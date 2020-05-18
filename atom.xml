@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ESP0xA的私人小岛</title>
+  
+  <subtitle>听说过赫尔辛根莫斯肯吗？</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.fingerdance.plus/"/>
+  <updated>2020-05-17T03:00:40.884Z</updated>
+  <id>https://www.fingerdance.plus/</id>
+  
+  <author>
+    <name>ESP0xA</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.fingerdance.plus/2020/05/17/hello-world/"/>
+    <id>https://www.fingerdance.plus/2020/05/17/hello-world/</id>
+    <published>2020-05-17T03:00:40.884Z</published>
+    <updated>2020-05-17T03:00:40.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #200 岛屿数量（Number of Islands）</title>
+    <link href="https://www.fingerdance.plus/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/</id>
+    <published>2020-04-20T16:16:39.000Z</published>
+    <updated>2020-04-20T16:16:39.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给你一个由 ‘1’（陆地）和
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+    
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="深度优先搜素" scheme="https://www.fingerdance.plus/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A0/"/>
+    
+      <category term="广度优先搜索" scheme="https://www.fingerdance.plus/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用Shell命令</title>
+    <link href="https://www.fingerdance.plus/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/"/>
+    <id>https://www.fingerdance.plus/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-04-18T06:11:44.000Z</published>
+    <updated>2020-04-18T06:11:44.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;查找当前目录及子目录特定文件（夹）并删除&lt;/strong&gt;&lt;br&gt;&lt;code&gt;find . -name &amp;quot;*.zip&amp;quot; -type f -print -exec rm {}
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
+    
+      <category term="Shell" scheme="https://www.fingerdance.plus/tags/Shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows同一台计算机不同用户之间转移hexo运行环境</title>
+    <link href="https://www.fingerdance.plus/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/"/>
+    <id>https://www.fingerdance.plus/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-04-15T10:47:56.000Z</published>
+    <updated>2020-04-15T10:47:56.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;部署hexo的用户：A&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;新用户：B&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在Windows平台由A切换B之后，A配置的hexo没法直接使用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;&lt;/p&gt;
+&lt;blockqu
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="https://www.fingerdance.plus/tags/hexo/"/>
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌云（GCP）给给未分配实例的外部IP地址分配实例</title>
+    <link href="https://www.fingerdance.plus/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/"/>
+    <id>https://www.fingerdance.plus/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/</id>
+    <published>2020-04-13T03:54:49.000Z</published>
+    <updated>2020-04-13T03:54:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;为了给未分配实例的外部IP地址分配实例，必须要保证新的实例与该IP地址在同一地区。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="谷歌云" scheme="https://www.fingerdance.plus/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91/"/>
+    
+      <category term="GCP" scheme="https://www.fingerdance.plus/tags/GCP/"/>
+    
+      <category term="GCE" scheme="https://www.fingerdance.plus/tags/GCE/"/>
+    
+      <category term="VM" scheme="https://www.fingerdance.plus/tags/VM/"/>
+    
+      <category term="外部IP地址" scheme="https://www.fingerdance.plus/tags/%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VPS测速</title>
+    <link href="https://www.fingerdance.plus/2020/04/13/VPS%E6%B5%8B%E9%80%9F/"/>
+    <id>https://www.fingerdance.plus/2020/04/13/VPS%E6%B5%8B%E9%80%9F/</id>
+    <published>2020-04-13T03:11:21.000Z</published>
+    <updated>2020-04-13T03:11:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt; &lt;strong&gt;speedtest-cli&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;下载speedtest-cli&lt;br&gt;&lt;code&gt;wget -O speedtest-cli
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
+    
+      <category term="VPS" scheme="https://www.fingerdance.plus/tags/VPS/"/>
+    
+      <category term="测速" scheme="https://www.fingerdance.plus/tags/%E6%B5%8B%E9%80%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用Screen命令</title>
+    <link href="https://www.fingerdance.plus/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/"/>
+    <id>https://www.fingerdance.plus/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-04-13T01:59:32.000Z</published>
+    <updated>2020-04-13T01:59:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Screen是一个可以在多个进程之间多路复用一个物理终端的窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。在使用过程中可以退出screen，甚至可
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
+    
+      <category term="Screen" scheme="https://www.fingerdance.plus/tags/Screen/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PanDownload远程Aria2下载恢复连接数</title>
+    <link href="https://www.fingerdance.plus/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/"/>
+    <id>https://www.fingerdance.plus/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/</id>
+    <published>2020-04-12T07:11:09.000Z</published>
+    <updated>2020-04-12T07:11:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;What&quot;&gt;&lt;a href=&quot;#What&quot; class=&quot;headerlink&quot; title=&quot;What?&quot;&gt;&lt;/a&gt;What?&lt;/h3&gt;&lt;p&gt;什么是连接数？如图：&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="Aria2" scheme="https://www.fingerdance.plus/tags/Aria2/"/>
+    
+      <category term="AriaNg" scheme="https://www.fingerdance.plus/tags/AriaNg/"/>
+    
+      <category term="PanDownload" scheme="https://www.fingerdance.plus/tags/PanDownload/"/>
+    
+      <category term="远程Aria2下载" scheme="https://www.fingerdance.plus/tags/%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux平台解压缩</title>
+    <link href="https://www.fingerdance.plus/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/"/>
+    <id>https://www.fingerdance.plus/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/</id>
+    <published>2020-04-11T15:13:54.000Z</published>
+    <updated>2020-04-11T15:13:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;7z-zip格式&quot;&gt;&lt;a href=&quot;#7z-zip格式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
+    
+      <category term="解压缩" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/"/>
+    
+      <category term="7z" scheme="https://www.fingerdance.plus/tags/7z/"/>
+    
+      <category term="zip" scheme="https://www.fingerdance.plus/tags/zip/"/>
+    
+      <category term="rar" scheme="https://www.fingerdance.plus/tags/rar/"/>
+    
+      <category term="tar" scheme="https://www.fingerdance.plus/tags/tar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #151 翻转字符串里的单词「Reverse Words in a String」</title>
+    <link href="https://www.fingerdance.plus/2020/04/11/LeetCode-151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D%E3%80%8CReverse-Words-in-a-String%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/11/LeetCode-151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D%E3%80%8CReverse-Words-in-a-String%E3%80%8D/</id>
+    <published>2020-04-11T02:38:28.000Z</published>
+    <updated>2020-04-11T02:38:28.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #22 括号生成「Generate Parentheses」</title>
+    <link href="https://www.fingerdance.plus/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/</id>
+    <published>2020-04-10T03:40:52.000Z</published>
+    <updated>2020-04-10T03:40:52.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>玩转rclone</title>
+    <link href="https://www.fingerdance.plus/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/"/>
+    <id>https://www.fingerdance.plus/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/</id>
+    <published>2020-04-09T06:25:11.000Z</published>
+    <updated>2020-04-09T06:25:11.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;名词详解&quot;&gt;&lt;a href=&quot;#名词详解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="Rclone" scheme="https://www.fingerdance.plus/tags/Rclone/"/>
+    
+      <category term="GoogleDrive" scheme="https://www.fingerdance.plus/tags/GoogleDrive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeecCode #面试题13 机器人的运动范围「」</title>
+    <link href="https://www.fingerdance.plus/2020/04/08/LeecCode-%E9%9D%A2%E8%AF%95%E9%A2%9813-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4%E3%80%8C%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/08/LeecCode-%E9%9D%A2%E8%AF%95%E9%A2%9813-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4%E3%80%8C%E3%80%8D/</id>
+    <published>2020-04-08T11:19:17.000Z</published>
+    <updated>2020-04-08T11:19:17.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」</title>
+    <link href="https://www.fingerdance.plus/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/</id>
+    <published>2020-04-07T06:56:22.000Z</published>
+    <updated>2020-04-07T06:56:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给你一幅由 N × N 矩阵表示的图像，其中每个像素的大小为 4 字节。请你设计一种算法，将图像旋转 90
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="矩阵" scheme="https://www.fingerdance.plus/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #42 接雨水「Trapping Rain Water」</title>
+    <link href="https://www.fingerdance.plus/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/</id>
+    <published>2020-04-04T15:51:44.000Z</published>
+    <updated>2020-04-04T15:51:44.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://www.fingerdance.plus/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="单调栈" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
+      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读代码的一点心得</title>
+    <link href="https://www.fingerdance.plus/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</id>
+    <published>2020-04-04T14:17:12.000Z</published>
+    <updated>2020-04-04T14:17:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;阅读代码时，要先看整体架构，再看局部细节。&lt;br&gt;明确哪里没变，哪里会变，怎么变的。&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+    
+      <category term="心得" scheme="https://www.fingerdance.plus/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #1111 有效括号的嵌套深度「Maximum Nesting Depth of Two Valid Parentheses Strings」</title>
+    <link href="https://www.fingerdance.plus/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/</id>
+    <published>2020-04-02T10:23:19.000Z</published>
+    <updated>2020-04-02T10:23:19.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode #20 有效的括号「Valid Parentheses」</title>
+    <link href="https://www.fingerdance.plus/2020/04/02/LeetCode-20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E3%80%8CValid-Parentheses%E3%80%8D/"/>
+    <id>https://www.fingerdance.plus/2020/04/02/LeetCode-20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E3%80%8CValid-Parentheses%E3%80%8D/</id>
+    <published>2020-04-02T07:24:44.000Z</published>
+    <updated>2020-04-02T07:24:44.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://www.fingerdance.plus/tags/LeetCode/"/>
+    
+      <category term="栈" scheme="https://www.fingerdance.plus/tags/%E6%A0%88/"/>
+    
+      <category term="数据结构" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转ffmpeg</title>
+    <link href="https://www.fingerdance.plus/2020/03/30/%E7%8E%A9%E8%BD%ACffmpeg/"/>
+    <id>https://www.fingerdance.plus/2020/03/30/%E7%8E%A9%E8%BD%ACffmpeg/</id>
+    <published>2020-03-30T14:39:17.000Z</published>
+    <updated>2020-03-30T14:39:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;合并分段视频&quot;&gt;&lt;a href=&quot;#合并分段视频&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="ffmpeg" scheme="https://www.fingerdance.plus/tags/ffmpeg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode # 10 卡牌分组（X of a Kind in a Deck of Cards）</title>
+    <link href="https://www.fingerdance.plus/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</id>
+    <published>2020-03-29T14:50:00.000Z</published>
+    <updated>2020-03-29T14:50:00.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="计数数组" scheme="https://www.fingerdance.plus/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="最大公约数" scheme="https://www.fingerdance.plus/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
+    
+  </entry>
+  
+</feed>

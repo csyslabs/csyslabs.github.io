@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="ESP0xA" />
+   
+  <meta name="description" content="记录点滴生活" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    LeetCode #8 车的可用捕获量（Available Captures for Rook） |  ESP0xA的私人小岛
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="ESP0xA的私人小岛" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-LeetCode-8-车的可用捕获量（Available-Captures-for-Rook）" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  LeetCode #8 车的可用捕获量（Available Captures for Rook）
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/" class="article-date">
+  <time datetime="2020-03-26T07:15:01.000Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/">指尖飞舞</a> / <a class="article-category-link" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.2k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>在一个 8 x 8 的棋盘上，有一个白色车（rook）。也可能有空方块，白&gt; 色的象（bishop）和黑色的卒（pawn）。它们分别以字符 “R”，“.”，<br>“B” 和 “p” 给出。大写字符表示白棋，小写字符表示黑棋。</p>
+<p>车按国际象棋中的规则移动：它选择四个基本方向中的一个（北，东，西&gt; 和南），然后朝那个方向移动，直到它选择停止、到达棋盘的边缘或移动&gt; 到同一方格来捕获该方格上颜色相反的卒。另外，车不能与其他友方（白&gt; 色）象进入同一个方格。</p>
+<p>返回车能够在一次移动中捕获到的卒的数量。</p>
+</blockquote>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B1.png" alt="pic0x0"></p>
+<blockquote>
+<p><strong>输入：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'R'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 3<br><strong>解释：</strong> 在本例中，车能够捕获所有的卒</p>
+</blockquote>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B2.png" alt="pic0x1"></p>
+<blockquote>
+<p><strong>输入：</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'R'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 0<br><strong>解释：</strong> 象阻止了车捕获任何卒</p>
+</blockquote>
+<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B3.png" alt="pic0x2"></p>
+<blockquote>
+<p><strong>输入：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'R'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'B'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 3<br><strong>解释：</strong> 车可以捕获位置 b5，d6 和 f5 的卒</p>
+</blockquote>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><blockquote>
+<ol>
+<li>board.length == board[i].length == 8</li>
+<li>board[i][j] 可以是 ‘R’，’.’，’B’ 或 ‘p’</li>
+<li>只有一个格子上存在 board[i][j] == ‘R’</li>
+</ol>
+</blockquote>
+<hr>
+<p>题目所求即白车<code>rock(R)</code>一次移动击杀小卒<code>pawn(p)</code>所有可能的情况。<br>读懂题意后，先找白车<code>R</code>，以<code>R</code>为起点，分别往四个方向寻找<code>p</code>。<br>注意可能会遇到<code>Bishop(B)</code>，表示此路不通。另注意范围。</p>
+<h3 id="普通解法"><a href="#普通解法" class="headerlink" title="普通解法"></a>普通解法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numRookCaptures</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; board.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j= <span class="number">0</span>; j &lt; board[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'R'</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> y = i, x = j;</span><br><span class="line">                    <span class="comment">//纵上</span></span><br><span class="line">                    <span class="keyword">while</span> (--i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//纵下</span></span><br><span class="line">                    i = y; <span class="comment">//i归位</span></span><br><span class="line">                    <span class="keyword">while</span> (++i &lt;= <span class="number">7</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//横左</span></span><br><span class="line">                    i = y;<span class="comment">//i归位</span></span><br><span class="line">                    <span class="keyword">while</span> (--j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//横右</span></span><br><span class="line">                    j = x;<span class="comment">//j归位</span></span><br><span class="line">                    <span class="keyword">while</span> (++j &lt;=<span class="number">7</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二维方向数组"><a href="#二维方向数组" class="headerlink" title="二维方向数组"></a>二维方向数组</h3><p>依然是先找到<code>R</code>，定义方向数组<code>[[-1, 0], [1, 0], [0, 1], [0, -1]]</code>，循环该方向数组可表示依次走一个方向。<br>走其中某个方向时，用<code>i, j</code>分别加方向数组即可完成行走动作，注意在行走时要判断棋盘范围。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numRookCaptures</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 因为题目已经明确给出 board.length == board[i].length == 8，所以不做输入检查</span></span><br><span class="line">        <span class="comment">// 定义方向数组，可以认为是四个方向向量，在棋盘问题上是常见的做法</span></span><br><span class="line">        <span class="keyword">int</span>[][] directions = &#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'R'</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span>[] direction : directions) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (burnout(board, i, j, direction)) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> res;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 代码不会走到这里，返回 0 或者抛出异常均可</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * burnout 横冲直撞的意思（来自欧路词典）</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> board     输入棋盘</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> x         当前白象位置的横坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> y         当前白象位置的纵坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> direction 方向向量</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 消灭一个 p，就返回 true</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">burnout</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>[] direction)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = x;</span><br><span class="line">        <span class="keyword">int</span> j = y;</span><br><span class="line">        <span class="keyword">while</span> (inArea(i, j)) &#123;</span><br><span class="line">            <span class="comment">// 是友军，路被堵死，直接返回</span></span><br><span class="line">            <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 是敌军，拿下一血（不知道一血这个词是不是这么用的）</span></span><br><span class="line">            <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            i += direction[<span class="number">0</span>];</span><br><span class="line">            j += direction[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i 当前位置横坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j 当前位置纵坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 是否在棋盘有效范围内</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">inArea</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i &gt;= <span class="number">0</span> &amp;&amp; i &lt; <span class="number">8</span> &amp;&amp; j &gt;= <span class="number">0</span> &amp;&amp; j &lt; <span class="number">8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析：</strong></p>
+<blockquote>
+<ul>
+<li>时间复杂度：(N^2)，这里 NN 是输入棋盘的长（宽）。找到白色车，最差情况下需要遍历完整个数组。题目固定了输入是 8 \times 88×8 规格的棋盘，认为是 O(1)O(1) 也是没有问题的。</li>
+<li>空间复杂度：O(1)，只使用到常数个临时变量。</li>
+</ul>
+</blockquote>
+<h5 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/available-captures-for-rook/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/available-captures-for-rook/</a></p>
+</blockquote>
+<h5 id="参考题解："><a href="#参考题解：" class="headerlink" title="参考题解："></a>参考题解：</h5><blockquote>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/available-captures-for-rook/solution/mo-ni-ti-an-zhao-ti-mu-yi-si-shi-xian-ji-ke-java-b/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/available-captures-for-rook/solution/mo-ni-ti-an-zhao-ti-mu-yi-si-shi-xian-ji-ke-java-b/</a></li>
+</ul>
+</blockquote>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E5%90%91%E6%95%B0%E7%BB%84/" rel="tag">方向数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A3%8B%E7%9B%98/" rel="tag">棋盘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/03/26/%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            方便调试的链表类实现
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/25/LeetCode-7-%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF%EF%BC%88Surface-Area-of-3D-Shapes%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">LeetCode # 7 三维形体的表面积（Surface Area of 3D Shapes）</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'FmCKGGUriKm6u18Ua9vqlllH-gzGzoHsz',
+        app_key: '3qjfG82XpFT1eCY9E8oR3Bmz',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        ESP0xA
+      </li>
+      <li>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="ESP0xA的私人小岛"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/English">英语</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E">指尖飞舞</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E">不亦乐乎</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E7%94%9F%E6%B4%BB/me">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请吃一块小饼干吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.png">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['愿你在海风里常回首','莫理会世间日月悠悠',''],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: false,
+    backSpeed: 10,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+  </div>
+</body>
+
+</html>
