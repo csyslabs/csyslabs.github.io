@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    LeetCode #42 接雨水「Trapping Rain Water」 |  ESP0xA的私人小岛
+    LeetCode #101 对称二叉树（Symmetric Tree） |  ESP0xA的私人小岛
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-LeetCode-42-接雨水「Trapping-Rain-Water」" class="article article-type-post" itemscope
+  <article id="post-LeetCode-101-对称二叉树（Symmetric-Tree）" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  LeetCode #42 接雨水「Trapping Rain Water」
+  LeetCode #101 对称二叉树（Symmetric Tree）
 </h1>
   
 
@@ -53,8 +53,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/" class="article-date">
-  <time datetime="2020-04-04T15:51:44.000Z" itemprop="datePublished">2020-04-04</time>
+      <a href="/2020/05/31/LeetCode-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Symmetric-Tree%EF%BC%89/" class="article-date">
+  <time datetime="2020-05-31T05:24:05.000Z" itemprop="datePublished">2020-05-31</time>
 </a>
       
   <div class="article-category">
@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">625字</span>
+            <span class="post-count">802字</span>
         </span>
     </span>
 
@@ -77,7 +77,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">3分钟</span>
         </span>
     </span>
 </div>
@@ -104,20 +104,22 @@
       
 
       
-      <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="2020-04-04-LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
-<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
-
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6 </p>
-</blockquote>
+      <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，检查它是否是镜像对称的。<br>例如，二叉树<code>[1,2,2,3,4,4,3]</code>是对称的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1</span><br><span class="line">   &#x2F; \</span><br><span class="line">  2   2</span><br><span class="line"> &#x2F; \ &#x2F; \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></table></figure>
+<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></table></figure>
+<p><strong>进阶：</strong><br>你可以运用递归和迭代两种方法解决这个问题吗？</p>
 <hr>
-<h3 id="按列计算（动态规划计算最值）"><a href="#按列计算（动态规划计算最值）" class="headerlink" title="按列计算（动态规划计算最值）"></a>按列计算（动态规划计算最值）</h3><p>遍历每列，判断要不要计算列上的积水。<br>如何判断？计算出该列左侧最高列高度，计算右侧最高列高度。<br>若该列比二者都小，则该列需要计算;否则不需计算。<br>如何分别计算某列两侧最值？<br>可维护两个数组分别存储每列左右两侧最值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * [列解法, 动态规划]</span></span><br><span class="line"><span class="comment">     * 1ms</span></span><br><span class="line"><span class="comment">     * 39.3MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] leftSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="comment">//第一列和最后一列不需要计算两侧最值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            leftSideMax[i] = Math.max(leftSideMax[i - <span class="number">1</span>], height[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            rightSideMax[i] = Math.max(rightSideMax[i + <span class="number">1</span>], height[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minimum = Math.min(leftSideMax[j], rightSideMax[j]);</span><br><span class="line">            <span class="keyword">if</span> (height[j] &lt; minimum) &#123;</span><br><span class="line">                res += (minimum - height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Definition for a binary tree node.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p>核心思想是先降后增必有积水。<br>这个就有点像有效括号，一对儿。<br>维护一个单调递减的栈，栈中存入柱子下标。（为什么存入下标而不直接存入高度？因为我们可能会计算两个相隔若干柱子之间的距离。）<br>入栈：栈为空时；当前柱子低于栈顶柱子。<br>出栈：当前柱子高于栈顶柱子。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单调栈 简化代码</span></span><br><span class="line"><span class="comment">     * 4ms - 29.81%</span></span><br><span class="line"><span class="comment">     * 39.5MB, 11.78%</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; height[i] &gt; height[stack.peek()]) &#123; <span class="comment">//有可能可计算体积</span></span><br><span class="line">                <span class="keyword">int</span> heightInfoBeforePop = stack.peek();</span><br><span class="line">                stack.pop(); <span class="comment">// 当前柱子高于栈顶柱子时，出栈。记得出栈前先保存栈高数据。</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) <span class="keyword">break</span>; <span class="comment">//不可计算体积</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> stackTop = stack.peek();</span><br><span class="line">                    res += ((i - stackTop - <span class="number">1</span>) * (Math.min(height[i], height[stackTop]) - height[heightInfoBeforePop]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i); <span class="comment">// 栈空或当前柱子小于等于于栈顶柱子高度时，入栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>我们可以将对整个二叉树是否对称的判断拆分成对若干节点对是否对称的判断。这是递归思想。<br>具体地，从root节点的左右孩子节点开始，进行一次判断。条件满足的话，再深入到node1的left与node2的right、node1的right与node2的left。依次递归下去。<br>注意回溯的情况，当node1和node2都为空时，即该节点对为对称的且为末端节点，<code>return true</code>。<br>不满足上面条件时，当node1和node2有一个为空或者<code>node1.val != node2.val</code>时，必然非对称，<code>return false</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">     * 内存消耗 :37.9 MB, 在所有 Java 提交中击败了31.25%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> cmp(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">cmp</span><span class="params">(TreeNode node1, TreeNode node2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//递归到头了，必须回溯。 不能在满足条件(node1 != null &amp;&amp; node2 != null &amp;&amp; node1.val == node2.val)时return true，因为此时需要继续向下递归</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//此时必然非对称</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> cmp(node1.left, node2.right) &amp;&amp; cmp(node1.right, node2.left); <span class="comment">//向下递归</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>我们可以引入一个队列，迭代判断所有节点对。<br>第一代poll root节点的左右孩子节点，判断节点状态。<br>往后每一代（如果有的话）保留了上一代判断条件得出的信息，poll出两个节点，再进行下一个判断。<br>一次又一次，迭代地进行判断。只要中间出现了一个不满足对称的情况：<br><code>node1 == null || node2 == null || node1.val != node2.val</code>，直接<code>return false</code>。<br>当所有节点入队出队迭代判断完毕均为出现非对称情况，那么可以认为二叉树是对称的。<br>注意到null节点的情况，队列应该使用LinkedList而非ArrayDeque——前者支持null元素，而后者不支持。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *执行用时 :1 ms, 在所有 Java 提交中击败了37.93%的用户</span></span><br><span class="line"><span class="comment">     *内存消耗 :39.8 MB, 在所有 Java 提交中击败了5.00%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">        queue.offer(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            TreeNode node1 = queue.poll();    </span><br><span class="line">            TreeNode node2 = queue.poll();  </span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">continue</span>; <span class="comment">//继续迭代判断</span></span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//必然非对称</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                queue.offer(node1.left);</span><br><span class="line">                queue.offer(node2.right);</span><br><span class="line">                queue.offer(node1.right);</span><br><span class="line">                queue.offer(node2.left);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//当所有节点入队出队结束，均未出现非对称情况，结果显然是对称的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/</a></p>
+
       
       <!-- reward -->
       
@@ -133,7 +135,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag">单调栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/" rel="tag">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%AD%E4%BB%A3/" rel="tag">迭代</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li></ul>
 
 
     </footer>
@@ -144,19 +146,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/" class="article-nav-link">
+      <a href="/2020/05/17/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">阅读代码的一点心得</div>
+        <div class="article-nav-title">Hello World</div>
       </a>
     
   </nav>

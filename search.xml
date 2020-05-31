@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode #101 对称二叉树（Symmetric Tree）</title>
+    <url>/2020/05/31/LeetCode-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Symmetric-Tree%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，检查它是否是镜像对称的。<br>例如，二叉树<code>[1,2,2,3,4,4,3]</code>是对称的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1</span><br><span class="line">   &#x2F; \</span><br><span class="line">  2   2</span><br><span class="line"> &#x2F; \ &#x2F; \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></table></figure>
+<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></table></figure>
+<p><strong>进阶：</strong><br>你可以运用递归和迭代两种方法解决这个问题吗？</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Definition for a binary tree node.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>我们可以将对整个二叉树是否对称的判断拆分成对若干节点对是否对称的判断。这是递归思想。<br>具体地，从root节点的左右孩子节点开始，进行一次判断。条件满足的话，再深入到node1的left与node2的right、node1的right与node2的left。依次递归下去。<br>注意回溯的情况，当node1和node2都为空时，即该节点对为对称的且为末端节点，<code>return true</code>。<br>不满足上面条件时，当node1和node2有一个为空或者<code>node1.val != node2.val</code>时，必然非对称，<code>return false</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">     * 内存消耗 :37.9 MB, 在所有 Java 提交中击败了31.25%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> cmp(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">cmp</span><span class="params">(TreeNode node1, TreeNode node2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//递归到头了，必须回溯。 不能在满足条件(node1 != null &amp;&amp; node2 != null &amp;&amp; node1.val == node2.val)时return true，因为此时需要继续向下递归</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//此时必然非对称</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> cmp(node1.left, node2.right) &amp;&amp; cmp(node1.right, node2.left); <span class="comment">//向下递归</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>我们可以引入一个队列，迭代判断所有节点对。<br>第一代poll root节点的左右孩子节点，判断节点状态。<br>往后每一代（如果有的话）保留了上一代判断条件得出的信息，poll出两个节点，再进行下一个判断。<br>一次又一次，迭代地进行判断。只要中间出现了一个不满足对称的情况：<br><code>node1 == null || node2 == null || node1.val != node2.val</code>，直接<code>return false</code>。<br>当所有节点入队出队迭代判断完毕均为出现非对称情况，那么可以认为二叉树是对称的。<br>注意到null节点的情况，队列应该使用LinkedList而非ArrayDeque——前者支持null元素，而后者不支持。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *执行用时 :1 ms, 在所有 Java 提交中击败了37.93%的用户</span></span><br><span class="line"><span class="comment">     *内存消耗 :39.8 MB, 在所有 Java 提交中击败了5.00%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">        queue.offer(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            TreeNode node1 = queue.poll();    </span><br><span class="line">            TreeNode node2 = queue.poll();  </span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">continue</span>; <span class="comment">//继续迭代判断</span></span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//必然非对称</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                queue.offer(node1.left);</span><br><span class="line">                queue.offer(node2.right);</span><br><span class="line">                queue.offer(node1.right);</span><br><span class="line">                queue.offer(node2.left);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//当所有节点入队出队结束，均未出现非对称情况，结果显然是对称的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
+        <tag>迭代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/05/17/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -115,8 +145,8 @@
   <entry>
     <title>谷歌云（GCP）给给未分配实例的外部IP地址分配实例</title>
     <url>/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<p>为了给未分配实例的外部IP地址分配实例，必须要保证新的实例与该IP地址在同一地区。<br><img src="2020-04-13-%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/0x0.png" alt="pic0x0"></p>
-<p>直接在新的实例中选择保留的IP地址。<br><img src="2020-04-13-%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/0x1.png" alt="pic0x1"></p>
+    <content><![CDATA[<p>为了给未分配实例的外部IP地址分配实例，必须要保证新的实例与该IP地址在同一地区。<br><img src="/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/0x0.png" alt="pic0x0"></p>
+<p>直接在新的实例中选择保留的IP地址。<br><img src="/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/0x1.png" alt="pic0x1"></p>
 <p>这样当我们删除一个实例，但希望把保留的IP地址应用到新的实例时，就可以很方便地操作。</p>
 ]]></content>
       <categories>
@@ -204,8 +234,8 @@
   <entry>
     <title>PanDownload远程Aria2下载恢复连接数</title>
     <url>/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/</url>
-    <content><![CDATA[<h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><p>什么是连接数？如图：<br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x0.png" alt="pic0x0"><br>对应PanDownload下载列表的连接数。</p>
-<p>这个参数在AriaNg面板中是这样的：<br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.png" alt="pic0x1"><br>通常情况下，连接数越大，速度越快。Aria2默认可设置单服务器最大连接数是16，可以重新编译Aria2设置更高的连接数。但过高的连接数对于百度云下载无显著意义，因为百度云单方面对连接数和对应速度做出了限制。</p>
+    <content><![CDATA[<h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><p>什么是连接数？如图：<br><img src="/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x0.png" alt="pic0x0"><br>对应PanDownload下载列表的连接数。</p>
+<p>这个参数在AriaNg面板中是这样的：<br><img src="/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.png" alt="pic0x1"><br>通常情况下，连接数越大，速度越快。Aria2默认可设置单服务器最大连接数是16，可以重新编译Aria2设置更高的连接数。但过高的连接数对于百度云下载无显著意义，因为百度云单方面对连接数和对应速度做出了限制。</p>
 <h3 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h3><p>在使用PanDownload远程Aria2下载过程中，会出现连接数缓慢递减，从而造成速度下降甚至是下载骤停。<br>查了很久没有找到对应的配置设置，不过笔者摸索出了一个土办法，可以在连接数下降之后手动重置连接数。</p>
 <h3 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h3><blockquote>
 <ul>
@@ -229,7 +259,7 @@
 </ul>
 </blockquote>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>特别是在下载大文件的时候，掉连接数会造成下载失败。只能通过人工干预来解决了，希望以后Aria2会对此进行优化。</p>
-<h1 id="R-I-P-PanDownload"><a href="#R-I-P-PanDownload" class="headerlink" title="R.I.P PanDownload"></a>R.I.P PanDownload</h1><p><strong>2020年4月15日，希望作者渡过这道坎</strong><br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.jpg" alt="pic0x2"></p>
+<h1 id="R-I-P-PanDownload"><a href="#R-I-P-PanDownload" class="headerlink" title="R.I.P PanDownload"></a>R.I.P PanDownload</h1><p><strong>2020年4月15日，希望作者渡过这道坎</strong><br><img src="/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.jpg" alt="pic0x2"></p>
 ]]></content>
       <categories>
         <category>不亦乐乎</category>
@@ -341,7 +371,7 @@
 <p>原地旋转输入矩阵，使其变为:<br>[<br>  [15,13, 2, 5],<br>  [14, 3, 4, 1],<br>  [12, 6, 8, 9],<br>  [16, 7,10,11]<br>]</p>
 </blockquote>
 <hr>
-<h3 id="原地旋转方法"><a href="#原地旋转方法" class="headerlink" title="原地旋转方法"></a>原地旋转方法</h3><p>先将数组按对角线翻折：<br><img src="2020-04-07-LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/Rotate_Matrix_LCCI_0x0.png" alt="pic0x0"><br>此时得到的数组每行和目标数组相反，只需要再将每行数组按中轴线翻折。<br>注意两次翻折的起始和终止，切记不能重复翻折（会折回去）。<br>比如第一次翻折不能写成<code>for (int j = 0; j &lt; len; j++)</code>。如果这样，在<code>i</code>向下遍历过程中，会将之前折的折回去。</p>
+<h3 id="原地旋转方法"><a href="#原地旋转方法" class="headerlink" title="原地旋转方法"></a>原地旋转方法</h3><p>先将数组按对角线翻折：<br><img src="/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/Rotate_Matrix_LCCI_0x0.png" alt="pic0x0"><br>此时得到的数组每行和目标数组相反，只需要再将每行数组按中轴线翻折。<br>注意两次翻折的起始和终止，切记不能重复翻折（会折回去）。<br>比如第一次翻折不能写成<code>for (int j = 0; j &lt; len; j++)</code>。如果这样，在<code>i</code>向下遍历过程中，会将之前折的折回去。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 0ms</span></span><br><span class="line"><span class="comment">     * 39.7MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = matrix.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123; <span class="comment">//切莫从0开始，否则当遍历j时又换回去了</span></span><br><span class="line">                <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[j][i];</span><br><span class="line">                matrix[j][i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = len / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; j++) &#123; <span class="comment">//到中线结束，否则过中线又换回去了</span></span><br><span class="line">                <span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][len - <span class="number">1</span> - j];</span><br><span class="line">                matrix[i][len - <span class="number">1</span> - j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="借用临时N-N数组（需额外空间）"><a href="#借用临时N-N数组（需额外空间）" class="headerlink" title="借用临时N * N数组（需额外空间）"></a>借用临时N * N数组（需额外空间）</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 0ms</span></span><br><span class="line"><span class="comment">     * 40.2MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = matrix.length;</span><br><span class="line">        <span class="keyword">int</span>[][] temp = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">                temp[j][len - <span class="number">1</span> - i] = matrix[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            System.arraycopy(temp[i], <span class="number">0</span>, matrix[i], <span class="number">0</span>, len);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -359,10 +389,10 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode #42 接雨水「Trapping Rain Water」</title>
-    <url>/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="2020-04-04-LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%E3%80%8CTrapping-Rain-Water%E3%80%8D/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
-<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
+    <title>LeetCode #42 接雨水（Trapping Rain Water）</title>
+    <url>/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
+<center><font size="1">上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
 
 <p><strong>示例：</strong></p>
 <blockquote>
@@ -446,8 +476,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -513,8 +543,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -554,7 +584,7 @@
   <entry>
     <title>方便调试的链表类实现</title>
     <url>/2020/03/26/%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p>链表是一种特殊的数据结构：<br><img src="2020-03-26-%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="pic0x0"><br>它包含了两部分：<br>$$ListNodePtr<br>\begin{cases}{value} \\<br>{next}\begin{cases}{value} \\<br>                    {next}\begin{cases}{value} \\<br>                                       {next…}<br>                                       \end{cases}<br>                    \end{cases}<br>\end{cases}<br>$$<br>在《算法 第4版》中是这样描述的：</p>
+    <content><![CDATA[<p>链表是一种特殊的数据结构：<br><img src="/2020/03/26/%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="pic0x0"><br>它包含了两部分：<br>$$ListNodePtr<br>\begin{cases}{value} \\<br>{next}\begin{cases}{value} \\<br>                    {next}\begin{cases}{value} \\<br>                                       {next…}<br>                                       \end{cases}<br>                    \end{cases}<br>\end{cases}<br>$$<br>在《算法 第4版》中是这样描述的：</p>
 <blockquote>
 <p>链表是一种递归的数据结构，它或者为空(null)，或者是指向一个结点(node)的引用，该结点含有一个泛型的元素和一个指向另一条链表的引用。</p>
 </blockquote>
@@ -570,8 +600,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Java</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -582,19 +612,19 @@
 <p>车按国际象棋中的规则移动：它选择四个基本方向中的一个（北，东，西&gt; 和南），然后朝那个方向移动，直到它选择停止、到达棋盘的边缘或移动&gt; 到同一方格来捕获该方格上颜色相反的卒。另外，车不能与其他友方（白&gt; 色）象进入同一个方格。</p>
 <p>返回车能够在一次移动中捕获到的卒的数量。</p>
 </blockquote>
-<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B1.png" alt="pic0x0"></p>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><p><img src="/2020/03/26/LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B1.png" alt="pic0x0"></p>
 <blockquote>
 <p><strong>输入：</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'R'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>输出：</strong> 3<br><strong>解释：</strong> 在本例中，车能够捕获所有的卒</p>
 </blockquote>
-<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B2.png" alt="pic0x1"></p>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><p><img src="/2020/03/26/LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B2.png" alt="pic0x1"></p>
 <blockquote>
 <p><strong>输入：</strong> </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'R'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>输出：</strong> 0<br><strong>解释：</strong> 象阻止了车捕获任何卒</p>
 </blockquote>
-<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><p><img src="2020-03-26-LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B3.png" alt="pic0x2"></p>
+<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><p><img src="/2020/03/26/LeetCode-8-%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F%EF%BC%88Available-Captures-for-Rook%EF%BC%89/%E7%A4%BA%E4%BE%8B3.png" alt="pic0x2"></p>
 <blockquote>
 <p><strong>输入：</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'p'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'R'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'B'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'B'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'p'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>,<span class="string">'.'</span>&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -634,8 +664,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -685,8 +715,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -727,8 +757,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -769,8 +799,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -820,8 +850,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -877,9 +907,9 @@
 <p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]<br><strong>示例2：</strong><br>输入：arr = [0,1,2,1], k = 1<br>输出：[0]<br><strong>限制：</strong><br>0 &lt;= k &lt;= arr.length &lt;= 10000<br>0 &lt;= arr[i] &lt;= 10000</p>
 </blockquote>
 <hr>
-<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/quickSort.png" alt="pic0x0"></p>
+<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/quickSort.png" alt="pic0x0"></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。<br><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AA%E5%A4%A7%E9%A1%B6%E5%A0%86.gif" alt="pic0x1"></p>
+<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。<br><img src="/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AA%E5%A4%A7%E9%A1%B6%E5%A0%86.gif" alt="pic0x1"></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
 <p><a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/</a></p>
@@ -890,8 +920,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -930,8 +960,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
