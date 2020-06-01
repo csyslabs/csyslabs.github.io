@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-06-01T05:52:17.000Z</updated>
+  <updated>2020-06-01T09:11:35.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）</title>
+    <link href="https://www.fingerdance.plus/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/</id>
+    <published>2020-06-01T09:11:35.000Z</published>
+    <updated>2020-06-01T09:11:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Welcome to Anaconda</title>
@@ -556,41 +585,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #20 有效的括号「Valid Parentheses」</title>
-    <link href="https://www.fingerdance.plus/2020/04/02/LeetCode-20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E3%80%8CValid-Parentheses%E3%80%8D/"/>
-    <id>https://www.fingerdance.plus/2020/04/02/LeetCode-20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7%E3%80%8CValid-Parentheses%E3%80%8D/</id>
-    <published>2020-04-02T07:24:44.000Z</published>
-    <updated>2020-04-02T07:24:44.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.fingerdance.plus/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="栈" scheme="https://www.fingerdance.plus/tags/%E6%A0%88/"/>
-    
-      <category term="数据结构" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
