@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies） |  ESP0xA的私人小岛
+    LeetCode #238 除自身以外数组的乘积（Product of Array Except Self） |  ESP0xA的私人小岛
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -36,7 +36,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-LeetCode-1431-拥有最多糖果的孩子（Kids-With-the-Greatest-Number-of-Candies）" class="article article-type-post" itemscope
+  <article id="post-LeetCode-238-除自身以外数组的乘积（Product-of-Array-Except-Self）" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -44,7 +44,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）
+  LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）
 </h1>
   
 
@@ -53,8 +53,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/" class="article-date">
-  <time datetime="2020-06-01T09:11:35.000Z" itemprop="datePublished">2020-06-01</time>
+      <a href="/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/" class="article-date">
+  <time datetime="2020-06-04T06:16:46.000Z" itemprop="datePublished">2020-06-04</time>
 </a>
       
   <div class="article-category">
@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">483字</span>
+            <span class="post-count">616字</span>
         </span>
     </span>
 
@@ -104,33 +104,29 @@
       
 
       
-      <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组<code>candies</code>和一个整数<code>extraCandies</code>，其中<code>candies[i]</code> 代表第 <code>i</code>个孩子拥有的糖果数目。</p>
-<p>对每一个孩子，检查是否存在一种方案，将额外的 <code>extraCandies</code> 个糖果分配给孩子们之后，此孩子有 <strong>最多</strong> 的糖果。注意，允许有多个孩子同时拥有 <strong>最多</strong> 的糖果数目。</p>
-<p><strong>示例1：</strong></p>
+      <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个长度为 n 的整数数组 <code>nums</code>，其中 n &gt; 1，返回输出数组 <code>output</code> ，其中 <code>output[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积。</p>
+<p><strong>示例：</strong></p>
 <blockquote>
-<p><strong>输入：</strong> candies = [2,3,5,1,3], extraCandies = 3<br><strong>输出：</strong> [true,true,true,false,true]<br><strong>解释：</strong><br>孩子 1 有 2 个糖果，如果他得到所有额外的糖果（3个），那么他总共有 5 个糖果，他将成为拥有最多糖果的孩子。<br>孩子 2 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。<br>孩子 3 有 5 个糖果，他已经是拥有最多糖果的孩子。<br>孩子 4 有 1 个糖果，即使他得到所有额外的糖果，他也只有 4 个糖果，无法成为拥有糖果最多的孩子。<br>孩子 5 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。</p>
+<p>输入: [1,2,3,4]<br>输出: [24,12,8,6]</p>
 </blockquote>
-<p><strong>示例2：</strong></p>
-<blockquote>
-<p><strong>输入：</strong> candies = [4,2,1,1,2], extraCandies = 1<br><strong>输出：</strong> [true,false,false,false,false]<br><strong>解释：</strong> 只有 1 个额外糖果，所以不管额外糖果给谁，只有孩子 1 可以成为拥有糖果最多的孩子。</p>
-</blockquote>
-<p><strong>示例3：</strong></p>
-<blockquote>
-<p><strong>输入：</strong> candies = [12,1,12], extraCandies = 10<br><strong>输出：</strong> [true,false,true]</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>2 &lt;= candies.length &lt;= 100</li>
-<li>1 &lt;= candies[i] &lt;= 100</li>
-<li>1 &lt;= extraCandies &lt;= 50</li>
-</ul>
+<p><strong>提示：</strong> 题目数据保证数组之中任意元素的全部前缀元素和后缀（甚至是整个数组）的乘积都在 32 位整数范围内。</p>
+<p><strong>说明:</strong> 请不要使用除法，且在 O(n) 时间复杂度内完成此题。</p>
+<p><strong>进阶：</strong> 你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）</p>
 <hr>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>没啥好说的，儿童节快乐！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Boolean&gt; <span class="title">kidsWithCandies</span><span class="params">(<span class="keyword">int</span>[] candies, <span class="keyword">int</span> extraCandies)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = candies.length;</span><br><span class="line">        <span class="keyword">int</span> max = candies[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            max = Math.max(max, candies[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Boolean&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            res.add(candies[i] + extraCandies &gt;= max);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/</a></p>
-</blockquote>
+<h3 id="左右乘积数组"><a href="#左右乘积数组" class="headerlink" title="左右乘积数组"></a>左右乘积数组</h3><p>维护两个数组，分别存放<code>nums[i]</code>左右乘积。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] productExceptSelf(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                left[i] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            left[i] = left[i - <span class="number">1</span>] * nums[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = len - <span class="number">1</span>; j &gt; -<span class="number">1</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == len - <span class="number">1</span>) &#123;</span><br><span class="line">                right[j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            right[j] = right[j + <span class="number">1</span>] * nums[j + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] output = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; len; k++) &#123;</span><br><span class="line">            output[k] = left[k] * right[k];</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度：</strong></p>
+<ul>
+<li>时间复杂度：<strong><em>O(N)</em></strong> 其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。预处理 <code>left</code> 和 <code>right</code> 数组以及最后的遍历计算都是 <strong><em>O(N)</em></strong> 的时间复杂度。</li>
+<li>空间复杂度：<strong><em>O(N)</em></strong> 其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。使用了 <code>left</code> 和 <code>right</code> 数组去构造答案，<code>left</code> 和 <code>right</code> 数组的长度为数组 <code>nums</code> 的大小。</li>
+</ul>
+<h3 id="进一步优化-O-1-的空间复杂度"><a href="#进一步优化-O-1-的空间复杂度" class="headerlink" title="进一步优化 O(1) 的空间复杂度"></a>进一步优化 <strong><em>O(1)</em></strong> 的空间复杂度</h3><p>可以使用答案数组来替代 <code>left</code> 数组，从右向左遍历，动态更新 <code>nums[i]</code> 右侧乘积。<br>也可以使用答案数组来替代 <code>right</code> 数组，从左向右遍历，动态更新 <code>nums[i]</code> 左侧乘积。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] productExceptSelf(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] output = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        output[len -<span class="number">1</span> ] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            output[i] = output[i + <span class="number">1</span>] * nums[i + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span>) left = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> left = left * nums[j - <span class="number">1</span>];</span><br><span class="line">            output[j] = left * output[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度：</strong></p>
+<ul>
+<li>时间复杂度：<strong><em>O(N)</em></strong>，其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。分析与方法一相同。</li>
+<li>空间复杂度：<strong><em>O(1)</em></strong>，输出数组不算进空间复杂度中，因此我们只需要常数的空间存放变量。</li>
+</ul>
 
       
       <!-- reward -->
@@ -158,19 +154,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/06/01/Welcome-to-Anaconda/" class="article-nav-link">
+      <a href="/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Welcome to Anaconda</div>
+        <div class="article-nav-title">LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）</div>
       </a>
     
   </nav>

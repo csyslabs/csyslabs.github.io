@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-06-01T09:11:35.000Z</updated>
+  <updated>2020-06-04T06:16:46.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）</title>
+    <link href="https://www.fingerdance.plus/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/</id>
+    <published>2020-06-04T06:16:46.000Z</published>
+    <updated>2020-06-04T06:16:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给你一个长度为 n 的整数数组 &lt;code&gt;nums&lt;/code&gt;，其中 n &amp;gt; 1，返回输出数组
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）</title>
@@ -570,21 +599,6 @@
     
     
       <category term="心得" scheme="https://www.fingerdance.plus/tags/%E5%BF%83%E5%BE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #1111 有效括号的嵌套深度「Maximum Nesting Depth of Two Valid Parentheses Strings」</title>
-    <link href="https://www.fingerdance.plus/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/"/>
-    <id>https://www.fingerdance.plus/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/</id>
-    <published>2020-04-02T10:23:19.000Z</published>
-    <updated>2020-04-02T10:23:19.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
     
   </entry>
   
