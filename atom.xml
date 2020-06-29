@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-06-04T06:16:46.000Z</updated>
+  <updated>2020-06-29T07:52:37.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读书笔记</title>
+    <link href="https://www.fingerdance.plus/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.fingerdance.plus/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-06-29T07:52:37.000Z</published>
+    <updated>2020-06-29T07:52:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。 
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="读书" scheme="https://www.fingerdance.plus/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）</title>
@@ -571,34 +603,6 @@
       <category term="单调栈" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
     
       <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阅读代码的一点心得</title>
-    <link href="https://www.fingerdance.plus/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</id>
-    <published>2020-04-04T14:17:12.000Z</published>
-    <updated>2020-04-04T14:17:12.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;阅读代码时，要先看整体架构，再看局部细节。&lt;br&gt;明确哪里没变，哪里会变，怎么变的。&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-    
-      <category term="心得" scheme="https://www.fingerdance.plus/tags/%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
