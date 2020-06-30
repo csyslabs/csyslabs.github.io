@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-06-29T07:52:37.000Z</updated>
+  <updated>2020-06-30T14:45:22.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>曾仕强「圆通的人际关系」节目笔记</title>
+    <link href="https://www.fingerdance.plus/2020/06/30/%E6%9B%BE%E4%BB%95%E5%BC%BA%E3%80%8C%E5%9C%86%E9%80%9A%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E3%80%8D%E8%8A%82%E7%9B%AE%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.fingerdance.plus/2020/06/30/%E6%9B%BE%E4%BB%95%E5%BC%BA%E3%80%8C%E5%9C%86%E9%80%9A%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E3%80%8D%E8%8A%82%E7%9B%AE%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-06-30T14:45:22.000Z</published>
+    <updated>2020-06-30T14:45:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;第一集&quot;&gt;&lt;a href=&quot;#第一集&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="曾仕强" scheme="https://www.fingerdance.plus/tags/%E6%9B%BE%E4%BB%95%E5%BC%BA/"/>
+    
+      <category term="哲学" scheme="https://www.fingerdance.plus/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>圣经本土化翻译片段</title>
+    <link href="https://www.fingerdance.plus/2020/06/30/%E5%9C%A3%E7%BB%8F%E6%9C%AC%E5%9C%9F%E5%8C%96%E7%BF%BB%E8%AF%91%E7%89%87%E6%AE%B5/"/>
+    <id>https://www.fingerdance.plus/2020/06/30/%E5%9C%A3%E7%BB%8F%E6%9C%AC%E5%9C%9F%E5%8C%96%E7%BF%BB%E8%AF%91%E7%89%87%E6%AE%B5/</id>
+    <published>2020-06-30T14:12:25.000Z</published>
+    <updated>2020-06-30T14:12:25.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;裆里搁裆，裆里搁裆，裆里搁 裆里搁 裆里搁裆… &lt;/p&gt;
+&lt;p&gt;闲言碎语不要讲，表一表大卫家的小木匠。
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="圣经" scheme="https://www.fingerdance.plus/tags/%E5%9C%A3%E7%BB%8F/"/>
+    
+      <category term="段子" scheme="https://www.fingerdance.plus/tags/%E6%AE%B5%E5%AD%90/"/>
+    
+  </entry>
   
   <entry>
     <title>读书笔记</title>
@@ -537,72 +600,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」</title>
-    <link href="https://www.fingerdance.plus/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/"/>
-    <id>https://www.fingerdance.plus/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/</id>
-    <published>2020-04-07T06:56:22.000Z</published>
-    <updated>2020-04-07T06:56:22.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给你一幅由 N × N 矩阵表示的图像，其中每个像素的大小为 4 字节。请你设计一种算法，将图像旋转 90
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="矩阵" scheme="https://www.fingerdance.plus/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #42 接雨水（Trapping Rain Water）</title>
-    <link href="https://www.fingerdance.plus/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/"/>
-    <id>https://www.fingerdance.plus/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/</id>
-    <published>2020-04-04T15:51:44.000Z</published>
-    <updated>2020-04-04T15:51:44.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="动态规划" scheme="https://www.fingerdance.plus/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="单调栈" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
-    
-      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
