@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-06-30T14:45:22.000Z</updated>
+  <updated>2020-07-31T16:19:27.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>沟通的艺术</title>
+    <link href="https://www.fingerdance.plus/2020/08/01/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/"/>
+    <id>https://www.fingerdance.plus/2020/08/01/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/</id>
+    <published>2020-07-31T16:19:27.000Z</published>
+    <updated>2020-07-31T16:19:27.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;话题穿插切换&quot;&gt;&lt;a href=&quot;#话题穿插切换&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+    
+      <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fix Intellj IDEA git pust rejected</title>
+    <link href="https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/"/>
+    <id>https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/</id>
+    <published>2020-07-25T11:18:30.000Z</published>
+    <updated>2020-07-25T11:18:30.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="IntelliJ IDEA" scheme="https://www.fingerdance.plus/tags/IntelliJ-IDEA/"/>
+    
+      <category term="git" scheme="https://www.fingerdance.plus/tags/git/"/>
+    
+      <category term="解决方案" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
   
   <entry>
     <title>曾仕强「圆通的人际关系」节目笔记</title>
@@ -550,50 +602,6 @@
     <id>https://www.fingerdance.plus/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/</id>
     <published>2020-04-10T03:40:52.000Z</published>
     <updated>2020-04-10T03:40:52.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>玩转rclone</title>
-    <link href="https://www.fingerdance.plus/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/"/>
-    <id>https://www.fingerdance.plus/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/</id>
-    <published>2020-04-09T06:25:11.000Z</published>
-    <updated>2020-04-09T06:25:11.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;名词详解&quot;&gt;&lt;a href=&quot;#名词详解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-    
-      <category term="Rclone" scheme="https://www.fingerdance.plus/tags/Rclone/"/>
-    
-      <category term="GoogleDrive" scheme="https://www.fingerdance.plus/tags/GoogleDrive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeecCode #面试题13 机器人的运动范围「」</title>
-    <link href="https://www.fingerdance.plus/2020/04/08/LeecCode-%E9%9D%A2%E8%AF%95%E9%A2%9813-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4%E3%80%8C%E3%80%8D/"/>
-    <id>https://www.fingerdance.plus/2020/04/08/LeecCode-%E9%9D%A2%E8%AF%95%E9%A2%9813-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4%E3%80%8C%E3%80%8D/</id>
-    <published>2020-04-08T11:19:17.000Z</published>
-    <updated>2020-04-08T11:19:17.000Z</updated>
     
     <summary type="html">
     
