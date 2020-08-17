@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-07-31T16:19:27.000Z</updated>
+  <updated>2020-08-17T10:04:39.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>驾驶技术学习心得</title>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <published>2020-08-17T10:04:39.000Z</published>
+    <updated>2020-08-17T10:04:39.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;科目二&quot;&gt;&lt;a href=&quot;#科目二&quot; class=&quot;headerlink&quot; title=&quot;科目二&quot;&gt;&lt;/a&gt;科目二&lt;/h3&gt;&lt;h4 id=&quot;倒车入库&quot;&gt;&lt;a href=&quot;#倒车入库&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="驾驶技术" scheme="https://www.fingerdance.plus/tags/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>沟通的艺术</title>
@@ -587,21 +614,6 @@
     <id>https://www.fingerdance.plus/2020/04/11/LeetCode-151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D%E3%80%8CReverse-Words-in-a-String%E3%80%8D/</id>
     <published>2020-04-11T02:38:28.000Z</published>
     <updated>2020-04-11T02:38:28.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #22 括号生成「Generate Parentheses」</title>
-    <link href="https://www.fingerdance.plus/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/"/>
-    <id>https://www.fingerdance.plus/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/</id>
-    <published>2020-04-10T03:40:52.000Z</published>
-    <updated>2020-04-10T03:40:52.000Z</updated>
     
     <summary type="html">
     
