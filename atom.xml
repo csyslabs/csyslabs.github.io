@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-08-18T05:22:00.000Z</updated>
+  <updated>2020-08-22T05:38:14.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
+    <link href="https://www.fingerdance.plus/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://www.fingerdance.plus/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-08-22T05:38:14.000Z</published>
+    <updated>2020-08-22T05:38:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天在shell上安装Anaconda的时候，发现安装过程中的「风火轮」进度条很有趣，于是就简单实现了一下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+    
+      <category term="进度条" scheme="https://www.fingerdance.plus/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
+    <link href="https://www.fingerdance.plus/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</id>
+    <published>2020-08-21T10:41:09.000Z</published>
+    <updated>2020-08-21T10:41:09.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 111 二叉树的最小深度（Minimum Depth of Binary Tree）</title>
+    <link href="https://www.fingerdance.plus/2020/08/21/LeetCode-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%EF%BC%88Minimum-Depth-of-Binary-Tree%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/08/21/LeetCode-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%EF%BC%88Minimum-Depth-of-Binary-Tree%EF%BC%89/</id>
+    <published>2020-08-21T09:21:12.000Z</published>
+    <updated>2020-08-21T09:21:12.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree）</title>
+    <link href="https://www.fingerdance.plus/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/</id>
+    <published>2020-08-21T08:27:26.000Z</published>
+    <updated>2020-08-21T08:27:26.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>LeetCode 110 平衡二叉树（Balanced Binary Tree）</title>
@@ -506,146 +579,6 @@
       <category term="VM" scheme="https://www.fingerdance.plus/tags/VM/"/>
     
       <category term="外部IP地址" scheme="https://www.fingerdance.plus/tags/%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VPS测速</title>
-    <link href="https://www.fingerdance.plus/2020/04/13/VPS%E6%B5%8B%E9%80%9F/"/>
-    <id>https://www.fingerdance.plus/2020/04/13/VPS%E6%B5%8B%E9%80%9F/</id>
-    <published>2020-04-13T03:11:21.000Z</published>
-    <updated>2020-04-13T03:11:21.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt; &lt;strong&gt;speedtest-cli&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;下载speedtest-cli&lt;br&gt;&lt;code&gt;wget -O speedtest-cli
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
-    
-      <category term="VPS" scheme="https://www.fingerdance.plus/tags/VPS/"/>
-    
-      <category term="测速" scheme="https://www.fingerdance.plus/tags/%E6%B5%8B%E9%80%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux常用Screen命令</title>
-    <link href="https://www.fingerdance.plus/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/"/>
-    <id>https://www.fingerdance.plus/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-04-13T01:59:32.000Z</published>
-    <updated>2020-04-13T01:59:32.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Screen是一个可以在多个进程之间多路复用一个物理终端的窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。在使用过程中可以退出screen，甚至可
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
-    
-      <category term="Screen" scheme="https://www.fingerdance.plus/tags/Screen/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PanDownload远程Aria2下载恢复连接数</title>
-    <link href="https://www.fingerdance.plus/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/"/>
-    <id>https://www.fingerdance.plus/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/</id>
-    <published>2020-04-12T07:11:09.000Z</published>
-    <updated>2020-04-12T07:11:09.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;What&quot;&gt;&lt;a href=&quot;#What&quot; class=&quot;headerlink&quot; title=&quot;What?&quot;&gt;&lt;/a&gt;What?&lt;/h3&gt;&lt;p&gt;什么是连接数？如图：&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-    
-      <category term="Aria2" scheme="https://www.fingerdance.plus/tags/Aria2/"/>
-    
-      <category term="AriaNg" scheme="https://www.fingerdance.plus/tags/AriaNg/"/>
-    
-      <category term="PanDownload" scheme="https://www.fingerdance.plus/tags/PanDownload/"/>
-    
-      <category term="远程Aria2下载" scheme="https://www.fingerdance.plus/tags/%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux平台解压缩</title>
-    <link href="https://www.fingerdance.plus/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/"/>
-    <id>https://www.fingerdance.plus/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/</id>
-    <published>2020-04-11T15:13:54.000Z</published>
-    <updated>2020-04-11T15:13:54.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;7z-zip格式&quot;&gt;&lt;a href=&quot;#7z-zip格式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
-    
-      <category term="解压缩" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/"/>
-    
-      <category term="7z" scheme="https://www.fingerdance.plus/tags/7z/"/>
-    
-      <category term="zip" scheme="https://www.fingerdance.plus/tags/zip/"/>
-    
-      <category term="rar" scheme="https://www.fingerdance.plus/tags/rar/"/>
-    
-      <category term="tar" scheme="https://www.fingerdance.plus/tags/tar/"/>
     
   </entry>
   
