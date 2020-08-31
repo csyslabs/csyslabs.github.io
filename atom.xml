@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-08-22T05:38:14.000Z</updated>
+  <updated>2020-08-31T08:57:58.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 559 N叉树的最大深度（Maximum Depth of N-ary Tree）</title>
+    <link href="https://www.fingerdance.plus/2020/08/31/LeetCode-559-N%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-N-ary-Tree%EF%BC%89/"/>
+    <id>https://www.fingerdance.plus/2020/08/31/LeetCode-559-N%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-N-ary-Tree%EF%BC%89/</id>
+    <published>2020-08-31T08:57:58.000Z</published>
+    <updated>2020-08-31T08:57:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个 N 叉树，找到其最大深度。&lt;br&gt;最大深度是指从根节点到最远叶子节点的最长路径上的节点总数。&lt;br&gt;例如，给定一个
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞，算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E%EF%BC%8C%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+    
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
+    
+      <category term="N叉树" scheme="https://www.fingerdance.plus/tags/N%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
@@ -107,9 +142,33 @@
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个二叉树，找出其最大深度。&lt;br&gt;二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。&lt;br&gt;说明:
+        
+      
+    
     </summary>
     
     
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+    
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -156,8 +215,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
@@ -183,8 +242,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
@@ -561,40 +620,6 @@
       <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
     
       <category term="Shell" scheme="https://www.fingerdance.plus/tags/Shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows同一台计算机不同用户之间转移hexo运行环境</title>
-    <link href="https://www.fingerdance.plus/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/"/>
-    <id>https://www.fingerdance.plus/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</id>
-    <published>2020-04-15T10:47:56.000Z</published>
-    <updated>2020-04-15T10:47:56.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;部署hexo的用户：A&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;新用户：B&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在Windows平台由A切换B之后，A配置的hexo没法直接使用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;&lt;/p&gt;
-&lt;blockqu
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="hexo" scheme="https://www.fingerdance.plus/tags/hexo/"/>
-    
-      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
