@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-08-31T08:57:58.000Z</updated>
+  <updated>2020-09-18T02:28:42.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,71 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>云开发Web应用训练营/2020阿里云云栖训练营 学习笔记</title>
+    <link href="https://www.fingerdance.plus/2020/09/18/%E4%BA%91%E5%BC%80%E5%8F%91Web%E5%BA%94%E7%94%A8%E8%AE%AD%E7%BB%83%E8%90%A5-2020%E9%98%BF%E9%87%8C%E4%BA%91%E4%BA%91%E6%A0%96%E8%AE%AD%E7%BB%83%E8%90%A5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.fingerdance.plus/2020/09/18/%E4%BA%91%E5%BC%80%E5%8F%91Web%E5%BA%94%E7%94%A8%E8%AE%AD%E7%BB%83%E8%90%A5-2020%E9%98%BF%E9%87%8C%E4%BA%91%E4%BA%91%E6%A0%96%E8%AE%AD%E7%BB%83%E8%90%A5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-18T02:28:42.000Z</published>
+    <updated>2020-09-18T02:28:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;阿里云的云开发Web应用训练营一共有7期课程，每天一期。我会记录每次课程的笔记，以便及时总结及将来回顾。&lt;br&gt;以下为课程目录：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Day1 9.17
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="阿里云" scheme="https://www.fingerdance.plus/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+      <category term="云栖训练营" scheme="https://www.fingerdance.plus/tags/%E4%BA%91%E6%A0%96%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
+    
+      <category term="云开发" scheme="https://www.fingerdance.plus/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ProjectNowCoder学习笔记</title>
+    <link href="https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-04T08:13:18.000Z</published>
+    <updated>2020-09-04T08:13:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;2-1-Spring入门和模板语法&quot;&gt;&lt;a href=&quot;#2-1-Spring入门和模板语法&quot; class=&quot;headerlink&quot; title=&quot;2.1 Spring入门和模板语法&quot;&gt;&lt;/a&gt;2.1 Spring入门和模板语法&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="Project" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
+    
+    
+      <category term="Spring" scheme="https://www.fingerdance.plus/tags/Spring/"/>
+    
+      <category term="Project" scheme="https://www.fingerdance.plus/tags/Project/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 559 N叉树的最大深度（Maximum Depth of N-ary Tree）</title>
@@ -36,7 +101,9 @@
     </summary>
     
     
-      <category term="指尖飞舞，算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E%EF%BC%8C%E7%AE%97%E6%B3%95/"/>
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
       <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
@@ -215,8 +282,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
@@ -242,8 +309,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
@@ -554,72 +621,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode #200 岛屿数量（Number of Islands）</title>
-    <link href="https://www.fingerdance.plus/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/"/>
-    <id>https://www.fingerdance.plus/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/</id>
-    <published>2020-04-20T16:16:39.000Z</published>
-    <updated>2020-04-20T16:16:39.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给你一个由 ‘1’（陆地）和
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
-    
-      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
-    
-      <category term="深度优先搜素" scheme="https://www.fingerdance.plus/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A0/"/>
-    
-      <category term="广度优先搜索" scheme="https://www.fingerdance.plus/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Shell命令</title>
-    <link href="https://www.fingerdance.plus/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/"/>
-    <id>https://www.fingerdance.plus/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-04-18T06:11:44.000Z</published>
-    <updated>2020-04-18T06:11:44.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;查找当前目录及子目录特定文件（夹）并删除&lt;/strong&gt;&lt;br&gt;&lt;code&gt;find . -name &amp;quot;*.zip&amp;quot; -type f -print -exec rm {}
-        
-      
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.fingerdance.plus/tags/Linux/"/>
-    
-      <category term="Shell" scheme="https://www.fingerdance.plus/tags/Shell/"/>
     
   </entry>
   
