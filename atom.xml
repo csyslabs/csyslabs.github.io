@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-09-18T02:28:42.000Z</updated>
+  <updated>2020-10-01T08:51:38.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++字符串及其指针类型定义</title>
+    <link href="https://www.fingerdance.plus/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/"/>
+    <id>https://www.fingerdance.plus/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</id>
+    <published>2020-10-01T08:51:38.000Z</published>
+    <updated>2020-10-01T08:51:38.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;type&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Meaning in MBCS builds&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Meaning in Unicode
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="C++" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/C/"/>
+    
+    
+      <category term="C++" scheme="https://www.fingerdance.plus/tags/C/"/>
+    
+      <category term="字符串" scheme="https://www.fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="指针" scheme="https://www.fingerdance.plus/tags/%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>云开发Web应用训练营/2020阿里云云栖训练营 学习笔记</title>
@@ -598,29 +636,6 @@
       <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="迭代" scheme="https://www.fingerdance.plus/tags/%E8%BF%AD%E4%BB%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.fingerdance.plus/2020/05/17/hello-world/"/>
-    <id>https://www.fingerdance.plus/2020/05/17/hello-world/</id>
-    <published>2020-05-17T03:00:40.884Z</published>
-    <updated>2020-05-17T03:00:40.884Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   

@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++字符串及其指针类型定义</title>
+    <url>/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">type</th>
+<th align="center">Meaning in MBCS builds</th>
+<th align="center">Meaning in Unicode builds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">WCHAR</td>
+<td align="center">wchar_t</td>
+<td align="center">wchar_t</td>
+</tr>
+<tr>
+<td align="center">LPSTR</td>
+<td align="center">char*</td>
+<td align="center">char*</td>
+</tr>
+<tr>
+<td align="center">LPCSTR</td>
+<td align="center">const char*</td>
+<td align="center">const char*</td>
+</tr>
+<tr>
+<td align="center">LPWSTR</td>
+<td align="center">wchar_t*</td>
+<td align="center">wchar_t*</td>
+</tr>
+<tr>
+<td align="center">LPCWSTR</td>
+<td align="center">wchar_t*</td>
+<td align="center">wchar_t*</td>
+</tr>
+<tr>
+<td align="center">TCHAR</td>
+<td align="center">TCHAR char</td>
+<td align="center">wchar_t</td>
+</tr>
+<tr>
+<td align="center">LPTSTR</td>
+<td align="center">TCHAR*</td>
+<td align="center">TCHAR*</td>
+</tr>
+<tr>
+<td align="center">LPCTSTR</td>
+<td align="center">const TCHAR*</td>
+<td align="center">const TCHAR*</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>字符串</tag>
+        <tag>指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>云开发Web应用训练营/2020阿里云云栖训练营 学习笔记</title>
     <url>/2020/09/18/%E4%BA%91%E5%BC%80%E5%8F%91Web%E5%BA%94%E7%94%A8%E8%AE%AD%E7%BB%83%E8%90%A5-2020%E9%98%BF%E9%87%8C%E4%BA%91%E4%BA%91%E6%A0%96%E8%AE%AD%E7%BB%83%E8%90%A5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>阿里云的云开发Web应用训练营一共有7期课程，每天一期。我会记录每次课程的笔记，以便及时总结及将来回顾。<br>以下为课程目录：</p>
