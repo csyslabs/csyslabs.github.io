@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用youtube-dl下载YouTube频道所有视频</title>
+    <url>/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p><code>youtube-dl -f &quot;bestvideo[height&gt;=&lt;resolution width such as: 3840&gt;]+bestaudio/best&quot; -ciw -o &quot;%(title)s.%(ext)s&quot; -v &lt;channel url like: xxx/channel/xxx&gt; --download-archive downloaded.txt</code></p>
+<blockquote>
+<p>-f, –format FORMAT<br>    video format code. with adding <code>bestvideo[height&gt;=3840]+bestaudio/best</code> youtube-dl will pick the quality &gt;= 4K</p>
+</blockquote>
+<blockquote>
+<p>-c, –continue<br>    force resume of partially downloaded files</p>
+</blockquote>
+<blockquote>
+<p>-i, –ignore-errors<br>    continue on download errors, for example to skip unavailable videos in a channel </p>
+</blockquote>
+<blockquote>
+<p>-w, –no-overwrites<br>    do not overwrite files</p>
+</blockquote>
+<blockquote>
+<p>-o, –output<br>    Output filename template, this example functions similarly to the old –title option</p>
+</blockquote>
+<blockquote>
+<p>-v, –verbose<br>    print various debugging information</p>
+</blockquote>
+<blockquote>
+<p>with –download-archive download.txt flag you gonna archive all videos’ info so that you can ezlly resume download.<br>-f </p>
+</blockquote>
+<p><em>reference:</em></p>
+<blockquote>
+<p><a href="https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel" target="_blank" rel="noopener">https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel</a> </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
+      <tags>
+        <tag>YouTube</tag>
+        <tag>youtube-dl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++字符串及其指针类型定义</title>
     <url>/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/</url>
     <content><![CDATA[<table>
@@ -1126,6 +1164,7 @@
 <p><code>ffmpeg -i &quot;video.ts&quot; -vcodec copy -acodec copy &quot;video.mp4&quot;</code></p>
 </blockquote>
 <h3 id="截取一段视频"><a href="#截取一段视频" class="headerlink" title="截取一段视频"></a>截取一段视频</h3><p>从第12秒截取到294秒：<br><code>ffmpeg  -i 0x0.mkv -ss 12 -c copy -to 294 0x1.mp4</code></p>
+<h3 id="提取视频中的音频"><a href="#提取视频中的音频" class="headerlink" title="提取视频中的音频"></a>提取视频中的音频</h3><p><code>ffmpeg -i xxx.mp4 -f mp3 -ar 16000 xxx.mp3</code><br>其中：<br>xxx.mp4 视频文件<br>-f mp3 mp3编码<br>-ar 16000 音频采样率<br>xxx.mp3输出的音频文件</p>
 <p><strong>未完待续</strong></p>
 ]]></content>
       <categories>

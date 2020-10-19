@@ -68,7 +68,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">139字</span>
+            <span class="post-count">186字</span>
         </span>
     </span>
 
@@ -120,6 +120,7 @@
 <p><code>ffmpeg -i &quot;video.ts&quot; -vcodec copy -acodec copy &quot;video.mp4&quot;</code></p>
 </blockquote>
 <h3 id="截取一段视频"><a href="#截取一段视频" class="headerlink" title="截取一段视频"></a>截取一段视频</h3><p>从第12秒截取到294秒：<br><code>ffmpeg  -i 0x0.mkv -ss 12 -c copy -to 294 0x1.mp4</code></p>
+<h3 id="提取视频中的音频"><a href="#提取视频中的音频" class="headerlink" title="提取视频中的音频"></a>提取视频中的音频</h3><p><code>ffmpeg -i xxx.mp4 -f mp3 -ar 16000 xxx.mp3</code><br>其中：<br>xxx.mp4 视频文件<br>-f mp3 mp3编码<br>-ar 16000 音频采样率<br>xxx.mp3输出的音频文件</p>
 <p><strong>未完待续</strong></p>
 
       
