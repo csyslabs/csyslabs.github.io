@@ -70,8 +70,8 @@
   
   <entry>
     <title>基础算法模板</title>
-    <link href="https://www.fingerdance.plus/2020/10/24/%E6%8E%92%E5%BA%8F/"/>
-    <id>https://www.fingerdance.plus/2020/10/24/%E6%8E%92%E5%BA%8F/</id>
+    <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
     <updated>2020-10-24T06:03:00.000Z</updated>
     
@@ -95,11 +95,7 @@
     
       <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="排序" scheme="https://www.fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="快速排序" scheme="https://www.fingerdance.plus/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
