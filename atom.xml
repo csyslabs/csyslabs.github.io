@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>ESP0xA的私人小岛</title>
+  <title>ESP的私人小岛</title>
   
-  <subtitle>听说过赫尔辛根莫斯肯吗？</subtitle>
+  <subtitle>我太菜被关起来了</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
@@ -10,7 +10,7 @@
   <id>https://www.fingerdance.plus/</id>
   
   <author>
-    <name>ESP0xA</name>
+    <name>ESP</name>
     
   </author>
   
@@ -438,8 +438,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
@@ -465,8 +465,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-17T10:04:39.000Z</updated>
     
