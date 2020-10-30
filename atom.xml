@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-10-30T14:37:34.000Z</updated>
+  <updated>2020-10-30T20:54:39.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-next主题博客部分配置</title>
+    <link href="https://www.fingerdance.plus/2020/10/31/Hexo-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE/"/>
+    <id>https://www.fingerdance.plus/2020/10/31/Hexo-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-10-30T20:54:39.000Z</published>
+    <updated>2020-10-30T20:54:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录自己对Hexo-next主题博客的一些配置。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Blog" scheme="https://www.fingerdance.plus/tags/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title>记录对hexo yilia主题的个性定制</title>
@@ -142,10 +167,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;排序&quot;&gt;&lt;a href=&quot;#排序&quot; class=&quot;headerlink&quot; title=&quot;排序&quot;&gt;&lt;/a&gt;排序&lt;/h2&gt;&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;p&gt;快排最难的地方在于边界问题。边界问题涉及到比较因子的选择以及各种条件判断。建议将模板直接背过。&lt;br&gt;今天看了闫学灿的快排讲解之后，感悟颇多，特地记录下来供以后复习。&lt;br&gt;首先上快排模板：&lt;/p&gt;
-&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;qSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; q[], &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (lo &amp;gt;= hi) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//end of recursion&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; cmp = q[(lo + hi) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = lo - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, j = hi + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 每次指针移动，需要向中间偏移一位，故在这里也初始化设置成lo - 1和hi + 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (;i &amp;lt; j;) &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; i ++; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (q[i] &amp;lt; cmp);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; j --; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (q[j] &amp;gt; cmp);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i &amp;lt; j) swap(q[i], q[j]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    qSort(q, lo, j); &lt;span class=&quot;comment&quot;&gt;//                         1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    qSort(q, j + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, hi); &lt;span class=&quot;comment&quot;&gt;//                     2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;由于j要么等于i 要么j在i左边一位，故其中1和2可以改成：&lt;/p&gt;
-&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;qSort(q, lo, i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;qSort(q, i, hi);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;详尽地记录了各种基础算法模板，以及一些个人理解。&lt;/p&gt;
     
     </summary>
     
@@ -292,13 +314,13 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
-    
       <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
-      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
     
       <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
       <category term="N叉树" scheme="https://www.fingerdance.plus/tags/N%E5%8F%89%E6%A0%91/"/>
     
@@ -376,13 +398,13 @@
     
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
-    
       <category term="dfs" scheme="https://www.fingerdance.plus/tags/dfs/"/>
     
       <category term="bfs" scheme="https://www.fingerdance.plus/tags/bfs/"/>
     
       <category term="树结构" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
   </entry>
   
@@ -411,17 +433,17 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+    
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
     
-      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
-    
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
-    
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
   </entry>
   
@@ -450,11 +472,11 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
+    
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
       <category term="树的高度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/"/>
     
@@ -545,9 +567,9 @@
     
       <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
       <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
+    
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   
@@ -597,41 +619,11 @@
     
       <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+    
       <category term="曾仕强" scheme="https://www.fingerdance.plus/tags/%E6%9B%BE%E4%BB%95%E5%BC%BA/"/>
     
       <category term="哲学" scheme="https://www.fingerdance.plus/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>圣经本土化翻译片段</title>
-    <link href="https://www.fingerdance.plus/2020/06/30/%E5%9C%A3%E7%BB%8F%E6%9C%AC%E5%9C%9F%E5%8C%96%E7%BF%BB%E8%AF%91%E7%89%87%E6%AE%B5/"/>
-    <id>https://www.fingerdance.plus/2020/06/30/%E5%9C%A3%E7%BB%8F%E6%9C%AC%E5%9C%9F%E5%8C%96%E7%BF%BB%E8%AF%91%E7%89%87%E6%AE%B5/</id>
-    <published>2020-06-30T14:12:25.000Z</published>
-    <updated>2020-06-30T14:12:25.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;裆里搁裆，裆里搁裆，裆里搁 裆里搁 裆里搁裆… &lt;/p&gt;
-&lt;p&gt;闲言碎语不要讲，表一表大卫家的小木匠。
-        
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="圣经" scheme="https://www.fingerdance.plus/tags/%E5%9C%A3%E7%BB%8F/"/>
-    
-      <category term="段子" scheme="https://www.fingerdance.plus/tags/%E6%AE%B5%E5%AD%90/"/>
     
   </entry>
   
