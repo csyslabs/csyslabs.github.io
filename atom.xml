@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ESP的私人小岛</title>
   
-  <subtitle>我太菜被关起来了</subtitle>
+  <subtitle>记录点滴生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-10-27T10:06:57.000Z</updated>
+  <updated>2020-10-30T14:37:34.000Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录对hexo yilia主题的个性定制</title>
+    <link href="https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/"/>
+    <id>https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/</id>
+    <published>2020-10-30T14:37:34.000Z</published>
+    <updated>2020-10-30T14:37:34.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-隐藏多余的「展开更多」&quot;&gt;&lt;a href=&quot;#1-隐藏多余的「展开更多」&quot; class=&quot;headerlink&quot; title=&quot;1. 隐藏多余的「展开更多」&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Blog" scheme="https://www.fingerdance.plus/tags/Blog/"/>
+    
+      <category term="Hexo" scheme="https://www.fingerdance.plus/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>AcWing 788 或 LeetCode 剑指Offer 51 逆序对的数量</title>
@@ -109,13 +142,10 @@
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;排序&quot;&gt;&lt;a href=&quot;#排序&quot; class=&quot;headerlink&quot; title=&quot;排序&quot;&gt;&lt;/a&gt;排序&lt;/h2&gt;&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h2 id=&quot;排序&quot;&gt;&lt;a href=&quot;#排序&quot; class=&quot;headerlink&quot; title=&quot;排序&quot;&gt;&lt;/a&gt;排序&lt;/h2&gt;&lt;h3 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h3&gt;&lt;p&gt;快排最难的地方在于边界问题。边界问题涉及到比较因子的选择以及各种条件判断。建议将模板直接背过。&lt;br&gt;今天看了闫学灿的快排讲解之后，感悟颇多，特地记录下来供以后复习。&lt;br&gt;首先上快排模板：&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;qSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; q[], &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (lo &amp;gt;= hi) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//end of recursion&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; cmp = q[(lo + hi) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = lo - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, j = hi + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 每次指针移动，需要向中间偏移一位，故在这里也初始化设置成lo - 1和hi + 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (;i &amp;lt; j;) &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; i ++; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (q[i] &amp;lt; cmp);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; j --; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (q[j] &amp;gt; cmp);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i &amp;lt; j) swap(q[i], q[j]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    qSort(q, lo, j); &lt;span class=&quot;comment&quot;&gt;//                         1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    qSort(q, j + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, hi); &lt;span class=&quot;comment&quot;&gt;//                     2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于j要么等于i 要么j在i左边一位，故其中1和2可以改成：&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;qSort(q, lo, i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;qSort(q, i, hi);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -129,11 +159,11 @@
     
       <category term="排序" scheme="https://www.fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
     
+      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
       <category term="快速排序" scheme="https://www.fingerdance.plus/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     
       <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="二分查找" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
@@ -602,38 +632,6 @@
       <category term="圣经" scheme="https://www.fingerdance.plus/tags/%E5%9C%A3%E7%BB%8F/"/>
     
       <category term="段子" scheme="https://www.fingerdance.plus/tags/%E6%AE%B5%E5%AD%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读书笔记</title>
-    <link href="https://www.fingerdance.plus/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.fingerdance.plus/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-06-29T07:52:37.000Z</published>
-    <updated>2020-06-29T07:52:37.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="读书" scheme="https://www.fingerdance.plus/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
