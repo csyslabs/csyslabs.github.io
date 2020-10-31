@@ -6,16 +6,14 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-atom-purple.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-atom-purple.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
@@ -36,8 +34,8 @@
 <meta property="article:tag" content="BFS">
 <meta property="article:tag" content="二叉树">
 <meta property="article:tag" content="递归">
-<meta property="article:tag" content="树深度">
 <meta property="article:tag" content="树">
+<meta property="article:tag" content="树深度">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.fingerdance.plus/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/">
@@ -55,14 +53,21 @@
 
   <title>LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree） | ESP的私人小岛</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BR9YB0161N"></script>
-    <script data-pjax>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BR9YB0161N');
+    <script>
+      function sendPageView() {
+        if (CONFIG.hostname !== location.hostname) return;
+        var uid = localStorage.getItem('uid') || (Math.random() + '.' + Math.random());
+        localStorage.setItem('uid', uid);
+        navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams({
+          v  : 1,
+          tid: 'G-23PFYL4751',
+          cid: uid,
+          t  : 'pageview',
+          dp : encodeURIComponent(location.pathname)
+        }));
       }
+      document.addEventListener('pjax:complete', sendPageView);
+      sendPageView();
     </script>
 
 
@@ -317,8 +322,8 @@
               <a href="/tags/BFS/" rel="tag"><i class="fa fa-tag"></i> BFS</a>
               <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 二叉树</a>
               <a href="/tags/%E9%80%92%E5%BD%92/" rel="tag"><i class="fa fa-tag"></i> 递归</a>
-              <a href="/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/" rel="tag"><i class="fa fa-tag"></i> 树深度</a>
               <a href="/tags/%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 树</a>
+              <a href="/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/" rel="tag"><i class="fa fa-tag"></i> 树深度</a>
           </div>
 
         
@@ -560,7 +565,6 @@
   </div>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
@@ -639,10 +643,6 @@ window.addEventListener('pjax:success', () => {
 </script>
 
 
-  <script defer src="/lib/three/three.min.js"></script>
-    <script defer src="/lib/three/three-waves.min.js"></script>
-    <script defer src="/lib/three/canvas_lines.min.js"></script>
-    <script defer src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -688,6 +688,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">

@@ -25,7 +25,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录自己对Hexo-next主题博客的一些配置。&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录自己使用Hexo-next主题博客过程中的的一些配置。&lt;/p&gt;
     
     </summary>
     
@@ -318,9 +318,9 @@
     
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
     
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
-    
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
       <category term="N叉树" scheme="https://www.fingerdance.plus/tags/N%E5%8F%89%E6%A0%91/"/>
     
@@ -398,13 +398,13 @@
     
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
       <category term="dfs" scheme="https://www.fingerdance.plus/tags/dfs/"/>
     
       <category term="bfs" scheme="https://www.fingerdance.plus/tags/bfs/"/>
     
       <category term="树结构" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
   </entry>
   
@@ -441,9 +441,9 @@
     
       <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
     
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
-    
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
   </entry>
   

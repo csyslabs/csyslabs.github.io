@@ -23,6 +23,11 @@
       </tags>
   </entry>
   <entry>
+    <title>In just 24 hours, US coronavirus cases soar by more than 40%</title>
+    <url>/2020/03/19/In-just-24-hours-US-coronavirus-cases-soar-by-more-than-40/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>[Daily Readings]  Trump address sparks chaos as coronavirus crisis deepens</title>
     <url>/2020/03/12/Trump-address-sparks-chaos-as-coronavirus-crisis-deepens/</url>
     <content><![CDATA[<hr>
@@ -200,11 +205,6 @@
       </tags>
   </entry>
   <entry>
-    <title>In just 24 hours, US coronavirus cases soar by more than 40%</title>
-    <url>/2020/03/19/In-just-24-hours-US-coronavirus-cases-soar-by-more-than-40/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>浅谈java的static关键字</title>
     <url>/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
     <content><![CDATA[<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><h3 id="Why-we-have-to-use-a-static-key-word"><a href="#Why-we-have-to-use-a-static-key-word" class="headerlink" title="Why we have to use a static key word?"></a>Why we have to use a <code>static</code> key word?</h3><p>一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。<br>如：</p>
@@ -239,39 +239,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode #1 两数之和「twoSum」 0x0</title>
-    <url>/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/</url>
-    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
-</blockquote>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9</p>
-<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
-</blockquote>
-<hr>
-<h3 id="Java-HashMap-method"><a href="#Java-HashMap-method" class="headerlink" title="Java HashMap method"></a>Java HashMap method</h3><p>key: target - nums[v]<br>value: v<br>每次迭代，判断nums[v]在不在hashmap中。<br>如果在，则nums[v]一定是之前target - nums[index_before]的值。此时返回{index_before, v}；<br>如果不在，则把key: target - nums[v]和value: v放到hashmap中。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-time-for-loop"><a href="#2-time-for-loop" class="headerlink" title="2 time for loop"></a>2 time for loop</h3><p>注意到数组中同样元素不可重复利用，意思是某元素不能和自己相加和target比较。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   2 7 11 15</span><br><span class="line">2  x</span><br><span class="line">7    x</span><br><span class="line">11     x</span><br><span class="line">15        x</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i] + nums[j] == target) &amp;&amp; (i != j))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-        <tag>HashMap</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode #2 最小的k个数「TopK」 0x1</title>
     <url>/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/</url>
     <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
@@ -295,8 +262,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -342,6 +309,39 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode #1 两数之和「twoSum」 0x0</title>
+    <url>/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/</url>
+    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
+</blockquote>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9</p>
+<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+</blockquote>
+<hr>
+<h3 id="Java-HashMap-method"><a href="#Java-HashMap-method" class="headerlink" title="Java HashMap method"></a>Java HashMap method</h3><p>key: target - nums[v]<br>value: v<br>每次迭代，判断nums[v]在不在hashmap中。<br>如果在，则nums[v]一定是之前target - nums[index_before]的值。此时返回{index_before, v}；<br>如果不在，则把key: target - nums[v]和value: v放到hashmap中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-time-for-loop"><a href="#2-time-for-loop" class="headerlink" title="2 time for loop"></a>2 time for loop</h3><p>注意到数组中同样元素不可重复利用，意思是某元素不能和自己相加和target比较。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   2 7 11 15</span><br><span class="line">2  x</span><br><span class="line">7    x</span><br><span class="line">11     x</span><br><span class="line">15        x</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i] + nums[j] == target) &amp;&amp; (i != j))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>算法</tag>
+        <tag>HashMap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode #5 链表的中间结点（Middle of the Linked List）</title>
     <url>/2020/03/23/LeetCode-5-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%88Middle-of-the-Linked-List%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
@@ -378,8 +378,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -427,8 +427,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -469,8 +469,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -496,6 +496,26 @@
         <tag>Java</tag>
         <tag>链表</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>LeetCode # 10 卡牌分组（X of a Kind in a Deck of Cards）</title>
+    <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>计数数组</tag>
+        <tag>最大公约数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About me</title>
+    <url>/2020/03/27/About-me/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>&#123;</span><br><span class="line">    String name = <span class="string">"zhangxy"</span>; <span class="comment">// Well, good name.</span></span><br><span class="line">    <span class="keyword">char</span> sex = <span class="string">'male'</span>; <span class="comment">// A tough man.</span></span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">25</span>; <span class="comment">// Grasping the little tail of youth.</span></span><br><span class="line">    <span class="keyword">int</span> hight = <span class="number">170</span>; <span class="comment">// Enough to me.</span></span><br><span class="line">    <span class="keyword">float</span> weight = <span class="number">73.7f</span>; <span class="comment">// Emm, a little bit overweight, but everyday going to gym. Gym is second home. </span></span><br><span class="line">    String edu = <span class="string">"UESTC"</span>; <span class="comment">// Where the water tastes like wine. </span></span><br><span class="line">    String pro = <span class="string">"SE"</span>; <span class="comment">// Making cool stuff.</span></span><br><span class="line">    String marriage = <span class="string">"Single"</span>; <span class="comment">// I'm trying...emm...how to be more attractive ?</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wish</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"春日宴，浊酒一杯歌一遍。再拜陈三愿：</span></span><br><span class="line"><span class="string">                    一愿父母身体常健，</span></span><br><span class="line"><span class="string">                    二愿自己珍惜时间，</span></span><br><span class="line"><span class="string">                    三愿如同梁上燕，</span></span><br><span class="line"><span class="string">                    岁岁年年，快乐无边！"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moreInfo</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Stay tuned:)"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>me</category>
+        <category>About me</category>
+      </categories>
   </entry>
   <entry>
     <title>LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）</title>
@@ -543,8 +563,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -610,23 +630,12 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>About me</title>
-    <url>/2020/03/27/About-me/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>&#123;</span><br><span class="line">    String name = <span class="string">"zhangxy"</span>; <span class="comment">// Well, good name.</span></span><br><span class="line">    <span class="keyword">char</span> sex = <span class="string">'male'</span>; <span class="comment">// A tough man.</span></span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">25</span>; <span class="comment">// Grasping the little tail of youth.</span></span><br><span class="line">    <span class="keyword">int</span> hight = <span class="number">170</span>; <span class="comment">// Enough to me.</span></span><br><span class="line">    <span class="keyword">float</span> weight = <span class="number">73.7f</span>; <span class="comment">// Emm, a little bit overweight, but everyday going to gym. Gym is second home. </span></span><br><span class="line">    String edu = <span class="string">"UESTC"</span>; <span class="comment">// Where the water tastes like wine. </span></span><br><span class="line">    String pro = <span class="string">"SE"</span>; <span class="comment">// Making cool stuff.</span></span><br><span class="line">    String marriage = <span class="string">"Single"</span>; <span class="comment">// I'm trying...emm...how to be more attractive ?</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wish</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"春日宴，浊酒一杯歌一遍。再拜陈三愿：</span></span><br><span class="line"><span class="string">                    一愿父母身体常健，</span></span><br><span class="line"><span class="string">                    二愿自己珍惜时间，</span></span><br><span class="line"><span class="string">                    三愿如同梁上燕，</span></span><br><span class="line"><span class="string">                    岁岁年年，快乐无边！"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moreInfo</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Stay tuned:)"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>me</category>
-        <category>About me</category>
-      </categories>
   </entry>
   <entry>
     <title>求最大公约数（gcd）的一点心得</title>
@@ -647,15 +656,6 @@
       <tags>
         <tag>最大公约数</tag>
         <tag>gcd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode # 10 卡牌分组（X of a Kind in a Deck of Cards）</title>
-    <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>计数数组</tag>
-        <tag>最大公约数</tag>
       </tags>
   </entry>
   <entry>
@@ -687,8 +687,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -720,6 +720,18 @@
       </categories>
       <tags>
         <tag>ffmpeg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读代码的一点心得</title>
+    <url>/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<p>阅读代码时，要先看整体架构，再看局部细节。<br>明确哪里没变，哪里会变，怎么变的。</p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -765,22 +777,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阅读代码的一点心得</title>
-    <url>/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p>阅读代码时，要先看整体架构，再看局部细节。<br>明确哪里没变，哪里会变，怎么变的。</p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -831,28 +831,6 @@
       </tags>
   </entry>
   <entry>
-    <title>玩转rclone</title>
-    <url>/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/</url>
-    <content><![CDATA[<h3 id="名词详解"><a href="#名词详解" class="headerlink" title="名词详解"></a>名词详解</h3><p><strong><code>remote</code></strong></p>
-<blockquote>
-<p><code>remote</code>可以理解成rclone程序「可操作」的对象。通常，一个remote在配置的时候会被分配：<br>一个API接口<code>client_id</code>和<code>client_secret</code>，可以默认rclone官方接口，也可以自己指定接口；<br>一个rclone权限<code>scope</code>，一共5种权限，通常我会选第1个Full access；<br>一个根目录ID<code>root_folder_id</code>，它指定了rclone程序可操作的源在什么地方，通常我会设置成网盘根目录，即对整个网盘可操作；<br>一个服务账号文件<code>service_account_file</code>，它可指定rclone使用真实或服务账号。</p>
-</blockquote>
-<h3 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h3><p><strong><code>copy</code></strong></p>
-<blockquote>
-<p><code>rclone copy remoteA:srcDir remoteB:dstDir</code></p>
-<p><code>copy</code> 适用于从一个地方「拷贝」到另一个地方，不管是从本地到网盘还是网盘到网盘。需要注意的是，Rclone绑定的账号至少需要对源有「读取」权限，对目标有「写入」权限。</p>
-<p><strong>举例：</strong><br>假设我们配置4个remote：remoteA为网盘A；remogteB为网盘B；remoteC为团队盘C；remoteD为团队盘D；<br>从remoteA的目录”/GdTemp”到remoteA的目录”/Movies/2020”：<br><code>rclone copy remoteA:/GdTemp remoteA/Movies/2020</code><br>从remoteA的目录”/GDTemp” </p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-      </categories>
-      <tags>
-        <tag>Rclone</tag>
-        <tag>GoogleDrive</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PanDownload远程Aria2下载恢复连接数</title>
     <url>/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/</url>
     <content><![CDATA[<h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><p>什么是连接数？如图：<br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x0.png" alt="pic0x0"><br>对应PanDownload下载列表的连接数。</p>
@@ -890,6 +868,28 @@
         <tag>AriaNg</tag>
         <tag>PanDownload</tag>
         <tag>远程Aria2下载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>玩转rclone</title>
+    <url>/2020/04/09/%E7%8E%A9%E8%BD%ACrclone/</url>
+    <content><![CDATA[<h3 id="名词详解"><a href="#名词详解" class="headerlink" title="名词详解"></a>名词详解</h3><p><strong><code>remote</code></strong></p>
+<blockquote>
+<p><code>remote</code>可以理解成rclone程序「可操作」的对象。通常，一个remote在配置的时候会被分配：<br>一个API接口<code>client_id</code>和<code>client_secret</code>，可以默认rclone官方接口，也可以自己指定接口；<br>一个rclone权限<code>scope</code>，一共5种权限，通常我会选第1个Full access；<br>一个根目录ID<code>root_folder_id</code>，它指定了rclone程序可操作的源在什么地方，通常我会设置成网盘根目录，即对整个网盘可操作；<br>一个服务账号文件<code>service_account_file</code>，它可指定rclone使用真实或服务账号。</p>
+</blockquote>
+<h3 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解"></a>命令详解</h3><p><strong><code>copy</code></strong></p>
+<blockquote>
+<p><code>rclone copy remoteA:srcDir remoteB:dstDir</code></p>
+<p><code>copy</code> 适用于从一个地方「拷贝」到另一个地方，不管是从本地到网盘还是网盘到网盘。需要注意的是，Rclone绑定的账号至少需要对源有「读取」权限，对目标有「写入」权限。</p>
+<p><strong>举例：</strong><br>假设我们配置4个remote：remoteA为网盘A；remogteB为网盘B；remoteC为团队盘C；remoteD为团队盘D；<br>从remoteA的目录”/GdTemp”到remoteA的目录”/Movies/2020”：<br><code>rclone copy remoteA:/GdTemp remoteA/Movies/2020</code><br>从remoteA的目录”/GDTemp” </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
+      <tags>
+        <tag>Rclone</tag>
+        <tag>GoogleDrive</tag>
       </tags>
   </entry>
   <entry>
@@ -1104,32 +1104,51 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode #101 对称二叉树（Symmetric Tree）</title>
-    <url>/2020/05/31/LeetCode-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Symmetric-Tree%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，检查它是否是镜像对称的。<br>例如，二叉树<code>[1,2,2,3,4,4,3]</code>是对称的。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1</span><br><span class="line">   &#x2F; \</span><br><span class="line">  2   2</span><br><span class="line"> &#x2F; \ &#x2F; \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></table></figure>
-<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></table></figure>
-<p><strong>进阶：</strong><br>你可以运用递归和迭代两种方法解决这个问题吗？</p>
+    <title>Linux平台解压缩</title>
+    <url>/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<h3 id="7z-zip格式"><a href="#7z-zip格式" class="headerlink" title="7z/zip格式"></a>7z/zip格式</h3><p><strong>安装</strong><br>安装p7zip<br>debian可以直接安装，其他系统可以使用相应命令。<br><code>sudo apt-get install p7zip-full</code></p>
+<p><strong>保留完整目录结构解压7z/zip文件</strong><br><code>7z x name.7z</code></p>
+<p><strong>解压带密码7z/zip文件</strong><br><code>7z x -p&quot;passwordGo&quot; name.7z</code><br>支持<code>utf-8</code>编码的中文密码，而在Windows平台压缩包其中文密码一般是<code>gbk</code>编码。</p>
+<p><strong>解压<code>gbk</code>编码密码的7z/zip文件</strong><br>现有密码为<code>中文密码</code>的压缩包<code>name.7z</code>。<br>直接执行<code>7z x -p&quot;&quot; name.7z</code>报密码错，因为shell输入的<code>中文密码</code>是<code>utf-8</code>编码。<br>需要有一个编码转换的过程，可以执行命令行：<br><code>7z x -p&quot;$(echo -n 中文密码|iconv -f utf-8 -t gbk)&quot; name.7z</code><br>shell会首先执行<code>$()</code>中的命令，不换行打印中文密码<code>中文密码</code>，再将<code>uft-8</code>编码的密码转换成<code>gbk</code>编码。最后执行解压缩命令，即可成功解压。</p>
+<p><strong>解压密码带有特殊字符的7z/zip文件</strong><br>现有密码为<code>letsgo!-pipixia#hahaha%wow$thatwasepic!</code>的压缩包。<br>直接执行<code>7z x -p&#39;letsgo!-pipixia#hahaha%wow$thatwasepic!&#39; name.7z</code><br>注意到<code>-p</code>后密码引号为<code>&#39;&#39;</code>。</p>
+<p><strong>解压分卷7z/zip文件</strong><br>split files:    </p>
+<ul>
+<li>name.7z.001</li>
+<li>name.7z.002</li>
+<li>name.7z.003</li>
+</ul>
+<p>不用合并后再解压缩，任选一个解压即可。<br><code>7z x name.7z.001</code></p>
+<p><strong>解压带密码分卷7z/zip文件</strong><br><code>7z x -p&quot;passwordGo!&quot; name.7z.001</code></p>
+<p><strong>批量解压各自独立的7z/zip文件</strong><br><code>for i in *.7z; do 7z x -p&quot;passwordGo&quot; $i; done</code></p>
+<p><strong>解压目录下所有7z/zip文件</strong><br>先使用<code>find</code>找出压缩文件，再执行解压。<br><code>find /home/AriaGo *.7z -exec 7z x -p&#39;passwordGo&#39; {} \;</code></p>
+<p><strong>加密压缩</strong><br><code>7z a dstname.7z * -p&#39;password&#39;</code><br><code>*</code>是目录或文件，如<code>./image/homeland</code>,<code>./image/homeland/skyline.jpg</code></p>
+<h5 id="更多详情，请参考："><a href="#更多详情，请参考：" class="headerlink" title="更多详情，请参考："></a>更多详情，请参考：</h5><blockquote>
+<p><a href="https://www.cnblogs.com/itech/archive/2009/08/31/1555835.html" target="_blank" rel="noopener">https://www.cnblogs.com/itech/archive/2009/08/31/1555835.html</a><br><a href="https://blog.csdn.net/qq_28050861/article/details/103255120" target="_blank" rel="noopener">https://blog.csdn.net/qq_28050861/article/details/103255120</a></p>
+</blockquote>
+<h3 id="rar格式"><a href="#rar格式" class="headerlink" title="rar格式"></a>rar格式</h3><p><strong>安装</strong><br>安装unrar<br>debian可以直接安装，其他系统可以使用相应命令。<br><code>sudo apt-get install unrar</code></p>
+<p><strong>按源目录结构解压</strong><br>保留源目录结构解压到工作目录。<br><code>unrar x name.rar</code></p>
+<p><strong>不保留目录结构解压</strong><br>不保留源目录结构解压到工作目录。<br><code>unrar e name.rar</code></p>
+<p><strong>不保留目录结构解压到指定目录</strong><br><code>unrar e name.rar /home/level1/level2</code> </p>
+<p><strong>解压带密码rar文件</strong><br><code>unrar e -p&quot;passwordGo&quot; name.rar</code></p>
+<p><strong>列出文件列表</strong><br><code>unrar l name.rar</code></p>
+<h5 id="更多详情，请参考：-1"><a href="#更多详情，请参考：-1" class="headerlink" title="更多详情，请参考："></a>更多详情，请参考：</h5><blockquote>
+<p><a href="https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/" target="_blank" rel="noopener">https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/</a></p>
+</blockquote>
+<h3 id="tar-gz格式"><a href="#tar-gz格式" class="headerlink" title="tar.gz格式"></a>tar.gz格式</h3><p><strong>压缩</strong><br><code>tar -czvf ./dstfilename.tar.gz ./srcfilname.format</code></p>
 <hr>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Definition for a binary tree node.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>我们可以将对整个二叉树是否对称的判断拆分成对若干节点对是否对称的判断。这是递归思想。<br>具体地，从root节点的左右孩子节点开始，进行一次判断。条件满足的话，再深入到node1的left与node2的right、node1的right与node2的left。依次递归下去。<br>注意回溯的情况，当node1和node2都为空时，即该节点对为对称的且为末端节点，<code>return true</code>。<br>不满足上面条件时，当node1和node2有一个为空或者<code>node1.val != node2.val</code>时，必然非对称，<code>return false</code>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">     * 内存消耗 :37.9 MB, 在所有 Java 提交中击败了31.25%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> cmp(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">cmp</span><span class="params">(TreeNode node1, TreeNode node2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//递归到头了，必须回溯。 不能在满足条件(node1 != null &amp;&amp; node2 != null &amp;&amp; node1.val == node2.val)时return true，因为此时需要继续向下递归</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//此时必然非对称</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> cmp(node1.left, node2.right) &amp;&amp; cmp(node1.right, node2.left); <span class="comment">//向下递归</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>我们可以引入一个队列，迭代判断所有节点对。<br>第一代poll root节点的左右孩子节点，判断节点状态。<br>往后每一代（如果有的话）保留了上一代判断条件得出的信息，poll出两个节点，再进行下一个判断。<br>一次又一次，迭代地进行判断。只要中间出现了一个不满足对称的情况：<br><code>node1 == null || node2 == null || node1.val != node2.val</code>，直接<code>return false</code>。<br>当所有节点入队出队迭代判断完毕均为出现非对称情况，那么可以认为二叉树是对称的。<br>注意到null节点的情况，队列应该使用LinkedList而非ArrayDeque——前者支持null元素，而后者不支持。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *执行用时 :1 ms, 在所有 Java 提交中击败了37.93%的用户</span></span><br><span class="line"><span class="comment">     *内存消耗 :39.8 MB, 在所有 Java 提交中击败了5.00%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">        queue.offer(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            TreeNode node1 = queue.poll();    </span><br><span class="line">            TreeNode node2 = queue.poll();  </span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">continue</span>; <span class="comment">//继续迭代判断</span></span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//必然非对称</span></span><br><span class="line">            queue.offer(node1.left);</span><br><span class="line">            queue.offer(node2.right);</span><br><span class="line">            queue.offer(node1.right);</span><br><span class="line">            queue.offer(node2.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//当所有节点入队出队结束，均未出现非对称情况，结果显然是对称的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/</a></p>
+<p><em>未完待续</em></p>
 ]]></content>
       <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
+        <category>不亦乐乎</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
-        <tag>二叉树</tag>
-        <tag>递归</tag>
-        <tag>迭代</tag>
+        <tag>Linux</tag>
+        <tag>解压缩</tag>
+        <tag>7z</tag>
+        <tag>zip</tag>
+        <tag>rar</tag>
+        <tag>tar</tag>
       </tags>
   </entry>
   <entry>
@@ -1193,6 +1212,31 @@
       </tags>
   </entry>
   <entry>
+    <title>读书笔记</title>
+    <url>/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><p>淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。</p>
+</li>
+<li><p>肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。  ——《1Q84》村上春树</p>
+</li>
+<li><p>真诚感谢四步法：</p>
+<blockquote>
+<p>说明行为：就是说清楚对方具体帮你做了什么事；<br>说清影响：说明他帮你的这件事，为你解决了什么问题；<br>分享感受：表达受到帮助后的真实感受；<br>投桃报李：表明对方有需要的话，你也愿意尽力帮忙。</p>
+</blockquote>
+</li>
+<li><p>彭林教授（清华大学人文学院历史系）反对父亲节、母亲节等西方节日。因为中国人是有孝道的，一年四季没有哪一天不孝，君子有终身之孝。而西方人它是没有孝道的，所以他们要找出一天来表示一下。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>圣经本土化翻译片段</title>
     <url>/2020/06/30/%E5%9C%A3%E7%BB%8F%E6%9C%AC%E5%9C%9F%E5%8C%96%E7%BF%BB%E8%AF%91%E7%89%87%E6%AE%B5/</url>
     <content><![CDATA[<p>裆里搁裆，裆里搁裆，裆里搁 裆里搁 裆里搁裆… </p>
@@ -1222,31 +1266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>读书笔记</title>
-    <url>/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li><p>淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。</p>
-</li>
-<li><p>肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。  ——《1Q84》村上春树</p>
-</li>
-<li><p>真诚感谢四步法：</p>
-<blockquote>
-<p>说明行为：就是说清楚对方具体帮你做了什么事；<br>说清影响：说明他帮你的这件事，为你解决了什么问题；<br>分享感受：表达受到帮助后的真实感受；<br>投桃报李：表明对方有需要的话，你也愿意尽力帮忙。</p>
-</blockquote>
-</li>
-<li><p>彭林教授（清华大学人文学院历史系）反对父亲节、母亲节等西方节日。因为中国人是有孝道的，一年四季没有哪一天不孝，君子有终身之孝。而西方人它是没有孝道的，所以他们要找出一天来表示一下。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>fix Intellj IDEA git pust rejected</title>
     <url>/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/</url>
     <content><![CDATA[]]></content>
@@ -1254,6 +1273,45 @@
         <tag>IntelliJ IDEA</tag>
         <tag>git</tag>
         <tag>解决方案</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）</title>
+    <url>/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组<code>candies</code>和一个整数<code>extraCandies</code>，其中<code>candies[i]</code> 代表第 <code>i</code>个孩子拥有的糖果数目。</p>
+<p>对每一个孩子，检查是否存在一种方案，将额外的 <code>extraCandies</code> 个糖果分配给孩子们之后，此孩子有 <strong>最多</strong> 的糖果。注意，允许有多个孩子同时拥有 <strong>最多</strong> 的糖果数目。</p>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> candies = [2,3,5,1,3], extraCandies = 3<br><strong>输出：</strong> [true,true,true,false,true]<br><strong>解释：</strong><br>孩子 1 有 2 个糖果，如果他得到所有额外的糖果（3个），那么他总共有 5 个糖果，他将成为拥有最多糖果的孩子。<br>孩子 2 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。<br>孩子 3 有 5 个糖果，他已经是拥有最多糖果的孩子。<br>孩子 4 有 1 个糖果，即使他得到所有额外的糖果，他也只有 4 个糖果，无法成为拥有糖果最多的孩子。<br>孩子 5 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。</p>
+</blockquote>
+<p><strong>示例2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> candies = [4,2,1,1,2], extraCandies = 1<br><strong>输出：</strong> [true,false,false,false,false]<br><strong>解释：</strong> 只有 1 个额外糖果，所以不管额外糖果给谁，只有孩子 1 可以成为拥有糖果最多的孩子。</p>
+</blockquote>
+<p><strong>示例3：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> candies = [12,1,12], extraCandies = 10<br><strong>输出：</strong> [true,false,true]</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>2 &lt;= candies.length &lt;= 100</li>
+<li>1 &lt;= candies[i] &lt;= 100</li>
+<li>1 &lt;= extraCandies &lt;= 50</li>
+</ul>
+<hr>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>没啥好说的，儿童节快乐！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Boolean&gt; <span class="title">kidsWithCandies</span><span class="params">(<span class="keyword">int</span>[] candies, <span class="keyword">int</span> extraCandies)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = candies.length;</span><br><span class="line">        <span class="keyword">int</span> max = candies[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            max = Math.max(max, candies[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Boolean&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            res.add(candies[i] + extraCandies &gt;= max);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1306,42 +1364,11 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode #1431 拥有最多糖果的孩子（Kids With the Greatest Number of Candies）</title>
-    <url>/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组<code>candies</code>和一个整数<code>extraCandies</code>，其中<code>candies[i]</code> 代表第 <code>i</code>个孩子拥有的糖果数目。</p>
-<p>对每一个孩子，检查是否存在一种方案，将额外的 <code>extraCandies</code> 个糖果分配给孩子们之后，此孩子有 <strong>最多</strong> 的糖果。注意，允许有多个孩子同时拥有 <strong>最多</strong> 的糖果数目。</p>
-<p><strong>示例1：</strong></p>
-<blockquote>
-<p><strong>输入：</strong> candies = [2,3,5,1,3], extraCandies = 3<br><strong>输出：</strong> [true,true,true,false,true]<br><strong>解释：</strong><br>孩子 1 有 2 个糖果，如果他得到所有额外的糖果（3个），那么他总共有 5 个糖果，他将成为拥有最多糖果的孩子。<br>孩子 2 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。<br>孩子 3 有 5 个糖果，他已经是拥有最多糖果的孩子。<br>孩子 4 有 1 个糖果，即使他得到所有额外的糖果，他也只有 4 个糖果，无法成为拥有糖果最多的孩子。<br>孩子 5 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。</p>
-</blockquote>
-<p><strong>示例2：</strong></p>
-<blockquote>
-<p><strong>输入：</strong> candies = [4,2,1,1,2], extraCandies = 1<br><strong>输出：</strong> [true,false,false,false,false]<br><strong>解释：</strong> 只有 1 个额外糖果，所以不管额外糖果给谁，只有孩子 1 可以成为拥有糖果最多的孩子。</p>
-</blockquote>
-<p><strong>示例3：</strong></p>
-<blockquote>
-<p><strong>输入：</strong> candies = [12,1,12], extraCandies = 10<br><strong>输出：</strong> [true,false,true]</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>2 &lt;= candies.length &lt;= 100</li>
-<li>1 &lt;= candies[i] &lt;= 100</li>
-<li>1 &lt;= extraCandies &lt;= 50</li>
-</ul>
-<hr>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>没啥好说的，儿童节快乐！</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Boolean&gt; <span class="title">kidsWithCandies</span><span class="params">(<span class="keyword">int</span>[] candies, <span class="keyword">int</span> extraCandies)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = candies.length;</span><br><span class="line">        <span class="keyword">int</span> max = candies[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            max = Math.max(max, candies[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Boolean&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            res.add(candies[i] + extraCandies &gt;= max);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies/</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
+    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
+    <url>/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
       <tags>
-        <tag>数组</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1440,14 +1467,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
-    <url>/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>二叉树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 110 平衡二叉树（Balanced Binary Tree）</title>
     <url>/2020/08/18/LeetCode-110-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Balanced-Binary-Tree%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，判断它是否是高度平衡的二叉树。<br>本题中，一棵高度平衡二叉树定义为：</p>
@@ -1490,6 +1509,175 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree）</title>
+    <url>/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，找出其最大深度。<br>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。<br>说明: 叶子节点是指没有子节点的节点。<br><strong>示例：</strong><br>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+<p>返回它的最大深度 3 。</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>注意和「LeetCode-111-二叉树的最小深度（Minimum-Depth-of-Binary-Tree）」比较学习。</p>
+<h3 id="递归（DFS）"><a href="#递归（DFS）" class="headerlink" title="递归（DFS）"></a>递归（DFS）</h3><p>和最小深度不同，当节点仅有左孩子或右孩子，可以直接比较取二者最大值。代码更简单：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(maxDepth(root.left), maxDepth(root.right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><p>逐层遍历，每层遍历完之后，深度加一，当整个树遍历完，返回深度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            <span class="keyword">while</span> (size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    queue.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    queue.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">            ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
+        <tag>树</tag>
+        <tag>树深度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode #101 对称二叉树（Symmetric Tree）</title>
+    <url>/2020/05/31/LeetCode-101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Symmetric-Tree%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，检查它是否是镜像对称的。<br>例如，二叉树<code>[1,2,2,3,4,4,3]</code>是对称的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1</span><br><span class="line">   &#x2F; \</span><br><span class="line">  2   2</span><br><span class="line"> &#x2F; \ &#x2F; \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></table></figure>
+<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  1</span><br><span class="line"> &#x2F; \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></table></figure>
+<p><strong>进阶：</strong><br>你可以运用递归和迭代两种方法解决这个问题吗？</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Definition for a binary tree node.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>我们可以将对整个二叉树是否对称的判断拆分成对若干节点对是否对称的判断。这是递归思想。<br>具体地，从root节点的左右孩子节点开始，进行一次判断。条件满足的话，再深入到node1的left与node2的right、node1的right与node2的left。依次递归下去。<br>注意回溯的情况，当node1和node2都为空时，即该节点对为对称的且为末端节点，<code>return true</code>。<br>不满足上面条件时，当node1和node2有一个为空或者<code>node1.val != node2.val</code>时，必然非对称，<code>return false</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户</span></span><br><span class="line"><span class="comment">     * 内存消耗 :37.9 MB, 在所有 Java 提交中击败了31.25%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> cmp(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">cmp</span><span class="params">(TreeNode node1, TreeNode node2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//递归到头了，必须回溯。 不能在满足条件(node1 != null &amp;&amp; node2 != null &amp;&amp; node1.val == node2.val)时return true，因为此时需要继续向下递归</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//此时必然非对称</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> cmp(node1.left, node2.right) &amp;&amp; cmp(node1.right, node2.left); <span class="comment">//向下递归</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>我们可以引入一个队列，迭代判断所有节点对。<br>第一代poll root节点的左右孩子节点，判断节点状态。<br>往后每一代（如果有的话）保留了上一代判断条件得出的信息，poll出两个节点，再进行下一个判断。<br>一次又一次，迭代地进行判断。只要中间出现了一个不满足对称的情况：<br><code>node1 == null || node2 == null || node1.val != node2.val</code>，直接<code>return false</code>。<br>当所有节点入队出队迭代判断完毕均为出现非对称情况，那么可以认为二叉树是对称的。<br>注意到null节点的情况，队列应该使用LinkedList而非ArrayDeque——前者支持null元素，而后者不支持。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *执行用时 :1 ms, 在所有 Java 提交中击败了37.93%的用户</span></span><br><span class="line"><span class="comment">     *内存消耗 :39.8 MB, 在所有 Java 提交中击败了5.00%的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">        queue.offer(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            TreeNode node1 = queue.poll();    </span><br><span class="line">            TreeNode node2 = queue.poll();  </span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> &amp;&amp; node2 == <span class="keyword">null</span>) <span class="keyword">continue</span>; <span class="comment">//继续迭代判断</span></span><br><span class="line">            <span class="keyword">if</span> (node1 == <span class="keyword">null</span> || node2 == <span class="keyword">null</span> || node1.val != node2.val) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//必然非对称</span></span><br><span class="line">            queue.offer(node1.left);</span><br><span class="line">            queue.offer(node2.right);</span><br><span class="line">            queue.offer(node1.right);</span><br><span class="line">            queue.offer(node2.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//当所有节点入队出队结束，均未出现非对称情况，结果显然是对称的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
+        <tag>迭代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ProjectNowCoder学习笔记</title>
+    <url>/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="2-1-Spring入门和模板语法"><a href="#2-1-Spring入门和模板语法" class="headerlink" title="2.1 Spring入门和模板语法"></a>2.1 Spring入门和模板语法</h2><h3 id="向模板传递参数"><a href="#向模板传递参数" class="headerlink" title="向模板传递参数"></a>向模板传递参数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> plus.fingerdance.projectx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.ui.Model;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/profile/&#123;group1d&#125;/&#123;userId&#125;"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span>         <span class="comment">//路径参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">profile</span><span class="params">(@PathVariable(<span class="string">"userId"</span>)</span> <span class="keyword">int</span> userId,</span></span><br><span class="line"><span class="function">                          @<span class="title">PathVariable</span><span class="params">(<span class="string">"group1d"</span>)</span> String groupId,</span></span><br><span class="line"><span class="function">                          <span class="comment">//请求参数</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// defaultValue是key的默认值，在url未指定该值时使用它。required标明是否需要key，默认为是，如果在默认状态下</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// url未指定key，则报错，如果设置成 false，则如果url未指定key，则key值会被指定为null</span></span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(<span class="string">"type"</span>)</span> <span class="keyword">int</span> type,</span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"key"</span>, defaultValue = <span class="string">"zz"</span>, required = <span class="keyword">false</span>)</span> String key)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Profile Page of %d who belong to %s;"</span> +</span><br><span class="line">                <span class="string">"Type: %d Key: %s"</span>, userId, groupId, type, key);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 以welcome.html模板的方式返回</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/welcome"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"value1"</span>, <span class="string">"Wow!"</span>);</span><br><span class="line">        List&lt;String&gt; colors = Arrays.asList(<span class="string">"RED"</span>, <span class="string">"BLUE"</span>, <span class="string">"GREEN"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"colors"</span>, colors); <span class="comment">//不加toString会报错：意思就是期待一个String类型啥的，而你给的是一个sequence bla bla</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"welcome"</span>; <span class="comment">//welcome.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>Project</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 559 N叉树的最大深度（Maximum Depth of N-ary Tree）</title>
+    <url>/2020/08/31/LeetCode-559-N%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-N-ary-Tree%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个 N 叉树，找到其最大深度。<br>最大深度是指从根节点到最远叶子节点的最长路径上的节点总数。<br>例如，给定一个 <code>3叉树</code> :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">       1</span><br><span class="line">   &#x2F;   |   \</span><br><span class="line">  3    2    4</span><br><span class="line"> &#x2F; \   </span><br><span class="line">5   6</span><br></pre></td></tr></table></figure>
+<p>我们应返回其最大深度，3。<br>说明:</p>
+<blockquote>
+<p>1.树的深度不会超过 1000。<br>2.树的节点总不会超过 5000。</p>
+</blockquote>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Node&gt; children;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> _val)</span> </span>&#123;</span><br><span class="line">        val = _val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> _val, List&lt;Node&gt; _children)</span> </span>&#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        children = _children;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>没啥可说的，和「LeetCode-104-二叉树的最大深度（Maximum-Depth-of-Binary-Tree）」对比，无非就是取最大值的不同。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root.children.isEmpty()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;  </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      List&lt;Integer&gt; heights = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">      <span class="keyword">for</span> (Node item : root.children) &#123;</span><br><span class="line">        heights.add(maxDepth(item)); </span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> Collections.max(heights) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，亦可维护一个「最大值变量」，children的每个元素，和它作比较。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//本方法参考HJF的题解</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == root) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (Node child : root.children) &#123;</span><br><span class="line">            result = Math.max(result, <span class="number">1</span> + maxDepth(child));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>可以由DFS递归改成迭代，同时维护一个最大值变量，每次出队需要将节点的深度信息和最大值变量作比较。所以节点需要携带深度信息。可以借助<code>pair</code>，也可以写一个新的节点类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//本方法参考官方题解</span></span><br><span class="line"><span class="keyword">import</span> javafx.util.Pair;</span><br><span class="line"><span class="keyword">import</span> java.lang.Math;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Pair&lt;Node, Integer&gt;&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">      stack.add(<span class="keyword">new</span> Pair(root, <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">      Pair&lt;Node, Integer&gt; current = stack.poll();</span><br><span class="line">      root = current.getKey();</span><br><span class="line">      <span class="keyword">int</span> current_depth = current.getValue();</span><br><span class="line">      <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        depth = Math.max(depth, current_depth);</span><br><span class="line">        <span class="keyword">for</span> (Node c : root.children) &#123;</span><br><span class="line">          stack.add(<span class="keyword">new</span> Pair(c, current_depth + <span class="number">1</span>));    </span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> depth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>本题亦可使用BFS，但是我不想写了。</p>
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/</a><br><strong>官方题解：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/solution/ncha-shu-de-zui-da-shen-du-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/solution/ncha-shu-de-zui-da-shen-du-by-leetcode/</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>树深度</tag>
+        <tag>N叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
+    <url>/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p>今天在shell上安装Anaconda的时候，发现安装过程中的「风火轮」进度条很有趣，于是就简单实现了一下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">icon = [<span class="string">'\\'</span>, <span class="string">'-'</span>, <span class="string">'/'</span>]</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">40</span>):</span><br><span class="line">    print(<span class="string">'\rAll work and no play make Jack a dull boy: &#123;&#125;'</span>.format(icon[m % <span class="number">3</span>]), end=<span class="string">''</span>)</span><br><span class="line">    time.sleep(<span class="number">0.25</span>)  <span class="comment"># -- control the r.p.m</span></span><br></pre></td></tr></table></figure>
+<p>无非就是把<code>print</code>函数的<code>end=&#39;\n&#39;</code>换成<code>end=&#39;&#39;</code>以便每次打印光标可以回到行首。再就是循环<code>icon</code>列表，制造「动画效果」。<br>比如你要倒计时10s，每0.25s输出一帧，那么就要输出40帧。每一帧依次选取列表的下标可以用m对列表长度取余。</p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+      </categories>
+      <tags>
+        <tag>进度条</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用youtube-dl下载YouTube频道所有视频</title>
+    <url>/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/</url>
+    <content><![CDATA[<p><code>youtube-dl -f &quot;bestvideo[width&gt;=&lt;resolution width such as: 3840&gt;]+bestaudio/best&quot; -ciw -o &quot;%(title)s.%(ext)s&quot; -v &lt;channel url like: xxx/channel/xxx&gt; --download-archive downloaded.txt</code></p>
+<blockquote>
+<p>-f, –format FORMAT<br>    video format code. with adding <code>bestvideo[width&gt;=3840]+bestaudio/best</code> youtube-dl will pick the quality &gt;= 4K</p>
+</blockquote>
+<blockquote>
+<p>-c, –continue<br>    force resume of partially downloaded files</p>
+</blockquote>
+<blockquote>
+<p>-i, –ignore-errors<br>    continue on download errors, for example to skip unavailable videos in a channel </p>
+</blockquote>
+<blockquote>
+<p>-w, –no-overwrites<br>    do not overwrite files</p>
+</blockquote>
+<blockquote>
+<p>-o, –output<br>    Output filename template, this example functions similarly to the old –title option</p>
+</blockquote>
+<blockquote>
+<p>-v, –verbose<br>    print various debugging information</p>
+</blockquote>
+<blockquote>
+<p>with –download-archive download.txt flag you gonna archive all videos’ info so that you can ezlly resume download.<br>-f </p>
+</blockquote>
+<p><em>reference:</em></p>
+<blockquote>
+<p><a href="https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel" target="_blank" rel="noopener">https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel</a> </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
+      <tags>
+        <tag>YouTube</tag>
+        <tag>youtube-dl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>位运算妙妙屋</title>
+    <url>/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</url>
+    <content><![CDATA[<h3 id="int类型利用位运算乘除2的k次幂"><a href="#int类型利用位运算乘除2的k次幂" class="headerlink" title="int类型利用位运算乘除2的k次幂"></a>int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+      </categories>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 111 二叉树的最小深度（Minimum Depth of Binary Tree）</title>
     <url>/2020/08/21/LeetCode-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%EF%BC%88Minimum-Depth-of-Binary-Tree%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，找出其最小深度。<br>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。<br>说明: 叶子节点是指没有子节点的节点。</p>
@@ -1516,101 +1704,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
-        <tag>树深度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree）</title>
-    <url>/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，找出其最大深度。<br>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。<br>说明: 叶子节点是指没有子节点的节点。<br><strong>示例：</strong><br>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
-<p>返回它的最大深度 3 。</p>
-<hr>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<p>注意和「LeetCode-111-二叉树的最小深度（Minimum-Depth-of-Binary-Tree）」比较学习。</p>
-<h3 id="递归（DFS）"><a href="#递归（DFS）" class="headerlink" title="递归（DFS）"></a>递归（DFS）</h3><p>和最小深度不同，当节点仅有左孩子或右孩子，可以直接比较取二者最大值。代码更简单：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(maxDepth(root.left), maxDepth(root.right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><p>逐层遍历，每层遍历完之后，深度加一，当整个树遍历完，返回深度。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            <span class="keyword">while</span> (size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    queue.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    queue.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">            ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/</a></p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
-        <tag>二叉树</tag>
-        <tag>递归</tag>
-        <tag>树深度</tag>
-        <tag>树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux平台解压缩</title>
-    <url>/2020/04/11/Linux%E5%B9%B3%E5%8F%B0%E8%A7%A3%E5%8E%8B%E7%BC%A9/</url>
-    <content><![CDATA[<h3 id="7z-zip格式"><a href="#7z-zip格式" class="headerlink" title="7z/zip格式"></a>7z/zip格式</h3><p><strong>安装</strong><br>安装p7zip<br>debian可以直接安装，其他系统可以使用相应命令。<br><code>sudo apt-get install p7zip-full</code></p>
-<p><strong>保留完整目录结构解压7z/zip文件</strong><br><code>7z x name.7z</code></p>
-<p><strong>解压带密码7z/zip文件</strong><br><code>7z x -p&quot;passwordGo&quot; name.7z</code><br>支持<code>utf-8</code>编码的中文密码，而在Windows平台压缩包其中文密码一般是<code>gbk</code>编码。</p>
-<p><strong>解压<code>gbk</code>编码密码的7z/zip文件</strong><br>现有密码为<code>中文密码</code>的压缩包<code>name.7z</code>。<br>直接执行<code>7z x -p&quot;&quot; name.7z</code>报密码错，因为shell输入的<code>中文密码</code>是<code>utf-8</code>编码。<br>需要有一个编码转换的过程，可以执行命令行：<br><code>7z x -p&quot;$(echo -n 中文密码|iconv -f utf-8 -t gbk)&quot; name.7z</code><br>shell会首先执行<code>$()</code>中的命令，不换行打印中文密码<code>中文密码</code>，再将<code>uft-8</code>编码的密码转换成<code>gbk</code>编码。最后执行解压缩命令，即可成功解压。</p>
-<p><strong>解压密码带有特殊字符的7z/zip文件</strong><br>现有密码为<code>letsgo!-pipixia#hahaha%wow$thatwasepic!</code>的压缩包。<br>直接执行<code>7z x -p&#39;letsgo!-pipixia#hahaha%wow$thatwasepic!&#39; name.7z</code><br>注意到<code>-p</code>后密码引号为<code>&#39;&#39;</code>。</p>
-<p><strong>解压分卷7z/zip文件</strong><br>split files:    </p>
-<ul>
-<li>name.7z.001</li>
-<li>name.7z.002</li>
-<li>name.7z.003</li>
-</ul>
-<p>不用合并后再解压缩，任选一个解压即可。<br><code>7z x name.7z.001</code></p>
-<p><strong>解压带密码分卷7z/zip文件</strong><br><code>7z x -p&quot;passwordGo!&quot; name.7z.001</code></p>
-<p><strong>批量解压各自独立的7z/zip文件</strong><br><code>for i in *.7z; do 7z x -p&quot;passwordGo&quot; $i; done</code></p>
-<p><strong>解压目录下所有7z/zip文件</strong><br>先使用<code>find</code>找出压缩文件，再执行解压。<br><code>find /home/AriaGo *.7z -exec 7z x -p&#39;passwordGo&#39; {} \;</code></p>
-<p><strong>加密压缩</strong><br><code>7z a dstname.7z * -p&#39;password&#39;</code><br><code>*</code>是目录或文件，如<code>./image/homeland</code>,<code>./image/homeland/skyline.jpg</code></p>
-<h5 id="更多详情，请参考："><a href="#更多详情，请参考：" class="headerlink" title="更多详情，请参考："></a>更多详情，请参考：</h5><blockquote>
-<p><a href="https://www.cnblogs.com/itech/archive/2009/08/31/1555835.html" target="_blank" rel="noopener">https://www.cnblogs.com/itech/archive/2009/08/31/1555835.html</a><br><a href="https://blog.csdn.net/qq_28050861/article/details/103255120" target="_blank" rel="noopener">https://blog.csdn.net/qq_28050861/article/details/103255120</a></p>
-</blockquote>
-<h3 id="rar格式"><a href="#rar格式" class="headerlink" title="rar格式"></a>rar格式</h3><p><strong>安装</strong><br>安装unrar<br>debian可以直接安装，其他系统可以使用相应命令。<br><code>sudo apt-get install unrar</code></p>
-<p><strong>按源目录结构解压</strong><br>保留源目录结构解压到工作目录。<br><code>unrar x name.rar</code></p>
-<p><strong>不保留目录结构解压</strong><br>不保留源目录结构解压到工作目录。<br><code>unrar e name.rar</code></p>
-<p><strong>不保留目录结构解压到指定目录</strong><br><code>unrar e name.rar /home/level1/level2</code> </p>
-<p><strong>解压带密码rar文件</strong><br><code>unrar e -p&quot;passwordGo&quot; name.rar</code></p>
-<p><strong>列出文件列表</strong><br><code>unrar l name.rar</code></p>
-<h5 id="更多详情，请参考：-1"><a href="#更多详情，请参考：-1" class="headerlink" title="更多详情，请参考："></a>更多详情，请参考：</h5><blockquote>
-<p><a href="https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/" target="_blank" rel="noopener">https://www.tecmint.com/how-to-open-extract-and-create-rar-files-in-linux/</a></p>
-</blockquote>
-<h3 id="tar-gz格式"><a href="#tar-gz格式" class="headerlink" title="tar.gz格式"></a>tar.gz格式</h3><p><strong>压缩</strong><br><code>tar -czvf ./dstfilename.tar.gz ./srcfilname.format</code></p>
-<hr>
-<p><em>未完待续</em></p>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>解压缩</tag>
-        <tag>7z</tag>
-        <tag>zip</tag>
-        <tag>rar</tag>
-        <tag>tar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ProjectNowCoder学习笔记</title>
-    <url>/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="2-1-Spring入门和模板语法"><a href="#2-1-Spring入门和模板语法" class="headerlink" title="2.1 Spring入门和模板语法"></a>2.1 Spring入门和模板语法</h2><h3 id="向模板传递参数"><a href="#向模板传递参数" class="headerlink" title="向模板传递参数"></a>向模板传递参数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> plus.fingerdance.projectx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.ui.Model;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/profile/&#123;group1d&#125;/&#123;userId&#125;"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span>         <span class="comment">//路径参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">profile</span><span class="params">(@PathVariable(<span class="string">"userId"</span>)</span> <span class="keyword">int</span> userId,</span></span><br><span class="line"><span class="function">                          @<span class="title">PathVariable</span><span class="params">(<span class="string">"group1d"</span>)</span> String groupId,</span></span><br><span class="line"><span class="function">                          <span class="comment">//请求参数</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// defaultValue是key的默认值，在url未指定该值时使用它。required标明是否需要key，默认为是，如果在默认状态下</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// url未指定key，则报错，如果设置成 false，则如果url未指定key，则key值会被指定为null</span></span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(<span class="string">"type"</span>)</span> <span class="keyword">int</span> type,</span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"key"</span>, defaultValue = <span class="string">"zz"</span>, required = <span class="keyword">false</span>)</span> String key)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Profile Page of %d who belong to %s;"</span> +</span><br><span class="line">                <span class="string">"Type: %d Key: %s"</span>, userId, groupId, type, key);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 以welcome.html模板的方式返回</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/welcome"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"value1"</span>, <span class="string">"Wow!"</span>);</span><br><span class="line">        List&lt;String&gt; colors = Arrays.asList(<span class="string">"RED"</span>, <span class="string">"BLUE"</span>, <span class="string">"GREEN"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"colors"</span>, colors); <span class="comment">//不加toString会报错：意思就是期待一个String类型啥的，而你给的是一个sequence bla bla</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"welcome"</span>; <span class="comment">//welcome.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>Project</tag>
       </tags>
   </entry>
   <entry>
@@ -1698,67 +1795,70 @@
       </tags>
   </entry>
   <entry>
-    <title>使用youtube-dl下载YouTube频道所有视频</title>
-    <url>/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<p><code>youtube-dl -f &quot;bestvideo[width&gt;=&lt;resolution width such as: 3840&gt;]+bestaudio/best&quot; -ciw -o &quot;%(title)s.%(ext)s&quot; -v &lt;channel url like: xxx/channel/xxx&gt; --download-archive downloaded.txt</code></p>
-<blockquote>
-<p>-f, –format FORMAT<br>    video format code. with adding <code>bestvideo[width&gt;=3840]+bestaudio/best</code> youtube-dl will pick the quality &gt;= 4K</p>
+    <title>Hexo-next主题博客部分配置</title>
+    <url>/2020/10/31/Hexo-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>记录自己使用Hexo-next主题博客过程中的的一些配置。</p>
+<a id="more"></a>
+
+<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><blockquote>
+<ul>
+<li>在要置顶的文章<code>Front-matter</code>中加入<code>top: true</code></li>
+<li>打开：\hexo\themes\next\layout_macro\post.swig ，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code></li>
+<li>在其下方添加代码段：<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;### 置顶 ###&#125;</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class="fa fa-thumb-tack"&gt;&lt;/i&gt;</span><br><span class="line">    &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">    &lt;span class="post-meta-divider"&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;### 置顶 ###&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
-<blockquote>
-<p>-c, –continue<br>    force resume of partially downloaded files</p>
+<h3 id="更改行内代码样式"><a href="#更改行内代码样式" class="headerlink" title="更改行内代码样式"></a>更改行内代码样式</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css</li>
+<li>新建文件夹：_custom</li>
+<li>打开_custom文件夹，新建文件：custom.styl</li>
+<li>打开custom.styl，添加如下代码：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#7D26CD</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>如果想要更改背景色，边距，边框等等可以加上：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#7D26CD</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">6</span>, <span class="number">162</span>, <span class="number">228</span>, <span class="number">0.8</span>);</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#06a2e4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>打开：\hexo\themes\next\source\css\main.styl</li>
+<li>在末尾加上一行：<code>@import &quot;_custom/custom.styl&quot;;</code></li>
+</ul>
 </blockquote>
-<blockquote>
-<p>-i, –ignore-errors<br>    continue on download errors, for example to skip unavailable videos in a channel </p>
+<h3 id="侧边栏目录高亮颜色"><a href="#侧边栏目录高亮颜色" class="headerlink" title="侧边栏目录高亮颜色"></a>侧边栏目录高亮颜色</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<figure class="highlight"><table><tr><td class="code"><pre><span class="line">// Colors</span><br><span class="line">// colors for use across theme.</span><br></pre></td></tr></table></figure></li>
+<li>在其下方添加两个颜色：<figure class="highlight"><table><tr><td class="code"><pre><span class="line">$purple       = #7D26CD;</span><br><span class="line">$purple-bright= #a442ff;</span><br></pre></td></tr></table></figure></li>
+<li>定位到：<code>$sidebar-highlight                    =</code>，修改为<code>$purple-bright</code></li>
+</ul>
 </blockquote>
-<blockquote>
-<p>-w, –no-overwrites<br>    do not overwrite files</p>
+<h3 id="头像边框宽度"><a href="#头像边框宽度" class="headerlink" title="头像边框宽度"></a>头像边框宽度</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<code>$site-author-image-border-width       = 2px;</code></li>
+<li>修改为<code>0px</code></li>
+</ul>
 </blockquote>
-<blockquote>
-<p>-o, –output<br>    Output filename template, this example functions similarly to the old –title option</p>
+<h3 id="文章主体文字行高"><a href="#文章主体文字行高" class="headerlink" title="文章主体文字行高"></a>文章主体文字行高</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<code>$line-height-base         = 2;</code></li>
+<li>修改为<code>1.6</code></li>
+</ul>
 </blockquote>
-<blockquote>
-<p>-v, –verbose<br>    print various debugging information</p>
-</blockquote>
-<blockquote>
-<p>with –download-archive download.txt flag you gonna archive all videos’ info so that you can ezlly resume download.<br>-f </p>
-</blockquote>
-<p><em>reference:</em></p>
-<blockquote>
-<p><a href="https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel" target="_blank" rel="noopener">https://askubuntu.com/questions/856911/using-youtube-dl-to-download-entire-youtube-channel</a> </p>
+<h3 id="页面加载进度条"><a href="#页面加载进度条" class="headerlink" title="页面加载进度条"></a>页面加载进度条</h3><blockquote>
+<ul>
+<li>定位到目录<code>cd /hexo/themes/next</code></li>
+<li>安装进度条依赖：theme-nexr-pace<code>git clone https://github.com/theme-next/theme-next-pace source/lib/pace</code></li>
+<li>打开安装目录<code>cd themes/next/source/lib/three</code>，执行更新：<code>git pull</code></li>
+<li>打开：\hexo\themes\next_config.yml</li>
+<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>设置成<code>true</code></li>
+</ul>
 </blockquote>
 ]]></content>
       <categories>
         <category>不亦乐乎</category>
+        <category>博客</category>
       </categories>
       <tags>
-        <tag>YouTube</tag>
-        <tag>youtube-dl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>位运算妙妙屋</title>
-    <url>/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</url>
-    <content><![CDATA[<h3 id="int类型利用位运算乘除2的k次幂"><a href="#int类型利用位运算乘除2的k次幂" class="headerlink" title="int类型利用位运算乘除2的k次幂"></a>int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
-      <tags>
-        <tag>位运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
-    <url>/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p>今天在shell上安装Anaconda的时候，发现安装过程中的「风火轮」进度条很有趣，于是就简单实现了一下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">icon = [<span class="string">'\\'</span>, <span class="string">'-'</span>, <span class="string">'/'</span>]</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">40</span>):</span><br><span class="line">    print(<span class="string">'\rAll work and no play make Jack a dull boy: &#123;&#125;'</span>.format(icon[m % <span class="number">3</span>]), end=<span class="string">''</span>)</span><br><span class="line">    time.sleep(<span class="number">0.25</span>)  <span class="comment"># -- control the r.p.m</span></span><br></pre></td></tr></table></figure>
-<p>无非就是把<code>print</code>函数的<code>end=&#39;\n&#39;</code>换成<code>end=&#39;&#39;</code>以便每次打印光标可以回到行首。再就是循环<code>icon</code>列表，制造「动画效果」。<br>比如你要倒计时10s，每0.25s输出一帧，那么就要输出40帧。每一帧依次选取列表的下标可以用m对列表长度取余。</p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
-      <tags>
-        <tag>进度条</tag>
+        <tag>博客</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1788,6 +1888,45 @@
         <tag>归并排序</tag>
         <tag>树状数组</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/17/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</title>
+    <url>/2020/03/07/%E7%BB%99%E6%82%A8%E6%8B%9C%E4%B8%AA%E6%99%9A%E5%B9%B4%EF%BC%8C%E7%A5%9D%E6%82%A8%E6%96%B0%E7%9A%84%E4%B8%80%E5%B9%B4%E5%BF%83%E6%98%8E%E7%9C%BC%E4%BA%AE%EF%BC%8C%E7%99%BE%E6%AF%92%E4%B8%8D%E4%BE%B5/</url>
+    <content><![CDATA[<h1 id="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"><a href="#给您拜个晚年，祝您新的一年心明眼亮，百毒不侵" class="headerlink" title="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"></a>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</h1><h2 id="一点感悟"><a href="#一点感悟" class="headerlink" title="一点感悟"></a>一点感悟</h2><h3 id="知乎有提问，新冠蔓延能带来哪些正面意义。"><a href="#知乎有提问，新冠蔓延能带来哪些正面意义。" class="headerlink" title="知乎有提问，新冠蔓延能带来哪些正面意义。"></a>知乎有提问，新冠蔓延能带来哪些正面意义。</h3><h3 id="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"><a href="#当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？" class="headerlink" title="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"></a>当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？</h3><h3 id="这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"><a href="#这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。" class="headerlink" title="这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"></a>这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。</h3><h3 id="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"><a href="#惊蛰刚过，我仿佛已经看见万物复苏。祝好！" class="headerlink" title="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"></a>惊蛰刚过，我仿佛已经看见万物复苏。祝好！</h3>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>新冠</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跑路专用呆湾警署查封页面</title>
+    <url>/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<p>效果图：<br><img src="2020-10-25-%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/img.jpg" alt="pic0x0"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-TW"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>網站已遭查禁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Fonts --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span>  <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">integrity</span>=<span class="string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        body&#123;</span><br><span class="line">            font-family: 'Raleway', sans-serif;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            -webkit-font-smoothing: antialiased;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            h1, h2, h3, h4, h5&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">font-family</span><span class="selector-pseudo">:'Montserrat'</span>, <span class="selector-tag">sans-serif</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line"><span class="css">            <span class="selector-class">.img-content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: -50%;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">padding</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line">            align-content: center ;</span><br><span class="line">            margin: auto 5% auto 5% ;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>, <span class="selector-id">#30cfd0</span> 0%, <span class="selector-id">#330867</span> 100%);</span></span><br><span class="line">            border-radius: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 3<span class="selector-tag">px</span> 3<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-id">#cccccc</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h1</span>&#123;</span></span><br><span class="line">            font-family: "Microsoft JhengHei" ;</span><br><span class="line">            font-size: 50px;   </span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span><span class="selector-pseudo">:1</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h2</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: <span class="selector-class">.9</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            font-size: 24px;</span><br><span class="line">            padding: 20px 0;</span><br><span class="line">            font-weight: 300;</span><br><span class="line">            width: 70%;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">&lt;script async src='/cdn-cgi/bm/cv/2172558837/api.js'&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"bg-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:-11%;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.niupic.com/images/2020/04/10/7mLl.jpeg"</span> <span class="attr">style</span>=<span class="string">"align-content: center;text-align: center;width: 40%;height: auto; margin: auto auto 1% auto; "</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 text-center"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:firebrick;"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>網站已經遭到查禁<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>(This Domain Has Been Seized)<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>已經違背中華民國著作權法第九十一條及九十二條規範，全部或部分內容涉屬盜版，正進入司法偵查中。<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                        The website is in violation of the Copyright Act of the Republic of China (Taiwan) for its unauthorized use of materials.  Investigation is currently underway.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span>內政部警政署刑事警察局電偵大隊 敬啟 <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                        Criminal Investigation Bureau（Taiwan）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">window</span>[<span class="string">'__CF$cv$params'</span>]=&#123;<span class="attr">r</span>:<span class="string">'580bbb10ab56988d'</span>,<span class="attr">m</span>:<span class="string">'89a8a3de2b7eced49bf0d7d5400be20e69b51188-1586346206-1800-AXfMipt69xS9k39OseM0Cvbr0f3Kbs2a6i15NQFaHcJ2EE29f4nRPtpVQp/KgduXqsjmOfivLCxx7gGaor0X8kEbM7J50HQX16lmdjp4bzFe+Nr/xYV+BXL01+ME0Wcofw=='</span>,<span class="attr">s</span>:[<span class="number">0xde0ce21efa</span>,<span class="number">0xa321d7537b</span>],<span class="attr">fb</span>:<span class="number">0</span>,&#125;&#125;)();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
   </entry>
   <entry>
     <title>记录对hexo yilia主题的个性定制</title>
@@ -1835,103 +1974,6 @@
         <tag>博客</tag>
         <tag>Blog</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-next主题博客部分配置</title>
-    <url>/2020/10/31/Hexo-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>记录自己对Hexo-next主题博客的一些配置。</p>
-<a id="more"></a>
-
-<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><blockquote>
-<ul>
-<li>在要置顶的文章<code>Front-matter</code>中加入<code>top: true</code></li>
-<li>打开：\hexo\themes\next\layout_macro\post.swig ，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code></li>
-<li>在其下方添加代码段： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;### 置顶 ###&#125;</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-thumb-tack&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &lt;font color&#x3D;7D26CD&gt;置顶&lt;&#x2F;font&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-divider&quot;&gt;|&lt;&#x2F;span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;### 置顶 ###&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<h3 id="更改行内代码样式"><a href="#更改行内代码样式" class="headerlink" title="更改行内代码样式"></a>更改行内代码样式</h3><blockquote>
-<ul>
-<li>打开：\hexo\themes\next\source\css</li>
-<li>新建文件夹：_custom</li>
-<li>打开_custom文件夹，新建文件：custom.styl</li>
-<li>打开custom.styl，添加如下代码：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-如果想要更改背景色，边距，边框等等可以加上：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">    background: rgba(6, 162, 228, 0.8);</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #06a2e4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>打开：\hexo\themes\next\source\css\main.styl</li>
-<li>在末尾加上一行：<code>@import &quot;_custom/custom.styl&quot;;</code></li>
-</ul>
-</blockquote>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/05/17/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</title>
-    <url>/2020/03/07/%E7%BB%99%E6%82%A8%E6%8B%9C%E4%B8%AA%E6%99%9A%E5%B9%B4%EF%BC%8C%E7%A5%9D%E6%82%A8%E6%96%B0%E7%9A%84%E4%B8%80%E5%B9%B4%E5%BF%83%E6%98%8E%E7%9C%BC%E4%BA%AE%EF%BC%8C%E7%99%BE%E6%AF%92%E4%B8%8D%E4%BE%B5/</url>
-    <content><![CDATA[<h1 id="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"><a href="#给您拜个晚年，祝您新的一年心明眼亮，百毒不侵" class="headerlink" title="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"></a>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</h1><h2 id="一点感悟"><a href="#一点感悟" class="headerlink" title="一点感悟"></a>一点感悟</h2><h3 id="知乎有提问，新冠蔓延能带来哪些正面意义。"><a href="#知乎有提问，新冠蔓延能带来哪些正面意义。" class="headerlink" title="知乎有提问，新冠蔓延能带来哪些正面意义。"></a>知乎有提问，新冠蔓延能带来哪些正面意义。</h3><h3 id="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"><a href="#当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？" class="headerlink" title="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"></a>当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？</h3><h3 id="这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"><a href="#这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。" class="headerlink" title="这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"></a>这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。</h3><h3 id="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"><a href="#惊蛰刚过，我仿佛已经看见万物复苏。祝好！" class="headerlink" title="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"></a>惊蛰刚过，我仿佛已经看见万物复苏。祝好！</h3>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>新冠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 559 N叉树的最大深度（Maximum Depth of N-ary Tree）</title>
-    <url>/2020/08/31/LeetCode-559-N%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-N-ary-Tree%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个 N 叉树，找到其最大深度。<br>最大深度是指从根节点到最远叶子节点的最长路径上的节点总数。<br>例如，给定一个 <code>3叉树</code> :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">       1</span><br><span class="line">   &#x2F;   |   \</span><br><span class="line">  3    2    4</span><br><span class="line"> &#x2F; \   </span><br><span class="line">5   6</span><br></pre></td></tr></table></figure>
-<p>我们应返回其最大深度，3。<br>说明:</p>
-<blockquote>
-<p>1.树的深度不会超过 1000。<br>2.树的节点总不会超过 5000。</p>
-</blockquote>
-<hr>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Node&gt; children;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> _val)</span> </span>&#123;</span><br><span class="line">        val = _val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> _val, List&lt;Node&gt; _children)</span> </span>&#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        children = _children;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>没啥可说的，和「LeetCode-104-二叉树的最大深度（Maximum-Depth-of-Binary-Tree）」对比，无非就是取最大值的不同。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (root.children.isEmpty()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;  </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      List&lt;Integer&gt; heights = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">      <span class="keyword">for</span> (Node item : root.children) &#123;</span><br><span class="line">        heights.add(maxDepth(item)); </span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> Collections.max(heights) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然，亦可维护一个「最大值变量」，children的每个元素，和它作比较。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//本方法参考HJF的题解</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == root) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (Node child : root.children) &#123;</span><br><span class="line">            result = Math.max(result, <span class="number">1</span> + maxDepth(child));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>可以由DFS递归改成迭代，同时维护一个最大值变量，每次出队需要将节点的深度信息和最大值变量作比较。所以节点需要携带深度信息。可以借助<code>pair</code>，也可以写一个新的节点类。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//本方法参考官方题解</span></span><br><span class="line"><span class="keyword">import</span> javafx.util.Pair;</span><br><span class="line"><span class="keyword">import</span> java.lang.Math;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Pair&lt;Node, Integer&gt;&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">      stack.add(<span class="keyword">new</span> Pair(root, <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">      Pair&lt;Node, Integer&gt; current = stack.poll();</span><br><span class="line">      root = current.getKey();</span><br><span class="line">      <span class="keyword">int</span> current_depth = current.getValue();</span><br><span class="line">      <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        depth = Math.max(depth, current_depth);</span><br><span class="line">        <span class="keyword">for</span> (Node c : root.children) &#123;</span><br><span class="line">          stack.add(<span class="keyword">new</span> Pair(c, current_depth + <span class="number">1</span>));    </span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> depth;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>本题亦可使用BFS，但是我不想写了。</p>
-<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/</a><br><strong>官方题解：</strong> <a href="https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/solution/ncha-shu-de-zui-da-shen-du-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/solution/ncha-shu-de-zui-da-shen-du-by-leetcode/</a></p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
-        <tag>树深度</tag>
-        <tag>树</tag>
-        <tag>N叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1996,16 +2038,6 @@
         <tag>字符串</tag>
         <tag>指针</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>跑路专用呆湾警署查封页面</title>
-    <url>/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</url>
-    <content><![CDATA[<p>效果图：<br><img src="2020-10-25-%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/img.jpg" alt="pic0x0"></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-TW"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>網站已遭查禁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Fonts --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span>  <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">integrity</span>=<span class="string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        body&#123;</span><br><span class="line">            font-family: 'Raleway', sans-serif;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            -webkit-font-smoothing: antialiased;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            h1, h2, h3, h4, h5&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">font-family</span><span class="selector-pseudo">:'Montserrat'</span>, <span class="selector-tag">sans-serif</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line"><span class="css">            <span class="selector-class">.img-content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: -50%;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">padding</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line">            align-content: center ;</span><br><span class="line">            margin: auto 5% auto 5% ;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>, <span class="selector-id">#30cfd0</span> 0%, <span class="selector-id">#330867</span> 100%);</span></span><br><span class="line">            border-radius: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 3<span class="selector-tag">px</span> 3<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-id">#cccccc</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h1</span>&#123;</span></span><br><span class="line">            font-family: "Microsoft JhengHei" ;</span><br><span class="line">            font-size: 50px;   </span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span><span class="selector-pseudo">:1</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h2</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: <span class="selector-class">.9</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            font-size: 24px;</span><br><span class="line">            padding: 20px 0;</span><br><span class="line">            font-weight: 300;</span><br><span class="line">            width: 70%;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">&lt;script async src='/cdn-cgi/bm/cv/2172558837/api.js'&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"bg-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:-11%;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.niupic.com/images/2020/04/10/7mLl.jpeg"</span> <span class="attr">style</span>=<span class="string">"align-content: center;text-align: center;width: 40%;height: auto; margin: auto auto 1% auto; "</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 text-center"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:firebrick;"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>網站已經遭到查禁<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>(This Domain Has Been Seized)<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>已經違背中華民國著作權法第九十一條及九十二條規範，全部或部分內容涉屬盜版，正進入司法偵查中。<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                        The website is in violation of the Copyright Act of the Republic of China (Taiwan) for its unauthorized use of materials.  Investigation is currently underway.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span>內政部警政署刑事警察局電偵大隊 敬啟 <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                        Criminal Investigation Bureau（Taiwan）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">window</span>[<span class="string">'__CF$cv$params'</span>]=&#123;<span class="attr">r</span>:<span class="string">'580bbb10ab56988d'</span>,<span class="attr">m</span>:<span class="string">'89a8a3de2b7eced49bf0d7d5400be20e69b51188-1586346206-1800-AXfMipt69xS9k39OseM0Cvbr0f3Kbs2a6i15NQFaHcJ2EE29f4nRPtpVQp/KgduXqsjmOfivLCxx7gGaor0X8kEbM7J50HQX16lmdjp4bzFe+Nr/xYV+BXL01+ME0Wcofw=='</span>,<span class="attr">s</span>:[<span class="number">0xde0ce21efa</span>,<span class="number">0xa321d7537b</span>],<span class="attr">fb</span>:<span class="number">0</span>,&#125;&#125;)();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-      </categories>
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
