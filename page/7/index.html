@@ -219,114 +219,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.fingerdance.plus/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESP的私人小岛">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/" class="post-title-link" itemprop="url">浅谈java的static关键字</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-03-14 00:43:07" itemprop="dateCreated datePublished" datetime="2020-03-14T00:43:07+08:00">2020-03-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-02 17:28:41" itemprop="dateModified" datetime="2020-04-02T17:28:41+08:00">2020-04-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><h3 id="Why-we-have-to-use-a-static-key-word"><a href="#Why-we-have-to-use-a-static-key-word" class="headerlink" title="Why we have to use a static key word?"></a>Why we have to use a <code>static</code> key word?</h3><p>一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。<br>如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用类变量，注意到st1.i和st2.i指向同一存储空间，具有相同值47</span></span><br><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line">StaticTest st1 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">StaticTest st2 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">st1.i</span><br><span class="line">st2.i</span><br><span class="line"><span class="comment">//使用类方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line">Incrementable sf = <span class="keyword">new</span> INcrementable();</span><br><span class="line">sf.increment;</span><br></pre></td></tr></table></figure>
-<p>那么，如果我们遇到特殊需求。比如我们希望为特定域（field）分配单一存储空间，而不去考虑究竟需要创建多少对象，甚至不用创建对象；再比如我们希望某个方法不与包含它的类的对象相关联，就是说，可以不用创建对象而使用方法。</p>
-<p>此时，我们可以使用<code>static</code>关键字。</p>
-<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><h3 id="How-do-we-use-static"><a href="#How-do-we-use-static" class="headerlink" title="How do we use static"></a>How do we use <code>static</code></h3><p>当声明一个事物是static时，就意味着这个域或方法不会与包含它的类的任何对象实例关联在一起。</p>
-<p>回顾上述两个类，我们可以声明类变量<code>i</code>和类方法<code>increment()</code>是<code>static</code>，再直接使用类名引用它们:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不必创建对象而使用i</span></span><br><span class="line">StaticTest.i++</span><br><span class="line"><span class="comment">//不必创建对象而使用方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Incrementable <span class="title">increment</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//另一个广为人知的例子  wow, that was epic.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h3><blockquote>
-<ul>
-<li>类中<code>static</code>方法不能访问非<code>static</code>变量。</li>
-<li>类中<code>static</code>方法不能使用<code>this</code>关键字。<br>原因就是<code>Static</code>方法是类方法，先于任何的实例（对象）存在。即<code>Static</code>方法在类加载时就已经存在了，但是对象是在创建时才在内存中生成。</li>
-</ul>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
-<ul>
-<li>声明为<code>static</code>的事物也可以用前文所述常规方法引用。</li>
-<li>通过类名直接引用是引用<code>static</code>事物的首选方式，这不仅是因为它强调了事物的<code>static</code>结构，而且在某些情况下它还为编译器进行优化提供了更好的机会。</li>
-</ul>
-</blockquote>
-<p><em>总结自《Thinking in Java 4th edition》P29 - P30</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.fingerdance.plus/2020/03/12/Trump-address-sparks-chaos-as-coronavirus-crisis-deepens/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -879,7 +771,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">64</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
