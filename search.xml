@@ -23,6 +23,104 @@
       </tags>
   </entry>
   <entry>
+    <title>浅谈java的static关键字</title>
+    <url>/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><h3 id="Why-we-have-to-use-a-static-key-word"><a href="#Why-we-have-to-use-a-static-key-word" class="headerlink" title="Why we have to use a static key word?"></a>Why we have to use a <code>static</code> key word?</h3><p>一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。<br>如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引用类变量，注意到st1.i和st2.i指向同一存储空间，具有相同值47</span></span><br><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line">StaticTest st1 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">StaticTest st2 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">st1.i</span><br><span class="line">st2.i</span><br><span class="line"><span class="comment">//使用类方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line">Incrementable sf = <span class="keyword">new</span> INcrementable();</span><br><span class="line">sf.increment;</span><br></pre></td></tr></table></figure>
+<p>那么，如果我们遇到特殊需求。比如我们希望为特定域（field）分配单一存储空间，而不去考虑究竟需要创建多少对象，甚至不用创建对象；再比如我们希望某个方法不与包含它的类的对象相关联，就是说，可以不用创建对象而使用方法。</p>
+<p>此时，我们可以使用<code>static</code>关键字。</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><h3 id="How-do-we-use-static"><a href="#How-do-we-use-static" class="headerlink" title="How do we use static"></a>How do we use <code>static</code></h3><p>当声明一个事物是static时，就意味着这个域或方法不会与包含它的类的任何对象实例关联在一起。</p>
+<p>回顾上述两个类，我们可以声明类变量<code>i</code>和类方法<code>increment()</code>是<code>static</code>，再直接使用类名引用它们:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不必创建对象而使用i</span></span><br><span class="line">StaticTest.i++</span><br><span class="line"><span class="comment">//不必创建对象而使用方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Incrementable <span class="title">increment</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//另一个广为人知的例子  wow, that was epic.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h3><blockquote>
+<ul>
+<li>类中<code>static</code>方法不能访问非<code>static</code>变量。</li>
+<li>类中<code>static</code>方法不能使用<code>this</code>关键字。<br>原因就是<code>Static</code>方法是类方法，先于任何的实例（对象）存在。即<code>Static</code>方法在类加载时就已经存在了，但是对象是在创建时才在内存中生成。</li>
+</ul>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<ul>
+<li>声明为<code>static</code>的事物也可以用前文所述常规方法引用。</li>
+<li>通过类名直接引用是引用<code>static</code>事物的首选方式，这不仅是因为它强调了事物的<code>static</code>结构，而且在某些情况下它还为编译器进行优化提供了更好的机会。</li>
+</ul>
+</blockquote>
+<p><em>总结自《Thinking in Java 4th edition》P29 - P30</em></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>static</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode #1 两数之和「twoSum」 0x0</title>
+    <url>/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/</url>
+    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
+</blockquote>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9</p>
+<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+</blockquote>
+<hr>
+<h3 id="Java-HashMap-method"><a href="#Java-HashMap-method" class="headerlink" title="Java HashMap method"></a>Java HashMap method</h3><p>key: target - nums[v]<br>value: v<br>每次迭代，判断nums[v]在不在hashmap中。<br>如果在，则nums[v]一定是之前target - nums[index_before]的值。此时返回{index_before, v}；<br>如果不在，则把key: target - nums[v]和value: v放到hashmap中。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-time-for-loop"><a href="#2-time-for-loop" class="headerlink" title="2 time for loop"></a>2 time for loop</h3><p>注意到数组中同样元素不可重复利用，意思是某元素不能和自己相加和target比较。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   2 7 11 15</span><br><span class="line">2  x</span><br><span class="line">7    x</span><br><span class="line">11     x</span><br><span class="line">15        x</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i] + nums[j] == target) &amp;&amp; (i != j))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>HashMap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode #2 最小的k个数「TopK」 0x1</title>
+    <url>/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/</url>
+    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。</p>
+</blockquote>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]<br><strong>示例2：</strong><br>输入：arr = [0,1,2,1], k = 1<br>输出：[0]<br><strong>限制：</strong><br>0 &lt;= k &lt;= arr.length &lt;= 10000<br>0 &lt;= arr[i] &lt;= 10000</p>
+</blockquote>
+<hr>
+<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/quickSort.png" alt="pic0x0"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。<br><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AA%E5%A4%A7%E9%A1%B6%E5%A0%86.gif" alt="pic0x1"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>TopK</tag>
+        <tag>快速选择</tag>
+        <tag>堆</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Daily Readings]  Trump address sparks chaos as coronavirus crisis deepens</title>
     <url>/2020/03/12/Trump-address-sparks-chaos-as-coronavirus-crisis-deepens/</url>
     <content><![CDATA[<hr>
@@ -200,44 +298,6 @@
       </tags>
   </entry>
   <entry>
-    <title>In just 24 hours, US coronavirus cases soar by more than 40%</title>
-    <url>/2020/03/19/In-just-24-hours-US-coronavirus-cases-soar-by-more-than-40/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>LeetCode #1 两数之和「twoSum」 0x0</title>
-    <url>/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/</url>
-    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
-</blockquote>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9</p>
-<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
-</blockquote>
-<hr>
-<h3 id="Java-HashMap-method"><a href="#Java-HashMap-method" class="headerlink" title="Java HashMap method"></a>Java HashMap method</h3><p>key: target - nums[v]<br>value: v<br>每次迭代，判断nums[v]在不在hashmap中。<br>如果在，则nums[v]一定是之前target - nums[index_before]的值。此时返回{index_before, v}；<br>如果不在，则把key: target - nums[v]和value: v放到hashmap中。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-time-for-loop"><a href="#2-time-for-loop" class="headerlink" title="2 time for loop"></a>2 time for loop</h3><p>注意到数组中同样元素不可重复利用，意思是某元素不能和自己相加和target比较。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   2 7 11 15</span><br><span class="line">2  x</span><br><span class="line">7    x</span><br><span class="line">11     x</span><br><span class="line">15        x</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i] + nums[j] == target) &amp;&amp; (i != j))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-        <tag>HashMap</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode #3 水壶问题（Water and Jug Problem）</title>
     <url>/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
@@ -277,56 +337,82 @@
       </tags>
   </entry>
   <entry>
-    <title>浅谈java的static关键字</title>
-    <url>/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><h3 id="Why-we-have-to-use-a-static-key-word"><a href="#Why-we-have-to-use-a-static-key-word" class="headerlink" title="Why we have to use a static key word?"></a>Why we have to use a <code>static</code> key word?</h3><p>一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。<br>如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引用类变量，注意到st1.i和st2.i指向同一存储空间，具有相同值47</span></span><br><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line">StaticTest st1 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">StaticTest st2 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">st1.i</span><br><span class="line">st2.i</span><br><span class="line"><span class="comment">//使用类方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line">Incrementable sf = <span class="keyword">new</span> INcrementable();</span><br><span class="line">sf.increment;</span><br></pre></td></tr></table></figure>
-<p>那么，如果我们遇到特殊需求。比如我们希望为特定域（field）分配单一存储空间，而不去考虑究竟需要创建多少对象，甚至不用创建对象；再比如我们希望某个方法不与包含它的类的对象相关联，就是说，可以不用创建对象而使用方法。</p>
-<p>此时，我们可以使用<code>static</code>关键字。</p>
-<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><h3 id="How-do-we-use-static"><a href="#How-do-we-use-static" class="headerlink" title="How do we use static"></a>How do we use <code>static</code></h3><p>当声明一个事物是static时，就意味着这个域或方法不会与包含它的类的任何对象实例关联在一起。</p>
-<p>回顾上述两个类，我们可以声明类变量<code>i</code>和类方法<code>increment()</code>是<code>static</code>，再直接使用类名引用它们:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不必创建对象而使用i</span></span><br><span class="line">StaticTest.i++</span><br><span class="line"><span class="comment">//不必创建对象而使用方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Incrementable <span class="title">increment</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//另一个广为人知的例子  wow, that was epic.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h3><blockquote>
-<ul>
-<li>类中<code>static</code>方法不能访问非<code>static</code>变量。</li>
-<li>类中<code>static</code>方法不能使用<code>this</code>关键字。<br>原因就是<code>Static</code>方法是类方法，先于任何的实例（对象）存在。即<code>Static</code>方法在类加载时就已经存在了，但是对象是在创建时才在内存中生成。</li>
-</ul>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
-<ul>
-<li>声明为<code>static</code>的事物也可以用前文所述常规方法引用。</li>
-<li>通过类名直接引用是引用<code>static</code>事物的首选方式，这不仅是因为它强调了事物的<code>static</code>结构，而且在某些情况下它还为编译器进行优化提供了更好的机会。</li>
-</ul>
-</blockquote>
-<p><em>总结自《Thinking in Java 4th edition》P29 - P30</em></p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>static</tag>
-      </tags>
+    <title>In just 24 hours, US coronavirus cases soar by more than 40%</title>
+    <url>/2020/03/19/In-just-24-hours-US-coronavirus-cases-soar-by-more-than-40/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>LeetCode #2 最小的k个数「TopK」 0x1</title>
-    <url>/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/</url>
-    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。</p>
+    <title>LeetCode #5 链表的中间结点（Middle of the Linked List）</title>
+    <url>/2020/03/23/LeetCode-5-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%88Middle-of-the-Linked-List%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给定一个带有头结点 head 的非空单链表，返回链表的中间结点。<br>如果有两个中间结点，则返回第二个中间结点。</p>
 </blockquote>
 <p><strong>示例1：</strong></p>
 <blockquote>
-<p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]<br><strong>示例2：</strong><br>输入：arr = [0,1,2,1], k = 1<br>输出：[0]<br><strong>限制：</strong><br>0 &lt;= k &lt;= arr.length &lt;= 10000<br>0 &lt;= arr[i] &lt;= 10000</p>
+<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.</p>
+</blockquote>
+<p><strong>示例2：</strong></p>
+<blockquote>
+<p>输入：[1,2,3,4,5,6]<br>输出：此列表中的结点 4 (序列化形式：[4,5,6])<br>由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>给定链表的结点数介于 1 和 100 之间。</li>
+</ul>
+<hr>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>定义一个快指针，定义一个慢指针。其中快指针每个循环走两部，慢指针走一步。这样，当快指针走慢整个链表，由于其速度是慢指针的二倍，故慢指针停留的位置即为链表的中间结点。</p>
+<p>注意到，当链表结点个数为偶时，即链表有两个中间结点。此时，题干要求返回第二个结点。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若题干要求返回第一个结点，应该这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">// return secondary node while we got a even node linkedList</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表类数组"><a href="#链表类数组" class="headerlink" title="链表类数组"></a>链表类数组</h3><p>换个思路，当我们知道链表结点个数，个数/2即为中间结点位置。我们可以创建一个链表类数组（记得曾经用过的计数数组吗？数组是个好东西，我们要把它玩坏！）循环链表每个结点，把它放在数组里。</p>
+<p>注意到，由于题干给出当有两个中间结点取其第二个，我们正好可以利用整形变量特征————int a = 5 / 2，则a被强制转换向下取整为2。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode[] arr = <span class="keyword">new</span> ListNode[<span class="number">100</span>]; <span class="comment">//we have restriction about length of linkedList</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr[i++] = head;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[count / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者用ArratList可以稍微稍微节省点空间。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        List&lt;ListNode&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr.add(head);</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr.get(arr.size() / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/middle-of-the-linked-list/</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode #6 按摩师（The Masseuse LCCI）</title>
+    <url>/2020/03/24/LeetCode-6-%E6%8C%89%E6%91%A9%E5%B8%88%EF%BC%88The-Masseuse-LCCI%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>一个有名的按摩师会收到源源不断的预约请求，每个预约都可以选择接或&gt; 不接。在每次预约服务之间要有休息时间，因此她不能接受相邻的预约。&gt; 给定一个预约请求序列，替按摩师找到最优的预约集合（总预约时间最长），返回总的分钟数。</p>
+<p><strong>注意</strong>：本题相对原题稍作改动</p>
+</blockquote>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入： [1,2,3,1]<br>输出： 4<br>解释： 选择 1 号预约和 3 号预约，总时长 = 1 + 3 = 4。</p>
+</blockquote>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入： [2,7,9,3,1]<br>输出： 12<br>解释： 选择 1 号预约、 3 号预约和 5 号预约，总时长 = 2 + 9 + 1 &gt; = 12。</p>
+</blockquote>
+<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><blockquote>
+<p>输入： [2,1,4,5,3,1,1,3]<br>输出： 12<br>解释： 选择 1 号预约、 3 号预约、 5 号预约和 8 号预约，总时长 = &gt; 2 + 4 + 3 + 3 = 12。</p>
 </blockquote>
 <hr>
-<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/quickSort.png" alt="pic0x0"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。<br><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AA%E5%A4%A7%E9%A1%B6%E5%A0%86.gif" alt="pic0x1"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/</a></p>
+<h3 id="一维状态数组"><a href="#一维状态数组" class="headerlink" title="一维状态数组"></a>一维状态数组</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">massage</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums.length == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = Math.max(nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            dp[i] = Math.max(dp[i-<span class="number">1</span>], dp[i-<span class="number">2</span>]+nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[dp.length-<span class="number">1</span>];<span class="comment">//or i-1 because i++ in last step</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(N)O(N)，NN 是数组的长度；</li>
+<li>空间复杂度：O(N)O(N)，状态数组的大小为 N</li>
+</ul>
+<h3 id="一维状态数组-「滚动数组」"><a href="#一维状态数组-「滚动数组」" class="headerlink" title="一维状态数组+「滚动数组」"></a>一维状态数组+「滚动数组」</h3><p>使用 3 个变量滚动完成计算，将空间优化到常数级别。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionSO1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">massage</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums.length == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> pre2 = <span class="number">0</span>, pre = <span class="number">0</span>, cur = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            cur = Math.max(pre, pre2 + num);</span><br><span class="line">            pre2 = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(N)，N是数组的长度；</li>
+<li>空间复杂度：O(1)，状态数组的大小为 3，常数空间。</li>
+</ul>
+<h5 id="题目链接https-leetcode-cn-com-problems-the-masseuse-lcci"><a href="#题目链接https-leetcode-cn-com-problems-the-masseuse-lcci" class="headerlink" title="题目链接https://leetcode-cn.com/problems/the-masseuse-lcci/"></a>题目链接<a href="https://leetcode-cn.com/problems/the-masseuse-lcci/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/the-masseuse-lcci/</a></h5><h5 id="参考题解"><a href="#参考题解" class="headerlink" title="参考题解"></a>参考题解</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/the-masseuse-lcci/solution/dong-tai-gui-hua-by-liweiwei1419-8/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/the-masseuse-lcci/solution/dong-tai-gui-hua-by-liweiwei1419-8/</a></p>
 </blockquote>
 ]]></content>
       <categories>
@@ -336,9 +422,79 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>TopK</tag>
-        <tag>快速选择</tag>
-        <tag>堆</tag>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode # 7 三维形体的表面积（Surface Area of 3D Shapes）</title>
+    <url>/2020/03/25/LeetCode-7-%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF%EF%BC%88Surface-Area-of-3D-Shapes%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>在 N * N 的网格上，我们放置一些 1 * 1 * 1  的立方体。</p>
+<p>每个值 v = grid[i][j] 表示 v 个正方体叠放在对应单元格 (i, j) 上。</p>
+<p>请你返回最终形体的表面积。</p>
+</blockquote>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：[[2]]<br>输出：10</p>
+</blockquote>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：[[1,2],[3,4]]<br>输出：34</p>
+</blockquote>
+<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><blockquote>
+<p>输入：[[1,0],[0,2]]<br>输出：16</p>
+</blockquote>
+<h3 id="示例4："><a href="#示例4：" class="headerlink" title="示例4："></a>示例4：</h3><blockquote>
+<p>输入：[[1,1,1],[1,0,1],[1,1,1]]<br>输出：32</p>
+</blockquote>
+<h3 id="示例5："><a href="#示例5：" class="headerlink" title="示例5："></a>示例5：</h3><blockquote>
+<p>输入：[[2,2,2],[2,1,2],[2,2,2]]<br>输出：46</p>
+</blockquote>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><blockquote>
+<ul>
+<li>1 &lt;= N &lt;= 50</li>
+<li>0 &lt;= grid[i][j] &lt;= 50</li>
+</ul>
+</blockquote>
+<hr>
+<p>用示例5举例，二维数组<code>[[2,2,2],[2,1,2],[2,2,2]]</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] grid = &#123;</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>表明一个3*3网格，每个格子分别放置对应数字的方块。<br>那么，表面积 = 总数 * 6 - 2(x + y + z)，其中x, y, z分别表示x, y, z方向重叠面数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">surfaceArea</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// this surface means hidden surface</span></span><br><span class="line">        <span class="keyword">int</span> surfaceZ = <span class="number">0</span>, surfaceY = <span class="number">0</span>, surfaceX = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// value count</span></span><br><span class="line">        <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> raw = <span class="number">0</span>; raw &lt; grid.length; raw++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> column = <span class="number">0</span>; column &lt; grid[raw].length; column++) &#123;</span><br><span class="line">                <span class="comment">// count value</span></span><br><span class="line">                value += grid[raw][column];</span><br><span class="line">                <span class="comment">// for each X, Y ,Z count hidden surface</span></span><br><span class="line">                <span class="keyword">if</span> (raw &lt; grid.length - <span class="number">1</span>)</span><br><span class="line">                    surfaceX += Math.min(grid[raw][column], grid[raw+<span class="number">1</span>][column]);</span><br><span class="line">                <span class="keyword">if</span> (column &lt; grid[raw].length - <span class="number">1</span>)</span><br><span class="line">                    surfaceY += Math.min(grid[raw][column], grid[raw][column+<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span> (grid[raw][column] &gt; <span class="number">0</span>)</span><br><span class="line">                    surfaceZ += (grid[raw][column] - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// this surface is real "surface"</span></span><br><span class="line">        <span class="keyword">int</span> surface = <span class="number">0</span>;</span><br><span class="line">        surface = value * <span class="number">6</span> - surfaceX * <span class="number">2</span> - surfaceY * <span class="number">2</span> - surfaceZ * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> surface;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(N^2)，其中 NN 是 grid 中的行和列的数目</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h5 id="题目链接https-leetcode-cn-com-problems-surface-area-of-3d-shapes"><a href="#题目链接https-leetcode-cn-com-problems-surface-area-of-3d-shapes" class="headerlink" title="题目链接https://leetcode-cn.com/problems/surface-area-of-3d-shapes/"></a>题目链接<a href="https://leetcode-cn.com/problems/surface-area-of-3d-shapes/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/surface-area-of-3d-shapes/</a></h5>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>二维数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方便调试的链表类实现</title>
+    <url>/2020/03/26/%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p>链表是一种特殊的数据结构：<br><img src="2020-03-26-%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="pic0x0"><br>它包含了两部分：<br>$$ListNodePtr<br>\begin{cases}{value} \\<br>{next}\begin{cases}{value} \\<br>                    {next}\begin{cases}{value} \\<br>                                       {next…}<br>                                       \end{cases}<br>                    \end{cases}<br>\end{cases}<br>$$<br>在《算法 第4版》中是这样描述的：</p>
+<blockquote>
+<p>链表是一种递归的数据结构，它或者为空(null)，或者是指向一个结点(node)的引用，该结点含有一个泛型的元素和一个指向另一条链表的引用。</p>
+</blockquote>
+<p>在我看来，因为链表是一种递归的数据结构，故不要把“结点”看成一个“点”。而应该看成是一个<code>value</code> + 该<code>value</code>后的全部链表———它是全部链表的一部分。<br>关于这个<code>value</code>，它可能是任意数据类型。</p>
+<p>一般来说链表类可以写成如下结构：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>为了在调试代码的时候直观地看到链表形如<code>7 -&gt; 0 -&gt; 8 -&gt; null</code>，链表类可以写成如下结构：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="keyword">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListNode</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"arr can not be empty"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        val = nums[<span class="number">0</span>];</span><br><span class="line">        ListNode curr = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            curr.next = <span class="keyword">new</span> ListNode(nums[i]); <span class="comment">//创建ListNode实例，调用前面的构造方法</span></span><br><span class="line">            curr = curr.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StringBuilder s = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        ListNode cur = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            s.append(cur.val);</span><br><span class="line">            s.append(<span class="string">" -&gt; "</span>);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        s.append(<span class="string">"null"</span>);</span><br><span class="line">        <span class="keyword">return</span> s.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在调试的时候，比如向<code>SolutionMe0x0</code>类的<code>testListNode</code>方法中传递链表<code>ListNode lx, ListNode ly</code>，我们可以：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">int</span>[] test1 = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] test2 = &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">4</span>&#125;;</span><br><span class="line">        <span class="comment">//int[] test1 = &#123;6, 7, 8, 3, 2, 7&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test2 = &#123;9, 7, 6, 6&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test1 = &#123;2&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test2 = &#123;5&#125;;</span></span><br><span class="line">        ListNode lx = <span class="keyword">new</span> ListNode(test1);</span><br><span class="line">        ListNode ly = <span class="keyword">new</span> ListNode(test2);</span><br><span class="line">        System.out.println(SolutionMe0x0.testListNode(lx));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -392,139 +548,6 @@
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode #5 链表的中间结点（Middle of the Linked List）</title>
-    <url>/2020/03/23/LeetCode-5-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%88Middle-of-the-Linked-List%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给定一个带有头结点 head 的非空单链表，返回链表的中间结点。<br>如果有两个中间结点，则返回第二个中间结点。</p>
-</blockquote>
-<p><strong>示例1：</strong></p>
-<blockquote>
-<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.</p>
-</blockquote>
-<p><strong>示例2：</strong></p>
-<blockquote>
-<p>输入：[1,2,3,4,5,6]<br>输出：此列表中的结点 4 (序列化形式：[4,5,6])<br>由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。</p>
-</blockquote>
-<p><strong>提示：</strong></p>
-<ul>
-<li>给定链表的结点数介于 1 和 100 之间。</li>
-</ul>
-<hr>
-<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>定义一个快指针，定义一个慢指针。其中快指针每个循环走两部，慢指针走一步。这样，当快指针走慢整个链表，由于其速度是慢指针的二倍，故慢指针停留的位置即为链表的中间结点。</p>
-<p>注意到，当链表结点个数为偶时，即链表有两个中间结点。此时，题干要求返回第二个结点。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>若题干要求返回第一个结点，应该这样：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">// return secondary node while we got a even node linkedList</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链表类数组"><a href="#链表类数组" class="headerlink" title="链表类数组"></a>链表类数组</h3><p>换个思路，当我们知道链表结点个数，个数/2即为中间结点位置。我们可以创建一个链表类数组（记得曾经用过的计数数组吗？数组是个好东西，我们要把它玩坏！）循环链表每个结点，把它放在数组里。</p>
-<p>注意到，由于题干给出当有两个中间结点取其第二个，我们正好可以利用整形变量特征————int a = 5 / 2，则a被强制转换向下取整为2。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode[] arr = <span class="keyword">new</span> ListNode[<span class="number">100</span>]; <span class="comment">//we have restriction about length of linkedList</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr[i++] = head;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[count / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者用ArratList可以稍微稍微节省点空间。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        List&lt;ListNode&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr.add(head);</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr.get(arr.size() / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/middle-of-the-linked-list/</a></p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-        <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode # 7 三维形体的表面积（Surface Area of 3D Shapes）</title>
-    <url>/2020/03/25/LeetCode-7-%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF%EF%BC%88Surface-Area-of-3D-Shapes%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>在 N * N 的网格上，我们放置一些 1 * 1 * 1  的立方体。</p>
-<p>每个值 v = grid[i][j] 表示 v 个正方体叠放在对应单元格 (i, j) 上。</p>
-<p>请你返回最终形体的表面积。</p>
-</blockquote>
-<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
-<p>输入：[[2]]<br>输出：10</p>
-</blockquote>
-<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
-<p>输入：[[1,2],[3,4]]<br>输出：34</p>
-</blockquote>
-<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><blockquote>
-<p>输入：[[1,0],[0,2]]<br>输出：16</p>
-</blockquote>
-<h3 id="示例4："><a href="#示例4：" class="headerlink" title="示例4："></a>示例4：</h3><blockquote>
-<p>输入：[[1,1,1],[1,0,1],[1,1,1]]<br>输出：32</p>
-</blockquote>
-<h3 id="示例5："><a href="#示例5：" class="headerlink" title="示例5："></a>示例5：</h3><blockquote>
-<p>输入：[[2,2,2],[2,1,2],[2,2,2]]<br>输出：46</p>
-</blockquote>
-<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><blockquote>
-<ul>
-<li>1 &lt;= N &lt;= 50</li>
-<li>0 &lt;= grid[i][j] &lt;= 50</li>
-</ul>
-</blockquote>
-<hr>
-<p>用示例5举例，二维数组<code>[[2,2,2],[2,1,2],[2,2,2]]</code>：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] grid = &#123;</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>表明一个3*3网格，每个格子分别放置对应数字的方块。<br>那么，表面积 = 总数 * 6 - 2(x + y + z)，其中x, y, z分别表示x, y, z方向重叠面数</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">surfaceArea</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// this surface means hidden surface</span></span><br><span class="line">        <span class="keyword">int</span> surfaceZ = <span class="number">0</span>, surfaceY = <span class="number">0</span>, surfaceX = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// value count</span></span><br><span class="line">        <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> raw = <span class="number">0</span>; raw &lt; grid.length; raw++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> column = <span class="number">0</span>; column &lt; grid[raw].length; column++) &#123;</span><br><span class="line">                <span class="comment">// count value</span></span><br><span class="line">                value += grid[raw][column];</span><br><span class="line">                <span class="comment">// for each X, Y ,Z count hidden surface</span></span><br><span class="line">                <span class="keyword">if</span> (raw &lt; grid.length - <span class="number">1</span>)</span><br><span class="line">                    surfaceX += Math.min(grid[raw][column], grid[raw+<span class="number">1</span>][column]);</span><br><span class="line">                <span class="keyword">if</span> (column &lt; grid[raw].length - <span class="number">1</span>)</span><br><span class="line">                    surfaceY += Math.min(grid[raw][column], grid[raw][column+<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span> (grid[raw][column] &gt; <span class="number">0</span>)</span><br><span class="line">                    surfaceZ += (grid[raw][column] - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// this surface is real "surface"</span></span><br><span class="line">        <span class="keyword">int</span> surface = <span class="number">0</span>;</span><br><span class="line">        surface = value * <span class="number">6</span> - surfaceX * <span class="number">2</span> - surfaceY * <span class="number">2</span> - surfaceZ * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> surface;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(N^2)，其中 NN 是 grid 中的行和列的数目</li>
-<li>空间复杂度：O(1)</li>
-</ul>
-<h5 id="题目链接https-leetcode-cn-com-problems-surface-area-of-3d-shapes"><a href="#题目链接https-leetcode-cn-com-problems-surface-area-of-3d-shapes" class="headerlink" title="题目链接https://leetcode-cn.com/problems/surface-area-of-3d-shapes/"></a>题目链接<a href="https://leetcode-cn.com/problems/surface-area-of-3d-shapes/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/surface-area-of-3d-shapes/</a></h5>]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-        <tag>二维数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode #6 按摩师（The Masseuse LCCI）</title>
-    <url>/2020/03/24/LeetCode-6-%E6%8C%89%E6%91%A9%E5%B8%88%EF%BC%88The-Masseuse-LCCI%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>一个有名的按摩师会收到源源不断的预约请求，每个预约都可以选择接或&gt; 不接。在每次预约服务之间要有休息时间，因此她不能接受相邻的预约。&gt; 给定一个预约请求序列，替按摩师找到最优的预约集合（总预约时间最长），返回总的分钟数。</p>
-<p><strong>注意</strong>：本题相对原题稍作改动</p>
-</blockquote>
-<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
-<p>输入： [1,2,3,1]<br>输出： 4<br>解释： 选择 1 号预约和 3 号预约，总时长 = 1 + 3 = 4。</p>
-</blockquote>
-<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
-<p>输入： [2,7,9,3,1]<br>输出： 12<br>解释： 选择 1 号预约、 3 号预约和 5 号预约，总时长 = 2 + 9 + 1 &gt; = 12。</p>
-</blockquote>
-<h3 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h3><blockquote>
-<p>输入： [2,1,4,5,3,1,1,3]<br>输出： 12<br>解释： 选择 1 号预约、 3 号预约、 5 号预约和 8 号预约，总时长 = &gt; 2 + 4 + 3 + 3 = 12。</p>
-</blockquote>
-<hr>
-<h3 id="一维状态数组"><a href="#一维状态数组" class="headerlink" title="一维状态数组"></a>一维状态数组</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">massage</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums.length == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = Math.max(nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            dp[i] = Math.max(dp[i-<span class="number">1</span>], dp[i-<span class="number">2</span>]+nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[dp.length-<span class="number">1</span>];<span class="comment">//or i-1 because i++ in last step</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(N)O(N)，NN 是数组的长度；</li>
-<li>空间复杂度：O(N)O(N)，状态数组的大小为 N</li>
-</ul>
-<h3 id="一维状态数组-「滚动数组」"><a href="#一维状态数组-「滚动数组」" class="headerlink" title="一维状态数组+「滚动数组」"></a>一维状态数组+「滚动数组」</h3><p>使用 3 个变量滚动完成计算，将空间优化到常数级别。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionSO1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">massage</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums.length == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> pre2 = <span class="number">0</span>, pre = <span class="number">0</span>, cur = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            cur = Math.max(pre, pre2 + num);</span><br><span class="line">            pre2 = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>时间复杂度：O(N)，N是数组的长度；</li>
-<li>空间复杂度：O(1)，状态数组的大小为 3，常数空间。</li>
-</ul>
-<h5 id="题目链接https-leetcode-cn-com-problems-the-masseuse-lcci"><a href="#题目链接https-leetcode-cn-com-problems-the-masseuse-lcci" class="headerlink" title="题目链接https://leetcode-cn.com/problems/the-masseuse-lcci/"></a>题目链接<a href="https://leetcode-cn.com/problems/the-masseuse-lcci/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/the-masseuse-lcci/</a></h5><h5 id="参考题解"><a href="#参考题解" class="headerlink" title="参考题解"></a>参考题解</h5><blockquote>
-<p><a href="https://leetcode-cn.com/problems/the-masseuse-lcci/solution/dong-tai-gui-hua-by-liweiwei1419-8/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/the-masseuse-lcci/solution/dong-tai-gui-hua-by-liweiwei1419-8/</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -595,29 +618,6 @@
       </tags>
   </entry>
   <entry>
-    <title>方便调试的链表类实现</title>
-    <url>/2020/03/26/%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p>链表是一种特殊的数据结构：<br><img src="2020-03-26-%E6%96%B9%E4%BE%BF%E8%B0%83%E8%AF%95%E7%9A%84%E9%93%BE%E8%A1%A8%E7%B1%BB%E5%AE%9E%E7%8E%B0/%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="pic0x0"><br>它包含了两部分：<br>$$ListNodePtr<br>\begin{cases}{value} \\<br>{next}\begin{cases}{value} \\<br>                    {next}\begin{cases}{value} \\<br>                                       {next…}<br>                                       \end{cases}<br>                    \end{cases}<br>\end{cases}<br>$$<br>在《算法 第4版》中是这样描述的：</p>
-<blockquote>
-<p>链表是一种递归的数据结构，它或者为空(null)，或者是指向一个结点(node)的引用，该结点含有一个泛型的元素和一个指向另一条链表的引用。</p>
-</blockquote>
-<p>在我看来，因为链表是一种递归的数据结构，故不要把“结点”看成一个“点”。而应该看成是一个<code>value</code> + 该<code>value</code>后的全部链表———它是全部链表的一部分。<br>关于这个<code>value</code>，它可能是任意数据类型。</p>
-<p>一般来说链表类可以写成如下结构：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>为了在调试代码的时候直观地看到链表形如<code>7 -&gt; 0 -&gt; 8 -&gt; null</code>，链表类可以写成如下结构：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="keyword">int</span> x) &#123;</span><br><span class="line">        val = x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListNode</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"arr can not be empty"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        val = nums[<span class="number">0</span>];</span><br><span class="line">        ListNode curr = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            curr.next = <span class="keyword">new</span> ListNode(nums[i]); <span class="comment">//创建ListNode实例，调用前面的构造方法</span></span><br><span class="line">            curr = curr.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StringBuilder s = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        ListNode cur = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            s.append(cur.val);</span><br><span class="line">            s.append(<span class="string">" -&gt; "</span>);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        s.append(<span class="string">"null"</span>);</span><br><span class="line">        <span class="keyword">return</span> s.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在调试的时候，比如向<code>SolutionMe0x0</code>类的<code>testListNode</code>方法中传递链表<code>ListNode lx, ListNode ly</code>，我们可以：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">int</span>[] test1 = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] test2 = &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">4</span>&#125;;</span><br><span class="line">        <span class="comment">//int[] test1 = &#123;6, 7, 8, 3, 2, 7&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test2 = &#123;9, 7, 6, 6&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test1 = &#123;2&#125;;</span></span><br><span class="line">        <span class="comment">//int[] test2 = &#123;5&#125;;</span></span><br><span class="line">        ListNode lx = <span class="keyword">new</span> ListNode(test1);</span><br><span class="line">        ListNode ly = <span class="keyword">new</span> ListNode(test2);</span><br><span class="line">        System.out.println(SolutionMe0x0.testListNode(lx));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>About me</title>
     <url>/2020/03/27/About-me/</url>
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>&#123;</span><br><span class="line">    String name = <span class="string">"zhangxy"</span>; <span class="comment">// Well, good name.</span></span><br><span class="line">    <span class="keyword">char</span> sex = <span class="string">'male'</span>; <span class="comment">// A tough man.</span></span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">25</span>; <span class="comment">// Grasping the little tail of youth.</span></span><br><span class="line">    <span class="keyword">int</span> hight = <span class="number">170</span>; <span class="comment">// Enough to me.</span></span><br><span class="line">    <span class="keyword">float</span> weight = <span class="number">73.7f</span>; <span class="comment">// Emm, a little bit overweight, but everyday going to gym. Gym is second home. </span></span><br><span class="line">    String edu = <span class="string">"UESTC"</span>; <span class="comment">// Where the water tastes like wine. </span></span><br><span class="line">    String pro = <span class="string">"SE"</span>; <span class="comment">// Making cool stuff.</span></span><br><span class="line">    String marriage = <span class="string">"Single"</span>; <span class="comment">// I'm trying...emm...how to be more attractive ?</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wish</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"春日宴，浊酒一杯歌一遍。再拜陈三愿：</span></span><br><span class="line"><span class="string">                    一愿父母身体常健，</span></span><br><span class="line"><span class="string">                    二愿自己珍惜时间，</span></span><br><span class="line"><span class="string">                    三愿如同梁上燕，</span></span><br><span class="line"><span class="string">                    岁岁年年，快乐无边！"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moreInfo</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Stay tuned:)"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -627,15 +627,6 @@
         <category>me</category>
         <category>About me</category>
       </categories>
-  </entry>
-  <entry>
-    <title>LeetCode # 10 卡牌分组（X of a Kind in a Deck of Cards）</title>
-    <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>计数数组</tag>
-        <tag>最大公约数</tag>
-      </tags>
   </entry>
   <entry>
     <title>求最大公约数（gcd）的一点心得</title>
@@ -656,6 +647,15 @@
       <tags>
         <tag>最大公约数</tag>
         <tag>gcd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode # 10 卡牌分组（X of a Kind in a Deck of Cards）</title>
+    <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>计数数组</tag>
+        <tag>最大公约数</tag>
       </tags>
   </entry>
   <entry>
@@ -689,6 +689,11 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode #1111 有效括号的嵌套深度「Maximum Nesting Depth of Two Valid Parentheses Strings」</title>
+    <url>/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>玩转ffmpeg</title>
     <url>/2020/03/30/%E7%8E%A9%E8%BD%ACffmpeg/</url>
     <content><![CDATA[<h3 id="合并分段视频"><a href="#合并分段视频" class="headerlink" title="合并分段视频"></a>合并分段视频</h3><p><strong>方法1：txt文件保存视频文件名</strong></p>
@@ -716,11 +721,6 @@
       <tags>
         <tag>ffmpeg</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>LeetCode #1111 有效括号的嵌套深度「Maximum Nesting Depth of Two Valid Parentheses Strings」</title>
-    <url>/2020/04/02/LeetCode-1111-%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6%E3%80%8CMaximum-Nesting-Depth-of-Two-Valid-Parentheses-Strings%E3%80%8D/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LeetCode #20 有效的括号「Valid Parentheses」</title>
@@ -772,6 +772,46 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode #42 接雨水（Trapping Rain Water）</title>
+    <url>/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="2020-04-04-LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
+<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
+
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6 </p>
+</blockquote>
+<hr>
+<h3 id="按列计算（动态规划计算最值）"><a href="#按列计算（动态规划计算最值）" class="headerlink" title="按列计算（动态规划计算最值）"></a>按列计算（动态规划计算最值）</h3><p>遍历每列，判断要不要计算列上的积水。<br>如何判断？计算出该列左侧最高列高度，计算右侧最高列高度。<br>若该列比二者都小，则该列需要计算;否则不需计算。<br>如何分别计算某列两侧最值？<br>可维护两个数组分别存储每列左右两侧最值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * [列解法, 动态规划]</span></span><br><span class="line"><span class="comment">     * 1ms</span></span><br><span class="line"><span class="comment">     * 39.3MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] leftSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="comment">//第一列和最后一列不需要计算两侧最值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            leftSideMax[i] = Math.max(leftSideMax[i - <span class="number">1</span>], height[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            rightSideMax[i] = Math.max(rightSideMax[i + <span class="number">1</span>], height[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minimum = Math.min(leftSideMax[j], rightSideMax[j]);</span><br><span class="line">            <span class="keyword">if</span> (height[j] &lt; minimum) &#123;</span><br><span class="line">                res += (minimum - height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p>核心思想是先降后增必有积水。<br>这个就有点像有效括号，一对儿。<br>维护一个单调递减的栈，栈中存入柱子下标。（为什么存入下标而不直接存入高度？因为我们可能会计算两个相隔若干柱子之间的距离。）<br>入栈：栈为空时；当前柱子低于栈顶柱子。<br>出栈：当前柱子高于栈顶柱子。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单调栈 简化代码</span></span><br><span class="line"><span class="comment">     * 4ms - 29.81%</span></span><br><span class="line"><span class="comment">     * 39.5MB, 11.78%</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; height[i] &gt; height[stack.peek()]) &#123; <span class="comment">//有可能可计算体积</span></span><br><span class="line">                <span class="keyword">int</span> heightInfoBeforePop = stack.peek();</span><br><span class="line">                stack.pop(); <span class="comment">// 当前柱子高于栈顶柱子时，出栈。记得出栈前先保存栈高数据。</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) <span class="keyword">break</span>; <span class="comment">//不可计算体积</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> stackTop = stack.peek();</span><br><span class="line">                    res += ((i - stackTop - <span class="number">1</span>) * (Math.min(height[i], height[stackTop]) - height[heightInfoBeforePop]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i); <span class="comment">// 栈空或当前柱子小于等于于栈顶柱子高度时，入栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>动态规划</tag>
+        <tag>单调栈</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阅读代码的一点心得</title>
+    <url>/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<p>阅读代码时，要先看整体架构，再看局部细节。<br>明确哪里没变，哪里会变，怎么变的。</p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」</title>
     <url>/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一幅由 N × N 矩阵表示的图像，其中每个像素的大小为 4 字节。请你设计一种算法，将图像旋转 90 度。</p>
@@ -804,49 +844,14 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode #42 接雨水（Trapping Rain Water）</title>
-    <url>/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="2020-04-04-LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
-<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
-
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6 </p>
-</blockquote>
-<hr>
-<h3 id="按列计算（动态规划计算最值）"><a href="#按列计算（动态规划计算最值）" class="headerlink" title="按列计算（动态规划计算最值）"></a>按列计算（动态规划计算最值）</h3><p>遍历每列，判断要不要计算列上的积水。<br>如何判断？计算出该列左侧最高列高度，计算右侧最高列高度。<br>若该列比二者都小，则该列需要计算;否则不需计算。<br>如何分别计算某列两侧最值？<br>可维护两个数组分别存储每列左右两侧最值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * [列解法, 动态规划]</span></span><br><span class="line"><span class="comment">     * 1ms</span></span><br><span class="line"><span class="comment">     * 39.3MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] leftSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="comment">//第一列和最后一列不需要计算两侧最值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            leftSideMax[i] = Math.max(leftSideMax[i - <span class="number">1</span>], height[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            rightSideMax[i] = Math.max(rightSideMax[i + <span class="number">1</span>], height[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minimum = Math.min(leftSideMax[j], rightSideMax[j]);</span><br><span class="line">            <span class="keyword">if</span> (height[j] &lt; minimum) &#123;</span><br><span class="line">                res += (minimum - height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p>核心思想是先降后增必有积水。<br>这个就有点像有效括号，一对儿。<br>维护一个单调递减的栈，栈中存入柱子下标。（为什么存入下标而不直接存入高度？因为我们可能会计算两个相隔若干柱子之间的距离。）<br>入栈：栈为空时；当前柱子低于栈顶柱子。<br>出栈：当前柱子高于栈顶柱子。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单调栈 简化代码</span></span><br><span class="line"><span class="comment">     * 4ms - 29.81%</span></span><br><span class="line"><span class="comment">     * 39.5MB, 11.78%</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; height[i] &gt; height[stack.peek()]) &#123; <span class="comment">//有可能可计算体积</span></span><br><span class="line">                <span class="keyword">int</span> heightInfoBeforePop = stack.peek();</span><br><span class="line">                stack.pop(); <span class="comment">// 当前柱子高于栈顶柱子时，出栈。记得出栈前先保存栈高数据。</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) <span class="keyword">break</span>; <span class="comment">//不可计算体积</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> stackTop = stack.peek();</span><br><span class="line">                    res += ((i - stackTop - <span class="number">1</span>) * (Math.min(height[i], height[stackTop]) - height[heightInfoBeforePop]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i); <span class="comment">// 栈空或当前柱子小于等于于栈顶柱子高度时，入栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3>]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>动态规划</tag>
-        <tag>单调栈</tag>
-        <tag>双指针</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeecCode #面试题13 机器人的运动范围「」</title>
     <url>/2020/04/08/LeecCode-%E9%9D%A2%E8%AF%95%E9%A2%9813-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4%E3%80%8C%E3%80%8D/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>阅读代码的一点心得</title>
-    <url>/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p>阅读代码时，要先看整体架构，再看局部细节。<br>明确哪里没变，哪里会变，怎么变的。</p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
+    <title>LeetCode #22 括号生成「Generate Parentheses」</title>
+    <url>/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>玩转rclone</title>
@@ -869,11 +874,6 @@
         <tag>Rclone</tag>
         <tag>GoogleDrive</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>LeetCode #22 括号生成「Generate Parentheses」</title>
-    <url>/2020/04/10/LeetCode-22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90%E3%80%8CGenerate-Parentheses%E3%80%8D/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LeetCode #151 翻转字符串里的单词「Reverse Words in a String」</title>
@@ -1004,42 +1004,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VPS测速</title>
-    <url>/2020/04/13/VPS%E6%B5%8B%E9%80%9F/</url>
-    <content><![CDATA[<blockquote>
-<p> <strong>speedtest-cli</strong></p>
-<blockquote>
-<ul>
-<li>下载speedtest-cli<br><code>wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</code></li>
-<li>添加可执行权限<br><code>chmod +x speedtest-cli</code></li>
-<li>以默认的Mbps为单位测速<br><code>./speedtest-cli</code></li>
-<li>以MB为单位测速<br><code>./speedtest-cli --byte</code></li>
-<li>查看可用测速服务器<br><code>./speedtest-cli --list</code></li>
-<li>选择指定服务器测速<br><code>./speedtest-cli --server NumberOfServer</code></li>
-<li>获取帮助<br><code>./speedtest-cli --help</code></li>
-</ul>
-</blockquote>
-<p> <strong>superspeed</strong></p>
-<blockquote>
-<ul>
-<li>下载superspeed<br>. <code>wget https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh</code></li>
-<li>添加可执行权限<br><code>chmod +x superspeed.sh</code></li>
-<li>测速<br><code>./superspeed.sh</code></li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>VPS</tag>
-        <tag>测速</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谷歌云（GCP）给给未分配实例的外部IP地址分配实例</title>
     <url>/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<p>为了给未分配实例的外部IP地址分配实例，必须要保证新的实例与该IP地址在同一地区。<br><img src="2020-04-13-%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/0x0.png" alt="pic0x0"></p>
@@ -1055,29 +1019,6 @@
         <tag>GCE</tag>
         <tag>VM</tag>
         <tag>外部IP地址</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用Shell命令</title>
-    <url>/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><strong>查找当前目录及子目录特定文件（夹）并删除</strong><br><code>find . -name &quot;*.zip&quot; -type f -print -exec rm {} \;</code></p>
-<ul>
-<li><code>.</code>即从当前目录递归查找</li>
-<li><code>-name &#39;*.zip&#39;</code>查找以<code>.zip</code>文件名结尾的对象</li>
-<li><code>-type f</code>该对象为文件</li>
-<li><code>-print</code>屏幕输出</li>
-<li><code>-exec</code>查找之后执行</li>
-<li><code>rm</code>删除<br>如果希望删除目录，可以<code>-type d</code>，其表示对象为目录。另外如果希望递归删除，可以<code>rm -r</code>。如果希望递归强制删除，可以<code>rm -rf</code>。</li>
-</ul>
-<p><strong>查找当前目录及子目录特定文件并移动到目标目录</strong><br><code>find . -name &quot;*.mp4&quot; -type f -print -exec mv -t /home/AriaGo/ {} +;</code></p>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Shell</tag>
       </tags>
   </entry>
   <entry>
@@ -1125,6 +1066,42 @@
       </tags>
   </entry>
   <entry>
+    <title>VPS测速</title>
+    <url>/2020/04/13/VPS%E6%B5%8B%E9%80%9F/</url>
+    <content><![CDATA[<blockquote>
+<p> <strong>speedtest-cli</strong></p>
+<blockquote>
+<ul>
+<li>下载speedtest-cli<br><code>wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</code></li>
+<li>添加可执行权限<br><code>chmod +x speedtest-cli</code></li>
+<li>以默认的Mbps为单位测速<br><code>./speedtest-cli</code></li>
+<li>以MB为单位测速<br><code>./speedtest-cli --byte</code></li>
+<li>查看可用测速服务器<br><code>./speedtest-cli --list</code></li>
+<li>选择指定服务器测速<br><code>./speedtest-cli --server NumberOfServer</code></li>
+<li>获取帮助<br><code>./speedtest-cli --help</code></li>
+</ul>
+</blockquote>
+<p> <strong>superspeed</strong></p>
+<blockquote>
+<ul>
+<li>下载superspeed<br>. <code>wget https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh</code></li>
+<li>添加可执行权限<br><code>chmod +x superspeed.sh</code></li>
+<li>测速<br><code>./superspeed.sh</code></li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>VPS</tag>
+        <tag>测速</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode #200 岛屿数量（Number of Islands）</title>
     <url>/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
@@ -1149,6 +1126,29 @@
         <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用Shell命令</title>
+    <url>/2020/04/18/%E5%B8%B8%E7%94%A8Shell%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><strong>查找当前目录及子目录特定文件（夹）并删除</strong><br><code>find . -name &quot;*.zip&quot; -type f -print -exec rm {} \;</code></p>
+<ul>
+<li><code>.</code>即从当前目录递归查找</li>
+<li><code>-name &#39;*.zip&#39;</code>查找以<code>.zip</code>文件名结尾的对象</li>
+<li><code>-type f</code>该对象为文件</li>
+<li><code>-print</code>屏幕输出</li>
+<li><code>-exec</code>查找之后执行</li>
+<li><code>rm</code>删除<br>如果希望删除目录，可以<code>-type d</code>，其表示对象为目录。另外如果希望递归删除，可以<code>rm -r</code>。如果希望递归强制删除，可以<code>rm -rf</code>。</li>
+</ul>
+<p><strong>查找当前目录及子目录特定文件并移动到目标目录</strong><br><code>find . -name &quot;*.mp4&quot; -type f -print -exec mv -t /home/AriaGo/ {} +;</code></p>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Shell</tag>
       </tags>
   </entry>
   <entry>
@@ -1245,31 +1245,6 @@
       </tags>
   </entry>
   <entry>
-    <title>读书笔记</title>
-    <url>/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li><p>淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。</p>
-</li>
-<li><p>肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。  ——《1Q84》村上春树</p>
-</li>
-<li><p>真诚感谢四步法：</p>
-<blockquote>
-<p>说明行为：就是说清楚对方具体帮你做了什么事；<br>说清影响：说明他帮你的这件事，为你解决了什么问题；<br>分享感受：表达受到帮助后的真实感受；<br>投桃报李：表明对方有需要的话，你也愿意尽力帮忙。</p>
-</blockquote>
-</li>
-<li><p>彭林教授（清华大学人文学院历史系）反对父亲节、母亲节等西方节日。因为中国人是有孝道的，一年四季没有哪一天不孝，君子有终身之孝。而西方人它是没有孝道的，所以他们要找出一天来表示一下。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>读书</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）</title>
     <url>/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个长度为 n 的整数数组 <code>nums</code>，其中 n &gt; 1，返回输出数组 <code>output</code> ，其中 <code>output[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积。</p>
@@ -1302,6 +1277,31 @@
       </categories>
       <tags>
         <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书笔记</title>
+    <url>/2020/06/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><p>淫字论事不论心，论心千古无完人。孝字论心不论事，论事千古无孝子。</p>
+</li>
+<li><p>肉体才是人的神殿，不管里面供奉的是什么，都应该好好保持它的强韧、美丽和清洁。  ——《1Q84》村上春树</p>
+</li>
+<li><p>真诚感谢四步法：</p>
+<blockquote>
+<p>说明行为：就是说清楚对方具体帮你做了什么事；<br>说清影响：说明他帮你的这件事，为你解决了什么问题；<br>分享感受：表达受到帮助后的真实感受；<br>投桃报李：表明对方有需要的话，你也愿意尽力帮忙。</p>
+</blockquote>
+</li>
+<li><p>彭林教授（清华大学人文学院历史系）反对父亲节、母亲节等西方节日。因为中国人是有孝道的，一年四季没有哪一天不孝，君子有终身之孝。而西方人它是没有孝道的，所以他们要找出一天来表示一下。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>读书</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1389,6 +1389,55 @@
       </tags>
   </entry>
   <entry>
+    <title>沟通的艺术</title>
+    <url>/2020/08/01/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/</url>
+    <content><![CDATA[<h3 id="沟通的基本功"><a href="#沟通的基本功" class="headerlink" title="沟通的基本功"></a>沟通的基本功</h3><blockquote>
+<ul>
+<li>聪明的脑子和活跃的思维<blockquote>
+<p>十八核大脑不是盖的，你能透彻地理解对方说的意思，甚至包括言外之意；你能清晰地明白对方语句间的逻辑关系，哪怕他的逻辑存在漏洞你也能够指出；你能设身处地地理解周围所有人的感受，无缝切换各个角色轻松地实现换位思考；你能一定程度上预判对面将要说的话，从而为将来的谈话提前做好准备；</p>
+</blockquote>
+</li>
+<li>敏锐的洞察力（察言观色）</li>
+<li></li>
+</ul>
+</blockquote>
+<h3 id="话题穿插切换"><a href="#话题穿插切换" class="headerlink" title="话题穿插切换"></a>话题穿插切换</h3><p>如果对方对和你要聊的话题并无兴趣的话，这时就需要切换话题，把话题转移到另一个方向去。<br><strong>常见话题切换语句</strong></p>
+<blockquote>
+<ul>
+<li>你知道么，其实。。。<blockquote>
+<p>举例：你知道么，今天你跟平常不太一样。。。</p>
+</blockquote>
+</li>
+<li>我觉得。。。</li>
+<li>对了。。。</li>
+</ul>
+</blockquote>
+<h3 id="1个核心思维模式：「把对方当主角」"><a href="#1个核心思维模式：「把对方当主角」" class="headerlink" title="1个核心思维模式：「把对方当主角」"></a>1个核心思维模式：「把对方当主角」</h3><p>把对方当成聊天的主角，每一步聊天，都围绕着对方，使其感受到「主角」般的爽感，谁都是希望自己被重视，被宠着的。<br>现在，请你在心里默念三遍：<br><strong>TA才是聊天的主角，我要宠着惯着！</strong><br><strong>TA才是聊天的主角，我要宠着惯着！</strong><br><strong>TA才是聊天的主角，我要宠着惯着！</strong></p>
+<h3 id="打招呼"><a href="#打招呼" class="headerlink" title="打招呼"></a>打招呼</h3><blockquote>
+<p>当然首先还是吸引对方的注意，不然的话，你跟对方打招呼结果他没注意到，那就尴尬了哈哈。<br>其次呢，神情自然大方地去释放你阳光的情绪吧。<br>微笑是最能感染人的，但是别皮笑肉不笑那种。用你的眼神去“微笑”，一个温柔的眼神胜过千言万语。眼睛一定要看着对方哦，瞳孔适当放大。<br>打招呼也有intro和outro的，outro可以用关怀的态度，还是把对方当主角宠。比如：注意安全喔、玩的开心喔，等等，当然，最简单的还是拜拜。</p>
+</blockquote>
+<h3 id="怎样说话让对面很容易接下去"><a href="#怎样说话让对面很容易接下去" class="headerlink" title="怎样说话让对面很容易接下去"></a>怎样说话让对面很容易接下去</h3><p><strong>在对方给的回答上做文章，谈谈自己的感受，并抛出一个或多个话题。</strong><br>其实如果你是个接话高手，那么只需要在接住话之后稍加 <strong>感受</strong>，再次将话题回到对方身上即可。</p>
+<h3 id="沟通前的准备"><a href="#沟通前的准备" class="headerlink" title="沟通前的准备"></a>沟通前的准备</h3><blockquote>
+<p><strong>step 1:</strong> 观察。我认为，沟通之前应该迅速判断对面有没有和你沟通的意愿。所以沟通前第一件事，就是用眼观察对方。这一步需要在一瞬间内完成。<br><strong>step 2:</strong> 观察。对的，第二步还是观察，只不过这一步观察对方的状态，根据这一状态可以自然而然开启沟通。<br><strong>step 3:</strong> 营造氛围。这一步开始营造聊天氛围。和人聊天，过了很久之后，具体说些啥，对方可能不会再记起，但是你们聊天的氛围、双方的感受是很难忘却的，特别是当这是一种特别舒服或者特别尴尬的时候。两人见面，不管是两者关系如何，这都不重要，重要的是你对氛围的把控。即便是双方不熟，只要把握好聊天氛围，一样可以有话聊。<br>聊天氛围客观描述：</p>
+<blockquote>
+<ul>
+<li>你自己在即将展开的聊天中扮演什么样的角色，塑造什么样的形象。<br>例1：<strong>自己处于弱势时，可以塑造大方乐观的形象。</strong> 今天和对方在家乐福门口见面，我俩都是从健身房出来，他带了伞，我没带伞，外面下着雨。他有伞我没有，自己处于弱势地位（这里的地位强弱不是说要去竞争什么），这时候你可以营造出一种自己乐观大度的形象：这些雨不算什么，我等会儿再走即可。这样聊天的基调就有了，你对将要发生的谈话已经有了一个非常十足的把握。和谐的氛围油然而生。具体说些啥，这些都不是很重要了。无非就是先寒暄，再顺着你准备的氛围说下去。<br>例2：<strong>塑造赞美者的形象</strong> 今天遇到同事或者同学或者一起健身的朋友，你发现对面穿了一件骚气的衣服，你可以把自己塑造成一个赞美者的形象，其实赞美是一门很深的学问，力度不够，会让人觉得肤浅做作；力度太大会变成讥笑，中国人是最敏感的；力度更大，就成了马屁精，或者舔狗。夸细节啊真诚啊啥的，这些都是最基本的东西，所有人都知道。<br>夸得别人舒服，营造马屁味道，这是需要长期磨炼反思的。人情练达即文章，我现在也不是很在行，以后慢慢补充。<br>例3：____</li>
+<li></li>
+<li><strong>step 4:</strong> 寒暄。此时开始聊天，在正式聊天前，会有一个intro，这是从不说话到正式聊天之间的一个平稳的过度，让对面做好准备，意思是说，我们要开始聊天了，双方都准备一下。<br>寒暄嘛，都是些无关痛痒的废话。它是根据两人 <strong>关系</strong> 来的。<br>中国人寒暄的时候，关系一般或者不熟可以问对方刚发生的事情。你可以问对方吃了吗？刚健完身啊？刚放学啊？刚下班啊？等等<del>我们一般寒暄的时候会根据对方的状态问一下刚发生的事情，这些事情必须是无关痛痒的。但你不要哪壶不开提哪壶，揭人伤疤啥的。一般也不要问对方将要去做什么，因为有些人很在意这些，你问他要去做啥，他可能不想告诉你，会认为你居心叵测，打探隐私。<br>例1： 噫</del>你也从这边走 or 噫<del>好巧啊，在这遇到你 or 噫</del>你也刚下来么 or 噫~很少在这碰到你等等。<br>关系是熟人或者很好，这个时候你再像上面这样寒暄就会拉开距离，千万注意。这时候，你就单刀直入，可以从 <strong>关怀</strong> 的角度入手。不管关系好坏，关怀可以通吃。<br>例2：</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>人际关系</tag>
+        <tag>沟通</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>驾驶技术学习心得</title>
     <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
@@ -1439,55 +1488,6 @@
       </tags>
   </entry>
   <entry>
-    <title>沟通的艺术</title>
-    <url>/2020/08/01/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/</url>
-    <content><![CDATA[<h3 id="沟通的基本功"><a href="#沟通的基本功" class="headerlink" title="沟通的基本功"></a>沟通的基本功</h3><blockquote>
-<ul>
-<li>聪明的脑子和活跃的思维<blockquote>
-<p>十八核大脑不是盖的，你能透彻地理解对方说的意思，甚至包括言外之意；你能清晰地明白对方语句间的逻辑关系，哪怕他的逻辑存在漏洞你也能够指出；你能设身处地地理解周围所有人的感受，无缝切换各个角色轻松地实现换位思考；你能一定程度上预判对面将要说的话，从而为将来的谈话提前做好准备；</p>
-</blockquote>
-</li>
-<li>敏锐的洞察力（察言观色）</li>
-<li></li>
-</ul>
-</blockquote>
-<h3 id="话题穿插切换"><a href="#话题穿插切换" class="headerlink" title="话题穿插切换"></a>话题穿插切换</h3><p>如果对方对和你要聊的话题并无兴趣的话，这时就需要切换话题，把话题转移到另一个方向去。<br><strong>常见话题切换语句</strong></p>
-<blockquote>
-<ul>
-<li>你知道么，其实。。。<blockquote>
-<p>举例：你知道么，今天你跟平常不太一样。。。</p>
-</blockquote>
-</li>
-<li>我觉得。。。</li>
-<li>对了。。。</li>
-</ul>
-</blockquote>
-<h3 id="1个核心思维模式：「把对方当主角」"><a href="#1个核心思维模式：「把对方当主角」" class="headerlink" title="1个核心思维模式：「把对方当主角」"></a>1个核心思维模式：「把对方当主角」</h3><p>把对方当成聊天的主角，每一步聊天，都围绕着对方，使其感受到「主角」般的爽感，谁都是希望自己被重视，被宠着的。<br>现在，请你在心里默念三遍：<br><strong>TA才是聊天的主角，我要宠着惯着！</strong><br><strong>TA才是聊天的主角，我要宠着惯着！</strong><br><strong>TA才是聊天的主角，我要宠着惯着！</strong></p>
-<h3 id="打招呼"><a href="#打招呼" class="headerlink" title="打招呼"></a>打招呼</h3><blockquote>
-<p>当然首先还是吸引对方的注意，不然的话，你跟对方打招呼结果他没注意到，那就尴尬了哈哈。<br>其次呢，神情自然大方地去释放你阳光的情绪吧。<br>微笑是最能感染人的，但是别皮笑肉不笑那种。用你的眼神去“微笑”，一个温柔的眼神胜过千言万语。眼睛一定要看着对方哦，瞳孔适当放大。<br>打招呼也有intro和outro的，outro可以用关怀的态度，还是把对方当主角宠。比如：注意安全喔、玩的开心喔，等等，当然，最简单的还是拜拜。</p>
-</blockquote>
-<h3 id="怎样说话让对面很容易接下去"><a href="#怎样说话让对面很容易接下去" class="headerlink" title="怎样说话让对面很容易接下去"></a>怎样说话让对面很容易接下去</h3><p><strong>在对方给的回答上做文章，谈谈自己的感受，并抛出一个或多个话题。</strong><br>其实如果你是个接话高手，那么只需要在接住话之后稍加 <strong>感受</strong>，再次将话题回到对方身上即可。</p>
-<h3 id="沟通前的准备"><a href="#沟通前的准备" class="headerlink" title="沟通前的准备"></a>沟通前的准备</h3><blockquote>
-<p><strong>step 1:</strong> 观察。我认为，沟通之前应该迅速判断对面有没有和你沟通的意愿。所以沟通前第一件事，就是用眼观察对方。这一步需要在一瞬间内完成。<br><strong>step 2:</strong> 观察。对的，第二步还是观察，只不过这一步观察对方的状态，根据这一状态可以自然而然开启沟通。<br><strong>step 3:</strong> 营造氛围。这一步开始营造聊天氛围。和人聊天，过了很久之后，具体说些啥，对方可能不会再记起，但是你们聊天的氛围、双方的感受是很难忘却的，特别是当这是一种特别舒服或者特别尴尬的时候。两人见面，不管是两者关系如何，这都不重要，重要的是你对氛围的把控。即便是双方不熟，只要把握好聊天氛围，一样可以有话聊。<br>聊天氛围客观描述：</p>
-<blockquote>
-<ul>
-<li>你自己在即将展开的聊天中扮演什么样的角色，塑造什么样的形象。<br>例1：<strong>自己处于弱势时，可以塑造大方乐观的形象。</strong> 今天和对方在家乐福门口见面，我俩都是从健身房出来，他带了伞，我没带伞，外面下着雨。他有伞我没有，自己处于弱势地位（这里的地位强弱不是说要去竞争什么），这时候你可以营造出一种自己乐观大度的形象：这些雨不算什么，我等会儿再走即可。这样聊天的基调就有了，你对将要发生的谈话已经有了一个非常十足的把握。和谐的氛围油然而生。具体说些啥，这些都不是很重要了。无非就是先寒暄，再顺着你准备的氛围说下去。<br>例2：<strong>塑造赞美者的形象</strong> 今天遇到同事或者同学或者一起健身的朋友，你发现对面穿了一件骚气的衣服，你可以把自己塑造成一个赞美者的形象，其实赞美是一门很深的学问，力度不够，会让人觉得肤浅做作；力度太大会变成讥笑，中国人是最敏感的；力度更大，就成了马屁精，或者舔狗。夸细节啊真诚啊啥的，这些都是最基本的东西，所有人都知道。<br>夸得别人舒服，营造马屁味道，这是需要长期磨炼反思的。人情练达即文章，我现在也不是很在行，以后慢慢补充。<br>例3：____</li>
-<li></li>
-<li><strong>step 4:</strong> 寒暄。此时开始聊天，在正式聊天前，会有一个intro，这是从不说话到正式聊天之间的一个平稳的过度，让对面做好准备，意思是说，我们要开始聊天了，双方都准备一下。<br>寒暄嘛，都是些无关痛痒的废话。它是根据两人 <strong>关系</strong> 来的。<br>中国人寒暄的时候，关系一般或者不熟可以问对方刚发生的事情。你可以问对方吃了吗？刚健完身啊？刚放学啊？刚下班啊？等等<del>我们一般寒暄的时候会根据对方的状态问一下刚发生的事情，这些事情必须是无关痛痒的。但你不要哪壶不开提哪壶，揭人伤疤啥的。一般也不要问对方将要去做什么，因为有些人很在意这些，你问他要去做啥，他可能不想告诉你，会认为你居心叵测，打探隐私。<br>例1： 噫</del>你也从这边走 or 噫<del>好巧啊，在这遇到你 or 噫</del>你也刚下来么 or 噫~很少在这碰到你等等。<br>关系是熟人或者很好，这个时候你再像上面这样寒暄就会拉开距离，千万注意。这时候，你就单刀直入，可以从 <strong>关怀</strong> 的角度入手。不管关系好坏，关怀可以通吃。<br>例2：</li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>沟通</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 110 平衡二叉树（Balanced Binary Tree）</title>
     <url>/2020/08/18/LeetCode-110-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Balanced-Binary-Tree%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，判断它是否是高度平衡的二叉树。<br>本题中，一棵高度平衡二叉树定义为：</p>
@@ -1530,14 +1530,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
-    <url>/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>二叉树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree）</title>
     <url>/2020/08/21/LeetCode-104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-Binary-Tree%EF%BC%89/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个二叉树，找出其最大深度。<br>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。<br>说明: 叶子节点是指没有子节点的节点。<br><strong>示例：</strong><br>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
@@ -1567,17 +1559,11 @@
       </tags>
   </entry>
   <entry>
-    <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
-    <url>/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<p>今天在shell上安装Anaconda的时候，发现安装过程中的「风火轮」进度条很有趣，于是就简单实现了一下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">icon = [<span class="string">'\\'</span>, <span class="string">'-'</span>, <span class="string">'/'</span>]</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">40</span>):</span><br><span class="line">    print(<span class="string">'\rAll work and no play make Jack a dull boy: &#123;&#125;'</span>.format(icon[m % <span class="number">3</span>]), end=<span class="string">''</span>)</span><br><span class="line">    time.sleep(<span class="number">0.25</span>)  <span class="comment"># -- control the r.p.m</span></span><br></pre></td></tr></table></figure>
-<p>无非就是把<code>print</code>函数的<code>end=&#39;\n&#39;</code>换成<code>end=&#39;&#39;</code>以便每次打印光标可以回到行首。再就是循环<code>icon</code>列表，制造「动画效果」。<br>比如你要倒计时10s，每0.25s输出一帧，那么就要输出40帧。每一帧依次选取列表的下标可以用m对列表长度取余。</p>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
+    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
+    <url>/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
       <tags>
-        <tag>进度条</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1614,17 +1600,17 @@
       </tags>
   </entry>
   <entry>
-    <title>ProjectNowCoder学习笔记</title>
-    <url>/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="2-1-Spring入门和模板语法"><a href="#2-1-Spring入门和模板语法" class="headerlink" title="2.1 Spring入门和模板语法"></a>2.1 Spring入门和模板语法</h2><h3 id="向模板传递参数"><a href="#向模板传递参数" class="headerlink" title="向模板传递参数"></a>向模板传递参数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> plus.fingerdance.projectx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.ui.Model;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/profile/&#123;group1d&#125;/&#123;userId&#125;"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span>         <span class="comment">//路径参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">profile</span><span class="params">(@PathVariable(<span class="string">"userId"</span>)</span> <span class="keyword">int</span> userId,</span></span><br><span class="line"><span class="function">                          @<span class="title">PathVariable</span><span class="params">(<span class="string">"group1d"</span>)</span> String groupId,</span></span><br><span class="line"><span class="function">                          <span class="comment">//请求参数</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// defaultValue是key的默认值，在url未指定该值时使用它。required标明是否需要key，默认为是，如果在默认状态下</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// url未指定key，则报错，如果设置成 false，则如果url未指定key，则key值会被指定为null</span></span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(<span class="string">"type"</span>)</span> <span class="keyword">int</span> type,</span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"key"</span>, defaultValue = <span class="string">"zz"</span>, required = <span class="keyword">false</span>)</span> String key)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Profile Page of %d who belong to %s;"</span> +</span><br><span class="line">                <span class="string">"Type: %d Key: %s"</span>, userId, groupId, type, key);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 以welcome.html模板的方式返回</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/welcome"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"value1"</span>, <span class="string">"Wow!"</span>);</span><br><span class="line">        List&lt;String&gt; colors = Arrays.asList(<span class="string">"RED"</span>, <span class="string">"BLUE"</span>, <span class="string">"GREEN"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"colors"</span>, colors); <span class="comment">//不加toString会报错：意思就是期待一个String类型啥的，而你给的是一个sequence bla bla</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"welcome"</span>; <span class="comment">//welcome.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>爱的魔力转圈圈：仿shell风火轮进度条实现</title>
+    <url>/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p>今天在shell上安装Anaconda的时候，发现安装过程中的「风火轮」进度条很有趣，于是就简单实现了一下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">icon = [<span class="string">'\\'</span>, <span class="string">'-'</span>, <span class="string">'/'</span>]</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">40</span>):</span><br><span class="line">    print(<span class="string">'\rAll work and no play make Jack a dull boy: &#123;&#125;'</span>.format(icon[m % <span class="number">3</span>]), end=<span class="string">''</span>)</span><br><span class="line">    time.sleep(<span class="number">0.25</span>)  <span class="comment"># -- control the r.p.m</span></span><br></pre></td></tr></table></figure>
+<p>无非就是把<code>print</code>函数的<code>end=&#39;\n&#39;</code>换成<code>end=&#39;&#39;</code>以便每次打印光标可以回到行首。再就是循环<code>icon</code>列表，制造「动画效果」。<br>比如你要倒计时10s，每0.25s输出一帧，那么就要输出40帧。每一帧依次选取列表的下标可以用m对列表长度取余。</p>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
-        <category>Project</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
-        <tag>Project</tag>
+        <tag>进度条</tag>
       </tags>
   </entry>
   <entry>
@@ -1721,6 +1707,20 @@
         <tag>C++</tag>
         <tag>字符串</tag>
         <tag>指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ProjectNowCoder学习笔记</title>
+    <url>/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="2-1-Spring入门和模板语法"><a href="#2-1-Spring入门和模板语法" class="headerlink" title="2.1 Spring入门和模板语法"></a>2.1 Spring入门和模板语法</h2><h3 id="向模板传递参数"><a href="#向模板传递参数" class="headerlink" title="向模板传递参数"></a>向模板传递参数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> plus.fingerdance.projectx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.ui.Model;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/profile/&#123;group1d&#125;/&#123;userId&#125;"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span>         <span class="comment">//路径参数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">profile</span><span class="params">(@PathVariable(<span class="string">"userId"</span>)</span> <span class="keyword">int</span> userId,</span></span><br><span class="line"><span class="function">                          @<span class="title">PathVariable</span><span class="params">(<span class="string">"group1d"</span>)</span> String groupId,</span></span><br><span class="line"><span class="function">                          <span class="comment">//请求参数</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// defaultValue是key的默认值，在url未指定该值时使用它。required标明是否需要key，默认为是，如果在默认状态下</span></span></span><br><span class="line"><span class="function">                          <span class="comment">// url未指定key，则报错，如果设置成 false，则如果url未指定key，则key值会被指定为null</span></span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(<span class="string">"type"</span>)</span> <span class="keyword">int</span> type,</span></span><br><span class="line"><span class="function">                          @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"key"</span>, defaultValue = <span class="string">"zz"</span>, required = <span class="keyword">false</span>)</span> String key)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Profile Page of %d who belong to %s;"</span> +</span><br><span class="line">                <span class="string">"Type: %d Key: %s"</span>, userId, groupId, type, key);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 以welcome.html模板的方式返回</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/welcome"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"value1"</span>, <span class="string">"Wow!"</span>);</span><br><span class="line">        List&lt;String&gt; colors = Arrays.asList(<span class="string">"RED"</span>, <span class="string">"BLUE"</span>, <span class="string">"GREEN"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"colors"</span>, colors); <span class="comment">//不加toString会报错：意思就是期待一个String类型啥的，而你给的是一个sequence bla bla</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"welcome"</span>; <span class="comment">//welcome.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>Project</tag>
       </tags>
   </entry>
   <entry>
@@ -1846,16 +1846,6 @@
       </tags>
   </entry>
   <entry>
-    <title>跑路专用呆湾警署查封页面</title>
-    <url>/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</url>
-    <content><![CDATA[<p>效果图：<br><img src="2020-10-25-%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/img.jpg" alt="pic0x0"></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-TW"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>網站已遭查禁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Fonts --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span>  <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">integrity</span>=<span class="string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        body&#123;</span><br><span class="line">            font-family: 'Raleway', sans-serif;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            -webkit-font-smoothing: antialiased;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            h1, h2, h3, h4, h5&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">font-family</span><span class="selector-pseudo">:'Montserrat'</span>, <span class="selector-tag">sans-serif</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line"><span class="css">            <span class="selector-class">.img-content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: -50%;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">padding</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line">            align-content: center ;</span><br><span class="line">            margin: auto 5% auto 5% ;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>, <span class="selector-id">#30cfd0</span> 0%, <span class="selector-id">#330867</span> 100%);</span></span><br><span class="line">            border-radius: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 3<span class="selector-tag">px</span> 3<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-id">#cccccc</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h1</span>&#123;</span></span><br><span class="line">            font-family: "Microsoft JhengHei" ;</span><br><span class="line">            font-size: 50px;   </span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span><span class="selector-pseudo">:1</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h2</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: <span class="selector-class">.9</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            font-size: 24px;</span><br><span class="line">            padding: 20px 0;</span><br><span class="line">            font-weight: 300;</span><br><span class="line">            width: 70%;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">&lt;script async src='/cdn-cgi/bm/cv/2172558837/api.js'&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"bg-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:-11%;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.niupic.com/images/2020/04/10/7mLl.jpeg"</span> <span class="attr">style</span>=<span class="string">"align-content: center;text-align: center;width: 40%;height: auto; margin: auto auto 1% auto; "</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 text-center"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:firebrick;"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>網站已經遭到查禁<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>(This Domain Has Been Seized)<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>已經違背中華民國著作權法第九十一條及九十二條規範，全部或部分內容涉屬盜版，正進入司法偵查中。<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                        The website is in violation of the Copyright Act of the Republic of China (Taiwan) for its unauthorized use of materials.  Investigation is currently underway.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span>內政部警政署刑事警察局電偵大隊 敬啟 <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                        Criminal Investigation Bureau（Taiwan）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">window</span>[<span class="string">'__CF$cv$params'</span>]=&#123;<span class="attr">r</span>:<span class="string">'580bbb10ab56988d'</span>,<span class="attr">m</span>:<span class="string">'89a8a3de2b7eced49bf0d7d5400be20e69b51188-1586346206-1800-AXfMipt69xS9k39OseM0Cvbr0f3Kbs2a6i15NQFaHcJ2EE29f4nRPtpVQp/KgduXqsjmOfivLCxx7gGaor0X8kEbM7J50HQX16lmdjp4bzFe+Nr/xYV+BXL01+ME0Wcofw=='</span>,<span class="attr">s</span>:[<span class="number">0xde0ce21efa</span>,<span class="number">0xa321d7537b</span>],<span class="attr">fb</span>:<span class="number">0</span>,&#125;&#125;)();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>不亦乐乎</category>
-      </categories>
-  </entry>
-  <entry>
     <title>位运算妙妙屋</title>
     <url>/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</url>
     <content><![CDATA[<h3 id="int类型利用位运算乘除2的k次幂"><a href="#int类型利用位运算乘除2的k次幂" class="headerlink" title="int类型利用位运算乘除2的k次幂"></a>int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
@@ -1893,6 +1883,97 @@
       <tags>
         <tag>归并排序</tag>
         <tag>树状数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跑路专用呆湾警署查封页面</title>
+    <url>/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<p>效果图：<br><img src="2020-10-25-%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/img.jpg" alt="pic0x0"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-TW"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>網站已遭查禁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Fonts --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span>  <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">integrity</span>=<span class="string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        body&#123;</span><br><span class="line">            font-family: 'Raleway', sans-serif;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            -webkit-font-smoothing: antialiased;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            h1, h2, h3, h4, h5&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">font-family</span><span class="selector-pseudo">:'Montserrat'</span>, <span class="selector-tag">sans-serif</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line"><span class="css">            <span class="selector-class">.img-content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: -50%;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.content</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            align-content: center;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin: auto;</span><br><span class="line">            height: 50%;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">padding</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line">            align-content: center ;</span><br><span class="line">            margin: auto 5% auto 5% ;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">top</span>, <span class="selector-id">#30cfd0</span> 0%, <span class="selector-id">#330867</span> 100%);</span></span><br><span class="line">            border-radius: 20px;</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 3<span class="selector-tag">px</span> 3<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-id">#cccccc</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h1</span>&#123;</span></span><br><span class="line">            font-family: "Microsoft JhengHei" ;</span><br><span class="line">            font-size: 50px;   </span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span><span class="selector-pseudo">:1</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h2</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:3</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: <span class="selector-class">.9</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">            <span class="selector-class">.banner</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#FFF</span>;</span></span><br><span class="line">            font-size: 24px;</span><br><span class="line">            padding: 20px 0;</span><br><span class="line">            font-weight: 300;</span><br><span class="line">            width: 70%;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">&lt;script async src='/cdn-cgi/bm/cv/2172558837/api.js'&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"bg-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:-11%;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://i.niupic.com/images/2020/04/10/7mLl.jpeg"</span> <span class="attr">style</span>=<span class="string">"align-content: center;text-align: center;width: 40%;height: auto; margin: auto auto 1% auto; "</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 text-center"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:firebrick;"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>網站已經遭到查禁<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>(This Domain Has Been Seized)<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>已經違背中華民國著作權法第九十一條及九十二條規範，全部或部分內容涉屬盜版，正進入司法偵查中。<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                        The website is in violation of the Copyright Act of the Republic of China (Taiwan) for its unauthorized use of materials.  Investigation is currently underway.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">p</span>&gt;</span>內政部警政署刑事警察局電偵大隊 敬啟 <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                        Criminal Investigation Bureau（Taiwan）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">window</span>[<span class="string">'__CF$cv$params'</span>]=&#123;<span class="attr">r</span>:<span class="string">'580bbb10ab56988d'</span>,<span class="attr">m</span>:<span class="string">'89a8a3de2b7eced49bf0d7d5400be20e69b51188-1586346206-1800-AXfMipt69xS9k39OseM0Cvbr0f3Kbs2a6i15NQFaHcJ2EE29f4nRPtpVQp/KgduXqsjmOfivLCxx7gGaor0X8kEbM7J50HQX16lmdjp4bzFe+Nr/xYV+BXL01+ME0Wcofw=='</span>,<span class="attr">s</span>:[<span class="number">0xde0ce21efa</span>,<span class="number">0xa321d7537b</span>],<span class="attr">fb</span>:<span class="number">0</span>,&#125;&#125;)();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo NexT主题博客的个性化配置</title>
+    <url>/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>记录自己使用Hexo-next主题博客过程中的的一些配置。</p>
+<a id="more"></a>
+
+<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><blockquote>
+<ul>
+<li>在要置顶的文章<code>Front-matter</code>中加入<code>top: true</code></li>
+<li>打开：\hexo\themes\next\layout_macro\post.swig ，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code></li>
+<li>在其下方添加代码段：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;### 置顶 ###&#125;</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-thumb-tack&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &lt;font color&#x3D;7D26CD&gt;置顶&lt;&#x2F;font&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-divider&quot;&gt;|&lt;&#x2F;span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;### 置顶 ###&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="更改行内代码样式"><a href="#更改行内代码样式" class="headerlink" title="更改行内代码样式"></a>更改行内代码样式</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css</li>
+<li>新建文件夹：_custom</li>
+<li>打开_custom文件夹，新建文件：custom.styl</li>
+<li>打开custom.styl，添加如下代码：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>如果想要更改背景色，边距，边框等等可以加上：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">    background: rgba(6, 162, 228, 0.8);</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #06a2e4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>打开：\hexo\themes\next\source\css\main.styl</li>
+<li>在末尾加上一行：<code>@import &quot;_custom/custom.styl&quot;;</code></li>
+</ul>
+</blockquote>
+<h3 id="侧边栏目录高亮颜色"><a href="#侧边栏目录高亮颜色" class="headerlink" title="侧边栏目录高亮颜色"></a>侧边栏目录高亮颜色</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Colors</span></span><br><span class="line"><span class="comment">// colors for use across theme.</span></span><br></pre></td></tr></table></figure></li>
+<li>在其下方添加两个颜色：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$purple       &#x3D; #7D26CD;</span><br><span class="line">$purple-bright&#x3D; #a442ff;</span><br></pre></td></tr></table></figure></li>
+<li>定位到：<code>$sidebar-highlight                    =</code>，修改为<code>$purple-bright</code></li>
+</ul>
+</blockquote>
+<h3 id="头像边框宽度"><a href="#头像边框宽度" class="headerlink" title="头像边框宽度"></a>头像边框宽度</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<code>$site-author-image-border-width       = 2px;</code></li>
+<li>修改为<code>0px</code></li>
+</ul>
+</blockquote>
+<h3 id="文章主体文字行高"><a href="#文章主体文字行高" class="headerlink" title="文章主体文字行高"></a>文章主体文字行高</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
+<li>定位到：<code>$line-height-base         = 2;</code></li>
+<li>修改为<code>1.6</code></li>
+</ul>
+</blockquote>
+<h3 id="页面加载进度条"><a href="#页面加载进度条" class="headerlink" title="页面加载进度条"></a>页面加载进度条</h3><blockquote>
+<ul>
+<li>定位到目录<code>cd /hexo/themes/next</code></li>
+<li>安装进度条依赖：theme-nexr-pace<code>git clone https://github.com/theme-next/theme-next-pace source/lib/pace</code></li>
+<li>打开安装目录<code>cd themes/next/source/lib/three</code>，执行更新：<code>git pull</code></li>
+<li>打开：\hexo\themes\next_config.yml</li>
+<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>设置成<code>true</code></li>
+</ul>
+</blockquote>
+<h3 id="配置Google-Analytic"><a href="#配置Google-Analytic" class="headerlink" title="配置Google Analytic"></a>配置Google Analytic</h3><p>GoogleAnalytic改版又适逢hexo-NexT主题更新，故配置过程有所变化，然而网上教程大多过时了。现详细记录一下自己配置Google Analytic的过程：</p>
+<blockquote>
+<ul>
+<li>打开<code>https://analytics.google.com/analytics</code>并登陆自己的谷歌账号</li>
+<li>根据步骤注册一个Analytics account，并且拿到自己的<code>MEASUREMENT ID</code>。<code>MEASUREMENT ID</code>就是<code>tracking_id</code>。</li>
+<li>拿到<code>MEASUREMENT ID</code>之后，定位到目录：\hexo\themes\next\layout_partials\header，创建一个文件<code>header.swig</code>。如果你用了其他主题，大概位置也是这里，但是文件后缀可能不一样，文件名形如<code>header.xxx</code>。可以自行验证，如果打开文件和下方代码不同则不是我们要找的。在新版NexT主题配置过程中，该文件需要我们手动创建。</li>
+<li>打开文件，填入一下代码（<code>MEASUREMENT ID</code>换成自己的）：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;www.googletagmanager.com&#x2F;gtag&#x2F;js?id&#x3D;MEASUREMENT ID&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.dataLayer &#x3D; window.dataLayer || [];</span><br><span class="line">  function gtag()&#123;dataLayer.push(arguments);&#125;</span><br><span class="line">  gtag(&#39;js&#39;, new Date());</span><br><span class="line">  gtag(&#39;config&#39;, &#39;MEASUREMENT ID&#39;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>打开：\hexo\themes\next_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: </span></span><br></pre></td></tr></table></figure></li>
+<li>在<code>header</code>后添加刚才创建的文件路径，并且取消本行注释：<code>header: T:\Blog\root\hexo\themes\next\layout\_partials\header\header.swig</code></li>
+<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Google Analytics</span></span><br><span class="line"> <span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span></span><br></pre></td></tr></table></figure></li>
+<li>在<code>tracking_id:</code>后填上自己的<code>MEASUREMENT ID</code></li>
+<li>部署完毕</li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -2007,11 +2088,20 @@
 <li>根据步骤注册一个Analytics account，并且拿到自己的<code>MEASUREMENT ID</code>。<code>MEASUREMENT ID</code>就是<code>tracking_id</code>。</li>
 <li>拿到<code>MEASUREMENT ID</code>之后，定位到目录：\hexo\themes\next\layout_partials\header，创建一个文件<code>header.swig</code>。如果你用了其他主题，大概位置也是这里，但是文件后缀可能不一样，文件名形如<code>header.xxx</code>。可以自行验证，如果打开文件和下方代码不同则不是我们要找的。在新版NexT主题配置过程中，该文件需要我们手动创建。</li>
 <li>打开文件，填入一下代码（<code>MEASUREMENT ID</code>换成自己的）：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;www.googletagmanager.com&#x2F;gtag&#x2F;js?id&#x3D;MEASUREMENT ID&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.dataLayer &#x3D; window.dataLayer || [];</span><br><span class="line">  function gtag()&#123;dataLayer.push(arguments);&#125;</span><br><span class="line">  gtag(&#39;js&#39;, new Date());</span><br><span class="line">  gtag(&#39;config&#39;, &#39;MEASUREMENT ID&#39;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
-<li>打开：\hexo\themes\next_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: </span></span><br></pre></td></tr></table></figure></li>
-<li>在<code>header</code>后添加刚才创建的文件路径，并且取消本行注释：<code>header: T:\Blog\root\hexo\themes\next\layout\_partials\header\header.swig</code></li>
-<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Google Analytics</span></span><br><span class="line"> <span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span></span><br></pre></td></tr></table></figure></li>
-<li>在<code>tracking_id:</code>后填上自己的<code>MEASUREMENT ID</code></li>
+<li>打开：\hexo\themes\next_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: </span></span><br></pre></td></tr></table></figure>
+在<code>header</code>后添加刚才创建的文件路径，并且取消本行注释：<code>header: T:\Blog\root\hexo\themes\next\layout\_partials\header\header.swig</code></li>
+<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Google Analytics</span></span><br><span class="line"> <span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span></span><br></pre></td></tr></table></figure>
+在<code>tracking_id:</code>后填上自己的<code>MEASUREMENT ID</code></li>
 <li>部署完毕</li>
+</ul>
+</blockquote>
+<h3 id="为文章添加更新时间"><a href="#为文章添加更新时间" class="headerlink" title="为文章添加更新时间"></a>为文章添加更新时间</h3><p>NexT主题已经为我们设置好了更新时间，可以在：</p>
+<blockquote>
+<ul>
+<li>\hexo\themes\next_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post meta display settings</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">updated_at:</span> </span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+开启<br>但是我们需要在hexo配置文件中做一些修改，打开：\hexo\_config.yml，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## Use post's date for updated date unless set in front-matter</span></span><br><span class="line"><span class="attr">use_date_for_updated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li>将<code>use_date_for_updated: true</code>注释掉，并且在其下方添加一行:<br><code>updated_option: &#39;date&#39;</code></li>
+<li>参考了hexo官方的做法：<a href="https://hexo.io/docs/configuration#Date-Time-format" target="_blank" rel="noopener">https://hexo.io/docs/configuration#Date-Time-format</a><br>“<code>use_date_for_updated</code> is deprecated and will be removed in next major version. Please use <code>updated_option: &#39;date&#39;</code> instead.”</li>
 </ul>
 </blockquote>
 ]]></content>
@@ -2025,84 +2115,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo NexT主题博客的个性化配置</title>
-    <url>/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>记录自己使用Hexo-next主题博客过程中的的一些配置。</p>
-<a id="more"></a>
-
-<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><blockquote>
-<ul>
-<li>在要置顶的文章<code>Front-matter</code>中加入<code>top: true</code></li>
-<li>打开：\hexo\themes\next\layout_macro\post.swig ，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code></li>
-<li>在其下方添加代码段：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;### 置顶 ###&#125;</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-thumb-tack&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &lt;font color&#x3D;7D26CD&gt;置顶&lt;&#x2F;font&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-divider&quot;&gt;|&lt;&#x2F;span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&#123;### 置顶 ###&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<h3 id="更改行内代码样式"><a href="#更改行内代码样式" class="headerlink" title="更改行内代码样式"></a>更改行内代码样式</h3><blockquote>
-<ul>
-<li>打开：\hexo\themes\next\source\css</li>
-<li>新建文件夹：_custom</li>
-<li>打开_custom文件夹，新建文件：custom.styl</li>
-<li>打开custom.styl，添加如下代码：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>如果想要更改背景色，边距，边框等等可以加上：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #7D26CD;</span><br><span class="line">    background: rgba(6, 162, 228, 0.8);</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #06a2e4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>打开：\hexo\themes\next\source\css\main.styl</li>
-<li>在末尾加上一行：<code>@import &quot;_custom/custom.styl&quot;;</code></li>
-</ul>
-</blockquote>
-<h3 id="侧边栏目录高亮颜色"><a href="#侧边栏目录高亮颜色" class="headerlink" title="侧边栏目录高亮颜色"></a>侧边栏目录高亮颜色</h3><blockquote>
-<ul>
-<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
-<li>定位到：<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Colors</span></span><br><span class="line"><span class="comment">// colors for use across theme.</span></span><br></pre></td></tr></table></figure></li>
-<li>在其下方添加两个颜色：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$purple       &#x3D; #7D26CD;</span><br><span class="line">$purple-bright&#x3D; #a442ff;</span><br></pre></td></tr></table></figure></li>
-<li>定位到：<code>$sidebar-highlight                    =</code>，修改为<code>$purple-bright</code></li>
-</ul>
-</blockquote>
-<h3 id="头像边框宽度"><a href="#头像边框宽度" class="headerlink" title="头像边框宽度"></a>头像边框宽度</h3><blockquote>
-<ul>
-<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
-<li>定位到：<code>$site-author-image-border-width       = 2px;</code></li>
-<li>修改为<code>0px</code></li>
-</ul>
-</blockquote>
-<h3 id="文章主体文字行高"><a href="#文章主体文字行高" class="headerlink" title="文章主体文字行高"></a>文章主体文字行高</h3><blockquote>
-<ul>
-<li>打开：\hexo\themes\next\source\css_variables\base.styl</li>
-<li>定位到：<code>$line-height-base         = 2;</code></li>
-<li>修改为<code>1.6</code></li>
-</ul>
-</blockquote>
-<h3 id="页面加载进度条"><a href="#页面加载进度条" class="headerlink" title="页面加载进度条"></a>页面加载进度条</h3><blockquote>
-<ul>
-<li>定位到目录<code>cd /hexo/themes/next</code></li>
-<li>安装进度条依赖：theme-nexr-pace<code>git clone https://github.com/theme-next/theme-next-pace source/lib/pace</code></li>
-<li>打开安装目录<code>cd themes/next/source/lib/three</code>，执行更新：<code>git pull</code></li>
-<li>打开：\hexo\themes\next_config.yml</li>
-<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
-<li>设置成<code>true</code></li>
-</ul>
-</blockquote>
-<h3 id="配置Google-Analytic"><a href="#配置Google-Analytic" class="headerlink" title="配置Google Analytic"></a>配置Google Analytic</h3><p>GoogleAnalytic改版又适逢hexo-NexT主题更新，故配置过程有所变化，然而网上教程大多过时了。现详细记录一下自己配置Google Analytic的过程：</p>
-<blockquote>
-<ul>
-<li>打开<code>https://analytics.google.com/analytics</code>并登陆自己的谷歌账号</li>
-<li>根据步骤注册一个Analytics account，并且拿到自己的<code>MEASUREMENT ID</code>。<code>MEASUREMENT ID</code>就是<code>tracking_id</code>。</li>
-<li>拿到<code>MEASUREMENT ID</code>之后，定位到目录：\hexo\themes\next\layout_partials\header，创建一个文件<code>header.swig</code>。如果你用了其他主题，大概位置也是这里，但是文件后缀可能不一样，文件名形如<code>header.xxx</code>。可以自行验证，如果打开文件和下方代码不同则不是我们要找的。在新版NexT主题配置过程中，该文件需要我们手动创建。</li>
-<li>打开文件，填入一下代码（<code>MEASUREMENT ID</code>换成自己的）：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;www.googletagmanager.com&#x2F;gtag&#x2F;js?id&#x3D;MEASUREMENT ID&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.dataLayer &#x3D; window.dataLayer || [];</span><br><span class="line">  function gtag()&#123;dataLayer.push(arguments);&#125;</span><br><span class="line">  gtag(&#39;js&#39;, new Date());</span><br><span class="line">  gtag(&#39;config&#39;, &#39;MEASUREMENT ID&#39;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
-<li>打开：\hexo\themes\next_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: </span></span><br></pre></td></tr></table></figure></li>
-<li>在<code>header</code>后添加刚才创建的文件路径，并且取消本行注释：<code>header: T:\Blog\root\hexo\themes\next\layout\_partials\header\header.swig</code></li>
-<li>定位到：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Google Analytics</span></span><br><span class="line"> <span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span></span><br></pre></td></tr></table></figure></li>
-<li>在<code>tracking_id:</code>后填上自己的<code>MEASUREMENT ID</code></li>
-<li>部署完毕</li>
-</ul>
-</blockquote>
-]]></content>
+    <title>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</title>
+    <url>/2020/03/07/%E7%BB%99%E6%82%A8%E6%8B%9C%E4%B8%AA%E6%99%9A%E5%B9%B4%EF%BC%8C%E7%A5%9D%E6%82%A8%E6%96%B0%E7%9A%84%E4%B8%80%E5%B9%B4%E5%BF%83%E6%98%8E%E7%9C%BC%E4%BA%AE%EF%BC%8C%E7%99%BE%E6%AF%92%E4%B8%8D%E4%BE%B5/</url>
+    <content><![CDATA[<h1 id="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"><a href="#给您拜个晚年，祝您新的一年心明眼亮，百毒不侵" class="headerlink" title="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"></a>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</h1><h2 id="一点感悟"><a href="#一点感悟" class="headerlink" title="一点感悟"></a>一点感悟</h2><h3 id="知乎有提问，新冠蔓延能带来哪些正面意义。"><a href="#知乎有提问，新冠蔓延能带来哪些正面意义。" class="headerlink" title="知乎有提问，新冠蔓延能带来哪些正面意义。"></a>知乎有提问，新冠蔓延能带来哪些正面意义。</h3><h3 id="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"><a href="#当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？" class="headerlink" title="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"></a>当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？</h3><h3 id="这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"><a href="#这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。" class="headerlink" title="这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"></a>这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。</h3><h3 id="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"><a href="#惊蛰刚过，我仿佛已经看见万物复苏。祝好！" class="headerlink" title="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"></a>惊蛰刚过，我仿佛已经看见万物复苏。祝好！</h3>]]></content>
       <categories>
-        <category>不亦乐乎</category>
-        <category>博客</category>
+        <category>生活</category>
       </categories>
       <tags>
-        <tag>博客</tag>
-        <tag>Blog</tag>
+        <tag>新冠</tag>
       </tags>
   </entry>
   <entry>
@@ -2122,17 +2142,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</title>
-    <url>/2020/03/07/%E7%BB%99%E6%82%A8%E6%8B%9C%E4%B8%AA%E6%99%9A%E5%B9%B4%EF%BC%8C%E7%A5%9D%E6%82%A8%E6%96%B0%E7%9A%84%E4%B8%80%E5%B9%B4%E5%BF%83%E6%98%8E%E7%9C%BC%E4%BA%AE%EF%BC%8C%E7%99%BE%E6%AF%92%E4%B8%8D%E4%BE%B5/</url>
-    <content><![CDATA[<h1 id="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"><a href="#给您拜个晚年，祝您新的一年心明眼亮，百毒不侵" class="headerlink" title="给您拜个晚年，祝您新的一年心明眼亮，百毒不侵"></a>给您拜个晚年，祝您新的一年心明眼亮，百毒不侵</h1><h2 id="一点感悟"><a href="#一点感悟" class="headerlink" title="一点感悟"></a>一点感悟</h2><h3 id="知乎有提问，新冠蔓延能带来哪些正面意义。"><a href="#知乎有提问，新冠蔓延能带来哪些正面意义。" class="headerlink" title="知乎有提问，新冠蔓延能带来哪些正面意义。"></a>知乎有提问，新冠蔓延能带来哪些正面意义。</h3><h3 id="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"><a href="#当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？" class="headerlink" title="当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？"></a>当时就震惊了。题主是在开玩笑吗，还是对灾难没什么认识，亦或是在绝望的暗夜中寻找光明？试问，文化大革命给我们带来了哪些正面的意义？98洪水呢？汶川地震呢？</h3><h3 id="这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"><a href="#这他妈是灾难-ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。" class="headerlink" title="这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。"></a>这他妈是灾难,ok？我建议题主问问在疫情中被感染的人，放心，你会被打死。问这种问题的时候，考虑一下在受灾者的感受，考虑一下奔赴在一线的医护人员的感受。</h3><h3 id="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"><a href="#惊蛰刚过，我仿佛已经看见万物复苏。祝好！" class="headerlink" title="惊蛰刚过，我仿佛已经看见万物复苏。祝好！"></a>惊蛰刚过，我仿佛已经看见万物复苏。祝好！</h3>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>新冠</tag>
-      </tags>
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
