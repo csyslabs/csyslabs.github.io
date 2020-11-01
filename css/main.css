@@ -1252,10 +1252,13 @@ pre .javascript .function {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e2ff69;
+  background: #3ddaff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1345,11 +1348,11 @@ pre .javascript .function {
   color: #f5f5f5;
 }
 .sidebar-nav .sidebar-nav-active {
-  border-bottom-color: #87daff;
-  color: #87daff;
+  border-bottom-color: #a442ff;
+  color: #a442ff;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #87daff;
+  color: #a442ff;
 }
 .sidebar-panel {
   display: none;
@@ -1378,7 +1381,7 @@ pre .javascript .function {
   }
 }
 .sidebar-toggle:hover .toggle-line {
-  background: #87daff;
+  background: #a442ff;
 }
 .post-toc {
   font-size: 0.875em;
@@ -1417,14 +1420,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  border-bottom-color: #87daff;
-  color: #87daff;
+  border-bottom-color: #a442ff;
+  color: #a442ff;
 }
 .post-toc .nav .active-current > a {
-  color: #87daff;
+  color: #a442ff;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #a442ff;
 }
 .site-state {
   display: flex;
@@ -1650,7 +1653,7 @@ pre .javascript .function {
   width: initial;
 }
 .back-to-top:hover {
-  color: #87daff;
+  color: #a442ff;
 }
 .back-to-top.back-to-top-on {
   bottom: 19px;
@@ -1662,7 +1665,7 @@ pre .javascript .function {
   }
 }
 .reading-progress-bar {
-  background: #37c6c0;
+  background: #a442ff;
   display: block;
   height: 3px;
   left: 0;
