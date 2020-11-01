@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：记录自己使用Hexo-next主题博客过程中的的一些配置。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-30T20:54:39.000Z">
-<meta property="article:modified_time" content="2020-11-01T09:04:39.356Z">
+<meta property="article:modified_time" content="2020-11-01T14:21:51.201Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="Blog">
@@ -256,7 +256,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-01 17:04:39" itemprop="dateModified" datetime="2020-11-01T17:04:39+08:00">2020-11-01</time>
+                <time title="Modified: 2020-11-01 22:21:51" itemprop="dateModified" datetime="2020-11-01T22:21:51+08:00">2020-11-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -356,6 +356,20 @@
 <li>定位到：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Google Analytics</span></span><br><span class="line"> <span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span></span><br></pre></td></tr></table></figure></li>
 <li>在<code>tracking_id:</code>后填上自己的<code>MEASUREMENT ID</code></li>
 <li>部署完毕</li>
+</ul>
+</blockquote>
+<h3 id="修复Pjax导致的图片显示异常"><a href="#修复Pjax导致的图片显示异常" class="headerlink" title="修复Pjax导致的图片显示异常"></a>修复Pjax导致的图片显示异常</h3><p>在官方对Pjax插件的说明中，我们可以看到其明确表示启用Pjax插件必须配合文章中的图片使用绝对路径才能让图片正常显示：<br><a href="https://theme-next.js.org/docs/third-party-services/external-libraries" target="_blank" rel="noopener">https://theme-next.js.org/docs/third-party-services/external-libraries</a><br>“Please use the <strong>absolute path</strong> of the image or Hexo asset_img tag in your posts, <strong>otherwise the images may fail to load during Pjax refresh.</strong>“<br>我们使用<code>hexo-asset-image</code>插件后，执行<code>hexo new &quot;new title&quot;</code>新建文章后，会在文章所在_post目录下同时新建一个与文章同名的目录。当需要插入图片时，只需将图片放入该目录中，并且在文章内引用图片即可。</p>
+<blockquote>
+<ul>
+<li>在使用Pjax之前，我们的引用方式为：<br><code>![picture name in post](new title/image.jpg)</code></li>
+<li>使用Pjax后，需要改为绝对路径：<br><code>![picture name in post](image.jpg)</code></li>
+</ul>
+</blockquote>
+<h3 id="设置点击头像回到主页"><a href="#设置点击头像回到主页" class="headerlink" title="设置点击头像回到主页"></a>设置点击头像回到主页</h3><blockquote>
+<ul>
+<li>打开hexo\themes\next\layout_partials\sidebar\site-overview.swig</li>
+<li>定位到: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img class&#x3D;&quot;site-author-image&quot; itemprop&#x3D;&quot;image&quot; alt&#x3D;&quot;&#123;&#123; author &#125;&#125;&quot;</span><br><span class="line">  src&#x3D;&quot;&#123;&#123; url_for(theme.avatar.url) &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<li>更改为:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#x2F;&quot;&gt;</span><br><span class="line">  &lt;img class&#x3D;&quot;site-author-image&quot; itemprop&#x3D;&quot;image&quot; alt&#x3D;&quot;&#123;&#123; author &#125;&#125;&quot;</span><br><span class="line">    src&#x3D;&quot;&#123;&#123; url_for(theme.avatar.url) &#125;&#125;&quot;&gt;</span><br><span class="line">&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </blockquote>
 
@@ -458,14 +472,16 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章置顶"><span class="nav-number">1.</span> <span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改行内代码样式"><span class="nav-number">2.</span> <span class="nav-text">更改行内代码样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏目录高亮颜色"><span class="nav-number">3.</span> <span class="nav-text">侧边栏目录高亮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像边框宽度"><span class="nav-number">4.</span> <span class="nav-text">头像边框宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章主体文字行高"><span class="nav-number">5.</span> <span class="nav-text">文章主体文字行高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面加载进度条"><span class="nav-number">6.</span> <span class="nav-text">页面加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Google-Analytic"><span class="nav-number">7.</span> <span class="nav-text">配置Google Analytic</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章置顶"><span class="nav-number">1.</span> <span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改行内代码样式"><span class="nav-number">2.</span> <span class="nav-text">更改行内代码样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏目录高亮颜色"><span class="nav-number">3.</span> <span class="nav-text">侧边栏目录高亮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像边框宽度"><span class="nav-number">4.</span> <span class="nav-text">头像边框宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章主体文字行高"><span class="nav-number">5.</span> <span class="nav-text">文章主体文字行高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面加载进度条"><span class="nav-number">6.</span> <span class="nav-text">页面加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Google-Analytic"><span class="nav-number">7.</span> <span class="nav-text">配置Google Analytic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修复Pjax导致的图片显示异常"><span class="nav-number">8.</span> <span class="nav-text">修复Pjax导致的图片显示异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置点击头像回到主页"><span class="nav-number">9.</span> <span class="nav-text">设置点击头像回到主页</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
     <img class="site-author-image" itemprop="image" alt="ESP"
       src="/images/avatar.jpg">
+  </a>
   <p class="site-author-name" itemprop="name">ESP</p>
   <div class="site-description" itemprop="description">我太菜被关起来了</div>
 </div>
