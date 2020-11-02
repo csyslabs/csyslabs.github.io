@@ -46,17 +46,11 @@
     <link href="https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/"/>
     <id>https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/</id>
     <published>2020-10-30T14:37:34.000Z</published>
-    <updated>2020-10-30T15:50:40.785Z</updated>
+    <updated>2020-11-02T13:35:06.069Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-隐藏多余的「展开更多」&quot;&gt;&lt;a href=&quot;#1-隐藏多余的「展开更多」&quot; class=&quot;headerlink&quot; title=&quot;1. 隐藏多余的「展开更多」&quot;&gt;&lt;/a&gt;1.
-        
-      
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录在使用hexo-yilia主题时的一些定制选项。&lt;/p&gt;
     
     </summary>
     
@@ -111,18 +105,11 @@
     <link href="https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/"/>
     <id>https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</id>
     <published>2020-10-25T15:31:52.000Z</published>
-    <updated>2020-11-01T10:35:32.567Z</updated>
+    <updated>2020-11-02T13:38:33.400Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;效果图：&lt;br&gt;&lt;img src=&quot;img.jpg&quot; alt=&quot;pic0x0&quot;&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;显示台湾警察署查封网站的页面html源码。&lt;/p&gt;
     
     </summary>
     
@@ -137,17 +124,11 @@
     <link href="https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/"/>
     <id>https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</id>
     <published>2020-10-25T08:09:15.000Z</published>
-    <updated>2020-10-25T08:47:58.662Z</updated>
+    <updated>2020-11-02T13:37:09.579Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;int类型利用位运算乘除2的k次幂&quot;&gt;&lt;a href=&quot;#int类型利用位运算乘除2的k次幂&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;位运算使用技巧。&lt;/p&gt;
     
     </summary>
     
@@ -197,17 +178,11 @@
     <link href="https://www.fingerdance.plus/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/"/>
     <id>https://www.fingerdance.plus/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/</id>
     <published>2020-10-19T13:44:42.000Z</published>
-    <updated>2020-10-19T14:04:23.962Z</updated>
+    <updated>2020-11-02T13:40:22.126Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;youtube-dl -f &amp;quot;bestvideo[width&amp;gt;=&amp;lt;resolution width such as: 3840&amp;gt;]+bestaudio/best&amp;quot; -ciw -o
-        
-      
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;使用youtube-dl一键下载指定YouTube频道所有视频。&lt;/p&gt;
     
     </summary>
     
@@ -264,7 +239,7 @@
     <link href="https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-09-04T08:13:18.000Z</published>
-    <updated>2020-11-01T14:17:14.212Z</updated>
+    <updated>2020-11-02T14:33:29.584Z</updated>
     
     <summary type="html">
     
@@ -485,8 +460,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
@@ -512,8 +487,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
@@ -562,9 +537,9 @@
     
       <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
       <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
+    
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   
@@ -614,11 +589,11 @@
     
       <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+    
       <category term="曾仕强" scheme="https://www.fingerdance.plus/tags/%E6%9B%BE%E4%BB%95%E5%BC%BA/"/>
     
       <category term="哲学" scheme="https://www.fingerdance.plus/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   

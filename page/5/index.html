@@ -614,7 +614,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-17 08:28:57" itemprop="dateModified" datetime="2020-10-17T08:28:57+08:00">2020-10-17</time>
+                <time title="Modified: 2020-11-02 21:56:55" itemprop="dateModified" datetime="2020-11-02T21:56:55+08:00">2020-11-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -644,25 +644,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="合并分段视频"><a href="#合并分段视频" class="headerlink" title="合并分段视频"></a>合并分段视频</h3><p><strong>方法1：txt文件保存视频文件名</strong></p>
-<blockquote>
-<p><code>ffmpeg -f concat -safe 0 -i files.txt -c copy &quot;merge.MP4&quot;</code></p>
-</blockquote>
-<p>其中files.txt中写入分段视频文件名</p>
-<blockquote>
-<p>file  name0x0.ts<br>file  name0x1.ts<br>file  name0x2.ts<br>file  name0x3.ts<br>file  name0x4.ts<br>file  name0x5.ts</p>
-</blockquote>
-<p><strong>方法2：直接写入各个视频文件名</strong></p>
-<blockquote>
-<p><code>ffmpeg -i &quot;concat:name0x0|name0x1|name0x2|name0x3&quot; -c copy &quot;merge.mp4&quot;</code></p>
-</blockquote>
-<h3 id="视频转换格式"><a href="#视频转换格式" class="headerlink" title="视频转换格式"></a>视频转换格式</h3><blockquote>
-<p><code>ffmpeg -i &quot;video.ts&quot; -vcodec copy -acodec copy &quot;video.mp4&quot;</code></p>
-</blockquote>
-<h3 id="截取一段视频"><a href="#截取一段视频" class="headerlink" title="截取一段视频"></a>截取一段视频</h3><p>从第12秒截取到294秒：<br><code>ffmpeg  -i 0x0.mkv -ss 12 -c copy -to 294 0x1.mp4</code></p>
-<h3 id="提取视频中的音频"><a href="#提取视频中的音频" class="headerlink" title="提取视频中的音频"></a>提取视频中的音频</h3><p><code>ffmpeg -i xxx.mp4 -f mp3 -ar 16000 xxx.mp3</code><br>其中：<br>xxx.mp4 视频文件<br>-f mp3 mp3编码<br>-ar 16000 音频采样率<br>xxx.mp3输出的音频文件</p>
-<p><strong>未完待续</strong></p>
-
+          <p><strong>摘要：</strong><br>FFmpeg的使用技巧。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/30/%E7%8E%A9%E8%BD%ACffmpeg/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
