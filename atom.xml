@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-03T09:41:31.527Z</updated>
+  <updated>2020-11-03T17:21:53.586Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AcWing 799.最长连续不重复子序列</title>
+    <link href="https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/</id>
+    <published>2020-11-03T17:10:48.000Z</published>
+    <updated>2020-11-03T17:21:53.586Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;一道经典的双指针题目。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo NexT主题博客的个性化配置</title>
     <link href="https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
     <id>https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
     <published>2020-10-30T20:54:39.000Z</published>
-    <updated>2020-11-03T09:41:31.527Z</updated>
+    <updated>2020-11-03T16:13:27.637Z</updated>
     
     <summary type="html">
     
@@ -69,11 +94,43 @@
   </entry>
   
   <entry>
-    <title>AcWing 788 或 LeetCode 剑指Offer 51 逆序对的数量</title>
+    <title>AcWing 788.逆序对的数量</title>
+    <link href="https://www.fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/"/>
+    <id>https://www.fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</id>
+    <published>2020-10-27T10:06:57.000Z</published>
+    <updated>2020-11-03T17:21:31.540Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。&lt;/p&gt;
+&lt;p&gt;逆序对的定义如下：对于数列的第 &lt;code&gt;i&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="树状数组" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AcWing 788.逆序对的数量</title>
     <link href="https://www.fingerdance.plus/2020/10/27/AcWing-788-%E6%88%96-LeetCode-%E5%89%91%E6%8C%87Offer-51-%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/"/>
     <id>https://www.fingerdance.plus/2020/10/27/AcWing-788-%E6%88%96-LeetCode-%E5%89%91%E6%8C%87Offer-51-%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</id>
     <published>2020-10-27T10:06:57.000Z</published>
-    <updated>2020-10-27T10:48:56.790Z</updated>
+    <updated>2020-11-03T17:21:45.457Z</updated>
     
     <summary type="html">
     
@@ -145,7 +202,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-10-30T20:49:37.929Z</updated>
+    <updated>2020-11-03T17:05:39.128Z</updated>
     
     <summary type="html">
     
@@ -540,60 +597,6 @@
       <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>fix Intellj IDEA git pust rejected</title>
-    <link href="https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/"/>
-    <id>https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/</id>
-    <published>2020-07-25T11:18:30.000Z</published>
-    <updated>2020-07-25T11:48:15.407Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-      <category term="IntelliJ IDEA" scheme="https://www.fingerdance.plus/tags/IntelliJ-IDEA/"/>
-    
-      <category term="git" scheme="https://www.fingerdance.plus/tags/git/"/>
-    
-      <category term="解决方案" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>曾仕强「圆通的人际关系」节目笔记</title>
-    <link href="https://www.fingerdance.plus/2020/06/30/%E6%9B%BE%E4%BB%95%E5%BC%BA%E3%80%8C%E5%9C%86%E9%80%9A%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E3%80%8D%E8%8A%82%E7%9B%AE%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.fingerdance.plus/2020/06/30/%E6%9B%BE%E4%BB%95%E5%BC%BA%E3%80%8C%E5%9C%86%E9%80%9A%E7%9A%84%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E3%80%8D%E8%8A%82%E7%9B%AE%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-06-30T14:45:22.000Z</published>
-    <updated>2020-06-30T16:21:20.326Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;第一集&quot;&gt;&lt;a href=&quot;#第一集&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="曾仕强" scheme="https://www.fingerdance.plus/tags/%E6%9B%BE%E4%BB%95%E5%BC%BA/"/>
-    
-      <category term="哲学" scheme="https://www.fingerdance.plus/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   
