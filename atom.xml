@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-03T17:21:53.586Z</updated>
+  <updated>2020-11-03T19:10:55.901Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/"/>
     <id>https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/</id>
     <published>2020-11-03T17:10:48.000Z</published>
-    <updated>2020-11-03T17:21:53.586Z</updated>
+    <updated>2020-11-03T19:10:55.901Z</updated>
     
     <summary type="html">
     
@@ -126,38 +126,6 @@
   </entry>
   
   <entry>
-    <title>AcWing 788.逆序对的数量</title>
-    <link href="https://www.fingerdance.plus/2020/10/27/AcWing-788-%E6%88%96-LeetCode-%E5%89%91%E6%8C%87Offer-51-%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/"/>
-    <id>https://www.fingerdance.plus/2020/10/27/AcWing-788-%E6%88%96-LeetCode-%E5%89%91%E6%8C%87Offer-51-%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</id>
-    <published>2020-10-27T10:06:57.000Z</published>
-    <updated>2020-11-03T17:21:45.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。&lt;/p&gt;
-&lt;p&gt;逆序对的定义如下：对于数列的第 &lt;code&gt;i&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="树状数组" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>跑路专用呆湾警署查封页面</title>
     <link href="https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/"/>
     <id>https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</id>
@@ -181,7 +149,7 @@
     <link href="https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/"/>
     <id>https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</id>
     <published>2020-10-25T08:09:15.000Z</published>
-    <updated>2020-11-02T13:37:09.579Z</updated>
+    <updated>2020-11-03T19:49:38.277Z</updated>
     
     <summary type="html">
     
@@ -202,7 +170,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-03T17:05:39.128Z</updated>
+    <updated>2020-11-03T18:58:13.274Z</updated>
     
     <summary type="html">
     
@@ -517,8 +485,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
@@ -544,8 +512,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
@@ -597,6 +565,27 @@
       <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fix Intellj IDEA git pust rejected</title>
+    <link href="https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/"/>
+    <id>https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/</id>
+    <published>2020-07-25T11:18:30.000Z</published>
+    <updated>2020-07-25T11:48:15.407Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="IntelliJ IDEA" scheme="https://www.fingerdance.plus/tags/IntelliJ-IDEA/"/>
+    
+      <category term="git" scheme="https://www.fingerdance.plus/tags/git/"/>
+    
+      <category term="解决方案" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   

@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：位运算使用技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-25T08:09:15.000Z">
-<meta property="article:modified_time" content="2020-11-02T13:37:09.579Z">
+<meta property="article:modified_time" content="2020-11-03T19:49:38.277Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-02 21:37:09" itemprop="dateModified" datetime="2020-11-02T21:37:09+08:00">2020-11-02</time>
+                <time title="Modified: 2020-11-04 03:49:38" itemprop="dateModified" datetime="2020-11-04T03:49:38+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,7 +287,13 @@
       
         <p><strong>摘要：</strong><br>位运算使用技巧。</p>
 <a id="more"></a>
-<h3 id="int类型利用位运算乘除2的k次幂"><a href="#int类型利用位运算乘除2的k次幂" class="headerlink" title="int类型利用位运算乘除2的k次幂"></a>int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
+<h3 id="1-int类型利用位运算乘除2的k次幂"><a href="#1-int类型利用位运算乘除2的k次幂" class="headerlink" title="1. int类型利用位运算乘除2的k次幂"></a>1. int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
+<h3 id="2-判断二进制数的第k位"><a href="#2-判断二进制数的第k位" class="headerlink" title="2. 判断二进制数的第k位"></a>2. 判断二进制数的第k位</h3><p>首先明确第k位是指从右边最低位向左边最高位第<code>k</code>位。<br>代码为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line">m = x &gt;&gt; k &amp; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>右移k位就把第k位移到了最低位，再判断该位置数字。</p>
+<h3 id="3-二进制数最后一位1的————lowbit-x"><a href="#3-二进制数最后一位1的————lowbit-x" class="headerlink" title="3. 二进制数最后一位1的————lowbit(x)"></a>3. 二进制数最后一位1的————lowbit(x)</h3><p>这里最后一位1是指从左往右最后一位，函数lowbit()返回的是包含该1与右边所有0。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; - x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>- x</code> 在计算机内部是以补码方式运算的，即:<br><code>- x = ~ x + 1</code><br>假设一个二进制数为：  0010101…0010100000<br><code>~ x</code>为：            1101010…1101011111<br><code>~ x + 1</code>为：        1101010…1101100000<br>注意到+1操作使得最后一位1及其右边所有数字发生了变化，而左边不变。<br>此时在和原数字进行&amp;运算，它和原数字在最后一位1左侧全部不同，右侧全部相同。</p>
 
     </div>
 
@@ -390,7 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#int类型利用位运算乘除2的k次幂"><span class="nav-number">1.</span> <span class="nav-text">int类型利用位运算乘除2的k次幂</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-number">1.</span> <span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-number">2.</span> <span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-number">3.</span> <span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -408,7 +414,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

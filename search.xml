@@ -79,7 +79,7 @@
 <li>对于两个序列，维护某种次序，比如归并排序中合并两个有序序列的操作</li>
 </ul>
 </blockquote>
-<p><strong>例题1：</strong><br><a href="">最长连续不重复子序列</a></p>
+<p><strong>例题1：</strong><br><a href="https://fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/" target="_blank" rel="noopener">最长连续不重复子序列</a></p>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -139,7 +139,7 @@
 <p>3</p>
 </blockquote>
 <hr>
-<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> a[N], S[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ ) &#123;</span><br><span class="line">        S[a[i]] ++;                                 <span class="comment">// 1</span></span><br><span class="line">        <span class="keyword">for</span> (;S[a[i]] &gt; <span class="number">1</span>;) &#123;                       <span class="comment">// 2</span></span><br><span class="line">            S[a[j]] --;</span><br><span class="line">            j ++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, i - j + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios::sync_with_stdio(false)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> a[N], S[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ ) &#123;</span><br><span class="line">        S[a[i]] ++;                                 <span class="comment">// 1</span></span><br><span class="line">        <span class="keyword">for</span> (;S[a[i]] &gt; <span class="number">1</span>;) &#123;                       <span class="comment">// 2</span></span><br><span class="line">            S[a[j]] --;</span><br><span class="line">            j ++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res, i - j + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li><ol>
@@ -324,34 +324,6 @@
   </entry>
   <entry>
     <title>AcWing 788.逆序对的数量</title>
-    <url>/2020/10/27/AcWing-788-%E6%88%96-LeetCode-%E5%89%91%E6%8C%87Offer-51-%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。</p>
-<p>逆序对的定义如下：对于数列的第 <code>i</code> 个和第 <code>j</code> 个元素，如果满足 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>，则其为一个逆序对；否则不是。</p>
-<p><strong>输入格式</strong><br>第一行包含整数n，表示数列的长度。</p>
-<p>第二行包含 n 个整数，表示整个数列。</p>
-<p><strong>输出格式</strong><br>输出一个整数，表示逆序对的个数。</p>
-<p><strong>数据范围</strong><br><code>1≤n≤100000</code><br><strong>输入样例：</strong></p>
-<blockquote>
-<p>6<br>  2 3 4 5 6 1</p>
-</blockquote>
-<p><strong>输出样例：</strong></p>
-<blockquote>
-<p>5</p>
-</blockquote>
-<hr>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> nums[N];</span><br><span class="line"><span class="keyword">int</span> tmp[N];</span><br><span class="line">LL res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    helper(lo, mid), helper(mid + <span class="number">1</span>, hi);</span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid &amp;&amp; j &lt;= hi;) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &lt;= nums[j]) tmp[t++] = nums[i++];</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            tmp[t++] = nums[j++];</span><br><span class="line">            res += mid - i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid;) tmp[t++] = nums[i++];</span><br><span class="line">    <span class="keyword">for</span> (;j &lt;= hi;) tmp[t++] = nums[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lo, j = <span class="number">0</span>; i &lt;= hi;) nums[i++] = tmp[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;nums[i]);</span><br><span class="line">    helper(<span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>归并排序</tag>
-        <tag>树状数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AcWing 788.逆序对的数量</title>
     <url>/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</url>
     <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。</p>
 <p>逆序对的定义如下：对于数列的第 <code>i</code> 个和第 <code>j</code> 个元素，如果满足 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>，则其为一个逆序对；否则不是。</p>
@@ -395,7 +367,13 @@
     <url>/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>位运算使用技巧。</p>
 <a id="more"></a>
-<h3 id="int类型利用位运算乘除2的k次幂"><a href="#int类型利用位运算乘除2的k次幂" class="headerlink" title="int类型利用位运算乘除2的k次幂"></a>int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
+<h3 id="1-int类型利用位运算乘除2的k次幂"><a href="#1-int类型利用位运算乘除2的k次幂" class="headerlink" title="1. int类型利用位运算乘除2的k次幂"></a>1. int类型利用位运算乘除2的k次幂</h3><p>a乘以2的k次幂，相当于a &lt;&lt; k 不管a是否为正数。<br>a除以2的k次幂，相当于a &gt;&gt; k 当且仅当a为正数。<br>注意，其他类型不常用，有的可以有的不可以，故不列出。</p>
+<h3 id="2-判断二进制数的第k位"><a href="#2-判断二进制数的第k位" class="headerlink" title="2. 判断二进制数的第k位"></a>2. 判断二进制数的第k位</h3><p>首先明确第k位是指从右边最低位向左边最高位第<code>k</code>位。<br>代码为：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line">m = x &gt;&gt; k &amp; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>右移k位就把第k位移到了最低位，再判断该位置数字。</p>
+<h3 id="3-二进制数最后一位1的————lowbit-x"><a href="#3-二进制数最后一位1的————lowbit-x" class="headerlink" title="3. 二进制数最后一位1的————lowbit(x)"></a>3. 二进制数最后一位1的————lowbit(x)</h3><p>这里最后一位1是指从左往右最后一位，函数lowbit()返回的是包含该1与右边所有0。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; - x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>- x</code> 在计算机内部是以补码方式运算的，即:<br><code>- x = ~ x + 1</code><br>假设一个二进制数为：  0010101…0010100000<br><code>~ x</code>为：            1101010…1101011111<br><code>~ x + 1</code>为：        1101010…1101100000<br>注意到+1操作使得最后一位1及其右边所有数字发生了变化，而左边不变。<br>此时在和原数字进行&amp;运算，它和原数字在最后一位1左侧全部不同，右侧全部相同。</p>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -668,7 +646,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -718,7 +696,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -1213,8 +1191,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>Linux</tag>
+        <tag>VPS</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -1875,9 +1853,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>计数数组</tag>
         <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
       </tags>
