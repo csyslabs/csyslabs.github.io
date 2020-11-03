@@ -441,8 +441,8 @@
       <tags>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>树</tag>
         <tag>树深度</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
       </tags>
   </entry>
@@ -495,10 +495,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
-        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -524,10 +524,10 @@
       <tags>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>递归</tag>
         <tag>二叉树</tag>
-        <tag>树</tag>
+        <tag>递归</tag>
         <tag>树深度</tag>
+        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -564,8 +564,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>递归</tag>
         <tag>二叉树</tag>
+        <tag>递归</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -574,7 +574,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -624,7 +624,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -953,8 +953,8 @@
       </categories>
       <tags>
         <tag>BFS</tag>
-        <tag>递归</tag>
         <tag>二叉树</tag>
+        <tag>递归</tag>
         <tag>迭代</tag>
       </tags>
   </entry>

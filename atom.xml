@@ -288,9 +288,9 @@
     
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
     
-      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
-    
       <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
       <category term="N叉树" scheme="https://www.fingerdance.plus/tags/N%E5%8F%89%E6%A0%91/"/>
     
@@ -368,13 +368,13 @@
     
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
-    
       <category term="dfs" scheme="https://www.fingerdance.plus/tags/dfs/"/>
     
       <category term="bfs" scheme="https://www.fingerdance.plus/tags/bfs/"/>
     
       <category term="树结构" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
     
   </entry>
   
@@ -407,13 +407,13 @@
     
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
     
-      <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
+      <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -444,9 +444,9 @@
     
       <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
-      <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="树的高度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6/"/>
     
@@ -460,8 +460,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
@@ -487,8 +487,8 @@
   
   <entry>
     <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
+    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
