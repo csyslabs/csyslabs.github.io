@@ -5,7 +5,7 @@
   --text-color: #555;
   --blockquote-color: #666;
   --link-color: #555;
-  --link-hover-color: #222;
+  --link-hover-color: #5d2b90;
   --brand-color: #222;
   --brand-hover-color: #222;
   --table-row-odd-bg-color: #f9f9f9;
@@ -1258,7 +1258,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6e4506;
+  background: #b4d6ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1348,11 +1348,11 @@ pre .javascript .function {
   color: #f5f5f5;
 }
 .sidebar-nav .sidebar-nav-active {
-  border-bottom-color: #a442ff;
-  color: #a442ff;
+  border-bottom-color: #5d2b90;
+  color: #5d2b90;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #a442ff;
+  color: #5d2b90;
 }
 .sidebar-panel {
   display: none;
@@ -1381,7 +1381,7 @@ pre .javascript .function {
   }
 }
 .sidebar-toggle:hover .toggle-line {
-  background: #a442ff;
+  background: #5d2b90;
 }
 .post-toc {
   font-size: 0.875em;
@@ -1420,14 +1420,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  border-bottom-color: #a442ff;
-  color: #a442ff;
+  border-bottom-color: #5d2b90;
+  color: #5d2b90;
 }
 .post-toc .nav .active-current > a {
-  color: #a442ff;
+  color: #5d2b90;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #a442ff;
+  color: #5d2b90;
 }
 .site-state {
   display: flex;
@@ -1653,7 +1653,7 @@ pre .javascript .function {
   width: initial;
 }
 .back-to-top:hover {
-  color: #a442ff;
+  color: #5d2b90;
 }
 .back-to-top.back-to-top-on {
   bottom: 19px;
@@ -1665,9 +1665,9 @@ pre .javascript .function {
   }
 }
 .reading-progress-bar {
-  background: #a442ff;
+  background: #5d2b90;
   display: block;
-  height: 3px;
+  height: 4px;
   left: 0;
   position: fixed;
   width: 0;
@@ -2661,5 +2661,5 @@ hr {
   display: inline-block;
 }
 code {
-  color: #7d26cd;
+  color: #5d2b90;
 }
