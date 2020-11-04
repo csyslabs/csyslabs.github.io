@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-04T14:58:46.069Z</updated>
+  <updated>2020-11-04T15:41:50.424Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组排序去重</title>
+    <link href="https://www.fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/"/>
+    <id>https://www.fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/</id>
+    <published>2020-11-04T15:31:34.000Z</published>
+    <updated>2020-11-04T15:41:50.424Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;一个快速实现数组排序去重的小技巧。&lt;/p&gt;
+&lt;p&gt;为什么要记录这个呢，因为算法题中经常用到。&lt;/p&gt;
+&lt;h3 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="排序" scheme="https://www.fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈原码、反码和补码</title>
@@ -533,33 +566,6 @@
     <title>驾驶技术学习心得</title>
     <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
     <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
-    <published>2020-08-17T10:04:39.000Z</published>
-    <updated>2020-08-23T07:53:55.442Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;科目二&quot;&gt;&lt;a href=&quot;#科目二&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="驾驶技术" scheme="https://www.fingerdance.plus/tags/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
     <published>2020-08-17T10:04:39.000Z</published>
     <updated>2020-08-23T07:53:55.442Z</updated>
     
