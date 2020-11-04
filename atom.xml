@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-03T19:10:55.901Z</updated>
+  <updated>2020-11-04T06:32:42.592Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AcWing 801.二进制中1的个数</title>
+    <link href="https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <published>2020-11-04T06:19:50.000Z</published>
+    <updated>2020-11-04T06:32:42.592Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;lowbit的经典应用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="位运算" scheme="https://www.fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="lowbit" scheme="https://www.fingerdance.plus/tags/lowbit/"/>
+    
+  </entry>
   
   <entry>
     <title>AcWing 799.最长连续不重复子序列</title>
@@ -149,7 +174,7 @@
     <link href="https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/"/>
     <id>https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</id>
     <published>2020-10-25T08:09:15.000Z</published>
-    <updated>2020-11-03T19:49:38.277Z</updated>
+    <updated>2020-11-04T06:31:36.306Z</updated>
     
     <summary type="html">
     
@@ -170,7 +195,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-03T18:58:13.274Z</updated>
+    <updated>2020-11-04T06:32:18.322Z</updated>
     
     <summary type="html">
     
@@ -562,30 +587,9 @@
     
       <category term="笔记" scheme="https://www.fingerdance.plus/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
       <category term="沟通" scheme="https://www.fingerdance.plus/tags/%E6%B2%9F%E9%80%9A/"/>
     
-  </entry>
-  
-  <entry>
-    <title>fix Intellj IDEA git pust rejected</title>
-    <link href="https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/"/>
-    <id>https://www.fingerdance.plus/2020/07/25/fix-Intellj-IDEA-git-pust-rejected/</id>
-    <published>2020-07-25T11:18:30.000Z</published>
-    <updated>2020-07-25T11:48:15.407Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-      <category term="IntelliJ IDEA" scheme="https://www.fingerdance.plus/tags/IntelliJ-IDEA/"/>
-    
-      <category term="git" scheme="https://www.fingerdance.plus/tags/git/"/>
-    
-      <category term="解决方案" scheme="https://www.fingerdance.plus/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="人际关系" scheme="https://www.fingerdance.plus/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   
