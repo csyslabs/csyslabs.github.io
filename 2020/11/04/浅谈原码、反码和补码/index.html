@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"www.fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我太菜被关起来了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ESP的私人小岛">
-<meta property="og:url" content="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/index.html">
+  <meta name="description" content="摘要：计算机二进制原码、反码和补码的个人理解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈原码、反码和补码">
+<meta property="og:url" content="https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/index.html">
 <meta property="og:site_name" content="ESP的私人小岛">
-<meta property="og:description" content="我太菜被关起来了">
+<meta property="og:description" content="摘要：计算机二进制原码、反码和补码的个人理解。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-04T07:32:13.000Z">
+<meta property="article:modified_time" content="2020-11-04T10:51:17.316Z">
 <meta property="article:author" content="ESP">
-<meta property="article:tag" content="菜">
+<meta property="article:tag" content="二进制">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/">
+<link rel="canonical" href="https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: 指尖飞舞 | ESP的私人小岛</title>
+  <title>浅谈原码、反码和补码 | ESP的私人小岛</title>
   
     <script>
       function sendPageView() {
@@ -213,240 +215,147 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">指尖飞舞
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESP的私人小岛">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈原码、反码和补码
+        </h1>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-04 15:32:13 / Modified: 18:51:17" itemprop="dateCreated datePublished" datetime="2020-11-04T15:32:13+08:00">2020-11-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/" class="post-meta-item leancloud_visitors" data-flag-title="浅谈原码、反码和补码" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-04T15:32:13+08:00"
-              content="2020-11-04">
-          11-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/" itemprop="url">
-            <span itemprop="name">浅谈原码、反码和补码</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-04T14:19:50+08:00"
-              content="2020-11-04">
-          11-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/" itemprop="url">
-            <span itemprop="name">AcWing 801.二进制中1的个数</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-04T01:10:48+08:00"
-              content="2020-11-04">
-          11-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/" itemprop="url">
-            <span itemprop="name">AcWing 799.最长连续不重复子序列</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-27T18:06:57+08:00"
-              content="2020-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/" itemprop="url">
-            <span itemprop="name">AcWing 788.逆序对的数量</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-25T16:09:15+08:00"
-              content="2020-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/" itemprop="url">
-            <span itemprop="name">位运算妙妙屋</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-24T14:03:00+08:00"
-              content="2020-10-24">
-          10-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" itemprop="url">
-            <span itemprop="name">基础算法模板</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-01T16:51:38+08:00"
-              content="2020-10-01">
-          10-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/" itemprop="url">
-            <span itemprop="name">C++字符串及其指针类型定义</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-04T16:13:18+08:00"
-              content="2020-09-04">
-          09-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">ProjectNowCoder学习笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T16:57:58+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/LeetCode-559-N%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6%EF%BC%88Maximum-Depth-of-N-ary-Tree%EF%BC%89/" itemprop="url">
-            <span itemprop="name">LeetCode 559 N叉树的最大深度（Maximum Depth of N-ary Tree）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-22T13:38:14+08:00"
-              content="2020-08-22">
-          08-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/22/%E7%88%B1%E7%9A%84%E9%AD%94%E5%8A%9B%E8%BD%AC%E5%9C%88%E5%9C%88%EF%BC%9A%E4%BB%BFshell%E9%A3%8E%E7%81%AB%E8%BD%AE%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/" itemprop="url">
-            <span itemprop="name">爱的魔力转圈圈：仿shell风火轮进度条实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p><strong>摘要：</strong><br>计算机二进制原码、反码和补码的个人理解。</p>
+<a id="more"></a>
+<p>首先应该明确一点，原码、反码和补码，它是一套由伟大的计算机前辈们设计出来的系统。目的是适配计算机的正负数表示，和加减运算。<br>当我认真理解了原码、反码和补码这一套系统之后，我深深地觉得如果自己出生于恰当的年代而且恰好也是一位计算机科学家的话，我大概也会这样设计，因为它是那么的和谐且自然————仿佛本就该如此。</p>
+<h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><p>一个int型整数的二进制表示为32个0或1，比如10，它的二进制表示为1010（前方的0省略了）。计算机被设计出来的时候，自带了一个加法器的东西。于是，整数的加法运算很简单。例如，10 + 1，它的二进制计算过程是：<br>0000 0000 0000 0000 0000 0000 0000 1010   +<br>0000 0000 0000 0000 0000 0000 0000 0001   =<br>0000 0000 0000 0000 0000 0000 0000 1011<br>-10的原码二进制表示为：<br>1000 0000 0000 0000 0000 0000 0000 1010<br><strong>这就是原码的定义，最高位是0，表示正数；最高位是1时，表示负数。其他位表示该数绝对值对应的二进制位。</strong><br>两个正数可以直接按照原码进行加法运算，那么减法呢？<br>当进行减法运算时，我们必须考虑用负数代替减法，把减法转化为加法运算。但是直接拿原码进行减法运算显然得出错误结论（即得到的结果值按照原码的表示方法和正确数值不对应）。为了表示负数，和将负数用于加法计算，科学家设计出了反码表示。</p>
+<h3 id="反码的由来"><a href="#反码的由来" class="headerlink" title="反码的由来"></a>反码的由来</h3><p>由于需要表示负数，科学家设计了反码。它的设计原则是：<br>x + (-x) = 0<br>即，一个数的负数加上它本身等于0。<br>看一下这个例子：<br>数字10的负数应该怎么表示？<br>10的原码二进制表示为：<br>0000 0000 0000 0000 0000 0000 0000 1010<br>-10的原码二进制表示为：<br>1000 0000 0000 0000 0000 0000 0000 1010<br>当我们运算10 + (-10)时，<br>如果直接拿原码当负数进行加法运算，得到的值是：<br>1000 0000 0000 0000 0000 0000 0000 1100<br>显然是错的，它并不是0。<br>于是科学家为了适配负数计算，将负数表示为：<br><strong>原码最高位保持不变，其他位每位取反。</strong><br>这就是反码。<br>那么，10 + (-10)就变成了：<br>0000 0000 0000 0000 0000 0000 0000 1010   +<br>1111 1111 1111 1111 1111 1111 1111 0101   =<br>1111 1111 1111 1111 1111 1111 1111 1111<br>注意，负数参与的加法得到的值依然是反码。为什么呢？因为：<br><strong>正数的反码就是其原码</strong><br>两个反码相加，结果当然还表示为反码。这里就很清晰了，上述计算结果最高位1表示负数，其他位取反还原成原码就是：<br>1000 0000 0000 0000 0000 0000 0000 0000<br>表示成-0。<br>那么，你可以注意到-0的反码表示为：<br>1111 1111 1111 1111 1111 1111 1111 1111<br>而+0的反码表示为：<br>0000 0000 0000 0000 0000 0000 0000 0000<br>而+0 == -0 == 0<br>当科学家设计到这里的时候，甭提多尴尬了，同一个数居然出现了两种表示方式。于是，闪耀着人类智慧光芒的 <strong>补码</strong> 应运而生。</p>
+<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><p>为了让0只有一种表示方式，科学家们大腿一拍，决定：<br><strong>先让0表示为0000 0000 0000 0000 0000 0000 0000 0000</strong><br><strong>所有正数原地不动，表示为其原码。</strong><br><strong>再让所有负数向多出来的-0位置移动一位。即所有负数表示为反码+1位偏移</strong><br>这就是补码。<br>为了更好地理解这一块，你可以把0附近的数在计算机中看成是这样排列的：<br>-3  -2  -1  -0   +0   +1   +2   +3<br>按照反码规则，他们确实是这样排列的。</p>
+<p>做个总结：</p>
+<blockquote>
+<ul>
+<li>原码：正数不变，负数最高位取1表示符号，其余位保持和对应的正数相同（给人看的，让你一看就知道是负几）。</li>
+<li>反码：正数和原码相同，负数最高位取1，其余位各位取反（给计算机看的，让计算机可以计算负数加法）。</li>
+<li>补码：正数和原码相同，负数为原码取反再加1（给计算机看的，让计算机可以处理0）。<br>其中，你如果直接看负数的补码会觉得好奇怪，其实这个只是一种表示方法，一种外在的表现形式。你按照计算机的规则先减1再取反就得到这个负数的原码的。你就能看懂了。</li>
+</ul>
+</blockquote>
+<p>举个例子：<br>3 + (-5)<br>3的补码为：<br>0000 0000 0000 0000 0000 0000 0000 0011<br>-5的原码为：<br>1000 0000 0000 0000 0000 0000 0000 0101<br>反码为：<br>1111 1111 1111 1111 1111 1111 1111 1010<br>补码为：<br>1111 1111 1111 1111 1111 1111 1111 1011<br>3 + (-5) 计算机的计算过程是这样的：<br>0000 0000 0000 0000 0000 0000 0000 0011   +<br>1111 1111 1111 1111 1111 1111 1111 1011   =<br>1111 1111 1111 1111 1111 1111 1111 1110<br>结果的补码看起来好奇怪，但是记住这是给计算机看的，在补码体系下计算机它就被设计成用这一串奇奇怪怪的10表示-2。我们只需将其减1再取反即可得到结果的原码表示：<br>结果减1当然也是加上1的补码：<br>1111 1111 1111 1111 1111 1111 1111 1110   +   //结果补码<br>1111 1111 1111 1111 1111 1111 1111 1111   =   //-1补码<br>1111 1111 1111 1111 1111 1111 1111 1101       //临时码<br>高位不变其他位取反：<br>1000 0000 0000 0000 0000 0000 0000 0010       //结果原码<br>一眼就看出这是-2.<br>其实所谓的一眼看出，不过是让最高位符号匹配后面的正数。</p>
+<p><em>参考:</em></p>
+<blockquote>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/105917577" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/105917577</a> 【原创】计算机为什么要用补码？ - kaka的文章 - 知乎</li>
+<li><a href="https://zh.wikipedia.org/wiki/原码" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/原码</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/反码" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/反码</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/补码" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/补码</a></li>
+</ul>
+</blockquote>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>ESP
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/" title="浅谈原码、反码和补码">https://www.fingerdance.plus/2020/11/04/浅谈原码、反码和补码/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="tag"><i class="fa fa-tag"></i> 二进制</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/" rel="next" title="AcWing 801.二进制中1的个数">
+      AcWing 801.二进制中1的个数 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/page/4/">4</a><a class="extend next" rel="next" href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -493,6 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原码"><span class="nav-number">1.</span> <span class="nav-text">原码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反码的由来"><span class="nav-number">2.</span> <span class="nav-text">反码的由来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补码"><span class="nav-number">3.</span> <span class="nav-text">补码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -822,6 +732,25 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e52d4810e3636b78a1ce',
+      clientSecret: 'a440f2ae50433769177027ce57778ac77627dff9',
+      repo        : 'BlogComment',
+      owner       : 'ESP0xA',
+      admin       : ['ESP0xA'],
+      id          : 'efa3177e162ef01b0f6d96bda09c084d',
+        language: 'en',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
