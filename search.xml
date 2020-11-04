@@ -125,6 +125,7 @@
     <title>数组排序去重</title>
     <url>/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>一个快速实现数组排序去重的小技巧。</p>
+<a id="more"></a>
 <p>为什么要记录这个呢，因为算法题中经常用到。</p>
 <h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><p>用sort函数配合STL的unique函数实现：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line">sort(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());                                 <span class="comment">// 1</span></span><br><span class="line">nums.erase(unique(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>()), nums.<span class="built_in">end</span>());       <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
@@ -1581,8 +1582,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -1651,8 +1652,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -1772,8 +1773,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -1823,8 +1824,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -1865,8 +1866,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -1907,8 +1908,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1958,8 +1959,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -2028,8 +2029,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -2068,8 +2069,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
