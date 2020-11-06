@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-04T15:54:02.259Z</updated>
+  <updated>2020-11-06T09:30:55.298Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AcWing 802.区间和</title>
+    <link href="https://www.fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/"/>
+    <id>https://www.fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</id>
+    <published>2020-11-06T02:20:26.000Z</published>
+    <updated>2020-11-06T09:30:55.298Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;一道经典的离散化题目。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="离散化" scheme="https://www.fingerdance.plus/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>数组排序去重</title>
@@ -67,7 +92,7 @@
     <link href="https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
     <id>https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2020-11-04T06:19:50.000Z</published>
-    <updated>2020-11-04T06:32:42.592Z</updated>
+    <updated>2020-11-06T04:27:12.460Z</updated>
     
     <summary type="html">
     
@@ -241,7 +266,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-04T06:32:18.322Z</updated>
+    <updated>2020-11-06T09:31:48.195Z</updated>
     
     <summary type="html">
     
@@ -551,33 +576,6 @@
       <category term="先序遍历" scheme="https://www.fingerdance.plus/tags/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
     
       <category term="后序遍历" scheme="https://www.fingerdance.plus/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>驾驶技术学习心得</title>
-    <link href="https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
-    <id>https://www.fingerdance.plus/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</id>
-    <published>2020-08-17T10:04:39.000Z</published>
-    <updated>2020-08-23T07:53:55.442Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;科目二&quot;&gt;&lt;a href=&quot;#科目二&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.fingerdance.plus/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="驾驶技术" scheme="https://www.fingerdance.plus/tags/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
