@@ -28,10 +28,15 @@
 <meta property="og:description" content="摘要：一个快速实现数组排序去重的小技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-04T15:31:34.000Z">
-<meta property="article:modified_time" content="2020-11-04T15:54:02.259Z">
+<meta property="article:modified_time" content="2020-11-06T16:44:02.249Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="数组">
 <meta property="article:tag" content="排序">
+<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="去重">
+<meta property="article:tag" content="unique">
+<meta property="article:tag" content="原地算法">
+<meta property="article:tag" content="in-place algorithm">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/">
@@ -248,10 +253,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-04 23:31:34 / Modified: 23:54:02" itemprop="dateCreated datePublished" datetime="2020-11-04T23:31:34+08:00">2020-11-04</time>
+              <time title="Created: 2020-11-04 23:31:34" itemprop="dateCreated datePublished" datetime="2020-11-04T23:31:34+08:00">2020-11-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-07 00:44:02" itemprop="dateModified" datetime="2020-11-07T00:44:02+08:00">2020-11-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -287,7 +298,8 @@
         <p><strong>摘要：</strong><br>一个快速实现数组排序去重的小技巧。</p>
 <a id="more"></a>
 <p>为什么要记录这个呢，因为算法题中经常用到。</p>
-<h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><p>用sort函数配合STL的unique函数实现：</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><ol>
+<li><p>用sort函数配合STL的unique函数实现：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line">sort(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());                                 <span class="comment">// 1</span></span><br><span class="line">nums.erase(unique(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>()), nums.<span class="built_in">end</span>());       <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
@@ -301,7 +313,24 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>我找了半天好像在Java中去重没有现成的轮子可用，可以借助set遍历一遍。坑爹。</p>
+</li>
+<li><p>自己造轮子<br>维护两个指针i和j，i负责遍历数组，比较每一项与上一项；j负责指向存储不重复元素的位置。当i遇到不重复项时，j跟随i移动；否则j停止，等待i遇到下一个不重复项。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::<span class="function">iterator <span class="title">unique</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;a)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!i || a[i] != a[i - <span class="number">1</span>]) &#123;                     <span class="comment">// 1</span></span><br><span class="line">            a[j ++] = a[i];                               <span class="comment">// 2</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// unique between 0 and j - 1</span></span><br><span class="line">    <span class="keyword">return</span> a.<span class="built_in">begin</span>() + j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><ol>
+<li><code>!i</code>等价于<code>i == 0</code>。当i取首位或者a[i]与上一位相等时，进行操作。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>这里体现了 <strong>原地算法思想（in-place algorithm）</strong>。一旦i超过首位且a[i] == a[i - 1]（遇到重复情况），j指针会停留在重复位置，等待i指针找到下一个不重复元素，直接将不重复元素覆盖掉j指针指向的重复位置。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>用到再来写。</p>
 
     </div>
 
@@ -331,6 +360,11 @@
           <div class="post-tags">
               <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
               <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
+              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="fa fa-tag"></i> 双指针</a>
+              <a href="/tags/%E5%8E%BB%E9%87%8D/" rel="tag"><i class="fa fa-tag"></i> 去重</a>
+              <a href="/tags/unique/" rel="tag"><i class="fa fa-tag"></i> unique</a>
+              <a href="/tags/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 原地算法</a>
+              <a href="/tags/in-place-algorithm/" rel="tag"><i class="fa fa-tag"></i> in-place algorithm</a>
           </div>
 
         
@@ -436,7 +470,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">109</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

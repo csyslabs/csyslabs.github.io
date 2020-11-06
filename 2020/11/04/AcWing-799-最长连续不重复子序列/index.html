@@ -28,8 +28,9 @@
 <meta property="og:description" content="摘要：一道经典的双指针题目。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-03T17:10:48.000Z">
-<meta property="article:modified_time" content="2020-11-03T19:10:55.901Z">
+<meta property="article:modified_time" content="2020-11-06T15:18:20.062Z">
 <meta property="article:author" content="ESP">
+<meta property="article:tag" content="计数数组">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="双指针">
 <meta name="twitter:card" content="summary">
@@ -248,10 +249,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-04 01:10:48 / Modified: 03:10:55" itemprop="dateCreated datePublished" datetime="2020-11-04T01:10:48+08:00">2020-11-04</time>
+              <time title="Created: 2020-11-04 01:10:48" itemprop="dateCreated datePublished" datetime="2020-11-04T01:10:48+08:00">2020-11-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-06 23:18:20" itemprop="dateModified" datetime="2020-11-06T23:18:20+08:00">2020-11-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -310,7 +317,12 @@
 <li>保持计数数组非零值全为1，一旦<code>i</code>移动后造成对应计数数组值<code>&gt; 1</code>，就认为出现了重复<br>  此时移动<code>j</code>，并且将移动前<code>j</code>对应的数字在计数数组中抹去，因为始终判断从<code>j</code>到<code>i</code>的情况</li>
 </ol>
 </li>
+<li><strong>计数数组维护序列的不重复性。</strong> 这道题还有个亮点就是计数数组的使用。为了监控不重复序列，维护一个数值始终为0或1的计数数组，每一次<code>i</code>移动，更新计数数组的对应值，一旦该值超过了1，我们就知道出现了重复。妙啊，妙。</li>
 </ul>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://www.acwing.com/problem/content/801/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/801/</a></p>
 </blockquote>
 
     </div>
@@ -339,6 +351,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 计数数组</a>
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="fa fa-tag"></i> 双指针</a>
           </div>
@@ -446,7 +459,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">105</span>
+        <span class="site-state-item-count">109</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
