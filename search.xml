@@ -93,6 +93,42 @@
 </ul>
 </blockquote>
 <p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-802-区间和">AcWing 802.区间和</a></p>
+<h3 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h3><p>现有若干区间，相互之间可能相交。将所有相交的区间合并为一个区间，返回合并后的区间。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将所有存在交集的区间合并</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; res;</span><br><span class="line"></span><br><span class="line">    sort(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());                             <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> st = <span class="number">-2e9</span>, ed = <span class="number">-2e9</span>;                                   <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> seg : segs)</span><br><span class="line">        <span class="keyword">if</span> (ed &lt; seg.first)                                     <span class="comment">// 3</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);            <span class="comment">// 4 </span></span><br><span class="line">            st = seg.first, ed = seg.second;                    <span class="comment">// 5</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> ed = <span class="built_in">max</span>(ed, seg.second);                          <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);                    <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>segs</code>存放的是所有区间的左右端点构成的<code>pair</code>。<br>算法思想是维护一个前置区间，维护一个当前区间。比较两个区间是否相交，不相交就认为前置区间是一个孤立区间。不管是否相交，更新前置区间的左右端点，在更新当前区间左右端点。当最后一个当前区间与其前置区间比较完毕后，不管二者是否相交，最后一次更新前置区间将不会有新的当前区间。此时新的前置区间将必然是一个孤立区间。</p>
+<blockquote>
+<ul>
+<li><ol>
+<li>区间按照左端点排序。<code>sort()</code>用于排序<code>pair</code>类时，默认按照左端点升序排序。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>初始化区间左右端点，后面会更新它们。这里是初始化为无穷小（相对来说），初始化值在不同题目可以按需调整。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>比较两个区间是否相交。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>因为初始化的前置区间是无穷小的一个点，所以当前区间是第一个区间时，必然成立。但我们不能将无穷小点放入<code>res</code>中。只有在前置区间从第一个区间开始时，满足3的条件才可以放入<code>res</code>中。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>不相交情况下更新前置区间左右端点。</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>相交情况下更新前置区间左右端点。（此时只需更新右端点）</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>处理最后一个前置区间，此时前置区间必然是孤立区间当且仅当区间集合<code>segs</code>非空时（或者说当且仅当前置区间非初始化值时）</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-803-区间合并">AcWing 803.区间合并</a></p>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -206,6 +242,64 @@
       </tags>
   </entry>
   <entry>
+    <title>AcWing 803.区间合并</title>
+    <url>/2020/11/07/AcWing-803-%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>一道经典的区间合并问题。</p>
+<a id="more"></a>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个区间 [li,ri]，要求合并所有有交集的区间。<br>注意如果在端点处相交，也算有交集。<br>输出合并完成后的区间个数。<br>例如：[1,3]和[2,6]可以合并为一个区间[1,6]。</p>
+<p><strong>输入格式</strong><br>第一行包含整数n。<br>接下来n行，每行包含两个整数 l 和 r。</p>
+<p><strong>输出格式</strong><br>共一行，包含一个整数，表示合并区间完成后的区间个数。</p>
+<p><strong>数据范围</strong><br>1≤n≤100000,<br>−1e9≤li≤ri≤1e9</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>5<br>1 2<br>2 4<br>5 6<br>7 8<br>7 9</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>3</p>
+</blockquote>
+<hr>
+<h3 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;PII&gt; &amp;segs)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; res;</span><br><span class="line">    <span class="keyword">int</span> l = segs[<span class="number">0</span>].first, r = segs[<span class="number">0</span>].second;                  <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; segs.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (r &lt; segs[i].first) &#123;                                <span class="comment">// 3</span></span><br><span class="line">            res.push_back(&#123;l, r&#125;);</span><br><span class="line">            l = segs[i].first, r = segs[i].second;              <span class="comment">// 4</span></span><br><span class="line">        &#125;                                          </span><br><span class="line">        <span class="keyword">else</span> r = <span class="built_in">max</span>(r, segs[i].second);                        <span class="comment">// 5</span></span><br><span class="line">    &#125;</span><br><span class="line">    res.push_back(&#123;l, r&#125;);                                      <span class="comment">// 6</span></span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; segs;</span><br><span class="line">    <span class="keyword">for</span> (; n -- ;) &#123;                                         </span><br><span class="line">        <span class="keyword">int</span> l, r;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        segs.push_back(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());                             <span class="comment">// 1  </span></span><br><span class="line">    merge(segs);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; segs.<span class="built_in">size</span>() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><ol>
+<li>区间按照左端点排序。<code>sort()</code>用于排序<code>pair</code>类时，默认按照左端点升序排序。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>初始化区间左右端点，后面会更新它们。因为题目指出区间数量<code>n &gt;= 1</code>，所以这里是初始化为排序后的第一个区间。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>比较两个区间是否相交。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>不相交情况下更新前置区间左右端点。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>相交情况下更新前置区间左右端点。（此时只需更新右端点）</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>处理最后一个前置区间，此时前置区间必然是孤立区间。因为<code>n &gt;= 1</code>且最后一个前置区间没有下一个当前区间。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<p><strong>题目链接：</strong><br><a href="https://www.acwing.com/problem/content/805/" target="_blank" rel="noopener">AcWing 803.区间合并</a></p>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>区间合并</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AcWing 802.区间和</title>
     <url>/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>一道经典的离散化题目。</p>
@@ -309,18 +403,18 @@
 <blockquote>
 <ul>
 <li><ol>
-<li><code>!i</code>等价于<code>i == 0</code>。当i取首位或者a[i]与上一位相等时，进行操作。</li>
+<li><code>!i</code>等价于<code>i == 0</code>。当i取首位或者<code>a[i]</code>与上一位相等时，说明<code>a[i]</code>是不重复元素。</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>这里体现了 <strong>原地算法思想（in-place algorithm）</strong>。一旦i超过首位且a[i] == a[i - 1]（遇到重复情况），j指针会停留在重复位置，等待i指针找到下一个不重复元素，直接将不重复元素覆盖掉j指针指向的重复位置。</li>
+<li>这里体现了 <strong>原地算法思想（in-place algorithm）</strong>。一旦<code>i</code>超过首位且<code>a[i] == a[i - 1]</code>（遇到重复情况），<code>j</code>指针会停留在重复位置，等待<code>i</code>指针找到下一个不重复元素, 直接将不重复元素覆盖掉j指针指向的重复位置。</li>
 </ol>
 </li>
 </ul>
 </blockquote>
 </li>
 </ol>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>用到再来写。</p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>用到再来写. </p>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -453,8 +547,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>计数数组</tag>
         <tag>算法</tag>
+        <tag>计数数组</tag>
         <tag>双指针</tag>
       </tags>
   </entry>
@@ -942,7 +1036,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -992,7 +1086,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -1487,8 +1581,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>Linux</tag>
+        <tag>VPS</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -2149,9 +2243,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>计数数组</tag>
         <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
       </tags>

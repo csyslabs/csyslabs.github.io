@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：详尽地记录了各种基础算法模板，以及一些个人理解。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-24T06:03:00.000Z">
-<meta property="article:modified_time" content="2020-11-06T09:33:52.494Z">
+<meta property="article:modified_time" content="2020-11-07T07:37:20.504Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
@@ -264,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-06 17:33:52" itemprop="dateModified" datetime="2020-11-06T17:33:52+08:00">2020-11-06</time>
+                <time title="Modified: 2020-11-07 15:37:20" itemprop="dateModified" datetime="2020-11-07T15:37:20+08:00">2020-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -388,6 +388,42 @@
 </ul>
 </blockquote>
 <p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-802-区间和">AcWing 802.区间和</a></p>
+<h3 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h3><p>现有若干区间，相互之间可能相交。将所有相交的区间合并为一个区间，返回合并后的区间。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将所有存在交集的区间合并</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; res;</span><br><span class="line"></span><br><span class="line">    sort(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());                             <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> st = <span class="number">-2e9</span>, ed = <span class="number">-2e9</span>;                                   <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> seg : segs)</span><br><span class="line">        <span class="keyword">if</span> (ed &lt; seg.first)                                     <span class="comment">// 3</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);            <span class="comment">// 4 </span></span><br><span class="line">            st = seg.first, ed = seg.second;                    <span class="comment">// 5</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> ed = <span class="built_in">max</span>(ed, seg.second);                          <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);                    <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>segs</code>存放的是所有区间的左右端点构成的<code>pair</code>。<br>算法思想是维护一个前置区间，维护一个当前区间。比较两个区间是否相交，不相交就认为前置区间是一个孤立区间。不管是否相交，更新前置区间的左右端点，在更新当前区间左右端点。当最后一个当前区间与其前置区间比较完毕后，不管二者是否相交，最后一次更新前置区间将不会有新的当前区间。此时新的前置区间将必然是一个孤立区间。</p>
+<blockquote>
+<ul>
+<li><ol>
+<li>区间按照左端点排序。<code>sort()</code>用于排序<code>pair</code>类时，默认按照左端点升序排序。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>初始化区间左右端点，后面会更新它们。这里是初始化为无穷小（相对来说），初始化值在不同题目可以按需调整。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>比较两个区间是否相交。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>因为初始化的前置区间是无穷小的一个点，所以当前区间是第一个区间时，必然成立。但我们不能将无穷小点放入<code>res</code>中。只有在前置区间从第一个区间开始时，满足3的条件才可以放入<code>res</code>中。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>不相交情况下更新前置区间左右端点。</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>相交情况下更新前置区间左右端点。（此时只需更新右端点）</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>处理最后一个前置区间，此时前置区间必然是孤立区间当且仅当区间集合<code>segs</code>非空时（或者说当且仅当前置区间非初始化值时）</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-803-区间合并">AcWing 803.区间合并</a></p>
 
     </div>
 
@@ -495,7 +531,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">1.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-number">1.2.</span> <span class="nav-text">归并排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-number">2.</span> <span class="nav-text">二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数二分查找"><span class="nav-number">2.1.</span> <span class="nav-text">整数二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数二分查找"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据精度迭代"><span class="nav-number">2.2.1.</span> <span class="nav-text">根据精度迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据循环次数迭代"><span class="nav-number">2.2.2.</span> <span class="nav-text">根据循环次数迭代</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度四则运算"><span class="nav-number">3.</span> <span class="nav-text">高精度四则运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度加法"><span class="nav-number">3.1.</span> <span class="nav-text">高精度加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度减法"><span class="nav-number">3.2.</span> <span class="nav-text">高精度减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度乘法"><span class="nav-number">3.3.</span> <span class="nav-text">高精度乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指针"><span class="nav-number">3.4.</span> <span class="nav-text">双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散化"><span class="nav-number">3.5.</span> <span class="nav-text">离散化</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">1.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-number">1.2.</span> <span class="nav-text">归并排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-number">2.</span> <span class="nav-text">二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数二分查找"><span class="nav-number">2.1.</span> <span class="nav-text">整数二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数二分查找"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据精度迭代"><span class="nav-number">2.2.1.</span> <span class="nav-text">根据精度迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据循环次数迭代"><span class="nav-number">2.2.2.</span> <span class="nav-text">根据循环次数迭代</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度四则运算"><span class="nav-number">3.</span> <span class="nav-text">高精度四则运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度加法"><span class="nav-number">3.1.</span> <span class="nav-text">高精度加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度减法"><span class="nav-number">3.2.</span> <span class="nav-text">高精度减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度乘法"><span class="nav-number">3.3.</span> <span class="nav-text">高精度乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指针"><span class="nav-number">3.4.</span> <span class="nav-text">双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散化"><span class="nav-number">3.5.</span> <span class="nav-text">离散化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区间合并"><span class="nav-number">3.6.</span> <span class="nav-text">区间合并</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -513,7 +549,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -526,7 +562,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">109</span>
+        <span class="site-state-item-count">110</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

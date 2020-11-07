@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：一个快速实现数组排序去重的小技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-04T15:31:34.000Z">
-<meta property="article:modified_time" content="2020-11-06T16:44:02.249Z">
+<meta property="article:modified_time" content="2020-11-06T16:49:19.183Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="数组">
 <meta property="article:tag" content="排序">
@@ -261,7 +261,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-07 00:44:02" itemprop="dateModified" datetime="2020-11-07T00:44:02+08:00">2020-11-07</time>
+                <time title="Modified: 2020-11-07 00:49:19" itemprop="dateModified" datetime="2020-11-07T00:49:19+08:00">2020-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,18 +319,18 @@
 <blockquote>
 <ul>
 <li><ol>
-<li><code>!i</code>等价于<code>i == 0</code>。当i取首位或者a[i]与上一位相等时，进行操作。</li>
+<li><code>!i</code>等价于<code>i == 0</code>。当i取首位或者<code>a[i]</code>与上一位相等时，说明<code>a[i]</code>是不重复元素。</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>这里体现了 <strong>原地算法思想（in-place algorithm）</strong>。一旦i超过首位且a[i] == a[i - 1]（遇到重复情况），j指针会停留在重复位置，等待i指针找到下一个不重复元素，直接将不重复元素覆盖掉j指针指向的重复位置。</li>
+<li>这里体现了 <strong>原地算法思想（in-place algorithm）</strong>。一旦<code>i</code>超过首位且<code>a[i] == a[i - 1]</code>（遇到重复情况），<code>j</code>指针会停留在重复位置，等待<code>i</code>指针找到下一个不重复元素, 直接将不重复元素覆盖掉j指针指向的重复位置。</li>
 </ol>
 </li>
 </ul>
 </blockquote>
 </li>
 </ol>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>用到再来写。</p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>用到再来写. </p>
 
     </div>
 
@@ -457,7 +457,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -470,7 +470,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">109</span>
+        <span class="site-state-item-count">110</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
