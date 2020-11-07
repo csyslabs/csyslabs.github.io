@@ -303,7 +303,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-07T07:37:20.504Z</updated>
+    <updated>2020-11-07T16:06:14.568Z</updated>
     
     <summary type="html">
     
@@ -442,9 +442,9 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
-    
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
@@ -561,13 +561,13 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
-    
-      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
-    
       <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://www.fingerdance.plus/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
