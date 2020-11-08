@@ -24,12 +24,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="ProjectNowCoder学习笔记">
 <meta property="og:url" content="https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="ESP的私人小岛">
+<meta property="og:site_name" content="Ops Call From Future">
 <meta property="og:description" content="摘要：记录ProjectNowCoder学习过程中的一些重点。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/project_structure.jpg">
 <meta property="article:published_time" content="2020-09-04T08:13:18.000Z">
-<meta property="article:modified_time" content="2020-11-06T15:10:25.498Z">
+<meta property="article:modified_time" content="2020-11-08T07:37:14.618Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="Spring">
 <meta property="article:tag" content="Project">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>ProjectNowCoder学习笔记 | ESP的私人小岛</title>
+  <title>ProjectNowCoder学习笔记 | Ops Call From Future</title>
   
     <script>
       function sendPageView() {
@@ -96,7 +96,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="ESP的私人小岛" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Ops Call From Future" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -117,10 +117,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">ESP的私人小岛</h1>
+      <h1 class="site-title">Ops Call From Future</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">记录点滴生活</p>
+      <p class="site-subtitle" itemprop="description">A ESP's Blog</p>
   </div>
 
   <div class="site-nav-right">
@@ -234,7 +234,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESP的私人小岛">
+      <meta itemprop="name" content="Ops Call From Future">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -262,7 +262,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-06 23:10:25" itemprop="dateModified" datetime="2020-11-06T23:10:25+08:00">2020-11-06</time>
+                <time title="Modified: 2020-11-08 15:37:14" itemprop="dateModified" datetime="2020-11-08T15:37:14+08:00">2020-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -360,8 +360,7 @@
 <blockquote>
 <p><strong>Wow!</strong><br>如果变量在后端中不存在则报错。在<code>$</code>和<code>{}</code>中加入任意字段则不会传递参数，全部会被当成文本解析。</p>
 </blockquote>
-<h4 id="2-5-2-复杂参数传递"><a href="#2-5-2-复杂参数传递" class="headerlink" title="2.5.2 复杂参数传递"></a>2.5.2 复杂参数传递</h4><p><strong>传递List:</strong></p>
-<ol>
+<h4 id="2-5-2-复杂参数传递"><a href="#2-5-2-复杂参数传递" class="headerlink" title="2.5.2 复杂参数传递"></a>2.5.2 复杂参数传递</h4><h5 id="2-5-2-1-传递List"><a href="#2-5-2-1-传递List" class="headerlink" title="2.5.2.1 传递List:"></a>2.5.2.1 传递List:</h5><ol>
 <li><p>通过<code>List</code>的<code>toString()</code>方法将<code>List</code>变量以<code>String</code>类型传递到前端。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; colors = Arrays.asList(<span class="string">"RED"</span>, <span class="string">"BLUE"</span>, <span class="string">"GREEN"</span>);</span><br><span class="line">model.addAttribute(<span class="string">"tColors1"</span>, colors.toString());</span><br></pre></td></tr></table></figure>
 <p>同时需要在src/main/resources/templates/welcome.html中写入代码：</p>
@@ -378,6 +377,26 @@
 <p>它实现了在访问<code>http://localhost:8080/welcome</code>时显示：</p>
 <blockquote>
 <p><strong>This is color 0: RED ,count: 1</strong><br><strong>This is color 1: BLUE ,count: 2</strong><br><strong>This is color 2: GREEN ,count: 3</strong> </p>
+</blockquote>
+</li>
+</ol>
+<h5 id="2-5-2-2-传递Map"><a href="#2-5-2-2-传递Map" class="headerlink" title="2.5.2.2 传递Map:"></a>2.5.2.2 传递Map:</h5><ol>
+<li><p>一般是向模板传递map，再在模板中使用<code>${map?keys}</code>循环keySet迭代器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">    map.put(String.valueOf(i), String.valueOf(i*i));</span><br><span class="line">&#125;</span><br><span class="line">model.addAttribute(<span class="string">"tMap"</span>, map);</span><br></pre></td></tr></table></figure>
+<p>同时需要在src/main/resources/templates/welcome.html中写入代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">#list</span> <span class="attr">tMap</span>?<span class="attr">keys</span> <span class="attr">as</span> <span class="attr">key</span>&gt;</span></span><br><span class="line">    key: $&#123;key&#125; - value: $&#123;tMap[key]&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它实现了在访问<code>http://localhost:8080/welcome</code>时显示：</p>
+<blockquote>
+<p><strong>key: 0 - value: 0</strong><br><strong>key: 1 - value: 1</strong><br><strong>key: 2 - value: 4</strong><br><strong>key: 3 - value: 9</strong></p>
+</blockquote>
+</li>
+<li><p>甚至可以直接向模板传递一个<code>entrySet()</code>，接着在模板中迭代它。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">    map.put(String.valueOf(i), String.valueOf(i*i));</span><br><span class="line">&#125;</span><br><span class="line">model.addAttribute(<span class="string">"tEntry"</span>, map.entrySet());</span><br></pre></td></tr></table></figure>
+<p><strong>这里<code>${entry.key}</code>是直接调用了<code>Java</code>对象方法。</strong><br>同时需要在src/main/resources/templates/welcome.html中写入代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">#list</span> <span class="attr">tEntry</span> <span class="attr">as</span> <span class="attr">entry</span>&gt;</span>                 <span class="tag">&lt;<span class="name">#--</span> <span class="attr">ftl</span>语言<span class="attr">map</span>不能<span class="attr">get</span>一个<span class="attr">entry</span>，要想循环<span class="attr">entry</span> <span class="attr">set</span>得从后端传过来 <span class="attr">--</span>&gt;</span></span><br><span class="line">    key: $&#123;entry.key&#125; - value: $&#123;entry.value&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">#list</span>&gt;</span>                                <span class="tag">&lt;<span class="name">#--</span> 这个太神奇了 <span class="attr">--</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它也实现了在访问<code>http://localhost:8080/welcome</code>时显示：</p>
+<blockquote>
+<p><strong>key: 0 - value: 0</strong><br><strong>key: 1 - value: 1</strong><br><strong>key: 2 - value: 4</strong><br><strong>key: 3 - value: 9</strong></p>
 </blockquote>
 </li>
 </ol>
@@ -484,7 +503,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-开发工具和Java语言介绍"><span class="nav-number">1.</span> <span class="nav-text">第一章　开发工具和Java语言介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-Spring入门和模板语法"><span class="nav-number">2.</span> <span class="nav-text">第二章　Spring入门和模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-项目结构："><span class="nav-number">2.1.</span> <span class="nav-text">2.1　项目结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-一个简单demo"><span class="nav-number">2.2.</span> <span class="nav-text">2.2　一个简单demo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-指定HTTP请求方法"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 指定HTTP请求方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-HTTP-METHOD"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 HTTP METHOD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-路径和请求的参数传递"><span class="nav-number">2.3.</span> <span class="nav-text">2.3　路径和请求的参数传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-通过模板返回"><span class="nav-number">2.4.</span> <span class="nav-text">2.4　通过模板返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-向模板传递参数"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 向模板传递参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-1-简单参数传递"><span class="nav-number">2.5.1.</span> <span class="nav-text">2.5.1 简单参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-2-复杂参数传递"><span class="nav-number">2.5.2.</span> <span class="nav-text">2.5.2 复杂参数传递</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-开发工具和Java语言介绍"><span class="nav-number">1.</span> <span class="nav-text">第一章　开发工具和Java语言介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-Spring入门和模板语法"><span class="nav-number">2.</span> <span class="nav-text">第二章　Spring入门和模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-项目结构："><span class="nav-number">2.1.</span> <span class="nav-text">2.1　项目结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-一个简单demo"><span class="nav-number">2.2.</span> <span class="nav-text">2.2　一个简单demo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-指定HTTP请求方法"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 指定HTTP请求方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-HTTP-METHOD"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 HTTP METHOD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-路径和请求的参数传递"><span class="nav-number">2.3.</span> <span class="nav-text">2.3　路径和请求的参数传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-通过模板返回"><span class="nav-number">2.4.</span> <span class="nav-text">2.4　通过模板返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-向模板传递参数"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 向模板传递参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-1-简单参数传递"><span class="nav-number">2.5.1.</span> <span class="nav-text">2.5.1 简单参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-2-复杂参数传递"><span class="nav-number">2.5.2.</span> <span class="nav-text">2.5.2 复杂参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-2-1-传递List"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">2.5.2.1 传递List:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-2-2-传递Map"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">2.5.2.2 传递Map:</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
