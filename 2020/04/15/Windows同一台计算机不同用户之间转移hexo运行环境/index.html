@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows同一台计算机不同用户之间转移hexo运行环境">
 <meta property="og:url" content="https://www.fingerdance.plus/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/index.html">
-<meta property="og:site_name" content="Ops Call From Future">
+<meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="部署hexo的用户：A新用户：B 在Windows平台由A切换B之后，A配置的hexo没法直接使用。 解决方法   将C:\Users\A\AppData\Roaming下的npm目录拷贝到C:\Users\B\AppData\Roaming。 这里是hexo的安装目录，在新用户下不用重新安装。   将C:\Users\A下的.ssh目录拷贝到C:\Users\B。 这里存放着用于连接Github">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-15T10:47:56.000Z">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Windows同一台计算机不同用户之间转移hexo运行环境 | Ops Call From Future</title>
+  <title>Windows同一台计算机不同用户之间转移hexo运行环境 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -94,7 +94,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Ops Call From Future" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Dirac Sea" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -115,10 +115,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Ops Call From Future</h1>
+      <h1 class="site-title">Dirac Sea</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">A ESP's Blog</p>
+      <p class="site-subtitle" itemprop="description">Ops Call From Future</p>
   </div>
 
   <div class="site-nav-right">
@@ -232,7 +232,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ops Call From Future">
+      <meta itemprop="name" content="Dirac Sea">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -418,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考："><span class="nav-number">1.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考："><span class="nav-text">参考：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -436,7 +436,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -745,6 +745,61 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
     <div id="pjax">
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

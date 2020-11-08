@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 110 平衡二叉树（Balanced Binary Tree）">
 <meta property="og:url" content="https://www.fingerdance.plus/2020/08/18/LeetCode-110-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88Balanced-Binary-Tree%EF%BC%89/index.html">
-<meta property="og:site_name" content="Ops Call From Future">
+<meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="题目给定一个二叉树，判断它是否是高度平衡的二叉树。本题中，一棵高度平衡二叉树定义为：  一个二叉树 _每个节点_ 的左右两个子树的高度差的绝对值不超过1。示例 1:给定二叉树 [3,9,20,null,null,15,7]  12345  3 &#x2F; \9  20  &#x2F;  \ 15   7 返回 true 。示例 2:给定二叉树 [1,2,2,3,3,null,null,4,4]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-18T05:22:00.000Z">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>LeetCode 110 平衡二叉树（Balanced Binary Tree） | Ops Call From Future</title>
+  <title>LeetCode 110 平衡二叉树（Balanced Binary Tree） | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -99,7 +99,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Ops Call From Future" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Dirac Sea" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -120,10 +120,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Ops Call From Future</h1>
+      <h1 class="site-title">Dirac Sea</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">A ESP's Blog</p>
+      <p class="site-subtitle" itemprop="description">Ops Call From Future</p>
   </div>
 
   <div class="site-nav-right">
@@ -237,7 +237,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ops Call From Future">
+      <meta itemprop="name" content="Dirac Sea">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -359,7 +359,7 @@
       <i class="fa fa-chevron-left"></i> LeetCode 104 二叉树的最大深度（Maximum Depth of Binary Tree）
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" rel="next" title="驾驶技术学习心得">
+    <a href="/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" rel="next" title="驾驶技术学习心得">
       驾驶技术学习心得 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -421,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一：递归"><span class="nav-number">2.</span> <span class="nav-text">解法一：递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二：自底向上（后序遍历）"><span class="nav-number">3.</span> <span class="nav-text">解法二：自底向上（后序遍历）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一：递归"><span class="nav-text">解法一：递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二：自底向上（后序遍历）"><span class="nav-text">解法二：自底向上（后序遍历）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -439,7 +439,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -748,6 +748,61 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
     <div id="pjax">
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

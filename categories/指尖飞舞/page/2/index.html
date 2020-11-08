@@ -22,9 +22,9 @@
 
   <meta name="description" content="我太菜被关起来了">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ops Call From Future">
+<meta property="og:title" content="Dirac Sea">
 <meta property="og:url" content="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/page/2/index.html">
-<meta property="og:site_name" content="Ops Call From Future">
+<meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="我太菜被关起来了">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="ESP">
@@ -44,7 +44,7 @@
   };
 </script>
 
-  <title>Category: 指尖飞舞 | Ops Call From Future</title>
+  <title>Category: 指尖飞舞 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -91,7 +91,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Ops Call From Future" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Dirac Sea" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -112,10 +112,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Ops Call From Future</h1>
+      <h1 class="site-title">Dirac Sea</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">A ESP's Blog</p>
+      <p class="site-subtitle" itemprop="description">Ops Call From Future</p>
   </div>
 
   <div class="site-nav-right">
@@ -231,6 +231,26 @@
     <div class="collection-year">
       <span class="collection-header">2020</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-10-01T16:51:38+08:00"
+              content="2020-10-01">
+          10-01
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/10/01/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/" itemprop="url">
+            <span itemprop="name">C++字符串及其指针类型定义</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -412,26 +432,6 @@
     </header>
   </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-21T00:16:39+08:00"
-              content="2020-04-21">
-          04-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/" itemprop="url">
-            <span itemprop="name">LeetCode #200 岛屿数量（Number of Islands）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
     </div>
   </div>
   
@@ -510,7 +510,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -819,6 +819,61 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
     <div id="pjax">
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
