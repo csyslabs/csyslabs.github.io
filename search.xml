@@ -1161,8 +1161,8 @@
       <tags>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>树深度</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
         <tag>N叉树</tag>
       </tags>
   </entry>
@@ -1215,10 +1215,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
-        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -1246,8 +1246,8 @@
         <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>树深度</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
