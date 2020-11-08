@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：记录自己使用Hexo-next主题博客过程中的的一些配置。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-30T20:54:39.000Z">
-<meta property="article:modified_time" content="2020-11-08T18:42:13.000Z">
+<meta property="article:modified_time" content="2020-11-08T20:16:51.358Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="Blog">
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-09 02:42:13" itemprop="dateModified" datetime="2020-11-09T02:42:13+08:00">2020-11-09</time>
+                <time title="Modified: 2020-11-09 04:16:51" itemprop="dateModified" datetime="2020-11-09T04:16:51+08:00">2020-11-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,8 +321,8 @@
 <li>打开：\hexo\themes\next\source\css</li>
 <li>新建文件夹：_custom</li>
 <li>打开_custom文件夹，新建文件：custom.styl</li>
-<li>打开custom.styl，添加如下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #5d2b90;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>如果想要更改背景色，边距，边框等等可以加上：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #5d2b90;</span><br><span class="line">    background: rgba(6, 162, 228, 0.8);</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #06a2e4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>打开custom.styl，添加如下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #5d2b90;</span><br><span class="line">    background: rgba(245, 240, 250, 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>如果想要更改边距，边框等等可以加上：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">code &#123;</span><br><span class="line">    color: #5d2b90;</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #06a2e4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>打开：\hexo\themes\next\source\css\main.styl</li>
 <li>在末尾加上一行：<code>@import &quot;_custom/custom.styl&quot;;</code></li>
 </ul>
@@ -410,9 +410,7 @@
 <li>更改<code>sidebar-nav-hover-color</code>的值为<code>purple-vs</code></li>
 </ul>
 </blockquote>
-<h3 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h3><p>今天，我给自己的博客换上了 <strong>衬线（serif)字体</strong>，没想到效果这么好。<br>中文字体：Noto Serif SC (思源宋体)<br>英文字体：Maitree (跟宋体绝配)<br>要想中英文字体同时更改，需要在两个地方设置。首先设置全局字体为Maitree，再单独修改中文字体为思源宋体。<br>步骤：</p>
-<ol>
-<li><p>修改全局英文字体：</p>
+<h3 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h3><p>今天，我给自己的博客换上了 <strong>衬线（serif)字体</strong>，没想到效果这么好。<br>中文字体：Noto Serif SC (思源宋体)<br>英文字体：Maitree (跟宋体绝配)<br>要想中英文字体同时更改，需要在两个地方设置。首先设置全局字体为Maitree，再单独修改中文字体为思源宋体。<br>步骤：<br><strong>修改全局英文字体：</strong></p>
 <blockquote>
 <ul>
 <li>打开：\hexo\themes\next\_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
@@ -421,22 +419,43 @@
 <li>将<code>family: Lato</code>改为<code>Maitree</code>。</li>
 </ul>
 </blockquote>
-</li>
-<li><p>修改中文字体：</p>
+<p><strong>修改中文字体：</strong></p>
 <blockquote>
 <ul>
 <li>打开：..\hexo\themes\next\source\css\_variables\base.styl</li>
 <li>定位到：<br><code>$font-family-chinese      = &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;;</code></li>
 <li>修改为：<code>&quot;Noto Serif SC&quot;;</code></li>
 <li>打开：..\hexo\themes\next\layout\_partials\header\header.swig</li>
-<li>文末添加：<code>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Serif+SC&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
+<li>文末添加：<br><code>&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Serif+SC&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
 <li>打开：..\hexo\themes\next\_config.yml ，定位到：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br></pre></td></tr></table></figure></li>
 <li>head行修改为：</li>
-<li>head: ..\hexo\themes\next\layout\_partials\header\header.swig</li>
+<li><code>head: ..\hexo\themes\next\layout\\_partials\header\header.swig</code></li>
 </ul>
 </blockquote>
-</li>
-</ol>
+<h3 id="版权声明引用样式更改"><a href="#版权声明引用样式更改" class="headerlink" title="版权声明引用样式更改"></a>版权声明引用样式更改</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css\_common\components\post\post-copyright.styl</li>
+<li>修改颜色从<code>$red</code>为<code>$purple-vs</code>，其中，<code>$purple-vs</code>在<br>\hexo\themes\next\source\css\_variables\base.styl中定义。</li>
+</ul>
+</blockquote>
+<h3 id="引用Note颜色更改"><a href="#引用Note颜色更改" class="headerlink" title="引用Note颜色更改"></a>引用Note颜色更改</h3><p>在Markdown中使用Note时：</p>
+<div class="note primary">
+            <p>whatever</p>
+          </div>
+<p>会在文章中插入块引用。<br><strong>更改引用边框颜色：</strong></p>
+<blockquote>
+<ul>
+<li>打开：..\hexo\themes\next\source\css\_variables\base.styl</li>
+<li>定位到：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Primary</span><br><span class="line">$note-primary-border        &#x3D; #6f42c1;</span><br></pre></td></tr></table></figure></li>
+<li>更改颜色值为：<code>#5d2b90</code></li>
+</ul>
+</blockquote>
+<p><strong>更改引用背景色：</strong></p>
+<blockquote>
+<ul>
+<li>在上文基础上更改<code>$note-primary-bg</code>值为: <code>var(--card-bg-color);</code><br>该颜色为版权声明块背景色，这样可让二者相互适配。</li>
+</ul>
+</blockquote>
 
     </div>
 
@@ -540,7 +559,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章置顶"><span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改行内代码样式"><span class="nav-text">更改行内代码样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏目录高亮颜色"><span class="nav-text">侧边栏目录高亮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像边框宽度"><span class="nav-text">头像边框宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章主体文字行高"><span class="nav-text">文章主体文字行高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面加载进度条"><span class="nav-text">页面加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Google-Analytic"><span class="nav-text">配置Google Analytic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修复Pjax导致的图片显示异常"><span class="nav-text">修复Pjax导致的图片显示异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置点击头像回到主页"><span class="nav-text">设置点击头像回到主页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改标题悬浮颜色"><span class="nav-text">更改标题悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改超链接悬浮颜色"><span class="nav-text">更改超链接悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改导航悬浮颜色"><span class="nav-text">更改导航悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义字体"><span class="nav-text">自定义字体</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章置顶"><span class="nav-text">文章置顶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改行内代码样式"><span class="nav-text">更改行内代码样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏目录高亮颜色"><span class="nav-text">侧边栏目录高亮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像边框宽度"><span class="nav-text">头像边框宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章主体文字行高"><span class="nav-text">文章主体文字行高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面加载进度条"><span class="nav-text">页面加载进度条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Google-Analytic"><span class="nav-text">配置Google Analytic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修复Pjax导致的图片显示异常"><span class="nav-text">修复Pjax导致的图片显示异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置点击头像回到主页"><span class="nav-text">设置点击头像回到主页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改标题悬浮颜色"><span class="nav-text">更改标题悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改超链接悬浮颜色"><span class="nav-text">更改超链接悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改导航悬浮颜色"><span class="nav-text">更改导航悬浮颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义字体"><span class="nav-text">自定义字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版权声明引用样式更改"><span class="nav-text">版权声明引用样式更改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用Note颜色更改"><span class="nav-text">引用Note颜色更改</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -576,7 +595,7 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fab fa-playstation"></i>
+  <div class="sidebar-button motion-element">
     ¯\_(ツ)_/¯
   </a>
   </div>
