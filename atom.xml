@@ -252,7 +252,7 @@
     <link href="https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
     <id>https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
     <published>2020-10-30T20:54:39.000Z</published>
-    <updated>2020-11-08T17:29:07.519Z</updated>
+    <updated>2020-11-08T18:10:12.829Z</updated>
     
     <summary type="html">
     
@@ -535,9 +535,9 @@
     
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
     
-      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
-    
       <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
+    
+      <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
       <category term="N叉树" scheme="https://www.fingerdance.plus/tags/N%E5%8F%89%E6%A0%91/"/>
     
