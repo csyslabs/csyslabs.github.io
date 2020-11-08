@@ -1418,8 +1418,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>沟通</tag>
       </tags>
   </entry>
@@ -1472,10 +1472,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1528,8 +1528,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>读书</tag>
         <tag>笔记</tag>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -2106,8 +2106,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -2176,8 +2176,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -2297,8 +2297,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -2348,8 +2348,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -2390,8 +2390,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -2432,8 +2432,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -2483,8 +2483,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -2553,8 +2553,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -2593,8 +2593,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
