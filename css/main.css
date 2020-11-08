@@ -1258,7 +1258,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #679e4b;
+  background: #36a1ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1966,6 +1966,9 @@ pre .javascript .function {
 .posts-expand .post-title-link:hover::before {
   transform: scaleX(1);
   visibility: visible;
+}
+.posts-expand .post-title-link:hover {
+  color: #5d2b90;
 }
 .posts-expand .post-title-link .fa-external-link-alt {
   font-size: 0.875em;

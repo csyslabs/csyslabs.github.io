@@ -869,6 +869,14 @@
 </li>
 </ul>
 </blockquote>
+<h3 id="更改标题悬浮颜色"><a href="#更改标题悬浮颜色" class="headerlink" title="更改标题悬浮颜色"></a>更改标题悬浮颜色</h3><blockquote>
+<ul>
+<li>打开：\hexo\themes\next\source\css_common\components\post\post-header.styl</li>
+<li>定位到：<code>.posts-expand .post-title-link {</code>，在其下方：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;:hover::before &#123;</span><br><span class="line">  transform: scaleX(1);</span><br><span class="line">  visibility: visible;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+下面添加：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;:hover&#123;</span><br><span class="line">   color:$purple-vs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这里的颜色<code>$purple-vs</code>在\hexo\themes\next\source\css\_variables\base.styl定义。</li>
+</ul>
+</blockquote>
 <h3 id="更改超链接悬浮颜色"><a href="#更改超链接悬浮颜色" class="headerlink" title="更改超链接悬浮颜色"></a>更改超链接悬浮颜色</h3><blockquote>
 <ul>
 <li>打开：\hexo\themes\next\source\css\_variables\base.styl</li>
