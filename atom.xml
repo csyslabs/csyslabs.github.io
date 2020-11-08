@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-08T10:12:26.828Z</updated>
+  <updated>2020-11-08T15:32:15.202Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AcWing 792.高精度减法</title>
+    <link href="https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/"/>
+    <id>https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/</id>
+    <published>2020-11-08T15:26:45.000Z</published>
+    <updated>2020-11-08T15:32:15.202Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;高精度减法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AcWing 792.高精度加法</title>
+    <link href="https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"/>
+    <id>https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/</id>
+    <published>2020-11-08T15:19:50.000Z</published>
+    <updated>2020-11-08T15:25:18.302Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要；&lt;/strong&gt;&lt;br&gt;高精度加法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>AcWing 2767.优秀的拆分 [2020 CCF CSP-J2, NOIP]</title>
@@ -189,9 +239,9 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="计数数组" scheme="https://www.fingerdance.plus/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
@@ -326,7 +376,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-07T16:06:14.568Z</updated>
+    <updated>2020-11-08T15:34:20.919Z</updated>
     
     <summary type="html">
     
@@ -465,9 +515,9 @@
       <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
-    
       <category term="BFS" scheme="https://www.fingerdance.plus/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://www.fingerdance.plus/tags/DFS/"/>
     
       <category term="树" scheme="https://www.fingerdance.plus/tags/%E6%A0%91/"/>
     
@@ -502,60 +552,6 @@
     
     
       <category term="进度条" scheme="https://www.fingerdance.plus/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 102 二叉树的层序遍历（Binary Tree Level Order Traversal）</title>
-    <link href="https://www.fingerdance.plus/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/"/>
-    <id>https://www.fingerdance.plus/2020/08/21/LeetCode-102-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88Binary-Tree-Level-Order-Traversal%EF%BC%89/</id>
-    <published>2020-08-21T10:41:09.000Z</published>
-    <updated>2020-08-23T07:54:29.632Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-      <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 111 二叉树的最小深度（Minimum Depth of Binary Tree）</title>
-    <link href="https://www.fingerdance.plus/2020/08/21/LeetCode-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%EF%BC%88Minimum-Depth-of-Binary-Tree%EF%BC%89/"/>
-    <id>https://www.fingerdance.plus/2020/08/21/LeetCode-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6%EF%BC%88Minimum-Depth-of-Binary-Tree%EF%BC%89/</id>
-    <published>2020-08-21T09:21:12.000Z</published>
-    <updated>2020-09-07T01:53:57.477Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个二叉树，找出其最小深度。&lt;br&gt;最小深度是从根节点到最近叶子节点的最短路径上的节点数量。&lt;br&gt;说明:
-        
-      
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="二叉树" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="树深度" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E6%B7%B1%E5%BA%A6/"/>
-    
-      <category term="dfs" scheme="https://www.fingerdance.plus/tags/dfs/"/>
-    
-      <category term="bfs" scheme="https://www.fingerdance.plus/tags/bfs/"/>
-    
-      <category term="树结构" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
