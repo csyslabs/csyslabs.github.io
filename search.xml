@@ -78,7 +78,25 @@
 </blockquote>
 <p>当然也可以在遍历完A后再处理最终进位问题，即：<br><strong>模板2：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] * b + t;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(t);</span><br><span class="line">    <span class="keyword">for</span> (;C.<span class="built_in">size</span>() &gt;  &amp;&amp; C.back() == <span class="number">0</span>;) C.pop_back();</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，模板1是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.</p>
+<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，模板1是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.<br><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://fingerdance.plus/2020/11/09/AcWing-793-高精度乘法/" target="_blank" rel="noopener">AcWing 793.高精度乘法</a></p>
+</blockquote>
+<h3 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h3><p>一个超长正整数除以一个短正整数。<br>和高精度加减乘不一样的是，高精度除法是从大整数高位开始的。在复习了小学二年级下册的相关内容后，我觉得算法基本上就是模拟除法竖式。<br>高精度加计算过程会产生进位，减计算过程会产生借位，乘计算过程会产生进位，而高精度除法计算过程会产生余数。<br>余数作为下一位的高位需要乘10进行新一轮的除法运算。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A / b = C ... r, A &gt;= 0, b &gt; 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">div</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b, <span class="keyword">int</span> &amp;r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    r = <span class="number">0</span>;                                                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- )</span><br><span class="line">    &#123;</span><br><span class="line">        r = r * <span class="number">10</span> + A[i];                                      <span class="comment">// 2</span></span><br><span class="line">        C.push_back(r / b);                                     <span class="comment">// 3</span></span><br><span class="line">        r %= b;                                                 <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(C.<span class="built_in">begin</span>(), C.<span class="built_in">end</span>());                                <span class="comment">// 5</span></span><br><span class="line">    <span class="keyword">while</span> (C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>) C.pop_back();         </span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>初始化余数<code>r</code>aka <code>remain</code>。</li>
+<li>对于被除数<code>A</code>的每一位，需要将上一位除法运算产生的余数作为当前数的高位乘10加上当前数。</li>
+<li>用当前数作为被除数和除数<code>b</code>进行除法运算，放到结果槽中。</li>
+<li>将余数保留给下一位。</li>
+<li>首位可能产生0，所以我们将结果数组反转再去除结尾0.</li>
+</ol>
+</blockquote>
+<p><strong>题目链接:</strong></p>
+<blockquote>
+<p><a href="https://fingerdance.plus/2020/11/09/AcWing-794-高精度除法/" target="_blank" rel="noopener">AcWing 794.高精度除法</a></p>
+</blockquote>
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>常见问题分类：</p>
@@ -331,12 +349,7 @@
 <p>…\src\main\resources\templates\welcome.html</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Value:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        $&#123;tValue&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>List:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>list toString represent:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            $&#123;tColors1&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>list loop:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tColors2</span> <span class="attr">as</span> <span class="attr">x</span>&gt;</span></span><br><span class="line">                This is color $&#123;x?index&#125;: $&#123;x&#125; ,count: $&#123;x?counter&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Map:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>map keySet:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tMap</span>?<span class="attr">keys</span> <span class="attr">as</span> <span class="attr">key</span>&gt;</span></span><br><span class="line">                key: $&#123;key&#125; - value: $&#123;tMap[key]&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>map entrySet:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tEntry</span> <span class="attr">as</span> <span class="attr">entry</span>&gt;</span>                 <span class="tag">&lt;<span class="name">#--</span> <span class="attr">ftl</span>语言<span class="attr">map</span>不能<span class="attr">get</span>一个<span class="attr">entry</span>，要想循环<span class="attr">entry</span> <span class="attr">set</span>得从后端传过来 <span class="attr">--</span>&gt;</span></span><br><span class="line">                key: $&#123;entry.key&#125; - value: $&#123;entry.value&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span>                                <span class="tag">&lt;<span class="name">#--</span> 这个太神奇了 <span class="attr">--</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>User:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>User: $&#123;user.name&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Description:</span><br><span class="line">            $&#123;user.getDescription()&#125;</span><br><span class="line">            $&#123;user.description&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Customized value:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">title</span> = <span class="string">"NowCoder"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>$&#123;title&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Include template:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#include</span> "<span class="attr">tail.html</span>"&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Customized macro:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#macro</span> <span class="attr">render_color</span> <span class="attr">index</span> <span class="attr">color</span>&gt;</span></span><br><span class="line">            Color Render Macro $&#123;index&#125;, $&#123;color&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">#macro</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tColors2</span> <span class="attr">as</span> <span class="attr">color</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">@render_color</span> <span class="attr">index</span>=<span class="string">"$&#123;color?index&#125;"</span> <span class="attr">color</span>=<span class="string">"$&#123;color&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">hello</span> = <span class="string">"Hello"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">helloworld1</span> = <span class="string">"$&#123;hello&#125; World ! [1]"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">helloworld2</span> = <span class="string">'$&#123;hello&#125; World ! [2]'</span>&gt;</span></span><br><span class="line">    $&#123;hello&#125;</span><br><span class="line">    $&#123;helloworld1&#125;</span><br><span class="line">    $&#123;helloworld2&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-]]></content>
+<h3 id="2-6-Requests和Response"><a href="#2-6-Requests和Response" class="headerlink" title="2.6 Requests和Response"></a>2.6 Requests和Response</h3>]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>Project</category>
@@ -347,9 +360,96 @@
       </tags>
   </entry>
   <entry>
+    <title>AcWing 794.高精度除法</title>
+    <url>/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>高精度除法模板题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定两个非负整数A，B，请你计算 A / B的商和余数。</p>
+<p><strong>输入格式</strong><br>共两行，第一行包含整数A，第二行包含整数B。</p>
+<p><strong>输出格式</strong><br>共两行，第一行输出所求的商，第二行输出所求余数。</p>
+<p><strong>数据范围</strong><br>$1≤A$ 的长度 $≤100000$,<br>$1≤B≤10000$<br>$B$ 一定不为0</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>7<br>2</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>3<br>1</p>
+</blockquote>
+<hr>
+<p>不考虑负数情况，因为负数除法可以转化为两个正数相除。<br>和高精度加减乘不一样的是，高精度除法是从大整数高位开始的。在复习了小学二年级下册的相关内容后，我觉得算法基本上就是模拟除法竖式。<br>高精度加计算过程会产生进位，减计算过程会产生借位，乘计算过程会产生进位，而高精度除法计算过程会产生余数。<br>余数作为下一位的高位需要乘10进行新一轮的除法运算。<br>以下为我写的代码，和模板可能有略微区别。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">div</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">0</span>;                                                         <span class="comment">// 1  </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        r = r * <span class="number">10</span> + A[i];                                             <span class="comment">// 2</span></span><br><span class="line">        res.push_back(r / b);                                          <span class="comment">// 3</span></span><br><span class="line">        r %= b;                                                        <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(res.<span class="built_in">begin</span>(), res.<span class="built_in">end</span>());                                   <span class="comment">// 5</span></span><br><span class="line">    <span class="keyword">for</span> (; res.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; res.back() == <span class="number">0</span>;) res.pop_back();</span><br><span class="line">    b = r;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length(); i ++ ) A.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    res = div(A, b);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = res.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) <span class="built_in">cout</span> &lt;&lt; res[i];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>初始化余数<code>r</code>aka <code>remain</code>。</li>
+<li>对于被除数<code>A</code>的每一位，需要将上一位除法运算产生的余数作为当前数的高位乘10加上当前数。</li>
+<li>用当前数作为被除数和除数<code>b</code>进行除法运算，放到结果槽中。</li>
+<li>将余数保留给下一位。</li>
+<li>首位可能产生0，所以我们将结果数组反转再去除结尾0.</li>
+</ol>
+</blockquote>
+<div class="note primary">
+            <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/796/" target="_blank" rel="noopener">AcWing 794.高精度除法</a></p>
+          </div>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>高精度四则运算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AcWing 793.高精度乘法</title>
+    <url>/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>高精度乘法模板题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定两个正整数A和B，请你计算A * B的值。</p>
+<p><strong>输入格式</strong><br>共两行，第一行包含整数A，第二行包含整数B。</p>
+<p><strong>输出格式</strong><br>共一行，包含A * B的值。</p>
+<p><strong>数据范围</strong><br>$1≤A$ 的长度 $≤100000$,<br>$0≤B≤10000$</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>2<br>3</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>6</p>
+</blockquote>
+<hr>
+<p>注意这道题是两个正整数，一个超长位数乘一个短位数，在进行高精度乘法运算过程中，我们习惯将短位数和超长位的每一位进行乘法运算。<br>如果换成负数，本质还是一样的，无非就是多一次正负判断。<br>对于最终进位的处理，有两种方式：</p>
+<h3 id="方法一：进位依次对十取模放进res数组"><a href="#方法一：进位依次对十取模放进res数组" class="headerlink" title="方法一：进位依次对十取模放进res数组"></a>方法一：进位依次对十取模放进res数组</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;m, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m.<span class="built_in">size</span>() || t; i ++ )                       <span class="comment">// 1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; m.<span class="built_in">size</span>()) t += m[i] * b;</span><br><span class="line">        res.push_back(t % <span class="number">10</span>);                                      <span class="comment">// 2</span></span><br><span class="line">        t /= <span class="number">10</span>;                                                    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; res.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; res.back() == <span class="number">0</span>;) res.pop_back();      <span class="comment">// 3</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; n;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) m.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    res = mul(m, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = res.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i  -- ) <span class="built_in">cout</span> &lt;&lt; res[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>注意1处条件，当<code>m</code>没有遍历完的时候，需要一直和<code>n</code>相乘，更新进位<code>t</code>。当乘完的时候，依然进入处理进位<code>t</code>，只不过此时不需要和<code>n</code>相乘，而是直接模10获得最高位数。</li>
+<li>放入slot中的数一直都是对10取模。</li>
+<li>去除数组尾部（结果头部）零。</li>
+</ol>
+</blockquote>
+<h3 id="方法二：进位直接放入res数组"><a href="#方法二：进位直接放入res数组" class="headerlink" title="方法二：进位直接放入res数组"></a>方法二：进位直接放入res数组</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;m, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = m[i] * n + t;</span><br><span class="line">        res.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t) res.push_back(t);</span><br><span class="line">    <span class="keyword">for</span> (; res.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; res.back() == <span class="number">0</span>;) res.pop_back();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; n;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) m.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    res = mul(m, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = res.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i  -- ) <span class="built_in">cout</span> &lt;&lt; res[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，方法一是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.</p>
+<div class="note primary">
+            <h4 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h4><p><a href="https://www.acwing.com/problem/content/795/" target="_blank" rel="noopener">AcWing 793.高精度乘法</a></p>
+          </div>
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>高精度四则运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AcWing 792.高精度减法</title>
     <url>/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>高精度减法。</p>
+    <content><![CDATA[<p><strong>摘要：</strong><br>高精度减法模板题。</p>
 <a id="more"></a>
 
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定两个正整数，计算它们的差，计算结果可能为负数。</p>
@@ -365,6 +465,7 @@
 <p>21</p>
 </blockquote>
 <hr>
+<p>注意这道题是两个正整数相减。<br>如果换成带负数的，进行判断正负之后，要么转化为两个正整数相加，要么依旧是两个正整数相减。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;a, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.<span class="built_in">size</span>() != b.<span class="built_in">size</span>()) <span class="keyword">return</span> a.<span class="built_in">size</span>() &gt; b.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] != b[i]) <span class="keyword">return</span> a[i] &gt; b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sub</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, t = <span class="number">0</span>; i &lt; m.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t += m[i];</span><br><span class="line">        <span class="keyword">if</span> (i &lt; n.<span class="built_in">size</span>()) t -= n[i];</span><br><span class="line">        res.push_back((t + <span class="number">10</span>) % <span class="number">10</span>);                                               <span class="comment">// 1</span></span><br><span class="line">        <span class="keyword">if</span> (t &lt; <span class="number">0</span>) t = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">else</span> t = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (;res.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; res.back() == <span class="number">0</span>;) res.pop_back();                       <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; m, n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- )  m.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = b.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- )  n.push_back(b[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">if</span> (cmp(m, n)) res = sub(m, n);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        res = sub(n, m);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'-'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = res.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) <span class="built_in">cout</span> &lt;&lt; res[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
@@ -372,10 +473,9 @@
 <li>注意当A与B前几位部分相等时，C后面会存在’0’，如<code>123 - 120</code>结果类似<code>003</code>。但在结果仅为1位时，不用考虑。</li>
 </ol>
 </blockquote>
-<p><strong>原题链接：</strong></p>
-<blockquote>
-<p><a href="https://www.acwing.com/problem/content/794/" target="_blank" rel="noopener">AcWing 792.高精度减法</a></p>
-</blockquote>
+<div class="note primary">
+            <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/794/" target="_blank" rel="noopener">AcWing 792.高精度减法</a></p>
+          </div>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -1348,7 +1448,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -1398,7 +1498,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -2178,8 +2278,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -2248,8 +2348,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -2369,8 +2469,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -2420,8 +2520,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -2462,8 +2562,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -2504,8 +2604,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -2555,8 +2655,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -2625,8 +2725,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -2665,8 +2765,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
