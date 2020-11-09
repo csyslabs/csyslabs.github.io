@@ -243,9 +243,9 @@ video {
   max-width: 100%;
 }
 hr {
-  background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
+  background-image: linear-gradient(0deg, #5d2b90, #5d2b90 1px, transparent 1px, transparent 1px);
   border: 0;
-  height: 3px;
+  height: 1px;
   margin: 40px 0;
 }
 blockquote {
@@ -1257,7 +1257,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #528567;
+  background: #58ff38;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
