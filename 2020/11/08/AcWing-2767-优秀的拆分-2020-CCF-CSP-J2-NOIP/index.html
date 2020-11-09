@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：2020 CCF CSP-J2普及组 aka NOIP">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-08T09:38:54.000Z">
-<meta property="article:modified_time" content="2020-11-08T15:35:52.418Z">
+<meta property="article:modified_time" content="2020-11-09T06:56:43.709Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="二进制">
 <meta name="twitter:card" content="summary">
@@ -262,10 +262,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-08 17:38:54 / Modified: 23:35:52" itemprop="dateCreated datePublished" datetime="2020-11-08T17:38:54+08:00">2020-11-08</time>
+              <time title="Created: 2020-11-08 17:38:54" itemprop="dateCreated datePublished" datetime="2020-11-08T17:38:54+08:00">2020-11-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-09 14:56:43" itemprop="dateModified" datetime="2020-11-09T14:56:43+08:00">2020-11-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -300,7 +306,7 @@
       
         <p><strong>摘要：</strong><br>2020 CCF CSP-J2普及组 aka NOIP</p>
 <a id="more"></a>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一般来说，一个正整数可以拆分成若干个正整数的和。<br>例如，$1=1，10=1+2+3+4$ 等。<br>对于正整数 $n$ 的一种特定拆分，我们称它为“优秀的”，当且仅当在这种拆分下，$n$ 被分解为了若干个 <strong>不同</strong> 的 $2$ 的 <strong>正整数</strong> 次幂。<br>注意，一个数 $x$ 能被表示成 $2$ 的正整数次幂，当且仅当 $x$ 能通过正整数个 $2$ 相乘在一起得到。<br>例如，$10=8+2=2^3+2^1$ 是一个优秀的拆分。<br>但是，$7=4+2+1=2^2+2^1+2^0$ 就不是一个优秀的拆分，因为 $1$ 不是 $2$ 的正整数次幂。<br>现在，给定正整数 $n$，你需要判断这个数的所有拆分中，是否存在优秀的拆分。<br>若存在，请你给出具体的拆分方案。<br>本题暂时采用AcWing数据。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一般来说，一个正整数可以拆分成若干个正整数的和。<br>例如，$1=1$，$10=1+2+3+4$ 等。<br>对于正整数 $n$ 的一种特定拆分，我们称它为“优秀的”，当且仅当在这种拆分下，$n$ 被分解为了若干个 <strong>不同</strong> 的 $2$ 的 <strong>正整数</strong> 次幂。<br>注意，一个数 $x$ 能被表示成 $2$ 的正整数次幂，当且仅当 $x$ 能通过正整数个 $2$ 相乘在一起得到。<br>例如，$10=8+2=2^3+2^1$ 是一个优秀的拆分。<br>但是，$7=4+2+1=2^2+2^1+2^0$ 就不是一个优秀的拆分，因为 $1$ 不是 $2$ 的正整数次幂。<br>现在，给定正整数 $n$，你需要判断这个数的所有拆分中，是否存在优秀的拆分。<br>若存在，请你给出具体的拆分方案。<br>本题暂时采用AcWing数据。</p>
 <p><strong>输入格式</strong><br>输入文件只有一行，一个正整数 n，代表需要判断的数。</p>
 <p><strong>输出格式</strong><br>如果这个数的所有拆分中，存在优秀的拆分。<br>那么，你需要 <strong>从大到小</strong> 输出这个拆分中的每一个数，相邻两个数之间用一个空格隔开。<br>可以证明，在规定了拆分数字的顺序后，该拆分方案是 <strong>唯一</strong> 的。<br>若不存在优秀的拆分，输出 “-1”（不包含双引号）。</p>
 <p><strong>数据范围</strong><br>对于 $20\%$ 的数据，$n≤10$。<br>对于另外 $20\%$ 的数据，保证 $n$ 为奇数。<br>对于另外 $20\%$ 的数据，保证 $n$ 为 $2$ 的正整数次幂。<br>对于 $80\%$ 的数据，$n≤1024$。<br>对于 $100\%$ 的数据，$1≤n≤1×10^7$。</p>
