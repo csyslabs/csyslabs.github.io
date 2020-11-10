@@ -52,10 +52,11 @@
 </blockquote>
 <p>该模板可以改写成总是模拟以一个更长的数组加长度较小的数组：<br><strong>模板2：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C = A + B, A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">add</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.<span class="built_in">size</span>() &lt; B.<span class="built_in">size</span>()) <span class="keyword">return</span> add(B, A);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        t += A[i];</span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.<span class="built_in">size</span>()) t += B[i];</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(t);</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样的话，就可以只考虑遍历较长数组，只进行一次长度判断。<br><strong>题目链接：</strong></p>
-<blockquote>
-<p><a href="https://fingerdance.plus/2020/11/08/AcWing-791-高精度加法/" target="_blank" rel="noopener">AcWing 791.高精度加法</a></p>
-</blockquote>
+<p>这样的话，就可以只考虑遍历较长数组，只进行一次长度判断。</p>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/08/AcWing-791-高精度加法/" target="_blank" rel="noopener">AcWing 791.高精度加法</a></p>
+          </div>
+
 <h3 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h3><p>两个超长正整数相减。因为结果可能为负数，负数的时候输出需要在最前面补<code>&#39;-&#39;</code>。<br><code>A B</code>相减最核心的部分，<code>A</code>总是大于等于<code>B</code>的，这样可以只遍历<code>A</code>，对对应的<code>B</code>有无数字进行判断。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//C = A - B， A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// return if A &gt;= B</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.<span class="built_in">size</span>() != B.<span class="built_in">size</span>()) <span class="keyword">return</span> A.<span class="built_in">size</span>() &gt; B.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] != B[i]) <span class="keyword">return</span> A[i] &gt; B[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A - B while A &gt;= B</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sub</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, t = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] - t;</span><br><span class="line">        <span class="comment">// consider if should sub slot of B</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.<span class="built_in">size</span>()) t -= B[i];</span><br><span class="line">        <span class="comment">// t might be a negative</span></span><br><span class="line">        <span class="comment">// t will be the right slot whatever its negative or positive</span></span><br><span class="line">        <span class="comment">// t + 10 means it will borrow 10 from next slot</span></span><br><span class="line">        C.push_back((t + <span class="number">10</span>) % <span class="number">10</span>);                                          <span class="comment">//1</span></span><br><span class="line">        <span class="comment">// update t</span></span><br><span class="line">        <span class="keyword">if</span> (t &lt; <span class="number">0</span>) t = <span class="number">1</span>;                    </span><br><span class="line">        <span class="keyword">else</span> t = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// there might be some '0' in back of C</span></span><br><span class="line">    <span class="comment">// dont't have to remove while C.size() == 1</span></span><br><span class="line">    <span class="keyword">for</span> (; C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>; ) C.pop_back();                    <span class="comment">//2</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A, B, C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) A.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = b.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) B.push_back(b[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">if</span> (cmp(A, B)) C = sub(A, B);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        C = sub(B, A);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = C.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) <span class="built_in">printf</span>(<span class="string">"%d"</span>, C[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -64,10 +65,11 @@
 <li>注意当A与B前几位部分相等时，C后面会存在’0’，如<code>123 - 120</code>结果类似<code>003</code>。但在结果仅为1位时，不用考虑。</li>
 </ol>
 </blockquote>
-<p><strong>题目链接：</strong></p>
-<blockquote>
-<p><a href="https://fingerdance.plus/2020/11/08/AcWing-792-高精度减法/" target="_blank" rel="noopener">AcWing 792.高精度减法</a></p>
-</blockquote>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/08/AcWing-792-高精度减法/" target="_blank" rel="noopener">AcWing 792.高精度减法</a></p>
+          </div>
+
+
 <h3 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h3><p>一个超长正整数乘一个普通int正整数。模拟相乘过程把普通int整数看成一个整体。<br><strong>模板1：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C = A * b, A &gt;= 0, b &gt; 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>() || t; i ++ )                       <span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; A.<span class="built_in">size</span>()) t += A[i] * b;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);                                        <span class="comment">//2</span></span><br><span class="line">        t /= <span class="number">10</span>;                                                    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>) C.pop_back();</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -78,10 +80,11 @@
 </blockquote>
 <p>当然也可以在遍历完A后再处理最终进位问题，即：<br><strong>模板2：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] * b + t;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(t);</span><br><span class="line">    <span class="keyword">for</span> (;C.<span class="built_in">size</span>() &gt;  &amp;&amp; C.back() == <span class="number">0</span>;) C.pop_back();</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，模板1是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.<br><strong>题目链接：</strong></p>
-<blockquote>
-<p><a href="https://fingerdance.plus/2020/11/09/AcWing-793-高精度乘法/" target="_blank" rel="noopener">AcWing 793.高精度乘法</a></p>
-</blockquote>
+<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，模板1是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.</p>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/09/AcWing-793-高精度乘法/" target="_blank" rel="noopener">AcWing 793.高精度乘法</a></p>
+          </div>
+
 <h3 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h3><p>一个超长正整数除以一个短正整数。<br>和高精度加减乘不一样的是，高精度除法是从大整数高位开始的。在复习了小学二年级下册的相关内容后，我觉得算法基本上就是模拟除法竖式。<br>高精度加计算过程会产生进位，减计算过程会产生借位，乘计算过程会产生进位，而高精度除法计算过程会产生余数。<br>余数作为下一位的高位需要乘10进行新一轮的除法运算。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A / b = C ... r, A &gt;= 0, b &gt; 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">div</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b, <span class="keyword">int</span> &amp;r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    r = <span class="number">0</span>;                                                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- )</span><br><span class="line">    &#123;</span><br><span class="line">        r = r * <span class="number">10</span> + A[i];                                      <span class="comment">// 2</span></span><br><span class="line">        C.push_back(r / b);                                     <span class="comment">// 3</span></span><br><span class="line">        r %= b;                                                 <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(C.<span class="built_in">begin</span>(), C.<span class="built_in">end</span>());                                <span class="comment">// 5</span></span><br><span class="line">    <span class="keyword">while</span> (C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>) C.pop_back();         </span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -93,16 +96,17 @@
 <li>首位可能产生0，所以我们将结果数组反转再去除结尾0.</li>
 </ol>
 </blockquote>
-<p><strong>题目链接:</strong></p>
-<blockquote>
-<p><a href="https://fingerdance.plus/2020/11/09/AcWing-794-高精度除法/" target="_blank" rel="noopener">AcWing 794.高精度除法</a></p>
-</blockquote>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/09/AcWing-794-高精度除法/" target="_blank" rel="noopener">AcWing 794.高精度除法</a></p>
+          </div>
+
 <h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><p>对于一个给定数组<code>alls[N]</code>，其前缀和数组<code>s[N]</code>对应着对于<code>alls[N]</code>的每一个元素，其前缀所有元素（包括这一位）之和。<br>前缀和数组的应用一般伴随着一些查询操作，一个查询操作就是给定一个区间范围，让你求该范围内数的和。<br>另外，注意构造前缀和数组是从下标1开始构造，整体数目不变。相当于是数组下标向右偏移一位。这是因为构造前缀和数组的每一位需要依赖其前一位。当构造第1位时，需要依赖第0位。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">S[i] = a[<span class="number">1</span>] + a[<span class="number">2</span>] + ... a[i]</span><br><span class="line">a[l] + ... + a[r] = S[r] - S[l - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p><strong>题目链接：</strong></p>
-<blockquote>
-<p><a href="https://fingerdance.plus/2020/11/10/AcWing-795-前缀和/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
-</blockquote>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/10/AcWing-795-前缀和/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
+          </div>
+
+
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>常见问题分类：</p>
@@ -112,7 +116,10 @@
 <li>对于两个序列，维护某种次序，比如归并排序中合并两个有序序列的操作</li>
 </ul>
 </blockquote>
-<p><strong>例题1：</strong><br><a href="https://fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/" target="_blank" rel="noopener">最长连续不重复子序列</a></p>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/04/AcWing-799-最长连续不重复子序列/" target="_blank" rel="noopener">AcWing 799.最长连续不重复子序列</a></p>
+          </div>
+
 <h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>当有一堆数，总量不多，比如说1e5，不算多，但是每个数可能取到很大值或很小值，比如说最大取到1e10。那么在需要把数值当成数组下标进行操作的时候，比如说计数数组，无法开出如此大空间的数组，这时候就需要离散化操作。<br>离散化：把无限空间中有限的个体映射到有限的空间中去，以此提高算法的时空效率。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls; <span class="comment">// 存储所有待离散化的值</span></span><br><span class="line">sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()); <span class="comment">// 将所有值排序</span></span><br><span class="line">alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 去掉重复元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 二分求出x对应的离散化的值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> <span class="comment">// 找到第一个大于等于x的位置</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r + <span class="number">1</span>; <span class="comment">// 映射到1, 2, ...n</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -123,7 +130,10 @@
 <li>注意离散化操作的重要前提是，原数据本身的值并不重要，我们不感兴趣，重要的是其位置。</li>
 </ul>
 </blockquote>
-<p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-802-区间和">AcWing 802.区间和</a></p>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://www.fingerdance.plus/2020/11/06/AcWing-802-区间和">AcWing 802.区间和</a></p>
+          </div>
+
 <h2 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h2><p>现有若干区间，相互之间可能相交。将所有相交的区间合并为一个区间，返回合并后的区间。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将所有存在交集的区间合并</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; res;</span><br><span class="line"></span><br><span class="line">    sort(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());                             <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> st = <span class="number">-2e9</span>, ed = <span class="number">-2e9</span>;                                   <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> seg : segs)</span><br><span class="line">        <span class="keyword">if</span> (ed &lt; seg.first)                                     <span class="comment">// 3</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);            <span class="comment">// 4 </span></span><br><span class="line">            st = seg.first, ed = seg.second;                    <span class="comment">// 5</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> ed = <span class="built_in">max</span>(ed, seg.second);                          <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);                    <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>segs</code>存放的是所有区间的左右端点构成的<code>pair</code>。<br>算法思想是维护一个前置区间，维护一个当前区间。比较两个区间是否相交，不相交就认为前置区间是一个孤立区间。不管是否相交，更新前置区间的左右端点，在更新当前区间左右端点。当最后一个当前区间与其前置区间比较完毕后，不管二者是否相交，最后一次更新前置区间将不会有新的当前区间。此时新的前置区间将必然是一个孤立区间。</p>
@@ -159,7 +169,9 @@
 </li>
 </ul>
 </blockquote>
-<p><strong>例题：</strong><br><a href="https://www.fingerdance.plus/2020/11/06/AcWing-803-区间合并">AcWing 803.区间合并</a></p>
+<div class="note primary">
+            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://www.fingerdance.plus/2020/11/06/AcWing-803-区间合并">AcWing 803.区间合并</a></p>
+          </div>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -717,7 +729,7 @@
 <p>8<br>0<br>5</p>
 </blockquote>
 <hr>
-<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">300010</span>;                                           <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">int</span> a[N], s[N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls;                                               <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">vector</span>&lt;PII&gt; add, query;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; l &lt; r;) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l + <span class="number">1</span>;                                               <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (; n -- ;) &#123;                                            <span class="comment">// 4</span></span><br><span class="line">        <span class="keyword">int</span> x, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; c;</span><br><span class="line">        alls.push_back(x);</span><br><span class="line">        add.push_back(&#123;x, c&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; m -- ;) &#123;                                            <span class="comment">// 5</span></span><br><span class="line">        <span class="keyword">int</span> l, r;   </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        alls.push_back(l);</span><br><span class="line">        alls.push_back(r);</span><br><span class="line">        query.push_back(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>());                             <span class="comment">// 6</span></span><br><span class="line">    alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 7</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : add) &#123;                                     <span class="comment">// 8</span></span><br><span class="line">        a[<span class="built_in">find</span>(item.first)] += item.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= alls.<span class="built_in">size</span>(); i ++ ) &#123;                  <span class="comment">// 9</span></span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : query) &#123;                                   <span class="comment">// 10</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">find</span>(item.first), r = <span class="built_in">find</span>(item.second);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">300010</span>;                                           <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">int</span> a[N], s[N];                                                 <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls;                                               <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">vector</span>&lt;PII&gt; add, query;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; l &lt; r;) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l + <span class="number">1</span>;                                               <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (; n -- ;) &#123;                                            <span class="comment">// 4</span></span><br><span class="line">        <span class="keyword">int</span> x, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; c;</span><br><span class="line">        alls.push_back(x);</span><br><span class="line">        add.push_back(&#123;x, c&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; m -- ;) &#123;                                            <span class="comment">// 5</span></span><br><span class="line">        <span class="keyword">int</span> l, r;   </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        alls.push_back(l);</span><br><span class="line">        alls.push_back(r);</span><br><span class="line">        query.push_back(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>());                             <span class="comment">// 6</span></span><br><span class="line">    alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 7</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : add) &#123;                                     <span class="comment">// 8</span></span><br><span class="line">        a[<span class="built_in">find</span>(item.first)] += item.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= alls.<span class="built_in">size</span>(); i ++ ) &#123;                  <span class="comment">// 9</span></span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : query) &#123;                                   <span class="comment">// 10</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">find</span>(item.first), r = <span class="built_in">find</span>(item.second);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li><ol>
@@ -753,20 +765,27 @@
 </ol>
 </li>
 <li><ol start="9">
-<li>求前缀和数组。我们知道求前缀和数组需要从1开始取，但是这里为什么 <strong>可以</strong> 从1开始遍历呢？因为alls数组是从0开始记录的，find方法将坐标映射到下标时已经向右偏移了一位，所以a数组值&gt; 0的位置一定是&gt; 0的。另外注意到这里为什么要用alls.size()呢，那是因为不管a下标从哪个数开始，前缀和数组长度一定和alls一样长。（在这么长的数组中，只有add.size()数量的数是 &gt;= 1的，其余全为查询坐标的下标，都是默认的0）。</li>
+<li>求前缀和数组。我们知道求前缀和数组需要从1开始取，但是这里为什么 <strong>可以</strong> 从1开始遍历呢？因为alls数组是从0开始记录的，find方法将坐标映射到下标时已经向右偏移了一位，所以a数组值&gt; 0的位置一定是&gt; 0的。另外注意到这里为什么要用alls.size()呢，那是因为离散化操作将所有的alls数组中的值全部映射到了a数组中，且前缀和数组长度一定和alls一样长。</li>
 </ol>
 </li>
 <li><ol start="10">
 <li>输出查询</li>
 </ol>
 </li>
+<li><ol start="11">
+<li>当数组范围大的时候一定要在<code>main()</code>函数外面开数组，因为在这里开数组其内存会被分配在数据区，而在<code>main()</code>内开数组其内存你会被分配在代码区，数据量大的话会出错。</li>
+</ol>
+</li>
 </ul>
 </blockquote>
+<p><strong>现在我们尝试描述一下a数组：</strong><br>a数组从0开始，到300009位结束。其中，第0位因为映射过程向右偏移一位故为0。从1开始到alls.size()处，其中有一部分值大于0，这些值是add操作增加的值；另一部分值为0，这一部分为查询坐标映射过来的，构建前缀和数组时需要包含在内。从alls.size()起到300009为止全是0.这一部分长度根据测试数据而变化。</p>
 <p>本质上，alls数组可以看成是一组映射关系。将可能取到极大或极小但数量有限的坐标和数组下标对应起来。由于vector数组自身的属性，此时是从0开始记录的。由于我们要构建前缀和数组，在处理a数组时要从1开始构建，所以在通过find方法找坐标下标时，要整体向右偏移一位。</p>
-<p><strong>原题链接：</strong></p>
-<blockquote>
-<p><a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/804/</a></p>
-</blockquote>
+<p><strong>举例：</strong><br>现有Add坐标: -314159265358979, -123, -84, -12, 0, 3, 10086, 99999999999999<br>简化一点，分别对应加1。<br>Query坐标：{-314159265358980, -122}, {-13, 5}, {9999, 99999999999999999999}, {-314159265358983, 99999999999999999999}, {0, 0}</p>
+<p>alls数组: $$-314159265358983_0, -314159265358980_1, -314159265358979_2, -123_3, -122_4, -84_5, -13_6,\ -12_7, 0_8, 3_9, 5_{10}, 9999_{11}, 10086_{12}, 99999999999999_{13}, 99999999999999999999_{14}$$</p>
+<p>a数组：$$0_0, 0_1, 0_2, 1_3, 1_4, 0_5, 0_6, 0_7, 1_8, 1_9, 1_{10}, 0_{11}, 0_{12}, 1_{13}, 1_{14}, 0_{15}, 0_{16}, … , 0_{100009}$$</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong><br><a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">AcWing 802.区间和</a></p>
+          </div>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -2328,8 +2347,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -2398,8 +2417,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -2519,8 +2538,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -2570,8 +2589,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -2612,8 +2631,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -2654,8 +2673,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -2705,8 +2724,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -2775,8 +2794,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -2815,8 +2834,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
