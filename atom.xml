@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-09T16:15:05.942Z</updated>
+  <updated>2020-11-10T05:32:38.493Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AcWing 795.前缀和</title>
+    <link href="https://www.fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    <id>https://www.fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/</id>
+    <published>2020-11-10T05:17:07.000Z</published>
+    <updated>2020-11-10T05:32:38.493Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;前缀和模板题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="前缀和" scheme="https://www.fingerdance.plus/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>AcWing 794.高精度除法</title>
@@ -426,7 +453,7 @@
     <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-09T16:08:18.704Z</updated>
+    <updated>2020-11-10T09:20:33.303Z</updated>
     
     <summary type="html">
     
@@ -528,31 +555,6 @@
       <category term="字符串" scheme="https://www.fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="指针" scheme="https://www.fingerdance.plus/tags/%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ProjectNowCoder学习笔记</title>
-    <link href="https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.fingerdance.plus/2020/09/04/ProjectNowCoder%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-09-04T08:13:18.000Z</published>
-    <updated>2020-11-09T09:11:05.252Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录ProjectNowCoder学习过程中的一些重点。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="Project" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
-    
-    
-      <category term="Spring" scheme="https://www.fingerdance.plus/tags/Spring/"/>
-    
-      <category term="Project" scheme="https://www.fingerdance.plus/tags/Project/"/>
     
   </entry>
   

@@ -97,6 +97,11 @@
 <blockquote>
 <p><a href="https://fingerdance.plus/2020/11/09/AcWing-794-高精度除法/" target="_blank" rel="noopener">AcWing 794.高精度除法</a></p>
 </blockquote>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><p>对于一个给定数组<code>alls[N]</code>，其前缀和数组<code>s[N]</code>对应着对于<code>alls[N]</code>的每一个元素，其前缀所有元素（包括这一位）之和。<br>前缀和数组的应用一般伴随着一些查询操作，一个查询操作就是给定一个区间范围，让你求该范围内数的和。<br>另外，注意构造前缀和数组是从下标1开始构造，整体数目不变。相当于是数组下标向右偏移一位。这是因为构造前缀和数组的每一位需要依赖其前一位。当构造第1位时，需要依赖第0位。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">S[i] = a[<span class="number">1</span>] + a[<span class="number">2</span>] + ... a[i]</span><br><span class="line">a[l] + ... + a[r] = S[r] - S[l - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+</blockquote>
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>常见问题分类：</p>
@@ -357,6 +362,49 @@
       <tags>
         <tag>Spring</tag>
         <tag>Project</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AcWing 795.前缀和</title>
+    <url>/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>前缀和模板题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输入一个长度为n的整数序列。<br>接下来再输入m个询问，每个询问输入一对l, r。<br>对于每个询问，输出原序列中从第l个数到第r个数的和。</p>
+<p><strong>输入格式</strong><br>第一行包含两个整数n和m。<br>第二行包含n个整数，表示整数数列。<br>接下来m行，每行包含两个整数l和r，表示一个询问的区间范围。</p>
+<p><strong>输出格式</strong><br>共m行，每行输出一个询问的结果。</p>
+<p><strong>数据范围</strong><br>$ 1≤l≤r≤n $,<br>$1≤n$, $m≤100000$,<br>$−1000≤$ 数列中元素的值 $≤1000$</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>5 3<br>2 1 3 6 4<br>1 2<br>1 3<br>2 4</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>3<br>6<br>10</p>
+</blockquote>
+<hr>
+<p>此题考查前缀和数组的构造。对于一个给定数组<code>alls[N]</code>，其前缀和数组<code>s[N]</code>对应着对于<code>alls[N]</code>的每一个元素，其前缀所有元素（包括这一位）之和。<br>前缀和数组的应用一般伴随着一些查询操作，一个查询操作就是给定一个区间范围，让你求该范围内数的和。<br>另外，注意构造前缀和数组是从下标1开始构造，整体数目不变。相当于是数组下标向右偏移一位。这是因为构造前缀和数组的每一位需要依赖其前一位。当构造第1位时，需要依赖第0位。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">int</span> alls[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) <span class="built_in">cin</span> &gt;&gt; alls[i];                  <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">int</span> s[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) &#123;                                <span class="comment">// 2</span></span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + alls[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; m -- ;) &#123;</span><br><span class="line">        <span class="keyword">int</span> l, r;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;          </span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;                            <span class="comment">// 3</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>从下标1开始读取数组，整体向右偏移一位方便查询。</li>
+<li>从下标1开始构建前缀和数组。</li>
+<li>查询时，<code>s[r] - s[l]</code>多减了一个<code>alls[l]</code>，所以要<code>s[r] - s[l - 1]</code>。</li>
+</ol>
+</blockquote>
+<div class="note primary">
+            <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/797/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
+          </div>
+
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数组</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -1448,7 +1496,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -1498,7 +1546,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
