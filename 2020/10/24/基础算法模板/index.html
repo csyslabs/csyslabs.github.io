@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：详尽地记录了各种基础算法模板，以及一些个人理解。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-24T06:03:00.000Z">
-<meta property="article:modified_time" content="2020-11-10T09:20:33.303Z">
+<meta property="article:modified_time" content="2020-11-10T10:44:43.893Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
@@ -287,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-10 17:20:33" itemprop="dateModified" datetime="2020-11-10T17:20:33+08:00">2020-11-10</time>
+                <time title="Modified: 2020-11-10 18:44:43" itemprop="dateModified" datetime="2020-11-10T18:44:43+08:00">2020-11-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,6 +419,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S[i] = a[<span class="number">1</span>] + a[<span class="number">2</span>] + ... a[i]</span><br><span class="line">a[l] + ... + a[r] = S[r] - S[l - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <p><strong>题目链接：</strong></p>
 <blockquote>
+<p><a href="https://fingerdance.plus/2020/11/10/AcWing-795-前缀和/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
 </blockquote>
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

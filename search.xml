@@ -101,6 +101,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">S[i] = a[<span class="number">1</span>] + a[<span class="number">2</span>] + ... a[i]</span><br><span class="line">a[l] + ... + a[r] = S[r] - S[l - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <p><strong>题目链接：</strong></p>
 <blockquote>
+<p><a href="https://fingerdance.plus/2020/11/10/AcWing-795-前缀和/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
 </blockquote>
 <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -706,7 +707,7 @@
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假定有一个无限长的数轴，数轴上每个坐标上的数都是0。<br>现在，我们首先进行 n 次操作，每次操作将某一位置x上的数加c。<br>接下来，进行 m 次询问，每个询问包含两个整数l和r，你需要求出在区间[l, r]之间的所有数的和。</p>
 <p><strong>输入格式</strong><br>第一行包含两个整数n和m。<br>接下来 n 行，每行包含两个整数x和c。<br>再接下里 m 行，每行包含两个整数l和r。</p>
 <p><strong>输出格式</strong><br>共m行，每行输出一个询问中所求的区间内数字和。</p>
-<p><strong>数据范围</strong><br>−1e9≤x≤1e9,<br>1≤n,m≤1e5,<br>−1e9≤l≤r≤1e9,<br>−10000≤c≤10000</p>
+<p><strong>数据范围</strong><br>$−1e9≤x≤1e9$,<br>$1≤n,m≤1e5$,<br>$−1e9≤l≤r≤1e9$,<br>$−10000≤c≤10000$ </p>
 <p><strong>输入样例：</strong></p>
 <blockquote>
 <p>3 3<br>1 2<br>3 6<br>7 5<br>1 3<br>4 6<br>7 8</p>
@@ -752,7 +753,7 @@
 </ol>
 </li>
 <li><ol start="9">
-<li>求前缀和数组。</li>
+<li>求前缀和数组。我们知道求前缀和数组需要从1开始取，但是这里为什么 <strong>可以</strong> 从1开始遍历呢？因为alls数组是从0开始记录的，find方法将坐标映射到下标时已经向右偏移了一位，所以a数组值&gt; 0的位置一定是&gt; 0的。另外注意到这里为什么要用alls.size()呢，那是因为不管a下标从哪个数开始，前缀和数组长度一定和alls一样长。（在这么长的数组中，只有add.size()数量的数是 &gt;= 1的，其余全为查询坐标的下标，都是默认的0）。</li>
 </ol>
 </li>
 <li><ol start="10">
@@ -761,6 +762,7 @@
 </li>
 </ul>
 </blockquote>
+<p>本质上，alls数组可以看成是一组映射关系。将可能取到极大或极小但数量有限的坐标和数组下标对应起来。由于vector数组自身的属性，此时是从0开始记录的。由于我们要构建前缀和数组，在处理a数组时要从1开始构建，所以在通过find方法找坐标下标时，要整体向右偏移一位。</p>
 <p><strong>原题链接：</strong></p>
 <blockquote>
 <p><a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/804/</a></p>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：一道经典的离散化题目。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-06T02:20:26.000Z">
-<meta property="article:modified_time" content="2020-11-06T09:30:55.298Z">
+<meta property="article:modified_time" content="2020-11-10T10:50:17.445Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="离散化">
@@ -263,10 +263,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-06 10:20:26 / Modified: 17:30:55" itemprop="dateCreated datePublished" datetime="2020-11-06T10:20:26+08:00">2020-11-06</time>
+              <time title="Created: 2020-11-06 10:20:26" itemprop="dateCreated datePublished" datetime="2020-11-06T10:20:26+08:00">2020-11-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-10 18:50:17" itemprop="dateModified" datetime="2020-11-10T18:50:17+08:00">2020-11-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -304,7 +310,7 @@
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假定有一个无限长的数轴，数轴上每个坐标上的数都是0。<br>现在，我们首先进行 n 次操作，每次操作将某一位置x上的数加c。<br>接下来，进行 m 次询问，每个询问包含两个整数l和r，你需要求出在区间[l, r]之间的所有数的和。</p>
 <p><strong>输入格式</strong><br>第一行包含两个整数n和m。<br>接下来 n 行，每行包含两个整数x和c。<br>再接下里 m 行，每行包含两个整数l和r。</p>
 <p><strong>输出格式</strong><br>共m行，每行输出一个询问中所求的区间内数字和。</p>
-<p><strong>数据范围</strong><br>−1e9≤x≤1e9,<br>1≤n,m≤1e5,<br>−1e9≤l≤r≤1e9,<br>−10000≤c≤10000</p>
+<p><strong>数据范围</strong><br>$−1e9≤x≤1e9$,<br>$1≤n,m≤1e5$,<br>$−1e9≤l≤r≤1e9$,<br>$−10000≤c≤10000$ </p>
 <p><strong>输入样例：</strong></p>
 <blockquote>
 <p>3 3<br>1 2<br>3 6<br>7 5<br>1 3<br>4 6<br>7 8</p>
@@ -350,7 +356,7 @@
 </ol>
 </li>
 <li><ol start="9">
-<li>求前缀和数组。</li>
+<li>求前缀和数组。我们知道求前缀和数组需要从1开始取，但是这里为什么 <strong>可以</strong> 从1开始遍历呢？因为alls数组是从0开始记录的，find方法将坐标映射到下标时已经向右偏移了一位，所以a数组值&gt; 0的位置一定是&gt; 0的。另外注意到这里为什么要用alls.size()呢，那是因为不管a下标从哪个数开始，前缀和数组长度一定和alls一样长。（在这么长的数组中，只有add.size()数量的数是 &gt;= 1的，其余全为查询坐标的下标，都是默认的0）。</li>
 </ol>
 </li>
 <li><ol start="10">
@@ -359,6 +365,7 @@
 </li>
 </ul>
 </blockquote>
+<p>本质上，alls数组可以看成是一组映射关系。将可能取到极大或极小但数量有限的坐标和数组下标对应起来。由于vector数组自身的属性，此时是从0开始记录的。由于我们要构建前缀和数组，在处理a数组时要从1开始构建，所以在通过find方法找坐标下标时，要整体向右偏移一位。</p>
 <p><strong>原题链接：</strong></p>
 <blockquote>
 <p><a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">https://www.acwing.com/problem/content/804/</a></p>
