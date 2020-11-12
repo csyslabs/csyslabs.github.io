@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：一道双指针题目。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-11T05:43:09.000Z">
-<meta property="article:modified_time" content="2020-11-11T06:08:15.997Z">
+<meta property="article:modified_time" content="2020-11-12T16:27:19.193Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="双指针">
@@ -264,10 +264,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-11 13:43:09 / Modified: 14:08:15" itemprop="dateCreated datePublished" datetime="2020-11-11T13:43:09+08:00">2020-11-11</time>
+              <time title="Created: 2020-11-11 13:43:09" itemprop="dateCreated datePublished" datetime="2020-11-11T13:43:09+08:00">2020-11-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-13 00:27:19" itemprop="dateModified" datetime="2020-11-13T00:27:19+08:00">2020-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -317,7 +323,7 @@
 <p>1 1</p>
 </blockquote>
 <hr>
-<h3 id="解法一：双指针"><a href="#解法一：双指针" class="headerlink" title="解法一：双指针"></a>解法一：双指针</h3><p>充分利用两个数组都是递增的特性。<br>指针1从数组1的高位向低位搜索，直到两数之和刚好小于目标数；此时如果指针1没有溢出，则数组1一定会存在一个满足条件的值。此时指针2从数组2的低位向高位搜索，直到找到。</p>
+<h3 id="解法一：双指针"><a href="#解法一：双指针" class="headerlink" title="解法一：双指针"></a>解法一：双指针</h3><p>类似夹逼准则。充分利用两个数组都是递增的特性。<br>维护两个指针，指针i从数组1的低位向高位遍历，指针j从数组2的高位向低位遍历，一直向正确的数值逼近。<br>j先向左移动，直到找到一个数，使得与i对应的数之和小于目标值，此时排除掉j右侧所有数，正确的i和j应该分别分布在i的右侧和j的左侧。<br>i再向右移动，直到找到一个数，使得与j对应的数之和小于目标值，此时排除掉i左侧所有数，正确的i和j应该分布在i的右侧和j的左侧。<br>A数组：<code>i____________________________________</code><br>B数组：<code>______________________________&lt;-j</code><br>A数组：<code>i____________________________________</code><br>B数组：<code>____________________j_____被排除_____</code><br>A数组：<code>i-&gt;____________________________________</code><br>B数组：<code>____________________j_____被排除_____</code><br>A数组：<code>____被排除____i____________________________</code><br>B数组：<code>____________________j_____被排除_____</code><br>重复上述过程，直到找到正确的i和j。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, x;</span><br><span class="line"><span class="keyword">int</span> a[N], b[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = m - <span class="number">1</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; a[i] + b[j] &gt; x) j -- ;</span><br><span class="line">        <span class="keyword">if</span> (j &gt;= <span class="number">0</span> &amp;&amp; a[i] + b[j] == x) <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">' '</span> &lt;&lt; j &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>复杂度： <strong><em>O(N)</em></strong></p>
 <h3 id="解法二：二分查找"><a href="#解法二：二分查找" class="headerlink" title="解法二：二分查找"></a>解法二：二分查找</h3><p>对于数组1中的每个数，通过目标数计算出应该存在于数组2中的值，再用二分查找的方式在数组2中查找。<br>该方法只利用了一个数组的单调性。</p>
@@ -461,7 +467,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">126</span>
+        <span class="site-state-item-count">127</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

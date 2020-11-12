@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"www.fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我太菜被关起来了">
+  <meta name="description" content="摘要：用数组模拟静态链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AcWing 826.单链表">
 <meta property="og:url" content="https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Dirac Sea">
-<meta property="og:description" content="我太菜被关起来了">
+<meta property="og:description" content="摘要：用数组模拟静态链表">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-12T07:32:37.000Z">
-<meta property="article:modified_time" content="2020-11-12T07:32:37.825Z">
+<meta property="article:modified_time" content="2020-11-12T16:55:18.862Z">
 <meta property="article:author" content="ESP">
-<meta property="article:tag" content="菜">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="链表">
+<meta property="article:tag" content="AcWing">
+<meta property="article:tag" content="单链表">
+<meta property="article:tag" content="静态链表">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/">
@@ -265,6 +269,26 @@
 
               <time title="Created: 2020-11-12 15:32:37" itemprop="dateCreated datePublished" datetime="2020-11-12T15:32:37+08:00">2020-11-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-13 00:55:18" itemprop="dateModified" datetime="2020-11-13T00:55:18+08:00">2020-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
 
           
             <span id="/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/" class="post-meta-item leancloud_visitors" data-flag-title="AcWing 826.单链表" title="Views">
@@ -284,7 +308,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p><strong>摘要：</strong><br>用数组模拟静态链表</p>
+<a id="more"></a>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>实现一个单链表，链表初始为空，支持三种操作：<br>(1) 向链表头插入一个数；<br>(2) 删除第k个插入的数后面的数；<br>(3) 在第k个插入的数后插入一个数<br>现在要对该链表进行M次操作，进行完所有操作后，从头到尾输出整个链表。</p>
+<p><strong>注意：</strong> 题目中第k个插入的数并不是指当前链表的第k个数。例如操作过程中一共插入了n个数，则按照插入的时间顺序，这n个数依次为：第1个插入的数，第2个插入的数，…第n个插入的数。</p>
+<p><strong>输入格式</strong><br>第一行包含整数M，表示操作次数。<br>接下来M行，每行包含一个操作命令，操作命令可能为以下几种：<br>(1) “H x”，表示向链表头插入一个数x。<br>(2) “D k”，表示删除第k个输入的数后面的数（当k为0时，表示删除头结点）。<br>(3) “I k x”，表示在第k个输入的数后面插入一个数x（此操作中k均大于0）。</p>
+<p><strong>输出格式</strong><br>共一行，将整个链表从头到尾输出。</p>
+<p><strong>数据范围</strong><br>$1≤M≤100000$<br>所有操作保证合法。</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>10<br>H 9<br>I 1 1<br>D 1<br>D 0<br>H 6<br>I 3 6<br>I 4 5<br>I 4 5<br>I 3 4<br>D 6</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>6 4 6 5</p>
+</blockquote>
+<hr>
+<p>用数组模拟链表，一定要理解其本质。首先什么是链表呢，链表是一堆离散的结点，每个结点存了两个值，一个表示结点的数值，一个是next指针，它指向了下一个结点的位置。链表是一个递归的数据结构（俄罗斯套娃），如果给我们一个链表的头结点，我们可以遍历整个链表。<br>一个链表结点可以形象地看成：</p>
+<p>我们用一个数组A来存储数值，一个数组B来存储指针。因为我们是用数组模拟链表，所以这里的指针就用数组下标表示。</p>
+
     </div>
 
     
@@ -309,6 +351,14 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 链表</a>
+              <a href="/tags/AcWing/" rel="tag"><i class="fa fa-tag"></i> AcWing</a>
+              <a href="/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 单链表</a>
+              <a href="/tags/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 静态链表</a>
+          </div>
 
         
 
@@ -382,6 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,7 +463,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">126</span>
+        <span class="site-state-item-count">127</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
