@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-11T06:08:15.997Z</updated>
+  <updated>2020-11-12T07:41:31.490Z</updated>
   <id>https://www.fingerdance.plus/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构模板</title>
+    <link href="https://www.fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://www.fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/</id>
+    <published>2020-11-12T07:36:22.000Z</published>
+    <updated>2020-11-12T07:41:31.490Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;详尽地记录了各种数据结构模板，以及一些个人理解。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="堆" scheme="https://www.fingerdance.plus/tags/%E5%A0%86/"/>
+    
+      <category term="链表" scheme="https://www.fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="栈" scheme="https://www.fingerdance.plus/tags/%E6%A0%88/"/>
+    
+      <category term="单调栈" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
+      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="AcWing" scheme="https://www.fingerdance.plus/tags/AcWing/"/>
+    
+      <category term="单链表" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="双链表" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="队列" scheme="https://www.fingerdance.plus/tags/%E9%98%9F%E5%88%97/"/>
+    
+      <category term="循环队列" scheme="https://www.fingerdance.plus/tags/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="单调队列" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
+    
+      <category term="KMP" scheme="https://www.fingerdance.plus/tags/KMP/"/>
+    
+      <category term="Trie数" scheme="https://www.fingerdance.plus/tags/Trie%E6%95%B0/"/>
+    
+      <category term="并查集" scheme="https://www.fingerdance.plus/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+      <category term="一般哈希" scheme="https://www.fingerdance.plus/tags/%E4%B8%80%E8%88%AC%E5%93%88%E5%B8%8C/"/>
+    
+      <category term="字符串哈希" scheme="https://www.fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/"/>
+    
+      <category term="C++ STL" scheme="https://www.fingerdance.plus/tags/C-STL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AcWing 826.单链表</title>
+    <link href="https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+    <id>https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/</id>
+    <published>2020-11-12T07:32:37.000Z</published>
+    <updated>2020-11-12T07:32:37.825Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>AcWing 800.数组元素的目标和</title>
@@ -472,78 +544,6 @@
     
     
       <category term="位运算" scheme="https://www.fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基础算法模板</title>
-    <link href="https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
-    <id>https://www.fingerdance.plus/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</id>
-    <published>2020-10-24T06:03:00.000Z</published>
-    <updated>2020-11-11T12:29:21.801Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;详尽地记录了各种基础算法模板，以及一些个人理解。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="排序" scheme="https://www.fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-      <category term="位运算" scheme="https://www.fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-      <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="快速排序" scheme="https://www.fingerdance.plus/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="二分查找" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
-      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
-    
-      <category term="前缀和" scheme="https://www.fingerdance.plus/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-      <category term="差分" scheme="https://www.fingerdance.plus/tags/%E5%B7%AE%E5%88%86/"/>
-    
-      <category term="离散化" scheme="https://www.fingerdance.plus/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
-      <category term="区间合并" scheme="https://www.fingerdance.plus/tags/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/"/>
-    
-      <category term="AcWing" scheme="https://www.fingerdance.plus/tags/AcWing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用youtube-dl下载YouTube频道所有视频</title>
-    <link href="https://www.fingerdance.plus/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/"/>
-    <id>https://www.fingerdance.plus/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/</id>
-    <published>2020-10-19T13:44:42.000Z</published>
-    <updated>2020-11-02T13:40:22.126Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;使用youtube-dl一键下载指定YouTube频道所有视频。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
-    
-    
-      <category term="YouTube" scheme="https://www.fingerdance.plus/tags/YouTube/"/>
-    
-      <category term="youtube-dl" scheme="https://www.fingerdance.plus/tags/youtube-dl/"/>
     
   </entry>
   
