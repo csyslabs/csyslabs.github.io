@@ -17,27 +17,27 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="题目： 给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。 返回使 A 中的每个值都是唯一的最少操作次数。  示例1： 输入：[1,2,2]输出：1解释：经过一次 move 操作，数组将变为 [1, 2, 3]。  示例2： 输入：[3,2,1,2,1,7]输出：6解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。可以看出 5 次或">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）">
-<meta property="og:url" content="https://www.fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/index.html">
+<meta property="og:url" content="https://fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="题目： 给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。 返回使 A 中的每个值都是唯一的最少操作次数。  示例1： 输入：[1,2,2]输出：1解释：经过一次 move 操作，数组将变为 [1, 2, 3]。  示例2： 输入：[3,2,1,2,1,7]输出：6解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。可以看出 5 次或">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-22T09:44:42.000Z">
 <meta property="article:modified_time" content="2020-03-26T07:40:52.246Z">
 <meta property="article:author" content="ESP">
-<meta property="article:tag" content="算法">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="算法">
 <meta property="article:tag" content="计数数组">
 <meta property="article:tag" content="数组">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
+<link rel="canonical" href="https://fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -241,7 +241,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -360,7 +360,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://www.fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/" title="LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）">https://www.fingerdance.plus/2020/03/22/LeetCode-4-使数组唯一的最小增量（Minimum Increment to Make Array Unique）/</a>
+    <a href="https://fingerdance.plus/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/" title="LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）">https://fingerdance.plus/2020/03/22/LeetCode-4-使数组唯一的最小增量（Minimum Increment to Make Array Unique）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -372,8 +372,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 计数数组</a>
               <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
               <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
@@ -469,7 +469,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

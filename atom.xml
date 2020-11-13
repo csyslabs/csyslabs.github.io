@@ -5,9 +5,9 @@
   <subtitle>Ops Call From Future</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.fingerdance.plus/"/>
-  <updated>2020-11-12T07:45:39.403Z</updated>
-  <id>https://www.fingerdance.plus/</id>
+  <link href="https://fingerdance.plus/"/>
+  <updated>2020-11-13T04:13:18.388Z</updated>
+  <id>https://fingerdance.plus/</id>
   
   <author>
     <name>ESP</name>
@@ -17,9 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AcWing 828.模拟栈</title>
+    <link href="https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/"/>
+    <id>https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/</id>
+    <published>2020-11-13T04:13:18.000Z</published>
+    <updated>2020-11-13T04:13:18.388Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ACWing 827.双链表</title>
+    <link href="https://fingerdance.plus/2020/11/13/ACWing-827-%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
+    <id>https://fingerdance.plus/2020/11/13/ACWing-827-%E5%8F%8C%E9%93%BE%E8%A1%A8/</id>
+    <published>2020-11-13T03:46:55.000Z</published>
+    <updated>2020-11-13T04:07:26.100Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>数据结构模板</title>
-    <link href="https://www.fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/"/>
-    <id>https://www.fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/</id>
+    <link href="https://fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://fingerdance.plus/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF/</id>
     <published>2020-11-12T07:36:22.000Z</published>
     <updated>2020-11-12T07:45:39.403Z</updated>
     
@@ -30,55 +62,55 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="堆" scheme="https://www.fingerdance.plus/tags/%E5%A0%86/"/>
+      <category term="堆" scheme="https://fingerdance.plus/tags/%E5%A0%86/"/>
     
-      <category term="链表" scheme="https://www.fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
+      <category term="链表" scheme="https://fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="栈" scheme="https://www.fingerdance.plus/tags/%E6%A0%88/"/>
+      <category term="单调栈" scheme="https://fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
     
-      <category term="单调栈" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+      <category term="栈" scheme="https://fingerdance.plus/tags/%E6%A0%88/"/>
     
-      <category term="算法模板" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+      <category term="算法模板" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
-      <category term="AcWing" scheme="https://www.fingerdance.plus/tags/AcWing/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
     
-      <category term="单链表" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+      <category term="单链表" scheme="https://fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="双链表" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
+      <category term="双链表" scheme="https://fingerdance.plus/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="队列" scheme="https://www.fingerdance.plus/tags/%E9%98%9F%E5%88%97/"/>
+      <category term="队列" scheme="https://fingerdance.plus/tags/%E9%98%9F%E5%88%97/"/>
     
-      <category term="循环队列" scheme="https://www.fingerdance.plus/tags/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"/>
+      <category term="循环队列" scheme="https://fingerdance.plus/tags/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"/>
     
-      <category term="单调队列" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
+      <category term="单调队列" scheme="https://fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"/>
     
-      <category term="KMP" scheme="https://www.fingerdance.plus/tags/KMP/"/>
+      <category term="KMP" scheme="https://fingerdance.plus/tags/KMP/"/>
     
-      <category term="Trie树" scheme="https://www.fingerdance.plus/tags/Trie%E6%A0%91/"/>
+      <category term="Trie树" scheme="https://fingerdance.plus/tags/Trie%E6%A0%91/"/>
     
-      <category term="并查集" scheme="https://www.fingerdance.plus/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="并查集" scheme="https://fingerdance.plus/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
-      <category term="一般哈希" scheme="https://www.fingerdance.plus/tags/%E4%B8%80%E8%88%AC%E5%93%88%E5%B8%8C/"/>
+      <category term="一般哈希" scheme="https://fingerdance.plus/tags/%E4%B8%80%E8%88%AC%E5%93%88%E5%B8%8C/"/>
     
-      <category term="字符串哈希" scheme="https://www.fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/"/>
+      <category term="字符串哈希" scheme="https://fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/"/>
     
-      <category term="C++ STL" scheme="https://www.fingerdance.plus/tags/C-STL/"/>
+      <category term="C++ STL" scheme="https://fingerdance.plus/tags/C-STL/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 826.单链表</title>
-    <link href="https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
-    <id>https://www.fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/</id>
+    <link href="https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+    <id>https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/</id>
     <published>2020-11-12T07:32:37.000Z</published>
-    <updated>2020-11-12T16:55:18.862Z</updated>
+    <updated>2020-11-13T03:46:12.238Z</updated>
     
     <summary type="html">
     
@@ -87,27 +119,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="链表" scheme="https://www.fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
+      <category term="链表" scheme="https://fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="AcWing" scheme="https://www.fingerdance.plus/tags/AcWing/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
     
-      <category term="单链表" scheme="https://www.fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+      <category term="单链表" scheme="https://fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="静态链表" scheme="https://www.fingerdance.plus/tags/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/"/>
+      <category term="静态链表" scheme="https://fingerdance.plus/tags/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 800.数组元素的目标和</title>
-    <link href="https://www.fingerdance.plus/2020/11/11/AcWing-800-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C/"/>
-    <id>https://www.fingerdance.plus/2020/11/11/AcWing-800-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C/</id>
+    <link href="https://fingerdance.plus/2020/11/11/AcWing-800-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C/"/>
+    <id>https://fingerdance.plus/2020/11/11/AcWing-800-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C/</id>
     <published>2020-11-11T05:43:09.000Z</published>
     <updated>2020-11-12T16:27:19.193Z</updated>
     
@@ -118,23 +150,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+      <category term="双指针" scheme="https://fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="二分" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E5%88%86/"/>
+      <category term="二分" scheme="https://fingerdance.plus/tags/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 795.前缀和</title>
-    <link href="https://www.fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    <id>https://www.fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/</id>
+    <link href="https://fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    <id>https://fingerdance.plus/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/</id>
     <published>2020-11-10T05:17:07.000Z</published>
     <updated>2020-11-10T10:43:56.623Z</updated>
     
@@ -145,23 +177,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="前缀和" scheme="https://www.fingerdance.plus/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+      <category term="前缀和" scheme="https://fingerdance.plus/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 794.高精度除法</title>
-    <link href="https://www.fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/"/>
-    <id>https://www.fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/</id>
+    <link href="https://fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/"/>
+    <id>https://fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/</id>
     <published>2020-11-09T14:02:30.000Z</published>
     <updated>2020-11-09T16:15:05.942Z</updated>
     
@@ -172,21 +204,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 793.高精度乘法</title>
-    <link href="https://www.fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/"/>
-    <id>https://www.fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/</id>
+    <link href="https://fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/"/>
+    <id>https://fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/</id>
     <published>2020-11-09T13:41:25.000Z</published>
     <updated>2020-11-09T14:01:51.156Z</updated>
     
@@ -197,21 +229,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 792.高精度减法</title>
-    <link href="https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/"/>
-    <id>https://www.fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/</id>
+    <link href="https://fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/"/>
+    <id>https://fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/</id>
     <published>2020-11-08T15:26:45.000Z</published>
     <updated>2020-11-09T14:27:04.107Z</updated>
     
@@ -222,21 +254,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 791.高精度加法</title>
-    <link href="https://www.fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"/>
-    <id>https://www.fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/</id>
+    <link href="https://fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"/>
+    <id>https://fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/</id>
     <published>2020-11-08T15:19:50.000Z</published>
     <updated>2020-11-09T13:51:28.781Z</updated>
     
@@ -247,21 +279,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://www.fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 2767.优秀的拆分 [2020 CCF CSP-J2, NOIP]</title>
-    <link href="https://www.fingerdance.plus/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/"/>
-    <id>https://www.fingerdance.plus/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/</id>
+    <link href="https://fingerdance.plus/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/"/>
+    <id>https://fingerdance.plus/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/</id>
     <published>2020-11-08T09:38:54.000Z</published>
     <updated>2020-11-09T06:56:43.709Z</updated>
     
@@ -272,19 +304,19 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="二进制" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+      <category term="二进制" scheme="https://fingerdance.plus/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 803.区间合并</title>
-    <link href="https://www.fingerdance.plus/2020/11/07/AcWing-803-%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/"/>
-    <id>https://www.fingerdance.plus/2020/11/07/AcWing-803-%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/</id>
+    <link href="https://fingerdance.plus/2020/11/07/AcWing-803-%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/"/>
+    <id>https://fingerdance.plus/2020/11/07/AcWing-803-%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/</id>
     <published>2020-11-07T07:23:06.000Z</published>
     <updated>2020-11-07T07:37:14.078Z</updated>
     
@@ -295,21 +327,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="区间合并" scheme="https://www.fingerdance.plus/tags/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/"/>
+      <category term="区间合并" scheme="https://fingerdance.plus/tags/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 802.区间和</title>
-    <link href="https://www.fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/"/>
-    <id>https://www.fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</id>
+    <link href="https://fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/"/>
+    <id>https://fingerdance.plus/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</id>
     <published>2020-11-06T02:20:26.000Z</published>
     <updated>2020-11-10T17:43:33.629Z</updated>
     
@@ -320,21 +352,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="离散化" scheme="https://www.fingerdance.plus/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
+      <category term="离散化" scheme="https://fingerdance.plus/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>数组排序去重</title>
-    <link href="https://www.fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/"/>
-    <id>https://www.fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/</id>
+    <link href="https://fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/"/>
+    <id>https://fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/</id>
     <published>2020-11-04T15:31:34.000Z</published>
     <updated>2020-11-06T16:49:19.183Z</updated>
     
@@ -345,31 +377,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="数组" scheme="https://www.fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="排序" scheme="https://www.fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+      <category term="双指针" scheme="https://fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="去重" scheme="https://www.fingerdance.plus/tags/%E5%8E%BB%E9%87%8D/"/>
+      <category term="去重" scheme="https://fingerdance.plus/tags/%E5%8E%BB%E9%87%8D/"/>
     
-      <category term="unique" scheme="https://www.fingerdance.plus/tags/unique/"/>
+      <category term="unique" scheme="https://fingerdance.plus/tags/unique/"/>
     
-      <category term="原地算法" scheme="https://www.fingerdance.plus/tags/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
+      <category term="原地算法" scheme="https://fingerdance.plus/tags/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
     
-      <category term="in-place algorithm" scheme="https://www.fingerdance.plus/tags/in-place-algorithm/"/>
+      <category term="in-place algorithm" scheme="https://fingerdance.plus/tags/in-place-algorithm/"/>
     
   </entry>
   
   <entry>
     <title>浅谈原码、反码和补码</title>
-    <link href="https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
-    <id>https://www.fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</id>
+    <link href="https://fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
+    <id>https://fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</id>
     <published>2020-11-04T07:32:13.000Z</published>
     <updated>2020-11-11T12:24:51.149Z</updated>
     
@@ -380,17 +412,17 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
     
-      <category term="二进制" scheme="https://www.fingerdance.plus/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+      <category term="二进制" scheme="https://fingerdance.plus/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 801.二进制中1的个数</title>
-    <link href="https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>https://www.fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <link href="https://fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>https://fingerdance.plus/2020/11/04/AcWing-801-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2020-11-04T06:19:50.000Z</published>
     <updated>2020-11-10T19:12:27.490Z</updated>
     
@@ -401,21 +433,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="位运算" scheme="https://www.fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="https://fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="lowbit" scheme="https://www.fingerdance.plus/tags/lowbit/"/>
+      <category term="lowbit" scheme="https://fingerdance.plus/tags/lowbit/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 799.最长连续不重复子序列</title>
-    <link href="https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>https://www.fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/</id>
+    <link href="https://fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>https://fingerdance.plus/2020/11/04/AcWing-799-%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/</id>
     <published>2020-11-03T17:10:48.000Z</published>
     <updated>2020-11-12T15:37:08.936Z</updated>
     
@@ -426,23 +458,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://www.fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="计数数组" scheme="https://www.fingerdance.plus/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
+      <category term="计数数组" scheme="https://fingerdance.plus/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
     
-      <category term="双指针" scheme="https://www.fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+      <category term="双指针" scheme="https://fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
   <entry>
     <title>Hexo NexT主题博客的个性化配置</title>
-    <link href="https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
-    <id>https://www.fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
+    <link href="https://fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
+    <id>https://fingerdance.plus/2020/10/31/Hexo%20NexT%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</id>
     <published>2020-10-30T20:54:39.000Z</published>
     <updated>2020-11-09T06:49:31.878Z</updated>
     
@@ -453,21 +485,21 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
-      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Blog" scheme="https://www.fingerdance.plus/tags/Blog/"/>
+      <category term="Blog" scheme="https://fingerdance.plus/tags/Blog/"/>
     
   </entry>
   
   <entry>
     <title>记录对hexo yilia主题的个性定制</title>
-    <link href="https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/"/>
-    <id>https://www.fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/</id>
+    <link href="https://fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/"/>
+    <id>https://fingerdance.plus/2020/10/30/%E8%AE%B0%E5%BD%95%E5%AF%B9hexo-yilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%AE%9A%E5%88%B6/</id>
     <published>2020-10-30T14:37:34.000Z</published>
     <updated>2020-11-02T13:35:06.069Z</updated>
     
@@ -478,23 +510,23 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
-      <category term="博客" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="博客" scheme="https://www.fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://fingerdance.plus/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Blog" scheme="https://www.fingerdance.plus/tags/Blog/"/>
+      <category term="Blog" scheme="https://fingerdance.plus/tags/Blog/"/>
     
-      <category term="Hexo" scheme="https://www.fingerdance.plus/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://fingerdance.plus/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>AcWing 788.逆序对的数量</title>
-    <link href="https://www.fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/"/>
-    <id>https://www.fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</id>
+    <link href="https://fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/"/>
+    <id>https://fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/</id>
     <published>2020-10-27T10:06:57.000Z</published>
     <updated>2020-11-03T17:21:31.540Z</updated>
     
@@ -512,54 +544,14 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="归并排序" scheme="https://www.fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="树状数组" scheme="https://www.fingerdance.plus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>跑路专用呆湾警署查封页面</title>
-    <link href="https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/"/>
-    <id>https://www.fingerdance.plus/2020/10/25/%E8%B7%91%E8%B7%AF%E4%B8%93%E7%94%A8%E5%91%86%E6%B9%BE%E8%AD%A6%E7%BD%B2%E6%9F%A5%E5%B0%81%E9%A1%B5%E9%9D%A2/</id>
-    <published>2020-10-25T15:31:52.000Z</published>
-    <updated>2020-11-02T13:38:33.400Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;显示台湾警察署查封网站的页面html源码。&lt;/p&gt;
-    
-    </summary>
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="不亦乐乎" scheme="https://www.fingerdance.plus/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="归并排序" scheme="https://fingerdance.plus/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>位运算妙妙屋</title>
-    <link href="https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/"/>
-    <id>https://www.fingerdance.plus/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/</id>
-    <published>2020-10-25T08:09:15.000Z</published>
-    <updated>2020-11-10T19:13:01.112Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;位运算使用技巧。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://www.fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-    
-      <category term="位运算" scheme="https://www.fingerdance.plus/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="树状数组" scheme="https://fingerdance.plus/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
