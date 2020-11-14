@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我太菜被关起来了">
+  <meta name="description" content="Я такой нуб, что заперли">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dirac Sea">
 <meta property="og:url" content="https://fingerdance.plus/page/5/index.html">
 <meta property="og:site_name" content="Dirac Sea">
-<meta property="og:description" content="我太菜被关起来了">
+<meta property="og:description" content="Я такой нуб, что заперли">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="菜">
@@ -234,12 +234,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fingerdance.plus/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-04 14:16:46 / Modified: 15:06:11" itemprop="dateCreated datePublished" datetime="2020-06-04T14:16:46+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/04/LeetCode-238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF%EF%BC%88Product-of-Array-Except-Self%EF%BC%89/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode #238 除自身以外数组的乘积（Product of Array Except Self）" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个长度为 n 的整数数组 <code>nums</code>，其中 n &gt; 1，返回输出数组 <code>output</code> ，其中 <code>output[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>输入: [1,2,3,4]<br>输出: [24,12,8,6]</p>
+</blockquote>
+<p><strong>提示：</strong> 题目数据保证数组之中任意元素的全部前缀元素和后缀（甚至是整个数组）的乘积都在 32 位整数范围内。</p>
+<p><strong>说明:</strong> 请不要使用除法，且在 O(n) 时间复杂度内完成此题。</p>
+<p><strong>进阶：</strong> 你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）</p>
+<hr>
+<h3 id="左右乘积数组"><a href="#左右乘积数组" class="headerlink" title="左右乘积数组"></a>左右乘积数组</h3><p>维护两个数组，分别存放<code>nums[i]</code>左右乘积。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] productExceptSelf(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                left[i] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            left[i] = left[i - <span class="number">1</span>] * nums[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = len - <span class="number">1</span>; j &gt; -<span class="number">1</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == len - <span class="number">1</span>) &#123;</span><br><span class="line">                right[j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            right[j] = right[j + <span class="number">1</span>] * nums[j + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] output = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; len; k++) &#123;</span><br><span class="line">            output[k] = left[k] * right[k];</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度：</strong></p>
+<ul>
+<li>时间复杂度：<strong><em>O(N)</em></strong> 其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。预处理 <code>left</code> 和 <code>right</code> 数组以及最后的遍历计算都是 <strong><em>O(N)</em></strong> 的时间复杂度。</li>
+<li>空间复杂度：<strong><em>O(N)</em></strong> 其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。使用了 <code>left</code> 和 <code>right</code> 数组去构造答案，<code>left</code> 和 <code>right</code> 数组的长度为数组 <code>nums</code> 的大小。</li>
+</ul>
+<h3 id="进一步优化-O-1-的空间复杂度"><a href="#进一步优化-O-1-的空间复杂度" class="headerlink" title="进一步优化 O(1) 的空间复杂度"></a>进一步优化 <strong><em>O(1)</em></strong> 的空间复杂度</h3><p>可以使用答案数组来替代 <code>left</code> 数组，从右向左遍历，动态更新 <code>nums[i]</code> 右侧乘积。<br>也可以使用答案数组来替代 <code>right</code> 数组，从左向右遍历，动态更新 <code>nums[i]</code> 左侧乘积。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] productExceptSelf(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] output = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        output[len -<span class="number">1</span> ] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            output[i] = output[i + <span class="number">1</span>] * nums[i + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span>) left = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> left = left * nums[j - <span class="number">1</span>];</span><br><span class="line">            output[j] = left * output[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度：</strong></p>
+<ul>
+<li>时间复杂度：<strong><em>O(N)</em></strong>，其中 <strong><em>O(N)</em></strong> 指的是数组 <code>nums</code> 的大小。分析与方法一相同。</li>
+<li>空间复杂度：<strong><em>O(1)</em></strong>，输出数组不算进空间复杂度中，因此我们只需要常数的空间存放变量。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://fingerdance.plus/2020/06/01/LeetCode-1431-%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90%EF%BC%88Kids-With-the-Greatest-Number-of-Candies%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -347,7 +451,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -438,7 +542,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -539,7 +643,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -626,7 +730,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -719,7 +823,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -816,7 +920,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -928,7 +1032,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1008,7 +1112,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1102,113 +1206,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fingerdance.plus/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux常用Screen命令</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-04-13 09:59:32 / Modified: 10:37:01" itemprop="dateCreated datePublished" datetime="2020-04-13T09:59:32+08:00">2020-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/" itemprop="url" rel="index"><span itemprop="name">不亦乐乎</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/13/Linux%E5%B8%B8%E7%94%A8Screen%E5%91%BD%E4%BB%A4/" class="post-meta-item leancloud_visitors" data-flag-title="Linux常用Screen命令" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Screen是一个可以在多个进程之间多路复用一个物理终端的窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。在使用过程中可以退出screen，甚至可以关掉登录窗口，下次再进去重新挂上screen会话，所有工作全部都会恢复。</p>
-<blockquote>
-<ul>
-<li><p><strong>安装</strong><br><code>sudo apt install screen</code></p>
-</li>
-<li><p><strong>创建新会话</strong><br><code>screen -S 0x0</code><br>创建一个名为「0x0」的会话，可以在其中执行任务。</p>
-</li>
-<li><p><strong>让会话独立（Detached）</strong><br>在当前会话中按住<code>Ctrl + A + D</code>，即可让其独立。此时我们可以在终端执行其他任务或退出终端。</p>
-</li>
-<li><p><strong>重新连接会话</strong><br><code>screen -r 0x0</code><br>回到名为「0x0」的会话中。</p>
-</li>
-<li><p><strong>查看会话列表</strong><br><code>screen -ls</code></p>
-</li>
-<li><p><strong>结束会话</strong><br><code>screen -X -S 0x0 quit</code>强制结束「0x0」会话。<br>在「0x0」会话中按住<code>Ctrl + D</code>结束当前会话。</p>
-</li>
-<li><p><strong>清除死亡会话</strong><br><code>screen -wipe</code></p>
-</li>
-</ul>
-</blockquote>
-<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/40133139" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/40133139</a><br><a href="https://www.cnblogs.com/xinzaibing/archive/2012/04/08/2437431.html" target="_blank" rel="noopener">https://www.cnblogs.com/xinzaibing/archive/2012/04/08/2437431.html</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1271,14 +1272,14 @@
       src="/images/avatar.jpg">
   </a>
   <p class="site-author-name" itemprop="name">ESP</p>
-  <div class="site-description" itemprop="description">我太菜被关起来了</div>
+  <div class="site-description" itemprop="description">Я такой нуб, что заперли</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1291,7 +1292,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">127</span>
+        <span class="site-state-item-count">129</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

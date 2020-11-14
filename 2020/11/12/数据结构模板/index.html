@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：详尽地记录了各种数据结构模板，以及一些个人理解。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-12T07:36:22.000Z">
-<meta property="article:modified_time" content="2020-11-12T07:45:39.403Z">
+<meta property="article:modified_time" content="2020-11-14T04:42:08.946Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="堆">
@@ -37,11 +37,13 @@
 <meta property="article:tag" content="单调栈">
 <meta property="article:tag" content="算法模板">
 <meta property="article:tag" content="AcWing">
+<meta property="article:tag" content="字符串">
 <meta property="article:tag" content="单链表">
 <meta property="article:tag" content="双链表">
 <meta property="article:tag" content="队列">
 <meta property="article:tag" content="循环队列">
 <meta property="article:tag" content="单调队列">
+<meta property="article:tag" content="滑动窗口">
 <meta property="article:tag" content="KMP">
 <meta property="article:tag" content="Trie树">
 <meta property="article:tag" content="并查集">
@@ -259,7 +261,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="ESP">
-      <meta itemprop="description" content="我太菜被关起来了">
+      <meta itemprop="description" content="Я такой нуб, что заперли">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -283,10 +285,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-12 15:36:22 / Modified: 15:45:39" itemprop="dateCreated datePublished" datetime="2020-11-12T15:36:22+08:00">2020-11-12</time>
+              <time title="Created: 2020-11-12 15:36:22" itemprop="dateCreated datePublished" datetime="2020-11-12T15:36:22+08:00">2020-11-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-14 12:42:08" itemprop="dateModified" datetime="2020-11-14T12:42:08+08:00">2020-11-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -321,6 +329,8 @@
       
         <p><strong>摘要：</strong><br>详尽地记录了各种数据结构模板，以及一些个人理解。</p>
 <a id="more"></a>
+<h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><h2 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h2><h2 id="模拟栈"><a href="#模拟栈" class="headerlink" title="模拟栈"></a>模拟栈</h2><h2 id="模拟队列"><a href="#模拟队列" class="headerlink" title="模拟队列"></a>模拟队列</h2><h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>和双指针思想类似，单调栈也是利用已知的某种性质，对暴力方法进行优化。</p>
+<h2 id="单调队列（滑动窗口）"><a href="#单调队列（滑动窗口）" class="headerlink" title="单调队列（滑动窗口）"></a>单调队列（滑动窗口）</h2>
     </div>
 
     
@@ -354,11 +364,13 @@
               <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 单调栈</a>
               <a href="/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" rel="tag"><i class="fa fa-tag"></i> 算法模板</a>
               <a href="/tags/AcWing/" rel="tag"><i class="fa fa-tag"></i> AcWing</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
               <a href="/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 单链表</a>
               <a href="/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 双链表</a>
               <a href="/tags/%E9%98%9F%E5%88%97/" rel="tag"><i class="fa fa-tag"></i> 队列</a>
               <a href="/tags/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/" rel="tag"><i class="fa fa-tag"></i> 循环队列</a>
               <a href="/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" rel="tag"><i class="fa fa-tag"></i> 单调队列</a>
+              <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag"><i class="fa fa-tag"></i> 滑动窗口</a>
               <a href="/tags/KMP/" rel="tag"><i class="fa fa-tag"></i> KMP</a>
               <a href="/tags/Trie%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> Trie树</a>
               <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag"><i class="fa fa-tag"></i> 并查集</a>
@@ -439,6 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表"><span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双链表"><span class="nav-text">双链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟栈"><span class="nav-text">模拟栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟队列"><span class="nav-text">模拟队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调栈"><span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调队列（滑动窗口）"><span class="nav-text">单调队列（滑动窗口）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -449,14 +462,14 @@
       src="/images/avatar.jpg">
   </a>
   <p class="site-author-name" itemprop="name">ESP</p>
-  <div class="site-description" itemprop="description">我太菜被关起来了</div>
+  <div class="site-description" itemprop="description">Я такой нуб, что заперли</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -469,7 +482,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">127</span>
+        <span class="site-state-item-count">129</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
