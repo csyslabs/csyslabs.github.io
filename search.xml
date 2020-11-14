@@ -17,9 +17,9 @@
         <tag>链表</tag>
         <tag>栈</tag>
         <tag>单调栈</tag>
-        <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -49,9 +49,9 @@
 <li><code>test</code>是测试目录</li>
 </ul>
 </blockquote>
-<h3 id="2-2-一个简单demo"><a href="#2-2-一个简单demo" class="headerlink" title="2.2 一个简单demo"></a>2.2 一个简单demo</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(map = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-一个简单demo"><a href="#2-2-一个简单demo" class="headerlink" title="2.2 一个简单demo"></a>2.2 一个简单demo</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(map = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>很简单的一个demo，它实现了在访问<code>localhost:8080/</code>或者<code>localhost:8080/index</code>时返回一个<code>Hello World</code>。<br>注意到<code>@RequestMapping(map = {&quot;/&quot;, &quot;/index&quot;})</code>：我们已经可以一窥SpingBoot的「依赖注入」端倪。</p>
-<h4 id="2-2-1-指定HTTP请求方法"><a href="#2-2-1-指定HTTP请求方法" class="headerlink" title="2.2.1 指定HTTP请求方法"></a>2.2.1 指定HTTP请求方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(map = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;, method = &#123;Requstmethod.GET&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-1-指定HTTP请求方法"><a href="#2-2-1-指定HTTP请求方法" class="headerlink" title="2.2.1 指定HTTP请求方法"></a>2.2.1 指定HTTP请求方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(map = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;, method = &#123;Requstmethod.GET&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>这样在访问<code>localhost:8080/</code>或者<code>localhost:8080/index</code>时只能通过HTTP的GET方法访问，当通过其他方法访问时会报错。在处理一些只需要提交数据的情况时，我们可以指定为HTTP请求方法为POST以避免不必要的数据拉取操作。</p>
 <h4 id="2-2-2-HTTP-METHOD"><a href="#2-2-2-HTTP-METHOD" class="headerlink" title="2.2.2 HTTP METHOD"></a>2.2.2 HTTP METHOD</h4><blockquote>
 <ul>
@@ -207,25 +207,70 @@
 <p>…\src\main\resources\templates\welcome.html</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Value:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        $&#123;tValue&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>List:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>list toString represent:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            $&#123;tColors1&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>list loop:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tColors2</span> <span class="attr">as</span> <span class="attr">x</span>&gt;</span></span><br><span class="line">                This is color $&#123;x?index&#125;: $&#123;x&#125; ,count: $&#123;x?counter&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Map:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>map keySet:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tMap</span>?<span class="attr">keys</span> <span class="attr">as</span> <span class="attr">key</span>&gt;</span></span><br><span class="line">                key: $&#123;key&#125; - value: $&#123;tMap[key]&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>map entrySet:<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tEntry</span> <span class="attr">as</span> <span class="attr">entry</span>&gt;</span>                 <span class="tag">&lt;<span class="name">#--</span> <span class="attr">ftl</span>语言<span class="attr">map</span>不能<span class="attr">get</span>一个<span class="attr">entry</span>，要想循环<span class="attr">entry</span> <span class="attr">set</span>得从后端传过来 <span class="attr">--</span>&gt;</span></span><br><span class="line">                key: $&#123;entry.key&#125; - value: $&#123;entry.value&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">#list</span>&gt;</span>                                <span class="tag">&lt;<span class="name">#--</span> 这个太神奇了 <span class="attr">--</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>User:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>User: $&#123;user.name&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Description:</span><br><span class="line">            $&#123;user.getDescription()&#125;</span><br><span class="line">            $&#123;user.description&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Customized value:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">title</span> = <span class="string">"NowCoder"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>$&#123;title&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Include template:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#include</span> "<span class="attr">tail.html</span>"&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Customized macro:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">#macro</span> <span class="attr">render_color</span> <span class="attr">index</span> <span class="attr">color</span>&gt;</span></span><br><span class="line">            Color Render Macro $&#123;index&#125;, $&#123;color&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">#macro</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">#list</span> <span class="attr">tColors2</span> <span class="attr">as</span> <span class="attr">color</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">@render_color</span> <span class="attr">index</span>=<span class="string">"$&#123;color?index&#125;"</span> <span class="attr">color</span>=<span class="string">"$&#123;color&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">hello</span> = <span class="string">"Hello"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">helloworld1</span> = <span class="string">"$&#123;hello&#125; World ! [1]"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">#assign</span> <span class="attr">helloworld2</span> = <span class="string">'$&#123;hello&#125; World ! [2]'</span>&gt;</span></span><br><span class="line">    $&#123;hello&#125;</span><br><span class="line">    $&#123;helloworld1&#125;</span><br><span class="line">    $&#123;helloworld2&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-6-Sping中的Request和Response对象"><a href="#2-6-Sping中的Request和Response对象" class="headerlink" title="2.6 Sping中的Request和Response对象"></a>2.6 Sping中的Request和Response对象</h3><p>Spring对Request和Response对象的一些参数有着很好的封装，可以通过参数方式获取：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// request对象</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/requests"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">requests</span><span class="params">(Model model,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletResponse response,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpSession session,</span></span></span><br><span class="line"><span class="function"><span class="params">                        @CookieValue(<span class="string">"JSESSIONID"</span>)</span> String sessionId) </span>&#123;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    String[] str = &#123;<span class="string">"request.getMethod(): "</span>, request.getMethod(),</span><br><span class="line">                    <span class="string">"request.getQueryString(): "</span>, request.getQueryString(),</span><br><span class="line">                    <span class="string">"request.getPathInfo(): "</span>, request.getPathInfo(),</span><br><span class="line">                    <span class="string">"request.getRequestURI(): "</span>, request.getRequestURI()&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; str.length; i ++ ) &#123;</span><br><span class="line">        sb.append(str[i]);</span><br><span class="line">        <span class="keyword">if</span> ((i &amp; <span class="number">1</span>) == <span class="number">1</span>) &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-Sping中的Request和Response对象"><a href="#2-6-Sping中的Request和Response对象" class="headerlink" title="2.6 Sping中的Request和Response对象"></a>2.6 Sping中的Request和Response对象</h3><h4 id="2-6-1-Request对象"><a href="#2-6-1-Request对象" class="headerlink" title="2.6.1 Request对象"></a>2.6.1 Request对象</h4><p>Spring对Request和Response对象的一些参数有着很好的封装，可以通过参数方式获取：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// request和respons对象</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/request"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">requests</span><span class="params">(Model model,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                        )</span> </span>&#123;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    String[] str = &#123;<span class="string">"request.getMethod(): "</span>, request.getMethod(),</span><br><span class="line">                    <span class="string">"request.getQueryString(): "</span>, request.getQueryString(),</span><br><span class="line">                    <span class="string">"request.getPathInfo(): "</span>, request.getPathInfo(),</span><br><span class="line">                    <span class="string">"request.getRequestURI(): "</span>, request.getRequestURI()&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; str.length; i ++ ) &#123;</span><br><span class="line">        sb.append(str[i]);</span><br><span class="line">        <span class="keyword">if</span> ((i &amp; <span class="number">1</span>) == <span class="number">1</span>) &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上代码可以在访问<code>http://localhost:8080/request</code>时显示：</p>
 <blockquote>
 <p>request.getMethod(): GET<br>request.getQueryString(): null<br>request.getPathInfo(): null<br>request.getRequestURI(): /request</p>
 </blockquote>
 <p>我们还可以通过<code>request.getHeader()</code>获取请求头信息：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (Enumeration&lt;String&gt; headerNames = request.getHeaderNames();headerNames.hasMoreElements();) &#123;</span><br><span class="line">    String name = headerNames.nextElement();</span><br><span class="line">    sb.append(name).append(<span class="string">":"</span>).append(request.getHeader(name)).append(<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>sb添加了如上信息后，会在访问<code>http://localhost:8080/request</code>时多显示如下信息：</p>
+<p><code>sb</code>添加了如上信息后，会在访问<code>http://localhost:8080/request</code>时多显示如下信息：</p>
 <blockquote>
-<p>host: localhost:8080<br>connection: keep-alive<br>upgrade-insecure-requests: 1<br>user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36<br>accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9<br>sec-fetch-site: none<br>sec-fetch-mode: navigate<br>sec-fetch-user: ?1<br>sec-fetch-dest: document<br>accept-encoding: gzip, deflate, br<br>accept-language: en,zh-CN;q=0.9,zh;q=0.8<br>cookie: Idea-510111fa=6e59ec78-c3df-46b6-9a42-f2f1d838f830; _ga=GA1.1.157327013.1604162973; username=nowcoder; JSESSIONID=3069F890EBAA5C697EA3CBFB3DDAF3AD; _ga_23PFYL4751=GS1.1.1605173542.45.1.1605173546.0</p>
+<p>host: localhost:8080<br>connection: keep-alive<br>cache-control: max-age=0<br>upgrade-insecure-requests: 1<br>user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 Edg/86.0.622.69<br>accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9<br>sec-fetch-site: none<br>sec-fetch-mode: navigate<br>sec-fetch-user: ?1<br>sec-fetch-dest: document<br>accept-encoding: gzip, deflate, br<br>accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6<br>cookie: Idea-510111fa=6e59ec78-c3df-46b6-9a42-f2f1d838f830; _ga=GA1.1.234834870.1604220367; _ga_23PFYL4751=GS1.1.1605340925.4.1.1605340955.0; JSESSIONID=E380D4FA65A20F296103B854C08FA844</p>
 </blockquote>
 <p>其中,cookie可以分开读取：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        sb.append(<span class="string">" Cookie:"</span> ).append(cookie.getName()).append(<span class="string">" Value:"</span>).append(cookie.getValue()).append(<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>sb添加了如上信息后，会在访问<code>http://localhost:8080/request</code>时多显示如下信息：</p>
+<p><code>sb</code>添加了如上信息后，会在访问<code>http://localhost:8080/request</code>时多显示如下信息：</p>
 <blockquote>
-<p>Cookie:Idea-510111fa Value:6e59ec78-c3df-46b6-9a42-f2f1d838f830<br>Cookie:_ga Value:GA1.1.157327013.1604162973<br>Cookie:username Value:nowcoder<br>Cookie:JSESSIONID Value:3069F890EBAA5C697EA3CBFB3DDAF3AD<br>Cookie:_ga_23PFYL4751 Value:GS1.1.1605173542.45.1.1605173546.0</p>
+<p>Cookie:Idea-510111fa Value:6e59ec78-c3df-46b6-9a42-f2f1d838f830<br>Cookie:_ga Value:GA1.1.234834870.1604220367<br>Cookie:_ga_23PFYL4751 Value:GS1.1.1605340925.4.1.1605340955.0<br>Cookie:JSESSIONID Value:416A8479B0D9CE8C912E3B4AF710D850</p>
 </blockquote>
-]]></content>
+<p>cookies的构成是很多组的<code>Cookie</code>和对应的<code>Value</code>，我们甚至可以通过注解的方式，直接读取cookies中的<code>Value</code>值。<br>在方法参数中加入注解<code>@CookieValue(&quot;JSESSIONID&quot;) String sessionId</code>获取<code>Cookie</code>为<code>JSESSIONID</code>对应的<code>Value</code>值：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/request"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">requests</span><span class="params">(Model model,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                        @CookieValue(<span class="string">"JSESSIONID"</span>)</span> String sessionId)</span></span><br></pre></td></tr></table></figure>
+<p>这样我们就可以直接读取：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line">sb.append(<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">sb.append(<span class="string">"COOKIEVALUE:"</span>).append(sessionId);</span><br><span class="line"><span class="keyword">return</span> sb.toString();</span><br></pre></td></tr></table></figure>
+<p><code>sb</code>添加了如上信息后，会在访问<code>http://localhost:8080/request</code>时多显示如下信息：</p>
+<blockquote>
+<p>COOKIEVALUE:416A8479B0D9CE8C912E3B4AF710D850</p>
+</blockquote>
+<h4 id="2-6-2-Response对象"><a href="#2-6-2-Response对象" class="headerlink" title="2.6.2 Response对象"></a>2.6.2 Response对象</h4><p>除了操作客户端向服务器请求的<code>Request</code>对象外，我们还可以操作服务器向客户端发送的<code>Response</code>对象。<br>向响应头中添加字段<code>nowcoderID:hello</code>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/request"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">requests</span><span class="params">(Model model,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletResponse response,</span></span></span><br><span class="line"><span class="function"><span class="params">                        HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                        @CookieValue(<span class="string">"JSESSIONID"</span>)</span> String sessionId)</span></span><br><span class="line"><span class="function"><span class="comment">// ...</span></span></span><br><span class="line"><span class="function">response.<span class="title">addHeader</span><span class="params">(<span class="string">"nowcoderID"</span>, <span class="string">"hello"</span>)</span></span>;</span><br><span class="line"><span class="keyword">return</span> sb.toString();</span><br></pre></td></tr></table></figure>
+<p>在操作Response对象前需要先在函数参数中声明对象。如上会在访问<code>http://localhost:8080/request</code>时用F12浏览器调试页面看到响应头已经包含了我们添加的字段：</p>
+<blockquote>
+<p><strong>nowcoderID:</strong> hello</p>
+</blockquote>
+<p>另外我们还可以向响应头中添加cookies对象，例如，我们可以添加一组cookies：name:<code>username</code>, value:<code>nowcoder</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"username"</span>, <span class="string">"nowcoder"</span>));</span><br></pre></td></tr></table></figure>
+<p>添加后会在访问<code>http://localhost:8080/request</code>时用F12浏览器调试页面看到响应头中已经添加了cookies：</p>
+<blockquote>
+<p><strong>Set-Cookie:</strong> username=nowcoder</p>
+</blockquote>
+<h3 id="2-7-重定向"><a href="#2-7-重定向" class="headerlink" title="2.7 重定向"></a>2.7 重定向</h3><p>重定向在工业中应用广泛。比如，一个网站制作了一个PC端网页<code>www.nowcoder.com</code>和一个手机端网页<code>m.nowcoder.com</code>，当服务器通过用户的UserAgent判断用户是使用了手机访问网页时，我们就可以让它跳转到手机端的网页。这样可以很好地提高用户体验。<br>再比如，网站新开发了一个网页，当我们已经将网页部署上线了，但是突然需要对网页做一个更改，又不能临时将网页下线。此时我们就可以为网页做一个跳转，跳转到更改之后部署的页面去。</p>
+<h4 id="2-7-1-302临时跳转"><a href="#2-7-1-302临时跳转" class="headerlink" title="2.7.1 302临时跳转"></a>2.7.1 302临时跳转</h4><p>我们可以使用Spring框架为网站自定义跳转：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//302临时性跳转</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/redirect/&#123;code&#125;"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">redirect302</span><span class="params">(@PathVariable(<span class="string">"code"</span>)</span> <span class="keyword">int</span> code) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数返回一个<code>&quot;redirect:/&quot;</code>这样当我们访问：<code>http://localhost:8080/redirect/113</code>时（<code>code</code>可以是任意整型变量），就会临时性地跳转到首页。</p>
+<blockquote>
+<p>Hello World</p>
+</blockquote>
+<p>我们可以设置在跳转时，通过<code>HttpSession</code>对象传递一个消息：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//302临时性跳转</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/redirect/&#123;code&#125;"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">redirect302</span><span class="params">(@PathVariable(<span class="string">"code"</span>)</span> <span class="keyword">int</span> code,</span></span><br><span class="line"><span class="function">                        HttpSession httpSession) </span>&#123;</span><br><span class="line">    httpSession.setAttribute(<span class="string">"msg"</span>, <span class="string">" --jump from redirect"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为函数添加一个<code>HttpSession</code>对象作为参数，并且为该对象设置一个属性，该属性由一个<code>String</code>对象和一个<code>Object</code>对象构成。前者定义了消息的名称，后者为消息对象本身。<br>接着，我们给定义地首页的<code>index</code>方法设置一个<code>Httpsession</code>对象作为参数：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello World"</span> + httpSession.getAttribute(<span class="string">"msg"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，当我们访问：<code>http://localhost:8080/redirect/113</code>时，会临时性地跳转到首页，并且将消息<code>--jump from redirect</code>传递到首页，首页会显示：</p>
+<blockquote>
+<p>Hello World –jump from redirect</p>
+</blockquote>
+<p>除了让方法通过返回<code>String</code>对象<code>&quot;redirect:/&quot;</code>的方式实现跳转之外，我们还可以让其返回<code>RedirectView</code>对象实现跳转：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//302临时性跳转</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/redirect/&#123;code&#125;"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> RedirectView <span class="title">redirect302</span><span class="params">(@PathVariable(<span class="string">"code"</span>)</span> <span class="keyword">int</span> code,</span></span><br><span class="line"><span class="function">                                HttpSession httpSession) </span>&#123;</span><br><span class="line">    httpSession.setAttribute(<span class="string">"msg"</span>, <span class="string">" --jump from redirect"</span>);  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RedirectView(<span class="string">"/"</span>, <span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上302跳转的情况，我们事先打开浏览器F12控制台，在跳转之后会看到当前网页的网络状态码为<code>302</code>。</p>
+<h4 id="2-7-2-301永久性跳转"><a href="#2-7-2-301永久性跳转" class="headerlink" title="2.7.2 301永久性跳转"></a>2.7.2 301永久性跳转</h4><p>除了设置302临时性跳转之外，我们还可以设置永久性跳转。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//301 permanently moved</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/redirect/&#123;code&#125;"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> RedirectView <span class="title">redirect301</span><span class="params">(@PathVariable(<span class="string">"code"</span>)</span> <span class="keyword">int</span> code,</span></span><br><span class="line"><span class="function">                                HttpSession httpSession) </span>&#123;</span><br><span class="line">    httpSession.setAttribute(<span class="string">"msg"</span>, <span class="string">" --jump from redirect"</span>);  </span><br><span class="line">    RedirectView red = <span class="keyword">new</span> RedirectView(<span class="string">"/"</span>, <span class="keyword">true</span>);</span><br><span class="line">    <span class="keyword">if</span> (code == <span class="number">301</span>) &#123;  <span class="comment">//当我们url的code填入301时，触发301跳转，否则为302跳转</span></span><br><span class="line">        red.setStatusCode(HttpStatus.MOVED_PERMANENTLY);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依然是通过访问url的<code>/request/{code}</code>实现跳转，当我们访问的code为指定的<code>301</code>时，方法内部设置<code>RedirectView</code>的状态码为<code>301</code>，这样当我们访问：<code>http://localhost:8080/redirect/301</code>时，会永久性地跳转到首页，并且将消息<code>--jump from redirect</code>传递到首页，首页会显示：</p>
+<blockquote>
+<p>Hello World –jump from redirect</p>
+</blockquote>
+<p>并且当前网页状态码为：<code>301</code>。</p>
+<h3 id="2-8-异常处理"><a href="#2-8-异常处理" class="headerlink" title="2.8 异常处理"></a>2.8 异常处理</h3>]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>Project</category>
@@ -1418,7 +1463,6 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>位运算</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>归并排序</tag>
@@ -1426,6 +1470,7 @@
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
+        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -1560,10 +1605,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
-        <tag>树深度</tag>
+        <tag>BFS</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
         <tag>N叉树</tag>
       </tags>
   </entry>
@@ -1616,10 +1661,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
-        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -1643,12 +1688,12 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
-        <tag>树深度</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -1684,9 +1729,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -1838,8 +1883,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
         <tag>沟通</tag>
+        <tag>人际关系</tag>
       </tags>
   </entry>
   <entry>
@@ -1892,9 +1937,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
-        <tag>人际关系</tag>
       </tags>
   </entry>
   <entry>
@@ -2073,10 +2118,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -2118,8 +2163,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
       </tags>
@@ -2904,8 +2949,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>计数数组</tag>
         <tag>数组</tag>
+        <tag>计数数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
