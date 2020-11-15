@@ -35,9 +35,9 @@
       <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="栈" scheme="https://fingerdance.plus/tags/%E6%A0%88/"/>
-    
       <category term="单调栈" scheme="https://fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
+      <category term="栈" scheme="https://fingerdance.plus/tags/%E6%A0%88/"/>
     
       <category term="ACWing" scheme="https://fingerdance.plus/tags/ACWing/"/>
     
@@ -48,15 +48,25 @@
     <link href="https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/"/>
     <id>https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/</id>
     <published>2020-11-13T04:13:18.000Z</published>
-    <updated>2020-11-13T04:13:18.388Z</updated>
+    <updated>2020-11-15T10:40:42.347Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;数组模拟栈模板题。&lt;/p&gt;
     
     </summary>
     
     
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="栈" scheme="https://fingerdance.plus/tags/%E6%A0%88/"/>
+    
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
     
   </entry>
   
@@ -116,15 +126,15 @@
     
       <category term="链表" scheme="https://fingerdance.plus/tags/%E9%93%BE%E8%A1%A8/"/>
     
+      <category term="单调栈" scheme="https://fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
       <category term="栈" scheme="https://fingerdance.plus/tags/%E6%A0%88/"/>
     
-      <category term="单调栈" scheme="https://fingerdance.plus/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+      <category term="字符串" scheme="https://fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="算法模板" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
-    
-      <category term="字符串" scheme="https://fingerdance.plus/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="单链表" scheme="https://fingerdance.plus/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
     

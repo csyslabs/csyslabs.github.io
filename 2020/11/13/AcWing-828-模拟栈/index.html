@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="摘要：">
+  <meta name="description" content="摘要：数组模拟栈模板题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AcWing 828.模拟栈">
 <meta property="og:url" content="https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/index.html">
 <meta property="og:site_name" content="Dirac Sea">
-<meta property="og:description" content="摘要：">
+<meta property="og:description" content="摘要：数组模拟栈模板题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-13T04:13:18.000Z">
-<meta property="article:modified_time" content="2020-11-13T04:13:18.388Z">
+<meta property="article:modified_time" content="2020-11-15T10:40:42.347Z">
 <meta property="article:author" content="ESP">
-<meta property="article:tag" content="菜">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="栈">
+<meta property="article:tag" content="AcWing">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://fingerdance.plus/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/">
@@ -265,6 +267,26 @@
 
               <time title="Created: 2020-11-13 12:13:18" itemprop="dateCreated datePublished" datetime="2020-11-13T12:13:18+08:00">2020-11-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-15 18:40:42" itemprop="dateModified" datetime="2020-11-15T18:40:42+08:00">2020-11-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
 
           
             <span id="/2020/11/13/AcWing-828-%E6%A8%A1%E6%8B%9F%E6%A0%88/" class="post-meta-item leancloud_visitors" data-flag-title="AcWing 828.模拟栈" title="Views">
@@ -284,8 +306,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>摘要：</strong></p>
+        <p><strong>摘要：</strong><br>数组模拟栈模板题。</p>
 <a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>实现一个栈，栈初始为空，支持四种操作：</p>
+<p>(1) “push x” – 向栈顶插入一个数x；<br>(2) “pop” – 从栈顶弹出一个数；<br>(3) “empty” – 判断栈是否为空；<br>(4) “query” – 查询栈顶元素。</p>
+<p>现在要对栈进行M个操作，其中的每个操作3和操作4都要输出相应的结果。</p>
+<p><strong>输入格式</strong><br>第一行包含整数M，表示操作次数。<br>接下来M行，每行包含一个操作命令，操作命令为”push x”，”pop”，”empty”，”query”中的一种。</p>
+<p><strong>输出格式</strong><br>对于每个”empty”和”query”操作都要输出一个查询结果，每个结果占一行。<br>其中，”empty”操作的查询结果为“YES”或“NO”，”query”操作的查询结果为一个整数，表示栈顶元素的值。</p>
+<p><strong>数据范围</strong><br>$1≤M≤100000$,<br>$1≤x≤10^9$<br>所有操作保证合法。</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>10<br>push 5<br>query<br>push 6<br>pop<br>query<br>pop<br>empty<br>push 4<br>query<br>empty</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>5<br>5<br>YES<br>4<br>NO</p>
+</blockquote>
+<hr>
+
     </div>
 
     
@@ -310,6 +349,12 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
+              <a href="/tags/AcWing/" rel="tag"><i class="fa fa-tag"></i> AcWing</a>
+          </div>
 
         
 
@@ -383,6 +428,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
