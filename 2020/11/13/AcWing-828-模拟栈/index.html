@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：数组模拟栈模板题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-13T04:13:18.000Z">
-<meta property="article:modified_time" content="2020-11-15T10:40:42.347Z">
+<meta property="article:modified_time" content="2020-11-15T14:45:10.103Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="栈">
@@ -272,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-15 18:40:42" itemprop="dateModified" datetime="2020-11-15T18:40:42+08:00">2020-11-15</time>
+                <time title="Modified: 2020-11-15 22:45:10" itemprop="dateModified" datetime="2020-11-15T22:45:10+08:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -324,6 +324,23 @@
 <p>5<br>5<br>YES<br>4<br>NO</p>
 </blockquote>
 <hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>维护一个数组和一个指针，数组存储所有入栈的数，指针指向栈顶元素。<br>入栈：指针右移，将数放入新的位置。<br>出栈：指针左移一位。<br>获取栈顶元素：直接返回指针指向的数、<br>判空：如果指针&gt;=0即非空。</p>
+<p>以上为数组模拟栈的基本操作，可见数组模拟栈是非常简单的。当然还可以进行很多魔改。比如当前出栈是不返回任何结果的，但是我们可以让它返回出栈的元素；以及各种边界条件判断等等。用C++ STL的栈能实现的，用数组都可以实现，而用数组可以实现更多STL栈所实现不了的。</p>
+<p><strong>在算法竞赛中，由于数据量往往很大，用STL容器（包括链表，hashmap等）会很慢。</strong></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> stk[N], tt;                         <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stk[++tt] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tt--;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> tt &gt;= <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> stk[tt];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    tt = <span class="number">-1</span>;                            <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (; n --;) &#123;</span><br><span class="line">        <span class="built_in">string</span> op;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="string">"push"</span>) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">            push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">"pop"</span>) &#123;</span><br><span class="line">            pop();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">"empty"</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; (empty() ? <span class="string">"NO"</span> : <span class="string">"YES"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;    <span class="comment">// query</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; query() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li><code>tt</code>为栈顶指针。</li>
+<li>让栈从数组下标为0处放入数据，因为<code>tt</code>是栈顶指针，在<code>push</code>的时候必须先向右移动一位，所以这里初始化为-1。</li>
+</ol>
+</blockquote>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/830/" target="_blank" rel="noopener">828.模拟栈</a></p>
+          </div>
+
+
+
+
 
     </div>
 
@@ -428,7 +445,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -446,7 +463,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
