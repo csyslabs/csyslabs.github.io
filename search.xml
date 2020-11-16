@@ -22,11 +22,11 @@
         <tag>算法</tag>
         <tag>堆</tag>
         <tag>链表</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
-        <tag>字符串</tag>
+        <tag>单调栈</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -288,7 +288,21 @@
 <p>error:参数不对</p>
 </blockquote>
 <p>我们另外在<code>error</code>函数中对异常进行统一的处理。</p>
-<h3 id="2-9-IOC或DI"><a href="#2-9-IOC或DI" class="headerlink" title="2.9 IOC或DI"></a>2.9 IOC或DI</h3>]]></content>
+<h3 id="2-9-IOC-aka-DI"><a href="#2-9-IOC-aka-DI" class="headerlink" title="2.9 IOC aka DI"></a>2.9 IOC aka DI</h3><h4 id="2-9-1-什么是IOC-DI"><a href="#2-9-1-什么是IOC-DI" class="headerlink" title="2.9.1 什么是IOC DI"></a>2.9.1 什么是IOC DI</h4><p>IOC，控制反转（Inversion of Contro）。<br>软件系统在没有引入IOC容器之前，比如说对象A依赖于对象B，那么对象A在初始化或者运行到某一点的时候，自己必须主动去创建对象B或者使用已经创建的对象B。无论是创建还是使用对象B，控制权都在自己手上。</p>
+<p>软件系统在引入IOC容器之后，这种情形就完全改变了，由于IOC容器的加入，对象A与对象B之间失去了直接联系，所以，当对象A运行到需要对象B的时候，IOC容器会主动创建一个对象B注入到对象A需要的地方。</p>
+<p>通过前后的对比，我们不难看出来：对象A获得依赖对象B的过程,由主动行为变为了被动行为，控制权颠倒过来了，这就是 <strong>控制反转</strong> 这个名称的由来。</p>
+<p>DI，依赖注入（Dependency Injection）。<br>控制被反转之后，获得依赖对象的过程由自身管理变为了由IOC容器主动注入。所以 <strong>控制反转</strong> 更合适的名字叫做 <strong>依赖注入</strong></p>
+<p>所以，依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情，就是指通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦。</p>
+<h4 id="2-9-2-举例"><a href="#2-9-2-举例" class="headerlink" title="2.9.2 举例"></a>2.9.2 举例</h4><p>在…/src/main/java/plus.fingerdance.projectx/service 目录下创建新的类<code>ProjectxService</code>。<br>注意要想能让IOC容器在别的地方注入这个类的对象，这里一定要有注解<code>@Service</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProjectxService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMessage</span><span class="params">(<span class="keyword">int</span> userId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello Message: "</span> + String.valueOf(userId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在…/src/main/java/plus.fingerdance.projectx/controller 目录下创建新的类<code>SettingController</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SettingController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/setting"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">setting</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Setting OK"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于<code>ProjectxService</code>类，如果我们想在<code>IndexController</code>和<code>SettingController</code>两个类里同时使用，一般来说需要在两个地方各都<code>new</code>出来一个。<br>但是使用IOC的方式，我们只需在两个地方通过注解的方式让IOC容器帮我们注入进来。<br>在<code>SettingController</code>类中：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SettingController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span>                                                                  <span class="comment">// IOC容器注入对象</span></span><br><span class="line">    ProjectxService projectxService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/setting"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">setting</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Setting OK"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>IndexController</code>类中：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span>                                                                  <span class="comment">// IOC容器注入对象</span></span><br><span class="line">    ProjectxService projectxService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = &#123;<span class="string">"/"</span>, <span class="string">"/index"</span>&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(HttpSession httpSession)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World"</span> + httpSession.getAttribute(<span class="string">"msg"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实，不难注意到<code>httpSession</code>对象也是通过IOC容器注入的。</p>
+]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>Project</category>
@@ -494,8 +508,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -2023,7 +2037,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -2073,7 +2087,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -2166,8 +2180,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
         <tag>沟通</tag>
+        <tag>人际关系</tag>
       </tags>
   </entry>
   <entry>
@@ -2220,9 +2234,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
-        <tag>人际关系</tag>
       </tags>
   </entry>
   <entry>
