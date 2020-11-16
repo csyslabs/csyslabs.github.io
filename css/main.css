@@ -750,7 +750,7 @@ pre .javascript .function {
 .post-body .note h4,
 .post-body .note h5,
 .post-body .note h6 {
-  margin-top: 3px;
+  margin-top: 0;
   border-bottom: initial;
   margin-bottom: 0;
   padding-top: 0;
@@ -773,17 +773,6 @@ pre .javascript .function {
 .post-body .note img:last-child {
   margin-bottom: 0;
 }
-.post-body .note:not(.no-icon) {
-  padding-left: 2.5em;
-}
-.post-body .note:not(.no-icon)::before {
-  font-size: 1.5em;
-  left: 0.4em;
-  position: absolute;
-  top: calc(50% - 1em);
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
 .post-body .note.default {
   background: #f7f7f7;
   border-left-color: #777;
@@ -793,10 +782,6 @@ pre .javascript .function {
 .post-body .note.default h4,
 .post-body .note.default h5,
 .post-body .note.default h6 {
-  color: #777;
-}
-.post-body .note.default:not(.no-icon)::before {
-  content: "\f0a9";
   color: #777;
 }
 .post-body .note.primary {
@@ -810,10 +795,6 @@ pre .javascript .function {
 .post-body .note.primary h6 {
   color: #5d2b90;
 }
-.post-body .note.primary:not(.no-icon)::before {
-  content: "\f055";
-  color: #5d2b90;
-}
 .post-body .note.info {
   background: #eef7fa;
   border-left-color: #428bca;
@@ -823,10 +804,6 @@ pre .javascript .function {
 .post-body .note.info h4,
 .post-body .note.info h5,
 .post-body .note.info h6 {
-  color: #428bca;
-}
-.post-body .note.info:not(.no-icon)::before {
-  content: "\f05a";
   color: #428bca;
 }
 .post-body .note.success {
@@ -840,10 +817,6 @@ pre .javascript .function {
 .post-body .note.success h6 {
   color: #5cb85c;
 }
-.post-body .note.success:not(.no-icon)::before {
-  content: "\f058";
-  color: #5cb85c;
-}
 .post-body .note.warning {
   background: #fdf8ea;
   border-left-color: #f0ad4e;
@@ -855,10 +828,6 @@ pre .javascript .function {
 .post-body .note.warning h6 {
   color: #f0ad4e;
 }
-.post-body .note.warning:not(.no-icon)::before {
-  content: "\f06a";
-  color: #f0ad4e;
-}
 .post-body .note.danger {
   background: #fcf1f2;
   border-left-color: #d9534f;
@@ -868,10 +837,6 @@ pre .javascript .function {
 .post-body .note.danger h4,
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
-  color: #d9534f;
-}
-.post-body .note.danger:not(.no-icon)::before {
-  content: "\f056";
   color: #d9534f;
 }
 .pagination .prev,
@@ -1257,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bb1d47;
+  background: #ffe8e7;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1615,9 +1580,6 @@ pre .javascript .function {
   .post-body .note {
     margin-bottom: 10px !important;
     padding: 10px !important;
-  }
-  .post-body .note:not(.no-icon) {
-    padding-left: 35px !important;
   }
   .post-body .tabs .tab-content .tab-pane {
     padding: 10px 10px 0 10px !important;
