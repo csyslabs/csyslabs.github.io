@@ -24,9 +24,9 @@
         <tag>链表</tag>
         <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
-        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -313,11 +313,41 @@
       </tags>
   </entry>
   <entry>
+    <title>AcWing 831.KMP字符串</title>
+    <url>/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>闪耀着人类智慧之光的——KMP算法。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p> 给定一个模式串S，以及一个模板串P，所有字符串中只包含大小写英文字母以及阿拉伯数字。<br>模板串P在模式串S中多次作为子串出现。<br>求出模板串P在模式串S中所有出现的位置的起始下标。</p>
+<p><strong>输入格式</strong><br>第一行输入整数N，表示字符串P的长度。<br>第二行输入字符串P。<br>第三行输入整数M，表示字符串S的长度。<br>第四行输入字符串S。</p>
+<p><strong>输出格式</strong><br>共一行，输出所有出现位置的起始下标（下标从0开始计数），整数之间用空格隔开。</p>
+<p><strong>数据范围</strong><br>$1≤N≤10^5$ $1≤M≤10^6$</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>3<br>aba<br>5<br>ababa</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>0 2</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>AcWing</tag>
+        <tag>KMP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AcWing 154.滑动窗口 [算法竞赛进阶指南]</title>
     <url>/2020/11/16/AcWing-154-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3-%5B%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97%5D/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>单调队列的模板题，滑动窗口经典应用。</p>
 <a id="more"></a>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个大小为 $n≤10^6&amp; 的数组。<br>有一个大小为k的滑动窗口，它从数组的最左边移动到最右边。<br>您只能在窗口中看到k个数字。<br>每次滑动窗口向右移动一个位置。<br>以下是一个例子：<br>该数组为[1 3 -1 -3 5 3 6 7]，k为3。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个大小为 $n≤10^6$ 的数组。<br>有一个大小为k的滑动窗口，它从数组的最左边移动到最右边。<br>您只能在窗口中看到k个数字。<br>每次滑动窗口向右移动一个位置。<br>以下是一个例子：<br>该数组为[1 3 -1 -3 5 3 6 7]，k为3。</p>
 <table>
 <thead>
 <tr>
@@ -368,7 +398,8 @@
 <blockquote>
 <p>-1 -3 -3 -3 3 3<br>3 3 5 5 6 7</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3>]]></content>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="comment">// 求每个窗口最小值</span></span><br><span class="line">    <span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="comment">// 判断队头是否已经滑出窗口，如果已经滑出了窗口，队列从hh处弹出一个数</span></span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line">        <span class="comment">// 在i加入到队尾之前，先维护队列的单调递增性</span></span><br><span class="line">        <span class="comment">// 如果a[i]比队尾对应值小的话，那么不能加入队列，否则队列会递减，此时队尾向左移动，直到在队列中找到一个值使得a[i]比它大（或者找完队列也没有找到）。那么这个时候再将i入队的话，对应的值就会单调递增了。</span></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line">        <span class="comment">// 因为i表示窗口末端或者说队尾，而它又是从0开始的，那么在窗口完全进入数组之前，不需要输出最值。</span></span><br><span class="line">        <span class="comment">// 即：i对应的窗口左端为i - k + 1，当i - k + 1 &lt; 0时，是不需要输出最小值的。</span></span><br><span class="line">        <span class="comment">// 但是由于需要从i = 0起开始维护队列的单调性，所以之前过程不能省略。</span></span><br><span class="line">        <span class="comment">// 我们怎么能知道此时队列头对应的数一定是最小的呢？（当队列数量小于k的时候）</span></span><br><span class="line">        <span class="comment">// 因为不管队列长度是刚好等于窗口长度，还是小于窗口长度，最左边的数一定是最小的。妙啊！</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]); <span class="comment">// 因为队列内部元素对应数组汇中的值是单调递增的，所以可以在O                                        // (1)的时间复杂度内找到最小值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 求每个窗口最大值</span></span><br><span class="line">    hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>算法</category>
@@ -2037,7 +2068,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -2087,7 +2118,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -2180,8 +2211,8 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -2234,9 +2265,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
       </tags>
   </entry>
   <entry>
@@ -2994,8 +3025,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>链表</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3246,8 +3277,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>算法</tag>
-        <tag>计数数组</tag>
         <tag>数组</tag>
+        <tag>计数数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
