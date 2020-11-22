@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fingerdance.plus/"/>
-  <updated>2020-11-17T10:34:58.832Z</updated>
+  <updated>2020-11-22T15:01:08.485Z</updated>
   <id>https://fingerdance.plus/</id>
   
   <author>
@@ -17,11 +17,73 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LeetCode 5606.具有给定数值的最小字符串 [第216场周赛]</title>
+    <link href="https://fingerdance.plus/2020/11/22/LeetCode-5606-%E5%85%B7%E6%9C%89%E7%BB%99%E5%AE%9A%E6%95%B0%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B/"/>
+    <id>https://fingerdance.plus/2020/11/22/LeetCode-5606-%E5%85%B7%E6%9C%89%E7%BB%99%E5%AE%9A%E6%95%B0%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B/</id>
+    <published>2020-11-22T14:28:56.000Z</published>
+    <updated>2020-11-22T15:01:08.485Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;力扣第216场周赛第二题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://fingerdance.plus/tags/LeetCode/"/>
+    
+      <category term="模拟" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+      <category term="竞赛" scheme="https://fingerdance.plus/tags/%E7%AB%9E%E8%B5%9B/"/>
+    
+      <category term="贪心" scheme="https://fingerdance.plus/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 5607.生成平衡数组的方案数 [第216场周赛]</title>
+    <link href="https://fingerdance.plus/2020/11/22/LeetCode-5607-%E7%94%9F%E6%88%90%E5%B9%B3%E8%A1%A1%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0-%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B/"/>
+    <id>https://fingerdance.plus/2020/11/22/LeetCode-5607-%E7%94%9F%E6%88%90%E5%B9%B3%E8%A1%A1%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0-%E7%AC%AC216%E5%9C%BA%E5%91%A8%E8%B5%9B/</id>
+    <published>2020-11-22T14:04:48.000Z</published>
+    <updated>2020-11-22T14:43:26.407Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;力扣第216场周赛第三题，考查前缀和及动态规划。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://fingerdance.plus/tags/LeetCode/"/>
+    
+      <category term="动态规划" scheme="https://fingerdance.plus/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="前缀和" scheme="https://fingerdance.plus/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="竞赛" scheme="https://fingerdance.plus/tags/%E7%AB%9E%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AcWing 831.KMP字符串</title>
     <link href="https://fingerdance.plus/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>https://fingerdance.plus/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
     <published>2020-11-17T08:57:09.000Z</published>
-    <updated>2020-11-17T10:34:58.832Z</updated>
+    <updated>2020-11-21T14:34:14.888Z</updated>
     
     <summary type="html">
     
@@ -366,7 +428,7 @@
     <link href="https://fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/"/>
     <id>https://fingerdance.plus/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/</id>
     <published>2020-11-09T14:02:30.000Z</published>
-    <updated>2020-11-09T16:15:05.942Z</updated>
+    <updated>2020-11-22T14:35:42.620Z</updated>
     
     <summary type="html">
     
@@ -382,7 +444,13 @@
     
       <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
+    
+      <category term="高精度" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+      <category term="模板题" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
+    
+      <category term="模拟" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%8B%9F/"/>
     
   </entry>
   
@@ -391,7 +459,7 @@
     <link href="https://fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/"/>
     <id>https://fingerdance.plus/2020/11/09/AcWing-793-%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/</id>
     <published>2020-11-09T13:41:25.000Z</published>
-    <updated>2020-11-09T14:01:51.156Z</updated>
+    <updated>2020-11-22T14:35:06.544Z</updated>
     
     <summary type="html">
     
@@ -407,7 +475,13 @@
     
       <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
+    
+      <category term="高精度" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+      <category term="模板题" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
+    
+      <category term="模拟" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%8B%9F/"/>
     
   </entry>
   
@@ -416,7 +490,7 @@
     <link href="https://fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/"/>
     <id>https://fingerdance.plus/2020/11/08/AcWing-792-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/</id>
     <published>2020-11-08T15:26:45.000Z</published>
-    <updated>2020-11-09T14:27:04.107Z</updated>
+    <updated>2020-11-22T14:35:22.484Z</updated>
     
     <summary type="html">
     
@@ -432,7 +506,13 @@
     
       <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
+    
+      <category term="高精度" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+      <category term="模板题" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
+    
+      <category term="模拟" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%8B%9F/"/>
     
   </entry>
   
@@ -441,7 +521,7 @@
     <link href="https://fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"/>
     <id>https://fingerdance.plus/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/</id>
     <published>2020-11-08T15:19:50.000Z</published>
-    <updated>2020-11-09T13:51:28.781Z</updated>
+    <updated>2020-11-22T14:34:35.914Z</updated>
     
     <summary type="html">
     
@@ -457,7 +537,13 @@
     
       <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="高精度四则运算" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/"/>
+      <category term="AcWing" scheme="https://fingerdance.plus/tags/AcWing/"/>
+    
+      <category term="高精度" scheme="https://fingerdance.plus/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+      <category term="模板题" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
+    
+      <category term="模拟" scheme="https://fingerdance.plus/tags/%E6%A8%A1%E6%8B%9F/"/>
     
   </entry>
   
@@ -531,62 +617,6 @@
       <category term="算法" scheme="https://fingerdance.plus/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="离散化" scheme="https://fingerdance.plus/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数组排序去重</title>
-    <link href="https://fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/"/>
-    <id>https://fingerdance.plus/2020/11/04/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%8E%BB%E9%87%8D/</id>
-    <published>2020-11-04T15:31:34.000Z</published>
-    <updated>2020-11-06T16:49:19.183Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;一个快速实现数组排序去重的小技巧。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数组" scheme="https://fingerdance.plus/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="排序" scheme="https://fingerdance.plus/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="双指针" scheme="https://fingerdance.plus/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-      <category term="去重" scheme="https://fingerdance.plus/tags/%E5%8E%BB%E9%87%8D/"/>
-    
-      <category term="unique" scheme="https://fingerdance.plus/tags/unique/"/>
-    
-      <category term="原地算法" scheme="https://fingerdance.plus/tags/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="in-place algorithm" scheme="https://fingerdance.plus/tags/in-place-algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅谈原码、反码和补码</title>
-    <link href="https://fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
-    <id>https://fingerdance.plus/2020/11/04/%E6%B5%85%E8%B0%88%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</id>
-    <published>2020-11-04T07:32:13.000Z</published>
-    <updated>2020-11-11T12:24:51.149Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;计算机二进制原码、反码和补码的个人理解。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://fingerdance.plus/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-    
-      <category term="二进制" scheme="https://fingerdance.plus/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
     
   </entry>
   
