@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。 逆序对的定义如下：对于数列的第 i 个和第 j 个元素，如果满足 i &lt; j 且 a[i] &gt; a[j]，则其为一个逆序对；否则不是。 输入格式第一行包含整数n，表示数列的长度。 第二行包含 n 个整数，表示整个数列。 输出格式输出一个整数，表示逆序对的个数。 数据范围1≤n≤100000输入样例：  6  2 3 4 5">
+  <meta name="description" content="摘要：归并排序模板题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AcWing 788.逆序对的数量">
 <meta property="og:url" content="https://fingerdance.plus/2020/10/27/AcWing-788.%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/index.html">
 <meta property="og:site_name" content="Dirac Sea">
-<meta property="og:description" content="题目给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。 逆序对的定义如下：对于数列的第 i 个和第 j 个元素，如果满足 i &lt; j 且 a[i] &gt; a[j]，则其为一个逆序对；否则不是。 输入格式第一行包含整数n，表示数列的长度。 第二行包含 n 个整数，表示整个数列。 输出格式输出一个整数，表示逆序对的个数。 数据范围1≤n≤100000输入样例：  6  2 3 4 5">
+<meta property="og:description" content="摘要：归并排序模板题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-27T10:06:57.000Z">
-<meta property="article:modified_time" content="2020-11-03T17:21:31.540Z">
+<meta property="article:modified_time" content="2020-11-29T10:48:01.339Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="归并排序">
 <meta property="article:tag" content="树状数组">
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-04 01:21:31" itemprop="dateModified" datetime="2020-11-04T01:21:31+08:00">2020-11-04</time>
+                <time title="Modified: 2020-11-29 18:48:01" itemprop="dateModified" datetime="2020-11-29T18:48:01+08:00">2020-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,14 +305,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个长度为n的整数数列，请你计算数列中的逆序对的数量。</p>
+        <p><strong>摘要：</strong><br>归并排序模板题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个长度为 <code>n</code> 的整数数列，请你计算数列中的逆序对的数量。</p>
 <p>逆序对的定义如下：对于数列的第 <code>i</code> 个和第 <code>j</code> 个元素，如果满足 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>，则其为一个逆序对；否则不是。</p>
-<p><strong>输入格式</strong><br>第一行包含整数n，表示数列的长度。</p>
-<p>第二行包含 n 个整数，表示整个数列。</p>
+<p><strong>输入格式</strong><br>第一行包含整数 <code>n</code> ，表示数列的长度。</p>
+<p>第二行包含 <code>n</code> 个整数，表示整个数列。</p>
 <p><strong>输出格式</strong><br>输出一个整数，表示逆序对的个数。</p>
-<p><strong>数据范围</strong><br><code>1≤n≤100000</code><br><strong>输入样例：</strong></p>
+<p><strong>数据范围</strong><br>$1≤n≤100000$</p>
+<p><strong>输入样例：</strong></p>
 <blockquote>
-<p>6<br>  2 3 4 5 6 1</p>
+<p>6<br>2 3 4 5 6 1</p>
 </blockquote>
 <p><strong>输出样例：</strong></p>
 <blockquote>
@@ -441,7 +445,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
