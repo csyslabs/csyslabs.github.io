@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"fingerdance.plus","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="摘要：用数组模拟静态链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AcWing 826.单链表">
-<meta property="og:url" content="https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:url" content="https://accepted.org.cn/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：用数组模拟静态链表">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-12T07:32:37.000Z">
-<meta property="article:modified_time" content="2020-11-15T06:54:35.224Z">
+<meta property="article:modified_time" content="2020-11-30T03:54:27.394Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="链表">
@@ -37,7 +37,7 @@
 <meta property="article:tag" content="静态链表">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/">
+<link rel="canonical" href="https://accepted.org.cn/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/">
 
 
 <script id="page-configurations">
@@ -241,7 +241,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -274,7 +274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-15 14:54:35" itemprop="dateModified" datetime="2020-11-15T14:54:35+08:00">2020-11-15</time>
+                <time title="Modified: 2020-11-30 11:54:27" itemprop="dateModified" datetime="2020-11-30T11:54:27+08:00">2020-11-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -327,20 +327,20 @@
 <h3 id="何为链表"><a href="#何为链表" class="headerlink" title="何为链表"></a>何为链表</h3><p>首先什么是链表呢，链表是一堆离散的结点，每个结点存了两个值，一个表示结点的数值，一个是next指针，它指向了下一个结点的位置。链表是一个递归的数据结构（俄罗斯套娃），如果给我们一个链表的头结点，我们可以遍历整个链表。可以认为链表某结点的next指针指向了其后面整个链表。<br>一个链表结点可以形象地看成：<br>[value]<br>[next ]<br>用数组模拟链表，一定要理解其本质。</p>
 <h3 id="数组模拟链表的本质"><a href="#数组模拟链表的本质" class="headerlink" title="数组模拟链表的本质"></a>数组模拟链表的本质</h3><p>我们用一个数组A来存储数值，一个数组B来存储指针。一个链表结点分别由同一下标的两个数组元素构成。因为是用数组模拟链表，所以结点的指针用数组下标表示。<br>从0开始遍历两个数组，0代表第0次插入操作，每一次向链表中新插入数值，下标后移一位，相当于new一个新的结点。但是当删除操作时，下标不会移动。也就是说，删除结点时，结点依然在数组中，只是链表不会指向它。<br>另外，需要一个下标来表示整个链表的头结点，注意，头结点不一定在0位置（可能会在头结点前面插入新的结点）。<br>为什么要有头结点下标呢？这样可以很方便地对整个链表遍历，也很方便地在头结点出进行插入和删除操作。</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p><strong>向链表头插入一个数：</strong> 在值域数组新的下标处放入插入的数的值，插入的结点指向了头结点位置，数组下标后移一位方便下次操作。<br><strong>删除第k个输入的数后面的数：</strong> 当k为0时，删除头结点，只需将head移动到head指向的结点；k不为0时，删除第k次插入的结点后面的结点，因为题目中描述“第k次插入”是从1开始计算的，所以此处需要删除下标为k-1的结点后面的结点。相当于是链表从k-1结点跳过它后面的结点，指向它后面的后面的结点。<br><strong>在第k个输入的数后面插入一个数：</strong> 题目说明此处k大于0。只需在值域数组新的下标处放入新插入的数的值，在指针域数组新的下标处放入下标为k-1的结点指向的下一个结点下标，再把下标为k-1的结点指向新的下标。另外，数组下标后移一位方便下次插入操作。</p>
+<p><strong>向链表头插入一个数：</strong> 即更新头结点。在值域数组新的下标处放入插入的数的值，插入的结点指向了头结点位置，数组下标后移一位方便下次操作。<br><strong>删除第k个输入的数后面的数：</strong> 当k为0时，删除头结点，只需将head移动到head指向的结点；k不为0时，删除第k次插入的结点后面的结点，因为题目中描述“第k次插入”是从1开始计算的，所以此处需要删除下标为k-1的结点后面的结点。相当于是链表从k-1结点跳过它后面的结点，指向它后面的后面的结点。<br><strong>在第k个输入的数后面插入一个数：</strong> 题目说明此处k大于0。只需在值域数组新的下标处放入新插入的数的值，在指针域数组新的下标处放入下标为k-1的结点指向的下一个结点下标，再把下标为k-1的结点指向新的下标。另外，数组下标后移一位方便下次插入操作。</p>
 </blockquote>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="comment">// head 表示头结点的下标</span></span><br><span class="line"><span class="comment">// e[i] 表示节点i的值</span></span><br><span class="line"><span class="comment">// ne[i] 表示节点i的next指针是多少</span></span><br><span class="line"><span class="comment">// idx 存储当前已经用到了哪个点</span></span><br><span class="line"><span class="keyword">int</span> head, e[N], ne[N], idx;                                             <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head = <span class="number">-1</span>;                                                          <span class="comment">// 2</span></span><br><span class="line">    idx = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将x插到头结点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = x, ne[idx] = head, head = idx ++ ;                         <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将x插到下标是k的点后面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = x, ne[idx] = ne[k], ne[k] = idx ++ ;                       <span class="comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将下标是k的点后面的点删掉</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k] = ne[ne[k]];                                                  <span class="comment">// 5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span> (m -- )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k, x;</span><br><span class="line">        <span class="keyword">char</span> op;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="string">'H'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">            add_to_head(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (op == <span class="string">'D'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">            <span class="keyword">if</span> (!k) head = ne[head];                                    <span class="comment">// 6</span></span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">remove</span>(k - <span class="number">1</span>);                                         <span class="comment">// 7</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; k &gt;&gt; x;</span><br><span class="line">            add(k - <span class="number">1</span>, x);                                              <span class="comment">// 8</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = head; i != <span class="number">-1</span>; i = ne[i]) <span class="built_in">cout</span> &lt;&lt; e[i] &lt;&lt; <span class="string">' '</span>;         <span class="comment">// 9</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
-<li><code>e[N]</code>和<code>ne[N]</code>数组分别为链表结点的值域数组和指针域数组，<code>head</code>为链表头结点下标，<code>idx</code>为两个数组共用的游标，每当需要往链表中插入值时，<code>idx</code>后移一位，相当于<code>new</code>一个新结点。</li>
-<li><code>head</code>初始化为-1，表示初始状态链表头结点为<code>null</code>；<code>idx</code>初始化为-1，表示将在两个数组的起始位置添加结点。</li>
+<li><code>e[N]</code> 和 <code>ne[N]</code> 数组分别为链表结点的值域数组和指针域数组， <code>head</code> 为链表头结点下标， <code>idx</code> 为两个数组共用的游标，每当需要往链表中插入值时， <code>idx</code> 后移一位，相当于 <code>new</code> 一个新结点。</li>
+<li><code>head</code>初始化为-1，表示初始状态链表头结点为<code>null</code>；<code>idx</code>初始化为0，表示将在两个数组的起始位置添加结点。因为题目的第「<code>k</code>」个数指的是从 <code>1</code> 起 第 <code>k</code> 个操作数，所以如果我们 <code>idx</code> 初始化为 <code>0</code> ，那么 <code>k</code> 和数组下标的对应关系是 <code>k - 1 == idx</code> 。接着我们注意到算法在使用 <code>k</code> 时是直接当数组下标用的，那是因为在 <code>7</code> <code>8</code> 处调用函数时，参数已经做了修正（<code>k - 1</code>）。当然可以让 <code>idx</code> 初始化为 <code>1</code> ，那么 <code>k</code> 和 <code>idx</code> 完全对应，可以直接使用，且调用函数时不需要修正。</li>
 <li><code>new</code>一个新的结点，让结点的<code>next</code>指针指向<code>head</code>，游标后移。</li>
 <li><code>new</code>一个新的结点，让结点的<code>next</code>指针指向下标<code>k</code>的下一位，游标后移。</li>
 <li>跳过下标为<code>k</code>的结点。</li>
 <li>注意到题干要求当<code>k</code>为0的情况。</li>
 <li>注意题干的第<code>k</code>个结点是从1开始计数的，我们算法实现的<code>k</code>是下标<code>k</code>。</li>
 <li>同上。</li>
-<li><strong>链表的遍历：</strong> 从头结点下标开始<code>i = head</code>，到<code>null</code>结点结束<code>i == -1</code>。</li>
+<li><strong>链表的遍历：</strong> 从头结点下标开始<code>i = head</code>，到<code>null</code>结点结束<code>i == -1</code>。因为第一个操作必然是更新头结点（否则其他操作没法进行），接着将头结点指向 <code>-1(null)</code> ，即第一步必然是 <code>head -&gt; null</code> ，随后所有操作都在 <code>head</code> 和 <code>null</code> 之间进行。那么在所有操作结束之后，遍历链表，一定是以 <code>null</code> 结束。</li>
 </ol>
 </blockquote>
 <div class="note primary">
@@ -362,7 +362,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://fingerdance.plus/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/" title="AcWing 826.单链表">https://fingerdance.plus/2020/11/12/AcWing-826-单链表/</a>
+    <a href="https://accepted.org.cn/2020/11/12/AcWing-826-%E5%8D%95%E9%93%BE%E8%A1%A8/" title="AcWing 826.单链表">https://accepted.org.cn/2020/11/12/AcWing-826-单链表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -498,7 +498,7 @@
         <a href="https://github.com/ESP0xA" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ESP0xA" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:rpm@live.com" title="E-Mail → mailto:rpm@live.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:esp@accepted.org.cn" title="E-Mail → mailto:esp@accepted.org.cn"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
