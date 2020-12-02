@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2020-11-29T14:13:00.483Z</updated>
+  <updated>2020-12-02T09:36:48.944Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 318.最大单词长度乘积</title>
+    <link href="https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/"/>
+    <id>https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/</id>
+    <published>2020-12-02T09:14:44.000Z</published>
+    <updated>2020-12-02T09:36:48.944Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;位运算记录字符串中字符。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 316.去除重复字母</title>
+    <link href="https://accepted.org.cn/2020/12/02/LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/"/>
+    <id>https://accepted.org.cn/2020/12/02/LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/</id>
+    <published>2020-12-02T05:01:34.000Z</published>
+    <updated>2020-12-02T09:37:21.756Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;一道贪心题。（需要review）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
+    
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="贪心" scheme="https://accepted.org.cn/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 493.翻转对</title>
@@ -259,9 +319,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="单调栈" scheme="https://accepted.org.cn/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
-    
       <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
+    
+      <category term="单调栈" scheme="https://accepted.org.cn/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
     
       <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
     
@@ -319,9 +379,9 @@
     
       <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
     
-      <category term="双链表" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="静态链表" scheme="https://accepted.org.cn/tags/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="双链表" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -350,9 +410,9 @@
     
       <category term="链表" scheme="https://accepted.org.cn/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="单调栈" scheme="https://accepted.org.cn/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
-    
       <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
+    
+      <category term="单调栈" scheme="https://accepted.org.cn/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
     
       <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -476,7 +536,7 @@
     <link href="https://accepted.org.cn/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/"/>
     <id>https://accepted.org.cn/2020/11/09/AcWing-794-%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/</id>
     <published>2020-11-09T14:02:30.000Z</published>
-    <updated>2020-11-22T14:35:42.620Z</updated>
+    <updated>2020-12-02T05:11:14.721Z</updated>
     
     <summary type="html">
     
@@ -561,60 +621,6 @@
       <category term="模板题" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
     
       <category term="模拟" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AcWing 791.高精度加法</title>
-    <link href="https://accepted.org.cn/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"/>
-    <id>https://accepted.org.cn/2020/11/08/AcWing-791-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/</id>
-    <published>2020-11-08T15:19:50.000Z</published>
-    <updated>2020-11-22T14:34:35.914Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要；&lt;/strong&gt;&lt;br&gt;高精度加法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
-    
-      <category term="高精度" scheme="https://accepted.org.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
-    
-      <category term="模板题" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/"/>
-    
-      <category term="模拟" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AcWing 2767.优秀的拆分 [2020 CCF CSP-J2, NOIP]</title>
-    <link href="https://accepted.org.cn/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/"/>
-    <id>https://accepted.org.cn/2020/11/08/AcWing-2767-%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%86%E5%88%86-2020-CCF-CSP-J2-NOIP/</id>
-    <published>2020-11-08T09:38:54.000Z</published>
-    <updated>2020-11-09T06:56:43.709Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;2020 CCF CSP-J2普及组 aka NOIP&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="二进制" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
     
   </entry>
   
