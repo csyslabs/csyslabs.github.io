@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2020-12-04T10:48:52.717Z</updated>
+  <updated>2020-12-06T08:30:11.017Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NowCoder.CD21 计算数组的小和 [程序员代码面试指南]</title>
+    <link href="https://accepted.org.cn/2020/12/06/NowCoder-CD21-%E8%AE%A1%E7%AE%97%E6%95%B0%E7%BB%84%E7%9A%84%E5%B0%8F%E5%92%8C-%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%A3%E7%A0%81%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/"/>
+    <id>https://accepted.org.cn/2020/12/06/NowCoder-CD21-%E8%AE%A1%E7%AE%97%E6%95%B0%E7%BB%84%E7%9A%84%E5%B0%8F%E5%92%8C-%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%A3%E7%A0%81%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/</id>
+    <published>2020-12-06T08:18:05.000Z</published>
+    <updated>2020-12-06T08:30:11.017Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;需要review&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="树状数组" scheme="https://accepted.org.cn/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="lowbit" scheme="https://accepted.org.cn/tags/lowbit/"/>
+    
+      <category term="NowCoder" scheme="https://accepted.org.cn/tags/NowCoder/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 659.分割数组为连续子序列</title>
@@ -35,9 +64,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="贪心" scheme="https://accepted.org.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
@@ -60,9 +89,9 @@
       <category term="生活" scheme="https://accepted.org.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
       <category term="笔记" scheme="https://accepted.org.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="情商" scheme="https://accepted.org.cn/tags/%E6%83%85%E5%95%86/"/>
     
@@ -106,9 +135,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -135,9 +164,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
     
@@ -166,9 +195,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="归并排序" scheme="https://accepted.org.cn/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
     
@@ -214,9 +243,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="模拟" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%8B%9F/"/>
     
@@ -245,9 +274,9 @@
       <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="动态规划" scheme="https://accepted.org.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
@@ -262,7 +291,7 @@
     <link href="https://accepted.org.cn/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>https://accepted.org.cn/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
     <published>2020-11-17T08:57:09.000Z</published>
-    <updated>2020-11-26T09:44:40.688Z</updated>
+    <updated>2020-12-06T10:20:45.366Z</updated>
     
     <summary type="html">
     
@@ -291,7 +320,7 @@
     <link href="https://accepted.org.cn/2020/11/16/AcWing-154-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3-[%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97]/"/>
     <id>https://accepted.org.cn/2020/11/16/AcWing-154-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3-[%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97]/</id>
     <published>2020-11-16T09:35:46.000Z</published>
-    <updated>2020-11-17T06:46:01.306Z</updated>
+    <updated>2020-12-05T08:07:24.525Z</updated>
     
     <summary type="html">
     
@@ -374,7 +403,7 @@
     <link href="https://accepted.org.cn/2020/11/14/AcWing-830-%E5%8D%95%E8%B0%83%E6%A0%88/"/>
     <id>https://accepted.org.cn/2020/11/14/AcWing-830-%E5%8D%95%E8%B0%83%E6%A0%88/</id>
     <published>2020-11-14T06:02:29.000Z</published>
-    <updated>2020-11-16T09:36:49.691Z</updated>
+    <updated>2020-12-05T08:07:28.511Z</updated>
     
     <summary type="html">
     
@@ -477,9 +506,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="堆" scheme="https://accepted.org.cn/tags/%E5%A0%86/"/>
-    
       <category term="链表" scheme="https://accepted.org.cn/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="堆" scheme="https://accepted.org.cn/tags/%E5%A0%86/"/>
     
       <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
     
@@ -572,33 +601,6 @@
       <category term="双指针" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
       <category term="二分" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AcWing 795.前缀和</title>
-    <link href="https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    <id>https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/</id>
-    <published>2020-11-10T05:17:07.000Z</published>
-    <updated>2020-11-10T10:43:56.623Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;前缀和模板题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数组" scheme="https://accepted.org.cn/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="前缀和" scheme="https://accepted.org.cn/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   

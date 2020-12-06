@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="摘要：闪耀着人类智慧之光的——KMP算法。">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：闪耀着人类智慧之光的——KMP算法。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-17T08:57:09.000Z">
-<meta property="article:modified_time" content="2020-11-26T09:44:40.688Z">
+<meta property="article:modified_time" content="2020-12-06T10:20:45.366Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="字符串">
@@ -225,7 +225,6 @@
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -273,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-26 17:44:40" itemprop="dateModified" datetime="2020-11-26T17:44:40+08:00">2020-11-26</time>
+                <time title="Modified: 2020-12-06 18:20:45" itemprop="dateModified" datetime="2020-12-06T18:20:45+08:00">2020-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -324,6 +323,14 @@
 </blockquote>
 <hr>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>模式串S<code>______Sa__________N______________</code><br>模板串P<code>######Pa__________N</code><br>假设当 <code>S</code> 和 <code>P</code> 从 <code>a</code> 点开始匹配时，到 <code>N</code> 点恰好发现一个字符不匹配，暴力做法我们是让 <code>P</code> 向右偏移一位，从头开始和 <code>S</code> 一一比对。但是存在一些字符是之前已经比对匹配过的，我们可以跳过它们以达到优化目的。<br>我们现在的目标就变成了： <strong>如何利用已经比对匹配过的字符已达到优化目的？</strong><br>设想如果我们能找到这样一个平移量 <code>x</code> 使得当我们把 <code>P</code> 串向右移动 <code>x</code> 位时：<br>模式串S<code>______Sa___x________N______________</code><br>模板串P<code>######Pa___x________N</code><br>模板串P<code>##########Px________N_____</code>（移动x位后的）<br>恰好使得在 <code>P</code> 串和 <code>S</code> 串中从 <code>x</code> 点到上次出现不同字符的 <code>N</code> 点中所有数相同，那么如果发现了这个 <code>x</code> 值，就可以从这里开始让两串匹配，从而完成优化。<br>即 <code>P</code> 串移动一个 <code>x</code> 使得 <code>P</code> 串的某一前缀与 <code>S</code> 串的后缀完全相等，在移动前， <code>S</code> 串的后缀与 <code>P</code> 串后缀已经比较过，完全相等。那么问题就转化成，能否找到这样一个 <code>x</code> 使得，在 <code>P</code> 串内部， <code>P</code> 串的前缀与后缀完全相等。 <code>x</code> 和前后缀的关系是： <code>x + 前缀或后缀 == Pa_N</code> 。（这里的前后缀是相对 <code>Sa_N</code> 和 <code>Pa_N</code> 而言）。<br>以上叙述可形象的看成：<br>模板串P<code>|___x___|_______suf_______|</code><br>模板串P<code>########|_______pre_______|___x___|</code><br>其中， <code>suf == pre</code> 。<br>当我们找到了这个 <code>x</code> 还远远不够，因为可能存在多个这样的 <code>x</code> ，为了使优化效果最好，我们尽可能地希望这个 <code>x</code> 越小越好（ <code>x</code> 最小可取到 <code>1</code> ，因为后面已经发生不匹配情况，如果取 <code>0</code> 的话造成矛盾）,当 <code>x</code> 取到 <code>1</code> 的时候，事实就是 <code>P</code> 串向后平移一位，恰好可以跳过从此处到上次不匹配的地方所有数，接着在上一次不匹配的地方又发生了不匹配的情况？</p>
+<p><strong>next数组：</strong><br>计算next数组的时候，next[j]的值是在p串中，寻找一个值，使得以j为终点的某一段后缀与以这个值为终点的前缀完全相等，并且后缀与前缀要尽可能地长。举例：<br>i: 1 2 3 4 5 6 7 8 9<br>s: a b a b a b c b d<br>p: a b a b a b a b<br>p: # # a b a b a b a b<br>此时，i == 7, j + 1 == 7, j == 6;<br>next[j]的值，应该为让以j为终点的后缀a b a b与以这个值为终点的前缀a b a b相等，这时next[j] = 4.</p>
+<p>对于p串，next数组的值为：<br>idx: 1 2 3 4 5 6 7 8<br>nex: 0 0 1 2 3 4 5 6<br>其中，当idx分别取1和2时，即j对应停留在1和2时，next值找不到满足条件的值，取0是为了退到起点让下一位i ++之后，和j + 1也就是 j == 1作比较。<br>idx == 3时，以下标3为后缀的a与以1为后缀的a相等。next[3] = 1;<br>idx == 4时，以下标4为后缀的a b与以2为后缀的a b相等。next[4] = 2;<br>idx == 5时，以下标5为后缀a b a与以3为后缀的a b a相等。next[5] = 3;<br>idx == 6时，以下标6为后缀a b a b与以4为后缀的a b a b相等。next[6] = 4;<br>idx == 7时，以下标7为后缀a b a b a与以5为后缀的a b a b a相等。next[7] = 5;<br>idx == 8时，以下标8为后缀a b a b a b与以6为后缀的a b a b a b相等。next[8] = 6;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>, M = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> ne[N];</span><br><span class="line"><span class="keyword">char</span> s[M], p[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; p + <span class="number">1</span> &gt;&gt; m &gt;&gt; s + <span class="number">1</span>;                        <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i ++ )                   <span class="comment">// 2</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];            <span class="comment">// 3</span></span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j ++ ;                        <span class="comment">// 4</span></span><br><span class="line">        ne[i] = j;                                          <span class="comment">// 5</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i ++ )                   <span class="comment">// 6</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];            <span class="comment">// 7</span></span><br><span class="line">        <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j ++ ;                        <span class="comment">// 8</span></span><br><span class="line">        <span class="keyword">if</span> (j == n)                                         <span class="comment">// 9</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>, i - n);                           <span class="comment">// 10</span></span><br><span class="line">            j = ne[j];                                      <span class="comment">// 11</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li></li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -447,7 +454,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">95</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -460,7 +467,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">136</span>
+        <span class="site-state-item-count">137</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -631,8 +638,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
