@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：位运算使用技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-25T08:09:15.000Z">
-<meta property="article:modified_time" content="2020-11-10T19:13:01.112Z">
+<meta property="article:modified_time" content="2020-12-07T03:57:44.206Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-11 03:13:01" itemprop="dateModified" datetime="2020-11-11T03:13:01+08:00">2020-11-11</time>
+                <time title="Modified: 2020-12-07 11:57:44" itemprop="dateModified" datetime="2020-12-07T11:57:44+08:00">2020-12-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,7 +309,13 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; - x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>- x</code> 在计算机内部是以补码方式运算的，即:<br><code>- x = ~ x + 1</code><br>假设一个二进制数为：  0010101…0010100000<br><code>~ x</code>为：            1101010…1101011111<br><code>~ x + 1</code>为：        1101010…1101100000<br>注意到+1操作使得最后一位1及其右边所有数字发生了变化，而左边不变。<br>此时在和原数字进行&amp;运算，它和原数字在最后一位1左侧全部不同，右侧全部相同。</p>
 <div class="note primary">
-            <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a href="https://fingerdance.plus/2020/11/04/AcWing-801-二进制中1的个数/" target="_blank" rel="noopener">二进制中1的个数</a></p>
+            <p><strong>题目链接：</strong> <a href="https://esp0xa.github.io//2020/11/04/AcWing-801-二进制中1的个数/" target="_blank" rel="noopener">二进制中1的个数</a></p>
+          </div>
+
+<h3 id="4-一个获取二进制数中1的个数的轮子"><a href="#4-一个获取二进制数中1的个数的轮子" class="headerlink" title="4. 一个获取二进制数中1的个数的轮子"></a>4. 一个获取二进制数中1的个数的轮子</h3><p><code>__builtin_popcount(unsigned int x)</code><br>用于计算一个32位无符号整数有多少个位为1。<br>类似地，可以用 <code>__builtin_popcountl(unsigned long x)</code> 和 <code>__builtin_popcountll(unsigned long long x)</code> 分别计算无符号 <code>long</code> 和 <code>long long</code> 整数二进制表示中1的位数。</p>
+<h3 id="5-二进制数中最高位1距离最低位的距离"><a href="#5-二进制数中最高位1距离最低位的距离" class="headerlink" title="5. 二进制数中最高位1距离最低位的距离"></a>5. 二进制数中最高位1距离最低位的距离</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_len</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; len ++) x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note primary">
+            <p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/" target="_blank" rel="noopener">LeetCode 5620.连接连续的二进制数字（Concatenation of Consecutive Binary Numbers）</a></p>
           </div>
 
 
@@ -414,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目链接："><span class="nav-text">题目链接：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个获取二进制数中1的个数的轮子"><span class="nav-text">4. 一个获取二进制数中1的个数的轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-二进制数中最高位1距离最低位的距离"><span class="nav-text">5. 二进制数中最高位1距离最低位的距离</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -432,7 +438,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -445,7 +451,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">137</span>
+        <span class="site-state-item-count">140</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
