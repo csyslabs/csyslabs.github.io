@@ -24,11 +24,11 @@
         <tag>链表</tag>
         <tag>栈</tag>
         <tag>单调栈</tag>
-        <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
+        <tag>字符串</tag>
         <tag>单链表</tag>
+        <tag>双链表</tag>
         <tag>队列</tag>
         <tag>循环队列</tag>
         <tag>单调队列</tag>
@@ -325,7 +325,7 @@
 <li>We use VirtualProtect to take permissions of the memory we are overwriting.</li>
 <li>We set the memory we’re ovewriting with 0x90 which is the NOP (no operationg) instruction, this is not 100% necessary but is a nice failsafe measure. While you’re debugging it’s also nice to watch the 0x90 get written so you know you’re doing the right thing in the right spot. We NOP the entire instruction by giving it the len argument.</li>
 <li>Then we calculate the relative address between the destination and src address by subtracting them, we subtract len. The result of this calculation is the relative offset from the last byte we overwrote to the address of our function we are jumping to. Keep in mind, we are using a relative jump, not an absolute jump so this must be calculated at runtime.</li>
-<li>Then we write 0xE9 which is the relative jmp instruction, then we add 1 byte so we can write the relative offset.</li>
+<li>Then we write 0xE9(byte code) which is the relative jmp instruction, then we add 1 byte(0xE9) so we can write the relative offset.</li>
 <li>Then we use VirtualProtect to reset the page permissions to what they were before we modified them.</li>
 <li>You have to execute your code inside a declspec naked function, you must preserve the registers and the stack so you don’t corrupt the stack of registers and you must execute the stolen bytes. Then you have to jump back to the src+len address.<br>The <code>__declspec(naked)</code> indicates that the function is going to be no epilogue and prologue. And we can write assembly code in it.</li>
 <li>The <code>_asm</code> indicates no other assembly code but ours.</li>
@@ -414,8 +414,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>lowbit</tag>
         <tag>树状数组</tag>
+        <tag>lowbit</tag>
         <tag>NowCoder</tag>
       </tags>
   </entry>
@@ -473,8 +473,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -523,8 +523,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>算法</tag>
-        <tag>字符串</tag>
         <tag>位运算</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -613,8 +613,8 @@
         <tag>LeetCode</tag>
         <tag>算法</tag>
         <tag>归并排序</tag>
-        <tag>lowbit</tag>
         <tag>树状数组</tag>
+        <tag>lowbit</tag>
       </tags>
   </entry>
   <entry>
@@ -776,8 +776,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>字符串</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>KMP</tag>
       </tags>
   </entry>
@@ -1072,8 +1072,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1127,8 +1127,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>单链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -2069,7 +2069,9 @@
             <p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/" target="_blank" rel="noopener">LeetCode 5620.连接连续的二进制数字（Concatenation of Consecutive Binary Numbers）</a></p>
           </div>
 
-]]></content>
+
+<h3 id="6-两个数之间交换位置"><a href="#6-两个数之间交换位置" class="headerlink" title="6. 两个数之间交换位置"></a>6. 两个数之间交换位置</h3><p>我们有<code>int a = 5, int b = 6</code>, 现需要交换二者位置，可以利用异或运算：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b;</span><br><span class="line">a = a ^ b;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>指尖飞舞</category>
       </categories>
@@ -2399,10 +2401,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
-        <tag>树</tag>
+        <tag>BFS</tag>
         <tag>树深度</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
       </tags>
   </entry>
@@ -2455,10 +2457,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
-        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -2482,12 +2484,12 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
-        <tag>树</tag>
         <tag>树深度</tag>
+        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -2523,10 +2525,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>树的高度</tag>
-        <tag>DFS</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
         <tag>后序遍历</tag>
@@ -2677,8 +2679,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -2732,10 +2734,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
       </tags>
   </entry>
@@ -2789,8 +2791,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>读书</tag>
         <tag>笔记</tag>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -2915,10 +2917,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -2960,8 +2962,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
       </tags>
