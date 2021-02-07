@@ -313,6 +313,38 @@
       </tags>
   </entry>
   <entry>
+    <title>AcWing 789.数的范围</title>
+    <url>/2021/02/07/AcWing-789-%E6%95%B0%E7%9A%84%E8%8C%83%E5%9B%B4/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>二分查找模板题。</p>
+<a id="more"></a>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个按照升序排列的长度为n的整数数组，以及 q 个查询。<br>对于每个查询，返回一个元素k的起始位置和终止位置（位置从0开始计数）。<br>如果数组中不存在该元素，则返回“-1 -1”。</p>
+<p><strong>输入格式</strong><br>第一行包含整数n和q，表示数组长度和询问个数。<br>第二行包含n个整数（均在1~10000范围内），表示完整数组。<br>接下来q行，每行包含一个整数k，表示一个询问元素。</p>
+<p><strong>输出格式</strong><br>共q行，每行包含两个整数，表示所求元素的起始位置和终止位置。<br>如果数组中不存在该元素，则返回“-1 -1”。</p>
+<p><strong>数据范围</strong><br>$ 1≤n≤100000 $<br>$ 1≤q≤10000 $<br>$ 1≤k≤10000 $</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>6 3<br>1 2 2 3 3 4<br>3<br>4<br>5</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>3 4<br>5 5<br>-1 -1<br>__</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> n, q, a[N], qry;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (; q--;) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; qry;</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[mid] &lt; qry) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a[lo] == qry) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; lo &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            </span><br><span class="line">            lo = <span class="number">0</span>, hi = n - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (; lo &lt; hi;) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = lo + hi + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (a[mid] &gt; qry) hi = mid - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> lo = mid;</span><br><span class="line">            &#125;            </span><br><span class="line"></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; hi &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note primary">
+            <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/791/" target="_blank" rel="noopener">AcWing 789.数的范围</a></p>
+          </div>
+
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>二分查找</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AcWing 1230.K倍区间[第八届蓝桥杯省赛B组]</title>
     <url>/2021/02/04/AcWing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4-%E7%AC%AC%E5%85%AB%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9BB%E7%BB%84/</url>
     <content><![CDATA[<p><strong>摘要：</strong></p>
@@ -450,8 +482,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -488,8 +520,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
         <tag>NowCoder</tag>
       </tags>
   </entry>
@@ -532,8 +564,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -547,10 +579,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -595,8 +627,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>字符串</tag>
         <tag>位运算</tag>
       </tags>
@@ -633,8 +665,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>字符串</tag>
         <tag>贪心</tag>
@@ -684,11 +716,11 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>归并排序</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -764,8 +796,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
         <tag>竞赛</tag>
         <tag>贪心</tag>
@@ -808,8 +840,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
         <tag>前缀和</tag>
         <tag>竞赛</tag>
@@ -2179,14 +2211,19 @@
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序是将原数组递归地一分为二，在最短子数组处完成排序，在回溯过程中合并子数组，以完成整个数组的排序。<br>过程感觉很像二叉树的遍历。<br>以下是归并排序模板：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000010</span>;                                     <span class="comment">// test data amount range</span></span><br><span class="line"><span class="keyword">int</span> q[N];                                                   <span class="comment">// original array</span></span><br><span class="line"><span class="keyword">int</span> tmp[N];                                                 <span class="comment">// temporary array</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;                                   <span class="comment">// end of recursion</span></span><br><span class="line">    <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                               </span><br><span class="line">    merge_sort(q, lo, mid), merge_sort(q, mid + <span class="number">1</span>, hi);     <span class="comment">// recursively divides into two</span></span><br><span class="line">    <span class="comment">// backtrack progress</span></span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;                                 </span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;                                              <span class="comment">// index of temporary array            </span></span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid &amp;&amp; j &lt;= hi;)                             <span class="comment">// puts smaller one into tmp[]</span></span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) tmp[t++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[t++] = q[j++]; </span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid;) tmp[t++] = q[i++];                     <span class="comment">// puts remaining array into tmp[]</span></span><br><span class="line">    <span class="keyword">for</span> (;j &lt;= hi;) tmp[t++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lo, j = <span class="number">0</span>; i &lt;= hi;) q[i++] = tmp[j++];    <span class="comment">// overrides original array</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为一分为二的过程一共持续 <strong><em>log(N)</em></strong> 次（以2为底）,把数放入 <code>tmp[]</code> 再覆盖原数组需要 <strong><em>O(N)</em></strong>。<br>故时间复杂度为 <strong><em>ONlog(N)</em></strong> </p>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕“性质”展开：<br><strong>找A的边界，看mid是否满足B</strong><br>满足即从AreaB向AreaA处搜索，不断缩小mid和边界A的距离，直到最终找到；<br>不满足即从AreaA向AreaB处搜索，不断缩小mid和边界A距离，直到最终找到。<br><strong>找B的边界，看mid是否满足A</strong><br>满足即从AreaA向AreaB处搜索，不断缩小mid和边界B的距离，直到最终找到；<br>不满足即从AreaB向AreaA处搜索，不断缩小mid和边界B的距离，直到最终找到。</p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕“性质”展开，不断更新<code>mid</code>值，从两个方向逼近边界。：<br><strong>找A的边界，mid从A向右更新</strong><br>当<code>mid</code>满足条件A时，A的边界至少可以取到<code>mid</code>；<br><strong>找B的边界，mid从B向左更新</strong><br>当<code>mid</code>满足条件B时，B的边界最多可以取到<code>mid</code>；</p>
 <p>整数二分查找模板：<br><strong>查找A边界</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// finds edge A</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                      <span class="comment">//  1</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_B(mid)) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>查找B边界</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// finds edge B</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;                   <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_A(mid)) lo = mid;</span><br><span class="line">        <span class="keyword">else</span> hi =  mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<blockquote>
 <p><strong>注意：2处为了防止边界问题，需要在计算mid的时候加一。</strong></p>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://www.acwing.com/problem/content/791/" target="_blank" rel="noopener">AcWing 802.区间和</a></p>
+</blockquote>
 <h3 id="浮点数二分查找"><a href="#浮点数二分查找" class="headerlink" title="浮点数二分查找"></a>浮点数二分查找</h3><h4 id="根据精度迭代"><a href="#根据精度迭代" class="headerlink" title="根据精度迭代"></a>根据精度迭代</h4><p>因为是找浮点数，所以可以不用考虑边界问题。<br><strong>例子：</strong><br>求数字x的开方。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">double</span> lo = <span class="number">0</span>, hi = <span class="built_in">max</span>(<span class="number">1</span>, x);                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (;hi - lo &gt; <span class="number">1e-8</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, lo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意1处当<code>x&lt;1</code>时，右边界是1。因为小于1的数，开方比自己大。<code>x&gt;1</code>时，右边界当然可以取到<code>x</code>。<br>题目中一般会给出<code>x</code>的取值范围，如 <code>-10000 &lt; x &lt; 10000</code>，那么<code>lo</code>和<code>hi</code>可以分别初始化为<code>-10000</code>和<code>10000</code>。<br>根据经验，如果题目要求保留<code>n</code>位有效数字，那么一般<code>lo</code>和<code>hi</code>之间判定的精度为<code>1e-(n + 2)</code>。</p>
@@ -2753,10 +2790,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -2808,11 +2845,11 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>情商</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
+        <tag>笔记</tag>
+        <tag>情商</tag>
       </tags>
   </entry>
   <entry>
@@ -2865,8 +2902,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>读书</tag>
         <tag>笔记</tag>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -3425,8 +3462,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -3495,8 +3532,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -3552,8 +3589,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>链表</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3616,8 +3653,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -3667,8 +3704,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -3709,8 +3746,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -3751,8 +3788,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -3802,10 +3839,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>计数数组</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
+        <tag>计数数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -3872,8 +3909,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -3907,8 +3944,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
