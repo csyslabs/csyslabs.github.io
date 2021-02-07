@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：总结了找游戏ViewMatrix的一般性方法。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-18T21:02:28.000Z">
-<meta property="article:modified_time" content="2021-01-18T22:03:12.863Z">
+<meta property="article:modified_time" content="2021-01-18T23:25:31.319Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="GAME HACKING">
 <meta property="article:tag" content="游戏外挂开发">
@@ -265,7 +265,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-19 05:02:28 / Modified: 06:03:12" itemprop="dateCreated datePublished" datetime="2021-01-19T05:02:28+08:00">2021-01-19</time>
+              <time title="Created: 2021-01-19 05:02:28 / Modified: 07:25:31" itemprop="dateCreated datePublished" datetime="2021-01-19T05:02:28+08:00">2021-01-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
 <a id="more"></a>
 
 <h3 id="ViewMatrix结构："><a href="#ViewMatrix结构：" class="headerlink" title="ViewMatrix结构："></a>ViewMatrix结构：</h3><blockquote>
-<p>它分为四行或四列，分别对应directx和opengl api游戏（vulkan暂未知）。据说还有四个斜边的我没见过。<br>以directx游戏举例，四行中，第一行为Left(X)轴，第二行为Up(Y)轴，第三行为Forward(Z)轴，第四行为Translation(用于校检和计算).</p>
+<p>它分为四行或四列.<br>四行中，第一行为Left(X)轴，第二行为Up(Y)轴，第三行为Forward(Z)轴，第四行为Translation(用于计算).</p>
 </blockquote>
 <h3 id="ViewMatrix的特性"><a href="#ViewMatrix的特性" class="headerlink" title="ViewMatrix的特性"></a>ViewMatrix的特性</h3><blockquote>
 <ol start="0">
@@ -362,7 +362,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/24/GAME-HACKING-%E5%9F%BA%E4%BA%8EFOV%E7%9A%84%E9%80%9A%E7%94%A8-world-to-screen-%E6%96%B9%E6%B3%95/" rel="prev" title="[GAME HACKING] 基于FOV的通用 world-to-screen 方法">
+      <i class="fa fa-chevron-left"></i> [GAME HACKING] 基于FOV的通用 world-to-screen 方法
+    </a></div>
       <div class="post-nav-item">
     <a href="/2020/12/14/GAME-HACKING-%E8%81%8A%E4%B8%80%E8%81%8AFuntion-Hook-Detour/" rel="next" title="[GAME HACKING] 聊一聊Funtion Hook/Detour">
       [GAME HACKING] 聊一聊Funtion Hook/Detour <i class="fa fa-chevron-right"></i>
@@ -444,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -457,7 +460,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">141</span>
+        <span class="site-state-item-count">142</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
