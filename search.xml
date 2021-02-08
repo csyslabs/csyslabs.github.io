@@ -24,9 +24,9 @@
         <tag>链表</tag>
         <tag>栈</tag>
         <tag>单调栈</tag>
-        <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -581,9 +581,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
-        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -630,8 +630,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>字符串</tag>
         <tag>位运算</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -883,8 +883,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>字符串</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>KMP</tag>
       </tags>
   </entry>
@@ -1179,8 +1179,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -2212,6 +2212,10 @@
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序是将原数组递归地一分为二，在最短子数组处完成排序，在回溯过程中合并子数组，以完成整个数组的排序。<br>过程感觉很像二叉树的遍历。<br>以下是归并排序模板：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000010</span>;                                     <span class="comment">// test data amount range</span></span><br><span class="line"><span class="keyword">int</span> q[N];                                                   <span class="comment">// original array</span></span><br><span class="line"><span class="keyword">int</span> tmp[N];                                                 <span class="comment">// temporary array</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;                                   <span class="comment">// end of recursion</span></span><br><span class="line">    <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                               </span><br><span class="line">    merge_sort(q, lo, mid), merge_sort(q, mid + <span class="number">1</span>, hi);     <span class="comment">// recursively divides into two</span></span><br><span class="line">    <span class="comment">// backtrack progress</span></span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;                                 </span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;                                              <span class="comment">// index of temporary array            </span></span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid &amp;&amp; j &lt;= hi;)                             <span class="comment">// puts smaller one into tmp[]</span></span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) tmp[t++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[t++] = q[j++]; </span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid;) tmp[t++] = q[i++];                     <span class="comment">// puts remaining array into tmp[]</span></span><br><span class="line">    <span class="keyword">for</span> (;j &lt;= hi;) tmp[t++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lo, j = <span class="number">0</span>; i &lt;= hi;) q[i++] = tmp[j++];    <span class="comment">// overrides original array</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为一分为二的过程一共持续 <strong><em>log(N)</em></strong> 次（以2为底）,把数放入 <code>tmp[]</code> 再覆盖原数组需要 <strong><em>O(N)</em></strong>。<br>故时间复杂度为 <strong><em>ONlog(N)</em></strong> </p>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://accepted.org.cn/2021/02/07/AcWing-789-%E6%95%B0%E7%9A%84%E8%8C%83%E5%9B%B4/">AcWing 789.数的范围</a></p>
+</blockquote>
 <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕“性质”展开，不断更新<code>mid</code>值，从两个方向逼近边界。：<br><strong>找A的边界，mid从A向右更新</strong><br>当<code>mid</code>满足条件A时，A的边界至少可以取到<code>mid</code>；<br><strong>找B的边界，mid从B向左更新</strong><br>当<code>mid</code>满足条件B时，B的边界最多可以取到<code>mid</code>；</p>
 <p>整数二分查找模板：<br><strong>查找A边界</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// finds edge A</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                      <span class="comment">//  1</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_B(mid)) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2246,7 +2250,7 @@
 <p>这样的话，就可以只考虑遍历较长数组，只进行一次长度判断。</p>
 <p><strong>题目链接：</strong></p>
 <blockquote>
-<p><a href="https://fingerdance.plus/2020/11/08/AcWing-791-高精度加法/" target="_blank" rel="noopener">AcWing 791.高精度加法</a></p>
+<p><a href="https://accepted.org.cn/2020/11/08/AcWing-791-高精度加法/">AcWing 791.高精度加法</a></p>
 </blockquote>
 <h3 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h3><p>两个超长正整数相减。因为结果可能为负数，负数的时候输出需要在最前面补<code>&#39;-&#39;</code>。<br><code>A B</code>相减最核心的部分，<code>A</code>总是大于等于<code>B</code>的，这样可以只遍历<code>A</code>，对对应的<code>B</code>有无数字进行判断。<br><strong>模板：</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//C = A - B， A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// return if A &gt;= B</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.<span class="built_in">size</span>() != B.<span class="built_in">size</span>()) <span class="keyword">return</span> A.<span class="built_in">size</span>() &gt; B.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] != B[i]) <span class="keyword">return</span> A[i] &gt; B[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A - B while A &gt;= B</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sub</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, t = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] - t;</span><br><span class="line">        <span class="comment">// consider if should sub slot of B</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.<span class="built_in">size</span>()) t -= B[i];</span><br><span class="line">        <span class="comment">// t might be a negative</span></span><br><span class="line">        <span class="comment">// t will be the right slot whatever its negative or positive</span></span><br><span class="line">        <span class="comment">// t + 10 means it will borrow 10 from next slot</span></span><br><span class="line">        C.push_back((t + <span class="number">10</span>) % <span class="number">10</span>);                                          <span class="comment">//1</span></span><br><span class="line">        <span class="comment">// update t</span></span><br><span class="line">        <span class="keyword">if</span> (t &lt; <span class="number">0</span>) t = <span class="number">1</span>;                    </span><br><span class="line">        <span class="keyword">else</span> t = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// there might be some '0' in back of C</span></span><br><span class="line">    <span class="comment">// dont't have to remove while C.size() == 1</span></span><br><span class="line">    <span class="keyword">for</span> (; C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>; ) C.pop_back();                    <span class="comment">//2</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A, B, C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) A.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = b.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) B.push_back(b[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">if</span> (cmp(A, B)) C = sub(A, B);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        C = sub(B, A);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = C.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) <span class="built_in">printf</span>(<span class="string">"%d"</span>, C[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2372,6 +2376,7 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>归并排序</tag>
@@ -2379,7 +2384,6 @@
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -2514,8 +2518,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -2597,10 +2601,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -2638,9 +2642,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -2793,9 +2797,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
-        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -2848,10 +2852,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>曾仕强</tag>
-        <tag>哲学</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>曾仕强</tag>
+        <tag>哲学</tag>
       </tags>
   </entry>
   <entry>
@@ -3030,10 +3034,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -3057,8 +3061,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
       </tags>

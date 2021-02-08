@@ -248,11 +248,11 @@
     
       <category term="笔记" scheme="https://accepted.org.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
+      <category term="沟通" scheme="https://accepted.org.cn/tags/%E6%B2%9F%E9%80%9A/"/>
+    
       <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="情商" scheme="https://accepted.org.cn/tags/%E6%83%85%E5%95%86/"/>
-    
-      <category term="沟通" scheme="https://accepted.org.cn/tags/%E6%B2%9F%E9%80%9A/"/>
     
   </entry>
   
@@ -296,9 +296,9 @@
     
       <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -464,9 +464,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
+    
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="KMP" scheme="https://accepted.org.cn/tags/KMP/"/>
     
