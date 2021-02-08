@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：详尽地记录了各种基础算法模板，以及一些个人理解。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-24T06:03:00.000Z">
-<meta property="article:modified_time" content="2021-02-07T11:21:15.026Z">
+<meta property="article:modified_time" content="2021-02-08T07:00:32.931Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
@@ -282,7 +282,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-07 19:21:15" itemprop="dateModified" datetime="2021-02-07T19:21:15+08:00">2021-02-07</time>
+                <time title="Modified: 2021-02-08 15:00:32" itemprop="dateModified" datetime="2021-02-08T15:00:32+08:00">2021-02-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -393,6 +393,7 @@
 <ol>
 <li>注意1处条件，当A没有遍历完的时候，需要一直和b相乘，更新进位t。当乘完的时候，依然进入处理进位t，只不过此时不需要和b相乘，而是直接模10获得最高位数。</li>
 <li>放入slot中的数一直都是对10取模。</li>
+<li>当小整数为0，而大数不止一位时，结果会产生多个0.此时需要消除多个0.</li>
 </ol>
 </blockquote>
 <p>当然也可以在遍历完A后再处理最终进位问题，即：<br><strong>模板2：</strong></p>

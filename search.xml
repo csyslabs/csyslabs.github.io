@@ -327,8 +327,9 @@
 </blockquote>
 <p><strong>输出样例：</strong></p>
 <blockquote>
-<p>3 4<br>5 5<br>-1 -1<br>__</p>
+<p>3 4<br>5 5<br>-1 -1</p>
 </blockquote>
+<p>__</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> n, q, a[N], qry;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (; q--;) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; qry;</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[mid] &lt; qry) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a[lo] == qry) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; lo &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            </span><br><span class="line">            lo = <span class="number">0</span>, hi = n - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (; lo &lt; hi;) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = lo + hi + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (a[mid] &gt; qry) hi = mid - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> lo = mid;</span><br><span class="line">            &#125;            </span><br><span class="line"></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; hi &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="note primary">
             <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/791/" target="_blank" rel="noopener">AcWing 789.数的范围</a></p>
@@ -482,8 +483,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -564,8 +565,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -579,8 +580,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -627,8 +628,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>字符串</tag>
         <tag>位运算</tag>
       </tags>
@@ -665,8 +666,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>字符串</tag>
         <tag>贪心</tag>
@@ -716,8 +717,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>归并排序</tag>
         <tag>lowbit</tag>
         <tag>树状数组</tag>
@@ -796,8 +797,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>模拟</tag>
         <tag>竞赛</tag>
         <tag>贪心</tag>
@@ -840,8 +841,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
         <tag>前缀和</tag>
         <tag>竞赛</tag>
@@ -1178,8 +1179,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -2265,6 +2266,7 @@
 <ol>
 <li>注意1处条件，当A没有遍历完的时候，需要一直和b相乘，更新进位t。当乘完的时候，依然进入处理进位t，只不过此时不需要和b相乘，而是直接模10获得最高位数。</li>
 <li>放入slot中的数一直都是对10取模。</li>
+<li>当小整数为0，而大数不止一位时，结果会产生多个0.此时需要消除多个0.</li>
 </ol>
 </blockquote>
 <p>当然也可以在遍历完A后再处理最终进位问题，即：<br><strong>模板2：</strong></p>
@@ -2512,8 +2514,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -2595,10 +2597,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -2636,9 +2638,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -2790,8 +2792,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -2845,10 +2847,10 @@
         <category>生活</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
-        <tag>笔记</tag>
         <tag>情商</tag>
       </tags>
   </entry>
@@ -2902,8 +2904,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>读书</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -3028,10 +3030,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -3055,8 +3057,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
       </tags>
@@ -3462,8 +3464,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -3532,8 +3534,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -3589,8 +3591,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Java</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3653,8 +3655,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -3704,8 +3706,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -3746,8 +3748,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -3788,8 +3790,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -3839,10 +3841,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
-        <tag>数组</tag>
+        <tag>LeetCode</tag>
         <tag>计数数组</tag>
+        <tag>数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -3909,8 +3911,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -3944,8 +3946,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
