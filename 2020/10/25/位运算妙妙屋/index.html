@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：位运算使用技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-25T08:09:15.000Z">
-<meta property="article:modified_time" content="2021-01-18T14:10:36.538Z">
+<meta property="article:modified_time" content="2021-02-09T16:16:57.943Z">
 <meta property="article:author" content="ESP">
 <meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-18 22:10:36" itemprop="dateModified" datetime="2021-01-18T22:10:36+08:00">2021-01-18</time>
+                <time title="Modified: 2021-02-10 00:16:57" itemprop="dateModified" datetime="2021-02-10T00:16:57+08:00">2021-02-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,6 +321,13 @@
 
 <h3 id="6-两个数之间交换位置"><a href="#6-两个数之间交换位置" class="headerlink" title="6. 两个数之间交换位置"></a>6. 两个数之间交换位置</h3><p>我们有<code>int a = 5, int b = 6</code>, 现需要交换二者位置，可以利用异或运算：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b;</span><br><span class="line">a = a ^ b;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-实现加法运算"><a href="#7-实现加法运算" class="headerlink" title="7. 实现加法运算"></a>7. 实现加法运算</h3><p>现有<code>int a</code>和<code>int b</code>，用位运算实现加法运算。<br>可以用<code>a ^ b</code>计算无进位加，用<code>a &amp; b &lt;&lt; 1</code>计算进位。<br>二者递归相加即可得到<code>a + b</code>的值。<br>举例：<br><code>int a = 8</code>, <code>int b = 13</code>；<br>8的二进制补码为：1000<br>13为：1101<br><code>a</code>和<code>b</code>的无进位加为：1000 ^ 1101 = 0101<br><code>a</code>和<code>b</code>的加法进位为：1000 &amp; 1101 = 10000<br>接着，我们递归地用上述方法计算0101和10000的和，直到进位为0.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!num2) <span class="keyword">return</span> num1;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> sum = num1 ^ num2;</span><br><span class="line">        <span class="keyword">int</span> carry = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(num1 &amp; num2) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> Add(sum, carry);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，c++支持负数左移，都是存的补码，int会越界所以转为unsigned int</p>
+</blockquote>
+
     </div>
 
     
@@ -422,7 +429,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个获取二进制数中1的个数的轮子"><span class="nav-text">4. 一个获取二进制数中1的个数的轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-二进制数中最高位1距离最低位的距离"><span class="nav-text">5. 二进制数中最高位1距离最低位的距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-两个数之间交换位置"><span class="nav-text">6. 两个数之间交换位置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个获取二进制数中1的个数的轮子"><span class="nav-text">4. 一个获取二进制数中1的个数的轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-二进制数中最高位1距离最低位的距离"><span class="nav-text">5. 二进制数中最高位1距离最低位的距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-两个数之间交换位置"><span class="nav-text">6. 两个数之间交换位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-实现加法运算"><span class="nav-text">7. 实现加法运算</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -440,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">103</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -453,7 +460,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">147</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
