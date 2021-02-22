@@ -22,8 +22,8 @@
         <tag>算法</tag>
         <tag>堆</tag>
         <tag>链表</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
@@ -1196,8 +1196,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -1285,8 +1285,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -2629,8 +2629,8 @@
       <tags>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>树深度</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
         <tag>N叉树</tag>
       </tags>
   </entry>
@@ -2683,10 +2683,10 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+        <tag>树深度</tag>
         <tag>dfs</tag>
         <tag>bfs</tag>
         <tag>树结构</tag>
-        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -2714,8 +2714,8 @@
         <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>树深度</tag>
         <tag>树</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
