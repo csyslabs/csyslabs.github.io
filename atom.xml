@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Dirac Sea</title>
   
-  <subtitle>Wander in Dirac Sea of Knowledge</subtitle>
+  <subtitle>Where the water tastes like wine</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-02-11T18:47:46.258Z</updated>
+  <updated>2021-02-22T15:51:57.154Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指Offer 03.数组中重复的数字</title>
+    <link href="https://accepted.org.cn/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <id>https://accepted.org.cn/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</id>
+    <published>2021-02-22T08:42:23.000Z</published>
+    <updated>2021-02-22T15:51:57.154Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;常见判重方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="计数数组" scheme="https://accepted.org.cn/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+      <category term="哈希表" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+      <category term="哈希集合" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>class模式的OJ刷题提高输入输出效率方法</title>
@@ -304,11 +335,11 @@
     
       <category term="笔记" scheme="https://accepted.org.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="沟通" scheme="https://accepted.org.cn/tags/%E6%B2%9F%E9%80%9A/"/>
-    
       <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="情商" scheme="https://accepted.org.cn/tags/%E6%83%85%E5%95%86/"/>
+    
+      <category term="沟通" scheme="https://accepted.org.cn/tags/%E6%B2%9F%E9%80%9A/"/>
     
   </entry>
   
@@ -496,35 +527,6 @@
       <category term="前缀和" scheme="https://accepted.org.cn/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="竞赛" scheme="https://accepted.org.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AcWing 831.KMP字符串</title>
-    <link href="https://accepted.org.cn/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>https://accepted.org.cn/2020/11/17/AcWing-831-KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
-    <published>2020-11-17T08:57:09.000Z</published>
-    <updated>2020-12-06T10:20:45.366Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;闪耀着人类智慧之光的——KMP算法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
-    
-      <category term="KMP" scheme="https://accepted.org.cn/tags/KMP/"/>
     
   </entry>
   

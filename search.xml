@@ -30,10 +30,10 @@
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
+        <tag>循环队列</tag>
         <tag>单调队列</tag>
         <tag>滑动窗口</tag>
         <tag>KMP</tag>
-        <tag>循环队列</tag>
         <tag>Trie树</tag>
         <tag>并查集</tag>
         <tag>一般哈希</tag>
@@ -310,6 +310,42 @@
       <tags>
         <tag>Spring</tag>
         <tag>Project</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer 03.数组中重复的数字</title>
+    <url>/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>常见判重方法。</p>
+<a id="more"></a>
+
+<p>找出数组中重复的数字。</p>
+<p>在一个长度为 <code>n</code> 的数组 <code>nums</code> 里的所有数字都在 <code>0～n-1</code> 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br>[2, 3, 1, 0, 2, 5, 3]<br><strong>输出：</strong><br>2 或 3 </p>
+</blockquote>
+<p><strong>限制：</strong><br>$ 2 &lt;= n &lt;= 100000 $</p>
+<hr>
+<p>本题考查判重方法。</p>
+<h3 id="方法一：计数数组"><a href="#方法一：计数数组" class="headerlink" title="方法一：计数数组"></a>方法一：计数数组</h3><p>维护一个计数数组，根据题意长度为 <code>n</code> 的数组每个数范围在 $[0, n-1]$ ，那么数组长度可以设置成大于等于 <code>n-1</code> 。<br>遍历数组，依次向计数数组中插入数字。对于当前数字 <code>x</code> , 在下标为 <code>x</code> 的位置数字增加 <code>1</code> 。如果当前值大于 <code>1</code>，则出现重复。</p>
+<div class="tabs" id="g_tab-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-0-1">C++</a></li><li class="tab"><a href="#g_tab-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 48 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 23.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line">        cnt = <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len + <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (++cnt[n] &gt; <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 46.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] cnt;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line">        cnt = <span class="keyword">new</span> <span class="keyword">int</span>[len + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (++cnt[n] &gt; <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<h3 id="方法二：哈希集合"><a href="#方法二：哈希集合" class="headerlink" title="方法二：哈希集合"></a>方法二：哈希集合</h3><p>向哈希集合中插入每个数，如果插入失败，则出现重复。</p>
+<div class="tabs" id="g_tab-1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-1-1">C++</a></li><li class="tab"><a href="#g_tab-1-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-1-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 56 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 26.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">set</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">set</span>.insert(n).second) &#123;</span><br><span class="line">                <span class="keyword">return</span> n;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 5 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 48.6 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!set.add(n)) <span class="keyword">return</span> n;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="方法三：哈希表"><a href="#方法三：哈希表" class="headerlink" title="方法三：哈希表"></a>方法三：哈希表</h3><p>维护一个哈希表，依次将每个数插入，但是，在插入之前先检查是否存在。</p>
+<div class="tabs" id="g_tab-2"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-2-1">C++</a></li><li class="tab"><a href="#g_tab-2-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-2-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 48 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 26.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; hash;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hash[n]) <span class="keyword">return</span> n;</span><br><span class="line">            <span class="keyword">else</span> hash[n] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-2-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 9 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 47.4 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Boolean&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hash.get(n) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                hash.put(n, <span class="keyword">true</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (hash.get(n)) &#123;</span><br><span class="line">                <span class="keyword">return</span> n;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                hash.put(n, <span class="keyword">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>计数数组</tag>
+        <tag>剑指Offer</tag>
+        <tag>哈希表</tag>
+        <tag>哈希集合</tag>
       </tags>
   </entry>
   <entry>
@@ -651,9 +687,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -1249,8 +1285,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1433,8 +1469,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1480,8 +1516,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1523,8 +1559,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1580,8 +1616,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -2449,14 +2485,14 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>归并排序</tag>
-        <tag>位运算</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
+        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -2868,9 +2904,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -2923,10 +2959,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>情商</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
+        <tag>情商</tag>
       </tags>
   </entry>
   <entry>
