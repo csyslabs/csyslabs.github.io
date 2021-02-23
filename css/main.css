@@ -658,6 +658,9 @@ pre .javascript .function {
   flex-grow: 1;
   list-style-type: none;
   border-radius: 0 0 0 0;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab,
@@ -678,7 +681,7 @@ pre .javascript .function {
 .tabs-comment ul.nav-tabs li.tab a {
   border-bottom: initial;
   display: block;
-  line-height: 1.8;
+  line-height: 1.4;
   outline: 0;
   padding: 0.25em 0.75em;
   text-align: center;
@@ -695,7 +698,7 @@ pre .javascript .function {
   border-bottom: 1px solid transparent;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
-  border-top: 3px solid #fc6423;
+  border-top: 1px solid #5d2b90;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab.active,
@@ -1197,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffa1fb;
+  background: #6b71a4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1602,7 +1605,7 @@ pre .javascript .function {
 .reading-progress-bar {
   background: #5d2b90;
   display: block;
-  height: 4px;
+  height: 1px;
   left: 0;
   position: fixed;
   width: 0;

@@ -19,7 +19,6 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-
   <meta name="description" content="我太菜被关起来了">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dirac Sea">
@@ -231,6 +230,433 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #3 水壶问题（Water and Jug Problem）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-21 13:21:47" itemprop="dateCreated datePublished" datetime="2020-03-21T13:21:47+08:00">2020-03-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-26 15:40:45" itemprop="dateModified" datetime="2020-03-26T15:40:45+08:00">2020-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode #3 水壶问题（Water and Jug Problem）" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>有两个容量分别为 x升 和 y升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 z升 的水？</p>
+<p>如果可以，最后请用以上水壶中的一或两个来盛放取得的 z升 水。</p>
+<p>你允许：</p>
+<ul>
+<li>装满任意一个水壶</li>
+<li>清空任意一个水壶</li>
+<li>从一个水壶向另外一个水壶倒水，直到装满或者倒空</li>
+</ul>
+</blockquote>
+<h3 id="示例-1-From-the-famous-“Die-Hard”-example"><a href="#示例-1-From-the-famous-“Die-Hard”-example" class="headerlink" title="示例 1: (From the famous “Die Hard” example)"></a>示例 1: (From the famous “Die Hard” example)</h3><blockquote>
+<p>输入: x = 3, y = 5, z = 4<br>输出: True</p>
+</blockquote>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><blockquote>
+<p>输入: x = 2, y = 6, z = 5<br>输出: False</p>
+</blockquote>
+<hr>
+<h3 id="贝祖定理方法"><a href="#贝祖定理方法" class="headerlink" title="贝祖定理方法"></a>贝祖定理方法</h3><p>关键在于划分成功条件。<br>题干默认z &gt;= 0，首先当z = 0 时，x和y取任意值，一定成功。<br>当z &gt; 0时：</p>
+<ul>
+<li>当x + y &lt; z时，即使两盏杯子装满水，依然不可能成功。</li>
+<li>当x + y = z时，x, y, z取任意值，一定成功。</li>
+<li>当x + y &gt; z时，不一定。问题的核心在此，用贝祖定理判定成功条件。<br>由贝祖定理可知，对任何整数x、y和它们的最大公约数gcd(x, y)，对于它们的的任意整数倍数a,b,c，都有<br>ax + by = c·gcd(x, y)恒成立。<br>由题干给出的几种操作，要完成目标，一定有ax + by = z。<br>和贝祖定理完美锲合，那么，只要z % (gcd(x, y)) = 0为真，则一定成功。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//贝祖定理</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">canMeasureWater</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//默认z &gt;= 0</span></span><br><span class="line">        <span class="keyword">if</span> (z == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">//z&gt;0</span></span><br><span class="line">        <span class="keyword">if</span> (x +y &lt;z)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (x + y == z)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="comment">//only x!=0,y!=0; x!=0,y==0; x==0,y!=0</span></span><br><span class="line">            <span class="keyword">return</span> z % gcd(x, y) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (y != <span class="number">0</span>) &#123; <span class="comment">//辗转相除法</span></span><br><span class="line">            <span class="keyword">int</span> temp = y;</span><br><span class="line">            y = x % y;</span><br><span class="line">            x = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3></li>
+</ul>
+<h5 id="题目链接https-leetcode-cn-com-problems-water-and-jug-problem"><a href="#题目链接https-leetcode-cn-com-problems-water-and-jug-problem" class="headerlink" title="题目链接https://leetcode-cn.com/problems/water-and-jug-problem/"></a>题目链接<a href="https://leetcode-cn.com/problems/water-and-jug-problem/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/water-and-jug-problem/</a></h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/" class="post-title-link" itemprop="url">LeetCode #2 最小的k个数「TopK」 0x1</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-20 23:44:21" itemprop="dateCreated datePublished" datetime="2020-03-20T23:44:21+08:00">2020-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-05 10:27:25" itemprop="dateModified" datetime="2020-04-05T10:27:25+08:00">2020-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode #2 最小的k个数「TopK」 0x1" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。</p>
+</blockquote>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]<br><strong>示例2：</strong><br>输入：arr = [0,1,2,1], k = 1<br>输出：[0]<br><strong>限制：</strong><br>0 &lt;= k &lt;= arr.length &lt;= 10000<br>0 &lt;= arr[i] &lt;= 10000</p>
+</blockquote>
+<hr>
+<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/quickSort.png" alt="pic0x0"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。<br><img src="2020-03-20-LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%EF%BC%88TopK%EF%BC%89/%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AA%E5%A4%A7%E9%A1%B6%E5%A0%86.gif" alt="pic0x1"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/" class="post-title-link" itemprop="url">LeetCode #1 两数之和「twoSum」 0x0</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-19 17:02:38" itemprop="dateCreated datePublished" datetime="2020-03-19T17:02:38+08:00">2020-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-05 10:26:51" itemprop="dateModified" datetime="2020-04-05T10:26:51+08:00">2020-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode #1 两数之和「twoSum」 0x0" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
+</blockquote>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9</p>
+<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+</blockquote>
+<hr>
+<h3 id="Java-HashMap-method"><a href="#Java-HashMap-method" class="headerlink" title="Java HashMap method"></a>Java HashMap method</h3><p>key: target - nums[v]<br>value: v<br>每次迭代，判断nums[v]在不在hashmap中。<br>如果在，则nums[v]一定是之前target - nums[index_before]的值。此时返回{index_before, v}；<br>如果不在，则把key: target - nums[v]和value: v放到hashmap中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-time-for-loop"><a href="#2-time-for-loop" class="headerlink" title="2 time for loop"></a>2 time for loop</h3><p>注意到数组中同样元素不可重复利用，意思是某元素不能和自己相加和target比较。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   2 7 11 15</span><br><span class="line">2  x</span><br><span class="line">7    x</span><br><span class="line">11     x</span><br><span class="line">15        x</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i] + nums[j] == target) &amp;&amp; (i != j))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h5><blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ESP">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/" class="post-title-link" itemprop="url">浅谈java的static关键字</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-14 00:43:07" itemprop="dateCreated datePublished" datetime="2020-03-14T00:43:07+08:00">2020-03-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-02 17:28:41" itemprop="dateModified" datetime="2020-04-02T17:28:41+08:00">2020-04-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/" class="post-meta-item leancloud_visitors" data-flag-title="浅谈java的static关键字" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><h3 id="Why-we-have-to-use-a-static-key-word"><a href="#Why-we-have-to-use-a-static-key-word" class="headerlink" title="Why we have to use a static key word?"></a>Why we have to use a <code>static</code> key word?</h3><p>一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。<br>如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用类变量，注意到st1.i和st2.i指向同一存储空间，具有相同值47</span></span><br><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line">StaticTest st1 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">StaticTest st2 = <span class="keyword">new</span> StaticTest();</span><br><span class="line">st1.i</span><br><span class="line">st2.i</span><br><span class="line"><span class="comment">//使用类方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line">Incrementable sf = <span class="keyword">new</span> INcrementable();</span><br><span class="line">sf.increment;</span><br></pre></td></tr></table></figure>
+<p>那么，如果我们遇到特殊需求。比如我们希望为特定域（field）分配单一存储空间，而不去考虑究竟需要创建多少对象，甚至不用创建对象；再比如我们希望某个方法不与包含它的类的对象相关联，就是说，可以不用创建对象而使用方法。</p>
+<p>此时，我们可以使用<code>static</code>关键字。</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><h3 id="How-do-we-use-static"><a href="#How-do-we-use-static" class="headerlink" title="How do we use static"></a>How do we use <code>static</code></h3><p>当声明一个事物是static时，就意味着这个域或方法不会与包含它的类的任何对象实例关联在一起。</p>
+<p>回顾上述两个类，我们可以声明类变量<code>i</code>和类方法<code>increment()</code>是<code>static</code>，再直接使用类名引用它们:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Class StaticTest &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">47</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不必创建对象而使用i</span></span><br><span class="line">StaticTest.i++</span><br><span class="line"><span class="comment">//不必创建对象而使用方法</span></span><br><span class="line">Class Incrementable &#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;StaticTest.i++; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Incrementable <span class="title">increment</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//另一个广为人知的例子  wow, that was epic.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// write your code here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h3><blockquote>
+<ul>
+<li>类中<code>static</code>方法不能访问非<code>static</code>变量。</li>
+<li>类中<code>static</code>方法不能使用<code>this</code>关键字。<br>原因就是<code>Static</code>方法是类方法，先于任何的实例（对象）存在。即<code>Static</code>方法在类加载时就已经存在了，但是对象是在创建时才在内存中生成。</li>
+</ul>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<ul>
+<li>声明为<code>static</code>的事物也可以用前文所述常规方法引用。</li>
+<li>通过类名直接引用是引用<code>static</code>事物的首选方式，这不仅是因为它强调了事物的<code>static</code>结构，而且在某些情况下它还为编译器进行优化提供了更好的机会。</li>
+</ul>
+</blockquote>
+<p><em>总结自《Thinking in Java 4th edition》P29 - P30</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -632,7 +1058,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -645,7 +1071,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">149</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
