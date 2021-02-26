@@ -22,11 +22,11 @@
         <tag>算法</tag>
         <tag>堆</tag>
         <tag>链表</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
-        <tag>字符串</tag>
+        <tag>栈</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -315,6 +315,192 @@
       </tags>
   </entry>
   <entry>
+    <title>剑指Offer 11.旋转数组的最小数字</title>
+    <url>/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p>
+<a id="more"></a>
+
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 <code>[3,4,5,1,2]</code> 为 <code>[1,2,3,4,5]</code> 的一个旋转，该数组的最小值为1。  </p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> [3,4,5,1,2]<br><strong>输出：</strong> 1</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> [2,2,2,0,1]<br><strong>输出：</strong> 0</p>
+</blockquote>
+<hr>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/">LeetCode 154.寻找旋转排序数组中的最小值 II</a> 完全一致。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="暴搜"><a href="#暴搜" class="headerlink" title="暴搜"></a>暴搜</h3><p>暴力Loop一把梭，复杂度为 $O(N)$.</p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">c++</a></li><li class="tab"><a href="#g_tab1-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/" target="_blank" rel="noopener">剑指Offer 11. 旋转数组的最小数字</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>二分查找</tag>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 154.寻找旋转排序数组中的最小值 II</title>
+    <url>/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p>
+<p>( 例如，数组 <code>[0,1,2,4,5,6,7]</code> 可能变为 <code>[4,5,6,7,0,1,2]</code> )。</p>
+<p>请找出其中最小的元素。</p>
+<p>注意数组中可能存在重复的元素。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入:</strong> [1,3,5]<br><strong>输出:</strong> 1</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入:</strong> [2,2,2,0,1]<br><strong>输出:</strong> 0</p>
+</blockquote>
+<p><strong>说明：</strong></p>
+<ul>
+<li>这道题是 <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a> 的延伸题目。</li>
+<li>允许重复会影响算法的时间复杂度吗？会如何影响，为什么？</li>
+</ul>
+<hr>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题和 <a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a> 的区别就在于折叠数组中可能存在重复。</p>
+<p>什么时候会产生影响呢？那就是当折叠点在原数组中某一数字相同段内时，折叠之后，数组首尾相同。那么，如果 <code>mid</code> 更新到与数组首尾相同的数字时，我们无法利用二分查找所依赖的 <strong>性质</strong> 确定 <code>mid</code> 是在左半边还是右半边。</p>
+<p>那么，解题思路就是：</p>
+<ul>
+<li>先特判非单调递减情况，排除原数组折叠点在数组下标范围外的情况。</li>
+<li>再特判折叠数组首尾相同的情况，方法是移动右指针向左直到和左端点不同为止。那么此时又有两种情况：</li>
+</ul>
+<ol>
+<li>右半边全为与左端点相同的数字，那么此时右指针移到了左半边， <code>nums[hi] &gt; nums[0]</code></li>
+<li>右半边不全是与左端点相同的数字，那么此时右指针依然在右半边， <code>nums[hi] &lt; nums[0]</code></li>
+</ol>
+<ul>
+<li>对于以上情况1，直接返回数组首即可；而对于情况2，需要按照传统二分查找，找到右半边的左边界。详情请参考： <strong><a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a></strong></li>
+</ul>
+<p>另外可以想一下，如果折叠数组数组完全相同，也就是最坏的情况，会怎么样。<br>那必然是最终右指针左移时与左指针相遇，进行一次常规二分直接得出答案。当然也可以在进入常规二分之前特判一下，都无所谓。<br>最坏的情况下，复杂度为 $O(N)$，平均的情况下，复杂度为 $O(logn)$.</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/" target="_blank" rel="noopener">LeetCode 154.寻找旋转排序数组中的最小值 II</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>二分查找</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 153.寻找旋转排序数组中的最小值</title>
+    <url>/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>二分查找经典题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。例如，数组 <code>[0,1,2,4,5,6,7]</code> 可能变为 <code>[4,5,6,7,0,1,2]</code> 。</p>
+<p>请找出其中最小的元素。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> nums = [3,4,5,1,2]<br><strong>输出：</strong> 1</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> nums = [4,5,6,7,0,1,2]<br><strong>输出：</strong> 0</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> nums = [1]<br><strong>输出：</strong> 1</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>$1 &lt;= nums.length &lt;= 5000$</li>
+<li>$-5000 &lt;= nums[i] &lt;= 5000$</li>
+<li><code>nums</code> 中的所有整数都是 唯一 的</li>
+<li><code>nums</code> 原来是一个升序排序的数组，但在预先未知的某个点上进行了旋转</li>
+</ul>
+<hr>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>题目要求找到折叠后的递增数组的第二段递增序列的左端点。<br>可以利用二分的思想，如果 <code>mid</code> 落在左半边，那么左边界最低取到 <code>mid+1</code>；<br>如果 <code>mid</code> 落在右半边，那么右边界最高取到 <code>mid</code>。<br>问题是，如何判断 <code>mid</code> 落在哪一边。</p>
+<p>因为折叠数组是从一个未知点折叠的，所以折叠数组左半边的所有数都大于等于第一个数，右半边都小于等于第一个数。依此可判断 <code>mid</code> 落在哪一边。</p>
+<p>注意这一题有个很坑的地方，测试用例存在折叠数组完全递增的情况，也就是默认折叠点在数组下标范围之外。需要进行特判。</p>
+<p>这一题的二分法找数字，利用目标值左半边和右半边的性质不同来缩小范围。<br>但是和该性质相关的点却是折叠数组的第一个数，而非目标值本身。<br>这一点尤为需要注意。一句话，想找目标值，在考虑性质的时候，不一定从目标值入手。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 8 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 9.7 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];       <span class="comment">// 1</span></span><br><span class="line">        <span class="keyword">int</span> cmp = <span class="number">0</span>;                                    <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[cmp]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="noopener">LeetCode 153.寻找旋转排序数组中的最小值</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>二分查找</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer 10-II.青蛙跳台阶问题</title>
+    <url>/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>动态规划入门题。</p>
+<a id="more"></a>
+
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。</p>
+<p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。<br>__<br><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> n = 2<br><strong>输出：</strong> 2</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> n = 7<br><strong>输出：</strong> 21</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> n = 0<br><strong>输出：</strong> 1</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>$ 0 &lt;= n &lt;= 100 $</li>
+</ul>
+<hr>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>注意数值溢出，可以每一步计算取模。正确性证明参见：<br><a href="https://accepted.org.cn/2021/02/25/剑指Offer-10-I-斐波那契数列/">剑指Offer 10-I.斐波那契数列</a><br>还有一点就是注意特判 <code>n == 0</code> 的情况。<br>本题起始位置为0层。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> _mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int64_t</span> dp[n + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>, dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="空间复杂度优化的动态规划"><a href="#空间复杂度优化的动态规划" class="headerlink" title="空间复杂度优化的动态规划"></a>空间复杂度优化的动态规划</h3><p>可以用三个变量滚动更新，代替数组。<br>核心是一共计算$n - 1$次，每次计算 <code>c</code> 的值，动态更新 <code>a</code> , <code>b</code>。</p>
+<div class="tabs" id="g_tab1-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-0-1">C++</a></li><li class="tab"><a href="#g_tab1-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int64_t</span> a, b, c;</span><br><span class="line">        c = b = a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (--n) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b, b = c;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/" target="_blank" rel="noopener">剑指Offer 10- II. 青蛙跳台阶问题</a></p>
+          </div>
+
+]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>动态规划</tag>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>剑指Offer 10-I.斐波那契数列</title>
     <url>/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>动态规划入门题。</p>
@@ -340,7 +526,7 @@
 <li>$ 0 &lt;= n &lt;= 100 $</li>
 </ul>
 <hr>
-<p>考虑数字越界问题，需要在每一步求解时都进行求余运算。<br>循环求余证明：<br>设正整数 $ x, y, p$，求余符号为$⊙$，则有<br>$ (x + y) ⊙ p = (x ⊙ p + y ⊙ p) ⊙ p $<br>那么，在本题中：<br>$ f(n) ⊙ p = [f(n−1) ⊙ p + f(n−2) ⊙ p] ⊙ p $<br>求f(n - 2)时，将其更新为f(n - 2)模以 <code>_mod</code>;<br>求f(n - 1)时，将其更新为f(n - 1)模以 <code>_mod</code>;<br>那么，根据上式，在求f(n)时，将其更新为f(n - 2) + f(n - 1)模以<br><code>_mod</code> 显然正确。</p>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>考虑数字越界问题，需要在每一步求解时都进行求余运算。<br>循环求余证明：<br>设正整数 $ x, y, p$，求余符号为$⊙$，则有<br>$ (x + y) ⊙ p = (x ⊙ p + y ⊙ p) ⊙ p $<br>那么，在本题中：<br>$ f(n) ⊙ p = [f(n−1) ⊙ p + f(n−2) ⊙ p] ⊙ p $<br>求f(n - 2)时，将其更新为f(n - 2)模以 <code>_mod</code>;<br>求f(n - 1)时，将其更新为f(n - 1)模以 <code>_mod</code>;<br>那么，根据上式，在求f(n)时，将其更新为f(n - 2) + f(n - 1)模以<br><code>_mod</code> 显然正确。</p>
 <div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int64_t</span> _mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int64_t</span> dp[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>, dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> _mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
 <div class="note primary">
@@ -1143,8 +1329,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>字符串</tag>
         <tag>位运算</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -1396,8 +1582,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>字符串</tag>
         <tag>AcWing</tag>
+        <tag>字符串</tag>
         <tag>KMP</tag>
       </tags>
   </entry>
@@ -1603,8 +1789,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -1692,8 +1878,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1876,8 +2062,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1923,8 +2109,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1966,8 +2152,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -2023,8 +2209,8 @@
         <tag>算法</tag>
         <tag>AcWing</tag>
         <tag>高精度</tag>
-        <tag>模拟</tag>
         <tag>模板题</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -2744,7 +2930,8 @@
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序是将原数组递归地一分为二，在最短子数组处完成排序，在回溯过程中合并子数组，以完成整个数组的排序。<br>过程感觉很像二叉树的遍历。<br>以下是归并排序模板：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000010</span>;                                     <span class="comment">// test data amount range</span></span><br><span class="line"><span class="keyword">int</span> q[N];                                                   <span class="comment">// original array</span></span><br><span class="line"><span class="keyword">int</span> tmp[N];                                                 <span class="comment">// temporary array</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;                                   <span class="comment">// end of recursion</span></span><br><span class="line">    <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                               </span><br><span class="line">    merge_sort(q, lo, mid), merge_sort(q, mid + <span class="number">1</span>, hi);     <span class="comment">// recursively divides into two</span></span><br><span class="line">    <span class="comment">// backtrack progress</span></span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;                                 </span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;                                              <span class="comment">// index of temporary array            </span></span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid &amp;&amp; j &lt;= hi;)                             <span class="comment">// puts smaller one into tmp[]</span></span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) tmp[t++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[t++] = q[j++]; </span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid;) tmp[t++] = q[i++];                     <span class="comment">// puts remaining array into tmp[]</span></span><br><span class="line">    <span class="keyword">for</span> (;j &lt;= hi;) tmp[t++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lo, j = <span class="number">0</span>; i &lt;= hi;) q[i++] = tmp[j++];    <span class="comment">// overrides original array</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为一分为二的过程一共持续 <strong><em>log(N)</em></strong> 次（以2为底）,把数放入 <code>tmp[]</code> 再覆盖原数组需要 <strong><em>O(N)</em></strong>。<br>故时间复杂度为 <strong><em>ONlog(N)</em></strong> </p>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕“性质”展开，不断更新<code>mid</code>值，从两个方向逼近边界。：<br><strong>找A的边界，mid从A向右更新</strong><br>当<code>mid</code>满足条件A时，A的边界至少可以取到<code>mid</code>；<br><strong>找B的边界，mid从B向左更新</strong><br>当<code>mid</code>满足条件B时，B的边界最多可以取到<code>mid</code>；</p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕 <strong>性质</strong> 展开，不断更新<code>mid</code>值，从两个方向逼近边界。但是请注意，这个 <strong>性质</strong> 并非必然和目标值有关。找目标值，在考虑性质的时候，不一定从目标值入手。</p>
+<p><strong>找A的边界，mid从A向右更新</strong><br>当<code>mid</code>满足条件A时，A的边界至少可以取到<code>mid</code>；<br><strong>找B的边界，mid从B向左更新</strong><br>当<code>mid</code>满足条件B时，B的边界最多可以取到<code>mid</code>；</p>
 <p>整数二分查找模板：<br><strong>查找A边界</strong></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// finds edge A</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                      <span class="comment">//  1</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_B(mid)) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2755,7 +2942,7 @@
 </blockquote>
 <p><strong>题目链接：</strong></p>
 <blockquote>
-<p><a href="https://accepted.org.cn/2021/02/07/AcWing-789-%E6%95%B0%E7%9A%84%E8%8C%83%E5%9B%B4/">AcWing 789.数的范围</a></p>
+<p><a href="https://accepted.org.cn/2021/02/07/AcWing-789-%E6%95%B0%E7%9A%84%E8%8C%83%E5%9B%B4/">AcWing 789.数的范围</a><br><a href="http://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">LeetCode 153.寻找旋转排序数组中的最小值</a></p>
 </blockquote>
 <h3 id="浮点数二分查找"><a href="#浮点数二分查找" class="headerlink" title="浮点数二分查找"></a>浮点数二分查找</h3><h4 id="根据精度迭代"><a href="#根据精度迭代" class="headerlink" title="根据精度迭代"></a>根据精度迭代</h4><p>因为是找浮点数，所以可以不用考虑边界问题。<br><strong>例子：</strong><br>求数字x的开方。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">double</span> lo = <span class="number">0</span>, hi = <span class="built_in">max</span>(<span class="number">1</span>, x);                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (;hi - lo &gt; <span class="number">1e-8</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, lo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2905,13 +3092,13 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>归并排序</tag>
+        <tag>位运算</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -3569,7 +3756,10 @@
   <entry>
     <title>LeetCode #200 岛屿数量（Number of Islands）</title>
     <url>/2020/04/21/LeetCode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F%EF%BC%88Number-of-Islands%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
+    <content><![CDATA[<p><strong>摘要：</strong><br>洪水灌溉算法经典题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
 <p>岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。</p>
 <p>此外，你可以假设该网格的四条边均被水包围。<br><strong>示例1：</strong></p>
 <blockquote>
@@ -3580,17 +3770,21 @@
 <p><strong>输入：</strong><br>{<br>  {‘1’, ‘1’, ‘0’, ‘0’, ‘0’},<br>  {‘1’, ‘1’, ‘0’, ‘0’, ‘0’},<br>  {‘0’, ‘0’, ‘1’, ‘0’, ‘0’},<br>  {‘0’, ‘0’, ‘0’, ‘1’, ‘1’}<br>}<br><strong>解释：</strong> 每座岛屿只能由水平和/或竖直方向上相邻的陆地连接而成。</p>
 </blockquote>
 <hr>
-<p>一看就是搜索题，已经遇到多次类似的。</p>
-<h3 id="广度优先搜素"><a href="#广度优先搜素" class="headerlink" title="广度优先搜素"></a>广度优先搜素</h3>]]></content>
+<p>扫雷游戏就使用了这个算法。</p>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3>]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>算法</category>
       </categories>
       <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
+        <tag>Flood Fill</tag>
+        <tag>洪水灌溉算法</tag>
       </tags>
   </entry>
   <entry>
@@ -3709,8 +3903,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>VPS</tag>
+        <tag>Linux</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -4121,8 +4315,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Java</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>

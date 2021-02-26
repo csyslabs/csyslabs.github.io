@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-02-25T15:02:18.734Z</updated>
+  <updated>2021-02-26T11:53:48.945Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -17,11 +17,119 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>剑指Offer 11.旋转数组的最小数字</title>
+    <link href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"/>
+    <id>https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</id>
+    <published>2021-02-26T11:26:56.000Z</published>
+    <updated>2021-02-26T11:53:48.945Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;二分查找经典应用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 154.寻找旋转排序数组中的最小值 II</title>
+    <link href="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/"/>
+    <id>https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/</id>
+    <published>2021-02-26T10:31:53.000Z</published>
+    <updated>2021-02-26T11:50:27.904Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;二分查找经典应用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 153.寻找旋转排序数组中的最小值</title>
+    <link href="https://accepted.org.cn/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/"/>
+    <id>https://accepted.org.cn/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</id>
+    <published>2021-02-26T08:38:43.000Z</published>
+    <updated>2021-02-26T11:27:44.628Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;二分查找经典题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指Offer 10-II.青蛙跳台阶问题</title>
+    <link href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/"/>
+    <id>https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/</id>
+    <published>2021-02-26T03:34:15.000Z</published>
+    <updated>2021-02-26T06:32:14.709Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;动态规划入门题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://accepted.org.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>剑指Offer 10-I.斐波那契数列</title>
     <link href="https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
     <id>https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</id>
     <published>2021-02-25T14:27:18.000Z</published>
-    <updated>2021-02-25T15:02:18.734Z</updated>
+    <updated>2021-02-26T06:30:56.599Z</updated>
     
     <summary type="html">
     
@@ -437,116 +545,6 @@
       <category term="游戏外挂开发" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82%E5%BC%80%E5%8F%91/"/>
     
       <category term="HOOK" scheme="https://accepted.org.cn/tags/HOOK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 118.杨辉三角</title>
-    <link href="https://accepted.org.cn/2020/12/06/LeetCode-118-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"/>
-    <id>https://accepted.org.cn/2020/12/06/LeetCode-118-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/</id>
-    <published>2020-12-06T13:58:56.000Z</published>
-    <updated>2020-12-06T14:16:38.076Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;简单模拟，简洁为上。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
-      <category term="模拟" scheme="https://accepted.org.cn/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NowCoder.CD21 计算数组的小和 [程序员代码面试指南]</title>
-    <link href="https://accepted.org.cn/2020/12/06/NowCoder-CD21-%E8%AE%A1%E7%AE%97%E6%95%B0%E7%BB%84%E7%9A%84%E5%B0%8F%E5%92%8C-%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%A3%E7%A0%81%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/"/>
-    <id>https://accepted.org.cn/2020/12/06/NowCoder-CD21-%E8%AE%A1%E7%AE%97%E6%95%B0%E7%BB%84%E7%9A%84%E5%B0%8F%E5%92%8C-%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%A3%E7%A0%81%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/</id>
-    <published>2020-12-06T08:18:05.000Z</published>
-    <updated>2020-12-06T08:30:11.017Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;需要review&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="树状数组" scheme="https://accepted.org.cn/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="lowbit" scheme="https://accepted.org.cn/tags/lowbit/"/>
-    
-      <category term="NowCoder" scheme="https://accepted.org.cn/tags/NowCoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 659.分割数组为连续子序列</title>
-    <link href="https://accepted.org.cn/2020/12/04/LeetCode-659-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%E4%B8%BA%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>https://accepted.org.cn/2020/12/04/LeetCode-659-%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%E4%B8%BA%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/</id>
-    <published>2020-12-04T10:16:09.000Z</published>
-    <updated>2020-12-04T10:48:52.717Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;利用了贪心的思想。（需要review）&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
-      <category term="贪心" scheme="https://accepted.org.cn/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>21天影响力倍增的人际沟通术学习笔记</title>
-    <link href="https://accepted.org.cn/2020/12/04/21%E5%A4%A9%E5%BD%B1%E5%93%8D%E5%8A%9B%E5%80%8D%E5%A2%9E%E7%9A%84%E4%BA%BA%E9%99%85%E6%B2%9F%E9%80%9A%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://accepted.org.cn/2020/12/04/21%E5%A4%A9%E5%BD%B1%E5%93%8D%E5%8A%9B%E5%80%8D%E5%A2%9E%E7%9A%84%E4%BA%BA%E9%99%85%E6%B2%9F%E9%80%9A%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-12-04T08:24:41.000Z</published>
-    <updated>2020-12-04T08:35:59.671Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;课程《21天影响力倍增的人际沟通术》学习笔记。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://accepted.org.cn/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="笔记" scheme="https://accepted.org.cn/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
-      <category term="情商" scheme="https://accepted.org.cn/tags/%E6%83%85%E5%95%86/"/>
-    
-      <category term="沟通" scheme="https://accepted.org.cn/tags/%E6%B2%9F%E9%80%9A/"/>
     
   </entry>
   
