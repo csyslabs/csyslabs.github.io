@@ -22,11 +22,11 @@
         <tag>算法</tag>
         <tag>堆</tag>
         <tag>链表</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
+        <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
-        <tag>字符串</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -790,11 +790,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1220,8 +1220,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
         <tag>NowCoder</tag>
       </tags>
   </entry>
@@ -1279,8 +1279,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -1329,8 +1329,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>位运算</tag>
         <tag>字符串</tag>
+        <tag>位运算</tag>
       </tags>
   </entry>
   <entry>
@@ -1419,8 +1419,8 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>归并排序</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1582,8 +1582,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>字符串</tag>
+        <tag>AcWing</tag>
         <tag>KMP</tag>
       </tags>
   </entry>
@@ -1789,8 +1789,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -1878,8 +1878,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3091,10 +3091,10 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>归并排序</tag>
         <tag>位运算</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
@@ -3233,8 +3233,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -3316,10 +3316,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -3355,9 +3355,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -3509,8 +3509,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -3564,10 +3564,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
       </tags>
   </entry>
@@ -3621,8 +3621,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>读书</tag>
         <tag>笔记</tag>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -3747,10 +3747,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -3769,9 +3769,24 @@
 <blockquote>
 <p><strong>输入：</strong><br>{<br>  {‘1’, ‘1’, ‘0’, ‘0’, ‘0’},<br>  {‘1’, ‘1’, ‘0’, ‘0’, ‘0’},<br>  {‘0’, ‘0’, ‘1’, ‘0’, ‘0’},<br>  {‘0’, ‘0’, ‘0’, ‘1’, ‘1’}<br>}<br><strong>解释：</strong> 每座岛屿只能由水平和/或竖直方向上相邻的陆地连接而成。</p>
 </blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li>$1 &lt;= m, n &lt;= 300$</li>
+<li><code>grid[i][j]</code> 的值为 <code>&#39;0&#39;</code> 或 <code>&#39;1&#39;</code></li>
+</ul>
 <hr>
-<p>扫雷游戏就使用了这个算法。</p>
-<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3>]]></content>
+<p>遍历整个网格，从每个’1’处开始向四个方向搜索，因为’0’不需要搜索，所以’0’既可以是题目中的海水也可以记录已遍历的岛屿，这样可以省去开一个新数组。<br>每一次搜索完毕，岛屿数量加一。因为岛屿和岛屿之间必然被水淹没，不可连通。<br>可以使用DFS和BFS两种写法。<br>这是一个经典的 <strong>Flood Fill</strong> 又称 <strong>洪水灌溉</strong> 算法，在图像处理领域有很大用途，扫雷游戏也使用了这个算法。</p>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">c++</a></li><li class="tab"><a href="#g_tab0-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 16 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 9.4 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt; g;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        g = grid;</span><br><span class="line">        m = grid.<span class="built_in">size</span>(), n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++ ) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j ++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (g[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    dfs(i, j);</span><br><span class="line">                    res ++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        g[r][c] = <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i ++ ) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[i], nec = c + dc[i];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; g[ner][nec] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                dfs(ner, nec);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 2 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 40.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dr, dc;</span><br><span class="line">    <span class="keyword">char</span>[][] g;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        g = grid;</span><br><span class="line">        m = grid.length;</span><br><span class="line">        n = grid[<span class="number">0</span>].length;</span><br><span class="line">        dr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        dc = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (g[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    res ++;</span><br><span class="line">                    dfs(i, j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        g[r][c] = <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; g[ner][nec] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                dfs(ner, nec);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><p>在Java语言中，可以使用当前行与列 <code>i</code>, <code>j</code> 和总列数 <code>n</code> 进行hash运算，将结果入队，以代替pair.<br>encode:<br><code>int hash = i * n + j;</code><br>decode:<br><code>int i = hash / n, j = hash % n;</code></p>
+<p>另外，还有个值得注意的地方就是，每次根据当前岛屿计算出四个方向的下一个岛屿时，要预先将其设置成 <code>0</code>，原因就是 <strong>防止队列中的其他和这个岛屿相邻的岛屿重复入队。</strong></p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">c++</a></li><li class="tab"><a href="#g_tab1-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 16 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 10.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt; g;</span><br><span class="line">    <span class="keyword">int64_t</span> m, n;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        g = grid;</span><br><span class="line">        m = g.<span class="built_in">size</span>(), n = g[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++ ) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (g[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    res++;</span><br><span class="line">                    bfs(i, j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">queue</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; q;</span><br><span class="line">        q.push(&#123;i, j&#125;);</span><br><span class="line">        g[i][j] = <span class="string">'0'</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (; q.<span class="built_in">size</span>();) &#123;</span><br><span class="line">            <span class="keyword">int</span> r = q.front().first, c = q.front().second;</span><br><span class="line">            q.pop();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d ++) &#123;</span><br><span class="line">                <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">                <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; g[ner][nec] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    q.push(&#123;ner, nec&#125;);</span><br><span class="line">                    g[ner][nec] = <span class="string">'0'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 3 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 40.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dr, dc;</span><br><span class="line">    <span class="keyword">char</span>[][] g;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        g = grid;</span><br><span class="line">        dr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        dc = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        m = g.length;</span><br><span class="line">        n = g[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (g[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    res++;</span><br><span class="line">                    bfs(i, j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        q.add(i * n + j);</span><br><span class="line">        g[i][j] = <span class="string">'0'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; q.size() &gt; <span class="number">0</span>;) &#123;</span><br><span class="line">            <span class="keyword">int</span> hash = q.remove();</span><br><span class="line">            <span class="keyword">int</span> r = hash / n, c = hash % n;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d++) &#123;</span><br><span class="line">                <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">                <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; g[ner][nec] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    g[ner][nec] = <span class="string">'0'</span>;</span><br><span class="line">                    q.add(ner * n + nec);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/number-of-islands/" target="_blank" rel="noopener">LeetCode 200.岛屿数量</a></p>
+          </div>]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>算法</category>
@@ -3779,8 +3794,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -3903,8 +3918,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>Linux</tag>
+        <tag>VPS</tag>
         <tag>测速</tag>
       </tags>
   </entry>
