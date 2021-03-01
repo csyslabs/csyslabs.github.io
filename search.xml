@@ -27,8 +27,8 @@
         <tag>字符串</tag>
         <tag>算法模板</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>单链表</tag>
+        <tag>双链表</tag>
         <tag>队列</tag>
         <tag>循环队列</tag>
         <tag>单调队列</tag>
@@ -314,14 +314,57 @@
 <p>IOC的思想类似于 <strong>享元设计模式（FlyWeight）</strong> ，由一个容器统一管理所有对象，以避免大量的new操作。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// m_map就看成是IOC容器</span></span><br><span class="line">Class flyWeight</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Object <span class="title">get</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span> key)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m_map.containsKey(key)) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> m_map[key];</span><br><span class="line">        &#125;</span><br><span class="line">        Object obj;</span><br><span class="line">        m_map.put_back(key, obj);</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">string</span>, object&gt; m_map;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="面向切面编程AOP"><a href="#面向切面编程AOP" class="headerlink" title="面向切面编程AOP"></a>面向切面编程AOP</h3>]]></content>
+<h3 id="3-0-面向切面编程AOP"><a href="#3-0-面向切面编程AOP" class="headerlink" title="3.0 面向切面编程AOP"></a>3.0 面向切面编程AOP</h3><h4 id="3-0-1-什么是面向切面编程"><a href="#3-0-1-什么是面向切面编程" class="headerlink" title="3.0.1 什么是面向切面编程"></a>3.0.1 什么是面向切面编程</h4><p><strong>面向切面编程</strong>（AOP是Aspect Oriented Program的首字母缩写） ，我们知道，面向对象的特点是继承、多态和封装。而封装就要求将功能分散到不同的对象中去，这在软件设计中往往称为职责分配。实际上也就是说，让不同的类设计不同的方法。这样代码就分散到一个个的类中去了。这样做的好处是降低了代码的复杂程度，使类可重用。<br>但是人们也发现，在分散代码的同时，也增加了代码的重复性。什么意思呢？比如说，我们在两个类中，可能都需要在每个方法中做日志。按面向对象的设计方法，我们就必须在两个类的方法中都加入日志的内容。也许他们是完全相同的，但就是因为面向对象的设计让类与类之间无法联系，而不能将这些重复的代码统一起来。<br>也许有人会说，那好办啊，我们可以将这段代码写在一个独立的类独立的方法里，然后再在这两个类中调用。但是，这样一来，这两个类跟我们上面提到的独立的类就有耦合了，它的改变会影响这两个类。那么，有没有什么办法，能让我们在需要的时候，随意地加入代码呢？这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。<br>一般而言，我们管切入到指定类指定方法的代码片段称为切面，而切入到哪些类、哪些方法则叫切入点。有了AOP，我们就可以把几个类共有的代码，抽取到一个切片中，等到需要时再切入对象中去，从而改变其原有的行为。<br>这样看来，AOP其实只是OOP的补充而已。OOP从横向上区分出一个个的类来，而AOP则从纵向上向对象中加入特定的代码。有了AOP，OOP变得立体了。如果加上时间维度，AOP使OOP由原来的二维变为三维了，由平面变成立体了。从技术上来说，AOP基本上是通过代理机制实现的。<br>AOP在编程历史上可以说是里程碑式的，对OOP编程是一种十分有益的补充。</p>
+<p>这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</p>
+<h4 id="3-0-2-AOP举例"><a href="#3-0-2-AOP举例" class="headerlink" title="3.0.2 AOP举例"></a>3.0.2 AOP举例</h4><p>在pom.xml文件中添加相关依赖项：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--AspectJ 开始--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.7.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--AspectJ 结束--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>下面我们为 <code>IndexController</code> 实现切面类。<br>在 …/src/main/java/com.wenda.demo/ 下新建包：<code>aspect</code>.<br>在 <code>aspect</code> 包下新建一个log切面类 <code>LogAspect</code> ，并为它添加注解 <code>@Aspect</code>。<br>接下来添加注解 <code>@Component</code> ，和 <code>@Service</code> 注解相同的是，他们都是自动注册bean的。区别是后者用于标注业务层组件，前者泛指组件，当组件不好归类的时候，可以使用这个注解标注。如果不明确是不是 <code>@Service</code> ，只要写了 <code>@Component</code> ,它就会以一个组件的方式在依赖注入的时候把对象构造出来。</p>
+<p>为 <code>LogAspect</code> 类添加一个logger对象和两个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogAspect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(LogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第一个*指返回值，第二个*指的是方法，后面跟的是参数</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Before method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"After method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们现在对所有访问 Index的方法做一个切面的“截获”。访问 <code>IndexController</code> 类的所有方法之前执行 <code>beforeMethod()</code> ，之后执行 <code>afterMethod()</code>.<br>注意 <code>&quot;execution(* com.wenda.demo.controller.IndexController.*(..))&quot;</code><br>其中，第一个 <code>*</code> 指返回值，第二个 <code>*</code> 指的是方法，后面跟的 <code>(..)</code> 是参数. 它描述了切面的执行条件。<br>那么当我们访问首页 <a href="http://localhost:8080/index" target="_blank" rel="noopener">http://localhost:8080/index</a> 的时候，在log里就会看到：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">03</span>-<span class="number">01</span> <span class="number">18</span>:<span class="number">22</span>:<span class="number">32.651</span>  INFO <span class="number">848</span> --- [nio-<span class="number">8080</span>-exec-<span class="number">1</span>] com.wenda.demo.aspect.LogAspect          : Before method</span><br><span class="line"><span class="number">2021</span>-<span class="number">03</span>-<span class="number">01</span> <span class="number">18</span>:<span class="number">22</span>:<span class="number">32.665</span>  INFO <span class="number">848</span> --- [nio-<span class="number">8080</span>-exec-<span class="number">1</span>] com.wenda.demo.aspect.LogAspect          : After method</span><br></pre></td></tr></table></figure>
+
+<p>切面的好处就是，如果想对系统的性能进行关注，可以在切面方法中为logger写入时间信息，我们可以很清楚地看到访问一个首页的方法的调用情况和执行效率：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogAspect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(LogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第一个*指返回值，第二个*指的是方法，后面跟的是参数</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Before method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"After method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">03</span>-<span class="number">01</span> <span class="number">18</span>:<span class="number">28</span>:<span class="number">12.814</span>  INFO <span class="number">3716</span> --- [nio-<span class="number">8080</span>-exec-<span class="number">1</span>] com.wenda.demo.aspect.LogAspect          : Before methodMon Mar <span class="number">01</span> <span class="number">18</span>:<span class="number">28</span>:<span class="number">12</span> CST <span class="number">2021</span></span><br><span class="line"><span class="number">2021</span>-<span class="number">03</span>-<span class="number">01</span> <span class="number">18</span>:<span class="number">28</span>:<span class="number">12.829</span>  INFO <span class="number">3716</span> --- [nio-<span class="number">8080</span>-exec-<span class="number">1</span>] com.wenda.demo.aspect.LogAspect          : After methodMon Mar <span class="number">01</span> <span class="number">18</span>:<span class="number">28</span>:<span class="number">12</span> CST <span class="number">2021</span></span><br></pre></td></tr></table></figure>
+<p>因为方法执行速度太快，看得不是很明显。</p>
+<p>现在我们使用切面的 <code>JoinPoint</code> 切点对象获取被切入方法的参数信息：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogAspect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(LogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第一个*指返回值，第二个*指的是方法，后面跟的是参数</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeMethod</span><span class="params">(JoinPoint joinPoint)</span> </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (Object arg : joinPoint.getArgs()) &#123;</span><br><span class="line">            sb.append(<span class="string">"arg: "</span>).append(arg).append(<span class="string">"|"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        logger.info(<span class="string">"Before method: "</span> + sb.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"After methods: "</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么当我们访问：<a href="http://localhost:8080/profile/admin/112?type=1" target="_blank" rel="noopener">http://localhost:8080/profile/admin/112?type=1</a> 的时候，可以在log里看到获取的参数：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">2021</span>-<span class="number">03</span>-<span class="number">01</span> <span class="number">19</span>:<span class="number">21</span>:<span class="number">47.467</span>  INFO <span class="number">19320</span> --- [nio-<span class="number">8080</span>-exec-<span class="number">1</span>] com.wenda.demo.aspect.LogAspect          : Before method: arg: <span class="number">112</span>|arg: admin|arg: <span class="number">1</span>|arg: zzz|</span><br></pre></td></tr></table></figure>
+
+<p>面向切面的核心思想就是动态地将代码切入到各种业务流程中去。</p>
+]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>Project</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>Spring</tag>
         <tag>Project</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring注解 @Component @Repository @service @Controller之间的区别</title>
+    <url>/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>[待完善] 这四个注解主要作用。</p>
+<a id="more"></a>
+
+
+<h3 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h3><p><code>@Component</code> 、 <code>@Repository</code> 、 <code>@Service</code> 、 <code>@Controller</code> 都是用来自动注册bean的。<br>区别在于：<br><code>@Service</code> 用于标注业务层组件<br><code>@Controller</code> 用于标注控制层组件（如struts中的action）<br><code>@Repository</code> 用于标注数据访问组件，即DAO组件<br><code>@Component</code> 泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。</p>
+<div class="note primary">
+            <p><strong>转载链接：</strong> <a href="https://zhuanlan.zhihu.com/p/28346387" target="_blank" rel="noopener">呵呵一笑很倾城 | 知乎</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Spring</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -1471,10 +1514,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -1521,8 +1564,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>位运算</tag>
         <tag>字符串</tag>
+        <tag>位运算</tag>
       </tags>
   </entry>
   <entry>
@@ -2070,8 +2113,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -2125,8 +2168,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>单链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3283,16 +3326,16 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>位运算</tag>
         <tag>归并排序</tag>
+        <tag>位运算</tag>
+        <tag>离散化</tag>
+        <tag>区间合并</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>离散化</tag>
-        <tag>区间合并</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -3701,10 +3744,10 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
+        <tag>笔记</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -3756,11 +3799,11 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>情商</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
+        <tag>笔记</tag>
+        <tag>情商</tag>
       </tags>
   </entry>
   <entry>
@@ -3813,8 +3856,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>读书</tag>
         <tag>笔记</tag>
+        <tag>读书</tag>
       </tags>
   </entry>
   <entry>
@@ -4774,8 +4817,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>计数数组</tag>
         <tag>数组</tag>
+        <tag>计数数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
