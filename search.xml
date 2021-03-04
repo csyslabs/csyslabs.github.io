@@ -318,6 +318,8 @@
 <p>这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。</p>
 <h4 id="3-0-2-AOP举例"><a href="#3-0-2-AOP举例" class="headerlink" title="3.0.2 AOP举例"></a>3.0.2 AOP举例</h4><p>在pom.xml文件中添加相关依赖项：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--AspectJ 开始--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.7.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cglib<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--AspectJ 结束--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或者直接添加aop起步依赖(starter)：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>下面我们为 <code>IndexController</code> 实现切面类。<br>在 …/src/main/java/com.wenda.demo/ 下新建包：<code>aspect</code>.<br>在 <code>aspect</code> 包下新建一个log切面类 <code>LogAspect</code> ，并为它添加注解 <code>@Aspect</code>。<br>接下来添加注解 <code>@Component</code> ，和 <code>@Service</code> 注解相同的是，他们都是自动注册bean的。区别是后者用于标注业务层组件，前者泛指组件，当组件不好归类的时候，可以使用这个注解标注。如果不明确是不是 <code>@Service</code> ，只要写了 <code>@Component</code> ,它就会以一个组件的方式在依赖注入的时候把对象构造出来。</p>
 <p>为 <code>LogAspect</code> 类添加一个logger对象和两个方法：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogAspect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(LogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第一个*指返回值，第二个*指的是方法，后面跟的是参数</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"Before method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"execution(* com.wenda.demo.controller.IndexController.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"After method"</span> + <span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -347,13 +349,118 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 191.位1的个数</title>
+    <url>/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>位运算判断最低位1。</p>
+<a id="more"></a>
+
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为 <strong>汉明重量</strong>）。</p>
+<p><strong>提示：</strong></p>
+<p>请注意，在某些语言（如 Java）中，没有无符号整数类型。在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。<br>在 Java 中，编译器使用二进制补码记法来表示有符号整数。因此，在上面的 示例 3 中，输入表示有符号整数 -3。</p>
+<p><strong>进阶：</strong></p>
+<p>如果多次调用这个函数，你将如何优化你的算法？</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 00000000000000000000000000001011<br><strong>输出：</strong> 3<br><strong>解释：</strong> 输入的二进制串 00000000000000000000000000001011 中，共有三位为 ‘1’。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 00000000000000000000000010000000<br><strong>输出：</strong> 1<br><strong>解释：</strong> 输入的二进制串 00000000000000000000000010000000 中，共有一位为 ‘1’。</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 11111111111111111111111111111101<br><strong>输出：</strong> 31<br><strong>解释：</strong> 输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 ‘1’。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>输入必须是长度为 <code>32</code> 的 二进制串 。</li>
+</ul>
+<hr>
+<h3 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h3><p>使用lowbit找到 <code>x</code> 最低位1以及其更低位所有0所表示的数，更新 <code>x</code>.</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">uint32_t</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">uint32_t</span> x)</span> </span>&#123;<span class="keyword">return</span> x &amp; -x;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; n; n -= lowbit(n)) res++;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.3 MB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="keyword">return</span> x &amp; -x;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n -= lowbit(n)) res++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<p>注意c++和java的传入参数 <code>n</code> 一个是无符号整型（unsigned int）一个是有符号整型（int），因为java中没有无符号整型，所以理解的时候需要注意区别。但是代码没有区别，因为不管有无符号，数字在计算机底层都是以补码形式表示的， <code>lowbit</code> 返回的值一定是补码最低位1以及其更低位所有0表示的数。</p>
+<p>举个例子说明它们的区别，对于示例3：<br><code>11111111111111111111111111111101</code><br>这个二进制数字在这道题的c++中表示为一个补码正数 <code>4294967293</code>，<br>而在java中，因为是有符号的，表示一个补码负数 <code>-3</code>.<br>也就是说，这道题在LeetCode后端评测器参数设定中，是用的不同数字分别表示c++和java语言中的这个二进制数的。</p>
+<p>c++中对这个数进行一次 <code>lowbit</code> 操作得到的数为：<br><code>1</code> ，对应二进制补码为 <code>00000000000000000000000000000001</code><br>java中对这个数进行一次 <code>lowbit</code> 操作得到的数为：<br><code>1</code> ，对应二进制补码为 <code>00000000000000000000000000000001</code><br>是完全相同的。<br><code>lowbit</code> 赛高~！</p>
+<h3 id="位运算小技巧"><a href="#位运算小技巧" class="headerlink" title="位运算小技巧"></a>位运算小技巧</h3><p>在二进制表示中，数字 <code>n</code> 的 <strong>最低位</strong> 1总是对应 n - 1 中的0。<br>利用这一性质，利用 <code>n &amp; n - 1</code> 可以巧妙找到最低位1.<br>在这里, <code>n &amp; n - 1</code> 等价于 <code>n - lowbit(n)</code>.</p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">c++</a></li><li class="tab"><a href="#g_tab1-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; n; n &amp;= n - <span class="number">1</span>) res++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n &amp;= n - <span class="number">1</span>) res++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="循环，用掩码判断"><a href="#循环，用掩码判断" class="headerlink" title="循环，用掩码判断"></a>循环，用掩码判断</h3><p>从最低位开始，设置一个掩码，初始化为 <code>00000000000000000000000000000001</code>.<br>让其对原数字进行 <code>&amp;</code> 运算，判断最低位是否为 <code>1</code>。<br>然后掩码左移一位，更新掩码，依次逐位判断当前位是否为 <code>1</code>.<br>注意在c++中，需要用无符号整型来表示掩码。</p>
+<div class="tabs" id="g_tab2"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab2-1">c++</a></li><li class="tab"><a href="#g_tab2-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab2-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.7 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">uint32_t</span> mask = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (n &amp; mask) res++;</span><br><span class="line">            mask &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab2-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 36.2 MB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mask = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((n &amp; mask) != <span class="number">0</span>) res++;</span><br><span class="line">            mask &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="循环，用原数字判断"><a href="#循环，用原数字判断" class="headerlink" title="循环，用原数字判断"></a>循环，用原数字判断</h3><p>可以固定掩码 <code>1</code>， 不断右移原数字，始终判断最低位。<br>因为c++中，原数字为无符号整型，所以原数字可以直接右移；<br>而java中，原数字有符号，所以需要使用无符号右移运算符 <code>&gt;&gt;&gt;</code>.</p>
+<div class="tabs" id="g_tab3"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab3-1">c++</a></li><li class="tab"><a href="#g_tab3-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab3-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mask = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (n &amp; mask) res++;</span><br><span class="line">            n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab3-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.4 MB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mask = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((n &amp; mask) != <span class="number">0</span>) res++;</span><br><span class="line">            n &gt;&gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="轮子"><a href="#轮子" class="headerlink" title="轮子"></a>轮子</h3><p>使用c++和java的内置轮子。</p>
+<div class="tabs" id="g_tab4"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab4-1">c++</a></li><li class="tab"><a href="#g_tab4-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab4-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> __builtin_popcount(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab4-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.bitCount(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/number-of-1-bits/" target="_blank" rel="noopener">LeetCode 191.位1的个数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>位运算</tag>
+        <tag>lowbit</tag>
+        <tag>剑指Offer</tag>
+        <tag>汉明重量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer 15.二进制中1的个数</title>
+    <url>/2021/03/03/%E5%89%91%E6%8C%87Offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>位运算判断最低位1。</p>
+<a id="more"></a>
+
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 00000000000000000000000000001011<br><strong>输出：</strong> 3<br><strong>解释：</strong> 输入的二进制串 00000000000000000000000000001011 中，共有三位为 ‘1’。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 00000000000000000000000010000000<br><strong>输出：</strong> 1<br><strong>解释：</strong> 输入的二进制串 00000000000000000000000010000000 中，共有一位为 ‘1’。</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p><strong>输入：</strong> 11111111111111111111111111111101<br><strong>输出：</strong> 31<br><strong>解释：</strong> 输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 ‘1’。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>输入必须是长度为 32 的 二进制串 。</li>
+</ul>
+<hr>
+<p>与 <a href="https://esp0xa.github.io/2021/03/03/LeetCode-191-位1的个数/" target="_blank" rel="noopener">LeetCode 191.位1的个数</a> 重复。</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/" target="_blank" rel="noopener">剑指Offer 15.二进制中1的个数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>位运算</tag>
+        <tag>lowbit</tag>
+        <tag>剑指Offer</tag>
+        <tag>汉明重量</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring注解 @Component @Repository @service @Controller之间的区别</title>
     <url>/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>[待完善] 这四个注解主要作用。</p>
 <a id="more"></a>
 
 
-<h3 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h3><p><code>@Component</code> 、 <code>@Repository</code> 、 <code>@Service</code> 、 <code>@Controller</code> 都是用来自动注册bean的。<br>区别在于：<br><code>@Service</code> 用于标注业务层组件<br><code>@Controller</code> 用于标注控制层组件（如struts中的action）<br><code>@Repository</code> 用于标注数据访问组件，即DAO组件<br><code>@Component</code> 泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。</p>
+<h3 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h3><p><code>@Component</code> 、 <code>@Repository</code> 、 <code>@Service</code> 、 <code>@Controller</code> 都是用来自动注册bean的。<br>在 <code>SpringApplication.run()</code> 启动的时候，spring会自动创建一个IOC容器，并且为IOC容器自动扫描配置类所在包以及子包下的所有被以上四个注解标注的类。<br>区别在于：<br><code>@Service</code> 用于标注业务层组件<br><code>@Controller</code> 用于标注控制层组件（如struts中的action），处理请求。<br><code>@Repository</code> 用于标注数据访问组件，即DAO组件<br><code>@Component</code> 泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注，在以上三种任意地方使用。</p>
 <div class="note primary">
             <p><strong>转载链接：</strong> <a href="https://zhuanlan.zhihu.com/p/28346387" target="_blank" rel="noopener">呵呵一笑很倾城 | 知乎</a></p>
           </div>]]></content>
@@ -442,8 +549,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -1004,12 +1111,12 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>双指针</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
-        <tag>双指针</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1514,8 +1621,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -1564,8 +1671,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>字符串</tag>
         <tag>位运算</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -2762,6 +2869,12 @@
 </li>
 </ul>
 </blockquote>
+<p>更多算法请参考：<a href="https://esp0xa.github.io/2021/03/03/LeetCode-191-位1的个数/" target="_blank" rel="noopener">LeetCode 191.位1的个数</a></p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/803/" target="_blank" rel="noopener">AcWing 801.二进制中1的个数</a></p>
+          </div>
+
+
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -3112,17 +3225,12 @@
 <h3 id="3-二进制数最后一位1的————lowbit-x"><a href="#3-二进制数最后一位1的————lowbit-x" class="headerlink" title="3. 二进制数最后一位1的————lowbit(x)"></a>3. 二进制数最后一位1的————lowbit(x)</h3><p>这里最后一位1是指从左往右最后一位，函数lowbit()返回的是包含该1与右边所有0。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; - x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>- x</code> 在计算机内部是以补码方式运算的，即:<br><code>- x = ~ x + 1</code><br>假设一个二进制数为：  0010101…0010100000<br><code>~ x</code>为：            1101010…1101011111<br><code>~ x + 1</code>为：        1101010…1101100000<br>注意到+1操作使得最后一位1及其右边所有数字发生了变化，而左边不变。<br>此时在和原数字进行&amp;运算，它和原数字在最后一位1左侧全部不同，右侧全部相同。</p>
-<div class="note primary">
-            <p><strong>题目链接：</strong> <a href="https://esp0xa.github.io//2020/11/04/AcWing-801-二进制中1的个数/" target="_blank" rel="noopener">二进制中1的个数</a></p>
-          </div>
-
-<h3 id="4-一个获取二进制数中1的个数的轮子"><a href="#4-一个获取二进制数中1的个数的轮子" class="headerlink" title="4. 一个获取二进制数中1的个数的轮子"></a>4. 一个获取二进制数中1的个数的轮子</h3><p><code>__builtin_popcount(unsigned int x)</code><br>用于计算一个32位无符号整数有多少个位为1。<br>类似地，可以用 <code>__builtin_popcountl(unsigned long x)</code> 和 <code>__builtin_popcountll(unsigned long long x)</code> 分别计算无符号 <code>long</code> 和 <code>long long</code> 整数二进制表示中1的位数。</p>
+<p><strong>参考题目：</strong> <a href="https://esp0xa.github.io//2020/11/04/AcWing-801-二进制中1的个数/" target="_blank" rel="noopener">AcWing 801.二进制中1的个数</a></p>
+<h3 id="4-一个获取二进制数中1的个数的轮子"><a href="#4-一个获取二进制数中1的个数的轮子" class="headerlink" title="4. 一个获取二进制数中1的个数的轮子"></a>4. 一个获取二进制数中1的个数的轮子</h3><p>在c++中：<br><code>__builtin_popcount(unsigned int x)</code><br>用于计算一个32位无符号整数有多少个位为1。<br>类似地，可以用 <code>__builtin_popcountl(unsigned long x)</code> 和 <code>__builtin_popcountll(unsigned long long x)</code> 分别计算无符号 <code>long</code> 和 <code>long long</code> 整数二进制表示中1的位数。</p>
+<p>在Java中：<br><code>Integer.bitCount(int x)</code></p>
+<p><strong>更多计算二进制表示的数中数字1的个数：</strong> <a href="https://esp0xa.github.io/2021/03/03/LeetCode-191-位1的个数/" target="_blank" rel="noopener">LeetCode 191.位1的个数</a></p>
 <h3 id="5-二进制数中最高位1距离最低位的距离"><a href="#5-二进制数中最高位1距离最低位的距离" class="headerlink" title="5. 二进制数中最高位1距离最低位的距离"></a>5. 二进制数中最高位1距离最低位的距离</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_len</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; len ++) x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="note primary">
-            <p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/" target="_blank" rel="noopener">LeetCode 5620.连接连续的二进制数字（Concatenation of Consecutive Binary Numbers）</a></p>
-          </div>
-
-
+<p><strong>参考题目：</strong> <a href="https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/" target="_blank" rel="noopener">LeetCode 5620.连接连续的二进制数字（Concatenation of Consecutive Binary Numbers）</a></p>
 <h3 id="6-两个数之间交换位置"><a href="#6-两个数之间交换位置" class="headerlink" title="6. 两个数之间交换位置"></a>6. 两个数之间交换位置</h3><p>我们有<code>int a = 5, int b = 6</code>, 现需要交换二者位置，可以利用异或运算：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b;</span><br><span class="line">a = a ^ b;</span><br></pre></td></tr></table></figure>
 
@@ -3326,16 +3434,16 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>归并排序</tag>
         <tag>位运算</tag>
-        <tag>离散化</tag>
-        <tag>区间合并</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
+        <tag>离散化</tag>
+        <tag>区间合并</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -3468,8 +3576,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -3551,10 +3659,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -3590,9 +3698,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -3744,8 +3852,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -3799,10 +3907,10 @@
         <category>生活</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
-        <tag>笔记</tag>
         <tag>情商</tag>
       </tags>
   </entry>
@@ -3856,8 +3964,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>读书</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -3982,10 +4090,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4029,8 +4137,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -4817,8 +4925,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>数组</tag>
         <tag>计数数组</tag>
+        <tag>数组</tag>
         <tag>排序</tag>
       </tags>
   </entry>
