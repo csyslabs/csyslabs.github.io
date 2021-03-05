@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Dirac Sea</title>
   
-  <subtitle>Where the water tastes like wine</subtitle>
+  <subtitle>where the water tastes like wine</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-03-04T04:19:23.998Z</updated>
+  <updated>2021-03-05T10:44:36.222Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10 MySQL服务端完全卸载+安装</title>
+    <link href="https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/"/>
+    <id>https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</id>
+    <published>2021-03-05T10:15:51.000Z</published>
+    <updated>2021-03-05T10:44:36.222Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录一下步骤。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+    
+      <category term="MySQL" scheme="https://accepted.org.cn/tags/MySQL/"/>
+    
+      <category term="数据库" scheme="https://accepted.org.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快速幂专题</title>
+    <link href="https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/"/>
+    <id>https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/</id>
+    <published>2021-03-05T03:11:09.000Z</published>
+    <updated>2021-03-05T09:44:58.083Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;深入快速幂。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="矩阵快速幂" scheme="https://accepted.org.cn/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+      <category term="快速幂" scheme="https://accepted.org.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+      <category term="高精度快速幂" scheme="https://accepted.org.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 191.位1的个数</title>
@@ -151,9 +205,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
-    
       <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
       <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
     
@@ -433,15 +487,15 @@
     
       <category term="双指针" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
-    
-      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
-    
       <category term="二叉树" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://accepted.org.cn/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="迭代" scheme="https://accepted.org.cn/tags/%E8%BF%AD%E4%BB%A3/"/>
+    
+      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
       <category term="树" scheme="https://accepted.org.cn/tags/%E6%A0%91/"/>
     
@@ -529,64 +583,6 @@
       <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
     
       <category term="线性查找" scheme="https://accepted.org.cn/tags/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指Offer 03.数组中重复的数字</title>
-    <link href="https://accepted.org.cn/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>https://accepted.org.cn/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</id>
-    <published>2021-02-22T08:42:23.000Z</published>
-    <updated>2021-02-23T09:50:59.448Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;常见判重方法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="计数数组" scheme="https://accepted.org.cn/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-      <category term="哈希表" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
-    
-      <category term="哈希集合" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>class模式的OJ刷题提高输入输出效率方法</title>
-    <link href="https://accepted.org.cn/2021/02/12/class%E6%A8%A1%E5%BC%8F%E7%9A%84OJ%E5%88%B7%E9%A2%98%E6%8F%90%E9%AB%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%88%E7%8E%87%E6%96%B9%E6%B3%95/"/>
-    <id>https://accepted.org.cn/2021/02/12/class%E6%A8%A1%E5%BC%8F%E7%9A%84OJ%E5%88%B7%E9%A2%98%E6%8F%90%E9%AB%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%88%E7%8E%87%E6%96%B9%E6%B3%95/</id>
-    <published>2021-02-11T18:21:19.000Z</published>
-    <updated>2021-02-11T18:47:46.258Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;简要介绍如何在以class为核心的oj中如何提高输入输出效率。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="leetcode" scheme="https://accepted.org.cn/tags/leetcode/"/>
-    
-      <category term="nowcoder" scheme="https://accepted.org.cn/tags/nowcoder/"/>
-    
-      <category term="oj" scheme="https://accepted.org.cn/tags/oj/"/>
     
   </entry>
   
