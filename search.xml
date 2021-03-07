@@ -42,22 +42,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java基础知识点总结</title>
-    <url>/2021/03/06/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>Java中必会的知识点。</p>
-<a id="more"></a>
-
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><div class="note primary">
-            <p><strong>原题链接：</strong> <a href=""></a></p>
-          </div>]]></content>
-      <categories>
-        <category>指尖飞舞</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win10 MySQL服务端完全卸载+安装</title>
     <url>/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>记录一下步骤。</p>
@@ -3818,7 +3802,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -3868,7 +3852,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4370,8 +4354,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>VPS</tag>
+        <tag>Linux</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -4782,8 +4766,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>链表</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
