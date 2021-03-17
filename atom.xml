@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-03-10T15:01:26.094Z</updated>
+  <updated>2021-03-17T15:00:09.278Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【游戏逆向】常见内存操作</title>
+    <link href="https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/"/>
+    <id>https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-03-17T11:53:12.000Z</published>
+    <updated>2021-03-17T15:00:09.278Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;记录游戏逆向开发中的常见内存操作。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+    
+      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+    
+  </entry>
   
   <entry>
     <title>关于人际关系的一点点思考</title>
@@ -228,9 +249,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
-    
       <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
       <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
     
@@ -510,15 +531,15 @@
     
       <category term="双指针" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
-    
-      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
-    
       <category term="二叉树" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://accepted.org.cn/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="迭代" scheme="https://accepted.org.cn/tags/%E8%BF%AD%E4%BB%A3/"/>
+    
+      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
       <category term="树" scheme="https://accepted.org.cn/tags/%E6%A0%91/"/>
     
@@ -550,33 +571,6 @@
       <category term="链表" scheme="https://accepted.org.cn/tags/%E9%93%BE%E8%A1%A8/"/>
     
       <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
-    
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指Offer 05.替换空格</title>
-    <link href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/"/>
-    <id>https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/</id>
-    <published>2021-02-23T05:53:50.000Z</published>
-    <updated>2021-02-23T09:50:21.381Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;简单语法题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
     
