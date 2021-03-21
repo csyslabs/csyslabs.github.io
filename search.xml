@@ -20,8 +20,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>链表</tag>
         <tag>堆</tag>
+        <tag>链表</tag>
         <tag>栈</tag>
         <tag>单调栈</tag>
         <tag>字符串</tag>
@@ -380,8 +380,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -943,11 +943,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -3262,14 +3262,14 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -3711,8 +3711,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -3794,10 +3794,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -3833,9 +3833,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -4226,10 +4226,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4273,8 +4273,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -4753,8 +4753,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>链表</tag>
         <tag>LeetCode</tag>
+        <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
   </entry>
@@ -5009,8 +5009,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>链表</tag>
         <tag>LeetCode</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
