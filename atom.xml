@@ -5,9 +5,9 @@
   <subtitle>where the water tastes like wine</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://accepted.org.cn/"/>
+  <link href="eetoa.github.io/"/>
   <updated>2021-03-17T15:00:09.278Z</updated>
-  <id>https://accepted.org.cn/</id>
+  <id>eetoa.github.io/</id>
   
   <author>
     <name>etoa</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【游戏逆向】常见内存操作</title>
-    <link href="https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/"/>
-    <id>https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/</id>
+    <link href="eetoa.github.io/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/"/>
+    <id>eetoa.github.io/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/</id>
     <published>2021-03-17T11:53:12.000Z</published>
     <updated>2021-03-17T15:00:09.278Z</updated>
     
@@ -32,17 +32,17 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+      <category term="游戏逆向" scheme="eetoa.github.io/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>关于人际关系的一点点思考</title>
-    <link href="https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/"/>
-    <id>https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/</id>
+    <link href="eetoa.github.io/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/"/>
+    <id>eetoa.github.io/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/</id>
     <published>2021-03-10T14:51:05.000Z</published>
     <updated>2021-03-10T15:01:26.094Z</updated>
     
@@ -55,19 +55,19 @@
     </summary>
     
     
-      <category term="生活" scheme="https://accepted.org.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="eetoa.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+      <category term="人际关系" scheme="eetoa.github.io/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
-      <category term="生活" scheme="https://accepted.org.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="eetoa.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Win10 MySQL服务端完全卸载+安装</title>
-    <link href="https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/"/>
-    <id>https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</id>
+    <link href="eetoa.github.io/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/"/>
+    <id>eetoa.github.io/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</id>
     <published>2021-03-05T10:15:51.000Z</published>
     <updated>2021-03-05T10:44:36.222Z</updated>
     
@@ -80,19 +80,19 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
     
-      <category term="MySQL" scheme="https://accepted.org.cn/tags/MySQL/"/>
+      <category term="MySQL" scheme="eetoa.github.io/tags/MySQL/"/>
     
-      <category term="数据库" scheme="https://accepted.org.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="eetoa.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>快速幂专题</title>
-    <link href="https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/"/>
-    <id>https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/</id>
+    <link href="eetoa.github.io/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/"/>
+    <id>eetoa.github.io/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/</id>
     <published>2021-03-05T03:11:09.000Z</published>
     <updated>2021-03-08T17:19:55.803Z</updated>
     
@@ -105,27 +105,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="矩阵快速幂" scheme="https://accepted.org.cn/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="矩阵快速幂" scheme="eetoa.github.io/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
-      <category term="快速幂" scheme="https://accepted.org.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="快速幂" scheme="eetoa.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
-      <category term="高精度快速幂" scheme="https://accepted.org.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="高精度快速幂" scheme="eetoa.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 191.位1的个数</title>
-    <link href="https://accepted.org.cn/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>https://accepted.org.cn/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <link href="eetoa.github.io/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>eetoa.github.io/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2021-03-03T14:53:37.000Z</published>
     <updated>2021-03-04T04:19:23.998Z</updated>
     
@@ -138,29 +138,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="lowbit" scheme="https://accepted.org.cn/tags/lowbit/"/>
+      <category term="lowbit" scheme="eetoa.github.io/tags/lowbit/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
-      <category term="汉明重量" scheme="https://accepted.org.cn/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
+      <category term="汉明重量" scheme="eetoa.github.io/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 15.二进制中1的个数</title>
-    <link href="https://accepted.org.cn/2021/03/03/%E5%89%91%E6%8C%87Offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>https://accepted.org.cn/2021/03/03/%E5%89%91%E6%8C%87Offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <link href="eetoa.github.io/2021/03/03/%E5%89%91%E6%8C%87Offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>eetoa.github.io/2021/03/03/%E5%89%91%E6%8C%87Offer-15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2021-03-03T14:48:46.000Z</published>
     <updated>2021-03-04T04:21:13.183Z</updated>
     
@@ -173,29 +173,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="lowbit" scheme="https://accepted.org.cn/tags/lowbit/"/>
+      <category term="lowbit" scheme="eetoa.github.io/tags/lowbit/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
-      <category term="汉明重量" scheme="https://accepted.org.cn/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
+      <category term="汉明重量" scheme="eetoa.github.io/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
     
   </entry>
   
   <entry>
     <title>Spring注解 @Component @Repository @service @Controller之间的区别</title>
-    <link href="https://accepted.org.cn/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://accepted.org.cn/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <link href="eetoa.github.io/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>eetoa.github.io/2021/03/01/Spring%E6%B3%A8%E8%A7%A3-Component-Repository-service-Controller%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <published>2021-03-01T09:58:07.000Z</published>
     <updated>2021-03-02T03:35:25.148Z</updated>
     
@@ -208,23 +208,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="Project" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
+      <category term="Project" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
     
     
-      <category term="Java" scheme="https://accepted.org.cn/tags/Java/"/>
+      <category term="Java" scheme="eetoa.github.io/tags/Java/"/>
     
-      <category term="Spring" scheme="https://accepted.org.cn/tags/Spring/"/>
+      <category term="Spring" scheme="eetoa.github.io/tags/Spring/"/>
     
-      <category term="注解" scheme="https://accepted.org.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
+      <category term="注解" scheme="eetoa.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>快速优雅裸连github</title>
-    <link href="https://accepted.org.cn/2021/02/28/%E5%BF%AB%E9%80%9F%E4%BC%98%E9%9B%85%E8%A3%B8%E8%BF%9Egithub/"/>
-    <id>https://accepted.org.cn/2021/02/28/%E5%BF%AB%E9%80%9F%E4%BC%98%E9%9B%85%E8%A3%B8%E8%BF%9Egithub/</id>
+    <link href="eetoa.github.io/2021/02/28/%E5%BF%AB%E9%80%9F%E4%BC%98%E9%9B%85%E8%A3%B8%E8%BF%9Egithub/"/>
+    <id>eetoa.github.io/2021/02/28/%E5%BF%AB%E9%80%9F%E4%BC%98%E9%9B%85%E8%A3%B8%E8%BF%9Egithub/</id>
     <published>2021-02-28T06:56:49.000Z</published>
     <updated>2021-03-04T05:37:47.138Z</updated>
     
@@ -237,17 +237,17 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="GitHub" scheme="https://accepted.org.cn/tags/GitHub/"/>
+      <category term="GitHub" scheme="eetoa.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 13.机器人的运动范围</title>
-    <link href="https://accepted.org.cn/2021/02/27/%E5%89%91%E6%8C%87Offer-13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/"/>
-    <id>https://accepted.org.cn/2021/02/27/%E5%89%91%E6%8C%87Offer-13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</id>
+    <link href="eetoa.github.io/2021/02/27/%E5%89%91%E6%8C%87Offer-13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/"/>
+    <id>eetoa.github.io/2021/02/27/%E5%89%91%E6%8C%87Offer-13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/</id>
     <published>2021-02-27T11:29:20.000Z</published>
     <updated>2021-02-27T12:28:48.202Z</updated>
     
@@ -260,29 +260,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+      <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
+      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 12.矩阵中的路径</title>
-    <link href="https://accepted.org.cn/2021/02/27/%E5%89%91%E6%8C%87Offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
-    <id>https://accepted.org.cn/2021/02/27/%E5%89%91%E6%8C%87Offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</id>
+    <link href="eetoa.github.io/2021/02/27/%E5%89%91%E6%8C%87Offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
+    <id>eetoa.github.io/2021/02/27/%E5%89%91%E6%8C%87Offer-12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</id>
     <published>2021-02-27T10:58:11.000Z</published>
     <updated>2021-02-27T11:04:47.725Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>回溯算法经典题。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。</p><p>[[“a”,” <strong>b</strong> “,”c”,”e”],<br>[“s”,” <strong>f</strong> “,” <strong>c</strong> “,”s”],<br>[“a”,”d”,” <strong>e</strong> “,”e”]]</p><p>但矩阵中不包含字符串“abfb”的路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入这个格子。</p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> board = [[“A”,”B”,”C”,”E”],[“S”,”F”,”C”,”S”],[“A”,”D”,”E”,”E”]], word = “ABCCED”<br><strong>输出：</strong> true</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> board = [[“a”,”b”],[“c”,”d”]], word = “abcd”<br><strong>输出：</strong> false</p></blockquote><p><strong>提示：</strong></p><ul><li>$1 &lt;= board.length &lt;= 200$</li><li>$1 &lt;= board[i].length &lt;= 200$</li></ul><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/27/LeetCode-79-单词搜索/">LeetCode 79.单词搜索</a> 完全相同。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 44 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.1 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; st;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="built_in">string</span> w;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">exist</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board, <span class="built_in">string</span> <span class="keyword">word</span>)</span> </span>&#123;</span><br><span class="line">        b = board, w = <span class="keyword">word</span>;</span><br><span class="line">        m = b.<span class="built_in">size</span>(), n = b[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        len = <span class="keyword">word</span>.<span class="built_in">size</span>();</span><br><span class="line">        st = <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; (m, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n, <span class="literal">false</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (b[i][j] == w[<span class="number">0</span>]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (dfs(i, j, <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (b[r][c] != w[u]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (u == len - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 正确的节点</span></span><br><span class="line">        st[r][c] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; !st[ner][nec]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dfs(ner, nec, u + <span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 恢复现场</span></span><br><span class="line">        st[r][c] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 7 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 40.1 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[][] b;</span><br><span class="line">    String w;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span>[] dr, dc;</span><br><span class="line">    <span class="keyword">boolean</span>[][] st;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">exist</span><span class="params">(<span class="keyword">char</span>[][] board, String word)</span> </span>&#123;</span><br><span class="line">        b = board;</span><br><span class="line">        w = word;</span><br><span class="line">        m = b.length;</span><br><span class="line">        n = b[<span class="number">0</span>].length;</span><br><span class="line">        len = w.length();</span><br><span class="line">        dr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        dc = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        st = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            Arrays.fill(st[i], <span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (b[i][j] == w.charAt(<span class="number">0</span>)) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (dfs(i, j, <span class="number">0</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (b[r][c] != w.charAt(u)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (u == len - <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// else keep checking</span></span><br><span class="line">        st[r][c] = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d ++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; !st[ner][nec]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dfs(ner, nec, u + <span class="number">1</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        st[r][c] = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/" target="_blank" rel="noopener">剑指Offer 12.矩阵中的路径</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>回溯算法经典题。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）。</p><p>[[“a”,” <strong>b</strong> “,”c”,”e”],<br>[“s”,” <strong>f</strong> “,” <strong>c</strong> “,”s”],<br>[“a”,”d”,” <strong>e</strong> “,”e”]]</p><p>但矩阵中不包含字符串“abfb”的路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入这个格子。</p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> board = [[“A”,”B”,”C”,”E”],[“S”,”F”,”C”,”S”],[“A”,”D”,”E”,”E”]], word = “ABCCED”<br><strong>输出：</strong> true</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> board = [[“a”,”b”],[“c”,”d”]], word = “abcd”<br><strong>输出：</strong> false</p></blockquote><p><strong>提示：</strong></p><ul><li>$1 &lt;= board.length &lt;= 200$</li><li>$1 &lt;= board[i].length &lt;= 200$</li></ul><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/27/LeetCode-79-单词搜索/" target="_blank" rel="noopener">LeetCode 79.单词搜索</a> 完全相同。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 44 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.1 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; st;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="built_in">string</span> w;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">exist</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board, <span class="built_in">string</span> <span class="keyword">word</span>)</span> </span>&#123;</span><br><span class="line">        b = board, w = <span class="keyword">word</span>;</span><br><span class="line">        m = b.<span class="built_in">size</span>(), n = b[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        len = <span class="keyword">word</span>.<span class="built_in">size</span>();</span><br><span class="line">        st = <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; (m, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n, <span class="literal">false</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (b[i][j] == w[<span class="number">0</span>]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (dfs(i, j, <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (b[r][c] != w[u]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (u == len - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 正确的节点</span></span><br><span class="line">        st[r][c] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; !st[ner][nec]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dfs(ner, nec, u + <span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 恢复现场</span></span><br><span class="line">        st[r][c] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 7 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 40.1 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[][] b;</span><br><span class="line">    String w;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span>[] dr, dc;</span><br><span class="line">    <span class="keyword">boolean</span>[][] st;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">exist</span><span class="params">(<span class="keyword">char</span>[][] board, String word)</span> </span>&#123;</span><br><span class="line">        b = board;</span><br><span class="line">        w = word;</span><br><span class="line">        m = b.length;</span><br><span class="line">        n = b[<span class="number">0</span>].length;</span><br><span class="line">        len = w.length();</span><br><span class="line">        dr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        dc = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        st = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            Arrays.fill(st[i], <span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (b[i][j] == w.charAt(<span class="number">0</span>)) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (dfs(i, j, <span class="number">0</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (b[r][c] != w.charAt(u)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (u == len - <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// else keep checking</span></span><br><span class="line">        st[r][c] = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; <span class="number">4</span>; d ++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[d], nec = c + dc[d];</span><br><span class="line">            <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; m &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; n &amp;&amp; !st[ner][nec]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dfs(ner, nec, u + <span class="number">1</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        st[r][c] = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/" target="_blank" rel="noopener">剑指Offer 12.矩阵中的路径</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -291,25 +291,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
+      <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
-      <category term="回溯" scheme="https://accepted.org.cn/tags/%E5%9B%9E%E6%BA%AF/"/>
+      <category term="回溯" scheme="eetoa.github.io/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 79.单词搜索</title>
-    <link href="https://accepted.org.cn/2021/02/27/LeetCode-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/"/>
-    <id>https://accepted.org.cn/2021/02/27/LeetCode-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/</id>
+    <link href="eetoa.github.io/2021/02/27/LeetCode-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/"/>
+    <id>eetoa.github.io/2021/02/27/LeetCode-79-%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/</id>
     <published>2021-02-27T08:39:10.000Z</published>
     <updated>2021-02-27T10:28:50.036Z</updated>
     
@@ -322,29 +322,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
+      <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
     
-      <category term="回溯" scheme="https://accepted.org.cn/tags/%E5%9B%9E%E6%BA%AF/"/>
+      <category term="回溯" scheme="eetoa.github.io/tags/%E5%9B%9E%E6%BA%AF/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 11.旋转数组的最小数字</title>
-    <link href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"/>
-    <id>https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</id>
+    <link href="eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"/>
+    <id>eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</id>
     <published>2021-02-26T11:26:56.000Z</published>
     <updated>2021-02-26T11:53:48.945Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 <code>[3,4,5,1,2]</code> 为 <code>[1,2,3,4,5]</code> 的一个旋转，该数组的最小值为1。  </p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> [3,4,5,1,2]<br><strong>输出：</strong> 1</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> [2,2,2,0,1]<br><strong>输出：</strong> 0</p></blockquote><hr><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/">LeetCode 154.寻找旋转排序数组中的最小值 II</a> 完全一致。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><h3 id="暴搜"><a href="#暴搜" class="headerlink" title="暴搜"></a>暴搜</h3><p>暴力Loop一把梭，复杂度为 $O(N)$.</p><div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">c++</a></li><li class="tab"><a href="#g_tab1-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/" target="_blank" rel="noopener">剑指Offer 11. 旋转数组的最小数字</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 <code>[3,4,5,1,2]</code> 为 <code>[1,2,3,4,5]</code> 的一个旋转，该数组的最小值为1。  </p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> [3,4,5,1,2]<br><strong>输出：</strong> 1</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> [2,2,2,0,1]<br><strong>输出：</strong> 0</p></blockquote><hr><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/" target="_blank" rel="noopener">LeetCode 154.寻找旋转排序数组中的最小值 II</a> 完全一致。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><h3 id="暴搜"><a href="#暴搜" class="headerlink" title="暴搜"></a>暴搜</h3><p>暴力Loop一把梭，复杂度为 $O(N)$.</p><div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">c++</a></li><li class="tab"><a href="#g_tab1-2">java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">        len = numbers.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i] &lt; numbers[i - <span class="number">1</span>]) <span class="keyword">return</span> numbers[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numbers[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/" target="_blank" rel="noopener">剑指Offer 11. 旋转数组的最小数字</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -353,27 +353,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+      <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 154.寻找旋转排序数组中的最小值 II</title>
-    <link href="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/"/>
-    <id>https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/</id>
+    <link href="eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/"/>
+    <id>eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/</id>
     <published>2021-02-26T10:31:53.000Z</published>
     <updated>2021-02-26T11:50:27.904Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p><p>( 例如，数组 <code>[0,1,2,4,5,6,7]</code> 可能变为 <code>[4,5,6,7,0,1,2]</code> )。</p><p>请找出其中最小的元素。</p><p>注意数组中可能存在重复的元素。</p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入:</strong> [1,3,5]<br><strong>输出:</strong> 1</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入:</strong> [2,2,2,0,1]<br><strong>输出:</strong> 0</p></blockquote><p><strong>说明：</strong></p><ul><li>这道题是 <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a> 的延伸题目。</li><li>允许重复会影响算法的时间复杂度吗？会如何影响，为什么？</li></ul><hr><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题和 <a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a> 的区别就在于折叠数组中可能存在重复。</p><p>什么时候会产生影响呢？那就是当折叠点在原数组中某一数字相同段内时，折叠之后，数组首尾相同。那么，如果 <code>mid</code> 更新到与数组首尾相同的数字时，我们无法利用二分查找所依赖的 <strong>性质</strong> 确定 <code>mid</code> 是在左半边还是右半边。</p><p>那么，解题思路就是：</p><ul><li>先特判非单调递减情况，排除原数组折叠点在数组下标范围外的情况。</li><li>再特判折叠数组首尾相同的情况，方法是移动右指针向左直到和左端点不同为止。那么此时又有两种情况：</li></ul><ol><li>右半边全为与左端点相同的数字，那么此时右指针移到了左半边， <code>nums[hi] &gt; nums[0]</code></li><li>右半边不全是与左端点相同的数字，那么此时右指针依然在右半边， <code>nums[hi] &lt; nums[0]</code></li></ol><ul><li>对于以上情况1，直接返回数组首即可；而对于情况2，需要按照传统二分查找，找到右半边的左边界。详情请参考： <strong><a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a></strong></li></ul><p>另外可以想一下，如果折叠数组数组完全相同，也就是最坏的情况，会怎么样。<br>那必然是最终右指针左移时与左指针相遇，进行一次常规二分直接得出答案。当然也可以在进入常规二分之前特判一下，都无所谓。<br>最坏的情况下，复杂度为 $O(N)$，平均的情况下，复杂度为 $O(logn)$.</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/" target="_blank" rel="noopener">LeetCode 154.寻找旋转排序数组中的最小值 II</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>二分查找经典应用。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p><p>( 例如，数组 <code>[0,1,2,4,5,6,7]</code> 可能变为 <code>[4,5,6,7,0,1,2]</code> )。</p><p>请找出其中最小的元素。</p><p>注意数组中可能存在重复的元素。</p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入:</strong> [1,3,5]<br><strong>输出:</strong> 1</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入:</strong> [2,2,2,0,1]<br><strong>输出:</strong> 0</p></blockquote><p><strong>说明：</strong></p><ul><li>这道题是 <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a> 的延伸题目。</li><li>允许重复会影响算法的时间复杂度吗？会如何影响，为什么？</li></ul><hr><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题和 <a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a> 的区别就在于折叠数组中可能存在重复。</p><p>什么时候会产生影响呢？那就是当折叠点在原数组中某一数字相同段内时，折叠之后，数组首尾相同。那么，如果 <code>mid</code> 更新到与数组首尾相同的数字时，我们无法利用二分查找所依赖的 <strong>性质</strong> 确定 <code>mid</code> 是在左半边还是右半边。</p><p>那么，解题思路就是：</p><ul><li>先特判非单调递减情况，排除原数组折叠点在数组下标范围外的情况。</li><li>再特判折叠数组首尾相同的情况，方法是移动右指针向左直到和左端点不同为止。那么此时又有两种情况：</li></ul><ol><li>右半边全为与左端点相同的数字，那么此时右指针移到了左半边， <code>nums[hi] &gt; nums[0]</code></li><li>右半边不全是与左端点相同的数字，那么此时右指针依然在右半边， <code>nums[hi] &lt; nums[0]</code></li></ol><ul><li>对于以上情况1，直接返回数组首即可；而对于情况2，需要按照传统二分查找，找到右半边的左边界。详情请参考： <strong><a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a></strong></li></ul><p>另外可以想一下，如果折叠数组数组完全相同，也就是最坏的情况，会怎么样。<br>那必然是最终右指针左移时与左指针相遇，进行一次常规二分直接得出答案。当然也可以在进入常规二分之前特判一下，都无所谓。<br>最坏的情况下，复杂度为 $O(N)$，平均的情况下，复杂度为 $O(logn)$.</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/" target="_blank" rel="noopener">LeetCode 154.寻找旋转排序数组中的最小值 II</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -382,23 +382,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+      <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 153.寻找旋转排序数组中的最小值</title>
-    <link href="https://accepted.org.cn/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/"/>
-    <id>https://accepted.org.cn/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</id>
+    <link href="eetoa.github.io/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/"/>
+    <id>eetoa.github.io/2021/02/26/LeetCode-153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/</id>
     <published>2021-02-26T08:38:43.000Z</published>
     <updated>2021-02-26T11:27:44.628Z</updated>
     
@@ -411,27 +411,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="二分查找" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+      <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 10-II.青蛙跳台阶问题</title>
-    <link href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/"/>
-    <id>https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/</id>
+    <link href="eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/"/>
+    <id>eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/</id>
     <published>2021-02-26T03:34:15.000Z</published>
     <updated>2021-02-26T06:32:14.709Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>动态规划入门题。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。</p><p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。<br>__<br><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> n = 2<br><strong>输出：</strong> 2</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> n = 7<br><strong>输出：</strong> 21</p></blockquote><p><strong>示例 3：</strong></p><blockquote><p><strong>输入：</strong> n = 0<br><strong>输出：</strong> 1</p></blockquote><p><strong>提示：</strong></p><ul><li>$ 0 &lt;= n &lt;= 100 $</li></ul><hr><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>注意数值溢出，可以每一步计算取模。正确性证明参见：<br><a href="https://accepted.org.cn/2021/02/25/剑指Offer-10-I-斐波那契数列/">剑指Offer 10-I.斐波那契数列</a><br>还有一点就是注意特判 <code>n == 0</code> 的情况。<br>本题起始位置为0层。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> _mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int64_t</span> dp[n + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>, dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><h3 id="空间复杂度优化的动态规划"><a href="#空间复杂度优化的动态规划" class="headerlink" title="空间复杂度优化的动态规划"></a>空间复杂度优化的动态规划</h3><p>可以用三个变量滚动更新，代替数组。<br>核心是一共计算$n - 1$次，每次计算 <code>c</code> 的值，动态更新 <code>a</code> , <code>b</code>。</p><div class="tabs" id="g_tab1-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-0-1">C++</a></li><li class="tab"><a href="#g_tab1-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int64_t</span> a, b, c;</span><br><span class="line">        c = b = a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (--n) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b, b = c;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/" target="_blank" rel="noopener">剑指Offer 10- II. 青蛙跳台阶问题</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>动态规划入门题。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。</p><p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。<br>__<br><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> n = 2<br><strong>输出：</strong> 2</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> n = 7<br><strong>输出：</strong> 21</p></blockquote><p><strong>示例 3：</strong></p><blockquote><p><strong>输入：</strong> n = 0<br><strong>输出：</strong> 1</p></blockquote><p><strong>提示：</strong></p><ul><li>$ 0 &lt;= n &lt;= 100 $</li></ul><hr><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>注意数值溢出，可以每一步计算取模。正确性证明参见：<br><a href="https://accepted.org.cn/2021/02/25/剑指Offer-10-I-斐波那契数列/" target="_blank" rel="noopener">剑指Offer 10-I.斐波那契数列</a><br>还有一点就是注意特判 <code>n == 0</code> 的情况。<br>本题起始位置为0层。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> _mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int64_t</span> dp[n + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>, dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><h3 id="空间复杂度优化的动态规划"><a href="#空间复杂度优化的动态规划" class="headerlink" title="空间复杂度优化的动态规划"></a>空间复杂度优化的动态规划</h3><p>可以用三个变量滚动更新，代替数组。<br>核心是一共计算$n - 1$次，每次计算 <code>c</code> 的值，动态更新 <code>a</code> , <code>b</code>。</p><div class="tabs" id="g_tab1-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-0-1">C++</a></li><li class="tab"><a href="#g_tab1-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int64_t</span> a, b, c;</span><br><span class="line">        c = b = a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (--n) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b, b = c;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/" target="_blank" rel="noopener">剑指Offer 10- II. 青蛙跳台阶问题</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -440,23 +440,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="https://accepted.org.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="eetoa.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 10-I.斐波那契数列</title>
-    <link href="https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
-    <id>https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</id>
+    <link href="eetoa.github.io/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
+    <id>eetoa.github.io/2021/02/25/%E5%89%91%E6%8C%87Offer-10-I-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</id>
     <published>2021-02-25T14:27:18.000Z</published>
     <updated>2021-02-26T06:30:56.599Z</updated>
     
@@ -469,25 +469,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="https://accepted.org.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="eetoa.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
-      <category term="矩阵快速幂" scheme="https://accepted.org.cn/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="矩阵快速幂" scheme="eetoa.github.io/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 09.用两个栈实现队列</title>
-    <link href="https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
-    <id>https://accepted.org.cn/2021/02/25/%E5%89%91%E6%8C%87Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
+    <link href="eetoa.github.io/2021/02/25/%E5%89%91%E6%8C%87Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
+    <id>eetoa.github.io/2021/02/25/%E5%89%91%E6%8C%87Offer-09-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
     <published>2021-02-25T08:55:32.000Z</published>
     <updated>2021-02-25T14:13:12.201Z</updated>
     
@@ -500,25 +500,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
+      <category term="栈" scheme="eetoa.github.io/tags/%E6%A0%88/"/>
     
-      <category term="队列" scheme="https://accepted.org.cn/tags/%E9%98%9F%E5%88%97/"/>
+      <category term="队列" scheme="eetoa.github.io/tags/%E9%98%9F%E5%88%97/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot和SSM在开发中的区别</title>
-    <link href="https://accepted.org.cn/2021/02/24/Spring-Boot%E5%92%8CSSM%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://accepted.org.cn/2021/02/24/Spring-Boot%E5%92%8CSSM%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <link href="eetoa.github.io/2021/02/24/Spring-Boot%E5%92%8CSSM%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>eetoa.github.io/2021/02/24/Spring-Boot%E5%92%8CSSM%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <published>2021-02-24T06:25:11.000Z</published>
     <updated>2021-02-25T00:16:05.770Z</updated>
     
@@ -531,23 +531,23 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="Project" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
+      <category term="Project" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/Project/"/>
     
     
-      <category term="Spring" scheme="https://accepted.org.cn/tags/Spring/"/>
+      <category term="Spring" scheme="eetoa.github.io/tags/Spring/"/>
     
-      <category term="Spring Boot" scheme="https://accepted.org.cn/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="eetoa.github.io/tags/Spring-Boot/"/>
     
-      <category term="SSM" scheme="https://accepted.org.cn/tags/SSM/"/>
+      <category term="SSM" scheme="eetoa.github.io/tags/SSM/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 07.重建二叉树</title>
-    <link href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <id>https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
+    <link href="eetoa.github.io/2021/02/23/%E5%89%91%E6%8C%87Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>eetoa.github.io/2021/02/23/%E5%89%91%E6%8C%87Offer-07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
     <published>2021-02-23T09:47:55.000Z</published>
     <updated>2021-02-25T02:45:03.580Z</updated>
     
@@ -560,35 +560,35 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="双指针" scheme="https://accepted.org.cn/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+      <category term="双指针" scheme="eetoa.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="二叉树" scheme="https://accepted.org.cn/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+      <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
     
-      <category term="递归" scheme="https://accepted.org.cn/tags/%E9%80%92%E5%BD%92/"/>
+      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
     
-      <category term="迭代" scheme="https://accepted.org.cn/tags/%E8%BF%AD%E4%BB%A3/"/>
+      <category term="二叉树" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+      <category term="递归" scheme="eetoa.github.io/tags/%E9%80%92%E5%BD%92/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
+      <category term="迭代" scheme="eetoa.github.io/tags/%E8%BF%AD%E4%BB%A3/"/>
     
-      <category term="树" scheme="https://accepted.org.cn/tags/%E6%A0%91/"/>
+      <category term="树" scheme="eetoa.github.io/tags/%E6%A0%91/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指Offer 06.从尾到头打印链表</title>
-    <link href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/"/>
-    <id>https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</id>
+    <link href="eetoa.github.io/2021/02/23/%E5%89%91%E6%8C%87Offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/"/>
+    <id>eetoa.github.io/2021/02/23/%E5%89%91%E6%8C%87Offer-06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</id>
     <published>2021-02-23T08:23:53.000Z</published>
     <updated>2021-02-23T09:46:39.227Z</updated>
     
@@ -601,18 +601,18 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="链表" scheme="https://accepted.org.cn/tags/%E9%93%BE%E8%A1%A8/"/>
+      <category term="链表" scheme="eetoa.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="栈" scheme="https://accepted.org.cn/tags/%E6%A0%88/"/>
+      <category term="栈" scheme="eetoa.github.io/tags/%E6%A0%88/"/>
     
-      <category term="剑指Offer" scheme="https://accepted.org.cn/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   
