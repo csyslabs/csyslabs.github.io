@@ -25,8 +25,8 @@
         <tag>栈</tag>
         <tag>单调栈</tag>
         <tag>字符串</tag>
-        <tag>算法模板</tag>
         <tag>AcWing</tag>
+        <tag>算法模板</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
         <tag>队列</tag>
@@ -39,6 +39,24 @@
         <tag>一般哈希</tag>
         <tag>字符串哈希</tag>
         <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【游戏逆向】判断内存Page是否可读</title>
+    <url>/2021/04/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%88%A4%E6%96%AD%E5%86%85%E5%AD%98Page%E6%98%AF%E5%90%A6%E5%8F%AF%E8%AF%BB/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>这个方法可以判断指定内存地址是否可读。</p>
+<a id="more"></a>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Memory access check</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">IsMemoryReadable</span><span class="params">(<span class="keyword">uintptr_t</span> base)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">size_t</span> length = <span class="keyword">sizeof</span>(<span class="keyword">uintptr_t</span>);</span><br><span class="line">	<span class="keyword">constexpr</span> <span class="keyword">size_t</span> read_access</span><br><span class="line">	=	(PAGE_READONLY</span><br><span class="line">		| PAGE_READWRITE </span><br><span class="line">		| PAGE_WRITECOPY </span><br><span class="line">		| PAGE_EXECUTE_READ </span><br><span class="line">		| PAGE_EXECUTE_READWRITE </span><br><span class="line">		| PAGE_EXECUTE_WRITECOPY);</span><br><span class="line">	<span class="comment">//structure to pass to virtual query which will be populated with the page's information</span></span><br><span class="line">	MEMORY_BASIC_INFORMATION mbi = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//virtual query returns information on a page</span></span><br><span class="line">	<span class="comment">//if you don't know what a page is , it's basically a contiguous block of memory</span></span><br><span class="line">	<span class="comment">//query for information starting at base</span></span><br><span class="line">	<span class="keyword">if</span> (VirtualQuery(<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">void</span>*&gt;(base), &amp;mbi, <span class="keyword">sizeof</span>(mbi)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//check read protections. if the page has one of the listed access protections, we can successfully read from it</span></span><br><span class="line">		<span class="keyword">if</span> (!(mbi.Protect &amp; read_access))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//When a process COMMITS a region of virtual memory, the operating system guarantees that it can maintain all the data </span></span><br><span class="line">		<span class="comment">//the process stores in the memory either in physical memory or on disk.</span></span><br><span class="line">		<span class="comment">//so check for MEM_COMMIT because this means the page is able to store data</span></span><br><span class="line">		<span class="comment">//if this is MEM_RESERVE OR MEM_FREE we don't want to attempt a read</span></span><br><span class="line">		<span class="keyword">if</span> (!(mbi.State &amp; MEM_COMMIT))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//make sure the page is not guarded and has access. attempts to read or access these kinds of pages will result in an access violation</span></span><br><span class="line">		<span class="keyword">if</span> (mbi.Protect &amp; (PAGE_GUARD | PAGE_NOACCESS))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//get the start and end of the page</span></span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">auto</span> start = <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">uintptr_t</span>&gt;(mbi.BaseAddress);</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">auto</span> <span class="built_in">end</span> = <span class="keyword">static_cast</span>&lt;<span class="keyword">uintptr_t</span>&gt;(start + mbi.RegionSize);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//check if our memory is within the readable region.</span></span><br><span class="line">		<span class="keyword">return</span> (base &gt;= start) &amp;&amp; ((base + length) &lt;= <span class="built_in">end</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <p><strong>转载链接：</strong> <a href="https://guidedhacking.com/threads/checking-for-readable-memory-c.9822/" target="_blank" rel="noopener">Checking For Readable Memory C++</a></p>
+          </div>]]></content>
+      <categories>
+        <category>不亦乐乎</category>
+      </categories>
+      <tags>
+        <tag>游戏逆向</tag>
       </tags>
   </entry>
   <entry>
@@ -406,8 +424,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -969,11 +987,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1270,7 +1288,7 @@
 <h3 id="ViewMatrix结构："><a href="#ViewMatrix结构：" class="headerlink" title="ViewMatrix结构："></a>ViewMatrix结构：</h3><blockquote>
 <p>它分为四行或四列.<br>四行中，第一行为Left(X)轴，第二行为Up(Y)轴，第三行为Forward(Z)轴，第四行为Translation(用于计算).</p>
 </blockquote>
-<h3 id="ViewMatrix的特性"><a href="#ViewMatrix的特性" class="headerlink" title="ViewMatrix的特性"></a>ViewMatrix的特性</h3><blockquote>
+<h3 id="ViewMatrix的特性（row-major）"><a href="#ViewMatrix的特性（row-major）" class="headerlink" title="ViewMatrix的特性（row major）"></a>ViewMatrix的特性（row major）</h3><blockquote>
 <ol start="0">
 <li>pitch和yaw变化时, 矩阵中前三行绝大部分数字一定发生变化；反之一定不变。</li>
 <li>前三行每个数字均在[-2, 2]之间</li>
@@ -1281,6 +1299,21 @@
 <li>视角变小时（机瞄），第一行第一个数字的绝对值增大。</li>
 <li>前三行后两位数字相同，矩阵中存在一个为0的数。（GTA5和Assault Cube已验证）</li>
 </ol>
+</blockquote>
+<h3 id="ViewMatrix的特性（column-major）"><a href="#ViewMatrix的特性（column-major）" class="headerlink" title="ViewMatrix的特性（column major）"></a>ViewMatrix的特性（column major）</h3><blockquote>
+<ol start="0">
+<li>pitch和yaw变化时, 矩阵中前三列绝大部分数字一定发生变化；反之一定不变。</li>
+<li>前三列每个数字均在[-2, 2]之间</li>
+<li>第三列每个数字均在[-1, 1]之间</li>
+<li>第四列数字较大</li>
+<li>当pitch在[-90, 90]范围内变化时，对应第三列（Forward列）某个数字在[-1, 1]范围内变化，他们具有良好的正相关性。</li>
+<li>如果pitch变化，yaw保持不变，则第三列部分数字变化，前两列部分数字不变；反之，如果pitch保持不变，yaw发生变化，则第三列部分数字不变，前两列部分数字变化。</li>
+<li>视角变小时（机瞄），第一列第一个数字的绝对值增大。</li>
+<li>前三列后两位数字相同，矩阵中存在一个为0的数。（GTA5和Assault Cube已验证）</li>
+</ol>
+</blockquote>
+<h3 id="综合特性-row-and-column-major"><a href="#综合特性-row-and-column-major" class="headerlink" title="综合特性(row and column major)"></a>综合特性(row and column major)</h3><blockquote>
+<p>存在一个恒定为零的数字。当矩阵为row major时，这个零在第3行第1列（matrix[2][0] = 0.f）;当矩阵为column major时，零在第1行第3列（matrix[0][2] = 0.f）。<br>存在一个数字，当视角垂直水平面90度向上时，恒定为1；向下时恒定为-1；这个数字在第3行第3列的位置。（matrix[2][2] = x）.<br>第4行或第4列较大。</p>
 </blockquote>
 <h3 id="利用以上特性搜索ViewMatrix地址"><a href="#利用以上特性搜索ViewMatrix地址" class="headerlink" title="利用以上特性搜索ViewMatrix地址"></a>利用以上特性搜索ViewMatrix地址</h3><p>一般利用第4条特性，配合pitch的变化搜索第三行特定数字。注意这种方法搜到的数字并非matrix首位，需要在浏览内存区域时，先对齐数组，判断数组首位。</p>
 <blockquote>
@@ -2074,8 +2107,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3288,17 +3321,17 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
+        <tag>归并排序</tag>
+        <tag>离散化</tag>
+        <tag>区间合并</tag>
+        <tag>AcWing</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
-        <tag>离散化</tag>
-        <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -3737,11 +3770,11 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
-        <tag>树深度</tag>
         <tag>N叉树</tag>
+        <tag>树深度</tag>
       </tags>
   </entry>
   <entry>
@@ -3820,10 +3853,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -3859,9 +3892,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -4252,10 +4285,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4299,8 +4332,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>算法</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -4750,8 +4783,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>计数数组</tag>
         <tag>最大公约数</tag>
+        <tag>计数数组</tag>
       </tags>
   </entry>
   <entry>
