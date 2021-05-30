@@ -25,10 +25,10 @@
         <tag>栈</tag>
         <tag>单调栈</tag>
         <tag>字符串</tag>
+        <tag>算法模板</tag>
         <tag>AcWing</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
-        <tag>算法模板</tag>
         <tag>队列</tag>
         <tag>循环队列</tag>
         <tag>单调队列</tag>
@@ -39,6 +39,32 @@
         <tag>一般哈希</tag>
         <tag>字符串哈希</tag>
         <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最小公倍数lcm算法</title>
+    <url>/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>最小公倍数 = 两数乘积 / 最大公约数</p>
+<a id="more"></a>
+
+<p>因为 <strong>最小公倍数 = 两数乘积 / 最大公约数</strong>，<br>所以:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b / gcd(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<div class="note primary">
+            <p><strong>相关链接：</strong> <a href="https://eetoa.github.io/2020/03/27/求最大公约数（gcd）的一点心得">求最大公约数（gcd）的一点心得</a></p>
+          </div>]]></content>
+      <categories>
+        <category>算法</category>
+        <category>指尖飞舞</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数学</tag>
+        <tag>最大公约数</tag>
+        <tag>gcd</tag>
+        <tag>最小公倍数</tag>
+        <tag>lcm</tag>
       </tags>
   </entry>
   <entry>
@@ -783,8 +809,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>位运算</tag>
         <tag>lowbit</tag>
         <tag>剑指Offer</tag>
@@ -825,8 +851,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>位运算</tag>
         <tag>lowbit</tag>
         <tag>剑指Offer</tag>
@@ -929,8 +955,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -1010,8 +1036,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>DFS</tag>
         <tag>回溯</tag>
       </tags>
@@ -1103,8 +1129,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二分查找</tag>
       </tags>
   </entry>
@@ -1151,8 +1177,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二分查找</tag>
       </tags>
   </entry>
@@ -1492,11 +1518,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1882,8 +1908,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -1964,8 +1990,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -2027,8 +2053,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>字符串</tag>
         <tag>位运算</tag>
       </tags>
@@ -2065,8 +2091,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>字符串</tag>
         <tag>贪心</tag>
@@ -2116,8 +2142,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>归并排序</tag>
         <tag>树状数组</tag>
         <tag>lowbit</tag>
@@ -2196,8 +2222,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
         <tag>竞赛</tag>
         <tag>贪心</tag>
@@ -2240,8 +2266,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
         <tag>前缀和</tag>
         <tag>竞赛</tag>
@@ -2578,8 +2604,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3793,16 +3819,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>归并排序</tag>
-        <tag>离散化</tag>
-        <tag>区间合并</tag>
-        <tag>AcWing</tag>
-        <tag>位运算</tag>
-        <tag>前缀和</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
+        <tag>前缀和</tag>
         <tag>差分</tag>
+        <tag>位运算</tag>
+        <tag>离散化</tag>
+        <tag>区间合并</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4241,8 +4267,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -4324,10 +4350,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -4363,9 +4389,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -4756,10 +4782,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4801,10 +4827,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>BFS</tag>
+        <tag>算法</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -5212,8 +5238,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -5282,8 +5308,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -5403,8 +5429,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -5454,8 +5480,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -5496,8 +5522,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -5538,8 +5564,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -5589,8 +5615,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -5659,8 +5685,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -5694,8 +5720,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>算法</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>

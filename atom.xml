@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="eetoa.github.io/"/>
-  <updated>2021-05-29T16:16:49.567Z</updated>
+  <updated>2021-05-30T08:05:13.162Z</updated>
   <id>eetoa.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最小公倍数lcm算法</title>
+    <link href="eetoa.github.io/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/"/>
+    <id>eetoa.github.io/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/</id>
+    <published>2021-05-30T08:00:53.000Z</published>
+    <updated>2021-05-30T08:05:13.162Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>最小公倍数 = 两数乘积 / 最大公约数</p><a id="more"></a><p>因为 <strong>最小公倍数 = 两数乘积 / 最大公约数</strong>，<br>所以:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b / gcd(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="note primary">            <p><strong>相关链接：</strong> <a href="https://eetoa.github.io/2020/03/27/求最大公约数（gcd）的一点心得">求最大公约数（gcd）的一点心得</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;最小公倍数 = 两数乘积 / 最大公约数&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="eetoa.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E7%AE%97%E6%B3%95/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+    
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="eetoa.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="最大公约数" scheme="eetoa.github.io/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
+    
+      <category term="gcd" scheme="eetoa.github.io/tags/gcd/"/>
+    
+      <category term="最小公倍数" scheme="eetoa.github.io/tags/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/"/>
+    
+      <category term="lcm" scheme="eetoa.github.io/tags/lcm/"/>
+    
+  </entry>
   
   <entry>
     <title>C++算法题输入输出小技巧总结</title>
@@ -259,9 +294,9 @@
       <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -294,9 +329,9 @@
       <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
@@ -383,9 +418,9 @@
     
       <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
-    
       <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
+    
+      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
     
       <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
     
@@ -443,9 +478,9 @@
       <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
     
@@ -503,9 +538,9 @@
       <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
@@ -532,40 +567,11 @@
       <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
     
-      <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指Offer 10-II.青蛙跳台阶问题</title>
-    <link href="eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/"/>
-    <id>eetoa.github.io/2021/02/26/%E5%89%91%E6%8C%87Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98/</id>
-    <published>2021-02-26T03:34:15.000Z</published>
-    <updated>2021-02-26T06:32:14.709Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>动态规划入门题。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。</p><p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。<br>__<br><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong> n = 2<br><strong>输出：</strong> 2</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong> n = 7<br><strong>输出：</strong> 21</p></blockquote><p><strong>示例 3：</strong></p><blockquote><p><strong>输入：</strong> n = 0<br><strong>输出：</strong> 1</p></blockquote><p><strong>提示：</strong></p><ul><li>$ 0 &lt;= n &lt;= 100 $</li></ul><hr><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>注意数值溢出，可以每一步计算取模。正确性证明参见：<br><a href="https://accepted.org.cn/2021/02/25/剑指Offer-10-I-斐波那契数列/" target="_blank" rel="noopener">剑指Offer 10-I.斐波那契数列</a><br>还有一点就是注意特判 <code>n == 0</code> 的情况。<br>本题起始位置为0层。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.9 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> _mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int64_t</span> dp[n + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>, dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= _mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">1</span>];</span><br><span class="line">            dp[i] %= mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><h3 id="空间复杂度优化的动态规划"><a href="#空间复杂度优化的动态规划" class="headerlink" title="空间复杂度优化的动态规划"></a>空间复杂度优化的动态规划</h3><p>可以用三个变量滚动更新，代替数组。<br>核心是一共计算$n - 1$次，每次计算 <code>c</code> 的值，动态更新 <code>a</code> , <code>b</code>。</p><div class="tabs" id="g_tab1-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-0-1">C++</a></li><li class="tab"><a href="#g_tab1-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 5.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int64_t</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int64_t</span> a, b, c;</span><br><span class="line">        c = b = a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (--n) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b, b = c;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 35.2 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            c %= mod;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/" target="_blank" rel="noopener">剑指Offer 10- II. 青蛙跳台阶问题</a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;动态规划入门题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-    
       <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="eetoa.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="剑指Offer" scheme="eetoa.github.io/tags/%E5%89%91%E6%8C%87Offer/"/>
+      <category term="二分查找" scheme="eetoa.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
   </entry>
   
