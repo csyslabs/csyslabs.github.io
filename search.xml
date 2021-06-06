@@ -47,7 +47,32 @@
     <content><![CDATA[<p><strong>摘要：</strong><br>BFS模板题</p>
 <a id="more"></a>
 
-
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个 <code>n x n</code> 的二进制矩阵 <code>grid</code> 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 <code>-1</code> 。</p>
+<p>二进制矩阵中的 畅通路径 是一条从 左上角 单元格（即，<code>(0, 0)</code>）到 右下角 单元格（即，<code>(n - 1, n - 1)</code>）的路径，该路径同时满足下述要求：</p>
+<ul>
+<li>路径途经的所有单元格都的值都是 0 。</li>
+<li>路径中所有相邻的单元格应当在 8 个方向之一 上连通（即，相邻两单元之间彼此不同且共享一条边或者一个角）。</li>
+</ul>
+<p><strong>畅通路径的长度</strong> 是该路径途经的单元格总数。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><img src="example1_1.png" alt="0x0"><br>输入：grid = [[0,1],[1,0]]<br>输出：2</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p><img src="example2_1.png" alt="0x1"><br>输入：grid = [[0,0,0],[1,1,0],[1,1,0]]<br>输出：4</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：grid = [[1,0,0],[1,1,0],[1,1,0]]<br>输出：-1</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>n == grid.length</li>
+<li>n == grid[i].length</li>
+<li>1 &lt;= n &lt;= 100</li>
+<li>grid[i][j] 为 0 或 1</li>
+</ul>
 <h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> <span class="built_in">shutdown</span> = []()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestPathBinaryMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">8</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> dc[<span class="number">8</span>] = &#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">10</span>;</span><br><span class="line">        pair&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; q[N];</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> R = grid.<span class="built_in">size</span>(), C = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (grid[<span class="number">0</span>][<span class="number">0</span>] || !R) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        q[++tt] = &#123;&#123;<span class="number">0</span>, <span class="number">0</span>&#125;, <span class="number">1</span>&#125;;</span><br><span class="line">        grid[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; tt &gt;= hh;)</span><br><span class="line">        &#123;</span><br><span class="line">            pair&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; node = q[hh++];</span><br><span class="line">            <span class="comment">// determin if current node is end of grids</span></span><br><span class="line">            <span class="keyword">int</span> r = node.first.first, c = node.first.second, len = node.second;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; r &lt;&lt; "-" &lt;&lt; c &lt;&lt; "-" &lt;&lt; len &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span> (r == R - <span class="number">1</span> &amp;&amp; c == C - <span class="number">1</span>) <span class="keyword">return</span> len;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> ner = r + dr[i];</span><br><span class="line">                <span class="keyword">int</span> nec = c + dc[i];</span><br><span class="line">                <span class="keyword">int</span> nel = len + <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// determin if in range</span></span><br><span class="line">                <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; R &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; C &amp;&amp; !grid[ner][nec])    <span class="comment">// valid node</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//cout &lt;&lt; ner &lt;&lt; "-" &lt;&lt; nec &lt;&lt; "-" &lt;&lt; nel &lt;&lt; endl;</span></span><br><span class="line">                    q[++tt] = &#123;&#123;ner, nec&#125;, nel&#125;;</span><br><span class="line">                    grid[ner][nec] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>咱们来思考一个问题：<br>Q: 为什么首先到达终点的路径一定是最短的？<br>A: 对于基于某个点的下一层，路径长度相等。因为BFS借助队列实现，如果存在两条不同长度的路径，那么可以认为他们之间是「平行」的，可以在某点处分道扬镳，最短路径一定最先抵达终点。</p>
@@ -1001,8 +1026,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -1564,11 +1589,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1887,8 +1912,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>World-to-Screen</tag>
         <tag>ViewMatrix</tag>
+        <tag>World-to-Screen</tag>
       </tags>
   </entry>
   <entry>
@@ -2650,8 +2675,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3864,14 +3889,14 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
@@ -4313,8 +4338,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -4396,10 +4421,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -4435,9 +4460,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -4446,7 +4471,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4496,7 +4521,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4828,10 +4853,10 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4875,8 +4900,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>DFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -5042,8 +5067,8 @@
   <entry>
     <title>PanDownload远程Aria2下载恢复连接数</title>
     <url>/2020/04/12/PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/</url>
-    <content><![CDATA[<h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><p>什么是连接数？如图：<br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x0.png" alt="pic0x0"><br>对应PanDownload下载列表的连接数。</p>
-<p>这个参数在AriaNg面板中是这样的：<br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.png" alt="pic0x1"><br>通常情况下，连接数越大，速度越快。Aria2默认可设置单服务器最大连接数是16，可以重新编译Aria2设置更高的连接数。但过高的连接数对于百度云下载无显著意义，因为百度云单方面对连接数和对应速度做出了限制。</p>
+    <content><![CDATA[<h3 id="What"><a href="#What" class="headerlink" title="What?"></a>What?</h3><p>什么是连接数？如图：<br><img src="0x0.png" alt="pic0x0"><br>对应PanDownload下载列表的连接数。</p>
+<p>这个参数在AriaNg面板中是这样的：<br><img src="0x2.png" alt="pic0x1"><br>通常情况下，连接数越大，速度越快。Aria2默认可设置单服务器最大连接数是16，可以重新编译Aria2设置更高的连接数。但过高的连接数对于百度云下载无显著意义，因为百度云单方面对连接数和对应速度做出了限制。</p>
 <h3 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h3><p>在使用PanDownload远程Aria2下载过程中，会出现连接数缓慢递减，从而造成速度下降甚至是下载骤停。<br>查了很久没有找到对应的配置设置，不过笔者摸索出了一个土办法，可以在连接数下降之后手动重置连接数。</p>
 <h3 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h3><blockquote>
 <ul>
@@ -5067,7 +5092,7 @@
 </ul>
 </blockquote>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>特别是在下载大文件的时候，掉连接数会造成下载失败。只能通过人工干预来解决了，希望以后Aria2会对此进行优化。</p>
-<h1 id="R-I-P-PanDownload"><a href="#R-I-P-PanDownload" class="headerlink" title="R.I.P PanDownload"></a>R.I.P PanDownload</h1><p><strong>2020年4月15日，希望作者渡过这道坎</strong><br><img src="2020-04-12-PanDownload%E8%BF%9C%E7%A8%8BAria2%E4%B8%8B%E8%BD%BD%E6%81%A2%E5%A4%8D%E8%BF%9E%E6%8E%A5%E6%95%B0/0x2.jpg" alt="pic0x2"></p>
+<h1 id="R-I-P-PanDownload"><a href="#R-I-P-PanDownload" class="headerlink" title="R.I.P PanDownload"></a>R.I.P PanDownload</h1><p><strong>2020年4月15日，希望作者渡过这道坎</strong><br><img src="0x2.jpg" alt="pic0x2"></p>
 ]]></content>
       <categories>
         <category>不亦乐乎</category>
@@ -5199,7 +5224,7 @@
   <entry>
     <title>LeetCode #42 接雨水（Trapping Rain Water）</title>
     <url>/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="2020-04-04-LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4%EF%BC%88Trapping-Rain-Water%EF%BC%89/%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
+    <content><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
 <center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
 
 <p><strong>示例：</strong></p>
