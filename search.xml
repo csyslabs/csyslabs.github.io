@@ -42,6 +42,50 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 1091.二进制矩阵中的最短路径</title>
+    <url>/2021/06/06/LeetCode-1091-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>BFS模板题</p>
+<a id="more"></a>
+
+
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> <span class="built_in">shutdown</span> = []()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestPathBinaryMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> dr[<span class="number">8</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> dc[<span class="number">8</span>] = &#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">10</span>;</span><br><span class="line">        pair&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; q[N];</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> R = grid.<span class="built_in">size</span>(), C = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (grid[<span class="number">0</span>][<span class="number">0</span>] || !R) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        q[++tt] = &#123;&#123;<span class="number">0</span>, <span class="number">0</span>&#125;, <span class="number">1</span>&#125;;</span><br><span class="line">        grid[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; tt &gt;= hh;)</span><br><span class="line">        &#123;</span><br><span class="line">            pair&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; node = q[hh++];</span><br><span class="line">            <span class="comment">// determin if current node is end of grids</span></span><br><span class="line">            <span class="keyword">int</span> r = node.first.first, c = node.first.second, len = node.second;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; r &lt;&lt; "-" &lt;&lt; c &lt;&lt; "-" &lt;&lt; len &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span> (r == R - <span class="number">1</span> &amp;&amp; c == C - <span class="number">1</span>) <span class="keyword">return</span> len;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> ner = r + dr[i];</span><br><span class="line">                <span class="keyword">int</span> nec = c + dc[i];</span><br><span class="line">                <span class="keyword">int</span> nel = len + <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// determin if in range</span></span><br><span class="line">                <span class="keyword">if</span> (ner &gt;= <span class="number">0</span> &amp;&amp; ner &lt; R &amp;&amp; nec &gt;= <span class="number">0</span> &amp;&amp; nec &lt; C &amp;&amp; !grid[ner][nec])    <span class="comment">// valid node</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//cout &lt;&lt; ner &lt;&lt; "-" &lt;&lt; nec &lt;&lt; "-" &lt;&lt; nel &lt;&lt; endl;</span></span><br><span class="line">                    q[++tt] = &#123;&#123;ner, nec&#125;, nel&#125;;</span><br><span class="line">                    grid[ner][nec] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>咱们来思考一个问题：<br>Q: 为什么首先到达终点的路径一定是最短的？<br>A: 对于基于某个点的下一层，路径长度相等。因为BFS借助队列实现，如果存在两条不同长度的路径，那么可以认为他们之间是「平行」的，可以在某点处分道扬镳，最短路径一定最先抵达终点。</p>
+<p><strong>几乎相同的题目：</strong> <a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/" target="_blank" rel="noopener">1162. 地图分析</a></p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/" target="_blank" rel="noopener">1091. 二进制矩阵中的最短路径</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>BFS</tag>
+        <tag>Flood Fill</tag>
+        <tag>洪水灌溉算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在LeetCode刷题应尽量避免使用全局变量</title>
+    <url>/2021/06/06/%E5%9C%A8LeetCode%E5%88%B7%E9%A2%98%E5%BA%94%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>会导致奇怪问题。</p>
+<a id="more"></a>
+
+<p>力扣的判题机在读取您的代码后，对每个测试用例，都会初始化一次类，但全局变量和类内静态变量需要您手动初始化。<br>但有时候即便手动初始化依然出错，所以应当尽量将变量初始化在类中。</p>
+<div class="note primary">
+            <p><strong>相关链接：</strong> <a href="https://support.leetcode-cn.com/hc/kb/article/1194344/" target="_blank" rel="noopener">某些测试用例下，执行代码返回结果正确，但提交解答却出错了</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最小公倍数lcm算法</title>
     <url>/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>最小公倍数 = 两数乘积 / 最大公约数</p>
@@ -80,9 +124,11 @@
 <h3 id="循环输入直到无数据源"><a href="#循环输入直到无数据源" class="headerlink" title="循环输入直到无数据源"></a>循环输入直到无数据源</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; a; )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="提高输入输出效率"><a href="#提高输入输出效率" class="headerlink" title="提高输入输出效率"></a>提高输入输出效率</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// start cin or cout</span></span><br></pre></td></tr></table></figure>
+<p>对于大量数据输入，少量输出的情况，可以这样写：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="Class模式的OJ（如LeetCode）提高输入输出"><a href="#Class模式的OJ（如LeetCode）提高输入输出" class="headerlink" title="Class模式的OJ（如LeetCode）提高输入输出"></a>Class模式的OJ（如LeetCode）提高输入输出</h3><p>很简单，直接在class外写上如下函数：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> io_sync_off=[]()&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> io_sync_off=[]()&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
 
 <p>举例：</p>
 <div class="note primary">
@@ -809,8 +855,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>位运算</tag>
         <tag>lowbit</tag>
         <tag>剑指Offer</tag>
@@ -851,8 +897,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>位运算</tag>
         <tag>lowbit</tag>
         <tag>剑指Offer</tag>
@@ -1036,8 +1082,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>DFS</tag>
         <tag>回溯</tag>
       </tags>
@@ -1129,8 +1175,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二分查找</tag>
       </tags>
   </entry>
@@ -1177,8 +1223,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二分查找</tag>
       </tags>
   </entry>
@@ -1908,8 +1954,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -1990,8 +2036,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -2053,8 +2099,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>字符串</tag>
         <tag>位运算</tag>
       </tags>
@@ -2091,8 +2137,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>字符串</tag>
         <tag>贪心</tag>
@@ -2142,8 +2188,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>归并排序</tag>
         <tag>树状数组</tag>
         <tag>lowbit</tag>
@@ -2222,8 +2268,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>模拟</tag>
         <tag>竞赛</tag>
         <tag>贪心</tag>
@@ -2266,8 +2312,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
         <tag>前缀和</tag>
         <tag>竞赛</tag>
@@ -2604,8 +2650,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3818,9 +3864,9 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
@@ -4400,7 +4446,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4450,7 +4496,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4827,8 +4873,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>深度优先搜素</tag>
@@ -5238,8 +5284,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>栈</tag>
         <tag>数据结构</tag>
       </tags>
@@ -5280,8 +5326,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>最大公约数</tag>
         <tag>计数数组</tag>
+        <tag>最大公约数</tag>
       </tags>
   </entry>
   <entry>
@@ -5308,8 +5354,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
         <tag>超级头结点</tag>
       </tags>
@@ -5429,8 +5475,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>数组</tag>
         <tag>方向数组</tag>
         <tag>棋盘</tag>
@@ -5480,8 +5526,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>二维数组</tag>
       </tags>
   </entry>
@@ -5522,8 +5568,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -5564,8 +5610,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -5615,8 +5661,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
         <tag>排序</tag>
@@ -5685,8 +5731,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>TopK</tag>
         <tag>快速选择</tag>
         <tag>堆</tag>
@@ -5720,8 +5766,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>算法</tag>
+        <tag>LeetCode</tag>
         <tag>HashMap</tag>
       </tags>
   </entry>
