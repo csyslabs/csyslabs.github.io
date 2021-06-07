@@ -25,10 +25,10 @@
         <tag>栈</tag>
         <tag>单调栈</tag>
         <tag>字符串</tag>
-        <tag>算法模板</tag>
         <tag>AcWing</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
+        <tag>算法模板</tag>
         <tag>队列</tag>
         <tag>循环队列</tag>
         <tag>单调队列</tag>
@@ -1026,8 +1026,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -1589,11 +1589,11 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -1912,8 +1912,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>ViewMatrix</tag>
         <tag>World-to-Screen</tag>
+        <tag>ViewMatrix</tag>
       </tags>
   </entry>
   <entry>
@@ -2085,8 +2085,40 @@
   <entry>
     <title>AcWing 868.筛质数</title>
     <url>/2020/12/03/AcWing-868-%E7%AD%9B%E8%B4%A8%E6%95%B0/</url>
-    <content><![CDATA[<p><strong>摘要：</strong></p>
-<a id="more"></a>]]></content>
+    <content><![CDATA[<p><strong>摘要：</strong><br>常见质数筛法。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个正整数 n，请你求出 1∼n 中质数的个数。</p>
+<p><strong>输入格式</strong><br>共一行，包含整数 n。</p>
+<p><strong>输出格式</strong><br>共一行，包含一个整数，表示 1∼n 中质数的个数。</p>
+<p><strong>数据范围</strong><br>$1≤n≤10^6$</p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>8</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<hr>
+<h3 id="朴素筛"><a href="#朴素筛" class="headerlink" title="朴素筛"></a>朴素筛</h3><p>从2开始枚举，依次将当前数的倍数（$2 * i, 3 * i, 4 * i … n$）标记为「非质数」，剩余的数就一定是质数。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pr[N];</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!st[i]) pr[++cnt] = i;              <span class="comment">// we consider i is a prime num if i wasn't get sieved</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + i; j &lt;= n; j+=i)       <span class="comment">// sieves all the multiple nums of i</span></span><br><span class="line">        &#123;</span><br><span class="line">            st[j] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h3><p>从2开始枚举，依次仅将质数的倍数标记为「非质数」，剩余的数一定是质数。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pr[N];</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!st[i]) </span><br><span class="line">        &#123;</span><br><span class="line">            pr[++cnt] = i;                          <span class="comment">// we consider i is a prime num if i wasn't get sieved   </span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + i; j &lt;= n; j+=i)       <span class="comment">// sieves all the multiple nums of i when i is a prime num</span></span><br><span class="line">                st[j] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h3>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>AcWing</tag>
+        <tag>质数</tag>
+        <tag>朴素筛</tag>
+        <tag>埃氏筛</tag>
+        <tag>线性筛</tag>
+      </tags>
   </entry>
   <entry>
     <title>LeetCode 318.最大单词长度乘积</title>
@@ -2675,8 +2707,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>双链表</tag>
         <tag>静态链表</tag>
+        <tag>双链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3891,15 +3923,15 @@
         <tag>双指针</tag>
         <tag>位运算</tag>
         <tag>归并排序</tag>
+        <tag>离散化</tag>
+        <tag>区间合并</tag>
+        <tag>AcWing</tag>
+        <tag>前缀和</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
-        <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>离散化</tag>
-        <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4338,8 +4370,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
         <tag>N叉树</tag>
@@ -4421,10 +4453,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>BFS</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>树深度</tag>
       </tags>
@@ -4460,9 +4492,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>DFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>DFS</tag>
         <tag>树的高度</tag>
         <tag>二叉树遍历</tag>
         <tag>先序遍历</tag>
@@ -4471,7 +4503,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4521,7 +4553,7 @@
   </entry>
   <entry>
     <title>驾驶技术学习心得</title>
-    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/repo/2020-08-17-%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/08/17/%E9%A9%BE%E9%A9%B6%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="科目二"><a href="#科目二" class="headerlink" title="科目二"></a>科目二</h2><blockquote>
 <p>项目开始前准备：<br>系好安全带，放下手刹，踩下刹车，启动引擎，踩下离合器。</p>
 </blockquote>
@@ -4853,10 +4885,10 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
-        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -4900,8 +4932,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>深度优先搜素</tag>
         <tag>广度优先搜索</tag>
         <tag>Flood Fill</tag>
@@ -5351,8 +5383,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>计数数组</tag>
         <tag>最大公约数</tag>
+        <tag>计数数组</tag>
       </tags>
   </entry>
   <entry>
