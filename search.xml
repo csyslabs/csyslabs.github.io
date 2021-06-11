@@ -25,10 +25,10 @@
         <tag>栈</tag>
         <tag>单调栈</tag>
         <tag>字符串</tag>
+        <tag>算法模板</tag>
         <tag>AcWing</tag>
         <tag>单链表</tag>
         <tag>双链表</tag>
-        <tag>算法模板</tag>
         <tag>队列</tag>
         <tag>循环队列</tag>
         <tag>单调队列</tag>
@@ -39,6 +39,42 @@
         <tag>一般哈希</tag>
         <tag>字符串哈希</tag>
         <tag>C++ STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法竞赛常用STL和其他c++知识点总结</title>
+    <url>/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>都是常用的。</p>
+<a id="more"></a>
+
+<h3 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h3><h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><p>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
+<ul>
+<li><p>升序<br><code>sort(a.begin(), a.end());</code><br><code>sort(a.begin(), a.end(), less&lt;int&gt;());</code></p>
+</li>
+<li><p>降序<br><code>sort(a.begin(), a.end(), greater&lt;int&gt;());</code><br><code>sort(a.rbegin(), a.rend());</code></p>
+</li>
+</ul>
+<h3 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h3><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
+<ul>
+<li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
+</li>
+<li><p>输出保留5位有效数字<br><code>cout &lt;&lt; setprecision(5) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code></p>
+</li>
+</ul>
+<div class="note primary">
+            <p><strong>参考链接：</strong> <a href="https://www.cnblogs.com/ysx1997/p/7753579.html" target="_blank" rel="noopener">C++ 如何保留两位小数和有效位数</a></p>
+          </div>
+
+<div class="note primary">
+            <p><strong>参考链接：</strong> <a href="https://www.cnblogs.com/ECJTUACM-873284962/p/10705252.html" target="_blank" rel="noopener">C++ 标准库之 iomanip 、操作符 ios::fixed 以及 setprecision 使用的惨痛教训经验总结</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>STL</tag>
       </tags>
   </entry>
   <entry>
@@ -1588,12 +1624,12 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>双指针</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>迭代</tag>
+        <tag>双指针</tag>
         <tag>树</tag>
         <tag>剑指Offer</tag>
       </tags>
@@ -2707,8 +2743,8 @@
         <tag>算法</tag>
         <tag>链表</tag>
         <tag>AcWing</tag>
-        <tag>静态链表</tag>
         <tag>双链表</tag>
+        <tag>静态链表</tag>
       </tags>
   </entry>
   <entry>
@@ -3709,7 +3745,7 @@
 <h3 id="2-判断二进制数的第k位"><a href="#2-判断二进制数的第k位" class="headerlink" title="2. 判断二进制数的第k位"></a>2. 判断二进制数的第k位</h3><p>首先明确第k位是指从右边最低位向左边最高位第<code>k</code>位。注意低位是从0开始计算，这样也是方便适配左移右移位数。和循环计数一般从0开始一个道理。<br>代码为：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line">m = x &gt;&gt; k &amp; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <p>右移k位就把第k位移到了最低位，再判断该位置数字。</p>
-<h3 id="3-二进制数最后一位1的————lowbit-x"><a href="#3-二进制数最后一位1的————lowbit-x" class="headerlink" title="3. 二进制数最后一位1的————lowbit(x)"></a>3. 二进制数最后一位1的————lowbit(x)</h3><p>这里最后一位1是指从左往右最后一位，函数lowbit()返回的是包含该1与右边所有0。</p>
+<h3 id="3-二进制数最后一位1的————lowbit-x"><a href="#3-二进制数最后一位1的————lowbit-x" class="headerlink" title="3. 二进制数最后一位1的————lowbit(x)"></a>3. 二进制数最后一位1的————lowbit(x)</h3><p>这里最后一位1是从左往右最后一位，也就是指最低位1，函数lowbit()返回的是包含该1与右边所有0。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; - x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>- x</code> 在计算机内部是以补码方式运算的，即:<br><code>- x = ~ x + 1</code><br>假设一个二进制数为：  0010101…0010100000<br><code>~ x</code>为：            1101010…1101011111<br><code>~ x + 1</code>为：        1101010…1101100000<br>注意到+1操作使得最后一位1及其右边所有数字发生了变化，而左边不变。<br>此时在和原数字进行&amp;运算，它和原数字在最后一位1左侧全部不同，右侧全部相同。</p>
 <p><strong>参考题目：</strong> <a href="https://esp0xa.github.io//2020/11/04/AcWing-801-二进制中1的个数/" target="_blank" rel="noopener">AcWing 801.二进制中1的个数</a></p>
@@ -3921,17 +3957,17 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>位运算</tag>
+        <tag>算法模板</tag>
+        <tag>快速排序</tag>
         <tag>归并排序</tag>
+        <tag>二分查找</tag>
+        <tag>高精度四则运算</tag>
+        <tag>前缀和</tag>
+        <tag>差分</tag>
+        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
         <tag>AcWing</tag>
-        <tag>前缀和</tag>
-        <tag>算法模板</tag>
-        <tag>快速排序</tag>
-        <tag>二分查找</tag>
-        <tag>高精度四则运算</tag>
-        <tag>差分</tag>
       </tags>
   </entry>
   <entry>
@@ -5383,8 +5419,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>最大公约数</tag>
         <tag>计数数组</tag>
+        <tag>最大公约数</tag>
       </tags>
   </entry>
   <entry>
