@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：OJ输入输出小技巧总结。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-29T12:44:47.000Z">
-<meta property="article:modified_time" content="2021-06-06T15:10:27.002Z">
+<meta property="article:modified_time" content="2021-06-12T13:39:29.677Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="oj">
 <meta name="twitter:card" content="summary">
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-06 23:10:27" itemprop="dateModified" datetime="2021-06-06T23:10:27+08:00">2021-06-06</time>
+                <time title="Modified: 2021-06-12 21:39:29" itemprop="dateModified" datetime="2021-06-12T21:39:29+08:00">2021-06-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,6 +313,12 @@
 <h3 id="输入一行带有空格的字符串"><a href="#输入一行带有空格的字符串" class="headerlink" title="输入一行带有空格的字符串"></a>输入一行带有空格的字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">std</span>::getline(<span class="built_in">cin</span>, s);</span><br></pre></td></tr></table></figure>
 
 <h3 id="循环输入直到无数据源"><a href="#循环输入直到无数据源" class="headerlink" title="循环输入直到无数据源"></a>循环输入直到无数据源</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; a; )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="stringstream-流式输入"><a href="#stringstream-流式输入" class="headerlink" title="stringstream 流式输入"></a>stringstream 流式输入</h3><p>很方便地进行字符串分割和字符串到其他类型的转换。</p>
+<ul>
+<li>输入：<br>1 2 3 4 5 6 7 8 9<br>34 56 85 19 0 88<br>995 668<br>10086</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> ar[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">stringstream</span> ss;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (; getline(<span class="built_in">cin</span>, s);) &#123;</span><br><span class="line">        ss &lt;&lt; s;    <span class="comment">// 将s放入ss中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, t = <span class="number">0</span>; ss &gt;&gt; t; i++) &#123;</span><br><span class="line">            ar[i] = t; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="提高输入输出效率"><a href="#提高输入输出效率" class="headerlink" title="提高输入输出效率"></a>提高输入输出效率</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// start cin or cout</span></span><br></pre></td></tr></table></figure>
 <p>对于大量数据输入，少量输出的情况，可以这样写：</p>
@@ -441,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入一行没有空格的字符串"><span class="nav-text">输入一行没有空格的字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入一行带有空格的字符串"><span class="nav-text">输入一行带有空格的字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环输入直到无数据源"><span class="nav-text">循环输入直到无数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提高输入输出效率"><span class="nav-text">提高输入输出效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class模式的OJ（如LeetCode）提高输入输出"><span class="nav-text">Class模式的OJ（如LeetCode）提高输入输出</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入一行没有空格的字符串"><span class="nav-text">输入一行没有空格的字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入一行带有空格的字符串"><span class="nav-text">输入一行带有空格的字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环输入直到无数据源"><span class="nav-text">循环输入直到无数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stringstream-流式输入"><span class="nav-text">stringstream 流式输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提高输入输出效率"><span class="nav-text">提高输入输出效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class模式的OJ（如LeetCode）提高输入输出"><span class="nav-text">Class模式的OJ（如LeetCode）提高输入输出</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
