@@ -20,26 +20,18 @@
     var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。  示例：  输入: [0,1,0,2,1,0,1,3,2,1,2,1]输出: 6    按列计算（动态规划计算最值）遍历每">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 42. 接雨水">
-<meta property="og:url" content="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/index.html">
+  <meta name="description" content="我太菜被关起来了">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dirac Sea">
+<meta property="og:url" content="https://accepted.org.cn/tags/LeetCode/page/4/index.html">
 <meta property="og:site_name" content="Dirac Sea">
-<meta property="og:description" content="题目给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。  示例：  输入: [0,1,0,2,1,0,1,3,2,1,2,1]输出: 6    按列计算（动态规划计算最值）遍历每">
+<meta property="og:description" content="我太菜被关起来了">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/%E9%A2%98%E7%9B%AE.png">
-<meta property="article:published_time" content="2020-04-04T15:51:44.000Z">
-<meta property="article:modified_time" content="2021-06-21T11:00:18.246Z">
 <meta property="article:author" content="etoa">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="动态规划">
-<meta property="article:tag" content="单调栈">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="菜">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/%E9%A2%98%E7%9B%AE.png">
 
-<link rel="canonical" href="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/">
+<link rel="canonical" href="https://accepted.org.cn/tags/LeetCode/page/4/">
 
 
 <script id="page-configurations">
@@ -47,7 +39,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
@@ -65,7 +57,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>LeetCode 42. 接雨水 | Dirac Sea</title>
+  <title>Tag: LeetCode | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -237,157 +229,80 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="etoa">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          LeetCode 42. 接雨水
-        </h1>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-04 23:51:44" itemprop="dateCreated datePublished" datetime="2020-04-04T23:51:44+08:00">2020-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-21 19:00:18" itemprop="dateModified" datetime="2021-06-21T19:00:18+08:00">2021-06-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 42. 接雨水" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">LeetCode
+          <small>Tag</small>
+        </h2>
+      </div>
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
-<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
-
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6 </p>
-</blockquote>
-<hr>
-<h3 id="按列计算（动态规划计算最值）"><a href="#按列计算（动态规划计算最值）" class="headerlink" title="按列计算（动态规划计算最值）"></a>按列计算（动态规划计算最值）</h3><p>遍历每列，判断要不要计算列上的积水。<br>如何判断？计算出该列左侧最高列高度，计算右侧最高列高度。<br>若该列比二者都小，则该列需要计算;否则不需计算。<br>如何分别计算某列两侧最值？<br>可维护两个数组分别存储每列左右两侧最值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * [列解法, 动态规划]</span></span><br><span class="line"><span class="comment">     * 1ms</span></span><br><span class="line"><span class="comment">     * 39.3MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] leftSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="comment">//第一列和最后一列不需要计算两侧最值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            leftSideMax[i] = Math.max(leftSideMax[i - <span class="number">1</span>], height[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            rightSideMax[i] = Math.max(rightSideMax[i + <span class="number">1</span>], height[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minimum = Math.min(leftSideMax[j], rightSideMax[j]);</span><br><span class="line">            <span class="keyword">if</span> (height[j] &lt; minimum) &#123;</span><br><span class="line">                res += (minimum - height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p>核心思想是先降后增必有积水。<br>这个就有点像有效括号，一对儿。<br>维护一个单调递减的栈，栈中存入柱子下标。（为什么存入下标而不直接存入高度？因为我们可能会计算两个相隔若干柱子之间的距离。）<br>入栈：栈为空时；当前柱子低于栈顶柱子。<br>出栈：当前柱子高于栈顶柱子。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单调栈 简化代码</span></span><br><span class="line"><span class="comment">     * 4ms - 29.81%</span></span><br><span class="line"><span class="comment">     * 39.5MB, 11.78%</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; height[i] &gt; height[stack.peek()]) &#123; <span class="comment">//有可能可计算体积</span></span><br><span class="line">                <span class="keyword">int</span> heightInfoBeforePop = stack.peek();</span><br><span class="line">                stack.pop(); <span class="comment">// 当前柱子高于栈顶柱子时，出栈。记得出栈前先保存栈高数据。</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) <span class="keyword">break</span>; <span class="comment">//不可计算体积</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> stackTop = stack.peek();</span><br><span class="line">                    res += ((i - stackTop - <span class="number">1</span>) * (Math.min(height[i], height[stackTop]) - height[heightInfoBeforePop]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i); <span class="comment">// 栈空或当前柱子小于等于于栈顶柱子高度时，入栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3>
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
 
-    
-    
-    
-        
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>etoa
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/" title="LeetCode 42. 接雨水">https://accepted.org.cn/2020/04/04/LeetCode-42-接雨水/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-03-20T23:44:21+08:00"
+              content="2020-03-20">
+          03-20
+        </time>
+      </div>
 
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/03/20/LeetCode-2-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0%E3%80%8CTopK%E3%80%8D%200x1/" itemprop="url">
+            <span itemprop="name">LeetCode #2 最小的k个数「TopK」 0x1</span>
+          </a>
+      </div>
 
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"><i class="fa fa-tag"></i> 动态规划</a>
-              <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 单调栈</a>
-              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="fa fa-tag"></i> 双指针</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/04/07/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9801-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E3%80%8CRotate-Matrix-LCCI%E3%80%8D/" rel="prev" title="LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」">
-      <i class="fa fa-chevron-left"></i> LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/04/%E9%98%85%E8%AF%BB%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/" rel="next" title="阅读代码的一点心得">
-      阅读代码的一点心得 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-03-19T17:02:38+08:00"
+              content="2020-03-19">
+          03-19
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E3%80%8CtwoSum%E3%80%8D%200x0/" itemprop="url">
+            <span itemprop="name">LeetCode #1 两数之和「twoSum」 0x0</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
   
   
   
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tags/LeetCode/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/tags/LeetCode/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/LeetCode/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -434,7 +349,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按列计算（动态规划计算最值）"><span class="nav-text">按列计算（动态规划计算最值）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单调栈"><span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双指针"><span class="nav-text">双指针</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -817,25 +731,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'e52d4810e3636b78a1ce',
-      clientSecret: 'a440f2ae50433769177027ce57778ac77627dff9',
-      repo        : 'BlogComment',
-      owner       : 'ESP0xA',
-      admin       : ['ESP0xA'],
-      id          : 'aaf3e012134f21c7df9008e80fc40751',
-        language: 'en',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
     </div>
 </body>

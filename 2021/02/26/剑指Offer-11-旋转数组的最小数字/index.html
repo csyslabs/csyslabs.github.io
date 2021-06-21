@@ -22,15 +22,16 @@
 
   <meta name="description" content="摘要：二分查找经典应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer 11.旋转数组的最小数字">
+<meta property="og:title" content="剑指Offer 11. 旋转数组的最小数字">
 <meta property="og:url" content="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：二分查找经典应用。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-26T11:26:56.000Z">
-<meta property="article:modified_time" content="2021-02-26T11:53:48.945Z">
+<meta property="article:modified_time" content="2021-06-21T10:50:42.242Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="二分查找">
 <meta property="article:tag" content="剑指Offer">
 <meta name="twitter:card" content="summary">
@@ -61,7 +62,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>剑指Offer 11.旋转数组的最小数字 | Dirac Sea</title>
+  <title>剑指Offer 11. 旋转数组的最小数字 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -253,7 +254,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          剑指Offer 11.旋转数组的最小数字
+          剑指Offer 11. 旋转数组的最小数字
         </h1>
 
         <div class="post-meta">
@@ -265,10 +266,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-26 19:26:56 / Modified: 19:53:48" itemprop="dateCreated datePublished" datetime="2021-02-26T19:26:56+08:00">2021-02-26</time>
+              <time title="Created: 2021-02-26 19:26:56" itemprop="dateCreated datePublished" datetime="2021-02-26T19:26:56+08:00">2021-02-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-21 18:50:42" itemprop="dateModified" datetime="2021-06-21T18:50:42+08:00">2021-06-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -281,10 +288,18 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a>
+                </span>
             </span>
 
           
-            <span id="/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer 11.旋转数组的最小数字" title="Views">
+            <span id="/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer 11. 旋转数组的最小数字" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -315,7 +330,7 @@
 <p><strong>输入：</strong> [2,2,2,0,1]<br><strong>输出：</strong> 0</p>
 </blockquote>
 <hr>
-<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>本题与 <a href="https://accepted.org.cn/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/">LeetCode 154.寻找旋转排序数组中的最小值 II</a> 完全一致。</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>本题与 <a href="https://eetoa.github.io/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/" target="_blank" rel="noopener">LeetCode 154. 寻找旋转排序数组中的最小值 II</a> 完全一致。</p>
 <div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
 <h3 id="暴搜"><a href="#暴搜" class="headerlink" title="暴搜"></a>暴搜</h3><p>暴力Loop一把梭，复杂度为 $O(N)$.</p>
@@ -339,7 +354,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/" title="剑指Offer 11.旋转数组的最小数字">https://accepted.org.cn/2021/02/26/剑指Offer-11-旋转数组的最小数字/</a>
+    <a href="https://accepted.org.cn/2021/02/26/%E5%89%91%E6%8C%87Offer-11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/" title="剑指Offer 11. 旋转数组的最小数字">https://accepted.org.cn/2021/02/26/剑指Offer-11-旋转数组的最小数字/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -352,6 +367,7 @@
           
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag"><i class="fa fa-tag"></i> 二分查找</a>
               <a href="/tags/%E5%89%91%E6%8C%87Offer/" rel="tag"><i class="fa fa-tag"></i> 剑指Offer</a>
           </div>
@@ -366,8 +382,8 @@
       <i class="fa fa-chevron-left"></i> LeetCode 79. 单词搜索
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/" rel="next" title="LeetCode 154.寻找旋转排序数组中的最小值 II">
-      LeetCode 154.寻找旋转排序数组中的最小值 II <i class="fa fa-chevron-right"></i>
+    <a href="/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/" rel="next" title="LeetCode 154. 寻找旋转排序数组中的最小值 II">
+      LeetCode 154. 寻找旋转排序数组中的最小值 II <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

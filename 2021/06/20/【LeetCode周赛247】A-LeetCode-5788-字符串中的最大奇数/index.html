@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：寻找字符串中的最大奇数。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-20T06:03:11.000Z">
-<meta property="article:modified_time" content="2021-06-21T02:57:46.248Z">
+<meta property="article:modified_time" content="2021-06-21T10:51:59.106Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="LeetCode">
@@ -274,7 +274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-21 10:57:46" itemprop="dateModified" datetime="2021-06-21T10:57:46+08:00">2021-06-21</time>
+                <time title="Modified: 2021-06-21 18:51:59" itemprop="dateModified" datetime="2021-06-21T18:51:59+08:00">2021-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -344,7 +344,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">largestOddNumber</span><span class="params">(<span class="built_in">string</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ((num.<span class="built_in">end</span>()[<span class="number">-1</span>]) &amp; <span class="number">1</span>) <span class="keyword">return</span> num;</span><br><span class="line">        <span class="keyword">int</span> len = num.<span class="built_in">size</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((num[i]) &amp; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> num.substr(<span class="number">0</span>, i + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>注意在判断数字字符的奇偶性时，可以直接判断。因为数字字符和对应的数字具有相同奇偶性。</p>
 <div class="note primary">
-            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/largest-odd-number-in-string/" target="_blank" rel="noopener">5788. 字符串中的最大奇数</a></p>
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/largest-odd-number-in-string/" target="_blank" rel="noopener">LeetCode 5788. 字符串中的最大奇数</a></p>
           </div>
     </div>
 
