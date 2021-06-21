@@ -20,8 +20,6 @@
     var CONFIG = {"hostname":"eetoa.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
-
   <meta name="description" content="摘要：深入快速幂。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速幂专题">
@@ -30,7 +28,7 @@
 <meta property="og:description" content="摘要：深入快速幂。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-05T03:11:09.000Z">
-<meta property="article:modified_time" content="2021-03-08T17:19:55.803Z">
+<meta property="article:modified_time" content="2021-06-21T08:13:41.742Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="位运算">
@@ -277,7 +275,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-09 01:19:55" itemprop="dateModified" datetime="2021-03-09T01:19:55+08:00">2021-03-09</time>
+                <time title="Modified: 2021-06-21 16:13:41" itemprop="dateModified" datetime="2021-06-21T16:13:41+08:00">2021-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,6 +288,10 @@
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">算法相关</span></a>
                 </span>
             </span>
 
@@ -324,9 +326,7 @@
 <p>根据这个思想，写代码的时候，我们动态地让指数右移，让$a$与最低位$1$相乘，然而每右移一次，相当于指数$b$除2，等价于$a$对应地更新成$a^2$。当最低位不为$1$时，则$a$继续更新，且不与最低位相乘。</p>
 <h4 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">fastpow</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; n; n &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &amp; <span class="number">1</span>) res *= a;</span><br><span class="line">        a = a * a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><div class="note primary">
-            <p><strong>原题链接：</strong> <a href=""></a></p>
-          </div>
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4>
     </div>
 
     
@@ -370,8 +370,8 @@
       <i class="fa fa-chevron-left"></i> Win10 MySQL服务端完全卸载+安装
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/" rel="next" title="LeetCode 191.位1的个数">
-      LeetCode 191.位1的个数 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/" rel="next" title="LeetCode 191. 位1的个数">
+      LeetCode 191. 位1的个数 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -450,20 +450,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">176</span>
+        <span class="site-state-item-count">170</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
