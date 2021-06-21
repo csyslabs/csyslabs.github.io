@@ -5,9 +5,9 @@
   <subtitle>where the water tastes like wine</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="eetoa.github.io/"/>
+  <link href="https://accepted.org.cn/"/>
   <updated>2021-06-21T02:04:08.329Z</updated>
-  <id>eetoa.github.io/</id>
+  <id>https://accepted.org.cn/</id>
   
   <author>
     <name>etoa</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>HeXo文章分类管理</title>
-    <link href="eetoa.github.io/2021/06/21/HeXo%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86/"/>
-    <id>eetoa.github.io/2021/06/21/HeXo%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86/</id>
+    <link href="https://accepted.org.cn/2021/06/21/HeXo%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86/"/>
+    <id>https://accepted.org.cn/2021/06/21/HeXo%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86/</id>
     <published>2021-06-21T01:47:26.000Z</published>
     <updated>2021-06-21T02:04:08.329Z</updated>
     
@@ -32,25 +32,25 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
-      <category term="博客" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="博客" scheme="eetoa.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://accepted.org.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="HeXo" scheme="eetoa.github.io/tags/HeXo/"/>
+      <category term="HeXo" scheme="https://accepted.org.cn/tags/HeXo/"/>
     
   </entry>
   
   <entry>
     <title>【LeetCode周赛246】C LeetCode 5791. 统计子岛屿</title>
-    <link href="eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91C-LeetCode-5791-%E7%BB%9F%E8%AE%A1%E5%AD%90%E5%B2%9B%E5%B1%BF/"/>
-    <id>eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91C-LeetCode-5791-%E7%BB%9F%E8%AE%A1%E5%AD%90%E5%B2%9B%E5%B1%BF/</id>
+    <link href="https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91C-LeetCode-5791-%E7%BB%9F%E8%AE%A1%E5%AD%90%E5%B2%9B%E5%B1%BF/"/>
+    <id>https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91C-LeetCode-5791-%E7%BB%9F%E8%AE%A1%E5%AD%90%E5%B2%9B%E5%B1%BF/</id>
     <published>2021-06-20T08:11:33.000Z</published>
     <updated>2021-06-21T02:55:51.757Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>洪水灌溉算法经典题型。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你两个 <code>m x n</code> 的二进制矩阵 <code>grid1</code> 和 <code>grid2</code> ，它们只包含 <code>0</code> （表示水域）和 <code>1</code> （表示陆地）。一个 <strong>岛屿</strong> 是由 <strong>四个方向</strong> （水平或者竖直）上相邻的 <code>1</code> 组成的区域。任何矩阵以外的区域都视为水域。</p><p>如果 <code>grid2</code> 的一个岛屿，被 <code>grid1</code> 的一个岛屿 <strong>完全</strong> 包含，也就是说 <code>grid2</code> 中该岛屿的每一个格子都被 <code>grid1</code> 中同一个岛屿完全包含，那么我们称 <code>grid2</code> 中的这个岛屿为 <strong>子岛屿</strong> 。</p><p>请你返回 <code>grid2</code> 中 <strong>子岛屿</strong> 的 <strong>数目</strong> 。</p><p><strong>示例 1：</strong><br><img src="test1.png" alt="0x0"></p><blockquote><p>输入：grid1 = [[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]], grid2 = [[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]<br>输出：3<br>解释：如上图所示，左边为 grid1 ，右边为 grid2 。<br>grid2 中标红的 1 区域是子岛屿，总共有 3 个子岛屿。</p></blockquote><p><strong>示例 2：</strong><br><img src="testcasex2.png" alt="0x1"></p><blockquote><p>输入：grid1 = [[1,0,1,0,1],[1,1,1,1,1],[0,0,0,0,0],[1,1,1,1,1],[1,0,1,0,1]], grid2 = [[0,0,0,0,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0],[1,0,0,0,1]]<br>输出：2<br>解释：如上图所示，左边为 grid1 ，右边为 grid2 。<br>grid2 中标红的 1 区域是子岛屿，总共有 2 个子岛屿。</p></blockquote><p><strong>提示：</strong></p><ul><li><code>m == grid1.length == grid2.length</code></li><li><code>n == grid1[i].length == grid2[i].length</code></li><li><code>1 &lt;= m, n &lt;= 500</code></li><li><code>grid1[i][j]</code> 和 <code>grid2[i][j]</code> 都要么是 <code>0</code> 要么是 <code>1</code> 。</li></ul><h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>在 <code>grid2</code> 中找到所有岛屿，并且在寻找的过程中判断每一个块是否和 <code>grid1</code> 中对应块相等，不等必然不是子岛屿。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> R, C;</span><br><span class="line">    <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid1, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid2, <span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">bool</span> &amp;issub)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (grid2[r][c] != grid1[r][c]) issub = <span class="literal">false</span>;</span><br><span class="line">        grid2[r][c] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[i], nec = c + dc[i];</span><br><span class="line">            <span class="keyword">if</span> (ner &lt; <span class="number">0</span> || ner &gt; R - <span class="number">1</span> || nec &lt; <span class="number">0</span> || nec &gt; C - <span class="number">1</span> || !grid2[ner][nec] || grid2[ner][nec] == <span class="number">0x3f3f3f3f</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dfs(grid1, grid2, ner, nec, issub);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countSubIslands</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid1, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;R = grid2.<span class="built_in">size</span>(), <span class="keyword">this</span>-&gt;C = grid2[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; R; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; C; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid2[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">bool</span> issub = <span class="literal">true</span>;</span><br><span class="line">                    dfs(grid1, grid2, i, j, issub);</span><br><span class="line">                    <span class="keyword">if</span> (issub) res++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>本题是 <a href="https://eetoa.github.io/2020/04/21/LeetCode-200-岛屿数量">LeetCode 200. 岛屿数量</a> 的升级版。</p><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/count-sub-islands/" target="_blank" rel="noopener">5791. 统计子岛屿</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>洪水灌溉算法经典题型。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你两个 <code>m x n</code> 的二进制矩阵 <code>grid1</code> 和 <code>grid2</code> ，它们只包含 <code>0</code> （表示水域）和 <code>1</code> （表示陆地）。一个 <strong>岛屿</strong> 是由 <strong>四个方向</strong> （水平或者竖直）上相邻的 <code>1</code> 组成的区域。任何矩阵以外的区域都视为水域。</p><p>如果 <code>grid2</code> 的一个岛屿，被 <code>grid1</code> 的一个岛屿 <strong>完全</strong> 包含，也就是说 <code>grid2</code> 中该岛屿的每一个格子都被 <code>grid1</code> 中同一个岛屿完全包含，那么我们称 <code>grid2</code> 中的这个岛屿为 <strong>子岛屿</strong> 。</p><p>请你返回 <code>grid2</code> 中 <strong>子岛屿</strong> 的 <strong>数目</strong> 。</p><p><strong>示例 1：</strong><br><img src="test1.png" alt="0x0"></p><blockquote><p>输入：grid1 = [[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]], grid2 = [[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]<br>输出：3<br>解释：如上图所示，左边为 grid1 ，右边为 grid2 。<br>grid2 中标红的 1 区域是子岛屿，总共有 3 个子岛屿。</p></blockquote><p><strong>示例 2：</strong><br><img src="testcasex2.png" alt="0x1"></p><blockquote><p>输入：grid1 = [[1,0,1,0,1],[1,1,1,1,1],[0,0,0,0,0],[1,1,1,1,1],[1,0,1,0,1]], grid2 = [[0,0,0,0,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0],[1,0,0,0,1]]<br>输出：2<br>解释：如上图所示，左边为 grid1 ，右边为 grid2 。<br>grid2 中标红的 1 区域是子岛屿，总共有 2 个子岛屿。</p></blockquote><p><strong>提示：</strong></p><ul><li><code>m == grid1.length == grid2.length</code></li><li><code>n == grid1[i].length == grid2[i].length</code></li><li><code>1 &lt;= m, n &lt;= 500</code></li><li><code>grid1[i][j]</code> 和 <code>grid2[i][j]</code> 都要么是 <code>0</code> 要么是 <code>1</code> 。</li></ul><h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>在 <code>grid2</code> 中找到所有岛屿，并且在寻找的过程中判断每一个块是否和 <code>grid1</code> 中对应块相等，不等必然不是子岛屿。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> R, C;</span><br><span class="line">    <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid1, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;grid2, <span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">bool</span> &amp;issub)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (grid2[r][c] != grid1[r][c]) issub = <span class="literal">false</span>;</span><br><span class="line">        grid2[r][c] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> ner = r + dr[i], nec = c + dc[i];</span><br><span class="line">            <span class="keyword">if</span> (ner &lt; <span class="number">0</span> || ner &gt; R - <span class="number">1</span> || nec &lt; <span class="number">0</span> || nec &gt; C - <span class="number">1</span> || !grid2[ner][nec] || grid2[ner][nec] == <span class="number">0x3f3f3f3f</span>) <span class="keyword">continue</span>;</span><br><span class="line">            dfs(grid1, grid2, ner, nec, issub);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countSubIslands</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid1, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;R = grid2.<span class="built_in">size</span>(), <span class="keyword">this</span>-&gt;C = grid2[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; R; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; C; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid2[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">bool</span> issub = <span class="literal">true</span>;</span><br><span class="line">                    dfs(grid1, grid2, i, j, issub);</span><br><span class="line">                    <span class="keyword">if</span> (issub) res++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>本题是 <a href="https://eetoa.github.io/2020/04/21/LeetCode-200-岛屿数量" target="_blank" rel="noopener">LeetCode 200. 岛屿数量</a> 的升级版。</p><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/count-sub-islands/" target="_blank" rel="noopener">5791. 统计子岛屿</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -59,35 +59,35 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="DFS" scheme="eetoa.github.io/tags/DFS/"/>
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
-      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
+      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
     
-      <category term="Flood Fill" scheme="eetoa.github.io/tags/Flood-Fill/"/>
+      <category term="Flood Fill" scheme="https://accepted.org.cn/tags/Flood-Fill/"/>
     
-      <category term="洪水灌溉算法" scheme="eetoa.github.io/tags/%E6%B4%AA%E6%B0%B4%E7%81%8C%E6%BA%89%E7%AE%97%E6%B3%95/"/>
+      <category term="洪水灌溉算法" scheme="https://accepted.org.cn/tags/%E6%B4%AA%E6%B0%B4%E7%81%8C%E6%BA%89%E7%AE%97%E6%B3%95/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>【LeetCode周赛246】B LeetCode 5789. 你完成的完整对局数</title>
-    <link href="eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91B-LeetCode-5789-%E4%BD%A0%E5%AE%8C%E6%88%90%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%B9%E5%B1%80%E6%95%B0/"/>
-    <id>eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91B-LeetCode-5789-%E4%BD%A0%E5%AE%8C%E6%88%90%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%B9%E5%B1%80%E6%95%B0/</id>
+    <link href="https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91B-LeetCode-5789-%E4%BD%A0%E5%AE%8C%E6%88%90%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%B9%E5%B1%80%E6%95%B0/"/>
+    <id>https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B246%E3%80%91B-LeetCode-5789-%E4%BD%A0%E5%AE%8C%E6%88%90%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%B9%E5%B1%80%E6%95%B0/</id>
     <published>2021-06-20T06:26:47.000Z</published>
     <updated>2021-06-21T02:57:21.543Z</updated>
     
@@ -100,31 +100,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="数学" scheme="eetoa.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="字符串" scheme="eetoa.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>【LeetCode周赛247】A. LeetCode 5788. 字符串中的最大奇数</title>
-    <link href="eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B247%E3%80%91A-LeetCode-5788-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%A5%87%E6%95%B0/"/>
-    <id>eetoa.github.io/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B247%E3%80%91A-LeetCode-5788-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%A5%87%E6%95%B0/</id>
+    <link href="https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B247%E3%80%91A-LeetCode-5788-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%A5%87%E6%95%B0/"/>
+    <id>https://accepted.org.cn/2021/06/20/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B247%E3%80%91A-LeetCode-5788-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%A5%87%E6%95%B0/</id>
     <published>2021-06-20T06:03:11.000Z</published>
     <updated>2021-06-21T02:57:46.248Z</updated>
     
@@ -137,29 +137,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="字符串" scheme="eetoa.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>【AcWing算法基础】第五讲-动态规划-背包问题 AcWing 2. 01背包问题</title>
-    <link href="eetoa.github.io/2021/06/18/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%94%E8%AE%B2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-AcWing-2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    <id>eetoa.github.io/2021/06/18/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%94%E8%AE%B2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-AcWing-2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
+    <link href="https://accepted.org.cn/2021/06/18/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%94%E8%AE%B2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-AcWing-2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    <id>https://accepted.org.cn/2021/06/18/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%94%E8%AE%B2-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-AcWing-2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
     <published>2021-06-18T08:59:36.000Z</published>
     <updated>2021-06-21T03:31:06.964Z</updated>
     
@@ -172,31 +172,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="AcWing" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/"/>
+      <category term="AcWing" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/"/>
     
-      <category term="算法基础课" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+      <category term="算法基础课" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="动态规划" scheme="eetoa.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="https://accepted.org.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="AcWing" scheme="eetoa.github.io/tags/AcWing/"/>
+      <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
     
-      <category term="背包" scheme="eetoa.github.io/tags/%E8%83%8C%E5%8C%85/"/>
+      <category term="背包" scheme="https://accepted.org.cn/tags/%E8%83%8C%E5%8C%85/"/>
     
-      <category term="01背包" scheme="eetoa.github.io/tags/01%E8%83%8C%E5%8C%85/"/>
+      <category term="01背包" scheme="https://accepted.org.cn/tags/01%E8%83%8C%E5%8C%85/"/>
     
   </entry>
   
   <entry>
     <title>算法题由给定数据范围反推算法复杂度及算法内容</title>
-    <link href="eetoa.github.io/2021/06/18/%E7%AE%97%E6%B3%95%E9%A2%98%E7%94%B1%E7%BB%99%E5%AE%9A%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E5%8F%8D%E6%8E%A8%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%AE%97%E6%B3%95%E5%86%85%E5%AE%B9/"/>
-    <id>eetoa.github.io/2021/06/18/%E7%AE%97%E6%B3%95%E9%A2%98%E7%94%B1%E7%BB%99%E5%AE%9A%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E5%8F%8D%E6%8E%A8%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%AE%97%E6%B3%95%E5%86%85%E5%AE%B9/</id>
+    <link href="https://accepted.org.cn/2021/06/18/%E7%AE%97%E6%B3%95%E9%A2%98%E7%94%B1%E7%BB%99%E5%AE%9A%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E5%8F%8D%E6%8E%A8%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%AE%97%E6%B3%95%E5%86%85%E5%AE%B9/"/>
+    <id>https://accepted.org.cn/2021/06/18/%E7%AE%97%E6%B3%95%E9%A2%98%E7%94%B1%E7%BB%99%E5%AE%9A%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E5%8F%8D%E6%8E%A8%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%AE%97%E6%B3%95%E5%86%85%E5%AE%B9/</id>
     <published>2021-06-18T00:09:43.000Z</published>
     <updated>2021-06-21T03:00:27.662Z</updated>
     
@@ -209,21 +209,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法相关" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
+      <category term="算法相关" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="复杂度" scheme="eetoa.github.io/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+      <category term="复杂度" scheme="https://accepted.org.cn/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
     
   </entry>
   
   <entry>
     <title>算法竞赛常用STL和其他c++知识点总结</title>
-    <link href="eetoa.github.io/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
-    <id>eetoa.github.io/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</id>
+    <link href="https://accepted.org.cn/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <id>https://accepted.org.cn/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</id>
     <published>2021-06-11T13:32:03.000Z</published>
     <updated>2021-06-21T03:01:26.786Z</updated>
     
@@ -236,25 +236,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法相关" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
+      <category term="算法相关" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="竞赛" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
+      <category term="竞赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="STL" scheme="eetoa.github.io/tags/STL/"/>
+      <category term="STL" scheme="https://accepted.org.cn/tags/STL/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 1091. 二进制矩阵中的最短路径</title>
-    <link href="eetoa.github.io/2021/06/06/LeetCode-1091-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
-    <id>eetoa.github.io/2021/06/06/LeetCode-1091-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</id>
+    <link href="https://accepted.org.cn/2021/06/06/LeetCode-1091-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
+    <id>https://accepted.org.cn/2021/06/06/LeetCode-1091-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</id>
     <published>2021-06-06T15:20:56.000Z</published>
     <updated>2021-06-21T03:35:53.058Z</updated>
     
@@ -267,29 +267,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="BFS" scheme="eetoa.github.io/tags/BFS/"/>
+      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
     
-      <category term="Flood Fill" scheme="eetoa.github.io/tags/Flood-Fill/"/>
+      <category term="Flood Fill" scheme="https://accepted.org.cn/tags/Flood-Fill/"/>
     
-      <category term="洪水灌溉算法" scheme="eetoa.github.io/tags/%E6%B4%AA%E6%B0%B4%E7%81%8C%E6%BA%89%E7%AE%97%E6%B3%95/"/>
+      <category term="洪水灌溉算法" scheme="https://accepted.org.cn/tags/%E6%B4%AA%E6%B0%B4%E7%81%8C%E6%BA%89%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>在LeetCode刷题应尽量避免使用全局变量</title>
-    <link href="eetoa.github.io/2021/06/06/%E5%9C%A8LeetCode%E5%88%B7%E9%A2%98%E5%BA%94%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
-    <id>eetoa.github.io/2021/06/06/%E5%9C%A8LeetCode%E5%88%B7%E9%A2%98%E5%BA%94%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</id>
+    <link href="https://accepted.org.cn/2021/06/06/%E5%9C%A8LeetCode%E5%88%B7%E9%A2%98%E5%BA%94%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
+    <id>https://accepted.org.cn/2021/06/06/%E5%9C%A8LeetCode%E5%88%B7%E9%A2%98%E5%BA%94%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</id>
     <published>2021-06-06T15:10:19.000Z</published>
     <updated>2021-06-21T03:39:21.699Z</updated>
     
@@ -302,27 +302,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>最小公倍数lcm算法</title>
-    <link href="eetoa.github.io/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/"/>
-    <id>eetoa.github.io/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/</id>
+    <link href="https://accepted.org.cn/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/"/>
+    <id>https://accepted.org.cn/2021/05/30/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0lcm%E7%AE%97%E6%B3%95/</id>
     <published>2021-05-30T08:00:53.000Z</published>
     <updated>2021-06-21T03:27:01.561Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>最小公倍数 = 两数乘积 / 最大公约数</p><a id="more"></a><p>因为 <strong>最小公倍数 = 两数乘积 / 最大公约数</strong>，<br>所以:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b / gcd(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="note primary">            <p><strong>相关链接：</strong> <a href="https://eetoa.github.io/2020/03/27/求最大公约数（gcd）的一点心得">求最大公约数（gcd）的一点心得</a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>最小公倍数 = 两数乘积 / 最大公约数</p><a id="more"></a><p>因为 <strong>最小公倍数 = 两数乘积 / 最大公约数</strong>，<br>所以:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b / gcd(a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="note primary">            <p><strong>相关链接：</strong> <a href="https://eetoa.github.io/2020/03/27/求最大公约数（gcd）的一点心得" target="_blank" rel="noopener">求最大公约数（gcd）的一点心得</a></p>          </div>]]></content>
     
     <summary type="html">
     
@@ -331,31 +331,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法相关" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
+      <category term="算法相关" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数学" scheme="eetoa.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="最大公约数" scheme="eetoa.github.io/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
+      <category term="最大公约数" scheme="https://accepted.org.cn/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/"/>
     
-      <category term="gcd" scheme="eetoa.github.io/tags/gcd/"/>
+      <category term="gcd" scheme="https://accepted.org.cn/tags/gcd/"/>
     
-      <category term="最小公倍数" scheme="eetoa.github.io/tags/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/"/>
+      <category term="最小公倍数" scheme="https://accepted.org.cn/tags/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/"/>
     
-      <category term="lcm" scheme="eetoa.github.io/tags/lcm/"/>
+      <category term="lcm" scheme="https://accepted.org.cn/tags/lcm/"/>
     
   </entry>
   
   <entry>
     <title>C++算法题输入输出小技巧总结</title>
-    <link href="eetoa.github.io/2021/05/29/C-%E7%AE%97%E6%B3%95%E9%A2%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/"/>
-    <id>eetoa.github.io/2021/05/29/C-%E7%AE%97%E6%B3%95%E9%A2%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</id>
+    <link href="https://accepted.org.cn/2021/05/29/C-%E7%AE%97%E6%B3%95%E9%A2%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/"/>
+    <id>https://accepted.org.cn/2021/05/29/C-%E7%AE%97%E6%B3%95%E9%A2%98%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</id>
     <published>2021-05-29T12:44:47.000Z</published>
     <updated>2021-06-21T03:03:27.984Z</updated>
     
@@ -368,21 +368,21 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法相关" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
+      <category term="算法相关" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>b-1面试题总结-Java基础</title>
-    <link href="eetoa.github.io/2021/04/21/b-1%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93-Java%E5%9F%BA%E7%A1%80/"/>
-    <id>eetoa.github.io/2021/04/21/b-1%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93-Java%E5%9F%BA%E7%A1%80/</id>
+    <link href="https://accepted.org.cn/2021/04/21/b-1%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93-Java%E5%9F%BA%E7%A1%80/"/>
+    <id>https://accepted.org.cn/2021/04/21/b-1%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93-Java%E5%9F%BA%E7%A1%80/</id>
     <published>2021-04-21T09:01:43.572Z</published>
     <updated>2021-04-22T13:26:14.353Z</updated>
     
@@ -401,8 +401,8 @@
   
   <entry>
     <title>【游戏逆向】LEA指令</title>
-    <link href="eetoa.github.io/2021/04/19/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91LEA%E6%8C%87%E4%BB%A4/"/>
-    <id>eetoa.github.io/2021/04/19/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91LEA%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://accepted.org.cn/2021/04/19/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91LEA%E6%8C%87%E4%BB%A4/"/>
+    <id>https://accepted.org.cn/2021/04/19/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91LEA%E6%8C%87%E4%BB%A4/</id>
     <published>2021-04-19T07:35:56.000Z</published>
     <updated>2021-06-21T03:48:18.180Z</updated>
     
@@ -415,19 +415,19 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="游戏逆向" scheme="eetoa.github.io/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
     
-      <category term="汇编" scheme="eetoa.github.io/tags/%E6%B1%87%E7%BC%96/"/>
+      <category term="汇编" scheme="https://accepted.org.cn/tags/%E6%B1%87%E7%BC%96/"/>
     
   </entry>
   
   <entry>
     <title>【游戏逆向】判断内存Page是否可读</title>
-    <link href="eetoa.github.io/2021/04/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%88%A4%E6%96%AD%E5%86%85%E5%AD%98Page%E6%98%AF%E5%90%A6%E5%8F%AF%E8%AF%BB/"/>
-    <id>eetoa.github.io/2021/04/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%88%A4%E6%96%AD%E5%86%85%E5%AD%98Page%E6%98%AF%E5%90%A6%E5%8F%AF%E8%AF%BB/</id>
+    <link href="https://accepted.org.cn/2021/04/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%88%A4%E6%96%AD%E5%86%85%E5%AD%98Page%E6%98%AF%E5%90%A6%E5%8F%AF%E8%AF%BB/"/>
+    <id>https://accepted.org.cn/2021/04/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%88%A4%E6%96%AD%E5%86%85%E5%AD%98Page%E6%98%AF%E5%90%A6%E5%8F%AF%E8%AF%BB/</id>
     <published>2021-04-17T15:08:28.000Z</published>
     <updated>2021-04-17T15:10:51.379Z</updated>
     
@@ -440,17 +440,17 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="游戏逆向" scheme="eetoa.github.io/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>【游戏逆向】How to find entityList in Call of Duty games with IDA tutorial</title>
-    <link href="eetoa.github.io/2021/03/31/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91How-to-find-entityList-in-Call-of-Duty-games-with-IDA-tutorial/"/>
-    <id>eetoa.github.io/2021/03/31/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91How-to-find-entityList-in-Call-of-Duty-games-with-IDA-tutorial/</id>
+    <link href="https://accepted.org.cn/2021/03/31/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91How-to-find-entityList-in-Call-of-Duty-games-with-IDA-tutorial/"/>
+    <id>https://accepted.org.cn/2021/03/31/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91How-to-find-entityList-in-Call-of-Duty-games-with-IDA-tutorial/</id>
     <published>2021-03-31T05:59:39.000Z</published>
     <updated>2021-03-31T12:24:53.490Z</updated>
     
@@ -463,17 +463,17 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="游戏逆向" scheme="eetoa.github.io/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>【游戏逆向】常见内存操作</title>
-    <link href="eetoa.github.io/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/"/>
-    <id>eetoa.github.io/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/"/>
+    <id>https://accepted.org.cn/2021/03/17/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C/</id>
     <published>2021-03-17T11:53:12.000Z</published>
     <updated>2021-03-17T15:00:09.278Z</updated>
     
@@ -486,17 +486,17 @@
     </summary>
     
     
-      <category term="不亦乐乎" scheme="eetoa.github.io/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+      <category term="不亦乐乎" scheme="https://accepted.org.cn/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
     
     
-      <category term="游戏逆向" scheme="eetoa.github.io/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
+      <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
     
   </entry>
   
   <entry>
     <title>关于人际关系的一点点思考</title>
-    <link href="eetoa.github.io/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/"/>
-    <id>eetoa.github.io/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/</id>
+    <link href="https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/"/>
+    <id>https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/</id>
     <published>2021-03-10T14:51:05.000Z</published>
     <updated>2021-03-10T15:01:26.094Z</updated>
     
@@ -509,19 +509,19 @@
     </summary>
     
     
-      <category term="生活" scheme="eetoa.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://accepted.org.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="人际关系" scheme="eetoa.github.io/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
+      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
-      <category term="生活" scheme="eetoa.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://accepted.org.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Win10 MySQL服务端完全卸载+安装</title>
-    <link href="eetoa.github.io/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/"/>
-    <id>eetoa.github.io/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</id>
+    <link href="https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/"/>
+    <id>https://accepted.org.cn/2021/03/05/Win10-MySQL%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD-%E5%AE%89%E8%A3%85/</id>
     <published>2021-03-05T10:15:51.000Z</published>
     <updated>2021-03-05T10:44:36.222Z</updated>
     
@@ -534,19 +534,19 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
     
-      <category term="MySQL" scheme="eetoa.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://accepted.org.cn/tags/MySQL/"/>
     
-      <category term="数据库" scheme="eetoa.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://accepted.org.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>快速幂专题</title>
-    <link href="eetoa.github.io/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/"/>
-    <id>eetoa.github.io/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/</id>
+    <link href="https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/"/>
+    <id>https://accepted.org.cn/2021/03/05/%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%93%E9%A2%98/</id>
     <published>2021-03-05T03:11:09.000Z</published>
     <updated>2021-06-21T08:13:41.742Z</updated>
     
@@ -559,29 +559,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法相关" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
+      <category term="算法相关" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="矩阵快速幂" scheme="eetoa.github.io/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="矩阵快速幂" scheme="https://accepted.org.cn/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
-      <category term="快速幂" scheme="eetoa.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="快速幂" scheme="https://accepted.org.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
-      <category term="高精度快速幂" scheme="eetoa.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="高精度快速幂" scheme="https://accepted.org.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 191. 位1的个数</title>
-    <link href="eetoa.github.io/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>eetoa.github.io/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <link href="https://accepted.org.cn/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>https://accepted.org.cn/2021/03/03/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2021-03-03T14:53:37.000Z</published>
     <updated>2021-06-21T08:20:15.531Z</updated>
     
@@ -594,22 +594,22 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="eetoa.github.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
     
     
-      <category term="LeetCode" scheme="eetoa.github.io/tags/LeetCode/"/>
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="算法" scheme="eetoa.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="位运算" scheme="eetoa.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="lowbit" scheme="eetoa.github.io/tags/lowbit/"/>
+      <category term="lowbit" scheme="https://accepted.org.cn/tags/lowbit/"/>
     
-      <category term="汉明重量" scheme="eetoa.github.io/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
+      <category term="汉明重量" scheme="https://accepted.org.cn/tags/%E6%B1%89%E6%98%8E%E9%87%8D%E9%87%8F/"/>
     
   </entry>
   

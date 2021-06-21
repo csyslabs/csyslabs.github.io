@@ -17,27 +17,25 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"eetoa.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
   <meta name="description" content="摘要：二分查找经典应用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 154.寻找旋转排序数组中的最小值 II">
-<meta property="og:url" content="eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/index.html">
+<meta property="og:url" content="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：二分查找经典应用。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-26T10:31:53.000Z">
 <meta property="article:modified_time" content="2021-02-26T11:50:27.904Z">
 <meta property="article:author" content="etoa">
-<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/">
+<link rel="canonical" href="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/">
 
 
 <script id="page-configurations">
@@ -242,7 +240,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -324,7 +322,7 @@
 <li>允许重复会影响算法的时间复杂度吗？会如何影响，为什么？</li>
 </ul>
 <hr>
-<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题和 <a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a> 的区别就在于折叠数组中可能存在重复。</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题和 <a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a> 的区别就在于折叠数组中可能存在重复。</p>
 <p>什么时候会产生影响呢？那就是当折叠点在原数组中某一数字相同段内时，折叠之后，数组首尾相同。那么，如果 <code>mid</code> 更新到与数组首尾相同的数字时，我们无法利用二分查找所依赖的 <strong>性质</strong> 确定 <code>mid</code> 是在左半边还是右半边。</p>
 <p>那么，解题思路就是：</p>
 <ul>
@@ -336,7 +334,7 @@
 <li>右半边不全是与左端点相同的数字，那么此时右指针依然在右半边， <code>nums[hi] &lt; nums[0]</code></li>
 </ol>
 <ul>
-<li>对于以上情况1，直接返回数组首即可；而对于情况2，需要按照传统二分查找，找到右半边的左边界。详情请参考： <strong><a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a></strong></li>
+<li>对于以上情况1，直接返回数组首即可；而对于情况2，需要按照传统二分查找，找到右半边的左边界。详情请参考： <strong><a href="https://accepted.org.cn/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/">寻找旋转排序数组中的最小值</a></strong></li>
 </ul>
 <p>另外可以想一下，如果折叠数组数组完全相同，也就是最坏的情况，会怎么样。<br>那必然是最终右指针左移时与左指针相遇，进行一次常规二分直接得出答案。当然也可以在进入常规二分之前特判一下，都无所谓。<br>最坏的情况下，复杂度为 $O(N)$，平均的情况下，复杂度为 $O(logn)$.</p>
 <div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 4 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 11.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        len = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>, hi = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判非递减情况（折叠点不在原数组下标范围内）</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 特判折叠点在重复数字中的情况（折叠后数组首尾相同）</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[hi] == nums[<span class="number">0</span>]; hi--); </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此时存在两种情况，一是右半边还有数字，二是右半边无数字</span></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[<span class="number">0</span>]) <span class="keyword">return</span> nums[lo];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 常规情况，和153题解法一致</span></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 0 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 38.3 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        len = nums.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = len - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi &amp;&amp; nums[lo] == nums[hi]; hi--);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums[hi] &gt; nums[lo]) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (; lo &lt; hi;) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = lo + hi &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= nums[<span class="number">0</span>]) lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> hi = mid;</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums[lo];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
@@ -359,7 +357,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="/eetoa.github.io/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/" title="LeetCode 154.寻找旋转排序数组中的最小值 II">eetoa.github.io/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/</a>
+    <a href="https://accepted.org.cn/2021/02/26/LeetCode-154-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC-II/" title="LeetCode 154.寻找旋转排序数组中的最小值 II">https://accepted.org.cn/2021/02/26/LeetCode-154-寻找旋转排序数组中的最小值-II/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -371,8 +369,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag"><i class="fa fa-tag"></i> 二分查找</a>
           </div>
 
@@ -493,7 +491,7 @@
         <a href="https://github.com/ESP0xA" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ESP0xA" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:esp@accepted.org.cn" title="E-Mail → mailto:esp@accepted.org.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:esp@accepted.org.cn" title="E-Mail → mailto:esp@accepted.org.cn"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
