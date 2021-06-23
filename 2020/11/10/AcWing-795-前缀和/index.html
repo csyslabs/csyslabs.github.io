@@ -22,17 +22,17 @@
 
   <meta name="description" content="摘要：前缀和模板题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AcWing 795.前缀和">
+<meta property="og:title" content="AcWing 795. 前缀和">
 <meta property="og:url" content="https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：前缀和模板题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-10T05:17:07.000Z">
-<meta property="article:modified_time" content="2020-11-10T10:43:56.623Z">
+<meta property="article:modified_time" content="2021-06-23T07:32:54.341Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="数组">
 <meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="AcWing">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/">
@@ -61,7 +61,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>AcWing 795.前缀和 | Dirac Sea</title>
+  <title>AcWing 795. 前缀和 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -253,7 +253,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          AcWing 795.前缀和
+          AcWing 795. 前缀和
         </h1>
 
         <div class="post-meta">
@@ -265,10 +265,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-10 13:17:07 / Modified: 18:43:56" itemprop="dateCreated datePublished" datetime="2020-11-10T13:17:07+08:00">2020-11-10</time>
+              <time title="Created: 2020-11-10 13:17:07" itemprop="dateCreated datePublished" datetime="2020-11-10T13:17:07+08:00">2020-11-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-23 15:32:54" itemprop="dateModified" datetime="2021-06-23T15:32:54+08:00">2021-06-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -281,10 +287,14 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
+                </span>
             </span>
 
           
-            <span id="/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-meta-item leancloud_visitors" data-flag-title="AcWing 795.前缀和" title="Views">
+            <span id="/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/" class="post-meta-item leancloud_visitors" data-flag-title="AcWing 795. 前缀和" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -326,8 +336,13 @@
 <li>查询时，<code>s[r] - s[l]</code>多减了一个<code>alls[l]</code>，所以要<code>s[r] - s[l - 1]</code>。</li>
 </ol>
 </blockquote>
+<p>下面来思考一下预处理前缀和数组的时候，为什么 <code>i</code> 从 <code>1</code> 开始，前缀和数组第 <code>0</code> 位留空。</p>
+<p>首先我们假设前缀和数组就是从第 <code>0</code> 位开始，即 <code>presum[i]</code> 对应原数组 $[0,i]$ 位元素的和。会发生什么呢？<br>假设求从 <code>0</code> 开始计算的第 <code>4</code> 位到第 <code>5</code> 位子数组和，那么使用这样一个前缀和数组可得：<br><code>int res = presum[5] - presum[4 - 1];</code><br>似乎没有问题，好，那我现在求第 <code>0</code> 位到第 <code>3</code> 位子数组的和：<br><code>int res = presum[3] - presum[0 - 1];</code><br>数组下标出现负数，为了避免这种情况，只能多一次判断，不方便。</p>
+<p>另外，在生成前缀和数组时，递推公式为：<code>presum[i] = presum[i - 1] + nums[i]</code>.<br>问题是，这个递推公式无法适配所有情况。即，当 <code>i</code> 取 <code>0</code> 时，出现异常。<br>为了避免这个情况，只能把 <code>presum[0]</code> 拿出来预设为 <code>nums[0]</code> ，从数组第 <code>1</code> 项接着按照递推公式计算。不方便。</p>
+<p>那么，为了方便地避免以上情况，我们决定将前缀和数组相对原数组向右偏移一位，用 <code>presum[1]</code> 表示原数组第 <code>0</code> 项， <code>presum[2]</code> 表示原数组第 <code>[0,1]</code> 项之和，将 <code>presum[i]</code> 表示为数组中 $[0,i-1]$ 所有数之和。</p>
+<p>那么，如果求原数组从零计第 <code>l</code> 项到 <code>r</code> 项子数组之和，那么<br><code>int res = presum[r + 1] - presum[l + 1 - 1];</code><br>因为 <code>presum[r]</code> 表示的是 $[0, r-1]$ 项之和， <code>presum[l]</code> 表示 $[0,l-1]$ 项之和。<br>另外，如果求原数组从1计算第 <code>l</code> 项到 <code>r</code> 项子数组之和，可以直接：<br><code>int res = presum[r] - presum[l - 1];</code></p>
 <div class="note primary">
-            <h4 id="原题链接："><a href="#原题链接：" class="headerlink" title="原题链接："></a>原题链接：</h4><p><a href="https://www.acwing.com/problem/content/797/" target="_blank" rel="noopener">AcWing 795.前缀和</a></p>
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/797/" target="_blank" rel="noopener">AcWing 795. 前缀和</a></p>
           </div>
 
 
@@ -345,7 +360,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/" title="AcWing 795.前缀和">https://accepted.org.cn/2020/11/10/AcWing-795-前缀和/</a>
+    <a href="https://accepted.org.cn/2020/11/10/AcWing-795-%E5%89%8D%E7%BC%80%E5%92%8C/" title="AcWing 795. 前缀和">https://accepted.org.cn/2020/11/10/AcWing-795-前缀和/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -358,8 +373,8 @@
           
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
               <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag"><i class="fa fa-tag"></i> 前缀和</a>
+              <a href="/tags/AcWing/" rel="tag"><i class="fa fa-tag"></i> AcWing</a>
           </div>
 
         
@@ -434,7 +449,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原题链接："><span class="nav-text">原题链接：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -452,7 +467,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -465,7 +480,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">166</span>
+        <span class="site-state-item-count">167</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
