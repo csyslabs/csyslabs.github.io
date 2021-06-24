@@ -235,6 +235,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">Windows同一台计算机不同用户之间转移hexo运行环境</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-15 18:47:56 / Modified: 23:36:57" itemprop="dateCreated datePublished" datetime="2020-04-15T18:47:56+08:00">2020-04-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/" itemprop="url" rel="index"><span itemprop="name">不亦乐乎</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">博客</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" class="post-meta-item leancloud_visitors" data-flag-title="Windows同一台计算机不同用户之间转移hexo运行环境" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>部署hexo的用户：A</strong><br><strong>新用户：B</strong></p>
+<p>在Windows平台由A切换B之后，A配置的hexo没法直接使用。</p>
+<p><strong>解决方法</strong></p>
+<blockquote>
+<ul>
+<li>将<code>C:\Users\A\AppData\Roaming</code>下的<code>npm</code>目录拷贝到<code>C:\Users\B\AppData\Roaming</code>。<blockquote>
+<p>这里是hexo的安装目录，在新用户下不用重新安装。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\A</code>下的<code>.ssh</code>目录拷贝到<code>C:\Users\B</code>。<blockquote>
+<p>这里存放着用于连接Github的ssh公钥和私钥。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\A</code>下的<code>node_modules</code>目录拷贝到<code>C:\Users\B</code>。<blockquote>
+<p>这里是安装node之后用来存放<code>npm</code>下载的各种包的地方，我们不用重新执行<code>npm install</code>，直接拷贝即可。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\B\AppData\Roaming\npm</code>添加到B的用户环境变量。<blockquote>
+<p>这一步可以让我们在新用户B下直接执行<code>hexo</code>命令。</p>
+</blockquote>
+</li>
+<li>将<code>T:\Git\root\Git\cmd</code>添加到B的用户环境变量。<blockquote>
+<p>这样可以在B下执行<code>git</code>命令。</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>同一台计算机不同不同用户之间转移hexo运行环境要比不同计算机之间更加方便。</p>
+<h5 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h5><blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a><br><a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35668237</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a><br><a href="https://m.html.cn/qa/node-js/12146.html" target="_blank" rel="noopener">https://m.html.cn/qa/node-js/12146.html</a><br><a href="https://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/01/npm-install.html</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1029,110 +1141,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="etoa">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="post-title-link" itemprop="url">LeetCode 42. 接雨水</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-04 23:51:44" itemprop="dateCreated datePublished" datetime="2020-04-04T23:51:44+08:00">2020-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-23 23:31:35" itemprop="dateModified" datetime="2021-06-23T23:31:35+08:00">2021-06-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/04/LeetCode-42-%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 42. 接雨水" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。<br><img src="%E9%A2%98%E7%9B%AE.png" alt="pic0x0"></p>
-<center><font size=1>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</font></center>
-
-<p><strong>示例：</strong></p>
-<blockquote>
-<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6 </p>
-</blockquote>
-<hr>
-<h3 id="按列计算（动态规划计算最值）"><a href="#按列计算（动态规划计算最值）" class="headerlink" title="按列计算（动态规划计算最值）"></a>按列计算（动态规划计算最值）</h3><p>遍历每列，判断要不要计算列上的积水。<br>如何判断？计算出该列左侧最高列高度，计算右侧最高列高度。<br>若该列比二者都小，则该列需要计算;否则不需计算。<br>如何分别计算某列两侧最值？<br>可维护两个数组分别存储每列左右两侧最值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * [列解法, 动态规划]</span></span><br><span class="line"><span class="comment">     * 1ms</span></span><br><span class="line"><span class="comment">     * 39.3MB</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] leftSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span>[] rightSideMax = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="comment">//第一列和最后一列不需要计算两侧最值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            leftSideMax[i] = Math.max(leftSideMax[i - <span class="number">1</span>], height[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            rightSideMax[i] = Math.max(rightSideMax[i + <span class="number">1</span>], height[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minimum = Math.min(leftSideMax[j], rightSideMax[j]);</span><br><span class="line">            <span class="keyword">if</span> (height[j] &lt; minimum) &#123;</span><br><span class="line">                res += (minimum - height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p>核心思想是先降后增必有积水。<br>这个就有点像有效括号，一对儿。<br>维护一个单调递减的栈，栈中存入柱子下标。（为什么存入下标而不直接存入高度？因为我们可能会计算两个相隔若干柱子之间的距离。）<br>入栈：栈为空时；当前柱子低于栈顶柱子。<br>出栈：当前柱子高于栈顶柱子。</p>
-<div class="tabs" id="g_tab"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-1">C++</a></li><li class="tab"><a href="#g_tab-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 2021-6-23 23:13:08</span></span><br><span class="line"><span class="comment"> * @Author: etoa</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> <span class="built_in">shutdown</span> = []() &#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> N = <span class="number">30010</span>;</span><br><span class="line">    pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; stk[N];  <span class="comment">// idx - height</span></span><br><span class="line">    <span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; <span class="built_in">height</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;len = <span class="built_in">height</span>.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!tt || <span class="built_in">height</span>[i] &lt;= stk[tt].second) &#123;</span><br><span class="line">                stk[++tt] = &#123;i, <span class="built_in">height</span>[i]&#125;;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 当前高度高于栈顶，可能会蓄水</span></span><br><span class="line">            <span class="comment">// 要从栈顶向下找到一个大于栈顶的柱子，如果存在则一定会蓄水，不存在则一定不会蓄水</span></span><br><span class="line">            <span class="keyword">for</span> (; tt &amp;&amp; <span class="built_in">height</span>[i] &gt; stk[tt].second;) &#123;   <span class="comment">// 栈内可能有多个柱子和当前柱子构成蓄水条件</span></span><br><span class="line">                <span class="keyword">int</span> stk_top_height = stk[tt].second;</span><br><span class="line">                <span class="keyword">for</span> (; tt; --tt) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (stk[tt].second &gt; stk_top_height) &#123;  <span class="comment">// 找到了</span></span><br><span class="line">                        <span class="keyword">int</span> l = stk[tt].first, r = i;</span><br><span class="line">                        <span class="keyword">int</span> lheight = stk[tt].second, rheight = <span class="built_in">height</span>[i];</span><br><span class="line">                        res += (r - l - <span class="number">1</span>) * (<span class="built_in">min</span>(lheight, rheight) - stk_top_height);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 栈顶自动更新</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 栈内已无柱子和当前柱子构成蓄水条件</span></span><br><span class="line">            stk[++tt] = &#123;i, <span class="built_in">height</span>[i]&#125;; <span class="comment">// 不管之前找没找到，都将当前柱子入栈; 此时栈可能为空（之前没找到），也可能非空，之前找到了</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 单调栈 简化代码</span></span><br><span class="line"><span class="comment">     * 4ms - 29.81%</span></span><br><span class="line"><span class="comment">     * 39.5MB, 11.78%</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; height[i] &gt; height[stack.peek()]) &#123; <span class="comment">//有可能可计算体积</span></span><br><span class="line">                <span class="keyword">int</span> heightInfoBeforePop = stack.peek();</span><br><span class="line">                stack.pop(); <span class="comment">// 当前柱子高于栈顶柱子时，出栈。记得出栈前先保存栈高数据。</span></span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) <span class="keyword">break</span>; <span class="comment">//不可计算体积</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> stackTop = stack.peek();</span><br><span class="line">                    res += ((i - stackTop - <span class="number">1</span>) * (Math.min(height[i], height[stackTop]) - height[heightInfoBeforePop]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i); <span class="comment">// 栈空或当前柱子小于等于于栈顶柱子高度时，入栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1206,7 +1214,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">142</span>
+          <span class="site-state-item-count">143</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

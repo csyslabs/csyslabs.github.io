@@ -235,6 +235,142 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/" class="post-title-link" itemprop="url">LeetCode 999. 可以被一步捕获的棋子数</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-26 15:15:01" itemprop="dateCreated datePublished" datetime="2020-03-26T15:15:01+08:00">2020-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-23 16:11:55" itemprop="dateModified" datetime="2021-06-23T16:11:55+08:00">2021-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 999. 可以被一步捕获的棋子数" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>在一个 8 x 8 的棋盘上，有一个白色的车（<code>Rook</code>），用字符 <code>&#39;R&#39;</code> 表示。棋盘上还可能存在空方块，白色的象（<code>Bishop</code>）以及黑色的卒（<code>pawn</code>），分别用字符 <code>&#39;.&#39;</code>，<code>&#39;B&#39;</code> 和 <code>&#39;p&#39;</code> 表示。不难看出，大写字符表示的是白棋，小写字符表示的是黑棋。</p>
+<p>车按国际象棋中的规则移动。东，西，南，北四个基本方向任选其一，然后一直向选定的方向移动，直到满足下列四个条件之一：</p>
+<ul>
+<li>棋手选择主动停下来。</li>
+<li>棋子因到达棋盘的边缘而停下。</li>
+<li>棋子移动到某一方格来捕获位于该方格上敌方（黑色）的卒，停在该方格内。</li>
+<li>车不能进入/越过已经放有其他友方棋子（白色的象）的方格，停在友方棋子前。</li>
+</ul>
+<p>你现在可以控制车移动一次，请你统计有多少敌方的卒处于你的捕获范围内（即，可以被一步捕获的棋子数）。</p>
+<p><strong>示例1：</strong><br><img src="1.png" alt="0x0"></p>
+<blockquote>
+<p><strong>输入：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;R&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 3<br><strong>解释：</strong> 在本例中，车能够捕获所有的卒</p>
+</blockquote>
+<p><strong>示例2：</strong><br><img src="2.png" alt="0x1"></p>
+<blockquote>
+<p><strong>输入：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;B&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;B&#39;,&#39;R&#39;,&#39;B&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;B&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 0<br><strong>解释：</strong> 象阻止了车捕获任何卒</p>
+</blockquote>
+<p><strong>示例3：</strong><br><img src="3.png" alt="0x2"></p>
+<blockquote>
+<p><strong>输入：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;R&#39;,&#39;.&#39;,&#39;p&#39;,&#39;B&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;B&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>输出：</strong> 3<br><strong>解释：</strong> 车可以捕获位置 b5，d6 和 f5 的卒</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<blockquote>
+<ol>
+<li><code>board.length == board[i].length == 8</code></li>
+<li><code>board[i][j]</code> 可以是 <code>&#39;R&#39;</code>，<code>&#39;.&#39;</code>，<code>&#39;B&#39;</code> 或 <code>&#39;p&#39;</code></li>
+<li>只有一个格子上存在 <code>board[i][j] == &#39;R&#39;</code></li>
+</ol>
+</blockquote>
+<hr>
+<p>题目所求即白车 <code>rock(R)</code> 一次移动击杀小卒 <code>pawn(p)</code> 所有可能的情况。<br>读懂题意后，先找白车 <code>R</code> ，以 <code>R</code> 为起点，分别往四个方向寻找 <code>p</code>。<br>注意可能会遇到 <code>Bishop(B)</code> ，表示此路不通。另注意范围。</p>
+<h3 id="普通解法"><a href="#普通解法" class="headerlink" title="普通解法"></a>普通解法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numRookCaptures</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; board.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j= <span class="number">0</span>; j &lt; board[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'R'</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> y = i, x = j;</span><br><span class="line">                    <span class="comment">//纵上</span></span><br><span class="line">                    <span class="keyword">while</span> (--i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//纵下</span></span><br><span class="line">                    i = y; <span class="comment">//i归位</span></span><br><span class="line">                    <span class="keyword">while</span> (++i &lt;= <span class="number">7</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//横左</span></span><br><span class="line">                    i = y;<span class="comment">//i归位</span></span><br><span class="line">                    <span class="keyword">while</span> (--j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//横右</span></span><br><span class="line">                    j = x;<span class="comment">//j归位</span></span><br><span class="line">                    <span class="keyword">while</span> (++j &lt;=<span class="number">7</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二维方向数组"><a href="#二维方向数组" class="headerlink" title="二维方向数组"></a>二维方向数组</h3><p>依然是先找到<code>R</code>，定义方向数组<code>[[-1, 0], [1, 0], [0, 1], [0, -1]]</code>，循环该方向数组可表示依次走一个方向。<br>走其中某个方向时，用<code>i, j</code>分别加方向数组即可完成行走动作，注意在行走时要判断棋盘范围。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> dr[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dc[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> R, C;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt; &amp;board, <span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt; R - <span class="number">1</span> || j &lt; <span class="number">0</span> || j &gt; C - <span class="number">1</span> || board[i][j] == <span class="string">'B'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">            res++;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        dfs(board, i + dr[k], j + dc[k], k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numRookCaptures</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;R = board.<span class="built_in">size</span>(), <span class="keyword">this</span>-&gt;C = board[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; R; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; C; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'R'</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++) &#123;</span><br><span class="line">                        dfs(board, i, j, k);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> res;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numRookCaptures</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 因为题目已经明确给出 board.length == board[i].length == 8，所以不做输入检查</span></span><br><span class="line">        <span class="comment">// 定义方向数组，可以认为是四个方向向量，在棋盘问题上是常见的做法</span></span><br><span class="line">        <span class="keyword">int</span>[][] directions = &#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (board[i][j] == <span class="string">'R'</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span>[] direction : directions) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (burnout(board, i, j, direction)) &#123;</span><br><span class="line">                            res++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> res;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 代码不会走到这里，返回 0 或者抛出异常均可</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * burnout 横冲直撞的意思（来自欧路词典）</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> board     输入棋盘</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> x         当前白象位置的横坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> y         当前白象位置的纵坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> direction 方向向量</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 消灭一个 p，就返回 true</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">burnout</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>[] direction)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = x;</span><br><span class="line">        <span class="keyword">int</span> j = y;</span><br><span class="line">        <span class="keyword">while</span> (inArea(i, j)) &#123;</span><br><span class="line">            <span class="comment">// 是友军，路被堵死，直接返回</span></span><br><span class="line">            <span class="keyword">if</span> (board[i][j] == <span class="string">'B'</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 是敌军，拿下一血（不知道一血这个词是不是这么用的）</span></span><br><span class="line">            <span class="keyword">if</span> (board[i][j] == <span class="string">'p'</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            i += direction[<span class="number">0</span>];</span><br><span class="line">            j += direction[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i 当前位置横坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j 当前位置纵坐标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 是否在棋盘有效范围内</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">inArea</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i &gt;= <span class="number">0</span> &amp;&amp; i &lt; <span class="number">8</span> &amp;&amp; j &gt;= <span class="number">0</span> &amp;&amp; j &lt; <span class="number">8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/available-captures-for-rook/" target="_blank" rel="noopener">LeetCode 999. 可以被一步捕获的棋子数</a></p>
+          </div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/25/LeetCode-7-%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF%EF%BC%88Surface-Area-of-3D-Shapes%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1237,89 +1373,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/12/Test-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="etoa">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/12/Test-0/" class="post-title-link" itemprop="url">Test</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-03-12 20:13:40" itemprop="dateCreated datePublished" datetime="2020-03-12T20:13:40+08:00">2020-03-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-15 20:13:40" itemprop="dateModified" datetime="2020-03-15T20:13:40+08:00">2020-03-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Test/" itemprop="url" rel="index"><span itemprop="name">Test</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/03/12/Test-0/" class="post-meta-item leancloud_visitors" data-flag-title="Test" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><h2 id="Test-1"><a href="#Test-1" class="headerlink" title="Test"></a>Test</h2><h3 id="emmm-this-is-a-test-too"><a href="#emmm-this-is-a-test-too" class="headerlink" title="emmm this is a test , too."></a>emmm this is a test , too.</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1393,7 +1446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">142</span>
+          <span class="site-state-item-count">143</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-06-23T10:49:19.851Z</updated>
+  <updated>2021-06-24T10:16:13.807Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 149. 直线上最多的点数</title>
+    <link href="https://accepted.org.cn/2021/06/24/LeetCode-149-%E7%9B%B4%E7%BA%BF%E4%B8%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E7%82%B9%E6%95%B0/"/>
+    <id>https://accepted.org.cn/2021/06/24/LeetCode-149-%E7%9B%B4%E7%BA%BF%E4%B8%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E7%82%B9%E6%95%B0/</id>
+    <published>2021-06-24T09:45:27.000Z</published>
+    <updated>2021-06-24T10:16:13.807Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>主要是考虑从哪个角度入手暴搜。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点。求最多有多少个点在同一条直线上。</p><p><strong>示例1:</strong></p><p><img src="0.jpg" alt="0x0"></p><blockquote><p>输入：points = [[1,1],[2,2],[3,3]]<br>输出：3</p></blockquote><p><strong>示例2:</strong></p><p><img src="1.jpg" alt="0x1"></p><blockquote><p>输入：points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]<br>输出：4</p></blockquote><p><strong>提示：</strong></p><ul><li>$1 &lt;= points.length &lt;= 300$</li><li>$points[i].length == 2$</li><li>$-10^4 &lt;= xi, yi &lt;= 10^4$</li><li>$points$ 中的所有点 <strong>互不相同</strong></li></ul><hr><h3 id="暴搜"><a href="#暴搜" class="headerlink" title="暴搜"></a>暴搜</h3><p>对于某一个点，把它看成中心点，平面上会有无穷多条直线经过它。对于一个中心点，剩余点的每个点都和它构成一条直线。我们统计剩余点和中心点构成直线的数量。</p><p>注意剩余点和中心点垂直的情况，此时可以用一个额外的变量来统计和中心点垂直的点的数量。<br>注意相同点的情况，即剩余点和中心点重合，虽然题目条件说明所有点互不相同，但是这里依旧考虑这一情况。<br>注意本题精度要求较高，计算斜率使用 long double 变量。<br>如果精度要求更高，可以考虑用分数来存放斜率，这时候需要求分子分母最大公约数。</p><div class="tabs" id="g_tab"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 2021-6-24 17:54:50</span></span><br><span class="line"><span class="comment"> * @Author: etoa</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> <span class="built_in">shutdown</span> = []()&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxPoints</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = points.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="built_in">unordered_map</span>&lt;<span class="keyword">long</span> <span class="keyword">double</span>, <span class="keyword">int</span>&gt; cnt;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> center = <span class="number">0</span>, vertical = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">double</span> ratio = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (points[j] == points[i]) center++;   <span class="comment">// 至少包含一个中心点 points[i]</span></span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (points[j][<span class="number">0</span>] == points[i][<span class="number">0</span>]) vertical++;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    ratio = (<span class="keyword">long</span> <span class="keyword">double</span>)(points[j][<span class="number">1</span>] - points[i][<span class="number">1</span>]) / (points[j][<span class="number">0</span>] - points[i][<span class="number">0</span>]);</span><br><span class="line">                    cnt[ratio]++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 垂线和斜线数量取较大者</span></span><br><span class="line">            <span class="keyword">int</span> mxratio = vertical;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> [key, value] : cnt) &#123;</span><br><span class="line">                mxratio = <span class="built_in">max</span>(mxratio, value);</span><br><span class="line">            &#125;</span><br><span class="line">            res = <span class="built_in">max</span>(res, mxratio + center);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/max-points-on-a-line/" target="_blank" rel="noopener">LeetCode 149. 直线上最多的点数</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;主要是考虑从哪个角度入手暴搜。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="哈希表" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 1162. 地图分析</title>
@@ -173,9 +204,9 @@
     
       <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
-    
       <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
+    
+      <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
     
       <category term="Flood Fill" scheme="https://accepted.org.cn/tags/Flood-Fill/"/>
     
@@ -212,9 +243,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
       <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
       <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -591,31 +622,6 @@
     
     
       <category term="游戏逆向" scheme="https://accepted.org.cn/tags/%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于人际关系的一点点思考</title>
-    <link href="https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/"/>
-    <id>https://accepted.org.cn/2021/03/10/%E5%85%B3%E4%BA%8E%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E6%80%9D%E8%80%83/</id>
-    <published>2021-03-10T14:51:05.000Z</published>
-    <updated>2021-03-10T15:01:26.094Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>生活感悟。</p><a id="more"></a><h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h3><p>通过很长时间的观察和实践，我总结出了一个道理，人与人之间关系要想处的好，无非三个词：</p><p><strong>真诚</strong>，<strong>亲切</strong>，<strong>友善</strong>。</p><p>看似是没啥营养的大道理，实则为人情练达。</p><p>想TA之所想，感TA之所受，对TA多加关怀，让TA觉得自己是被重视的。</p><p>记住，要用心经营。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;生活感悟。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://accepted.org.cn/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="人际关系" scheme="https://accepted.org.cn/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
-    
-      <category term="生活" scheme="https://accepted.org.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
