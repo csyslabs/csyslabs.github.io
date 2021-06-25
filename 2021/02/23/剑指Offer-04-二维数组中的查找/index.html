@@ -22,17 +22,18 @@
 
   <meta name="description" content="摘要：巧妙利用递增特性线性查找目标值。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer 04.二维数组中的查找">
+<meta property="og:title" content="剑指Offer 04. 二维数组中的查找">
 <meta property="og:url" content="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：巧妙利用递增特性线性查找目标值。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-23T05:13:47.000Z">
-<meta property="article:modified_time" content="2021-02-23T09:50:42.816Z">
+<meta property="article:modified_time" content="2021-06-25T02:55:49.712Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="剑指Offer">
-<meta property="article:tag" content="线性查找">
+<meta property="article:tag" content="线性搜索">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">
@@ -61,7 +62,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>剑指Offer 04.二维数组中的查找 | Dirac Sea</title>
+  <title>剑指Offer 04. 二维数组中的查找 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -253,7 +254,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          剑指Offer 04.二维数组中的查找
+          剑指Offer 04. 二维数组中的查找
         </h1>
 
         <div class="post-meta">
@@ -265,10 +266,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-23 13:13:47 / Modified: 17:50:42" itemprop="dateCreated datePublished" datetime="2021-02-23T13:13:47+08:00">2021-02-23</time>
+              <time title="Created: 2021-02-23 13:13:47" itemprop="dateCreated datePublished" datetime="2021-02-23T13:13:47+08:00">2021-02-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-25 10:55:49" itemprop="dateModified" datetime="2021-06-25T10:55:49+08:00">2021-06-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -281,10 +288,18 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a>
+                </span>
             </span>
 
           
-            <span id="/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer 04.二维数组中的查找" title="Views">
+            <span id="/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer 04. 二维数组中的查找" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -304,16 +319,17 @@
         <p><strong>摘要：</strong><br>巧妙利用递增特性线性查找目标值。</p>
 <a id="more"></a>
 
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>在一个 <code>n * m</code> 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>在一个 $n * m$ 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
 <p><strong>示例:</strong></p>
 <p>现有矩阵 <code>matrix</code> 如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,   4,  7, 11, 15],</span><br><span class="line">  [2,   5,  8, 12, 19],</span><br><span class="line">  [3,   6,  9, 16, 22],</span><br><span class="line">  [10, 13, 14, 17, 24],</span><br><span class="line">  [18, 21, 23, 26, 30]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>给定 <code>target = 5</code>，返回 <code>true</code>。</p>
 <p>给定 <code>target = 20</code>，返回 <code>false</code>。</p>
 <p><strong>限制：</strong></p>
-<p>$ 0 &lt;= n &lt;= 1000 $,<br>$ 0 &lt;= m &lt;= 1000 $</p>
+<p>$ 0 &lt;= n &lt;= 1000 $,</p>
+<p>$ 0 &lt;= m &lt;= 1000 $</p>
 <hr>
-<h3 id="方法：线性查找"><a href="#方法：线性查找" class="headerlink" title="方法：线性查找"></a>方法：线性查找</h3><p>从右上角开始，如果当前数比目标值小，则排除当前行；如果比目标值大，则排除当前列。</p>
+<h3 id="线性查找"><a href="#线性查找" class="headerlink" title="线性查找"></a>线性查找</h3><p>从右上角开始，如果当前数比目标值小，则排除当前行；如果比目标值大，则排除当前列。</p>
 <div class="tabs" id="g_tab-0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-0-1">C++</a></li><li class="tab"><a href="#g_tab-0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 28 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 12.8 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> R = matrix.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (!R) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> C = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>, c = C - <span class="number">1</span>; r &lt; R &amp;&amp; c &gt;= <span class="number">0</span>;) &#123;</span><br><span class="line">            <span class="keyword">int</span> cur = matrix[r][c];</span><br><span class="line">            <span class="keyword">if</span> (cur == target) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (cur &lt; target) r++;</span><br><span class="line">            <span class="keyword">else</span> c--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行用时: 1 ms</span></span><br><span class="line"><span class="comment">// 内存消耗: 44.5 MB</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> R = matrix.length;</span><br><span class="line">        <span class="keyword">if</span> (R == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">int</span> C = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>, c = C - <span class="number">1</span>; r &lt; R &amp;&amp; c &gt;= <span class="number">0</span>;) &#123;</span><br><span class="line">            <span class="keyword">int</span> cur = matrix[r][c];</span><br><span class="line">            <span class="keyword">if</span> (cur == target) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (cur &lt; target) r++;</span><br><span class="line">            <span class="keyword">else</span> c--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
 <div class="note primary">
@@ -333,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" title="剑指Offer 04.二维数组中的查找">https://accepted.org.cn/2021/02/23/剑指Offer-04-二维数组中的查找/</a>
+    <a href="https://accepted.org.cn/2021/02/23/%E5%89%91%E6%8C%87Offer-04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" title="剑指Offer 04. 二维数组中的查找">https://accepted.org.cn/2021/02/23/剑指Offer-04-二维数组中的查找/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -346,8 +362,9 @@
           
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
               <a href="/tags/%E5%89%91%E6%8C%87Offer/" rel="tag"><i class="fa fa-tag"></i> 剑指Offer</a>
-              <a href="/tags/%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE/" rel="tag"><i class="fa fa-tag"></i> 线性查找</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 线性搜索</a>
           </div>
 
         
@@ -356,8 +373,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/02/23/%E5%89%91%E6%8C%87Offer-05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" rel="prev" title="剑指Offer 05.替换空格">
-      <i class="fa fa-chevron-left"></i> 剑指Offer 05.替换空格
+    <a href="/2021/02/23/%E5%89%91%E6%8C%87Offer-05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" rel="prev" title="剑指Offer 05. 替换空格">
+      <i class="fa fa-chevron-left"></i> 剑指Offer 05. 替换空格
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/02/22/%E5%89%91%E6%8C%87Offer-03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" rel="next" title="剑指Offer 03. 数组中重复的数字">
@@ -422,7 +439,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法：线性查找"><span class="nav-text">方法：线性查找</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性查找"><span class="nav-text">线性查找</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -453,7 +470,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">167</span>
+        <span class="site-state-item-count">160</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

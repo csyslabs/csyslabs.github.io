@@ -204,9 +204,9 @@
     
       <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
     
-      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
-    
       <category term="DFS" scheme="https://accepted.org.cn/tags/DFS/"/>
+    
+      <category term="BFS" scheme="https://accepted.org.cn/tags/BFS/"/>
     
       <category term="Flood Fill" scheme="https://accepted.org.cn/tags/Flood-Fill/"/>
     
@@ -243,9 +243,9 @@
     
       <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
+    
+      <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="字符串" scheme="https://accepted.org.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
