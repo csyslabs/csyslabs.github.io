@@ -22,18 +22,18 @@
 
   <meta name="description" content="摘要：位运算记录字符串中字符。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 318.最大单词长度乘积">
+<meta property="og:title" content="LeetCode 318. 最大单词长度乘积">
 <meta property="og:url" content="https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/index.html">
 <meta property="og:site_name" content="Dirac Sea">
 <meta property="og:description" content="摘要：位运算记录字符串中字符。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-02T09:14:44.000Z">
-<meta property="article:modified_time" content="2020-12-02T09:36:48.944Z">
+<meta property="article:modified_time" content="2021-06-28T03:02:41.889Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="位运算">
 <meta property="article:tag" content="字符串">
+<meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/">
@@ -62,7 +62,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>LeetCode 318.最大单词长度乘积 | Dirac Sea</title>
+  <title>LeetCode 318. 最大单词长度乘积 | Dirac Sea</title>
   
     <script>
       function sendPageView() {
@@ -254,7 +254,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode 318.最大单词长度乘积
+          LeetCode 318. 最大单词长度乘积
         </h1>
 
         <div class="post-meta">
@@ -266,10 +266,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-02 17:14:44 / Modified: 17:36:48" itemprop="dateCreated datePublished" datetime="2020-12-02T17:14:44+08:00">2020-12-02</time>
+              <time title="Created: 2020-12-02 17:14:44" itemprop="dateCreated datePublished" datetime="2020-12-02T17:14:44+08:00">2020-12-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-28 11:02:41" itemprop="dateModified" datetime="2021-06-28T11:02:41+08:00">2021-06-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -282,10 +288,14 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
             </span>
 
           
-            <span id="/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 318.最大单词长度乘积" title="Views">
+            <span id="/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 318. 最大单词长度乘积" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -305,7 +315,7 @@
         <p><strong>摘要：</strong><br>位运算记录字符串中字符。</p>
 <a id="more"></a>
 
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个字符串数组 words，找到 length(word[i]) * length(word[j]) 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 0。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个字符串数组 $words$，找到 $length(word[i]) \times length(word[j])$ 的最大值，并且这两个单词不含有公共字母。你可以认为每个单词只包含小写字母。如果不存在这样的两个单词，返回 $0$。</p>
 <p><strong>示例 1:</strong></p>
 <blockquote>
 <p>输入: [“abcw”,”baz”,”foo”,”bar”,”xtfn”,”abcdef”]<br>输出: 16<br>解释: 这两个单词为 “abcw”, “xtfn”。</p>
@@ -321,14 +331,15 @@
 <hr>
 <p>这道题的关键在于判断两个字符串有无公共字符。可以想到的方法有哈希集合，计数数组，以及位运算。</p>
 <h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p>这道题的字符串中仅有26个字母，可以用位运算方法记录下字符串中出现的字符。<br>对于一个字符，我们计算出它和 <code>a</code> 的偏移，将 <code>1</code> 左移这个偏移量，那么得到的二进制数就记录下了当前字符。那么，如何记录整个字符串的所有字符呢？<br>维护一个二进制数 <code>s</code> , 对于字符串中的每一个字符，用上述方法计算出对应的二进制数后，与 <code>s</code> 进行或运算，将每个字符相对 <code>a</code> 的偏移量累加地记录到 <code>s</code> 中。<br>判断两个字符串有无公共字符时，就可以直接让对应下标的二进制数进行与运算，为 <code>0</code> 则无公共字符串。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; state;                                                                              </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> <span class="keyword">word</span> : words) &#123;</span><br><span class="line">            <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> c : <span class="keyword">word</span>) &#123;</span><br><span class="line">                s |= <span class="number">1</span> &lt;&lt; (c - <span class="string">'a'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            state.push_back(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.<span class="built_in">size</span>(); i ++) &#123; </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; words.<span class="built_in">size</span>(); j ++) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((state[i] &amp; state[j]) == <span class="number">0</span>) mx = <span class="built_in">max</span>(mx, (<span class="keyword">int</span>) (words[i].<span class="built_in">size</span>() * words[j].<span class="built_in">size</span>()));     <span class="comment">// 1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mx;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; state;                                                                              </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> <span class="keyword">word</span> : words) &#123;</span><br><span class="line">            <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> c : <span class="keyword">word</span>) &#123;</span><br><span class="line">                s |= <span class="number">1</span> &lt;&lt; (c - <span class="string">'a'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            state.push_back(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.<span class="built_in">size</span>(); i ++) &#123; </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; words.<span class="built_in">size</span>(); j ++) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((state[i] &amp; state[j]) == <span class="number">0</span>) mx = <span class="built_in">max</span>(mx, (<span class="keyword">int</span>) (words[i].<span class="built_in">size</span>() * words[j].<span class="built_in">size</span>()));     <span class="comment">// 1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mx;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div></div>
+
 <blockquote>
 <ol>
 <li>注意在 <code>C++</code> 中 <code>string.size()</code> 返回值为 <code>unsinged long</code>。</li>
 </ol>
 </blockquote>
 <div class="note primary">
-            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/" target="_blank" rel="noopener">LeetCode 318.最大单词长度乘积（Maximum Product of Word Lengths）</a></p>
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/" target="_blank" rel="noopener">LeetCode 318. 最大单词长度乘积</a></p>
           </div>
     </div>
 
@@ -344,7 +355,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/" title="LeetCode 318.最大单词长度乘积">https://accepted.org.cn/2020/12/02/LeetCode-318-最大单词长度乘积/</a>
+    <a href="https://accepted.org.cn/2020/12/02/LeetCode-318-%E6%9C%80%E5%A4%A7%E5%8D%95%E8%AF%8D%E9%95%BF%E5%BA%A6%E4%B9%98%E7%A7%AF/" title="LeetCode 318. 最大单词长度乘积">https://accepted.org.cn/2020/12/02/LeetCode-318-最大单词长度乘积/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -358,8 +369,8 @@
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag"><i class="fa fa-tag"></i> 位运算</a>
               <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
+              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag"><i class="fa fa-tag"></i> 位运算</a>
           </div>
 
         
@@ -465,7 +476,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">157</span>
+        <span class="site-state-item-count">156</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
