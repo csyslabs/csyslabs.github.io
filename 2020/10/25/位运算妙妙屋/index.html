@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：位运算使用技巧。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-25T08:09:15.000Z">
-<meta property="article:modified_time" content="2021-06-28T03:00:46.126Z">
+<meta property="article:modified_time" content="2021-07-04T16:59:01.026Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="位运算">
@@ -272,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-28 11:00:46" itemprop="dateModified" datetime="2021-06-28T11:00:46+08:00">2021-06-28</time>
+                <time title="Modified: 2021-07-05 00:59:01" itemprop="dateModified" datetime="2021-07-05T00:59:01+08:00">2021-07-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -333,8 +333,17 @@
 <blockquote>
 <p>注意，c++支持负数左移，都是存的补码，int会越界所以转为unsigned int</p>
 </blockquote>
-<h3 id="7-二进制数记录单词中出现过的字符"><a href="#7-二进制数记录单词中出现过的字符" class="headerlink" title="7 二进制数记录单词中出现过的字符"></a>7 二进制数记录单词中出现过的字符</h3><p>记录一个仅由全部大写字母或全部小写字母构成的单词中出现过的字符，因为最多出现26种字符，可以用一个32位 <code>int</code> 数字统计字符是否出现过。<br>从数字最低位开始，对应 <code>&#39;a&#39;</code> 或 <code>&#39;A&#39;</code>。对于字符 <code>c</code>，可以用 <code>1 &lt;&lt; c - &#39;a&#39;</code> 或 <code>1 &lt;&lt; c - &#39;A&#39;</code> 在对应位置设 $1$.</p>
+<h3 id="8-二进制数记录单词中出现过的字符"><a href="#8-二进制数记录单词中出现过的字符" class="headerlink" title="8. 二进制数记录单词中出现过的字符"></a>8. 二进制数记录单词中出现过的字符</h3><p>记录一个仅由全部大写字母或全部小写字母构成的单词中出现过的字符，因为最多出现26种字符，可以用一个32位 <code>int</code> 数字统计字符是否出现过。<br>从数字最低位开始，对应 <code>&#39;a&#39;</code> 或 <code>&#39;A&#39;</code>。对于字符 <code>c</code>，可以用 <code>1 &lt;&lt; c - &#39;a&#39;</code> 或 <code>1 &lt;&lt; c - &#39;A&#39;</code> 在对应位置设 $1$.</p>
 <p>将单词所有字符进行如上操作，将全部结果进行或运算得到的最终数字就可以记录单词中出现过的字符。<br><strong>参考题目：</strong> <a href="https://eetoa.github.io/2020/12/02/LeetCode-318-最大单词长度乘积/" target="_blank" rel="noopener">LeetCode 318. 最大单词长度乘积</a></p>
+<h3 id="9-异或运算性质"><a href="#9-异或运算性质" class="headerlink" title="9. 异或运算性质"></a>9. 异或运算性质</h3><ul>
+<li>$a \bigoplus 0 = a$</li>
+<li>$a \bigoplus a = 0$</li>
+<li>$(a \bigoplus b) \bigoplus c = a \bigoplus (b \bigoplus c)$</li>
+<li>$a \bigoplus b = b \bigoplus a$</li>
+<li>如果 $a \bigoplus b = c$<br>则 $b = a \bigoplus c$<br>，这是一种加密算法。</li>
+</ul>
+<h3 id="10-一个二进制数-x-，它的距离最低位-k-个数字不同且其他位相同的二进制数为："><a href="#10-一个二进制数-x-，它的距离最低位-k-个数字不同且其他位相同的二进制数为：" class="headerlink" title="10. 一个二进制数 $x$，它的距离最低位 $k$ 个数字不同且其他位相同的二进制数为："></a>10. 一个二进制数 $x$，它的距离最低位 $k$ 个数字不同且其他位相同的二进制数为：</h3><p><code>x ^ (1 &lt;&lt; k)</code></p>
+<h3 id="11-二进制快速幂"><a href="#11-二进制快速幂" class="headerlink" title="11. 二进制快速幂"></a>11. 二进制快速幂</h3><p>详见<a href="https://eetoa.github.io/2021/07/04/【AcWing算法基础】第四讲-数学知识-快速幂-AcWing-875-快速幂/" target="_blank" rel="noopener">【AcWing算法基础】第四讲-数学知识-快速幂 AcWing 875. 快速幂</a></p>
 
     </div>
 
@@ -438,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个获取二进制数中1的个数的轮子"><span class="nav-text">4. 一个获取二进制数中1的个数的轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-二进制数中最高位1距离最低位的距离"><span class="nav-text">5. 二进制数中最高位1距离最低位的距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-两个数之间交换位置"><span class="nav-text">6. 两个数之间交换位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-实现加法运算"><span class="nav-text">7. 实现加法运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-二进制数记录单词中出现过的字符"><span class="nav-text">7 二进制数记录单词中出现过的字符</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-int类型利用位运算乘除2的k次幂"><span class="nav-text">1. int类型利用位运算乘除2的k次幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-判断二进制数的第k位"><span class="nav-text">2. 判断二进制数的第k位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-二进制数最后一位1的————lowbit-x"><span class="nav-text">3. 二进制数最后一位1的————lowbit(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-一个获取二进制数中1的个数的轮子"><span class="nav-text">4. 一个获取二进制数中1的个数的轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-二进制数中最高位1距离最低位的距离"><span class="nav-text">5. 二进制数中最高位1距离最低位的距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-两个数之间交换位置"><span class="nav-text">6. 两个数之间交换位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-实现加法运算"><span class="nav-text">7. 实现加法运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-二进制数记录单词中出现过的字符"><span class="nav-text">8. 二进制数记录单词中出现过的字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-异或运算性质"><span class="nav-text">9. 异或运算性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-一个二进制数-x-，它的距离最低位-k-个数字不同且其他位相同的二进制数为："><span class="nav-text">10. 一个二进制数 $x$，它的距离最低位 $k$ 个数字不同且其他位相同的二进制数为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-二进制快速幂"><span class="nav-text">11. 二进制快速幂</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -456,20 +465,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">148</span>
+          <span class="site-state-item-count">157</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-count">153</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
