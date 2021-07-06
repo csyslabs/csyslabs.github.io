@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode 1418. 点菜展示表</title>
+    <url>/2021/07/06/LeetCode-1418-%E7%82%B9%E8%8F%9C%E5%B1%95%E7%A4%BA%E8%A1%A8/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>使用有序集合和有序map简化代码。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组 $orders$，表示客户在餐厅中完成的订单。</p>
+<p>确切地说， $orders[i]=[customerNamei,tableNumberi,foodItemi]$ ，其中 $customerNamei$ 是客户的姓名，$tableNumberi$ 是客户所在餐桌的桌号，而 $foodItemi$ 是客户点的餐品名称。</p>
+<p>请你返回该餐厅的 <strong>点菜展示表</strong> 。在这张表中，表中第一行为标题，其第一列为餐桌桌号 “Table” ，后面每一列都是按字母顺序排列的餐品名称。接下来每一行中的项则表示每张餐桌订购的相应餐品数量，第一列应当填对应的桌号，后面依次填写下单的餐品数量。</p>
+<p>注意：客户姓名不是点菜展示表的一部分。此外，表中的数据行应该按餐桌桌号升序排列。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：orders = [[“David”,”3”,”Ceviche”],[“Corina”,”10”,”Beef Burrito”],[“David”,”3”,”Fried Chicken”],[“Carla”,”5”,”Water”],[“Carla”,”5”,”Ceviche”],[“Rous”,”3”,”Ceviche”]]<br>输出：[[“Table”,”Beef Burrito”,”Ceviche”,”Fried Chicken”,”Water”],[“3”,”0”,”2”,”1”,”0”],[“5”,”0”,”1”,”0”,”1”],[“10”,”1”,”0”,”0”,”0”]]<br>解释：<br>点菜展示表如下所示：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Table</th>
+<th align="left">Beef Burrito</th>
+<th align="left">Ceviche</th>
+<th align="left">Fried Chicken</th>
+<th align="left">Water</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+</tbody></table>
+<p>对于餐桌 3：David 点了 “Ceviche” 和 “Fried Chicken”，而 Rous 点了 “Ceviche”<br>而餐桌 5：Carla 点了 “Water” 和 “Ceviche”<br>餐桌 10：Corina 点了 “Beef Burrito” </p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：orders = [[“James”,”12”,”Fried Chicken”],[“Ratesh”,”12”,”Fried Chicken”],[“Amadeus”,”12”,”Fried Chicken”],[“Adam”,”1”,”Canadian Waffles”],[“Brianna”,”1”,”Canadian Waffles”]]<br>输出：[[“Table”,”Canadian Waffles”,”Fried Chicken”],[“1”,”2”,”0”],[“12”,”0”,”3”]]<br>解释：<br>对于餐桌 1：Adam 和 Brianna 都点了 “Canadian Waffles”<br>而餐桌 12：James, Ratesh 和 Amadeus 都点了 “Fried Chicken”</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：orders = [[“Laura”,”2”,”Bean Burrito”],[“Jhon”,”2”,”Beef Burrito”],[“Melissa”,”2”,”Soda”]]<br>输出：[[“Table”,”Bean Burrito”,”Beef Burrito”,”Soda”],[“2”,”1”,”1”,”1”]]</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>$1 &lt;= orders.length &lt;= 5 \times 10^4$</li>
+<li>$orders[i].length = 3$</li>
+<li>$1 &lt;= customerNamei.length, foodItemi.length &lt;= 20$</li>
+<li>$customerNamei$ 和 $foodItemi$ 由大小写英文字母及空格字符 <code>&#39; &#39;</code> 组成。</li>
+<li>$tableNumberi$ 是 $1$ 到 $500$ 范围内的整数。</li>
+</ul>
+<hr>
+<h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><p>构建一个桌号数组，数组中放入有序哈希表。遍历 $orders$ 数组，将桌号对应的菜品放入到对应的哈希表中。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 2021-7-6 14:11:00</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> N = <span class="number">507</span>;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; table[N];</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; <span class="title">displayTable</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt;&amp; orders)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; fooditem;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : orders) &#123;</span><br><span class="line">            fooditem.insert(e[<span class="number">2</span>]);</span><br><span class="line">            table[stoi(e[<span class="number">1</span>])][e[<span class="number">2</span>]]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; res;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; intro;</span><br><span class="line">        intro.push_back(<span class="string">"Table"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : fooditem) intro.push_back(e);</span><br><span class="line">        res.push_back(intro);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!table[i].empty()) &#123;</span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; each_table;</span><br><span class="line">                each_table.push_back(to_string(i));</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : fooditem) &#123;</span><br><span class="line">                    each_table.push_back(to_string(table[i][e]));</span><br><span class="line">                &#125;</span><br><span class="line">                res.push_back(each_table);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/" target="_blank" rel="noopener">LeetCode 1418. 点菜展示表</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>map</tag>
+        <tag>set</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 726. 原子的数量</title>
     <url>/2021/07/06/LeetCode-726-%E5%8E%9F%E5%AD%90%E7%9A%84%E6%95%B0%E9%87%8F/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>很容易想到使用DFS解决问题。</p>
@@ -103,8 +186,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>LeetCode</tag>
         <tag>数学</tag>
+        <tag>LeetCode</tag>
         <tag>竞赛</tag>
         <tag>数论</tag>
         <tag>快速幂</tag>
@@ -285,8 +368,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>位运算</tag>
         <tag>前缀和</tag>
+        <tag>位运算</tag>
         <tag>竞赛</tag>
       </tags>
   </entry>
@@ -778,8 +861,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -1000,7 +1083,7 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>哈希表</tag>
+        <tag>unordered_map</tag>
       </tags>
   </entry>
   <entry>
@@ -1298,8 +1381,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>LeetCode</tag>
         <tag>数学</tag>
+        <tag>LeetCode</tag>
         <tag>字符串</tag>
         <tag>竞赛</tag>
       </tags>
@@ -3146,8 +3229,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>LeetCode</tag>
         <tag>链表</tag>
+        <tag>LeetCode</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -3257,10 +3340,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>哈希表</tag>
         <tag>计数数组</tag>
         <tag>剑指Offer</tag>
-        <tag>哈希集合</tag>
+        <tag>unordered_map</tag>
+        <tag>unordered_set</tag>
       </tags>
   </entry>
   <entry>
@@ -3347,8 +3430,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -3436,8 +3519,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4256,8 +4339,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -4508,8 +4591,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4560,8 +4643,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4883,14 +4966,21 @@
       </tags>
   </entry>
   <entry>
-    <title>AcWing 802.区间和</title>
-    <url>/2020/11/06/AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>一道经典的离散化题目。</p>
+    <title>【AcWing算法基础】第一讲-基础算法-离散化 AcWing 802. 区间和</title>
+    <url>/2020/11/06/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%80%E8%AE%B2-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-%E7%A6%BB%E6%95%A3%E5%8C%96-AcWing-802-%E5%8C%BA%E9%97%B4%E5%92%8C/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>离散化模板题。</p>
 <a id="more"></a>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假定有一个无限长的数轴，数轴上每个坐标上的数都是0。<br>现在，我们首先进行 n 次操作，每次操作将某一位置x上的数加c。<br>接下来，进行 m 次询问，每个询问包含两个整数l和r，你需要求出在区间[l, r]之间的所有数的和。</p>
-<p><strong>输入格式</strong><br>第一行包含两个整数n和m。<br>接下来 n 行，每行包含两个整数x和c。<br>再接下里 m 行，每行包含两个整数l和r。</p>
-<p><strong>输出格式</strong><br>共m行，每行输出一个询问中所求的区间内数字和。</p>
-<p><strong>数据范围</strong><br>$−1e9≤x≤1e9$,<br>$1≤n,m≤1e5$,<br>$−1e9≤l≤r≤1e9$,<br>$−10000≤c≤10000$ </p>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假定有一个无限长的数轴，数轴上每个坐标上的数都是 $0$。<br>现在，我们首先进行 $n$ 次操作，每次操作将某一位置 $x$ 上的数加 $c$。<br>接下来，进行 $m$ 次询问，每个询问包含两个整数 $l$ 和 $r$，你需要求出在区间 $[l, r]$ 之间的所有数的和。</p>
+<p><strong>输入格式</strong><br>第一行包含两个整数 $n$ 和 $m$。<br>接下来 $n$ 行，每行包含两个整数 $x$ 和 $c$。<br>再接下里 $m$ 行，每行包含两个整数 $l$ 和 $r$。</p>
+<p><strong>输出格式</strong><br>共 $m$ 行，每行输出一个询问中所求的区间内数字和。</p>
+<p><strong>数据范围</strong></p>
+<ul>
+<li>$−10^9≤x≤10^9$, </li>
+<li>$1≤n,m≤10^5$, </li>
+<li>$−10^9≤l≤r≤10^9$, </li>
+<li>$−10000≤c≤10000$ </li>
+</ul>
 <p><strong>输入样例：</strong></p>
 <blockquote>
 <p>3 3<br>1 2<br>3 6<br>7 5<br>1 3<br>4 6<br>7 8</p>
@@ -4900,27 +4990,28 @@
 <p>8<br>0<br>5</p>
 </blockquote>
 <hr>
-<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">300010</span>;                                           <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">int</span> a[N], s[N];                                                 <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls;                                               <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">vector</span>&lt;PII&gt; add, query;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; l &lt; r;) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l + <span class="number">1</span>;                                               <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (; n -- ;) &#123;                                            <span class="comment">// 4</span></span><br><span class="line">        <span class="keyword">int</span> x, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; c;</span><br><span class="line">        alls.push_back(x);</span><br><span class="line">        add.push_back(&#123;x, c&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; m -- ;) &#123;                                            <span class="comment">// 5</span></span><br><span class="line">        <span class="keyword">int</span> l, r;   </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        alls.push_back(l);</span><br><span class="line">        alls.push_back(r);</span><br><span class="line">        query.push_back(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>());                             <span class="comment">// 6</span></span><br><span class="line">    alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 7</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : add) &#123;                                     <span class="comment">// 8</span></span><br><span class="line">        a[<span class="built_in">find</span>(item.first)] += item.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= alls.<span class="built_in">size</span>(); i ++ ) &#123;                  <span class="comment">// 9</span></span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : query) &#123;                                   <span class="comment">// 10</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">find</span>(item.first), r = <span class="built_in">find</span>(item.second);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><div class="tabs" id="g_tab"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">300010</span>;                                           <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">int</span> a[N], s[N];                                                 <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls;                                               <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">vector</span>&lt;PII&gt; add, query;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; l &lt; r;) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l + <span class="number">1</span>;                                               <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (; n -- ;) &#123;                                            <span class="comment">// 4</span></span><br><span class="line">        <span class="keyword">int</span> x, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; c;</span><br><span class="line">        alls.push_back(x);</span><br><span class="line">        add.push_back(&#123;x, c&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; m -- ;) &#123;                                            <span class="comment">// 5</span></span><br><span class="line">        <span class="keyword">int</span> l, r;   </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        alls.push_back(l);</span><br><span class="line">        alls.push_back(r);</span><br><span class="line">        query.push_back(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>());                             <span class="comment">// 6</span></span><br><span class="line">    alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 7</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : add) &#123;                                     <span class="comment">// 8</span></span><br><span class="line">        a[<span class="built_in">find</span>(item.first)] += item.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= alls.<span class="built_in">size</span>(); i ++ ) &#123;                  <span class="comment">// 9</span></span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : query) &#123;                                   <span class="comment">// 10</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">find</span>(item.first), r = <span class="built_in">find</span>(item.second);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
 <blockquote>
 <ul>
 <li><ol>
-<li>add下标最多1e5个，query下标最多2e5个。当最极端的情况出现时，下标总数可达到3e5。</li>
+<li><code>add</code> 下标最多 <code>1e5</code> 个，<code>query</code> 下标最多 <code>2e5</code> 个。当最极端的情况出现时，下标总数可达到 <code>3e5</code>。</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>待离散化数组，存放add下标和query下标。</li>
+<li>待离散化数组，存放 <code>add</code> 下标和 <code>query</code> 下标。</li>
 </ol>
 </li>
 <li><ol start="3">
-<li>为了方便求前缀和，将add每一位映射到a数组向右偏移一位的位置（从1开始）。</li>
+<li>为了方便求前缀和，将 <code>add</code> 每一位映射到 <code>a</code> 数组向右偏移一位的位置（从 <code>1</code> 开始）。</li>
 </ol>
 </li>
 <li><ol start="4">
-<li>add数据输入。</li>
+<li><code>add</code> 数据输入。</li>
 </ol>
 </li>
 <li><ol start="5">
-<li>query数据输入。</li>
+<li><code>query</code> 数据输入。</li>
 </ol>
 </li>
 <li><ol start="6">
@@ -4932,11 +5023,11 @@
 </ol>
 </li>
 <li><ol start="8">
-<li>处理映射数组，所有add下标对应统统加上相应的数；所有query下标对应默认为0。</li>
+<li>处理映射数组，所有 <code>add</code> 下标对应统统加上相应的数；所有 <code>query</code> 下标对应默认为 <code>0</code>。</li>
 </ol>
 </li>
 <li><ol start="9">
-<li>求前缀和数组。我们知道求前缀和数组需要从1开始取，但是这里为什么 <strong>可以</strong> 从1开始遍历呢？因为alls数组是从0开始记录的，find方法将坐标映射到下标时已经向右偏移了一位，所以a数组值&gt; 0的位置一定是&gt; 0的。另外注意到这里为什么要用alls.size()呢，那是因为离散化操作将所有的alls数组中的值全部映射到了a数组中，且前缀和数组长度一定和alls一样长。</li>
+<li>求前缀和数组。我们知道求前缀和数组需要从 <code>1</code> 开始取，但是这里为什么 <strong>可以</strong> 从 <code>1</code> 开始遍历呢？因为 <code>alls</code> 数组是从 <code>0</code> 开始记录的，<code>find</code> 方法将坐标映射到下标时已经向右偏移了一位，所以 <code>a</code> 数组值 $&gt; 0$ 的位置一定是 $&gt; 0$ 的。另外注意到这里为什么要用 <code>alls.size()</code> 呢，那是因为离散化操作将所有的 <code>alls</code> 数组中的值全部映射到了 <code>a</code> 数组中，且前缀和数组长度一定和 <code>alls</code> 一样长。</li>
 </ol>
 </li>
 <li><ol start="10">
@@ -4944,27 +5035,31 @@
 </ol>
 </li>
 <li><ol start="11">
-<li>当数组范围大的时候一定要在<code>main()</code>函数外面开数组，因为在这里开数组其内存会被分配在数据区，而在<code>main()</code>内开数组其内存你会被分配在代码区，数据量大的话会出错。</li>
+<li>当数组范围大的时候一定要在 <code>main()</code> 函数外面开数组，因为在这里开数组其内存会被分配在数据区（堆），而在 <code>main()</code> 内开数组其内存你会被分配在代码区，数据量大的话会出错。</li>
 </ol>
 </li>
 </ul>
 </blockquote>
-<p><strong>现在我们尝试描述一下a数组：</strong><br>a数组从0开始，到300009位结束。其中，第0位因为映射过程向右偏移一位故为0。从1开始到alls.size()处，其中有一部分值大于0，这些值是add操作增加的值；另一部分值为0，这一部分为查询坐标映射过来的，构建前缀和数组时需要包含在内。从alls.size()起到300009为止全是0.这一部分长度根据测试数据而变化。</p>
-<p>本质上，alls数组可以看成是一组映射关系。将可能取到极大或极小但数量有限的坐标和数组下标对应起来。由于vector数组自身的属性，此时是从0开始记录的。由于我们要构建前缀和数组，在处理a数组时要从1开始构建，所以在通过find方法找坐标下标时，要整体向右偏移一位。</p>
-<p><strong>举例：</strong><br>现有Add坐标: -314159265358979, -123, -84, -12, 0, 3, 10086, 99999999999999<br>简化一点，分别对应加1。<br>Query坐标：{-314159265358980, -122}, {-13, 5}, {9999, 99999999999999999999}, {-314159265358983, 99999999999999999999}, {0, 0}</p>
-<p>alls数组: $$-314159265358983_0, -314159265358980_1, -314159265358979_2, -123_3, -122_4, -84_5, -13_6,\ -12_7, 0_8, 3_9, 5_{10}, 9999_{11}, 10086_{12}, 99999999999999_{13}, 99999999999999999999_{14}$$</p>
-<p>a数组：$$0_0, 0_1, 0_2, 1_3, 1_4, 0_5, 0_6, 0_7, 1_8, 1_9, 1_{10}, 0_{11}, 0_{12}, 1_{13}, 1_{14}, 0_{15}, 0_{16}, … , 0_{100009}$$</p>
+<p>注意，由于vector数组自身的属性，此时是从 $0$ 开始记录的。由于我们要构建前缀和数组，在处理 <code>a</code> 数组时要从 $1$ 开始构建，所以在通过 <code>find</code> 方法找坐标下标时，要整体向右偏移一位。</p>
+<p><strong>现在我们尝试描述一下a数组：</strong><br><code>a</code> 数组存放着 <code>alls</code> 数组排序去重之后的所有值的下标，注意这里的下标是 <code>alls</code> 数组的。因为 <code>alls</code> 数组中存放着坐标轴上 <code>add</code> 操作和 <code>query</code> 操作涉及到的坐标，所以 <code>a</code> 数组中部分值为非零部分为零。非零的部分是 <code>add</code> 操作增加的数，零的部分包含 <code>query</code> 操作对应的没什么意义的 <code>0</code> 和剩下的一些留空数组元素 <code>0</code>.</p>
+<p>本质上，<code>alls</code> 数组可以看成是一组映射关系。将可能取到极大或极小但数量有限的坐标和数组下标对应起来。其中，<code>alls</code> 数组的下标对应映射的结果，<code>alls</code> 数组的值对应原坐标轴的坐标。此后我们将 <code>alls</code> 数组的下标单独拿出来对应 <code>a</code> 数组，<code>alls</code> 数组的值单独拿出来放在 <code>a</code> 数组对应的下标处。这样就完成了离散化。</p>
 <div class="note primary">
-            <p><strong>原题链接：</strong><br><a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">AcWing 802.区间和</a></p>
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/804/" target="_blank" rel="noopener">AcWing 802. 区间和</a></p>
           </div>
 ]]></content>
       <categories>
         <category>指尖飞舞</category>
         <category>算法</category>
+        <category>AcWing</category>
+        <category>算法基础课</category>
+        <category>第一讲基础算法</category>
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>二分查找</tag>
+        <tag>前缀和</tag>
         <tag>离散化</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5012,8 +5107,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>数组</tag>
+        <tag>排序</tag>
         <tag>双指针</tag>
         <tag>去重</tag>
         <tag>unique</tag>
@@ -5483,8 +5578,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -5737,17 +5832,17 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
-        <tag>位运算</tag>
-        <tag>AcWing</tag>
-        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
+        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7268,8 +7363,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>LeetCode</tag>
         <tag>链表</tag>
+        <tag>LeetCode</tag>
         <tag>超级头结点</tag>
       </tags>
   </entry>
@@ -7519,8 +7614,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>LeetCode</tag>
         <tag>链表</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -7571,9 +7666,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>排序</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -7652,8 +7747,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>TopK</tag>
         <tag>排序</tag>
+        <tag>TopK</tag>
         <tag>堆</tag>
       </tags>
   </entry>
@@ -7681,7 +7776,7 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>哈希表</tag>
+        <tag>unordered_map</tag>
       </tags>
   </entry>
   <entry>
