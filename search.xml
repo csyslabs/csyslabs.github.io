@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode 611. 有效三角形的个数</title>
+    <url>/2021/08/04/LeetCode-611-%E6%9C%89%E6%95%88%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>一道双指针题目。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个包含非负整数的数组，你的任务是统计其中可以组成三角形三条边的三元组个数。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p>输入: [2,2,3,4]<br>输出: 3<br>解释:<br>有效的组合是:<br>2,3,4 (使用第一个 2)<br>2,3,4 (使用第二个 2)<br>2,2,3</p>
+</blockquote>
+<p><strong>注意:</strong></p>
+<ol>
+<li>数组长度不超过 $1000$。</li>
+<li>数组里整数的范围为 $[0, 1000]$。</li>
+</ol>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>构成三角形的条件是：三条边中，任意两条边之和大于第三条边。<br>我们可以将原数组排序，依次枚举最长边、次长边和最短边。其中，最长边从小到大枚举即可，次长边和最短边用两个指针维护。两个指针分别初始化为最长边左边第一个数下标和0. 次长边指针从右向左枚举，对于每一个次长边，将最短边指针从左到右枚举，直到找到最小的满足条件的最短边。因为数组是递增的，从最小的满足条件的最短边到次长边都是满足条件的。这样可以实现优化。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">triangleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        sort(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;       <span class="comment">// 枚举最大数</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>, k = <span class="number">0</span>; j &gt; <span class="number">0</span> &amp;&amp; k &lt; j; --j) &#123;   <span class="comment">// 枚举次大数</span></span><br><span class="line">                <span class="keyword">for</span> (; k &lt; j &amp;&amp; nums[k] + nums[j] &lt;= nums[i]; ++k);</span><br><span class="line">                res += j - k;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">triangleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;   <span class="comment">// 枚举所有最长边   </span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>, k = <span class="number">0</span>; k &lt; j &amp;&amp; j &gt; <span class="number">0</span>; --j) &#123;   <span class="comment">// 枚举所有次长边   </span></span><br><span class="line">                <span class="keyword">for</span> (; k &lt; j &amp;&amp; nums[k] + nums[j] &lt;= nums[i]; ++k); <span class="comment">// 排除所有不满足条件的最短边   </span></span><br><span class="line">                res += j - k;   <span class="comment">// 从 k 到 j - 1 这一段都是满足的</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<p><strong>复杂度：</strong> 最坏情况下是 $n^2$，实际情况是每一个最长边，可能存在一段 $k$ 到 $j - 1$ 是满足条件的而不用遍历</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/valid-triangle-number/" target="_blank" rel="noopener">LeetCode 611. 有效三角形的个数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 14. 最长公共前缀</title>
     <url>/2021/08/01/LeetCode-14-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>很简单的模拟题，如果换成公共子序列那就复杂了。 </p>
@@ -21,6 +55,7 @@
 <h3 id="按列比较"><a href="#按列比较" class="headerlink" title="按列比较"></a>按列比较</h3><p>可以拿第一个字符串作为比较对象，维护一个单指针，当单指针超出第一个字符串的下标范围则可以认为第一个字符串就是所有字符串中最短的，且是公共前缀；<br>否则拿当前指针指向的第一个字符串的字符和所有字符串该位置的字符比较，一旦出现不匹配的情况那到此为指针前面的所有前缀串就是最长公共子串。</p>
 <div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; ss)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = ss.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= ss[<span class="number">0</span>].<span class="built_in">size</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> ss[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">char</span> c = ss[<span class="number">0</span>][i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ss[j][i] != c) &#123;</span><br><span class="line">                    <span class="keyword">return</span> res;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            res += c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] ss)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = ss.length;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= ss[<span class="number">0</span>].length()) <span class="keyword">return</span> ss[<span class="number">0</span>];    <span class="comment">// 第一个字符串在所有串中最短</span></span><br><span class="line">            <span class="keyword">char</span> c = ss[<span class="number">0</span>].charAt(i);</span><br><span class="line">            <span class="keyword">for</span> (String s : ss) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i &gt;= s.length() || s.charAt(i) != c) <span class="keyword">return</span> res.toString();</span><br><span class="line">            &#125;</span><br><span class="line">            res.append(c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
+<p>复杂度：最坏的情况下，需要将每一个字符枚举到，所以复杂度为所有字符的数量之和。</p>
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">LeetCode 14. 最长公共前缀</a></p>
           </div>]]></content>
@@ -32,6 +67,7 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -961,8 +997,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>前缀和</tag>
         <tag>位运算</tag>
+        <tag>前缀和</tag>
         <tag>竞赛</tag>
       </tags>
   </entry>
@@ -1454,8 +1490,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
       </tags>
   </entry>
   <entry>
@@ -3595,8 +3631,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -3684,8 +3720,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -3767,8 +3803,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>ViewMatrix</tag>
         <tag>World-to-Screen</tag>
+        <tag>ViewMatrix</tag>
       </tags>
   </entry>
   <entry>
@@ -4756,8 +4792,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -4808,8 +4844,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -5221,10 +5257,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5272,8 +5308,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>数组</tag>
+        <tag>排序</tag>
         <tag>双指针</tag>
         <tag>去重</tag>
         <tag>unique</tag>
@@ -5743,8 +5779,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -5997,17 +6033,17 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
+        <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7499,8 +7535,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>计数数组</tag>
         <tag>最大公约数</tag>
+        <tag>计数数组</tag>
       </tags>
   </entry>
   <entry>
@@ -7831,9 +7867,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>排序</tag>
         <tag>计数数组</tag>
         <tag>数组</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -7912,8 +7948,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>TopK</tag>
         <tag>排序</tag>
+        <tag>TopK</tag>
         <tag>堆</tag>
       </tags>
   </entry>
