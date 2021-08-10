@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-08-10T11:19:09.842Z</updated>
+  <updated>2021-08-10T11:57:39.671Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://accepted.org.cn/2021/08/10/%E7%BB%8F%E9%AA%8C%EF%BC%9A%E6%8A%8Ahexo%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%E4%BB%8EWindows%E8%BF%81%E7%A7%BB%E5%88%B0Mac/"/>
     <id>https://accepted.org.cn/2021/08/10/%E7%BB%8F%E9%AA%8C%EF%BC%9A%E6%8A%8Ahexo%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%E4%BB%8EWindows%E8%BF%81%E7%A7%BB%E5%88%B0Mac/</id>
     <published>2021-08-10T11:10:05.000Z</published>
-    <updated>2021-08-10T11:19:09.842Z</updated>
+    <updated>2021-08-10T11:57:39.671Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>记录一下自己把hexo博客环境从Windows迁移到Mac的过程。</p><a id="more"></a><h3 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h3><ol><li>第一步，准备一碟花生米。</li><li>在Windows环境中，压缩hexo文件夹，拷贝到Mac电脑中。</li><li>此外</li></ol><div class="note primary">            <p><strong>原题链接：</strong> <a href=""></a></p>          </div>]]></content>
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>记录一下自己把hexo博客环境从Windows迁移到Mac的过程。</p><a id="more"></a><h3 id="Implements"><a href="#Implements" class="headerlink" title="Implements"></a>Implements</h3><ol><li>第一步，准备一碟花生米。</li><li>在Windows环境中，压缩hexo文件夹，拷贝到Mac电脑中。OK，在Windows系统上的操作到此为止。</li><li>接下来咱们在Mac上操作。在Mac上部署hexo需要Homebrew，nvm，node.js(v12.22.4)，hexo.</li><li>安装Homebrew（略）。</li><li>安装nvm（通过Homebrew安装nvm）。<blockquote><p><code>brew install nvm</code><br><code>echo &quot;source $(brew --prefix nvm)/nvm.sh&quot; &gt;&gt; .bash_profile</code><br><code>. ~/.bash_profile</code><br><code>nvm -v</code>查看nvm版本</p></blockquote></li><li>查看当前已安装的node.js版本<blockquote><p><code>nvm list</code><br>如果存在已安装的node.js，建议彻底删除卸载。具体方法略。</p></blockquote></li><li>接下来安装node.js<blockquote><p><code>nvm ls-remote</code> 查看可安装的node.js版本。<br><code>nvm install 12.22.4</code> 不要安装最新版本。<br><code>node -v</code> 查看安装的node版本。<br><code>npm -v</code>  在node安装之后，咱们的npm也默认安装好了。</p></blockquote></li><li>安装hexo，<blockquote><p><code>sudo npm install -g hexo</code></p></blockquote></li><li>到此为止，崭新的hexo环境已配好。咱们可以建一个测试博客。<blockquote><p>cd 到测试文件夹。<br><code>hexo init</code><br><code>hexo g</code><br><code>hexo s</code><br>如果终端显示url及端口号，则说明环境和配置没问题。</p></blockquote></li><li>配置新的SSHkey。因为咱们是用git往GitHub上push代码，那么，配置SSH是有必要的。我建议用新的SSH key。<blockquote><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><br>前往/Users/etoa/，按command+shift+.显示隐藏文件夹，看有无.ssh文件夹。<br>打开.ssh文件夹，以文本打开id_rsa.pub，将咱们的public key拷贝下来，千万别拷贝id_rsa中的key，这里面是私钥，不能放到GitHub上。<br>打开GitHub官网，登录自己的账号。<br>前往Setting页面，选择SSH and GPG keys。<br>点击New SSH key，将public key复制到这里，并命名。</p></blockquote></li><li>打开第2步拷贝的hexo压缩文件，将themes中的_config.yml中的所有Windows绝对路径替换成当前Mac的路径。</li><li>终端定位到hexo根目录，执行：<blockquote><p><code>hexo s</code><br>见证奇迹的时刻，耶～</p></blockquote></li></ol>]]></content>
     
     <summary type="html">
     
