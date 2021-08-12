@@ -20,8 +20,6 @@
     var CONFIG = {"hostname":"accepted.org.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
-
   <meta name="description" content="我太菜被关起来了">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dirac Sea">
@@ -233,6 +231,228 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">剑指Offer 40. 最小的k个数</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-20 23:44:21" itemprop="dateCreated datePublished" datetime="2020-03-20T23:44:21+08:00">2020-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-26 17:17:32" itemprop="dateModified" datetime="2021-06-26T17:17:32+08:00">2021-06-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer 40. 最小的k个数" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>输入整数数组 <code>arr</code> ，找出其中最小的 <code>k</code> 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。</p>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]</p>
+</blockquote>
+<p><strong>示例2：</strong></p>
+<blockquote>
+<p>输入：arr = [0,1,2,1], k = 1<br>输出：[0]</p>
+</blockquote>
+<p><strong>限制：</strong></p>
+<blockquote>
+<p>$0 &lt;= k &lt;= arr.length &lt;= 10000$<br>$0 &lt;= arr[i] &lt;= 10000$</p>
+</blockquote>
+<hr>
+<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="1.png" alt="0x0"></p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。</p>
+<p><img src="2.gif" alt="0x1"></p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">C++</a></li><li class="tab"><a href="#g_tab1-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; mxheap;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getLeastNumbers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            mxheap.push(arr[i]);</span><br><span class="line">            <span class="keyword">for</span> (; mxheap.<span class="built_in">size</span>() &gt; k; mxheap.pop());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span> (; !mxheap.empty(); mxheap.pop())</span><br><span class="line">            res.push_back(mxheap.top());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><p>待更新。</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">剑指Offer 40. 最小的k个数</a></p>
+          </div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="post-title-link" itemprop="url">LeetCode 1. 两数之和</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-19 17:02:38" itemprop="dateCreated datePublished" datetime="2020-03-19T17:02:38+08:00">2020-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-07 13:17:58" itemprop="dateModified" datetime="2021-07-07T13:17:58+08:00">2021-07-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode 1. 两数之和" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>给定一个整数数组 <code>nums</code> 和一个目标值 <code>target</code> ，请你在该数组中找出和为目标值的那 <strong>两个</strong> 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</p>
+</blockquote>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>key: <code>target - nums[v]</code><br>value: <code>v</code><br>每次迭代，判断 <code>nums[v]</code> 在不在hashmap中。<br>如果在，则 <code>nums[v]</code> 一定是之前 <code>target - nums[index_before]</code> 的值。此时返回 <code>{index_before, v}</code> ；<br>如果不在，则把key: <code>target - nums[v]</code> 和value: <code>v</code> 放到hashmap中。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; heap;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> w = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (heap.count(nums[i])) <span class="keyword">return</span> &#123;heap[nums[i]], i&#125;;</span><br><span class="line">            heap[w] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">LeetCode 1. 两数之和</a></p>
+          </div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -748,7 +968,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">165</span>
+          <span class="site-state-item-count">167</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -761,7 +981,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-count">152</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
