@@ -1177,8 +1177,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -3750,8 +3750,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -3839,8 +3839,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -3922,8 +3922,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>World-to-Screen</tag>
         <tag>ViewMatrix</tag>
+        <tag>World-to-Screen</tag>
       </tags>
   </entry>
   <entry>
@@ -4485,7 +4485,9 @@
 <blockquote>
 <p>-1 -3 -3 -3 3 3<br>3 3 5 5 6 7</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="comment">// 求每个窗口最小值</span></span><br><span class="line">    <span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="comment">// 判断队头是否已经滑出窗口，如果已经滑出了窗口，队列从hh处弹出一个数</span></span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line">        <span class="comment">// 在i加入到队尾之前，先维护队列的单调递增性</span></span><br><span class="line">        <span class="comment">// 如果a[i]比队尾对应值小的话，那么不能加入队列，否则队列会递减，此时队尾向左移动，直到在队列中找到一个值使得a[i]比它大（或者找完队列也没有找到）。那么这个时候再将i入队的话，对应的值就会单调递增了。</span></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line">        <span class="comment">// 因为i表示窗口末端或者说队尾，而它又是从0开始的，那么在窗口完全进入数组之前，不需要输出最值。</span></span><br><span class="line">        <span class="comment">// 即：i对应的窗口左端为i - k + 1，当i - k + 1 &lt; 0时，是不需要输出最小值的。</span></span><br><span class="line">        <span class="comment">// 但是由于需要从i = 0起开始维护队列的单调性，所以之前过程不能省略。</span></span><br><span class="line">        <span class="comment">// 我们怎么能知道此时队列头对应的数一定是最小的呢？（当队列数量小于k的时候）</span></span><br><span class="line">        <span class="comment">// 因为不管队列长度是刚好等于窗口长度，还是小于窗口长度，最左边的数一定是最小的。妙啊！</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]); <span class="comment">// 因为队列内部元素对应数组汇中的值是单调递增的，所以可以在O                                        // (1)的时间复杂度内找到最小值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 求每个窗口最大值</span></span><br><span class="line">    hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于求滑动窗口中最小值的情况，假设对于窗口在任意位置时，存在一个单调上升的队列，这个队列的所有元素是窗口中所有元素表示集合的子集。那么我们可以用O(1)的时间得出窗口中的最小值，及队首元素。<br>现在考虑如何构建这个单调上升的队列。假设我们从原数组的中间某段开始移动窗口，并且考虑维护一个单调上升队列。我们应该怎么做？<br>显然，要想让当前窗口的元素构成单调上升的队列，那么当窗口元素单调下降时，必然要被排除。换句话说，当窗口左侧的元素比右侧大的时候，一定不会是当前窗口的最小值，也一定不会是将来窗口的最小值。因为它既比右侧元素大，又必然在它的右侧元素之前滑出窗口。<br>那么，对于窗口的每一步移动，当出现下降情况，我们必然需要从队尾往队首找到比当前入队的新元素小或等的数。<br>另外，根据题意，只有当窗口完全进入数组时，才需要输出最小值。但是，在完全进入之前，就已经开始构建单调队列了。这也是为什么上文需要”假设我们从原数组的中间某段开始移动窗口“，就是为了暂时只考虑中间段的情况。</p>
+<p>我们来从宏观上观察一下单调队列的特性。因为我们按照滑动窗口的右侧边界遍历原数组，所以队列中应该放的是下标，以便于判断。<br>我们维护的单调队列所包含元素构成的集合一定是当前窗口元素构成集合的子集。<br>单调队列的左侧边界不一定非得是滑动窗口的左边届，因为上一步为了维护队列单调上升，可能从上一步的窗口中间开始维护递增，到了当前步，队列左边界就不会是窗口左边界而是中间位置。<br>单调队列可以包含任意个相同值，因为相同值不影响最值选取，换句话说就是完全可以占个坑。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="tabs" id="g_tab"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab-1">C++</a></li><li class="tab"><a href="#g_tab-2">C++</a></li><li class="tab"><a href="#g_tab-3">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="comment">// 求每个窗口最小值</span></span><br><span class="line">    <span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="comment">// 判断队头是否已经滑出窗口，如果已经滑出了窗口，队列从hh处弹出一个数</span></span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line">        <span class="comment">// 在i加入到队尾之前，先维护队列的单调递增性</span></span><br><span class="line">        <span class="comment">// 如果a[i]比队尾对应值小的话，那么不能加入队列，否则队列会递减，此时队尾向左移动，直到在队列中找到一个值使得a[i]比它大（或者找完队列也没有找到）。那么这个时候再将i入队的话，对应的值就会单调递增了。</span></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line">        <span class="comment">// 因为i表示窗口末端或者说队尾，而它又是从0开始的，那么在窗口完全进入数组之前，不需要输出最值。</span></span><br><span class="line">        <span class="comment">// 即：i对应的窗口左端为i - k + 1，当i - k + 1 &lt; 0时，是不需要输出最小值的。</span></span><br><span class="line">        <span class="comment">// 但是由于需要从i = 0起开始维护队列的单调性，所以之前过程不能省略。</span></span><br><span class="line">        <span class="comment">// 我们怎么能知道此时队列头对应的数一定是最小的呢？（当队列数量小于k的时候）</span></span><br><span class="line">        <span class="comment">// 因为不管队列长度是刚好等于窗口长度，还是小于窗口长度，最左边的数一定是最小的。妙啊！</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]); <span class="comment">// 因为队列内部元素对应数组汇中的值是单调递增的，所以可以在O                                        // (1)的时间复杂度内找到最小值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 求每个窗口最大值</span></span><br><span class="line">    hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) hh ++ ;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt -- ;</span><br><span class="line">        q[ ++ tt] = i;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[q[hh]]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-2"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *  author: etoa</span></span><br><span class="line"><span class="comment"> *  2021-08-12 23:52:01</span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> N = <span class="number">1000006</span>;</span><br><span class="line"><span class="keyword">int</span> a[N], q[N];</span><br><span class="line"><span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="comment">// 求最小值</span></span><br><span class="line">    <span class="comment">// i表示滑动窗口的右侧边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;   </span><br><span class="line">        <span class="comment">// 注意队首所表示的原数组下标可能是窗口中间某下标</span></span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) ++hh;</span><br><span class="line">        <span class="comment">// 维护队列单调上升</span></span><br><span class="line">        <span class="keyword">for</span> (; hh &lt;= tt &amp;&amp; a[q[tt]] &gt; a[i]; --tt);</span><br><span class="line">        <span class="comment">// 队列直至为空或者找到一个合适的队尾</span></span><br><span class="line">        q[++tt] = i;</span><br><span class="line">        <span class="comment">// 当滑动窗口完全进入数组时，开始计算最小值，但是在进入之前，上述单调上升队列也必须维护</span></span><br><span class="line">        <span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; a[q[hh]] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">    <span class="comment">// 求最大值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) ++hh;</span><br><span class="line">        <span class="keyword">for</span> (; hh &lt;= tt &amp;&amp; a[q[tt]] &lt; a[i]; --tt);</span><br><span class="line">        q[++tt] = i;</span><br><span class="line">        <span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; a[q[hh]] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab-3"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-13 09:40:27</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> N = (<span class="keyword">int</span>)<span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[N], q = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> hh = <span class="number">0</span>, tt = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">static</span> Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    <span class="keyword">static</span> PrintWriter out = <span class="keyword">new</span> PrintWriter(System.out);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt(), k = in.nextInt();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) a[i] = in.nextInt();</span><br><span class="line">        <span class="comment">// 求最小值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 队列头溢出</span></span><br><span class="line">            <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) ++hh;</span><br><span class="line">            <span class="keyword">for</span> (; hh &lt;= tt &amp;&amp; a[i] &lt; a[q[tt]]; --tt);</span><br><span class="line">            q[++tt] = i;</span><br><span class="line">            <span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) out.print(a[q[hh]] + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        hh = <span class="number">0</span>;</span><br><span class="line">        tt = -<span class="number">1</span>;</span><br><span class="line">        out.print(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="comment">// 求最大值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; i - k + <span class="number">1</span> &gt; q[hh]) ++hh;</span><br><span class="line">            <span class="keyword">for</span> (; hh &lt;= tt &amp;&amp; a[i] &gt; a[q[tt]]; --tt);</span><br><span class="line">            q[++tt] = i;</span><br><span class="line">            <span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) out.print(a[q[hh]] + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        out.flush();</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>对于这种需要维护一个性质的问题，通常可以这样思考：先假设有这样一个性质，再考虑如何构造和维护这个性质。</p>
 <div class="note primary">
@@ -4659,8 +4661,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -4911,8 +4913,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4963,8 +4965,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5376,10 +5378,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5897,8 +5899,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6152,16 +6154,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>位运算</tag>
-        <tag>AcWing</tag>
-        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
