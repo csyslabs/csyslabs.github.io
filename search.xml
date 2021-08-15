@@ -934,8 +934,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>前缀和</tag>
         <tag>位运算</tag>
+        <tag>前缀和</tag>
         <tag>竞赛</tag>
       </tags>
   </entry>
@@ -1427,8 +1427,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
       </tags>
   </entry>
   <entry>
@@ -4004,8 +4004,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -4093,8 +4093,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4306,9 +4306,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -4915,8 +4915,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -5167,8 +5167,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -5219,8 +5219,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -5632,10 +5632,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6153,8 +6153,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6407,17 +6407,17 @@
         <tag>算法</tag>
         <tag>排序</tag>
         <tag>双指针</tag>
+        <tag>位运算</tag>
+        <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
-        <tag>位运算</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7193,10 +7193,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>生活</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>生活</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -7249,10 +7249,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>情商</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
+        <tag>情商</tag>
       </tags>
   </entry>
   <entry>
@@ -7612,8 +7612,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>VPS</tag>
+        <tag>Linux</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -7909,8 +7909,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>计数数组</tag>
         <tag>最大公约数</tag>
+        <tag>计数数组</tag>
       </tags>
   </entry>
   <entry>
@@ -7963,17 +7963,6 @@
         <tag>最大公约数</tag>
         <tag>gcd</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>About me</title>
-    <url>/2020/03/27/About-me/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>&#123;</span><br><span class="line">    String name = <span class="string">"zhangxy"</span>; <span class="comment">// Well, good name.</span></span><br><span class="line">    <span class="keyword">char</span> sex = <span class="string">'male'</span>; <span class="comment">// A tough man.</span></span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">25</span>; <span class="comment">// Grasping the little tail of youth.</span></span><br><span class="line">    <span class="keyword">int</span> hight = <span class="number">170</span>; <span class="comment">// Enough to me.</span></span><br><span class="line">    <span class="keyword">float</span> weight = <span class="number">73.7f</span>; <span class="comment">// Emm, a little bit overweight, but everyday going to gym. Gym is second home. </span></span><br><span class="line">    String edu = <span class="string">"UESTC"</span>; <span class="comment">// Where the water tastes like wine. </span></span><br><span class="line">    String pro = <span class="string">"SE"</span>; <span class="comment">// Making cool stuff.</span></span><br><span class="line">    String marriage = <span class="string">"Single"</span>; <span class="comment">// I'm trying...emm...how to be more attractive ?</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wish</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"春日宴，浊酒一杯歌一遍。再拜陈三愿：</span></span><br><span class="line"><span class="string">                    一愿父母身体常健，</span></span><br><span class="line"><span class="string">                    二愿自己珍惜时间，</span></span><br><span class="line"><span class="string">                    三愿如同梁上燕，</span></span><br><span class="line"><span class="string">                    岁岁年年，快乐无边！"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moreInfo</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Stay tuned:)"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>me</category>
-        <category>About me</category>
-      </categories>
   </entry>
   <entry>
     <title>方便调试的链表类实现</title>
