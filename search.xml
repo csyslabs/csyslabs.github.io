@@ -22,6 +22,12 @@
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/3ab09737afb645cc82c35d56a5ce802a?tpId=37&&tqId=21230&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ7. 取近似值</a></p>
           </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
       <tags>
         <tag>算法</tag>
         <tag>NowCoder</tag>
@@ -1373,9 +1379,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -3753,10 +3759,10 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>双指针</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -4170,8 +4176,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>World-to-Screen</tag>
         <tag>ViewMatrix</tag>
+        <tag>World-to-Screen</tag>
       </tags>
   </entry>
   <entry>
@@ -4491,8 +4497,8 @@
         <tag>LeetCode</tag>
         <tag>排序</tag>
         <tag>归并排序</tag>
-        <tag>lowbit</tag>
         <tag>树状数组</tag>
+        <tag>lowbit</tag>
       </tags>
   </entry>
   <entry>
@@ -6850,9 +6856,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>树</tag>
         <tag>N叉树</tag>
         <tag>树深度</tag>
       </tags>
@@ -6903,10 +6909,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -6947,10 +6953,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -6985,10 +6991,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7036,9 +7042,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7436,10 +7442,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
