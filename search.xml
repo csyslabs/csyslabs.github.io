@@ -1,6 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HJ7. 取近似值</title>
+    <url>/2021/08/15/HJ7-%E5%8F%96%E8%BF%91%E4%BC%BC%E5%80%BC/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>注意C++和Java强转整型的区别。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。</p>
+<p><strong>输入描述：</strong><br>输入一个正浮点数值</p>
+<p><strong>输出描述：</strong><br>输出该数值的近似整数值</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>5.5</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>6</p>
+</blockquote>
+<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><p>本题主要关注一下C++和Java在float转整型时的区别、<br><code>float x = 5.0;</code><br>在C++中，<code>int y = x * 10;</code> 即可，或者 <code>int y = (int)x * 10;</code>，在一个变量上强转一次，整个表达式都默认强转。<br>而在Java中，<code>int y = x * 10;</code>是错的，应该 <code>int y = (int)(x * 10);</code> 整个表达式放在一起强转。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 17:06:09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; x;) &#123;</span><br><span class="line">        <span class="keyword">int</span> y = x * <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> base = y / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> remain = y % <span class="number">10</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; (remain &lt; <span class="number">5</span> ? base : base + <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 17:05:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();) &#123;</span><br><span class="line">            <span class="keyword">float</span> x = in.nextFloat();</span><br><span class="line">            <span class="keyword">int</span> y = (<span class="keyword">int</span>)(x * <span class="number">10</span>);</span><br><span class="line">            <span class="keyword">int</span> base = y / <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">int</span> remain = y % <span class="number">10</span>;</span><br><span class="line">            System.out.println(remain &lt; <span class="number">5</span> ? base : base + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/3ab09737afb645cc82c35d56a5ce802a?tpId=37&&tqId=21230&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ7. 取近似值</a></p>
+          </div>]]></content>
+      <tags>
+        <tag>算法</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ6. 质数因子</title>
+    <url>/2021/08/15/HJ6-%E8%B4%A8%E6%95%B0%E5%9B%A0%E5%AD%90/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>对一个正整数分解质因数。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>功能:输入一个正整数，按照从小到大的顺序输出它的所有质因子（重复的也要列举）（如 $180$ 的质因子为 $2$ $2$ $3$ $3$ $5$ ）</p>
+<p>最后一个数后面也要有空格</p>
+<p><strong>输入描述：</strong><br>输入一个long型整数</p>
+<p><strong>输出描述：</strong><br>按照从小到大的顺序输出它的所有质数的因子，以空格隔开。最后一个数后面也要有空格。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>180</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>2 2 3 3 5</p>
+</blockquote>
+<h3 id="最小质因子和最大质因子-埃式筛优化"><a href="#最小质因子和最大质因子-埃式筛优化" class="headerlink" title="最小质因子和最大质因子+埃式筛优化"></a>最小质因子和最大质因子+埃式筛优化</h3><p>一个显然的思路是，对于一个数，找到它的最小质因子，然后将这个数更新成对该最小质因子整除后的数，依次再去找到其最小质因子。<br>可以从2开始试，如果一个数会被2整除，这个数除2之后也可以被2整除，直到结束。那么这个数的质因子就全是2.<br>如果在中间某处不能被2整除了，说明这个数往后更新的时候均不可被2整除。这时候尝试可否整除3.<br>按照这个方法直到找到所有最小质因子。</p>
+<p>现在考虑如何优化。</p>
+<p>优化一：<br>首先看下最大质因子性质：<br><strong>一个正整数的质因子，最多只有一个大于其平方根。</strong><br>证明：假设有超过一个质因子大于其平方根，那么二者相乘一定大于该数。得证。</p>
+<p>对于目标数字 $x$，根据这个性质，我们可以将可能出现的质因子限制在 $\sqrt x$及以内。再考虑剩余可能的最后一个大于 $\sqrt x$的质因子。</p>
+<p>优化二：<br>因为求的是所有质因子，那么在找到每个质因子之后，我们都可以借助 <a href="/2020/12/03/【AcWing算法基础】第四讲-数学知识-质数-AcWing-868-筛质数/">筛质数</a> 思想，将一部分非质数筛掉，在剩下的中找目标质因子。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 16:01:49</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">long</span>, <span class="keyword">bool</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">long</span> &amp;n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> i = <span class="number">2L</span>;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt;= (<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (; !st[i] &amp;&amp; n % i == <span class="number">0</span>;) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">            n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 更新一次即可</span></span><br><span class="line">        <span class="keyword">bool</span> is_set = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!is_set) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">long</span> j = i + i; j &lt;= (<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n); j += i)</span><br><span class="line">                st[j] = <span class="literal">true</span>;</span><br><span class="line">            is_set = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">// 此时存在最大质因子超过原数字平方根的可能</span></span><br><span class="line">    <span class="keyword">if</span> (n != <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">long</span> n;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; n;)</span><br><span class="line">        solve(n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 16:44:19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();) &#123;</span><br><span class="line">            <span class="keyword">long</span> x = in.nextLong();</span><br><span class="line">            Map&lt;Long, Boolean&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">2</span>; i &lt;= (<span class="keyword">long</span>)Math.sqrt(x); i++) &#123;</span><br><span class="line">                <span class="keyword">boolean</span> isSet = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">for</span> (;(hash.get(i) == <span class="keyword">null</span> || hash.get(i) == <span class="keyword">false</span>) &amp;&amp; x % i == <span class="number">0</span>;) &#123;</span><br><span class="line">                    System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">                    x /= i;</span><br><span class="line">                    <span class="keyword">if</span> (!isSet) &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">long</span> j = i + i; j &lt;= (<span class="keyword">long</span>)Math.sqrt(x); j += i) &#123;</span><br><span class="line">                            hash.put(j, <span class="keyword">true</span>);</span><br><span class="line">                        &#125;    </span><br><span class="line">                        isSet = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (x != <span class="number">1</span>) System.out.print(x + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/196534628ca6490ebce2e336b47b3607?tpId=37&&tqId=21229&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ6. 质数因子</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数论</tag>
+        <tag>质数</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ5. 进制转换</title>
+    <url>/2021/08/15/HJ5-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>一个简单的十六进制转十进制问题。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>写出一个程序，接受一个十六进制的数，输出该数值的十进制表示。</p>
+<p><strong>输入描述：</strong><br>输入一个十六进制的数值字符串。注意：一个用例会同时有多组输入数据，请参考帖子<a href="https://www.nowcoder.com/discuss/276处理多组输入的问题。" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/276处理多组输入的问题。</a></p>
+<p><strong>输出描述：</strong><br>输出该数值的十进制字符串。不同组的测试用例用\n隔开。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>0xA<br>0xAA</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>10<br>170</p>
+</blockquote>
+<h3 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h3><p>任意进制(设 $M$ 进制)转十进制：<br>先将 $M$ 种符号和对应的十进制一一对应起来。<br>答案初始化为零。<br>对于每一位 $M$ 进制符号，答案乘以 $M$ 再加上该位符号对应的十进制数。答案更新为上述值。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li><li class="tab"><a href="#g_tab0-3">Java JDK</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author:etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 02:00:53</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; hashmap = &#123;&#123;<span class="string">'A'</span>, <span class="number">10</span>&#125;, &#123;<span class="string">'B'</span>, <span class="number">11</span>&#125;,</span><br><span class="line">                                 &#123;<span class="string">'C'</span>, <span class="number">12</span>&#125;, &#123;<span class="string">'D'</span>, <span class="number">13</span>&#125;,</span><br><span class="line">                                 &#123;<span class="string">'E'</span>, <span class="number">14</span>&#125;, &#123;<span class="string">'F'</span>, <span class="number">15</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">for</span> (; getline(<span class="built_in">cin</span>, s); ) &#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = s[i];</span><br><span class="line">            <span class="keyword">int</span> x = <span class="built_in">isdigit</span>(c) ? c - <span class="string">'0'</span> : hashmap[c];</span><br><span class="line">            res = res * <span class="number">16</span> + x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 02:18:44</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;Character, Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        hash.put(<span class="string">'A'</span>, <span class="number">10</span>);</span><br><span class="line">        hash.put(<span class="string">'B'</span>, <span class="number">11</span>);</span><br><span class="line">        hash.put(<span class="string">'C'</span>, <span class="number">12</span>);</span><br><span class="line">        hash.put(<span class="string">'D'</span>, <span class="number">13</span>);</span><br><span class="line">        hash.put(<span class="string">'E'</span>, <span class="number">14</span>);</span><br><span class="line">        hash.put(<span class="string">'F'</span>, <span class="number">15</span>);</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();) &#123;</span><br><span class="line">            String s = in.next();</span><br><span class="line">            <span class="keyword">char</span>[] chs = s.toCharArray();</span><br><span class="line">            <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, n = s.length(); i &lt; n; i++) &#123;</span><br><span class="line">                <span class="keyword">char</span> c = chs[i];</span><br><span class="line">                <span class="keyword">int</span> x = Character.isDigit(c) ? c - <span class="string">'0'</span> : hash.get(c);</span><br><span class="line">                res = res * <span class="number">16</span> + x;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(res);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-3"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author:atoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 02:23:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext(); ) &#123;</span><br><span class="line">            String s = in.next();</span><br><span class="line">            System.out.println(Integer.valueOf(s.substring(<span class="number">2</span>), <span class="number">16</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/8f3df50d2b9043208c5eed283d1d4da6?tpId=37&&tqId=21228&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ5. 进制转换</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>进制转换</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ4. 字符串分隔</title>
+    <url>/2021/08/14/HJ4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E9%9A%94/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>简单字符串分割题目。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong></p>
+<ul>
+<li>连续输入字符串，请按长度为 $8$ 拆分每个字符串后输出到新的字符串数组；</li>
+<li>长度不是 $8$ 整数倍的字符串请在后面补数字 $0$，空字符串不处理。</li>
+</ul>
+<p><strong>输入描述：</strong><br>连续输入字符串(输入多次,每个字符串长度小于 $100$)</p>
+<p><strong>输出描述：</strong><br>输出到长度为 $8$ 的新字符串数组</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>abc<br>123456789</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>abc00000<br>12345678<br>90000000</p>
+</blockquote>
+<h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><p>主要考察截取子串的方法，在C++的STL和Java的JDK中，字符串截取子串均有相应实现。<br>详情请见：<a href="https://eetoa.github.io/2021/06/11/算法竞赛常用STL和其他c-知识点总结/" target="_blank" rel="noopener">算法竞赛常用STL和其他c++知识点总结</a></p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 21:19:39</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">for</span> (; getline(<span class="built_in">cin</span>, s);) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i = i + <span class="number">8</span>) &#123;</span><br><span class="line">            <span class="built_in">string</span> each = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">if</span> (i + <span class="number">8</span> &lt; n) &#123;</span><br><span class="line">                each = s.substr(i, <span class="number">8</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                each = s.substr(i);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">8</span> - each.<span class="built_in">size</span>(); k--; each += <span class="string">'0'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; each &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 21:39:12</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext(); ) &#123;</span><br><span class="line">            String s = in.nextLine();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.length(); i &lt; n; i += <span class="number">8</span>) &#123;</span><br><span class="line">                <span class="comment">// StringBuilder sb = new StringBuilder();</span></span><br><span class="line">                String t;</span><br><span class="line">                <span class="keyword">if</span> (i + <span class="number">8</span> &lt; n) &#123;</span><br><span class="line">                    t = s.substring(i, i + <span class="number">8</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    t = s.substring(i, n);</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, len = t.length(); j &lt; <span class="number">8</span> - len; j++) &#123;</span><br><span class="line">                        t += <span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/d9162298cb5a437aad722fccccaae8a7?tpId=37&&tqId=21227&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ4. 字符串分隔</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ3. 明明的随机数</title>
+    <url>/2021/08/14/HJ3-%E6%98%8E%E6%98%8E%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>简单的排序+去重。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了 $N$ 个 $1$ 到 $1000$ 之间的随机整数（$N≤1000$），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作(同一个测试用例里可能会有多组数据(用于不同的调查)，希望大家能正确处理)。</p>
+<p>注：测试用例保证输入参数的正确性，答题者无需验证。测试用例不止一组。</p>
+<p>当没有新的输入时，说明输入结束。</p>
+<p><strong>输入描述：</strong><br>注意：输入可能有多组数据(用于不同的调查)。每组数据都包括多行，第一行先输入随机整数的个数N，接下来的N行再输入相应个数的整数。具体格式请看下面的”示例”。</p>
+<p><strong>输出描述：</strong><br>返回多行，处理后的结果</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br>3<br>2<br>2<br>1<br>11<br>10<br>20<br>40<br>32<br>67<br>40<br>20<br>89<br>300<br>400<br>15<br><strong>输出：</strong><br>1<br>2<br>10<br>15<br>20<br>32<br>40<br>67<br>89<br>300<br>400<br><strong>说明：</strong><br>输入解释：<br>第一个数字是 $3$，也即这个小样例的 $N=3$，说明用计算机生成了 $3$ 个 $1$ 到 $1000$ 之间的随机整数，接下来每行一个随机数字，共 $3$ 行，也即这 $3$ 个随机数字为：</p>
+<p>2<br>1<br>1<br>所以第一个小样例的输出为：<br>1<br>2<br>第二个小样例的第一个数字为 $11$，也即…(类似上面的解释)…<br>所以第二个小样例的输出为：<br>10<br>15<br>20<br>32<br>40<br>67<br>89<br>300<br>400<br>所以示例1包含了两个小样例！！  </p>
+</blockquote>
+<h3 id="排序去重"><a href="#排序去重" class="headerlink" title="排序去重"></a>排序去重</h3><p>本题考察排序去重，C++可以完全依赖STL，C++和Java都可以使用有序集合。<br>手动去重也是可以的。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++ 纯STL</a></li><li class="tab"><a href="#g_tab0-2">Java Arrays类排序+手动去重</a></li><li class="tab"><a href="#g_tab0-3">Java 有序集合</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 19:57:36</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; n; ) &#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">a</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        sort(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">        a.erase(unique(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>()), a.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;each : a) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; each &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 20:22:27</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();)  &#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                a[i] = in.nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">            Arrays.sort(a);</span><br><span class="line">            List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="comment">// dedupe</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                list.add(a[i]);</span><br><span class="line">                <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (; j &lt; n &amp;&amp; a[j] == a[i]; ++j);</span><br><span class="line">                i = j - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (Integer each : list) &#123;</span><br><span class="line">                System.out.println(each);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-3"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 20:45:27</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();)  &#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            Set&lt;Integer&gt; ordSet = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                ordSet.add(in.nextInt());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (Iterator iter = ordSet.iterator(); iter.hasNext();) &#123;</span><br><span class="line">                System.out.println(iter.next());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/3245215fffb84b7b81285493eae92ff0?tpId=37&&tqId=21226&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ3. 明明的随机数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>排序</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ2. 计算某字母出现次数</title>
+    <url>/2021/08/14/HJ2-%E8%AE%A1%E7%AE%97%E6%9F%90%E5%AD%97%E6%AF%8D%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>入门题，字符计数。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>写出一个程序，接受一个由字母、数字和空格组成的字符串，和一个字母，然后输出输入字符串中该字母的出现次数。不区分大小写，字符串长度小于500。</p>
+<p><strong>输入描述：</strong><br>第一行输入一个由字母和数字以及空格组成的字符串，第二行输入一个字母。</p>
+<p><strong>输出描述：</strong><br>输出输入字符串中含有该字符的个数。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>ABCabc<br>A<br>输出：<br>2</p>
+</blockquote>
+<h3 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h3><p>简单的计数问题，也没啥好说的。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 12:51:09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    getline(<span class="built_in">cin</span>, s);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; c;</span><br><span class="line">    <span class="keyword">char</span> cc = <span class="built_in">islower</span>(c) ? <span class="built_in">toupper</span>(c) : <span class="built_in">tolower</span>(c);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;each : s) &#123;</span><br><span class="line">        <span class="keyword">if</span> (each == c || each == cc) res++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 13:03:07</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.nextLine();</span><br><span class="line">        <span class="keyword">char</span> c = in.next().charAt(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">char</span> cc = Character.isLowerCase(c) ? Character.toUpperCase(c) : Character.toLowerCase(c);</span><br><span class="line">        <span class="keyword">char</span>[] ar = s.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> each : ar) &#123;</span><br><span class="line">            <span class="keyword">if</span> (each == c || each == cc) &#123;</span><br><span class="line">                res ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/a35ce98431874e3a820dbe4b2d0508b1?tpId=37&&tqId=21225&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ2. 计算某字母出现次数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ1. 字符串最后一个单词的长度</title>
+    <url>/2021/08/14/HJ1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>一道简单的字符串题目。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>计算字符串最后一个单词的长度，单词以空格隔开，字符串长度小于5000。</p>
+<p><strong>输入描述：</strong><br>输入一行，代表要计算的字符串，非空，长度小于5000。</p>
+<p><strong>输出描述：</strong><br>输出一个整数，表示输入字符串最后一个单词的长度。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：hello nowcoder<br>输出：8<br>说明：最后一个单词为nowcoder，长度为8</p>
+</blockquote>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>这题没啥好说的，拿到最后一个字符串，计算长度即可。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="built_in">string</span> &amp;s)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = s.<span class="built_in">size</span>(), res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] != <span class="string">' '</span>) res++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">for</span> (; getline(<span class="built_in">cin</span>, s);) &#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; s &lt;&lt; endl;</span></span><br><span class="line">        solve(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-14 11:56:12</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">5010</span>;</span><br><span class="line">    <span class="keyword">static</span> String[] stk = <span class="keyword">new</span> String[N];</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext(); stk[++tt] = in.next());</span><br><span class="line">        System.out.println(stk[tt].length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/8c949ea5f36f422594b306a2300315da?tpId=37&&tqId=21224&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ1. 字符串最后一个单词的长度</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的职场生活笔记</title>
     <url>/2021/08/11/%E6%88%91%E7%9A%84%E8%81%8C%E5%9C%BA%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>职场生活也是一本书，既然读书，就得记笔记。</p>
@@ -52,7 +296,7 @@
 
 
 <div class="note primary">
-            <p><strong>原题链接：</strong> <a href=""></a></p>
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/3305/" target="_blank" rel="noopener">AcWing 3302. 表达式求值</a></p>
           </div>]]></content>
       <categories>
         <category>指尖飞舞</category>
@@ -1129,9 +1373,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -1231,7 +1475,7 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>蓝桥杯</tag>
-        <tag>进制</tag>
+        <tag>进制转换</tag>
       </tags>
   </entry>
   <entry>
@@ -1861,22 +2105,26 @@
   <entry>
     <title>算法竞赛常用STL和其他c++知识点总结</title>
     <url>/2021/06/11/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%B8%B8%E7%94%A8STL%E5%92%8C%E5%85%B6%E4%BB%96c-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p><strong>摘要：</strong><br>都是常用的。</p>
+    <content><![CDATA[<p><strong>摘要：</strong><br>算法竞赛经常用到的STL和JDK轮子总结。</p>
 <a id="more"></a>
 
-<h3 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h3><h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><p>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
+<h2 id="STL-如果对应Java的JDK存在类似功能，也一并给出"><a href="#STL-如果对应Java的JDK存在类似功能，也一并给出" class="headerlink" title="STL(如果对应Java的JDK存在类似功能，也一并给出)"></a>STL(如果对应Java的JDK存在类似功能，也一并给出)</h2><h3 id="1-数组排序"><a href="#1-数组排序" class="headerlink" title="1. 数组排序"></a>1. 数组排序</h3><p>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
 <ul>
 <li><p>升序<br><code>sort(a.begin(), a.end());</code><br><code>sort(a.begin(), a.end(), less&lt;int&gt;());</code></p>
 </li>
 <li><p>降序<br><code>sort(a.begin(), a.end(), greater&lt;int&gt;());</code><br><code>sort(a.rbegin(), a.rend());</code></p>
 </li>
 </ul>
-<h4 id="字符串转数值类型"><a href="#字符串转数值类型" class="headerlink" title="字符串转数值类型"></a>字符串转数值类型</h4><p><code>#include &lt;string&gt;</code><br><strong>std::atoi</strong><br>转换 const char* 为一个 int 类型整数，超出 int 类型范围时，返回边界值。</p>
+<h3 id="2-字符串转数值类型"><a href="#2-字符串转数值类型" class="headerlink" title="2. 字符串转数值类型"></a>2. 字符串转数值类型</h3><p><code>#include &lt;string&gt;</code><br><strong>std::atoi</strong><br>转换 const char* 为一个 int 类型整数，超出 int 类型范围时，返回边界值。</p>
 <p><strong>std::atol</strong><br>转换 const char* 为一个 long 类型整数，超出 long 类型范围时，返回边界值。</p>
 <p><strong>std::atoll</strong><br>转换 const char* 为一个 long long 类型整数，超出 long long 类型范围时，返回边界值。</p>
 <p><strong>std::stoi</strong><br>转换 std::string 为一个 int 类型整数，超出 int 类型范围时报错。</p>
 <p><strong>std::stol</strong><br>转换 std::string 为一个 long 类型整数，超出 long 类型范围时报错。</p>
 <p><strong>std::stoll</strong><br>转换 std::string 为一个 long long 类型整数，超出 long long 类型范围时报错。</p>
+<h3 id="3-有序集合"><a href="#3-有序集合" class="headerlink" title="3. 有序集合"></a>3. 有序集合</h3><p><strong>C++</strong><br>set</p>
+<p><strong>Java</strong><br>TreeSet</p>
+<h3 id="4-截取子串"><a href="#4-截取子串" class="headerlink" title="4. 截取子串"></a>4. 截取子串</h3><p><strong>C++</strong><br><code>string s = &quot;abcd&quot;;</code><br><code>s.substr(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substr(int index, int len)</code><br>截取从 <code>index</code> 开始，长度为 <code>len</code> 的子串。</p>
+<p><strong>Java</strong><br><code>String s = new String(&quot;abcd&quot;);</code><br><code>s.substring(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substring(int beginIndex, int endIndex)</code><br>截取从 <code>beginIndex</code> 开始到 <code>endIndex</code> 前一个字符结束的子串。左闭右开。</p>
 <h3 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h3><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
 <ul>
 <li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
@@ -3505,10 +3753,10 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>双指针</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -3922,8 +4170,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>ViewMatrix</tag>
         <tag>World-to-Screen</tag>
+        <tag>ViewMatrix</tag>
       </tags>
   </entry>
   <entry>
@@ -4243,8 +4491,8 @@
         <tag>LeetCode</tag>
         <tag>排序</tag>
         <tag>归并排序</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -4661,8 +4909,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -6602,9 +6850,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
         <tag>树深度</tag>
       </tags>
@@ -6655,10 +6903,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -6699,10 +6947,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -6737,10 +6985,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -6788,9 +7036,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7188,10 +7436,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
