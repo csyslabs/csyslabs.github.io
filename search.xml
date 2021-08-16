@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HJ9. 提取不重复的整数</title>
+    <url>/2021/08/16/HJ9-%E6%8F%90%E5%8F%96%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B4%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>TwoSum既视感[滑稽]</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>输入一个 <code>int</code> 型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。<br>保证输入的整数最后一位不是 $0$。</p>
+<p><strong>输入描述：</strong><br>输入一个 <code>int</code> 型整数</p>
+<p><strong>输出描述：</strong><br>按照从右向左的阅读顺序，返回一个不含重复数字的新的整数</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>9876673</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>37689</p>
+</blockquote>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021年08月16日22:43:02</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (; n; n /= <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = n % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (!st[x]) <span class="built_in">cout</span> &lt;&lt; x;</span><br><span class="line">        st[x] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:48:43</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        n = in.nextInt();</span><br><span class="line">        Map&lt;Integer, Boolean&gt; st = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n /= <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = n % <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (!st.containsKey(x)) &#123;</span><br><span class="line">                System.out.print(x);</span><br><span class="line">            &#125;</span><br><span class="line">            st.put(x, <span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/253986e66d114d378ae8de2e6c4577c1?tpId=37&&tqId=21232&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ9. 提取不重复的整数</a></p>
+          </div>]]></content>
+      <tags>
+        <tag>算法</tag>
+        <tag>哈希表</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ8. 合并表记录</title>
+    <url>/2021/08/16/HJ8-%E5%90%88%E5%B9%B6%E8%A1%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>有序哈希表的应用。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>数据表记录包含表索引和数值（ <code>int</code> 范围的正整数），请对表索引相同的记录进行合并，即将相同索引的数值进行求和运算，输出按照 <code>key</code> 值升序进行输出。</p>
+<p><strong>输入描述：</strong><br>先输入键值对的个数<br>然后输入成对的 <code>index</code> 和 <code>value</code> 值，以空格隔开</p>
+<p><strong>输出描述：</strong><br>输出合并后的键值对（多行）</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>4<br>0 1<br>0 2<br>1 2<br>3 4</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>0 3<br>1 2<br>3 4</p>
+</blockquote>
+<h3 id="有序哈希表"><a href="#有序哈希表" class="headerlink" title="有序哈希表"></a>有序哈希表</h3><p>将数据放到哈希表中，再将 <code>key</code> 相同的 <code>value</code> 累加即可。同时，题目要求按照 <code>key</code> 升序排列。所以可以考虑使用有序哈希表。<br>在C++中是STL的 <code>Map</code>，在Java中则是 <code>TreeMap</code>。</p>
+<p>注意在Java中 <code>Map.Entry&lt;K, V&gt;</code> 是Map的静态接口。遍历的时候用到。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:06:45</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hash;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (; n--;) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        hash[x] += y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [key, value] : hash) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; key &lt;&lt; <span class="string">' '</span> &lt;&lt; value &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:30:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        Map&lt;Integer, Integer&gt; hash = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span> y = in.nextInt();</span><br><span class="line">            <span class="keyword">if</span> (hash.containsKey(x)) &#123;</span><br><span class="line">                hash.put(x, hash.get(x) + y);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                hash.put(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : hash.entrySet()) &#123;</span><br><span class="line">            System.out.println(entry.getKey() + <span class="string">" "</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/de044e89123f4a7482bd2b214a685201?tpId=37&&tqId=21231&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ8. 合并表记录</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>哈希表</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HJ7. 取近似值</title>
     <url>/2021/08/15/HJ7-%E5%8F%96%E8%BF%91%E4%BC%BC%E5%80%BC/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>注意C++和Java强转整型的区别。</p>
@@ -3914,8 +3978,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>哈希表</tag>
         <tag>计数数组</tag>
+        <tag>哈希表</tag>
         <tag>剑指Offer</tag>
         <tag>集合</tag>
       </tags>
@@ -7612,8 +7676,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>Linux</tag>
+        <tag>VPS</tag>
         <tag>测速</tag>
       </tags>
   </entry>
@@ -7909,8 +7973,8 @@
     <url>/2020/03/29/LeetCode-10-%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84%EF%BC%88X-of-a-Kind-in-a-Deck-of-Cards%EF%BC%89/</url>
     <content><![CDATA[]]></content>
       <tags>
-        <tag>最大公约数</tag>
         <tag>计数数组</tag>
+        <tag>最大公约数</tag>
       </tags>
   </entry>
   <entry>

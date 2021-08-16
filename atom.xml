@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://accepted.org.cn/"/>
-  <updated>2021-08-15T10:28:19.597Z</updated>
+  <updated>2021-08-16T14:50:11.724Z</updated>
   <id>https://accepted.org.cn/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HJ9. 提取不重复的整数</title>
+    <link href="https://accepted.org.cn/2021/08/16/HJ9-%E6%8F%90%E5%8F%96%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B4%E6%95%B0/"/>
+    <id>https://accepted.org.cn/2021/08/16/HJ9-%E6%8F%90%E5%8F%96%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B4%E6%95%B0/</id>
+    <published>2021-08-16T14:40:16.000Z</published>
+    <updated>2021-08-16T14:50:11.724Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>TwoSum既视感[滑稽]</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>输入一个 <code>int</code> 型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。<br>保证输入的整数最后一位不是 $0$。</p><p><strong>输入描述：</strong><br>输入一个 <code>int</code> 型整数</p><p><strong>输出描述：</strong><br>按照从右向左的阅读顺序，返回一个不含重复数字的新的整数</p><p><strong>示例1</strong></p><blockquote><p>输入：<br>9876673</p></blockquote><blockquote><p>输出：<br>37689</p></blockquote><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021年08月16日22:43:02</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (; n; n /= <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = n % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (!st[x]) <span class="built_in">cout</span> &lt;&lt; x;</span><br><span class="line">        st[x] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:48:43</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        n = in.nextInt();</span><br><span class="line">        Map&lt;Integer, Boolean&gt; st = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n /= <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = n % <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (!st.containsKey(x)) &#123;</span><br><span class="line">                System.out.print(x);</span><br><span class="line">            &#125;</span><br><span class="line">            st.put(x, <span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/253986e66d114d378ae8de2e6c4577c1?tpId=37&&tqId=21232&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ9. 提取不重复的整数</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;TwoSum既视感[滑稽]&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="哈希表" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+      <category term="NowCoder" scheme="https://accepted.org.cn/tags/NowCoder/"/>
+    
+      <category term="华为机试题库" scheme="https://accepted.org.cn/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HJ8. 合并表记录</title>
+    <link href="https://accepted.org.cn/2021/08/16/HJ8-%E5%90%88%E5%B9%B6%E8%A1%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>https://accepted.org.cn/2021/08/16/HJ8-%E5%90%88%E5%B9%B6%E8%A1%A8%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-08-16T14:01:34.000Z</published>
+    <updated>2021-08-16T14:31:25.189Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>有序哈希表的应用。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>数据表记录包含表索引和数值（ <code>int</code> 范围的正整数），请对表索引相同的记录进行合并，即将相同索引的数值进行求和运算，输出按照 <code>key</code> 值升序进行输出。</p><p><strong>输入描述：</strong><br>先输入键值对的个数<br>然后输入成对的 <code>index</code> 和 <code>value</code> 值，以空格隔开</p><p><strong>输出描述：</strong><br>输出合并后的键值对（多行）</p><p><strong>示例1</strong></p><blockquote><p>输入：<br>4<br>0 1<br>0 2<br>1 2<br>3 4</p></blockquote><blockquote><p>输出：<br>0 3<br>1 2<br>3 4</p></blockquote><h3 id="有序哈希表"><a href="#有序哈希表" class="headerlink" title="有序哈希表"></a>有序哈希表</h3><p>将数据放到哈希表中，再将 <code>key</code> 相同的 <code>value</code> 累加即可。同时，题目要求按照 <code>key</code> 升序排列。所以可以考虑使用有序哈希表。<br>在C++中是STL的 <code>Map</code>，在Java中则是 <code>TreeMap</code>。</p><p>注意在Java中 <code>Map.Entry&lt;K, V&gt;</code> 是Map的静态接口。遍历的时候用到。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:06:45</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; hash;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (; n--;) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        hash[x] += y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [key, value] : hash) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; key &lt;&lt; <span class="string">' '</span> &lt;&lt; value &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-16 22:30:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        Map&lt;Integer, Integer&gt; hash = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = in.nextInt();</span><br><span class="line">            <span class="keyword">int</span> y = in.nextInt();</span><br><span class="line">            <span class="keyword">if</span> (hash.containsKey(x)) &#123;</span><br><span class="line">                hash.put(x, hash.get(x) + y);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                hash.put(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : hash.entrySet()) &#123;</span><br><span class="line">            System.out.println(entry.getKey() + <span class="string">" "</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/de044e89123f4a7482bd2b214a685201?tpId=37&&tqId=21231&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ8. 合并表记录</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;有序哈希表的应用。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="NowCoder" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+    
+      <category term="华为机试题库" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+    
+    
+      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="哈希表" scheme="https://accepted.org.cn/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+      <category term="NowCoder" scheme="https://accepted.org.cn/tags/NowCoder/"/>
+    
+      <category term="华为机试题库" scheme="https://accepted.org.cn/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>HJ7. 取近似值</title>
@@ -615,86 +677,6 @@
       <category term="数论" scheme="https://accepted.org.cn/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="快速幂" scheme="https://accepted.org.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【AcWing算法基础】第四讲-数学知识-快速幂 AcWing 875. 快速幂</title>
-    <link href="https://accepted.org.cn/2021/07/04/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86-%E5%BF%AB%E9%80%9F%E5%B9%82-AcWing-875-%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
-    <id>https://accepted.org.cn/2021/07/04/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86-%E5%BF%AB%E9%80%9F%E5%B9%82-AcWing-875-%E5%BF%AB%E9%80%9F%E5%B9%82/</id>
-    <published>2021-07-04T15:46:47.000Z</published>
-    <updated>2021-07-04T17:00:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>经典快速求幂的算法。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定 $n$ 组 $a_i$, $b_i$, $p_i$，对于每组数据，求出 $a_i^{b_i} \bmod p_i$ 的值。</p><p><strong>输入格式</strong></p><p>第一行包含整数 $n$。</p><p>接下来 $n$ 行，每行包含三个整数 $a_i$, $b_i$, $p_i$。</p><p><strong>输出格式</strong></p><p>对于每组数据，输出一个结果，表示 $a_i^{b_i} \bmod p_i$ 的值。</p><p>每个结果占一行。</p><p><strong>数据范围</strong></p><ul><li>$1≤n≤100000$,</li><li>$1≤a_i, b_i, p_i≤2×10^9$</li></ul><p><strong>输入样例：</strong></p><blockquote><p>2<br>3 2 5<br>4 3 9</p></blockquote><p><strong>输出样例：</strong></p><blockquote><p>4<br>1</p></blockquote><hr><h3 id="二进制反复平方"><a href="#二进制反复平方" class="headerlink" title="二进制反复平方"></a>二进制反复平方</h3><p>本题是模意义下取幂，我们知道取模运算不会干涉乘法运算。所以我们核心关注如何求 $a^b$.</p><p>如果我们可以将 $b$ 拆分成 $2^{x_1} + 2^{x_2} + … + 2^{x_i}$，那么</p><p>$a^b = a^{2^{x_1} + 2^{x_2} + … + 2^{x_i}}$ (即$a^b = a^{2^{x_1}} \times a^{2^{x_2}} \times … \times a^{2^{x_i}}$).</p><p>显然这是将 $b$ 转化为 $2$ 进制后进行 $10$ 进制展开的结果，很轻松可以做到。</p><p>那么现在考虑如何快速获得 $a^{2^{x_1}} \times a^{2^{x_2}} \times … \times a^{2^{x_i}}$ 的值。</p><p>我们可以很方便地预处理出来 $a^{2^0}, a^{2^1}, a^{2^2} … a^{2^{log_2b}}$ 的序列。其中最后一项 $a^{2^{log_2b}}$ 需要刚好小于等于 $a^{b}$.</p><p>有了这样一个序列，我们就可以从中选择需要的数字相乘即可得到最终答案。显然，当 $b$ 的二进制位为1的时候就是对应需要的值（如果二进制位为 $0$，则 $10$ 进制展开的时候是 $0 \times 2^{x_i}$，相加的时候被忽略）。</p><p>在预处理过程中，每一项都是由前一项平方得到，那么整个算法的时间复杂度为 $O(logb)$.</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> LL = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">ksm</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b, <span class="keyword">int</span> &amp;p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL res = <span class="number">1</span>; <span class="comment">// 2的零次幂</span></span><br><span class="line">    <span class="keyword">while</span> (b) &#123;</span><br><span class="line">        <span class="comment">// 如果b的最后一位是1，那么将b拆成2进制表示再分解成若干个2的xi次幂因式的时候，某一个因式对应着该位</span></span><br><span class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>) res = res * a % p;  <span class="comment">// a,b &gt;= 1，所以至少需要算一下第一次a的2的0次幂(等于a)，所以res初始化为1. 随后的计算, a被更新成对应a的2的若干次幂</span></span><br><span class="line">        <span class="comment">// 不管b最后一位是否是1，都需要反复求a的平方，直到a的2的x次幂 &gt; a的b次幂，此时一共计算了log_2b次</span></span><br><span class="line">        a = (LL)a * a % p;  <span class="comment">// 下一次a更新成本次a的平方，其中a = a的2的xi次幂</span></span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;    <span class="comment">// b右移一位，直到为0退出循环</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> a, b, p;</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; p;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ksm(a, b, p) &lt;&lt; <span class="built_in">endl</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><p>现在证明模意义下取幂的正确性：<br>根据模运算性质可知，<br>$x \times y \bmod p = x \bmod p \times y \bmod p$.</p><p>那么，$a^b \bmod p = (a^{2^{x_1}} \times a^{2^{x_2}} \times … \times a^{2^{x_i}}) \bmod p$.</p><p>即$a^b \bmod p = (a^{2^{x_1}} \bmod p \times a^{2^{x_2}} \bmod p \times … \times a^{2^{x_i}} \bmod p) \bmod p$.</p><p>那么每次 $a$ 的迭代 $\bmod p$ 一次，对应上式中每一项 $\bmod p$，每次 $res$ 计算的时候 $\bmod p$ 一次对应上式中最后面的 $\bmod p$.</p><p>取模运算不会干涉乘法运算。</p><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/description/877/" target="_blank" rel="noopener">AcWing 875. 快速幂</a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;经典快速求幂的算法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="AcWing" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/"/>
-    
-      <category term="算法基础课" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
-    
-      <category term="第四讲数学知识" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/%E7%AC%AC%E5%9B%9B%E8%AE%B2%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="https://accepted.org.cn/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="位运算" scheme="https://accepted.org.cn/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-      <category term="AcWing" scheme="https://accepted.org.cn/tags/AcWing/"/>
-    
-      <category term="数论" scheme="https://accepted.org.cn/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-      <category term="快速幂" scheme="https://accepted.org.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【LeetCode周赛248】B LeetCode 5801. 消灭怪物的最大数量</title>
-    <link href="https://accepted.org.cn/2021/07/04/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B248%E3%80%91B-LeetCode-5801-%E6%B6%88%E7%81%AD%E6%80%AA%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/"/>
-    <id>https://accepted.org.cn/2021/07/04/%E3%80%90LeetCode%E5%91%A8%E8%B5%9B248%E3%80%91B-LeetCode-5801-%E6%B6%88%E7%81%AD%E6%80%AA%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F/</id>
-    <published>2021-07-04T14:22:06.000Z</published>
-    <updated>2021-07-04T14:36:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>很明显的贪心题，植物大战僵尸。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>你正在玩一款电子游戏，在游戏中你需要保护城市免受怪物侵袭。给你一个 <strong>下标从 $0$ 开始</strong> 且长度为 $n$ 的整数数组 $dist$ ，其中 $dist[i]$ 是第 $i$ 个怪物与城市的 <strong>初始距离</strong>（单位：米）。</p><p>怪物以 <strong>恒定</strong> 的速度走向城市。给你一个长度为 $n$ 的整数数组 $speed$ 表示每个怪物的速度，其中 $speed[i]$ 是第 $i$ 个怪物的速度（单位：米/分）。</p><p>怪物从 <strong>第 $0$ 分钟</strong> 时开始移动。你有一把武器，并可以 <strong>选择</strong> 在每一分钟的开始时使用，包括第 0 分钟。但是你无法在一分钟的中间使用武器。这种武器威力惊人，一次可以消灭任一还活着的怪物。</p><p>一旦任一怪物到达城市，你就输掉了这场游戏。如果某个怪物 <strong>恰</strong> 在某一分钟开始时到达城市，这会被视为 <strong>输掉</strong> 游戏，在你可以使用武器之前，游戏就会结束。</p><p>返回在你输掉游戏前可以消灭的怪物的 <strong>最大</strong> 数量。如果你可以在所有怪物到达城市前将它们全部消灭，返回  $n$ 。</p><p><strong>示例 1：</strong></p><blockquote><p>输入：dist = [1,3,4], speed = [1,1,1]<br>输出：3<br>解释：<br>第 0 分钟开始时，怪物的距离是 [1,3,4]，你消灭了第一个怪物。<br>第 1 分钟开始时，怪物的距离是 [X,2,3]，你没有消灭任何怪物。<br>第 2 分钟开始时，怪物的距离是 [X,1,2]，你消灭了第二个怪物。<br>第 3 分钟开始时，怪物的距离是 [X,X,1]，你消灭了第三个怪物。<br>所有 3 个怪物都可以被消灭。</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p>输入：dist = [1,1,2,3], speed = [1,1,1,1]<br>输出：1<br>解释：<br>第 0 分钟开始时，怪物的距离是 [1,1,2,3]，你消灭了第一个怪物。<br>第 1 分钟开始时，怪物的距离是 [X,0,1,2]，你输掉了游戏。<br>你只能消灭 1 个怪物。</p></blockquote><p><strong>示例 3：</strong></p><blockquote><p>输入：dist = [3,2,4], speed = [5,3,2]<br>输出：1<br>解释：<br>第 0 分钟开始时，怪物的距离是 [3,2,4]，你消灭了第一个怪物。<br>第 1 分钟开始时，怪物的距离是 [X,0,2]，你输掉了游戏。<br>你只能消灭 1 个怪物。</p></blockquote><p><strong>提示：</strong></p><ul><li>$n = dist.length = speed.length$</li><li>$1 &lt;= n &lt;= 10^5$</li><li>$1 &lt;= dist[i], speed[i] &lt;= 10^5$</li></ul><hr><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><p>不能根据距离判断优先击杀的对象，因为速度不同，所以要根据预计到达时间来判断。<br>因为每次击杀之后都需要获得最近到达的对象，所以考虑将所有对象的预计到达时间计算出来，从小到大排序。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">eliminateMaximum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; dist, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; speed)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = dist.<span class="built_in">size</span>();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; time;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            time.push_back((<span class="keyword">double</span>)dist[i] / speed[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(time.<span class="built_in">begin</span>(), time.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (res &gt;= time[i]) <span class="keyword">return</span> res;</span><br><span class="line">            ++res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/eliminate-maximum-number-of-monsters/" target="_blank" rel="noopener">LeetCode 5801. 消灭怪物的最大数量</a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;很明显的贪心题，植物大战僵尸。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/"/>
-    
-      <category term="竞赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/"/>
-    
-      <category term="LeetCode周赛" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/LeetCode%E5%91%A8%E8%B5%9B/"/>
-    
-      <category term="248" scheme="https://accepted.org.cn/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E7%AB%9E%E8%B5%9B/LeetCode%E5%91%A8%E8%B5%9B/248/"/>
-    
-    
-      <category term="算法" scheme="https://accepted.org.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://accepted.org.cn/tags/LeetCode/"/>
-    
-      <category term="竞赛" scheme="https://accepted.org.cn/tags/%E7%AB%9E%E8%B5%9B/"/>
-    
-      <category term="贪心" scheme="https://accepted.org.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
