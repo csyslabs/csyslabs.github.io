@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：算法竞赛经常用到的STL和JDK轮子总结。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-11T13:32:03.000Z">
-<meta property="article:modified_time" content="2021-08-14T13:50:21.844Z">
+<meta property="article:modified_time" content="2021-08-17T15:30:07.470Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="STL">
@@ -272,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-14 21:50:21" itemprop="dateModified" datetime="2021-08-14T21:50:21+08:00">2021-08-14</time>
+                <time title="Modified: 2021-08-17 23:30:07" itemprop="dateModified" datetime="2021-08-17T23:30:07+08:00">2021-08-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,7 +348,21 @@
 <p><strong>Java</strong><br>TreeSet</p>
 <h3 id="4-截取子串"><a href="#4-截取子串" class="headerlink" title="4. 截取子串"></a>4. 截取子串</h3><p><strong>C++</strong><br><code>string s = &quot;abcd&quot;;</code><br><code>s.substr(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substr(int index, int len)</code><br>截取从 <code>index</code> 开始，长度为 <code>len</code> 的子串。</p>
 <p><strong>Java</strong><br><code>String s = new String(&quot;abcd&quot;);</code><br><code>s.substring(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substring(int beginIndex, int endIndex)</code><br>截取从 <code>beginIndex</code> 开始到 <code>endIndex</code> 前一个字符结束的子串。左闭右开。</p>
-<h3 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h3><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
+<h3 id="5-bitset"><a href="#5-bitset" class="headerlink" title="5. bitset"></a>5. bitset</h3><p><strong>C++</strong></p>
+<ul>
+<li>定义一个长度为 <code>MXN</code> 的bitset:<br><code>bitset&lt;MXN&gt; bs;</code></li>
+<li>将下标为 <code>idx</code> 处的值设为 <code>true</code> / <code>false</code><br><code>bs[idx] = true;</code> <code>bs[idx] = 1;</code><br><code>bs[idx] = false;</code> <code>bs[idx] = 0;</code></li>
+<li>统计所有值为1的个数<br><code>int x = bs.count();</code></li>
+<li>反转下标为 <code>idx</code> 处的值<br><code>bs[idx].flip();</code> 或 <code>bs.flip(idx);</code></li>
+</ul>
+<p><strong>Java</strong></p>
+<ul>
+<li>定义一个长度为 <code>MXN</code> 的bitset:<br><code>BitSet bs = new BitSet();</code></li>
+<li>将下标为 <code>idx</code> 处的值设为 <code>true</code> / <code>false</code><br><code>bs.set(idx, true);</code><br><code>bs.set(idx, false);</code></li>
+<li>统计所有值为1的个数<br><code>int x = cardinality();</code></li>
+<li>反转下标为 <code>idx</code> 处的值<br><code>bs.flip(idx);</code></li>
+</ul>
+<h2 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h2><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
 <ul>
 <li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
 </li>
@@ -465,7 +479,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-如果对应Java的JDK存在类似功能，也一并给出"><span class="nav-text">STL(如果对应Java的JDK存在类似功能，也一并给出)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数组排序"><span class="nav-text">1. 数组排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串转数值类型"><span class="nav-text">2. 字符串转数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有序集合"><span class="nav-text">3. 有序集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-截取子串"><span class="nav-text">4. 截取子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他C-知识点"><span class="nav-text">其他C++知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x0-输出指定位的小数点或有效数字"><span class="nav-text">0x0 输出指定位的小数点或有效数字</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-如果对应Java的JDK存在类似功能，也一并给出"><span class="nav-text">STL(如果对应Java的JDK存在类似功能，也一并给出)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数组排序"><span class="nav-text">1. 数组排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串转数值类型"><span class="nav-text">2. 字符串转数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有序集合"><span class="nav-text">3. 有序集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-截取子串"><span class="nav-text">4. 截取子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-bitset"><span class="nav-text">5. bitset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他C-知识点"><span class="nav-text">其他C++知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x0-输出指定位的小数点或有效数字"><span class="nav-text">0x0 输出指定位的小数点或有效数字</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -483,7 +497,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">175</span>
+          <span class="site-state-item-count">176</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -496,7 +510,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">154</span>
+        <span class="site-state-item-count">155</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

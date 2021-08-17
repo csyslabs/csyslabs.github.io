@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HJ10. 字符个数统计</title>
+    <url>/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>简单哈希表的使用。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>编写一个函数，计算字符串中含有的不同字符的个数。字符在ASCII码范围内($0$~$127$，包括 $0$ 和 $127$)，换行表示结束符，不算在字符里。不在范围内的不作统计。多个相同的字符只计算一次<br>例如，对于字符串abaca而言，有a、b、c三种不同的字符，因此输出 $3$。</p>
+<p><strong>输入描述：</strong><br>输入一行没有空格的字符串。</p>
+<p><strong>输出描述：</strong><br>输出 输入字符串 中范围在($0$~$127$，包括 $0$ 和 $127$)字符的种数。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>abc</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>3</p>
+</blockquote>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>很容易想到维护一个哈希表或者集合统计所有出现过的字符。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i++) &#123;</span><br><span class="line">        st[s[i]] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.next();</span><br><span class="line">        Map&lt;Character, Boolean&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">char</span>[] chs = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = chs.length; i &lt; n; i++) &#123;</span><br><span class="line">            hash.put(chs[i], <span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(hash.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a>bitset</h3><p>当然也可以使用bitset记录所有出现过的字符。</p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">C++</a></li><li class="tab"><a href="#g_tab1-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-17 23:15:54</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    <span class="built_in">bitset</span>&lt;130&gt; bs;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i++) &#123;</span><br><span class="line">        bs[s[i]] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; bs.count() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-17 23:13:16</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.next();</span><br><span class="line">        BitSet bitset = <span class="keyword">new</span> BitSet(<span class="number">130</span>);</span><br><span class="line">        <span class="keyword">char</span>[] chs = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = chs.length; i &lt; n; i++) &#123;</span><br><span class="line">            bitset.set(chs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(bitset.cardinality());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/eb94f6a5b2ba49c6ac72d40b5ce95f50?tpId=37&&tqId=21233&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ10. 字符个数统计</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>哈希表</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+        <tag>bitset</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HJ9. 提取不重复的整数</title>
     <url>/2021/08/16/HJ9-%E6%8F%90%E5%8F%96%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B4%E6%95%B0/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>TwoSum既视感[滑稽]</p>
@@ -21,6 +61,12 @@
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/253986e66d114d378ae8de2e6c4577c1?tpId=37&&tqId=21232&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ9. 提取不重复的整数</a></p>
           </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
       <tags>
         <tag>算法</tag>
         <tag>哈希表</tag>
@@ -1443,9 +1489,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -1491,8 +1537,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -2195,7 +2241,21 @@
 <p><strong>Java</strong><br>TreeSet</p>
 <h3 id="4-截取子串"><a href="#4-截取子串" class="headerlink" title="4. 截取子串"></a>4. 截取子串</h3><p><strong>C++</strong><br><code>string s = &quot;abcd&quot;;</code><br><code>s.substr(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substr(int index, int len)</code><br>截取从 <code>index</code> 开始，长度为 <code>len</code> 的子串。</p>
 <p><strong>Java</strong><br><code>String s = new String(&quot;abcd&quot;);</code><br><code>s.substring(int index)</code><br>截取从 <code>index</code> 开始到字符串结束的子串。<br><code>s.substring(int beginIndex, int endIndex)</code><br>截取从 <code>beginIndex</code> 开始到 <code>endIndex</code> 前一个字符结束的子串。左闭右开。</p>
-<h3 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h3><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
+<h3 id="5-bitset"><a href="#5-bitset" class="headerlink" title="5. bitset"></a>5. bitset</h3><p><strong>C++</strong></p>
+<ul>
+<li>定义一个长度为 <code>MXN</code> 的bitset:<br><code>bitset&lt;MXN&gt; bs;</code></li>
+<li>将下标为 <code>idx</code> 处的值设为 <code>true</code> / <code>false</code><br><code>bs[idx] = true;</code> <code>bs[idx] = 1;</code><br><code>bs[idx] = false;</code> <code>bs[idx] = 0;</code></li>
+<li>统计所有值为1的个数<br><code>int x = bs.count();</code></li>
+<li>反转下标为 <code>idx</code> 处的值<br><code>bs[idx].flip();</code> 或 <code>bs.flip(idx);</code></li>
+</ul>
+<p><strong>Java</strong></p>
+<ul>
+<li>定义一个长度为 <code>MXN</code> 的bitset:<br><code>BitSet bs = new BitSet();</code></li>
+<li>将下标为 <code>idx</code> 处的值设为 <code>true</code> / <code>false</code><br><code>bs.set(idx, true);</code><br><code>bs.set(idx, false);</code></li>
+<li>统计所有值为1的个数<br><code>int x = cardinality();</code></li>
+<li>反转下标为 <code>idx</code> 处的值<br><code>bs.flip(idx);</code></li>
+</ul>
+<h2 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h2><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
 <ul>
 <li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
 </li>
@@ -3823,10 +3883,10 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>双指针</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -3978,8 +4038,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>计数数组</tag>
         <tag>哈希表</tag>
+        <tag>计数数组</tag>
         <tag>剑指Offer</tag>
         <tag>集合</tag>
       </tags>
@@ -4068,8 +4128,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4157,8 +4217,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4240,8 +4300,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>ViewMatrix</tag>
         <tag>World-to-Screen</tag>
+        <tag>ViewMatrix</tag>
       </tags>
   </entry>
   <entry>
@@ -4979,8 +5039,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -5231,8 +5291,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5283,8 +5343,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5696,10 +5756,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6217,8 +6277,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6472,16 +6532,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>位运算</tag>
-        <tag>AcWing</tag>
-        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6920,9 +6980,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
         <tag>树深度</tag>
       </tags>
@@ -6973,10 +7033,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7017,10 +7077,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7055,10 +7115,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7106,9 +7166,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7506,10 +7566,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7676,8 +7736,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>VPS</tag>
+        <tag>Linux</tag>
         <tag>测速</tag>
       </tags>
   </entry>
