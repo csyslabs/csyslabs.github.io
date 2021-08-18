@@ -1,6 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HJ14. 字符串排序</title>
+    <url>/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>熟悉C++和Java的排序轮子。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>给定 $n$ 个字符串，请对 $n$ 个字符串按照字典序排列。</p>
+<p><strong>输入描述：</strong><br>输入第一行为一个正整数 $n(1≤n≤1000)$,下面 $n$ 行为 $n$ 个字符串(字符串长度 $≤100$),字符串中只含有大小写字母。</p>
+<p><strong>输出描述：</strong><br>数据输出 $n$ 行，输出结果为按照字典序排列的字符串。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br>9<br>cap<br>to<br>cat<br>card<br>two<br>too<br>up<br>boat<br>boot</p>
+</blockquote>
+<blockquote>
+<p><strong>输出：</strong><br>boat<br>boot<br>cap<br>card<br>cat<br>to<br>too<br>two<br>up</p>
+</blockquote>
+<h3 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h3><p>重点关注C++和Java的排序轮子使用。其实这些排序轮子都默认对字符串按照字典序排序。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 22:44:57</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">vec</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; vec[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;each : vec) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; each &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 23:05:59</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            String s = in.next();</span><br><span class="line">            list.add(s);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.sort(list);</span><br><span class="line">        <span class="keyword">for</span> (String each : list) &#123;</span><br><span class="line">            System.out.println(each);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/5af18ba2eb45443aa91a11e848aa6723?tpId=37&&tqId=21237&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ14. 字符串排序</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ13. 句子逆序</title>
+    <url>/2021/08/18/HJ13-%E5%8F%A5%E5%AD%90%E9%80%86%E5%BA%8F/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>简单栈的应用。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>将一个英文语句以单词为单位逆序排放。例如“I am a boy”，逆序排放后为“boy a am I”<br>所有单词之间用一个空格隔开，语句中除了英文字母外，不再包含其他字符</p>
+<p><strong>输入描述：</strong><br>输入一个英文语句，每个单词用空格隔开。保证输入只包含空格和字母。</p>
+<p><strong>输出描述：</strong><br>得到逆序的句子</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br>I am a boy</p>
+</blockquote>
+<blockquote>
+<p><strong>输出：</strong><br>boy a am I</p>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>注意Java语言中，<code>StringBuilder</code> 的清空有三种常见的方式。<br><code>StringBuilder sb = new StringBuilder();</code></p>
+<ul>
+<li><ol>
+<li><code>sb.setLength(0);</code></li>
+</ol>
+</li>
+<li><ol start="2">
+<li><code>sb.delete(0. sb.length());</code></li>
+</ol>
+</li>
+<li><ol start="3">
+<li>生成新的StringBuilder对象，旧的由GC回收。</li>
+</ol>
+</li>
+</ul>
+<p>三种方法最快的是第一种，第二种次之（差别很小），最慢的是第三种。<br>另外注意第二种方式，第二个index指向 <code>StringBuilder</code> 最后一个字符下标的后一位。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021年08月18日22:20:41</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; stk;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    getline(<span class="built_in">cin</span>, s);</span><br><span class="line">    s += <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">string</span> tmp = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i ++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">' '</span>) &#123;</span><br><span class="line">            stk.push(tmp);</span><br><span class="line">            tmp = <span class="string">""</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            tmp += s[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; !stk.empty(); stk.pop()) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; stk.top() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 22:34:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.nextLine();</span><br><span class="line">        s += <span class="string">" "</span>;</span><br><span class="line">        LinkedList&lt;String&gt; stk = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">char</span>[] chs = s.toCharArray();</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.length(); i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (chs[i] == <span class="string">' '</span>) &#123;</span><br><span class="line">                stk.addLast(sb.toString());</span><br><span class="line">                sb.setLength(<span class="number">0</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                sb.append(chs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; !stk.isEmpty();) &#123;</span><br><span class="line">            System.out.print(stk.removeLast() + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/48b3cb4e3c694d9da5526e6255bb73c3?tpId=37&&tqId=21236&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ13. 句子逆序</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>栈</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ12. 字符串反转</title>
+    <url>/2021/08/18/HJ12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>简单字符串反转，有大概一万种做法。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>接受一个只包含小写字母的字符串，然后输出该字符串反转后的字符串。（字符串长度不超过 $1000$）</p>
+<p><strong>输入描述：</strong><br>输入一行，为一个只包含小写字母的字符串。</p>
+<p><strong>输出描述：</strong><br>输出该字符串反转后的字符串。</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>abcd</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>dcba</p>
+</blockquote>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><p>这题主要考察字符串反转，方法有一万种。选一种自己喜欢的就好。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 18:22:41</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    reverse(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 18:28:10</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.next();</span><br><span class="line">        System.out.println(<span class="keyword">new</span> StringBuilder(s).reverse().toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/e45e078701ab4e4cb49393ae30f1bb04?tpId=37&&tqId=21235&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ12. 字符串反转</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ11. 数字颠倒</title>
+    <url>/2021/08/18/HJ11-%E6%95%B0%E5%AD%97%E9%A2%A0%E5%80%92/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>Integer to String reverse.</p>
+<a id="more"></a>
+
+
+<h3 id="反转整数"><a href="#反转整数" class="headerlink" title="反转整数"></a>反转整数</h3><p>将数字每一位to string，逆序保存。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-18 17:56:33</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">string</span> s = n ? <span class="string">""</span> : <span class="string">"0"</span>;</span><br><span class="line">    <span class="keyword">for</span> (; n; n /= <span class="number">10</span>) &#123;</span><br><span class="line">        s += n % <span class="number">10</span> + <span class="number">0x30</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021年08月18日18:13:59</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">        StringBuilder sb = n == <span class="number">0</span> ? <span class="keyword">new</span> StringBuilder(<span class="string">"0"</span>) : <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n /= <span class="number">10</span>) &#123;</span><br><span class="line">            sb.append((<span class="keyword">char</span>)(n % <span class="number">10</span> + <span class="number">0x30</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/ae809795fca34687a48b172186e3dafe?tpId=37&&tqId=21234&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ11. 数字颠倒</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于OIDC协议的jwt颁发与验证的底层实现</title>
+    <url>/2021/08/18/%E5%9F%BA%E4%BA%8EOIDC%E5%8D%8F%E8%AE%AE%E7%9A%84jwt%E9%A2%81%E5%8F%91%E4%B8%8E%E9%AA%8C%E8%AF%81%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>第一次技术分享会。</p>
+<a id="more"></a>
+
+
+<h2 id="什么是JWT"><a href="#什么是JWT" class="headerlink" title="什么是JWT"></a>什么是JWT</h2><h2 id="jwt长什么样？"><a href="#jwt长什么样？" class="headerlink" title="jwt长什么样？"></a>jwt长什么样？</h2><p>这是咱们嘉宾登录页面签发的JWT：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">eyJraWQiOiI2MGNjMWQ5Yi0wNTU2LTQxNjMtYTAwOS1mNTgxNmIwMzczZGMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ6aGFuZ3lhbmciLCJhdWQiOiJmYjkxNzdhZC0xMTQ2LTQyYjgtODNhNy0yODNmNWVjMmE1YWUiLCJpc3MiOiJodHRwczpcL1wvbGluYW9uZWRldi5kaWdpdGFsZXhwby5jb20iLCJleHAiOjE2MjkxODk2MTQsIm5vbmNlIjoiMDQ4NTBGNzgxOTQwNDM5Nzg0Q0MzRDMzNkFFQ0I5QzUiLCJpYXQiOjE2MjkxODkzNTV9.XxT0haq4fOHO6QzPEHudd6Z4-F4oXkJLdut-xxUh7EGcKm5dLBvwHdvMci2IY6_LHIcUCKs4xQHRaj5GtgqDNvauGLF_Nb_BHjnuLwxLAasDhkzt3d4qEd_uz8Mb_6_AUm126tgYetxyMk7QlW2FC8M9Xm-<span class="number">2F</span>60c73Hie_PyOdjA07o1ij2p4UvIKLfEvpKlKHBp9jCUj-tgQAG_rPqAC7NKF60z-idHJ5ekMnhV2MsdTLSRKWxOPM0l6TjA0YPSJFoE8PtGxD-D8Zk2GDRLTa530C9cKMnhuy9ydYF5_Io3LggOYdDqePtueNBl7FNHVgjFq0YP56uZ3uvLM0lBwA</span><br></pre></td></tr></table></figure>
+<p>简化版：<br><code>xxxxx.yyyyy.zzzzz</code></p>
+<p>分为三个部分，中间用 <code>.</code> 隔开.</p>
+<p>分别是：</p>
+<ul>
+<li>Header</li>
+<li>Payload</li>
+<li>Signature</li>
+</ul>
+<p>这三段都是经过Base64Url加密的字符串，它们紧凑而小巧，一旦登录的用户获得了服务端签发的jwt，那么它可以在随后的每次请求的时候将jwt放在header，url或者post body里面，用来高效验证登录信息，服务端只需要解密就可以得到用户信息，没必要反复查表，也避免了在内存中维护session。<br><strong>Header:</strong><br>分为类型和加密算法两个部分。比如：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"alg"</span>: <span class="string">"HS256"</span>,</span><br><span class="line">  <span class="attr">"typ"</span>: <span class="string">"JWT"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="签发过程"><a href="#签发过程" class="headerlink" title="签发过程"></a>签发过程</h2><p>Jwt的签发首先需要根据header和payload生成一个JWSObject，再调用JWSObject的sign方法进行签发。</p>
+<h3 id="使用RSA私钥生成一个JWSSigner对象"><a href="#使用RSA私钥生成一个JWSSigner对象" class="headerlink" title="使用RSA私钥生成一个JWSSigner对象"></a>使用RSA私钥生成一个JWSSigner对象</h3><p>签发的实现过程会使用到这个key。<br><code>RSAKey rsaKey = RSAKey.parse(OIDCConstants.RSA_PRIVATE_KEY);</code><br><code>JWSSigner signer = new RSASSASigner(rsaKey);</code></p>
+<h3 id="配置Header"><a href="#配置Header" class="headerlink" title="配置Header"></a>配置Header</h3><p>会将加密算法种类和生成对象的类型封装在header中。<br>因为在解密token的时候会先参考header从而选择正确的解密方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">JWSHeader jwsHeader = <span class="keyword">new</span> JWSHeader</span><br><span class="line">        .Builder(JWSAlgorithm.RS256)</span><br><span class="line">        .type(JOSEObjectType.JWT).keyID(keyId).build();</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成JWSObject-核心对象"><a href="#生成JWSObject-核心对象" class="headerlink" title="生成JWSObject(核心对象)"></a>生成JWSObject(核心对象)</h3><p>接下来根据OIDC协议将JWT所包含的信息封装在JWSObject对象中，OIDC协议中这部分的详细描述：</p>
+<ul>
+<li>iss = Issuer Identifier：必须。提供认证信息者的唯一标识。一般是一个https的url（不包含querystring和fragment部分）。</li>
+<li>sub = Subject Identifier：必须。iss提供的EU的标识，在iss范围内唯一。它会被RP用来标识唯一的用户。最长为255个ASCII个字符。</li>
+<li>aud = Audience(s)：必须。标识ID Token的受众。必须包含OAuth2的client_id。</li>
+<li>exp = Expiration time：必须。过期时间，超过此时间的ID Token会作废不再被验证通过。</li>
+<li>iat = Issued At Time：必须。JWT的构建的时间。</li>
+<li>auth_time = AuthenticationTime：EU完成认证的时间。如果RP发送AuthN请求的时候携带max_age的参数，则此Claim是必须的。</li>
+<li>nonce：RP发送请求的时候提供的随机字符串，用来减缓重放攻击，也可以来关联ID Token和RP本身的Session信息。</li>
+<li>acr = Authentication Context Class Reference：可选。表示一个认证上下文引用值，可以用来标识认证上下文类。</li>
+<li>amr = Authentication Methods References：可选。表示一组认证方法。</li>
+<li>azp = Authorized party：可选。结合aud使用。只有在被认证的一方和受众（aud）不一致时才使用此值，一般情况下很少使用。</li>
+</ul>
+<p>具体的实现，是将上述参数封装在 <code>JWTClaimsSet</code> 这个静态类里面，<code>jwtClaimsSetBuilder</code> 是该静态类的内部类对象，用来设置封装这个过程。这些参数将会成为静态类的内部变量。<br>接着会将 <code>JWTClaimsSet</code> 转为一个JSON对象，<code>Payload</code> 相当于一个 <code>wapper</code> 包装器，这个 <code>new</code> 的过程底层基本上只是完成了一次 <code>this.json = json</code> 的过程。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">JWTClaimsSet jwtClaimsSet = jwtClaimsSetBuilder.issuer(jwtDomain.getIssuer())</span><br><span class="line">        .subject(jwtDomain.getSubject())</span><br><span class="line">        .audience(jwtDomain.getAudience())</span><br><span class="line">        .expirationTime(jwtDomain.getExpirationTime())</span><br><span class="line">        .issueTime(jwtDomain.getIssuedTime())</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">Payload payload = <span class="keyword">new</span> Payload(jwtClaimsSet.toJSONObject());</span><br><span class="line">JWSObject jwsObject = <span class="keyword">new</span> JWSObject(jwsHeader, payload);</span><br></pre></td></tr></table></figure>
+<p>接着会将header和payload封装成我们要的JWSObject类型。<br>我们重点关注一下JWSObject对象初始化的时候进行了哪些设置：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JWSObject</span><span class="params">(JWSHeader header, Payload payload)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (header == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The JWS header must not be null"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.header = header;</span><br><span class="line">        <span class="keyword">if</span> (payload == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The payload must not be null"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setPayload(payload);</span><br><span class="line">            <span class="keyword">this</span>.signingInputString = composeSigningInput(header.toBase64URL(), payload.toBase64URL());</span><br><span class="line">            <span class="keyword">this</span>.signature = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">this</span>.state = JWSObject.State.UNSIGNED;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>对header和payload判空，如果为空都会抛出异常。</li>
+<li>把header和payload初始化到对象内部。</li>
+<li>将header和payload用Base64URL进行编码再toString()。简单说就是将header和payload加密成一个字符串放在JWSObject内部。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Base64URL <span class="title">toBase64URL</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.parsedBase64URL == <span class="keyword">null</span> ? Base64URL.encode(<span class="keyword">this</span>.toString()) : <span class="keyword">this</span>.parsedBase64URL;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></li>
+<li>将签发状态设置成<code>UNSIGNED</code></li>
+</ul>
+</blockquote>
+<p>下面重点关注sign()方法的底层实现。</p>
+<h3 id="签发sign-方法的准备过程"><a href="#签发sign-方法的准备过程" class="headerlink" title="签发sign() 方法的准备过程"></a>签发<code>sign()</code> 方法的准备过程</h3><p>在初始化JWSObject对象之后，会调用JWSObject对象的 <code>sign()</code> 方法来签发生成一个Json Web Token.<br>下面我们来一起看一下 <code>sign()</code> 方法的底层是怎么实现的。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">sign</span><span class="params">(JWSSigner signer)</span> <span class="keyword">throws</span> JOSEException </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.ensureUnsignedState();</span><br><span class="line">    <span class="keyword">this</span>.ensureJWSSignerSupport(signer);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.signature = signer.sign(<span class="keyword">this</span>.getHeader(), <span class="keyword">this</span>.getSigningInput());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (JOSEException var3) &#123;</span><br><span class="line">        <span class="keyword">throw</span> var3;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception var4) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> JOSEException(var4.getMessage(), var4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.state = JWSObject.State.SIGNED;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>先确保“未签名”的状态，在初始化JWSObject对象的时候已经将状态初始化成了未签发状态。在签发之前，咱们必须确保状态是未签发的，否则抛出异常。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureUnsignedState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state != JWSObject.State.UNSIGNED) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"The JWS object must be in an unsigned state"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></li>
+<li><code>signer</code> 这个对象是调用 <code>sign()</code> 方法时传入的，<code>signer.supportedJWSAlgorithms()</code>方法会返回所有支持的RSA加密算法类型，维护在一个哈希集合容器中。如果之前设置的算法加密类型不在该容器中的话，则抛出异常。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureJWSSignerSupport</span><span class="params">(JWSSigner signer)</span> <span class="keyword">throws</span> JOSEException </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!signer.supportedJWSAlgorithms().contains(<span class="keyword">this</span>.getHeader().getAlgorithm())) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> JOSEException(<span class="string">"The \""</span> + <span class="keyword">this</span>.getHeader().getAlgorithm() + <span class="string">"\" algorithm is not allowed or supported by the JWS signer: Supported algorithms: "</span> + signer.supportedJWSAlgorithms());</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></li>
+<li>在签发前的验证工作完成之后，最终调用 RSASSASigner 的sign()方法签发<br><code>this.signature = signer.sign(this.getHeader(), this.getSigningInput());</code></li>
+</ul>
+</blockquote>
+<p>好，在深入 <code>sign()</code> 底层之前，我们先梳理一下整套逻辑，关注一下方法到底做了什么。<br><code>sign()</code> 方法会返回一个 <code>Base64URL</code> 对象并成为调用者对象（<code>JWSObject</code>）的一个内部对象。这是一个封装的过程。<br>也就是说，纵观整个签发过程，无非就是先生成一个 <code>JWSObject</code> 对象，封装了各种参数（用户信息，过期时间啥的），再将加密后的 <code>Base64URL</code> 再次封装。最后将 <code>JWSObject</code> 对象序列化成最终的 <code>JWT</code> 返回。</p>
+<h3 id="RSASSASigner-signer-方法的底层实现（重点关注）"><a href="#RSASSASigner-signer-方法的底层实现（重点关注）" class="headerlink" title="RSASSASigner.signer()方法的底层实现（重点关注）"></a>RSASSASigner.signer()方法的底层实现（重点关注）</h3><p><code>RSASSASigner</code>（我称之为“签发器”）就是第一步用rsaKey生成的对象类型，回顾一下：<br><code>JWSSigner signer = new RSASSASigner(rsaKey);</code><br>显然 <code>JWSSigner</code> 是接口，而 <code>RSASSASigner</code> 是实现类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Base64URL <span class="title">sign</span><span class="params">(JWSHeader header, <span class="keyword">byte</span>[] signingInput)</span> <span class="keyword">throws</span> JOSEException </span>&#123;</span><br><span class="line">    Signature signer = RSASSA.getSignerAndVerifier(header.getAlgorithm(), <span class="keyword">this</span>.getJCAContext().getProvider());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        signer.initSign(<span class="keyword">this</span>.privateKey);</span><br><span class="line">        signer.update(signingInput);</span><br><span class="line">        <span class="keyword">return</span> Base64URL.encode(signer.sign());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InvalidKeyException var5) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> JOSEException(<span class="string">"Invalid private RSA key: "</span> + var5.getMessage(), var5);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SignatureException var6) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> JOSEException(<span class="string">"RSA signature exception: "</span> + var6.getMessage(), var6);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这三个方法是整个signer()的核心：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Initialize this object for signing. If this method is called again with a different argument, it negates the effect of this call.</span></span><br><span class="line"><span class="comment">Params:</span></span><br><span class="line"><span class="comment">privateKey – the private key of the identity whose signature is going to be generated.</span></span><br><span class="line"><span class="comment">Throws:</span></span><br><span class="line"><span class="comment">InvalidKeyException – if the key is invalid.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">initSign</span><span class="params">(PrivateKey privateKey)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> InvalidKeyException </span>&#123;</span><br><span class="line">        engineInitSign(privateKey);</span><br><span class="line">        state = SIGN;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!skipDebug &amp;&amp; pdebug != <span class="keyword">null</span>) &#123;</span><br><span class="line">            pdebug.println(<span class="string">"Signature."</span> + algorithm +</span><br><span class="line">                <span class="string">" signing algorithm from: "</span> + getProviderName());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Updates the data to be signed or verified, using the specified array of bytes.</span></span><br><span class="line"><span class="comment">Params:</span></span><br><span class="line"><span class="comment">data – the byte array to use for the update.</span></span><br><span class="line"><span class="comment">Throws:</span></span><br><span class="line"><span class="comment">SignatureException – if this signature object is not initialized properly.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">byte</span>[] data)</span> <span class="keyword">throws</span> SignatureException </span>&#123;</span><br><span class="line">        update(data, <span class="number">0</span>, data.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Returns the signature bytes of all the data updated. The format of the signature depends on the underlying signature scheme.</span></span><br><span class="line"><span class="comment">A call to this method resets this signature object to the state it was in when previously initialized for signing via a call to initSign(PrivateKey). That is, the object is reset and available to generate another signature from the same signer, if desired, via new calls to update and sign.</span></span><br><span class="line"><span class="comment">Returns:</span></span><br><span class="line"><span class="comment">the signature bytes of the signing operation's result.</span></span><br><span class="line"><span class="comment">Throws:</span></span><br><span class="line"><span class="comment">SignatureException – if this signature object is not initialized properly or if this signature algorithm is unable to process the input data provided.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">byte</span>[] sign() <span class="keyword">throws</span> SignatureException &#123;</span><br><span class="line">        <span class="keyword">if</span> (state == SIGN) &#123;</span><br><span class="line">            <span class="keyword">return</span> engineSign();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(<span class="string">"object not initialized for "</span> +</span><br><span class="line">                                     <span class="string">"signing"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">engineInitSign</span><span class="params">(PrivateKey var1)</span> <span class="keyword">throws</span> InvalidKeyException </span>&#123;</span><br><span class="line">    AsymmetricKeyParameter var2 = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (var1 <span class="keyword">instanceof</span> BCDSTU4145PrivateKey) &#123;</span><br><span class="line">        var2 = ECUtil.generatePrivateKeyParameter(var1);</span><br><span class="line">        <span class="keyword">this</span>.digest = <span class="keyword">new</span> GOST3411Digest(<span class="keyword">this</span>.expandSbox(DSTU4145Params.getDefaultDKE()));</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (var1 <span class="keyword">instanceof</span> ECKey) &#123;</span><br><span class="line">        var2 = ECUtil.generatePrivateKeyParameter(var1);</span><br><span class="line">        <span class="keyword">this</span>.digest = <span class="keyword">new</span> GOST3411Digest(<span class="keyword">this</span>.expandSbox(DSTU4145Params.getDefaultDKE()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.appRandom != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.signer.init(<span class="keyword">true</span>, <span class="keyword">new</span> ParametersWithRandom(var2, <span class="keyword">this</span>.appRandom));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.signer.init(<span class="keyword">true</span>, var2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>重点关注engineSign()，这是签发的实现核心：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">byte</span>[] engineSign() <span class="keyword">throws</span> SignatureException &#123;</span><br><span class="line">    <span class="keyword">byte</span>[] var1 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="keyword">this</span>.digest.getDigestSize()];</span><br><span class="line">    <span class="keyword">this</span>.digest.doFinal(var1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        BigInteger[] var2 = <span class="keyword">this</span>.signer.generateSignature(var1);</span><br><span class="line">        <span class="keyword">byte</span>[] var3 = var2[<span class="number">0</span>].toByteArray();</span><br><span class="line">        <span class="keyword">byte</span>[] var4 = var2[<span class="number">1</span>].toByteArray();</span><br><span class="line">        <span class="keyword">byte</span>[] var5 = <span class="keyword">new</span> <span class="keyword">byte</span>[var3.length &gt; var4.length ? var3.length * <span class="number">2</span> : var4.length * <span class="number">2</span>];</span><br><span class="line">        System.arraycopy(var4, <span class="number">0</span>, var5, var5.length / <span class="number">2</span> - var4.length, var4.length);</span><br><span class="line">        System.arraycopy(var3, <span class="number">0</span>, var5, var5.length - var3.length, var3.length);</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">new</span> DEROctetString(var5)).getEncoded();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception var6) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(var6.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">byte</span>[] engineSign() <span class="keyword">throws</span> SignatureException &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.privateKey == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(<span class="string">"Missing private key"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] var1 = <span class="keyword">this</span>.getDigestValue();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">byte</span>[] var2 = encodeSignature(<span class="keyword">this</span>.digestOID, var1);</span><br><span class="line">            <span class="keyword">byte</span>[] var3 = <span class="keyword">this</span>.padding.pad(var2);</span><br><span class="line">            <span class="keyword">byte</span>[] var4 = RSACore.rsa(var3, <span class="keyword">this</span>.privateKey, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">return</span> var4;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (GeneralSecurityException var5) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(<span class="string">"Could not sign data"</span>, var5);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException var6) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(<span class="string">"Could not encode data"</span>, var6);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">byte</span>[] engineSign() <span class="keyword">throws</span> SignatureException &#123;</span><br><span class="line">    <span class="keyword">byte</span>[] var1 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="keyword">this</span>.digest.getDigestSize()];</span><br><span class="line">    <span class="keyword">this</span>.digest.doFinal(var1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] var2 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">64</span>];</span><br><span class="line">        BigInteger[] var3 = <span class="keyword">this</span>.signer.generateSignature(var1);</span><br><span class="line">        <span class="keyword">byte</span>[] var4 = var3[<span class="number">0</span>].toByteArray();</span><br><span class="line">        <span class="keyword">byte</span>[] var5 = var3[<span class="number">1</span>].toByteArray();</span><br><span class="line">        <span class="keyword">if</span> (var5[<span class="number">0</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">            System.arraycopy(var5, <span class="number">0</span>, var2, <span class="number">32</span> - var5.length, var5.length);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.arraycopy(var5, <span class="number">1</span>, var2, <span class="number">32</span> - (var5.length - <span class="number">1</span>), var5.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (var4[<span class="number">0</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">            System.arraycopy(var4, <span class="number">0</span>, var2, <span class="number">64</span> - var4.length, var4.length);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.arraycopy(var4, <span class="number">1</span>, var2, <span class="number">64</span> - (var4.length - <span class="number">1</span>), var4.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> var2;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception var6) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(var6.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href=""></a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>OIDC协议</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HJ10. 字符个数统计</title>
     <url>/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>简单哈希表的使用。</p>
@@ -1537,8 +1778,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
       </tags>
   </entry>
   <entry>
@@ -2224,14 +2465,23 @@
     <content><![CDATA[<p><strong>摘要：</strong><br>算法竞赛经常用到的STL和JDK轮子总结。</p>
 <a id="more"></a>
 
-<h2 id="STL-如果对应Java的JDK存在类似功能，也一并给出"><a href="#STL-如果对应Java的JDK存在类似功能，也一并给出" class="headerlink" title="STL(如果对应Java的JDK存在类似功能，也一并给出)"></a>STL(如果对应Java的JDK存在类似功能，也一并给出)</h2><h3 id="1-数组排序"><a href="#1-数组排序" class="headerlink" title="1. 数组排序"></a>1. 数组排序</h3><p>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
+<h2 id="STL-如果对应Java的JDK存在类似功能，也一并给出"><a href="#STL-如果对应Java的JDK存在类似功能，也一并给出" class="headerlink" title="STL(如果对应Java的JDK存在类似功能，也一并给出)"></a>STL(如果对应Java的JDK存在类似功能，也一并给出)</h2><h3 id="1-排序"><a href="#1-排序" class="headerlink" title="1. 排序"></a>1. 排序</h3><p><strong>C++</strong><br>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
 <ul>
 <li><p>升序<br><code>sort(a.begin(), a.end());</code><br><code>sort(a.begin(), a.end(), less&lt;int&gt;());</code></p>
 </li>
 <li><p>降序<br><code>sort(a.begin(), a.end(), greater&lt;int&gt;());</code><br><code>sort(a.rbegin(), a.rend());</code></p>
 </li>
 </ul>
+<p><strong>Java</strong></p>
+<ol>
+<li><p><code>Arrays.sort​(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</code><br>用于排序数组。<br>举例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//降序</span></span><br><span class="line">Arrays.sort(arr, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b-a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>COllections.sort​(List&lt;T&gt; list, Comparator&lt;? super T&gt; c)</code><br>用于排序容器。<br>举例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Collections.sort(list, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b - a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="2-字符串转数值类型"><a href="#2-字符串转数值类型" class="headerlink" title="2. 字符串转数值类型"></a>2. 字符串转数值类型</h3><p><code>#include &lt;string&gt;</code><br><strong>std::atoi</strong><br>转换 const char* 为一个 int 类型整数，超出 int 类型范围时，返回边界值。</p>
+</li>
+</ol>
 <p><strong>std::atol</strong><br>转换 const char* 为一个 long 类型整数，超出 long 类型范围时，返回边界值。</p>
 <p><strong>std::atoll</strong><br>转换 const char* 为一个 long long 类型整数，超出 long long 类型范围时，返回边界值。</p>
 <p><strong>std::stoi</strong><br>转换 std::string 为一个 int 类型整数，超出 int 类型范围时报错。</p>
@@ -2255,6 +2505,13 @@
 <li>统计所有值为1的个数<br><code>int x = cardinality();</code></li>
 <li>反转下标为 <code>idx</code> 处的值<br><code>bs.flip(idx);</code></li>
 </ul>
+<h3 id="6-反转字符串"><a href="#6-反转字符串" class="headerlink" title="6. 反转字符串"></a>6. 反转字符串</h3><p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">"1234567"</span>;</span><br><span class="line">reverse(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"1234567"</span>);</span><br><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(s).reverse();</span><br><span class="line">string re = sb.toString();</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(s).reverse();</span><br><span class="line">string re = sb.toString();</span><br></pre></td></tr></table></figure>
+
 <h2 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h2><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
 <ul>
 <li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
@@ -4128,8 +4385,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -4217,8 +4474,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4300,8 +4557,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>World-to-Screen</tag>
         <tag>ViewMatrix</tag>
+        <tag>World-to-Screen</tag>
       </tags>
   </entry>
   <entry>
@@ -5039,8 +5296,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>单调栈</tag>
         <tag>栈</tag>
+        <tag>单调栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -5291,8 +5548,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -5343,8 +5600,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -5756,10 +6013,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6277,8 +6534,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6532,16 +6789,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>位运算</tag>
+        <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7736,8 +7993,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>Linux</tag>
+        <tag>VPS</tag>
         <tag>测速</tag>
       </tags>
   </entry>

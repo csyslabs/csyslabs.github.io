@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：算法竞赛经常用到的STL和JDK轮子总结。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-11T13:32:03.000Z">
-<meta property="article:modified_time" content="2021-08-17T15:30:07.470Z">
+<meta property="article:modified_time" content="2021-08-18T15:03:53.920Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="STL">
@@ -272,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-17 23:30:07" itemprop="dateModified" datetime="2021-08-17T23:30:07+08:00">2021-08-17</time>
+                <time title="Modified: 2021-08-18 23:03:53" itemprop="dateModified" datetime="2021-08-18T23:03:53+08:00">2021-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,14 +331,23 @@
         <p><strong>摘要：</strong><br>算法竞赛经常用到的STL和JDK轮子总结。</p>
 <a id="more"></a>
 
-<h2 id="STL-如果对应Java的JDK存在类似功能，也一并给出"><a href="#STL-如果对应Java的JDK存在类似功能，也一并给出" class="headerlink" title="STL(如果对应Java的JDK存在类似功能，也一并给出)"></a>STL(如果对应Java的JDK存在类似功能，也一并给出)</h2><h3 id="1-数组排序"><a href="#1-数组排序" class="headerlink" title="1. 数组排序"></a>1. 数组排序</h3><p>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
+<h2 id="STL-如果对应Java的JDK存在类似功能，也一并给出"><a href="#STL-如果对应Java的JDK存在类似功能，也一并给出" class="headerlink" title="STL(如果对应Java的JDK存在类似功能，也一并给出)"></a>STL(如果对应Java的JDK存在类似功能，也一并给出)</h2><h3 id="1-排序"><a href="#1-排序" class="headerlink" title="1. 排序"></a>1. 排序</h3><p><strong>C++</strong><br>对数组<code>vector&lt;int&gt; a</code>排序：<br><code>#include &lt;algorithm&gt;</code></p>
 <ul>
 <li><p>升序<br><code>sort(a.begin(), a.end());</code><br><code>sort(a.begin(), a.end(), less&lt;int&gt;());</code></p>
 </li>
 <li><p>降序<br><code>sort(a.begin(), a.end(), greater&lt;int&gt;());</code><br><code>sort(a.rbegin(), a.rend());</code></p>
 </li>
 </ul>
+<p><strong>Java</strong></p>
+<ol>
+<li><p><code>Arrays.sort​(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</code><br>用于排序数组。<br>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//降序</span></span><br><span class="line">Arrays.sort(arr, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b-a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>COllections.sort​(List&lt;T&gt; list, Comparator&lt;? super T&gt; c)</code><br>用于排序容器。<br>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Collections.sort(list, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b - a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="2-字符串转数值类型"><a href="#2-字符串转数值类型" class="headerlink" title="2. 字符串转数值类型"></a>2. 字符串转数值类型</h3><p><code>#include &lt;string&gt;</code><br><strong>std::atoi</strong><br>转换 const char* 为一个 int 类型整数，超出 int 类型范围时，返回边界值。</p>
+</li>
+</ol>
 <p><strong>std::atol</strong><br>转换 const char* 为一个 long 类型整数，超出 long 类型范围时，返回边界值。</p>
 <p><strong>std::atoll</strong><br>转换 const char* 为一个 long long 类型整数，超出 long long 类型范围时，返回边界值。</p>
 <p><strong>std::stoi</strong><br>转换 std::string 为一个 int 类型整数，超出 int 类型范围时报错。</p>
@@ -362,6 +371,13 @@
 <li>统计所有值为1的个数<br><code>int x = cardinality();</code></li>
 <li>反转下标为 <code>idx</code> 处的值<br><code>bs.flip(idx);</code></li>
 </ul>
+<h3 id="6-反转字符串"><a href="#6-反转字符串" class="headerlink" title="6. 反转字符串"></a>6. 反转字符串</h3><p><strong>C++</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">"1234567"</span>;</span><br><span class="line">reverse(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p><strong>Java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"1234567"</span>);</span><br><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(s).reverse();</span><br><span class="line">string re = sb.toString();</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(s).reverse();</span><br><span class="line">string re = sb.toString();</span><br></pre></td></tr></table></figure>
+
 <h2 id="其他C-知识点"><a href="#其他C-知识点" class="headerlink" title="其他C++知识点"></a>其他C++知识点</h2><h4 id="0x0-输出指定位的小数点或有效数字"><a href="#0x0-输出指定位的小数点或有效数字" class="headerlink" title="0x0 输出指定位的小数点或有效数字"></a>0x0 输出指定位的小数点或有效数字</h4><p><strong>举例：</strong><br><code>float a = 233.233;</code></p>
 <ul>
 <li><p>输出保留2位小数:<br><code>inlcude &lt;iomanip&gt;</code><br><code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(2) &lt;&lt; a;</code><br>四舍五入输出<code>233.23</code><br>其中，<code>setiosflags(ios::fixed)</code> 为设置浮点数以固定的小数位数显示。<br><code>setprecision(2)</code> 为设置精度为2.</p>
@@ -479,7 +495,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-如果对应Java的JDK存在类似功能，也一并给出"><span class="nav-text">STL(如果对应Java的JDK存在类似功能，也一并给出)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数组排序"><span class="nav-text">1. 数组排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串转数值类型"><span class="nav-text">2. 字符串转数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有序集合"><span class="nav-text">3. 有序集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-截取子串"><span class="nav-text">4. 截取子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-bitset"><span class="nav-text">5. bitset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他C-知识点"><span class="nav-text">其他C++知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x0-输出指定位的小数点或有效数字"><span class="nav-text">0x0 输出指定位的小数点或有效数字</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-如果对应Java的JDK存在类似功能，也一并给出"><span class="nav-text">STL(如果对应Java的JDK存在类似功能，也一并给出)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-排序"><span class="nav-text">1. 排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串转数值类型"><span class="nav-text">2. 字符串转数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有序集合"><span class="nav-text">3. 有序集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-截取子串"><span class="nav-text">4. 截取子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-bitset"><span class="nav-text">5. bitset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-反转字符串"><span class="nav-text">6. 反转字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他C-知识点"><span class="nav-text">其他C++知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0x0-输出指定位的小数点或有效数字"><span class="nav-text">0x0 输出指定位的小数点或有效数字</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -497,7 +513,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">181</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -510,7 +526,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">155</span>
+        <span class="site-state-item-count">156</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
