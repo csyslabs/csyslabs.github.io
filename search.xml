@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HJ17. 坐标移动</title>
+    <url>/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>其实是一道字符串处理题目。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>开发一个坐标计算工具， $A$ 表示向左移动，$D$ 表示向右移动，$W$ 表示向上移动，$S$ 表示向下移动。从 $(0,0)$ 点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</p>
+<p><strong>输入：</strong></p>
+<p>合法坐标为 $A$(或者 $D$ 或者 $W$ 或者 $S$) + 数字（两位以内）</p>
+<p>坐标之间以 $;$ 分隔。</p>
+<p>非法坐标点需要进行丢弃。如 $AA10;  A1A;  $%$;  YAD;$ 等。</p>
+<p>下面是一个简单的例子 如：</p>
+<p>$A10;S20;W10;D30;X;A1A;B10A11;;A10;$</p>
+<p>处理过程：</p>
+<p>起点 $(0,0)$</p>
+<ul>
+<li><p>$A10   =  （-10,0）$</p>
+</li>
+<li><p>$S20   =  (-10,-20)$</p>
+</li>
+<li><p>$W10  =  (-10,-10)$</p>
+</li>
+<li><p>$D30  =  (20,-10)$</p>
+</li>
+<li><p>$x$    =  无效</p>
+</li>
+<li><p>$A1A$   =  无效</p>
+</li>
+<li><p>$B10A11$   =  无效</p>
+</li>
+<li><p>一个空 不影响</p>
+</li>
+<li><p>$A10  =  (10,-10)$</p>
+</li>
+</ul>
+<p>结果 $(10， -10)$</p>
+<p><strong>注意请处理多组输入输出</strong></p>
+<p><strong>输入描述：</strong><br>一行字符串</p>
+<p><strong>输出描述：</strong><br>最终坐标，以逗号分隔</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p>输入：<br>$A10;S20;W10;D30;X;A1A;B10A11;;A10;$</p>
+</blockquote>
+<blockquote>
+<p>输出：<br>$10,-10$</p>
+</blockquote>
+<h3 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h3><p>首先将操作指令从字符串中分割出来，对于每一个操作指令，提取其中的坐标偏移。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-19 10:55:07</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; st = &#123;<span class="string">'A'</span>, <span class="string">'D'</span>, <span class="string">'W'</span>, <span class="string">'S'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    getline(<span class="built_in">cin</span>, s);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; vec;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.<span class="built_in">size</span>(); i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> t;</span><br><span class="line">        <span class="keyword">int</span> j = i;</span><br><span class="line">        <span class="keyword">for</span> (; j &lt; n &amp;&amp; s[j] != <span class="string">';'</span>; j++) &#123;</span><br><span class="line">            t += s[j];</span><br><span class="line">        &#125;</span><br><span class="line">        i = j;</span><br><span class="line">        vec.push_back(t);</span><br><span class="line">    &#125;</span><br><span class="line">    pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pos = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;each : vec) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!each.<span class="built_in">size</span>() || !st.count(each[<span class="number">0</span>])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> offset = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; each.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">isdigit</span>(each[i])) &#123;</span><br><span class="line">                offset = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            offset = offset * <span class="number">10</span> + each[i] - <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; each &lt;&lt; ": " &lt;&lt; offset &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">switch</span> (each[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'A'</span>: pos.x -= offset; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'D'</span>: pos.x += offset; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'W'</span>: pos.y += offset; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'S'</span>: pos.y -= offset; <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; each &lt;&lt; ": " &lt;&lt; pos.x &lt;&lt; ',' &lt;&lt; pos.y &lt;&lt; endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pos.x &lt;&lt; <span class="string">','</span> &lt;&lt; pos.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021年08月19日11:53:04</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s = in.nextLine();</span><br><span class="line">        String[] ops = s.split(<span class="string">";"</span>);</span><br><span class="line">        List&lt;Character&gt; list = Arrays.asList(<span class="string">'A'</span>, <span class="string">'D'</span>, <span class="string">'W'</span>, <span class="string">'S'</span>);</span><br><span class="line">        Set&lt;Character&gt; hash = <span class="keyword">new</span> HashSet&lt;&gt;(list);</span><br><span class="line">        <span class="keyword">int</span>[] pos = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (String each : ops) &#123;</span><br><span class="line">            <span class="keyword">if</span> (each.length() == <span class="number">0</span> || !hash.contains(each.charAt(<span class="number">0</span>))) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> offset = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; each.length(); i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!Character.isDigit(each.charAt(i))) &#123;</span><br><span class="line">                    offset = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                offset = offset * <span class="number">10</span> + each.charAt(i) - <span class="number">0x30</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="comment">//            System.out.println(String.valueOf(offset));</span></span><br><span class="line">            <span class="keyword">switch</span> (each.charAt(<span class="number">0</span>)) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'A'</span>: pos[<span class="number">0</span>] -= offset; <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'D'</span>: pos[<span class="number">0</span>] += offset; <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'W'</span>: pos[<span class="number">1</span>] += offset; <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'S'</span>: pos[<span class="number">1</span>] -= offset; <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(String.valueOf(pos[<span class="number">0</span>]) + <span class="string">","</span> + String.valueOf(pos[<span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<p>苦于C++的STL没有split，只能手写实现，算法复杂度是 $O(N)$，还是很快的。</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/119bcca3befb405fbe58abe9c532eb29?tpId=37&&tqId=21240&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ17. 坐标移动</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HJ15. 求int类型正整数在内存中存储时1的个数</title>
+    <url>/2021/08/19/HJ15-%E6%B1%82int%E7%B1%BB%E5%9E%8B%E6%AD%A3%E6%95%B4%E6%95%B0%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E6%97%B61%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>二进制中1的个数，老入门题了。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>输入一个 <code>int</code> 型的正整数，计算出该 <code>int</code> 型数据在内存中存储时 $1$ 的个数。</p>
+<p><strong>输入描述：</strong><br> 输入一个整数（<code>int</code> 类型）</p>
+<p><strong>输出描述：</strong><br> 这个数转换成 $2$ 进制后，输出 $1$ 的个数</p>
+<p><strong>示例1</strong></p>
+<blockquote>
+<p><strong>输入：</strong><br>5</p>
+</blockquote>
+<blockquote>
+<p><strong>输出：</strong><br>2</p>
+</blockquote>
+<h3 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h3><p><code>lowbit</code> 返回二进制数中最低位的 $1$ 及后面的 $0$（所构成的数）。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-19 09:51:30</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int64_t</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int64_t</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; n; n -= lowbit(n)) &#123;</span><br><span class="line">        res++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-19 09:54:31</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">long</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x &amp; -x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (; n != <span class="number">0</span>; n -= lowbit(n)) &#123;</span><br><span class="line">            res++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/440f16e490a0404786865e99c6ad91c9?tpId=37&&tqId=21238&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ15. 求int类型正整数在内存中存储时1的个数</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>NowCoder</category>
+        <category>华为机试题库</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>位运算</tag>
+        <tag>lowbit</tag>
+        <tag>NowCoder</tag>
+        <tag>华为机试题库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HJ14. 字符串排序</title>
     <url>/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>熟悉C++和Java的排序轮子。</p>
@@ -1730,9 +1832,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -1778,8 +1880,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4140,10 +4242,10 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>双指针</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -4295,8 +4397,8 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>哈希表</tag>
         <tag>计数数组</tag>
+        <tag>哈希表</tag>
         <tag>剑指Offer</tag>
         <tag>集合</tag>
       </tags>
@@ -4385,8 +4487,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -4474,8 +4576,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4557,8 +4659,8 @@
       </categories>
       <tags>
         <tag>游戏逆向</tag>
-        <tag>World-to-Screen</tag>
         <tag>ViewMatrix</tag>
+        <tag>World-to-Screen</tag>
       </tags>
   </entry>
   <entry>
@@ -4686,8 +4788,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>沟通</tag>
       </tags>
@@ -4878,8 +4980,8 @@
         <tag>LeetCode</tag>
         <tag>排序</tag>
         <tag>归并排序</tag>
-        <tag>树状数组</tag>
         <tag>lowbit</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -5548,8 +5650,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -5600,8 +5702,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>前缀和</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6013,10 +6115,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6534,8 +6636,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>AcWing</tag>
         <tag>归并排序</tag>
+        <tag>AcWing</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6789,16 +6891,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>位运算</tag>
-        <tag>AcWing</tag>
-        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
+        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
+        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7237,9 +7339,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
         <tag>树深度</tag>
       </tags>
@@ -7290,10 +7392,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7334,10 +7436,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7372,10 +7474,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7423,9 +7525,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7573,8 +7675,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>人际关系</tag>
         <tag>笔记</tag>
+        <tag>人际关系</tag>
         <tag>情商</tag>
         <tag>生活</tag>
         <tag>沟通</tag>
@@ -7629,10 +7731,10 @@
         <category>生活</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
         <tag>人际关系</tag>
-        <tag>笔记</tag>
         <tag>情商</tag>
       </tags>
   </entry>
@@ -7686,8 +7788,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>读书</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -7823,10 +7925,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
