@@ -1730,9 +1730,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -1778,8 +1778,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
       </tags>
   </entry>
   <entry>
@@ -4140,10 +4140,10 @@
         <tag>算法</tag>
         <tag>LeetCode</tag>
         <tag>双指针</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
         <tag>剑指Offer</tag>
       </tags>
   </entry>
@@ -4385,8 +4385,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -4474,8 +4474,8 @@
       <tags>
         <tag>算法</tag>
         <tag>计数数组</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
         <tag>蓝桥杯</tag>
       </tags>
   </entry>
@@ -4687,9 +4687,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -5296,8 +5296,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>栈</tag>
         <tag>单调栈</tag>
+        <tag>栈</tag>
         <tag>AcWing</tag>
       </tags>
   </entry>
@@ -5548,8 +5548,8 @@
       <tags>
         <tag>算法</tag>
         <tag>双指针</tag>
-        <tag>二分查找</tag>
         <tag>AcWing</tag>
+        <tag>二分查找</tag>
       </tags>
   </entry>
   <entry>
@@ -5600,8 +5600,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>前缀和</tag>
         <tag>AcWing</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -6013,10 +6013,10 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>AcWing</tag>
         <tag>二分查找</tag>
         <tag>前缀和</tag>
         <tag>离散化</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -6534,8 +6534,8 @@
       <tags>
         <tag>算法</tag>
         <tag>排序</tag>
-        <tag>归并排序</tag>
         <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>树状数组</tag>
       </tags>
   </entry>
@@ -6789,16 +6789,16 @@
         <tag>排序</tag>
         <tag>双指针</tag>
         <tag>位运算</tag>
+        <tag>AcWing</tag>
+        <tag>归并排序</tag>
         <tag>算法模板</tag>
         <tag>快速排序</tag>
-        <tag>归并排序</tag>
         <tag>二分查找</tag>
         <tag>高精度四则运算</tag>
         <tag>前缀和</tag>
         <tag>差分</tag>
         <tag>离散化</tag>
         <tag>区间合并</tag>
-        <tag>AcWing</tag>
       </tags>
   </entry>
   <entry>
@@ -7237,9 +7237,9 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
         <tag>N叉树</tag>
         <tag>树深度</tag>
       </tags>
@@ -7290,10 +7290,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7334,10 +7334,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7372,10 +7372,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -7423,9 +7423,9 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+        <tag>DFS</tag>
         <tag>树</tag>
         <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -7574,10 +7574,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>生活</tag>
-        <tag>沟通</tag>
         <tag>人际关系</tag>
         <tag>情商</tag>
+        <tag>生活</tag>
+        <tag>沟通</tag>
       </tags>
   </entry>
   <entry>
@@ -7630,10 +7630,10 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>人际关系</tag>
-        <tag>情商</tag>
         <tag>曾仕强</tag>
         <tag>哲学</tag>
+        <tag>人际关系</tag>
+        <tag>情商</tag>
       </tags>
   </entry>
   <entry>
@@ -7823,10 +7823,10 @@
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
-        <tag>树</tag>
-        <tag>二叉树</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>树</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
