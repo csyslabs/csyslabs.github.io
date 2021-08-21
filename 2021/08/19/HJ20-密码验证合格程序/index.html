@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：考察字符串处理，巧用位运算记录字符种类。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-19T12:54:25.000Z">
-<meta property="article:modified_time" content="2021-08-19T13:21:59.056Z">
+<meta property="article:modified_time" content="2021-08-20T01:56:53.620Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="字符串">
@@ -267,10 +267,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-19 20:54:25 / Modified: 21:21:59" itemprop="dateCreated datePublished" datetime="2021-08-19T20:54:25+08:00">2021-08-19</time>
+              <time title="Created: 2021-08-19 20:54:25" itemprop="dateCreated datePublished" datetime="2021-08-19T20:54:25+08:00">2021-08-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-20 09:56:53" itemprop="dateModified" datetime="2021-08-20T09:56:53+08:00">2021-08-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -317,11 +323,23 @@
 <p><strong>输出描述：</strong><br>如果符合要求输出：$OK$，否则输出 $NG$</p>
 <p><strong>示例1</strong></p>
 <blockquote>
-<p><strong>输入：</strong><br>$021Abc9000$<br>$021Abc9Abc1$<br>$021ABC9000$<br>$021$bc9000$</p>
+<p><strong>输入：</strong></p>
 </blockquote>
+<ul>
+<li>$021Abc9000$</li>
+<li>$021Abc9Abc1$</li>
+<li>$021ABC9000$</li>
+<li>$021(bc9000$</li>
+</ul>
 <blockquote>
-<p><strong>输出：</strong><br>$OK$<br>$NG$<br>$NG$<br>$OK$</p>
+<p><strong>输出：</strong></p>
 </blockquote>
+<ul>
+<li>$OK$</li>
+<li>$NG$</li>
+<li>$NG$</li>
+<li>$OK$</li>
+</ul>
 <h3 id="字符串处理-位运算"><a href="#字符串处理-位运算" class="headerlink" title="字符串处理 + 位运算"></a>字符串处理 + 位运算</h3><p>我们根据题意依次判断几种不符合要求的条件即可。<br>关键在于判断子串的重复性，题目指出长度大于 $2$ 的子串不能重复，那么从长度为 $3$ 开始判断子串的重复性，如果无重复那么长度大于 $3$ 的子串也一定无重复。</p>
 <p>简单证明：<br>假设长度为 $3$ 的子串经判断无重复，且长度大于 $3$ 的子串存在重复。那么因为长度大于 $3$ 的子串存在长度为 $3$ 的子串且重复，与假设相矛盾。<br>故假设不成立。<br>得证。</p>
 <p>另外，在判断字符种类的时候，可以使用位运算辅助判断。</p>
@@ -368,7 +386,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/20/HJ21-%E7%AE%80%E5%8D%95%E5%AF%86%E7%A0%81/" rel="prev" title="HJ21. 简单密码">
+      <i class="fa fa-chevron-left"></i> HJ21. 简单密码
+    </a></div>
       <div class="post-nav-item">
     <a href="/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/" rel="next" title="HJ17. 坐标移动">
       HJ17. 坐标移动 <i class="fa fa-chevron-right"></i>
@@ -449,7 +470,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">187</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
