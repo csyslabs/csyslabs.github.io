@@ -235,6 +235,231 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/23/LeetCode-5-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%88Middle-of-the-Linked-List%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/23/LeetCode-5-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%88Middle-of-the-Linked-List%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #5 链表的中间结点（Middle of the Linked List）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-23 17:22:01" itemprop="dateCreated datePublished" datetime="2020-03-23T17:22:01+08:00">2020-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-29 20:44:48" itemprop="dateModified" datetime="2020-03-29T20:44:48+08:00">2020-03-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给定一个带有头结点 head 的非空单链表，返回链表的中间结点。<br>如果有两个中间结点，则返回第二个中间结点。</p>
+</blockquote>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.</p>
+</blockquote>
+<p><strong>示例2：</strong></p>
+<blockquote>
+<p>输入：[1,2,3,4,5,6]<br>输出：此列表中的结点 4 (序列化形式：[4,5,6])<br>由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>给定链表的结点数介于 1 和 100 之间。</li>
+</ul>
+<hr>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>定义一个快指针，定义一个慢指针。其中快指针每个循环走两部，慢指针走一步。这样，当快指针走慢整个链表，由于其速度是慢指针的二倍，故慢指针停留的位置即为链表的中间结点。</p>
+<p>注意到，当链表结点个数为偶时，即链表有两个中间结点。此时，题干要求返回第二个结点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x0</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若题干要求返回第一个结点，应该这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x1</span> </span>&#123;</span><br><span class="line">    <span class="comment">// return secondary node while we got a even node linkedList</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fast.next.next == <span class="keyword">null</span>) fast = fast.next;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表类数组"><a href="#链表类数组" class="headerlink" title="链表类数组"></a>链表类数组</h3><p>换个思路，当我们知道链表结点个数，个数/2即为中间结点位置。我们可以创建一个链表类数组（记得曾经用过的计数数组吗？数组是个好东西，我们要把它玩坏！）循环链表每个结点，把它放在数组里。</p>
+<p>注意到，由于题干给出当有两个中间结点取其第二个，我们正好可以利用整形变量特征————int a = 5 / 2，则a被强制转换向下取整为2。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode[] arr = <span class="keyword">new</span> ListNode[<span class="number">100</span>]; <span class="comment">//we have restriction about length of linkedList</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr[i++] = head;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr[count / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者用ArratList可以稍微稍微节省点空间。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution0x3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        List&lt;ListNode&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            arr.add(head);</span><br><span class="line">            <span class="keyword">if</span> (head.next == <span class="keyword">null</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr.get(arr.size() / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>题目链接：</strong> <a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/middle-of-the-linked-list/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-22 17:44:42" itemprop="dateCreated datePublished" datetime="2020-03-22T17:44:42+08:00">2020-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-26 15:40:54" itemprop="dateModified" datetime="2020-03-26T15:40:54+08:00">2020-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。</p>
+<p>返回使 A 中的每个值都是唯一的最少操作次数。</p>
+</blockquote>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：[1,2,2]<br>输出：1<br>解释：经过一次 move 操作，数组将变为 [1, 2, 3]。</p>
+</blockquote>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：[3,2,1,2,1,7]<br>输出：6<br>解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。<br>可以看出 5 次或 5 次以下的 move 操作是不能让数组的每个值唯一的。</p>
+</blockquote>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><blockquote>
+<ul>
+<li>0 &lt;= A.length &lt;= 40000</li>
+<li>0 &lt;= A[i] &lt; 40000</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="先排序再遍历"><a href="#先排序再遍历" class="headerlink" title="先排序再遍历"></a>先排序再遍历</h3><p>首先将数组进行排序，然后从左到右遍历数组：</p>
+<ul>
+<li>如果当前元素大于上一个元素，保持不变；</li>
+<li>如果当前元素小于等于上一个元素，就需要增加当前元素，直到大于上一个元素。<br>例如输入 <code>[3, 2, 1, 2, 1, 7]</code>，排序后为<code>[1, 1, 2, 2, 3, 7]</code>。遍历数组的过程如下图所示：<br>![pic0x0](2020-03-22-LeetCode-4-使数组唯一的最小增量（Minimum Increment to Make Array Unique）/使数组唯一的最小增量 先排序再遍历.gif)<br>写成代码，只需要用一个变量保存当前的最大值即可。题解代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//排序再遍历计数，最基础的计算方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//特殊情况</span></span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (A.length &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(A);</span><br><span class="line">        <span class="comment">//下个数不比当前数大，则计算下个数需要加的次数res，同时</span></span><br><span class="line">        <span class="comment">//由于每次move操作+1，故下个数+res刚好大于当前数</span></span><br><span class="line">        <span class="comment">//注意此时数组排序会被打乱，不能认为判断条件仅是相等情况.</span></span><br><span class="line">        <span class="comment">//另外，注意边界，最多判定到lengh - 2位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i+<span class="number">1</span>] &lt;= A[i])&#123;</span><br><span class="line">                res += (A[i] - A[i+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">                A[i+<span class="number">1</span>] += (A[i] - A[i+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="构建计数数组"><a href="#构建计数数组" class="headerlink" title="构建计数数组"></a>构建计数数组</h3><p>上面方法中，排序需要 O(n \log n)O(nlogn) 的时间，比较昂贵。我们尝试不进行排序的方法。</p>
+<p>例如输入 <code>[3, 2, 1, 2, 1, 7]</code>，计数之后有两个 1 和两个 2。我们先看最小的数，两个 1 重复了，需要有一个增加到 2，这样 2 的数量变成了三个。在三个 2 中，又有两个需要增加到 3，然后又出现了两个 3…… 以此类推，可以计算出需要增加的次数。</p>
+<p>我们可以用 map（如 C++ 的 <code>unordered_map</code>，Java 的 <code>HashMap</code>）来做计数。不过既然题目中说明了整数的范围在 0 到 40000 之间，我们不妨直接用一个大小为 40000 的数组做计数。</p>
+<p>需要注意的是，虽然整数的范围是 0 到 40000，但是由于整数还会因为增加而变大，超出 40000 的范围。例如极端的情况：所有数都是 39999。所以需要对整数中最大的数单独处理。代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</span><br><span class="line">    <span class="comment">//计数数组（有序）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (A.length &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//核心思想，是record数组的构建</span></span><br><span class="line">        <span class="comment">//record数组是有序数组，index表示A数组中的值，value表示A数组中数值出现的次数</span></span><br><span class="line">        <span class="keyword">int</span>[] record = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">40000</span>];</span><br><span class="line">        <span class="keyword">int</span> max= A[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a : A) &#123;</span><br><span class="line">            record[a]++;</span><br><span class="line">            max = Math.max(max, a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//A数组中最大数max一定在record数组最后面，等下要加以特殊处理</span></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (record[i] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                res += (record[i] -<span class="number">1</span>);</span><br><span class="line">                <span class="comment">//record是动态的</span></span><br><span class="line">                <span class="comment">//如果当前位置数值&gt;1，说明下个位置数值会增加当前位置数值-1</span></span><br><span class="line">                record[i+<span class="number">1</span>] += (record[i] -<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//A数组最大值max在record数组中特殊处理</span></span><br><span class="line">        <span class="comment">//max位于record右边界的情况</span></span><br><span class="line">        <span class="keyword">if</span> (record[max] &gt; <span class="number">1</span>) &#123; <span class="comment">//否则不用担心越界</span></span><br><span class="line">            <span class="keyword">int</span> plus = record[max] - <span class="number">1</span>; <span class="comment">//首项（尾项1）</span></span><br><span class="line">            res += (plus + <span class="number">1</span>) * plus / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="线性探测法O-N-（含路径压缩）"><a href="#线性探测法O-N-（含路径压缩）" class="headerlink" title="线性探测法O(N) （含路径压缩）"></a>线性探测法O(N) （含路径压缩）</h3><h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><h5 id="题目链接https-leetcode-cn-com-problems-minimum-increment-to-make-array-unique"><a href="#题目链接https-leetcode-cn-com-problems-minimum-increment-to-make-array-unique" class="headerlink" title="题目链接https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/"></a>题目链接<a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/</a></h5><h5 id="参考题解"><a href="#参考题解" class="headerlink" title="参考题解"></a>参考题解</h5><blockquote>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/shi-shu-zu-wei-yi-de-zui-xiao-zeng-liang-by-leet-2/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/shi-shu-zu-wei-yi-de-zui-xiao-zeng-liang-by-leet-2/</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/tan-xin-suan-fa-bing-cha-ji-java-by-liweiwei1419/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/tan-xin-suan-fa-bing-cha-ji-java-by-liweiwei1419/</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://accepted.org.cn/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1023,7 +1248,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">188</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
