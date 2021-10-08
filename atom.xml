@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://etoa.io/"/>
-  <updated>2021-08-31T06:21:17.058Z</updated>
+  <updated>2021-10-08T08:45:13.607Z</updated>
   <id>https://etoa.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决BeanDefinitionStoreException: Failed to parse configuration class异常</title>
+    <link href="https://etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/"/>
+    <id>https://etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/</id>
+    <published>2021-10-08T08:37:36.000Z</published>
+    <updated>2021-10-08T08:45:13.607Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>解决一个由重复生成的bean导致的bean冲突异常。</p><a id="more"></a><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>在某次发版前夕，pull了最新代码之后，项目神奇般的无法启动了，疯狂报“BeanDefinitionStoreException: Failed to parse configuration class异常”，拉取最新代码或者拉取之前迭代的代码都卡在这里。<br>看了一下，在项目编译之后，会在target目录下生成两个相同类。</p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>执行Mavean的 <code>mvn clean</code> 将临时文件清理即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;解决一个由重复生成的bean导致的bean冲突异常。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="工程" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
+    
+      <category term="异常" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
+    
+    
+      <category term="工程" scheme="https://etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
+    
+      <category term="Maven" scheme="https://etoa.io/tags/Maven/"/>
+    
+      <category term="异常" scheme="https://etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>HJ33. 整数与IP地址之间的转换</title>
@@ -60,7 +91,7 @@
     <link href="https://etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2021-08-24T02:40:52.000Z</published>
-    <updated>2021-08-24T03:01:57.732Z</updated>
+    <updated>2021-10-08T08:39:01.223Z</updated>
     
     <content type="html"><![CDATA[<p><strong>摘要：</strong><br>记一次mvn编译时踩的坑。</p><a id="more"></a><h3 id="情况描述"><a href="#情况描述" class="headerlink" title="情况描述"></a>情况描述</h3><p>当我在使用 <code>mvn tomcat7:run</code> 编译的时候，出现提示：<br><code>No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?</code></p><h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><p>问题在于没有配置JDK环境变量。</p><ol><li>查看JDK目录，执行：<code>$ /usr/libexec/java_home -V</code><br>得到：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Matching Java Virtual Machines (2):</span><br><span class="line">    1.8.301.09 (x86_64) <span class="string">"Oracle Corporation"</span> - <span class="string">"Java"</span> /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home</span><br><span class="line">    1.8.0_301 (x86_64) <span class="string">"Oracle Corporation"</span> - <span class="string">"Java SE 8"</span> /Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home</span><br><span class="line">/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home</span><br></pre></td></tr></table></figure>可知，我们的JDK目录位于：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.8.0_301 (x86_64) &quot;Oracle Corporation&quot; - &quot;Java SE 8&quot; &#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_301.jdk&#x2F;Contents&#x2F;Home</span><br></pre></td></tr></table></figure></li><li>配置JDK环境变量，执行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ open -e .bash_profile</span><br></pre></td></tr></table></figure></li><li>在.bash_profile中添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_301.jdk&#x2F;Contents&#x2F;Home</span><br></pre></td></tr></table></figure></li><li>执行：<code>$ source .bash_profile</code>使之生效.</li><li>执行：<code>echo $JAVA_HOME</code>查看是否生效。</li></ol><h3 id="问题回溯"><a href="#问题回溯" class="headerlink" title="问题回溯"></a>问题回溯</h3><p>其实问题的本质就是maven找不到JDK，配置一下JDK环境变量即可。</p><div class="note primary">            <p><strong>参考：</strong> <a href="https://juejin.cn/post/6844903878694010893" target="_blank" rel="noopener">Mac 配置JDK环境变量</a></p>          </div>]]></content>
     
@@ -75,10 +106,14 @@
     
       <category term="工程" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
     
+      <category term="异常" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
+    
     
       <category term="工程" scheme="https://etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
     
       <category term="Maven" scheme="https://etoa.io/tags/Maven/"/>
+    
+      <category term="异常" scheme="https://etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
     
   </entry>
   
@@ -686,39 +721,6 @@
       <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="哈希表" scheme="https://etoa.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
-    
-      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
-    
-      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HJ7. 取近似值</title>
-    <link href="https://etoa.io/2021/08/15/HJ7-%E5%8F%96%E8%BF%91%E4%BC%BC%E5%80%BC/"/>
-    <id>https://etoa.io/2021/08/15/HJ7-%E5%8F%96%E8%BF%91%E4%BC%BC%E5%80%BC/</id>
-    <published>2021-08-15T09:03:52.000Z</published>
-    <updated>2021-08-15T10:28:19.597Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>注意C++和Java强转整型的区别。</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><strong>描述</strong><br>写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。</p><p><strong>输入描述：</strong><br>输入一个正浮点数值</p><p><strong>输出描述：</strong><br>输出该数值的近似整数值</p><p><strong>示例1</strong></p><blockquote><p>输入：<br>5.5</p></blockquote><blockquote><p>输出：<br>6</p></blockquote><h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><p>本题主要关注一下C++和Java在float转整型时的区别、<br><code>float x = 5.0;</code><br>在C++中，<code>int y = x * 10;</code> 即可，或者 <code>int y = (int)x * 10;</code>，在一个变量上强转一次，整个表达式都默认强转。<br>而在Java中，<code>int y = x * 10;</code>是错的，应该 <code>int y = (int)(x * 10);</code> 整个表达式放在一起强转。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 17:06:09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; x;) &#123;</span><br><span class="line">        <span class="keyword">int</span> y = x * <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> base = y / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> remain = y % <span class="number">10</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; (remain &lt; <span class="number">5</span> ? base : base + <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * author: etoa</span></span><br><span class="line"><span class="comment"> * 2021-08-15 17:05:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">for</span> (; in.hasNext();) &#123;</span><br><span class="line">            <span class="keyword">float</span> x = in.nextFloat();</span><br><span class="line">            <span class="keyword">int</span> y = (<span class="keyword">int</span>)(x * <span class="number">10</span>);</span><br><span class="line">            <span class="keyword">int</span> base = y / <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">int</span> remain = y % <span class="number">10</span>;</span><br><span class="line">            System.out.println(remain &lt; <span class="number">5</span> ? base : base + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://www.nowcoder.com/practice/3ab09737afb645cc82c35d56a5ce802a?tpId=37&&tqId=21230&rp=1&ru=/ta/huawei&qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">HJ7. 取近似值</a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;注意C++和Java强转整型的区别。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
-    
-      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
-    
-    
-      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
