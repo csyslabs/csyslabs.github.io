@@ -295,7 +295,7 @@
 
 <h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>The traditional method for all CoD games is to load the binary up in IDA and find the <strong>CG_Init</strong> function. Usually you can search for the string “white”, cross reference it, and one of the cross references will be that <strong>CG_Init</strong> function.</p>
 <p>At the tippity-top of this function, you will see some calls to memset</p>
-<p><img src="0.png" alt="0x0"></p>
+<p><img src="/2021/03/31/%E3%80%90%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91%E3%80%91How-to-find-entityList-in-Call-of-Duty-games-with-IDA-tutorial/0.png" alt="0x0"></p>
 <p>Here you can find a bunch of different structs, including the <strong>cg_entities</strong> struct. This struct contains an array of <strong>centity_t</strong>. Not pointers to <strong>centity_t</strong>.<br><strong>centity_t</strong> contains various information about the player including their position. <strong>cg_entities</strong> is used for both players and bots.</p>
 <p>Keep in mind that there are two entity lists. <strong>cgentity_t</strong> and <strong>ClientInfo_t</strong>. <strong>ClientInfo_t</strong> is used to get the player name while <strong>cgentity_t</strong> is used for their position and other data.</p>
 <p>Here are some addresses for the latest Steam Version of CoD 5. Try use them as a reference/guide so you can learn how to find them yourself.</p>
@@ -424,7 +424,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -437,7 +437,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">160</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -479,7 +479,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fas fa-terminal"></i>
   </span>

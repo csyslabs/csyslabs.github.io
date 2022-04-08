@@ -334,7 +334,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">byte</span>[] engineSign() <span class="keyword">throws</span> SignatureException &#123;</span><br><span class="line">    <span class="keyword">byte</span>[] var1 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="keyword">this</span>.digest.getDigestSize()];</span><br><span class="line">    <span class="keyword">this</span>.digest.doFinal(var1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] var2 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">64</span>];</span><br><span class="line">        BigInteger[] var3 = <span class="keyword">this</span>.signer.generateSignature(var1);</span><br><span class="line">        <span class="keyword">byte</span>[] var4 = var3[<span class="number">0</span>].toByteArray();</span><br><span class="line">        <span class="keyword">byte</span>[] var5 = var3[<span class="number">1</span>].toByteArray();</span><br><span class="line">        <span class="keyword">if</span> (var5[<span class="number">0</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">            System.arraycopy(var5, <span class="number">0</span>, var2, <span class="number">32</span> - var5.length, var5.length);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.arraycopy(var5, <span class="number">1</span>, var2, <span class="number">32</span> - (var5.length - <span class="number">1</span>), var5.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (var4[<span class="number">0</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">            System.arraycopy(var4, <span class="number">0</span>, var2, <span class="number">64</span> - var4.length, var4.length);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.arraycopy(var4, <span class="number">1</span>, var2, <span class="number">64</span> - (var4.length - <span class="number">1</span>), var4.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> var2;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception var6) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> SignatureException(var6.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <div class="note primary">
-            <p><strong>原题链接：</strong> <a href=""></a></p>
+            <p><strong>原题链接：</strong> <a href></a></p>
           </div>
       </div>
       
@@ -414,7 +414,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -427,7 +427,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">160</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -469,7 +469,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fas fa-terminal"></i>
   </span>

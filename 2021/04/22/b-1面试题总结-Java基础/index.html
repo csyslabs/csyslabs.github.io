@@ -377,7 +377,7 @@
 <li>占内存大小 字符常量只占 2 个字节; 字符串常量占若干个字节 (<strong>注意： char 在 Java 中占两个字节</strong>)</li>
 </ol>
 <blockquote>
-<p>java 编程思想第四版：2.2.2 节<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-15/86735519.jpg" alt=""></p>
+<p>java 编程思想第四版：2.2.2 节<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-15/86735519.jpg" alt></p>
 </blockquote>
 <h3 id="2-1-7-构造器-Constructor-是否可被-override"><a href="#2-1-7-构造器-Constructor-是否可被-override" class="headerlink" title="2.1.7. 构造器 Constructor 是否可被 override?"></a>2.1.7. 构造器 Constructor 是否可被 override?</h3><p>Constructor 不能被 override（重写）,但是可以 overload（重载）,所以你可以看到一个类中有多个构造函数的情况。</p>
 <h3 id="2-1-8-重载和重写的区别"><a href="#2-1-8-重载和重写的区别" class="headerlink" title="2.1.8. 重载和重写的区别"></a>2.1.8. 重载和重写的区别</h3><blockquote>
@@ -387,7 +387,7 @@
 <p><strong>重载：</strong></p>
 <p>发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同。</p>
 <p>下面是《Java 核心技术》对重载这个概念的介绍：</p>
-<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/bg/desktopjava%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E9%87%8D%E8%BD%BD.jpg" alt=""></p>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/bg/desktopjava%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-%E9%87%8D%E8%BD%BD.jpg" alt></p>
 <p>综上：重载就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</p>
 <p><strong>重写：</strong></p>
 <p>重写发生在运行期，是子类对父类的允许访问的方法的实现过程进行重新编写。</p>
@@ -604,9 +604,9 @@
 
 <p><strong>解析：</strong></p>
 <p>交换之前：</p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-27/88729818.jpg" alt=""></p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-27/88729818.jpg" alt></p>
 <p>交换之后：</p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-27/34384414.jpg" alt=""></p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-27/34384414.jpg" alt></p>
 <p>通过上面两张图可以很清晰的看出： <strong>方法并没有改变存储在变量 s1 和 s2 中的对象引用。swap 方法的参数 x 和 y 被初始化为两个对象引用的拷贝，这个方法交换的是这两个拷贝</strong></p>
 <blockquote>
 <p><strong>总结</strong></p>
@@ -640,10 +640,10 @@
 <li>当用 final 修饰一个类时，表明这个类不能被继承。final 类中的所有成员方法都会被隐式地指定为 final 方法。</li>
 <li>使用 final 方法的原因有两个。第一个原因是把方法锁定，以防任何继承类修改它的含义；第二个原因是效率。在早期的 Java 实现版本中，会将 final 方法转为内嵌调用。但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升（现在的 Java 版本已经不需要使用 final 方法进行这些优化了）。类中所有的 private 方法都隐式地指定为 final。</li>
 </ol>
-<h3 id="2-1-29-Java-中的异常处理"><a href="#2-1-29-Java-中的异常处理" class="headerlink" title="2.1.29. Java 中的异常处理"></a>2.1.29. Java 中的异常处理</h3><h4 id="2-1-29-1-Java-异常类层次结构图"><a href="#2-1-29-1-Java-异常类层次结构图" class="headerlink" title="2.1.29.1. Java 异常类层次结构图"></a>2.1.29.1. Java 异常类层次结构图</h4><p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt=""></p>
+<h3 id="2-1-29-Java-中的异常处理"><a href="#2-1-29-Java-中的异常处理" class="headerlink" title="2.1.29. Java 中的异常处理"></a>2.1.29. Java 中的异常处理</h3><h4 id="2-1-29-1-Java-异常类层次结构图"><a href="#2-1-29-1-Java-异常类层次结构图" class="headerlink" title="2.1.29.1. Java 异常类层次结构图"></a>2.1.29.1. Java 异常类层次结构图</h4><p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt></p>
 <p style="font-size:13px;text-align:right">图片来自：https://simplesnippets.tech/exception-handling-in-java-part-1/</p>
 
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE2.png" alt=""></p>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE2.png" alt></p>
 <p style="font-size:13px;text-align:right">图片来自：https://chercher.tech/java-programming/exceptions-java</p>
 
 <p>在 Java 中，所有的异常都有一个共同的祖先 <code>java.lang</code> 包中的 <code>Throwable</code> 类。<code>Throwable</code> 类有两个重要的子类 <code>Exception</code>（异常）和 <code>Error</code>（错误）。<code>Exception</code> 能被程序本身处理(<code>try-catch</code>)， <code>Error</code> 是无法处理的(只能尽量避免)。</p>
@@ -839,7 +839,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -852,7 +852,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">160</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -894,7 +894,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fas fa-terminal"></i>
   </span>

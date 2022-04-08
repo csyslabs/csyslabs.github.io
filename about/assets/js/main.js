@@ -118,10 +118,8 @@
 			speed: 1000,
 			offset: function() {
 
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
+				// If <=large,>small, and sidebar is present, use its height as the offset.
+					if (breakpoints.active('<=large') && !breakpoints.active('<="small')" $sidebar.length> 0)
 						return $sidebar.height();
 
 				return 0;
@@ -187,4 +185,4 @@
 				}
 			});
 
-})(jQuery);
+})(jQuery);</=large')></=large,>

@@ -319,19 +319,19 @@
 <li>车不能进入/越过已经放有其他友方棋子（白色的象）的方格，停在友方棋子前。</li>
 </ul>
 <p>你现在可以控制车移动一次，请你统计有多少敌方的卒处于你的捕获范围内（即，可以被一步捕获的棋子数）。</p>
-<p><strong>示例1：</strong><br><img src="1.png" alt="0x0"></p>
+<p><strong>示例1：</strong><br><img src="/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/1.png" alt="0x0"></p>
 <blockquote>
 <p><strong>输入：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;R&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>输出：</strong> 3<br><strong>解释：</strong> 在本例中，车能够捕获所有的卒</p>
 </blockquote>
-<p><strong>示例2：</strong><br><img src="2.png" alt="0x1"></p>
+<p><strong>示例2：</strong><br><img src="/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/2.png" alt="0x1"></p>
 <blockquote>
 <p><strong>输入：</strong> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;B&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;B&#39;,&#39;R&#39;,&#39;B&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;B&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>输出：</strong> 0<br><strong>解释：</strong> 象阻止了车捕获任何卒</p>
 </blockquote>
-<p><strong>示例3：</strong><br><img src="3.png" alt="0x2"></p>
+<p><strong>示例3：</strong><br><img src="/2020/03/26/LeetCode-999-%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%80%E6%AD%A5%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A3%8B%E5%AD%90%E6%95%B0/3.png" alt="0x2"></p>
 <blockquote>
 <p><strong>输入：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;p&#39;,&#39;p&#39;,&#39;.&#39;,&#39;R&#39;,&#39;.&#39;,&#39;p&#39;,&#39;B&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;B&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;p&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">    &#123;&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;,&#39;.&#39;&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -475,7 +475,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -488,7 +488,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">160</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -530,7 +530,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fas fa-terminal"></i>
   </span>
