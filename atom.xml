@@ -5,9 +5,9 @@
   <subtitle>where the water tastes like wine</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.etoa.io/"/>
+  <link href="https://etoa.io/"/>
   <updated>2022-04-08T06:53:37.716Z</updated>
-  <id>https://www.etoa.io/</id>
+  <id>https://etoa.io/</id>
   
   <author>
     <name>etoa</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>LeetCode 177. 第N高的薪水</title>
-    <link href="https://www.etoa.io/2022/04/08/LeetCode-177-%E7%AC%ACN%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/"/>
-    <id>https://www.etoa.io/2022/04/08/LeetCode-177-%E7%AC%ACN%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</id>
+    <link href="https://etoa.io/2022/04/08/LeetCode-177-%E7%AC%ACN%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/"/>
+    <id>https://etoa.io/2022/04/08/LeetCode-177-%E7%AC%ACN%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</id>
     <published>2022-04-08T03:34:55.000Z</published>
     <updated>2022-04-08T06:53:37.716Z</updated>
     
@@ -33,22 +33,22 @@
     
     
     
-      <category term="LeetCode" scheme="https://www.etoa.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://etoa.io/tags/LeetCode/"/>
     
-      <category term="TopK" scheme="https://www.etoa.io/tags/TopK/"/>
+      <category term="TopK" scheme="https://etoa.io/tags/TopK/"/>
     
-      <category term="排序" scheme="https://www.etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="数据库" scheme="https://www.etoa.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://etoa.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="窗口函数" scheme="https://www.etoa.io/tags/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"/>
+      <category term="窗口函数" scheme="https://etoa.io/tags/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode 176. 第二高的薪水</title>
-    <link href="https://www.etoa.io/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/"/>
-    <id>https://www.etoa.io/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</id>
+    <link href="https://etoa.io/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/"/>
+    <id>https://etoa.io/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</id>
     <published>2022-04-08T03:27:08.000Z</published>
     <updated>2022-04-08T03:32:38.084Z</updated>
     
@@ -62,22 +62,22 @@
     
     
     
-      <category term="LeetCode" scheme="https://www.etoa.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://etoa.io/tags/LeetCode/"/>
     
-      <category term="TopK" scheme="https://www.etoa.io/tags/TopK/"/>
+      <category term="TopK" scheme="https://etoa.io/tags/TopK/"/>
     
-      <category term="排序" scheme="https://www.etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="数据库" scheme="https://www.etoa.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://etoa.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="子查询" scheme="https://www.etoa.io/tags/%E5%AD%90%E6%9F%A5%E8%AF%A2/"/>
+      <category term="子查询" scheme="https://etoa.io/tags/%E5%AD%90%E6%9F%A5%E8%AF%A2/"/>
     
   </entry>
   
   <entry>
     <title>解决BeanDefinitionStoreException: Failed to parse configuration class异常</title>
-    <link href="https://www.etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/"/>
-    <id>https://www.etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/</id>
+    <link href="https://etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/"/>
+    <id>https://etoa.io/2021/10/08/%E8%A7%A3%E5%86%B3BeanDefinitionStoreException-Failed-to-parse-configuration-class%E5%BC%82%E5%B8%B8/</id>
     <published>2021-10-08T08:37:36.000Z</published>
     <updated>2021-10-08T08:45:13.607Z</updated>
     
@@ -90,25 +90,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="工程" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
     
-      <category term="异常" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
     
     
-      <category term="工程" scheme="https://www.etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
     
-      <category term="Maven" scheme="https://www.etoa.io/tags/Maven/"/>
+      <category term="Maven" scheme="https://etoa.io/tags/Maven/"/>
     
-      <category term="异常" scheme="https://www.etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="https://etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title>HJ33. 整数与IP地址之间的转换</title>
-    <link href="https://www.etoa.io/2021/08/31/HJ33-%E6%95%B4%E6%95%B0%E4%B8%8EIP%E5%9C%B0%E5%9D%80%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/"/>
-    <id>https://www.etoa.io/2021/08/31/HJ33-%E6%95%B4%E6%95%B0%E4%B8%8EIP%E5%9C%B0%E5%9D%80%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</id>
+    <link href="https://etoa.io/2021/08/31/HJ33-%E6%95%B4%E6%95%B0%E4%B8%8EIP%E5%9C%B0%E5%9D%80%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://etoa.io/2021/08/31/HJ33-%E6%95%B4%E6%95%B0%E4%B8%8EIP%E5%9C%B0%E5%9D%80%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</id>
     <published>2021-08-31T06:09:13.000Z</published>
     <updated>2021-08-31T06:21:17.058Z</updated>
     
@@ -121,33 +121,33 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="进制转换" scheme="https://www.etoa.io/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+      <category term="进制转换" scheme="https://etoa.io/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
-      <category term="bitset" scheme="https://www.etoa.io/tags/bitset/"/>
+      <category term="bitset" scheme="https://etoa.io/tags/bitset/"/>
     
   </entry>
   
   <entry>
     <title>Maven编译踩坑记录：Maven未识别JDK的问题</title>
-    <link href="https://www.etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://www.etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://etoa.io/2021/08/24/Maven%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AMaven%E6%9C%AA%E8%AF%86%E5%88%ABJDK%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2021-08-24T02:40:52.000Z</published>
     <updated>2021-10-08T08:39:01.223Z</updated>
     
@@ -160,25 +160,25 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="工程" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/"/>
     
-      <category term="异常" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E5%B7%A5%E7%A8%8B/%E5%BC%82%E5%B8%B8/"/>
     
     
-      <category term="工程" scheme="https://www.etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
+      <category term="工程" scheme="https://etoa.io/tags/%E5%B7%A5%E7%A8%8B/"/>
     
-      <category term="Maven" scheme="https://www.etoa.io/tags/Maven/"/>
+      <category term="Maven" scheme="https://etoa.io/tags/Maven/"/>
     
-      <category term="异常" scheme="https://www.etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="https://etoa.io/tags/%E5%BC%82%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title>HJ32. 密码截取</title>
-    <link href="https://www.etoa.io/2021/08/23/HJ32-%E5%AF%86%E7%A0%81%E6%88%AA%E5%8F%96/"/>
-    <id>https://www.etoa.io/2021/08/23/HJ32-%E5%AF%86%E7%A0%81%E6%88%AA%E5%8F%96/</id>
+    <link href="https://etoa.io/2021/08/23/HJ32-%E5%AF%86%E7%A0%81%E6%88%AA%E5%8F%96/"/>
+    <id>https://etoa.io/2021/08/23/HJ32-%E5%AF%86%E7%A0%81%E6%88%AA%E5%8F%96/</id>
     <published>2021-08-23T14:54:01.000Z</published>
     <updated>2021-08-23T15:08:46.632Z</updated>
     
@@ -191,29 +191,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ29. 字符串加解密</title>
-    <link href="https://www.etoa.io/2021/08/23/HJ29-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
-    <id>https://www.etoa.io/2021/08/23/HJ29-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E8%A7%A3%E5%AF%86/</id>
+    <link href="https://etoa.io/2021/08/23/HJ29-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
+    <id>https://etoa.io/2021/08/23/HJ29-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A0%E8%A7%A3%E5%AF%86/</id>
     <published>2021-08-23T05:08:51.000Z</published>
     <updated>2021-08-23T05:32:56.067Z</updated>
     
@@ -226,29 +226,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ27. 查找兄弟单词</title>
-    <link href="https://www.etoa.io/2021/08/22/HJ27-%E6%9F%A5%E6%89%BE%E5%85%84%E5%BC%9F%E5%8D%95%E8%AF%8D/"/>
-    <id>https://www.etoa.io/2021/08/22/HJ27-%E6%9F%A5%E6%89%BE%E5%85%84%E5%BC%9F%E5%8D%95%E8%AF%8D/</id>
+    <link href="https://etoa.io/2021/08/22/HJ27-%E6%9F%A5%E6%89%BE%E5%85%84%E5%BC%9F%E5%8D%95%E8%AF%8D/"/>
+    <id>https://etoa.io/2021/08/22/HJ27-%E6%9F%A5%E6%89%BE%E5%85%84%E5%BC%9F%E5%8D%95%E8%AF%8D/</id>
     <published>2021-08-22T02:18:36.000Z</published>
     <updated>2021-08-22T02:56:16.756Z</updated>
     
@@ -261,35 +261,35 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="TopK" scheme="https://www.etoa.io/tags/TopK/"/>
+      <category term="TopK" scheme="https://etoa.io/tags/TopK/"/>
     
-      <category term="堆" scheme="https://www.etoa.io/tags/%E5%A0%86/"/>
+      <category term="堆" scheme="https://etoa.io/tags/%E5%A0%86/"/>
     
-      <category term="计数数组" scheme="https://www.etoa.io/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
+      <category term="计数数组" scheme="https://etoa.io/tags/%E8%AE%A1%E6%95%B0%E6%95%B0%E7%BB%84/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ26. 字符串排序</title>
-    <link href="https://www.etoa.io/2021/08/20/HJ26-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
-    <id>https://www.etoa.io/2021/08/20/HJ26-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</id>
+    <link href="https://etoa.io/2021/08/20/HJ26-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
+    <id>https://etoa.io/2021/08/20/HJ26-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</id>
     <published>2021-08-20T15:21:18.000Z</published>
     <updated>2021-08-20T16:37:58.028Z</updated>
     
@@ -302,33 +302,33 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="排序" scheme="https://www.etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://etoa.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="双指针" scheme="https://www.etoa.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+      <category term="双指针" scheme="https://etoa.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ23. 删除字符串中出现次数最少的字符</title>
-    <link href="https://www.etoa.io/2021/08/20/HJ23-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%B0%91%E7%9A%84%E5%AD%97%E7%AC%A6/"/>
-    <id>https://www.etoa.io/2021/08/20/HJ23-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%B0%91%E7%9A%84%E5%AD%97%E7%AC%A6/</id>
+    <link href="https://etoa.io/2021/08/20/HJ23-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%B0%91%E7%9A%84%E5%AD%97%E7%AC%A6/"/>
+    <id>https://etoa.io/2021/08/20/HJ23-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%B0%91%E7%9A%84%E5%AD%97%E7%AC%A6/</id>
     <published>2021-08-20T05:35:16.000Z</published>
     <updated>2021-08-20T05:46:01.138Z</updated>
     
@@ -341,29 +341,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ22. 汽水瓶</title>
-    <link href="https://www.etoa.io/2021/08/20/HJ22-%E6%B1%BD%E6%B0%B4%E7%93%B6/"/>
-    <id>https://www.etoa.io/2021/08/20/HJ22-%E6%B1%BD%E6%B0%B4%E7%93%B6/</id>
+    <link href="https://etoa.io/2021/08/20/HJ22-%E6%B1%BD%E6%B0%B4%E7%93%B6/"/>
+    <id>https://etoa.io/2021/08/20/HJ22-%E6%B1%BD%E6%B0%B4%E7%93%B6/</id>
     <published>2021-08-20T03:35:23.000Z</published>
     <updated>2021-08-20T05:14:29.761Z</updated>
     
@@ -376,27 +376,27 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ21. 简单密码</title>
-    <link href="https://www.etoa.io/2021/08/20/HJ21-%E7%AE%80%E5%8D%95%E5%AF%86%E7%A0%81/"/>
-    <id>https://www.etoa.io/2021/08/20/HJ21-%E7%AE%80%E5%8D%95%E5%AF%86%E7%A0%81/</id>
+    <link href="https://etoa.io/2021/08/20/HJ21-%E7%AE%80%E5%8D%95%E5%AF%86%E7%A0%81/"/>
+    <id>https://etoa.io/2021/08/20/HJ21-%E7%AE%80%E5%8D%95%E5%AF%86%E7%A0%81/</id>
     <published>2021-08-20T02:25:55.000Z</published>
     <updated>2021-08-20T02:58:38.435Z</updated>
     
@@ -409,29 +409,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ20. 密码验证合格程序</title>
-    <link href="https://www.etoa.io/2021/08/19/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://www.etoa.io/2021/08/19/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/</id>
+    <link href="https://etoa.io/2021/08/19/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/"/>
+    <id>https://etoa.io/2021/08/19/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/</id>
     <published>2021-08-19T12:54:25.000Z</published>
     <updated>2021-08-20T01:56:53.620Z</updated>
     
@@ -444,31 +444,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="位运算" scheme="https://www.etoa.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="https://etoa.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ17. 坐标移动</title>
-    <link href="https://www.etoa.io/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/"/>
-    <id>https://www.etoa.io/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/</id>
+    <link href="https://etoa.io/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/"/>
+    <id>https://etoa.io/2021/08/19/HJ17-%E5%9D%90%E6%A0%87%E7%A7%BB%E5%8A%A8/</id>
     <published>2021-08-19T02:43:05.000Z</published>
     <updated>2021-08-19T03:54:36.060Z</updated>
     
@@ -481,29 +481,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ15. 求int类型正整数在内存中存储时1的个数</title>
-    <link href="https://www.etoa.io/2021/08/19/HJ15-%E6%B1%82int%E7%B1%BB%E5%9E%8B%E6%AD%A3%E6%95%B4%E6%95%B0%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E6%97%B61%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>https://www.etoa.io/2021/08/19/HJ15-%E6%B1%82int%E7%B1%BB%E5%9E%8B%E6%AD%A3%E6%95%B4%E6%95%B0%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E6%97%B61%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <link href="https://etoa.io/2021/08/19/HJ15-%E6%B1%82int%E7%B1%BB%E5%9E%8B%E6%AD%A3%E6%95%B4%E6%95%B0%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E6%97%B61%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>https://etoa.io/2021/08/19/HJ15-%E6%B1%82int%E7%B1%BB%E5%9E%8B%E6%AD%A3%E6%95%B4%E6%95%B0%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%82%A8%E6%97%B61%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
     <published>2021-08-19T01:48:02.000Z</published>
     <updated>2021-08-19T02:01:40.657Z</updated>
     
@@ -516,31 +516,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="位运算" scheme="https://www.etoa.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+      <category term="位运算" scheme="https://etoa.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
-      <category term="lowbit" scheme="https://www.etoa.io/tags/lowbit/"/>
+      <category term="lowbit" scheme="https://etoa.io/tags/lowbit/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ14. 字符串排序</title>
-    <link href="https://www.etoa.io/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
-    <id>https://www.etoa.io/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</id>
+    <link href="https://etoa.io/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
+    <id>https://etoa.io/2021/08/18/HJ14-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</id>
     <published>2021-08-18T14:41:37.000Z</published>
     <updated>2021-08-18T15:08:39.533Z</updated>
     
@@ -553,29 +553,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ13. 句子逆序</title>
-    <link href="https://www.etoa.io/2021/08/18/HJ13-%E5%8F%A5%E5%AD%90%E9%80%86%E5%BA%8F/"/>
-    <id>https://www.etoa.io/2021/08/18/HJ13-%E5%8F%A5%E5%AD%90%E9%80%86%E5%BA%8F/</id>
+    <link href="https://etoa.io/2021/08/18/HJ13-%E5%8F%A5%E5%AD%90%E9%80%86%E5%BA%8F/"/>
+    <id>https://etoa.io/2021/08/18/HJ13-%E5%8F%A5%E5%AD%90%E9%80%86%E5%BA%8F/</id>
     <published>2021-08-18T14:18:31.000Z</published>
     <updated>2021-08-18T14:36:21.126Z</updated>
     
@@ -588,31 +588,31 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="栈" scheme="https://www.etoa.io/tags/%E6%A0%88/"/>
+      <category term="栈" scheme="https://etoa.io/tags/%E6%A0%88/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ12. 字符串反转</title>
-    <link href="https://www.etoa.io/2021/08/18/HJ12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC/"/>
-    <id>https://www.etoa.io/2021/08/18/HJ12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC/</id>
+    <link href="https://etoa.io/2021/08/18/HJ12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC/"/>
+    <id>https://etoa.io/2021/08/18/HJ12-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC/</id>
     <published>2021-08-18T10:20:09.000Z</published>
     <updated>2021-08-18T14:36:35.373Z</updated>
     
@@ -625,29 +625,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ11. 数字颠倒</title>
-    <link href="https://www.etoa.io/2021/08/18/HJ11-%E6%95%B0%E5%AD%97%E9%A2%A0%E5%80%92/"/>
-    <id>https://www.etoa.io/2021/08/18/HJ11-%E6%95%B0%E5%AD%97%E9%A2%A0%E5%80%92/</id>
+    <link href="https://etoa.io/2021/08/18/HJ11-%E6%95%B0%E5%AD%97%E9%A2%A0%E5%80%92/"/>
+    <id>https://etoa.io/2021/08/18/HJ11-%E6%95%B0%E5%AD%97%E9%A2%A0%E5%80%92/</id>
     <published>2021-08-18T09:51:33.000Z</published>
     <updated>2021-08-18T10:16:06.825Z</updated>
     
@@ -660,29 +660,29 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="字符串" scheme="https://www.etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://etoa.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>HJ10. 字符个数统计</title>
-    <link href="https://www.etoa.io/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/"/>
-    <id>https://www.etoa.io/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/</id>
+    <link href="https://etoa.io/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/"/>
+    <id>https://etoa.io/2021/08/17/HJ10-%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0%E7%BB%9F%E8%AE%A1/</id>
     <published>2021-08-17T14:47:48.000Z</published>
     <updated>2021-08-17T15:31:02.346Z</updated>
     
@@ -695,24 +695,24 @@
     </summary>
     
     
-      <category term="指尖飞舞" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+      <category term="指尖飞舞" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
     
-      <category term="算法" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/NowCoder/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
     
-      <category term="算法" scheme="https://www.etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://etoa.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="哈希表" scheme="https://www.etoa.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+      <category term="哈希表" scheme="https://etoa.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
     
-      <category term="NowCoder" scheme="https://www.etoa.io/tags/NowCoder/"/>
+      <category term="NowCoder" scheme="https://etoa.io/tags/NowCoder/"/>
     
-      <category term="华为机试题库" scheme="https://www.etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
+      <category term="华为机试题库" scheme="https://etoa.io/tags/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95%E9%A2%98%E5%BA%93/"/>
     
-      <category term="bitset" scheme="https://www.etoa.io/tags/bitset/"/>
+      <category term="bitset" scheme="https://etoa.io/tags/bitset/"/>
     
   </entry>
   
