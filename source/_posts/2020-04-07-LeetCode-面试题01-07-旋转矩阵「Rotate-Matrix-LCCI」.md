@@ -1,0 +1,101 @@
+---
+title: 'LeetCode #面试题01.07 旋转矩阵「Rotate Matrix LCCI」'
+comments: true
+date: 2020-04-07 14:56:22
+tags:
+    - 矩阵
+    - 数组
+categories:
+    - [指尖飞舞, 算法] 
+---
+### 题目
+给你一幅由 N × N 矩阵表示的图像，其中每个像素的大小为 4 字节。请你设计一种算法，将图像旋转 90 度。
+
+不占用额外内存空间能否做到？
+__示例1：__
+> 给定 matrix = 
+> [
+>   [1,2,3],
+>   [4,5,6],
+>   [7,8,9]
+> ],
+>
+> 原地旋转输入矩阵，使其变为:
+> [
+>   [7,4,1],
+>   [8,5,2],
+>   [9,6,3]
+> ]
+
+__示例2：__
+> 给定 matrix =
+> [
+>   [ 5, 1, 9,11],
+>   [ 2, 4, 8,10],
+>   [13, 3, 6, 7],
+>   [15,14,12,16]
+> ], 
+> 
+> 原地旋转输入矩阵，使其变为:
+> [
+>   [15,13, 2, 5],
+>   [14, 3, 4, 1],
+>   [12, 6, 8, 9],
+>   [16, 7,10,11]
+> ]
+___
+### 原地旋转方法
+先将数组按对角线翻折：
+![pic0x0](2020-04-07-LeetCode-面试题01-07-旋转矩阵「Rotate-Matrix-LCCI」/Rotate_Matrix_LCCI_0x0.png)
+此时得到的数组每行和目标数组相反，只需要再将每行数组按中轴线翻折。
+注意两次翻折的起始和终止，切记不能重复翻折（会折回去）。
+比如第一次翻折不能写成`for (int j = 0; j < len; j++)`。如果这样，在`i`向下遍历过程中，会将之前折的折回去。
+```Java
+class Solution0x0 {
+    /* 0ms
+     * 39.7MB
+     */
+    public void rotate(int[][] matrix) {
+        int len = matrix.length;
+        for (int i = 0 ; i < len; i++) {
+            for (int j = i + 1; j < len; j++) { //切莫从0开始，否则当遍历j时又换回去了
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+        int mid = len / 2;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < mid; j++) { //到中线结束，否则过中线又换回去了
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[i][len - 1 - j];
+                matrix[i][len - 1 - j] = temp;
+            }
+        }
+    }
+}
+```
+### 借用临时N * N数组（需额外空间）
+```Java
+class Solution0x1 {
+    /* 0ms
+     * 40.2MB
+     */
+    public void rotate(int[][] matrix) {
+        int len = matrix.length;
+        int[][] temp = new int[len][len];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                temp[j][len - 1 - i] = matrix[i][j];
+            }
+        }
+        for (int i = 0; i < len; i++) {
+            System.arraycopy(temp[i], 0, matrix[i], 0, len);
+        }
+
+    }
+}
+```
+
+##### 题目链接
+> https://leetcode-cn.com/problems/rotate-matrix-lcci/

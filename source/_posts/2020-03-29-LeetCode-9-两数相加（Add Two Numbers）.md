@@ -1,0 +1,55 @@
+---
+title: 'LeetCode #9 两数相加（Add Two Numbers）'
+comments: true
+date: 2020-03-29 19:00:56
+tags:
+    - 链表
+    - 超级头结点
+    - 算法
+    - LeetCode
+categories:
+    - [指尖飞舞, 算法]
+---
+### 题目
+> 给出两个 __非空__ 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 __逆序__ 的方式存储的，并且它们的每个节点只能存储 __一位__ 数字。
+> 
+> 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+> 
+> 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+
+__示例：__
+> __输入：__(2 -> 4 -> 3) + (5 -> 6 -> 4)
+> __输出：__ 7 -> 0 -> 8
+> __原因：__ 342 + 465 = 807
+___
+
+### 朴素解法
+我们需要创建一个新的链表作为相加后的返回对象，而且在新的链表构造过程中，其头结点需要不断移动，从而导致无法返回整个链表。
+
+我们可以定义独立于新链表的一个 __超级头结点__ ，让其指向新的链表。
+```Java
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int carry = 0; //进位
+        ListNode pre = new ListNode(0); //超级头结点
+        ListNode cur = pre; //超级头结点指向新的链表
+        while (l1 != null || l2 != null) {
+            int value1 = l1 == null ? 0 : l1.val;
+            int value2 = l2 == null ? 0 : l2.val;
+            int sum = value1 + value2 + carry;
+
+            if (sum >= 10) carry = 1;
+            else carry = 0;
+            cur.next = new ListNode(sum % 10);
+            cur = cur.next;
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+        if (carry == 1) cur.next = new ListNode(1);
+        return res.next; //返回超级头结点的后面
+    }
+}
+```
+
+__题目链接：__ https://leetcode-cn.com/problems/add-two-numbers/
+
