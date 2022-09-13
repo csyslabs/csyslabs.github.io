@@ -23,8 +23,10 @@ minify: false
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
   #head: source/_data/head.swig
-  head: /Users/etoa/Blog/hexo/themes/next/layout/_partials/header/header.swig
-  header: /Users/etoa/Blog/hexo/themes/next/layout/_partials/header/header.swig
+  #   head: /Users/etoa/Blog/hexo/themes/next/layout/_partials/header/header.swig
+  #   header: /Users/etoa/Blog/hexo/themes/next/layout/_partials/header/header.swig
+  head: themes/next/layout/_partials/header/header.swig
+  header: themes/next/layout/_partials/header/header.swig
   #sidebar: source/_data/sidebar.swig
   #postMeta: source/_data/post-meta.swig
   #postBodyEnd: source/_data/post-body-end.swig
