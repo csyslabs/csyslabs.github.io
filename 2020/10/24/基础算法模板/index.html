@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-atom-purple.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-atom-purple.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Maitree:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"csyslabs.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":50,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要：详尽地记录了各种基础算法模板，以及一些个人理解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础算法模板">
+<meta property="og:url" content="https://csyslabs.github.io/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/index.html">
+<meta property="og:site_name" content="Dirac Sea">
+<meta property="og:description" content="摘要：详尽地记录了各种基础算法模板，以及一些个人理解。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-24T06:03:00.000Z">
+<meta property="article:modified_time" content="2022-09-12T16:17:13.522Z">
+<meta property="article:author" content="etoa">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="排序">
+<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="位运算">
+<meta property="article:tag" content="算法模板">
+<meta property="article:tag" content="快速排序">
+<meta property="article:tag" content="归并排序">
+<meta property="article:tag" content="二分查找">
+<meta property="article:tag" content="高精度四则运算">
+<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="差分">
+<meta property="article:tag" content="离散化">
+<meta property="article:tag" content="区间合并">
+<meta property="article:tag" content="AcWing">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://csyslabs.github.io/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23PFYL4751"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-23PFYL4751');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+  <title>基础算法模板 | Dirac Sea</title>
+  
+    <script>
+      function sendPageView() {
+        if (CONFIG.hostname !== location.hostname) return;
+        var uid = localStorage.getItem('uid') || (Math.random() + '.' + Math.random());
+        localStorage.setItem('uid', uid);
+        navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams({
+          v  : 1,
+          tid: 'G-23PFYL4751',
+          cid: uid,
+          t  : 'pageview',
+          dp : encodeURIComponent(location.pathname)
+        }));
+      }
+      document.addEventListener('pjax:complete', sendPageView);
+      sendPageView();
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Dirac Sea" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Dirac Sea</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">where the water tastes like wine</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23PFYL4751"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-23PFYL4751');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dirac Sea">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基础算法模板
+        </h1>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-24 14:03:00" itemprop="dateCreated datePublished" datetime="2020-10-24T14:03:00+08:00">2020-10-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/" itemprop="url" rel="index"><span itemprop="name">AcWing</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">算法基础课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>摘要：</strong><br>详尽地记录了各种基础算法模板，以及一些个人理解。</p>
+<a id="more"></a>
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快排最难的地方在于边界问题。边界问题涉及到比较因子的选择以及各种条件判断。建议将模板直接背过。<br>今天看了闫学灿的快排讲解之后，感悟颇多，特地记录下来供以后复习。<br>首先上快排模板：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qSort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>; <span class="comment">//end of recursion</span></span><br><span class="line">    <span class="keyword">int</span> cmp = q[(lo + hi) &gt;&gt; <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> i = lo - <span class="number">1</span>, j = hi + <span class="number">1</span>; <span class="comment">// 每次指针移动，需要向中间偏移一位，故在这里也初始化设置成lo - 1和hi + 1</span></span><br><span class="line">    <span class="keyword">for</span> (;i &lt; j;) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (; q[++ i] &lt; cmp; );</span><br><span class="line">        <span class="keyword">for</span> (; q[-- j] &gt; cmp; );</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) swap(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    qSort(q, lo, j); <span class="comment">//                         1</span></span><br><span class="line">    qSort(q, j + <span class="number">1</span>, hi); <span class="comment">//                     2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于 <code>j</code> 要么等于 <code>i</code> 要么 <code>j</code> 在 <code>i</code> 左边一位，故其中 <code>1</code> 和 <code>2</code> 可以改成：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, i - <span class="number">1</span>); </span><br><span class="line">qSort(q, i, hi);</span><br></pre></td></tr></table></figure>
+<p>但是注意，如果 <code>cmp</code> 设置成 <code>q[lo]</code> 的话，则只能是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, j); </span><br><span class="line">qSort(q, j + <span class="number">1</span>, hi);</span><br></pre></td></tr></table></figure>
+<p>因为如果换成了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, i - <span class="number">1</span>); </span><br><span class="line">qSort(q, i, hi);</span><br></pre></td></tr></table></figure>
+<p>的话会出现死循环问题。<br>举个例子：数组<code>{1, 2}</code>排序，<code>lo = 0, hi = 1, i = -1 , j = 2, cmp = 1</code>.<br>第一轮递归，<code>i = 0, j = 0</code>.<br><code>qSort(q, 0, -1);</code>  直接return.<br><code>qSort(q, 0, 1);</code>   死循环.</p>
+<p>同理，如果 <code>cmp</code> 设置成 <code>q[hi]</code> 的话，使用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, j); </span><br><span class="line">qSort(q, j + <span class="number">1</span>, hi);</span><br></pre></td></tr></table></figure>
+<p>也会发生死循环.</p>
+<p>所以：<br><strong><code>cmp</code> 设置成 <code>q[lo]</code> 的话，递归调用必须是：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, j); </span><br><span class="line">qSort(q, j + <span class="number">1</span>, hi);</span><br></pre></td></tr></table></figure>
+<p><strong><code>cmp</code> 设置成 <code>q[hi]</code> 的话，递归调用必须是：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qSort(q, lo, i - <span class="number">1</span>); </span><br><span class="line">qSort(q, i, hi);</span><br></pre></td></tr></table></figure>
+<p>为了保险起见，建议将 <code>cmp</code> 设置成中间位置。</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序是将原数组递归地一分为二，在最短子数组处完成排序，在回溯过程中合并子数组，以完成整个数组的排序。<br>过程感觉很像二叉树的遍历。<br>以下是归并排序模板：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000010</span>;                                     <span class="comment">// test data amount range</span></span><br><span class="line"><span class="keyword">int</span> q[N];                                                   <span class="comment">// original array</span></span><br><span class="line"><span class="keyword">int</span> tmp[N];                                                 <span class="comment">// temporary array</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;                                   <span class="comment">// end of recursion</span></span><br><span class="line">    <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                               </span><br><span class="line">    merge_sort(q, lo, mid), merge_sort(q, mid + <span class="number">1</span>, hi);     <span class="comment">// recursively divides into two</span></span><br><span class="line">    <span class="comment">// backtrack progress</span></span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;                                 </span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;                                              <span class="comment">// index of temporary array            </span></span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid &amp;&amp; j &lt;= hi;)                             <span class="comment">// puts smaller one into tmp[]</span></span><br><span class="line">        <span class="keyword">if</span> (q[i] &lt;= q[j]) tmp[t++] = q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[t++] = q[j++]; </span><br><span class="line">    <span class="keyword">for</span> (;i &lt;= mid;) tmp[t++] = q[i++];                     <span class="comment">// puts remaining array into tmp[]</span></span><br><span class="line">    <span class="keyword">for</span> (;j &lt;= hi;) tmp[t++] = q[j++];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lo, j = <span class="number">0</span>; i &lt;= hi;) q[i++] = tmp[j++];    <span class="comment">// overrides original array</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为一分为二的过程一共持续 <strong><em>log(N)</em></strong> 次（以2为底）,把数放入 <code>tmp[]</code> 再覆盖原数组需要 <strong><em>O(N)</em></strong>。<br>故时间复杂度为 <strong><em>ONlog(N)</em></strong> </p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="整数二分查找"><a href="#整数二分查找" class="headerlink" title="整数二分查找"></a>整数二分查找</h3><p>一般涉及到单调性的问题，查找某个边界，可以使用二分查找。但是二分查找不仅仅只适用于单调性问题。<br>即：<br>单调性问题查找一定可以用二分，非单调性问题也有可能可以用二分。<br>二分查找的本质目的是：<br><strong>在一个整数区间上，前一段满足某种性质A，后一段满足另一性质B。使用二分查找找到满足性质A的边界点edgeA或者满足性质B的边界点edgeB。</strong><br><code>____________Satisfied A______________| |___________Satisfied B________________</code><br>整个查找过程围绕 <strong>性质</strong> 展开，不断更新<code>mid</code>值，从两个方向逼近边界。但是请注意，这个 <strong>性质</strong> 并非必然和目标值有关。找目标值，在考虑性质的时候，不一定从目标值入手（这一点非常重要，请仔细体会）。</p>
+<p><strong>找A的边界，mid从A向右更新</strong><br>当<code>mid</code>满足条件A时，A的边界至少可以取到<code>mid</code>；<br><strong>找B的边界，mid从B向左更新</strong><br>当<code>mid</code>满足条件B时，B的边界最多可以取到<code>mid</code>；</p>
+<p>整数二分查找模板：<br><strong>查找A边界</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// finds edge A</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi) &gt;&gt; <span class="number">1</span>;                      <span class="comment">//  1</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_B(mid)) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查找B边界</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// finds edge B</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_A</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_satisfied_B</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">/*---*/</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (;lo &lt; hi;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;                   <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span> (is_satisfied_A(mid)) lo = mid;</span><br><span class="line">        <span class="keyword">else</span> hi =  mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意：2处为了防止边界问题，需要在计算mid的时候加一。</strong></p>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2021/02/07/AcWing-789-数的范围/" target="_blank" rel="noopener">数的范围</a><br><a href="http://eetoa.github.io/2021/02/26/LeetCode-153-寻找旋转排序数组中的最小值/" target="_blank" rel="noopener">寻找旋转排序数组中的最小值</a></p>
+</blockquote>
+<h3 id="浮点数二分查找"><a href="#浮点数二分查找" class="headerlink" title="浮点数二分查找"></a>浮点数二分查找</h3><h4 id="根据精度迭代"><a href="#根据精度迭代" class="headerlink" title="根据精度迭代"></a>根据精度迭代</h4><p>因为是找浮点数，所以可以不用考虑边界问题。<br><strong>例子：</strong><br>求数字x的开方。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">double</span> lo = <span class="number">0</span>, hi = <span class="built_in">max</span>(<span class="number">1</span>, x);                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (;hi - lo &gt; <span class="number">1e-8</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, lo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意1处当<code>x&lt;1</code>时，右边界是1。因为小于1的数，开方比自己大。<code>x&gt;1</code>时，右边界当然可以取到<code>x</code>。<br>题目中一般会给出<code>x</code>的取值范围，如 <code>-10000 &lt; x &lt; 10000</code>，那么<code>lo</code>和<code>hi</code>可以分别初始化为<code>-10000</code>和<code>10000</code>。<br>根据经验，如果题目要求保留<code>n</code>位有效数字，那么一般<code>lo</code>和<code>hi</code>之间判定的精度为<code>1e-(n + 2)</code>。</p>
+<h4 id="根据循环次数迭代"><a href="#根据循环次数迭代" class="headerlink" title="根据循环次数迭代"></a>根据循环次数迭代</h4><p>这是浮点数二分的另一种写法，直接循环个<code>100</code>次。<br>如上题：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="keyword">double</span> lo = <span class="number">0</span>, hi = <span class="built_in">max</span>(<span class="number">1</span>, x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x) hi = mid;</span><br><span class="line">        <span class="keyword">else</span> lo = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, lo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这相当于把lo到hi范围缩小2的100次方倍。（100次2分）<br>因为2的100次幂足够大，所以结果是正确的。</p>
+<h2 id="高精度四则运算"><a href="#高精度四则运算" class="headerlink" title="高精度四则运算"></a>高精度四则运算</h2><h3 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h3><p>两个 <strong>超长位数正整数</strong> 相加，一般是以 <strong>字符串</strong> 形式读取整数，再把整数放入 <strong>数组</strong> 中，进行模拟加法运算。<br><strong>模板1：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C = A + B, A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">add</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span>                             <span class="comment">//1</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>() || i &lt; B.<span class="built_in">size</span>(); i++)                      <span class="comment">//2</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt;= A.<span class="built_in">size</span>()) t += A[i];</span><br><span class="line">        <span class="keyword">if</span> (i &lt;= B.<span class="built_in">size</span>()) t += B[i];</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(<span class="number">1</span>);                                                  <span class="comment">//3</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A, B;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- ) A.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = b.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) B.push_back(b[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">auto</span> C = add(A, B);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = C.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --) <span class="built_in">cout</span> &lt;&lt; C[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注释：</p>
+<blockquote>
+<ol>
+<li>以数组引用传入参数，可以避免没必要的数组拷贝。</li>
+<li><code>A</code>或<code>B</code>至少有一个没有遍历完，都需要继续计算。</li>
+<li>注意结束之后进位有可能非0.</li>
+</ol>
+</blockquote>
+<p>该模板可以改写成总是模拟以一个更长的数组加长度较小的数组：<br><strong>模板2：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C = A + B, A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">add</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.<span class="built_in">size</span>() &lt; B.<span class="built_in">size</span>()) <span class="keyword">return</span> add(B, A);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        t += A[i];</span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.<span class="built_in">size</span>()) t += B[i];</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(t);</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的话，就可以只考虑遍历较长数组，只进行一次长度判断。</p>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/08/AcWing-791-高精度加法/" target="_blank" rel="noopener">高精度加法</a></p>
+</blockquote>
+<h3 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h3><p>两个超长正整数相减。因为结果可能为负数，负数的时候输出需要在最前面补<code>&#39;-&#39;</code>。<br><code>A B</code>相减最核心的部分，<code>A</code>总是大于等于<code>B</code>的，这样可以只遍历<code>A</code>，对对应的<code>B</code>有无数字进行判断。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C = A - B， A &gt;= 0, B &gt;= 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// return if A &gt;= B</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.<span class="built_in">size</span>() != B.<span class="built_in">size</span>()) <span class="keyword">return</span> A.<span class="built_in">size</span>() &gt; B.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i] != B[i]) <span class="keyword">return</span> A[i] &gt; B[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A - B while A &gt;= B</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">sub</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, t = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] - t;</span><br><span class="line">        <span class="comment">// consider if should sub slot of B</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.<span class="built_in">size</span>()) t -= B[i];</span><br><span class="line">        <span class="comment">// t might be a negative</span></span><br><span class="line">        <span class="comment">// t will be the right slot whatever its negative or positive</span></span><br><span class="line">        <span class="comment">// t + 10 means it will borrow 10 from next slot</span></span><br><span class="line">        C.push_back((t + <span class="number">10</span>) % <span class="number">10</span>);                                          <span class="comment">//1</span></span><br><span class="line">        <span class="comment">// update t</span></span><br><span class="line">        <span class="keyword">if</span> (t &lt; <span class="number">0</span>) t = <span class="number">1</span>;                    </span><br><span class="line">        <span class="keyword">else</span> t = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// there might be some '0' in back of C</span></span><br><span class="line">    <span class="comment">// dont't have to remove while C.size() == 1</span></span><br><span class="line">    <span class="keyword">for</span> (; C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>; ) C.pop_back();                    <span class="comment">//2</span></span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; A, B, C;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = a.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) A.push_back(a[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = b.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) B.push_back(b[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">if</span> (cmp(A, B)) C = sub(A, B);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        C = sub(B, A);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = C.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- ) <span class="built_in">printf</span>(<span class="string">"%d"</span>, C[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>此处<code>t</code>有可能被减成了负数（最低可以取到-10，最高可取到9），此时向后一位借10，于是最低取到0；同时由于借10的时候并没有判断正负，所以+10可能会导致结果高于10。也就是说，此时运算过程放入<code>C</code>中的数可能的取值范围是：<code>(0, 19)</code>。这样我对10取模，即可得到正确的放入<code>C</code>中的数了。<br>注意，在把“优化”后的（指借位模10）运算结果放入<code>C</code>时，并没有把结果赋值给<code>t</code>，因为后面需要判断<code>t</code>的正负，以更新下一轮的<code>t</code>取值。如果赋值了，则<code>t</code>必然为正，无法更新进位信息。</li>
+<li>注意当A与B前几位部分相等时，C后面会存在’0’，如<code>123 - 120</code>结果类似<code>003</code>。但在结果仅为1位时，不用考虑。</li>
+</ol>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/08/AcWing-792-高精度减法/" target="_blank" rel="noopener">高精度减法</a></p>
+</blockquote>
+<h3 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h3><p>一个超长正整数乘一个普通int正整数。模拟相乘过程把普通int整数看成一个整体。<br><strong>模板1：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C = A * b, A &gt;= 0, b &gt; 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>() || t; i ++ )                       <span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; A.<span class="built_in">size</span>()) t += A[i] * b;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);                                        <span class="comment">//2</span></span><br><span class="line">        t /= <span class="number">10</span>;                                                    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>) C.pop_back();</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>注意1处条件，当A没有遍历完的时候，需要一直和b相乘，更新进位t。当乘完的时候，依然进入处理进位t，只不过此时不需要和b相乘，而是直接模10获得最高位数。</li>
+<li>放入slot中的数一直都是对10取模。</li>
+<li>当小整数为0，而大数不止一位时，结果会产生多个0.此时需要消除多个0.</li>
+</ol>
+</blockquote>
+<p>当然也可以在遍历完A后再处理最终进位问题，即：<br><strong>模板2：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i ++ ) &#123;</span><br><span class="line">        t = A[i] * b + t;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t) C.push_back(t);</span><br><span class="line">    <span class="keyword">for</span> (;C.<span class="built_in">size</span>() &gt;  &amp;&amp; C.back() == <span class="number">0</span>;) C.pop_back();</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 在处理最终进位<code>t</code>的时候，模板1是对<code>t</code>再进入循环处理，这时候如果<code>t &lt; 10</code>的话，只循环一次，但是如果<code>t &gt;= 10</code>的话，需要反复进入循环，依次取模，除10.</p>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/09/AcWing-793-高精度乘法/" target="_blank" rel="noopener">高精度乘法</a></p>
+</blockquote>
+<h3 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h3><p>一个超长正整数除以一个短正整数。<br>和高精度加减乘不一样的是，高精度除法是从大整数高位开始的。在复习了小学二年级下册的相关内容后，我觉得算法基本上就是模拟除法竖式。<br>高精度加计算过程会产生进位，减计算过程会产生借位，乘计算过程会产生进位，而高精度除法计算过程会产生余数。<br>余数作为下一位的高位需要乘10进行新一轮的除法运算。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A / b = C ... r, A &gt;= 0, b &gt; 0</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">div</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b, <span class="keyword">int</span> &amp;r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    r = <span class="number">0</span>;                                                      <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = A.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -- )</span><br><span class="line">    &#123;</span><br><span class="line">        r = r * <span class="number">10</span> + A[i];                                      <span class="comment">// 2</span></span><br><span class="line">        C.push_back(r / b);                                     <span class="comment">// 3</span></span><br><span class="line">        r %= b;                                                 <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(C.<span class="built_in">begin</span>(), C.<span class="built_in">end</span>());                                <span class="comment">// 5</span></span><br><span class="line">    <span class="keyword">while</span> (C.<span class="built_in">size</span>() &gt; <span class="number">1</span> &amp;&amp; C.back() == <span class="number">0</span>) C.pop_back();         </span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>初始化余数<code>r</code>aka <code>remain</code>。</li>
+<li>对于被除数<code>A</code>的每一位，需要将上一位除法运算产生的余数作为当前数的高位乘10加上当前数。</li>
+<li>用当前数作为被除数和除数<code>b</code>进行除法运算，放到结果槽中。</li>
+<li>将余数保留给下一位。</li>
+<li>首位可能产生0，所以我们将结果数组反转再去除结尾0.</li>
+</ol>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/09/AcWing-794-高精度除法/" target="_blank" rel="noopener">高精度除法</a></p>
+</blockquote>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><p>对于一个给定数组<code>alls[N]</code>，其前缀和数组<code>s[N]</code>对应着对于<code>alls[N]</code>的每一个元素，其前缀所有元素（包括这一位）之和。<br>前缀和数组的应用一般伴随着一些查询操作，一个查询操作就是给定一个区间范围，让你求该范围内数的和。<br>另外，注意构造前缀和数组是从下标1开始构造，整体数目不变。相当于是数组下标向右偏移一位。这是因为构造前缀和数组的每一位需要依赖其前一位。当构造第1位时，需要依赖第0位。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S[i] = a[<span class="number">1</span>] + a[<span class="number">2</span>] + ... a[i]</span><br><span class="line">a[l] + ... + a[r] = S[r] - S[l - <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/10/AcWing-795-前缀和/" target="_blank" rel="noopener">前缀和</a></p>
+</blockquote>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>双指针的核心思想，是在暴力求解的基础上，通过已知的某种性质，用两个指针进行优化。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; check(i, j)) j ++ ;</span><br><span class="line">    <span class="comment">// 具体问题的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常见问题分类：</p>
+<blockquote>
+<ul>
+<li>对于一个序列，用两个指针维护一段区间</li>
+<li>对于两个序列，维护某种次序，比如归并排序中合并两个有序序列的操作</li>
+</ul>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/04/AcWing-799-最长连续不重复子序列/" target="_blank" rel="noopener">最长连续不重复子序列</a></p>
+</blockquote>
+<h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>当有一堆数，总量不多，比如说1e5，不算多，但是每个数可能取到很大值或很小值，比如说最大取到1e10。那么在需要把数值当成数组下标进行操作的时候，比如说计数数组，无法开出如此大空间的数组，这时候就需要离散化操作。<br>离散化：把无限空间中有限的个体映射到有限的空间中去，以此提高算法的时空效率。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; alls; <span class="comment">// 存储所有待离散化的值</span></span><br><span class="line">sort(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()); <span class="comment">// 将所有值排序</span></span><br><span class="line">alls.erase(unique(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>());   <span class="comment">// 去掉重复元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 二分求出x对应的离散化的值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> <span class="comment">// 找到第一个大于等于x的位置</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r + <span class="number">1</span>; <span class="comment">// 映射到1, 2, ...n</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>离散化的映射，主要是将待离散化的数放到容器中，进行排序、去重，再用二分查找找到对应下标，将下标放到一个数组中。</li>
+<li>排序：一般是通过二分查找的方式进行下标映射，所以需要对原数据排序。</li>
+<li>去重：因为要将待离散化数映射成各自的下标，所以需要对其去重复。</li>
+<li>注意离散化操作的重要前提是，原数据本身的值并不重要，我们不感兴趣，重要的是其位置。</li>
+</ul>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/06/AcWing-802-区间和" target="_blank" rel="noopener">区间和</a></p>
+</blockquote>
+<h2 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h2><p>现有若干区间，相互之间可能相交。将所有相交的区间合并为一个区间，返回合并后的区间。<br><strong>模板：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将所有存在交集的区间合并</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;PII&gt; res;</span><br><span class="line"></span><br><span class="line">    sort(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());                             <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> st = <span class="number">-2e9</span>, ed = <span class="number">-2e9</span>;                                   <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> seg : segs)</span><br><span class="line">        <span class="keyword">if</span> (ed &lt; seg.first)                                     <span class="comment">// 3</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);            <span class="comment">// 4 </span></span><br><span class="line">            st = seg.first, ed = seg.second;                    <span class="comment">// 5</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> ed = <span class="built_in">max</span>(ed, seg.second);                          <span class="comment">// 6</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.push_back(&#123;st, ed&#125;);                    <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>segs</code>存放的是所有区间的左右端点构成的<code>pair</code>。<br>算法思想是维护一个前置区间，维护一个当前区间。比较两个区间是否相交，不相交就认为前置区间是一个孤立区间。不管是否相交，更新前置区间的左右端点，在更新当前区间左右端点。当最后一个当前区间与其前置区间比较完毕后，不管二者是否相交，最后一次更新前置区间将不会有新的当前区间。此时新的前置区间将必然是一个孤立区间。</p>
+<blockquote>
+<ul>
+<li><ol>
+<li>区间按照左端点排序。<code>sort()</code>用于排序<code>pair</code>类时，默认按照左端点升序排序。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>初始化区间左右端点，后面会更新它们。这里是初始化为无穷小（相对来说），初始化值在不同题目可以按需调整。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>比较两个区间是否相交。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>因为初始化的前置区间是无穷小的一个点，所以当前区间是第一个区间时，必然成立。但我们不能将无穷小点放入<code>res</code>中。只有在前置区间从第一个区间开始时，满足3的条件才可以放入<code>res</code>中。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>不相交情况下更新前置区间左右端点。</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>相交情况下更新前置区间左右端点。（此时只需更新右端点）</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>处理最后一个前置区间，此时前置区间必然是孤立区间当且仅当区间集合<code>segs</code>非空时（或者说当且仅当前置区间非初始化值时）</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<p><strong>题目链接：</strong></p>
+<blockquote>
+<p><a href="https://eetoa.github.io/2020/11/06/AcWing-803-区间合并" target="_blank" rel="noopener">区间合并</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>etoa
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://csyslabs.github.io/2020/10/24/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" title="基础算法模板">https://csyslabs.github.io/2020/10/24/基础算法模板/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
+              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="fa fa-tag"></i> 双指针</a>
+              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag"><i class="fa fa-tag"></i> 位运算</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" rel="tag"><i class="fa fa-tag"></i> 算法模板</a>
+              <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 快速排序</a>
+              <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 归并排序</a>
+              <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag"><i class="fa fa-tag"></i> 二分查找</a>
+              <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" rel="tag"><i class="fa fa-tag"></i> 高精度四则运算</a>
+              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag"><i class="fa fa-tag"></i> 前缀和</a>
+              <a href="/tags/%E5%B7%AE%E5%88%86/" rel="tag"><i class="fa fa-tag"></i> 差分</a>
+              <a href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/" rel="tag"><i class="fa fa-tag"></i> 离散化</a>
+              <a href="/tags/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/" rel="tag"><i class="fa fa-tag"></i> 区间合并</a>
+              <a href="/tags/AcWing/" rel="tag"><i class="fa fa-tag"></i> AcWing</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/25/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%A6%99%E5%A6%99%E5%B1%8B/" rel="prev" title="位运算妙妙屋">
+      <i class="fa fa-chevron-left"></i> 位运算妙妙屋
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/19/%E4%BD%BF%E7%94%A8youtube-dl%E4%B8%8B%E8%BD%BDYouTube%E9%A2%91%E9%81%93%E6%89%80%E6%9C%89%E8%A7%86%E9%A2%91/" rel="next" title="使用youtube-dl下载YouTube频道所有视频">
+      使用youtube-dl下载YouTube频道所有视频 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-text">归并排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-text">二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数二分查找"><span class="nav-text">整数二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数二分查找"><span class="nav-text">浮点数二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据精度迭代"><span class="nav-text">根据精度迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据循环次数迭代"><span class="nav-text">根据循环次数迭代</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度四则运算"><span class="nav-text">高精度四则运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度加法"><span class="nav-text">高精度加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度减法"><span class="nav-text">高精度减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度乘法"><span class="nav-text">高精度乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高精度除法"><span class="nav-text">高精度除法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀和"><span class="nav-text">前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双指针"><span class="nav-text">双指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散化"><span class="nav-text">离散化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间合并"><span class="nav-text">区间合并</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
+    <img class="site-author-image" itemprop="image" alt="etoa"
+      src="/images/avatar.jpg">
+  </a>
+  <p class="site-author-name" itemprop="name">etoa</p>
+  <div class="site-description" itemprop="description">我太菜被关起来了</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    ¯\_(ツ)_/¯
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/csyslabs" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;csyslabs" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:i@etoa.io" title="E-Mail → mailto:i@etoa.io" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-terminal"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">etoa</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
