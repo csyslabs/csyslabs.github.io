@@ -9,7 +9,7 @@ tags:
     - 字符串
 categories:
     - [指尖飞舞, 算法, LeetCode]
-    - [指尖飞舞, 算法, 竞赛, LeetCode双周赛, 55]
+    - [指尖飞舞, 算法, 竞赛, LeetCode周赛]
 ---
 __摘要：__
 简单字符串替换。

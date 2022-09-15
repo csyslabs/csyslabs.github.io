@@ -10,7 +10,7 @@ tags:
     - 状态机
 categories:
     - [指尖飞舞, 算法, LeetCode]
-    - [指尖飞舞, 算法, 竞赛, LeetCode双周赛, 55]
+    - [指尖飞舞, 算法, 竞赛, LeetCode周赛]
 ---
 __摘要：__
 经典的状态机类型的dp问题。

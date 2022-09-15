@@ -12,7 +12,7 @@ tags:
     - 洪水灌溉算法
 categories:
     - [指尖飞舞, 算法, LeetCode]
-    - [指尖飞舞, 算法, 竞赛, LeetCode周赛, 246]
+    - [指尖飞舞, 算法, 竞赛, LeetCode周赛]
 
 ---
 __摘要：__
