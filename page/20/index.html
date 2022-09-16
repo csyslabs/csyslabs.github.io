@@ -22,9 +22,9 @@
 
   <meta name="description" content="我太菜被关起来了">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dirac Sea">
+<meta property="og:title" content="SysLabs™">
 <meta property="og:url" content="https://csyslabs.github.io/page/20/index.html">
-<meta property="og:site_name" content="Dirac Sea">
+<meta property="og:site_name" content="SysLabs™">
 <meta property="og:description" content="我太菜被关起来了">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="etoa">
@@ -57,7 +57,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>Dirac Sea - where the water tastes like wine</title>
+  <title>SysLabs™ - System Laboratories</title>
   
     <script>
       function sendPageView() {
@@ -104,7 +104,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Dirac Sea" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="SysLabs™" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -125,10 +125,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Dirac Sea</h1>
+      <h1 class="site-title">SysLabs™</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">where the water tastes like wine</p>
+      <p class="site-subtitle" itemprop="description">System Laboratories</p>
   </div>
 
   <div class="site-nav-right">
@@ -235,6 +235,435 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SysLabs™">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/22/LeetCode-4-%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F%EF%BC%88Minimum%20Increment%20to%20Make%20Array%20Unique%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #4 使数组唯一的最小增量（Minimum Increment to Make Array Unique）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-22 17:44:42" itemprop="dateCreated datePublished" datetime="2020-03-22T17:44:42+08:00">2020-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。</p>
+<p>返回使 A 中的每个值都是唯一的最少操作次数。</p>
+</blockquote>
+<h3 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h3><blockquote>
+<p>输入：[1,2,2]<br>输出：1<br>解释：经过一次 move 操作，数组将变为 [1, 2, 3]。</p>
+</blockquote>
+<h3 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h3><blockquote>
+<p>输入：[3,2,1,2,1,7]<br>输出：6<br>解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。<br>可以看出 5 次或 5 次以下的 move 操作是不能让数组的每个值唯一的。</p>
+</blockquote>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><blockquote>
+<ul>
+<li>0 &lt;= A.length &lt;= 40000</li>
+<li>0 &lt;= A[i] &lt; 40000</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="先排序再遍历"><a href="#先排序再遍历" class="headerlink" title="先排序再遍历"></a>先排序再遍历</h3><p>首先将数组进行排序，然后从左到右遍历数组：</p>
+<ul>
+<li>如果当前元素大于上一个元素，保持不变；</li>
+<li>如果当前元素小于等于上一个元素，就需要增加当前元素，直到大于上一个元素。<br>例如输入 <code>[3, 2, 1, 2, 1, 7]</code>，排序后为<code>[1, 1, 2, 2, 3, 7]</code>。遍历数组的过程如下图所示：<br>![pic0x0](2020-03-22-LeetCode-4-使数组唯一的最小增量（Minimum Increment to Make Array Unique）/使数组唯一的最小增量 先排序再遍历.gif)<br>写成代码，只需要用一个变量保存当前的最大值即可。题解代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//排序再遍历计数，最基础的计算方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//特殊情况</span></span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (A.length &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(A);</span><br><span class="line">        <span class="comment">//下个数不比当前数大，则计算下个数需要加的次数res，同时</span></span><br><span class="line">        <span class="comment">//由于每次move操作+1，故下个数+res刚好大于当前数</span></span><br><span class="line">        <span class="comment">//注意此时数组排序会被打乱，不能认为判断条件仅是相等情况.</span></span><br><span class="line">        <span class="comment">//另外，注意边界，最多判定到lengh - 2位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i+<span class="number">1</span>] &lt;= A[i])&#123;</span><br><span class="line">                res += (A[i] - A[i+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">                A[i+<span class="number">1</span>] += (A[i] - A[i+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="构建计数数组"><a href="#构建计数数组" class="headerlink" title="构建计数数组"></a>构建计数数组</h3><p>上面方法中，排序需要 O(n \log n)O(nlogn) 的时间，比较昂贵。我们尝试不进行排序的方法。</p>
+<p>例如输入 <code>[3, 2, 1, 2, 1, 7]</code>，计数之后有两个 1 和两个 2。我们先看最小的数，两个 1 重复了，需要有一个增加到 2，这样 2 的数量变成了三个。在三个 2 中，又有两个需要增加到 3，然后又出现了两个 3…… 以此类推，可以计算出需要增加的次数。</p>
+<p>我们可以用 map（如 C++ 的 <code>unordered_map</code>，Java 的 <code>HashMap</code>）来做计数。不过既然题目中说明了整数的范围在 0 到 40000 之间，我们不妨直接用一个大小为 40000 的数组做计数。</p>
+<p>需要注意的是，虽然整数的范围是 0 到 40000，但是由于整数还会因为增加而变大，超出 40000 的范围。例如极端的情况：所有数都是 39999。所以需要对整数中最大的数单独处理。代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</span><br><span class="line">    <span class="comment">//计数数组（有序）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (A.length &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//核心思想，是record数组的构建</span></span><br><span class="line">        <span class="comment">//record数组是有序数组，index表示A数组中的值，value表示A数组中数值出现的次数</span></span><br><span class="line">        <span class="keyword">int</span>[] record = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">40000</span>];</span><br><span class="line">        <span class="keyword">int</span> max= A[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a : A) &#123;</span><br><span class="line">            record[a]++;</span><br><span class="line">            max = Math.max(max, a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//A数组中最大数max一定在record数组最后面，等下要加以特殊处理</span></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (record[i] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                res += (record[i] -<span class="number">1</span>);</span><br><span class="line">                <span class="comment">//record是动态的</span></span><br><span class="line">                <span class="comment">//如果当前位置数值&gt;1，说明下个位置数值会增加当前位置数值-1</span></span><br><span class="line">                record[i+<span class="number">1</span>] += (record[i] -<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//A数组最大值max在record数组中特殊处理</span></span><br><span class="line">        <span class="comment">//max位于record右边界的情况</span></span><br><span class="line">        <span class="keyword">if</span> (record[max] &gt; <span class="number">1</span>) &#123; <span class="comment">//否则不用担心越界</span></span><br><span class="line">            <span class="keyword">int</span> plus = record[max] - <span class="number">1</span>; <span class="comment">//首项（尾项1）</span></span><br><span class="line">            res += (plus + <span class="number">1</span>) * plus / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="线性探测法O-N-（含路径压缩）"><a href="#线性探测法O-N-（含路径压缩）" class="headerlink" title="线性探测法O(N) （含路径压缩）"></a>线性探测法O(N) （含路径压缩）</h3><h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><h5 id="题目链接https-leetcode-cn-com-problems-minimum-increment-to-make-array-unique"><a href="#题目链接https-leetcode-cn-com-problems-minimum-increment-to-make-array-unique" class="headerlink" title="题目链接https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/"></a>题目链接<a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/</a></h5><h5 id="参考题解"><a href="#参考题解" class="headerlink" title="参考题解"></a>参考题解</h5><blockquote>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/shi-shu-zu-wei-yi-de-zui-xiao-zeng-liang-by-leet-2/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/shi-shu-zu-wei-yi-de-zui-xiao-zeng-liang-by-leet-2/</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/tan-xin-suan-fa-bing-cha-ji-java-by-liweiwei1419/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/tan-xin-suan-fa-bing-cha-ji-java-by-liweiwei1419/</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SysLabs™">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/21/LeetCode-3-%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98%EF%BC%88Water-and-Jug-Problem%EF%BC%89/" class="post-title-link" itemprop="url">LeetCode #3 水壶问题（Water and Jug Problem）</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-21 13:21:47" itemprop="dateCreated datePublished" datetime="2020-03-21T13:21:47+08:00">2020-03-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>有两个容量分别为 x升 和 y升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 z升 的水？</p>
+<p>如果可以，最后请用以上水壶中的一或两个来盛放取得的 z升 水。</p>
+<p>你允许：</p>
+<ul>
+<li>装满任意一个水壶</li>
+<li>清空任意一个水壶</li>
+<li>从一个水壶向另外一个水壶倒水，直到装满或者倒空</li>
+</ul>
+</blockquote>
+<h3 id="示例-1-From-the-famous-“Die-Hard”-example"><a href="#示例-1-From-the-famous-“Die-Hard”-example" class="headerlink" title="示例 1: (From the famous “Die Hard” example)"></a>示例 1: (From the famous “Die Hard” example)</h3><blockquote>
+<p>输入: x = 3, y = 5, z = 4<br>输出: True</p>
+</blockquote>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><blockquote>
+<p>输入: x = 2, y = 6, z = 5<br>输出: False</p>
+</blockquote>
+<hr>
+<h3 id="贝祖定理方法"><a href="#贝祖定理方法" class="headerlink" title="贝祖定理方法"></a>贝祖定理方法</h3><p>关键在于划分成功条件。<br>题干默认z &gt;= 0，首先当z = 0 时，x和y取任意值，一定成功。<br>当z &gt; 0时：</p>
+<ul>
+<li>当x + y &lt; z时，即使两盏杯子装满水，依然不可能成功。</li>
+<li>当x + y = z时，x, y, z取任意值，一定成功。</li>
+<li>当x + y &gt; z时，不一定。问题的核心在此，用贝祖定理判定成功条件。<br>由贝祖定理可知，对任何整数x、y和它们的最大公约数gcd(x, y)，对于它们的的任意整数倍数a,b,c，都有<br>ax + by = c·gcd(x, y)恒成立。<br>由题干给出的几种操作，要完成目标，一定有ax + by = z。<br>和贝祖定理完美锲合，那么，只要z % (gcd(x, y)) = 0为真，则一定成功。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//贝祖定理</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">canMeasureWater</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//默认z &gt;= 0</span></span><br><span class="line">        <span class="keyword">if</span> (z == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">//z&gt;0</span></span><br><span class="line">        <span class="keyword">if</span> (x +y &lt;z)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (x + y == z)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="comment">//only x!=0,y!=0; x!=0,y==0; x==0,y!=0</span></span><br><span class="line">            <span class="keyword">return</span> z % gcd(x, y) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (y != <span class="number">0</span>) &#123; <span class="comment">//辗转相除法</span></span><br><span class="line">            <span class="keyword">int</span> temp = y;</span><br><span class="line">            y = x % y;</span><br><span class="line">            x = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3></li>
+</ul>
+<h5 id="题目链接https-leetcode-cn-com-problems-water-and-jug-problem"><a href="#题目链接https-leetcode-cn-com-problems-water-and-jug-problem" class="headerlink" title="题目链接https://leetcode-cn.com/problems/water-and-jug-problem/"></a>题目链接<a href="https://leetcode-cn.com/problems/water-and-jug-problem/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/water-and-jug-problem/</a></h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SysLabs™">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">剑指Offer 40. 最小的k个数</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-20 23:44:21" itemprop="dateCreated datePublished" datetime="2020-03-20T23:44:21+08:00">2020-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>输入整数数组 <code>arr</code> ，找出其中最小的 <code>k</code> 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。</p>
+<p><strong>示例1：</strong></p>
+<blockquote>
+<p>输入：arr = [3,2,1], k = 2<br>输出：[1,2] 或者 [2,1]</p>
+</blockquote>
+<p><strong>示例2：</strong></p>
+<blockquote>
+<p>输入：arr = [0,1,2,1], k = 1<br>输出：[0]</p>
+</blockquote>
+<p><strong>限制：</strong></p>
+<blockquote>
+<p>$0 &lt;= k &lt;= arr.length &lt;= 10000$<br>$0 &lt;= arr[i] &lt;= 10000$</p>
+</blockquote>
+<hr>
+<h3 id="快速查找方法-分治法，快速排序思想"><a href="#快速查找方法-分治法，快速排序思想" class="headerlink" title="快速查找方法(分治法，快速排序思想)"></a>快速查找方法(分治法，快速排序思想)</h3><p><img src="/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/1.png" alt="0x0"></p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopK</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getTopK(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt;= arr.length)</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length -<span class="number">1</span>;</span><br><span class="line">        partitionArray(arr, low, high, k);</span><br><span class="line">        <span class="comment">//copy array</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> copy = <span class="number">0</span>; copy &lt; k; copy++)&#123;</span><br><span class="line">            result[copy] = arr[copy];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">partitionArray</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = partition(arr, low, high);</span><br><span class="line">        <span class="keyword">if</span> (k == m) <span class="comment">//as we expect，反复递归，k会在m左右两侧摇摆，直到恰好等于m</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; m)</span><br><span class="line">            partitionArray(arr, low, m -<span class="number">1</span>, k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            partitionArray(arr, m + <span class="number">1</span>, high, k);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = low;</span><br><span class="line">        <span class="keyword">int</span> j = high + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = arr[low];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (arr[++i] &lt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == high) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (arr[--j] &gt; v) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == low) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) &#123; <span class="comment">//碰头了</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, low, j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[]arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><p>维护一个大顶堆，堆中始终保持当前状态最小k个数。</p>
+<p><img src="/2020/03/20/%E5%89%91%E6%8C%87Offer-40-%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0/2.gif" alt="0x1"></p>
+<div class="tabs" id="g_tab1"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab1-1">C++</a></li><li class="tab"><a href="#g_tab1-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab1-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; mxheap;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">getLeastNumbers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            mxheap.push(arr[i]);</span><br><span class="line">            <span class="keyword">for</span> (; mxheap.<span class="built_in">size</span>() &gt; k; mxheap.pop());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span> (; !mxheap.empty(); mxheap.pop())</span><br><span class="line">            res.push_back(mxheap.top());</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab1-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span>[] getLeastNumbers(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 使用一个最大堆（大顶堆）</span></span><br><span class="line">        <span class="comment">// Java 的 PriorityQueue 默认是小顶堆，添加 comparator 参数使其变成最大堆,or we can do it like this:</span></span><br><span class="line">        <span class="comment">// Collections.reverseOrder()</span></span><br><span class="line">        <span class="comment">//PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, (i1, i2) -&gt; Integer.compare(i2, i1));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : arr) &#123;</span><br><span class="line">            <span class="comment">// 当前数字小于堆顶元素才会入堆</span></span><br><span class="line">            <span class="keyword">if</span> (heap.isEmpty() || heap.size() &lt; k || e &lt; heap.peek()) &#123; <span class="comment">//Queue.peek()返回堆顶最大元素（不删除），空堆返回null</span></span><br><span class="line">                heap.offer(e); <span class="comment">//Queue.offer()插入元素e，返回true</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (heap.size() &gt; k) &#123;</span><br><span class="line">                heap.poll(); <span class="comment">// Queue.poll()推出堆顶最大元素作为返回值，空堆返回null</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将堆中的元素存入数组</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[heap.size()];</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> e : heap) &#123; <span class="comment">//遍历堆</span></span><br><span class="line">            res[j++] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><p>待更新。</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/" target="_blank" rel="noopener">剑指Offer 40. 最小的k个数</a></p>
+          </div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="etoa">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SysLabs™">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/19/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="post-title-link" itemprop="url">LeetCode 1. 两数之和</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-19 17:02:38" itemprop="dateCreated datePublished" datetime="2020-03-19T17:02:38+08:00">2020-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>给定一个整数数组 <code>nums</code> 和一个目标值 <code>target</code> ，请你在该数组中找出和为目标值的那 <strong>两个</strong> 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。而且，你不能重复利用这个数组中同样的元素。</p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</p>
+</blockquote>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>key: <code>target - nums[v]</code><br>value: <code>v</code><br>每次迭代，判断 <code>nums[v]</code> 在不在hashmap中。<br>如果在，则 <code>nums[v]</code> 一定是之前 <code>target - nums[index_before]</code> 的值。此时返回 <code>{index_before, v}</code> ；<br>如果不在，则把key: <code>target - nums[v]</code> 和value: <code>v</code> 放到hashmap中。</p>
+<div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; heap;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> w = target - nums[i];</span><br><span class="line">            <span class="keyword">if</span> (heap.count(nums[i])) <span class="keyword">return</span> &#123;heap[nums[i]], i&#125;;</span><br><span class="line">            heap[w] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *Java HashMap method</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nums.length; v++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.get(nums[v]) != <span class="keyword">null</span>) &#123; <span class="comment">//found value what is index v</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;hashMap.get(nums[v]), v&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(target - nums[v], v); <span class="comment">//found nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">LeetCode 1. 两数之和</a></p>
+          </div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://csyslabs.github.io/2020/03/14/%E6%B5%85%E8%B0%88java%E7%9A%84static%E5%85%B3%E9%94%AE%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -244,7 +673,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
+      <meta itemprop="name" content="SysLabs™">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -345,7 +774,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
+      <meta itemprop="name" content="SysLabs™">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -370,7 +799,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-13 00:17:13" itemprop="dateModified" datetime="2022-09-13T00:17:13+08:00">2022-09-13</time>
+                <time title="Modified: 2022-09-16 20:07:46" itemprop="dateModified" datetime="2022-09-16T20:07:46+08:00">2022-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -378,7 +807,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/English/" itemprop="url" rel="index"><span itemprop="name">English</span></a>
+                  <a href="/categories/%E8%AA%9E%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">語言</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AA%9E%E8%A8%80/English/" itemprop="url" rel="index"><span itemprop="name">English</span></a>
                 </span>
             </span>
 
@@ -429,7 +862,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dirac Sea">
+      <meta itemprop="name" content="SysLabs™">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -565,20 +998,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">197</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-count">155</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
