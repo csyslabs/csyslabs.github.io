@@ -3,9 +3,10 @@ title: 'Trump address sparks chaos as coronavirus crisis deepens[CNN]'
 comments: true
 date: 2020-03-12 21:14:00
 tags: 
-    - English
-    - news
-categories: English
+    - 語言
+    - News
+categories: 
+    - [語言, English]
 ---
 __摘要：__
 CNN news
