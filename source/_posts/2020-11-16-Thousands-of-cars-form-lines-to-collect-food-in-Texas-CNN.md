@@ -3,9 +3,10 @@ title: 'Thousands of cars form lines to collect food in Texas [CNN]'
 comments: true
 date: 2020-11-16 12:10:54
 tags:
-    - English
+    - 語言
     - News
-categories: English
+categories: 
+    - [語言, English]
 ---
 __摘要：__
 CNN news
