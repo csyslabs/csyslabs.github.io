@@ -1,11 +1,11 @@
 ---
-title: 【AcWing算法基础】第二讲-数据结构-Trie字符串统计 AcWing 835. Trie字符串统计
+title: 【AcWing算法基础】第二讲-数据结构-Trie AcWing 835. Trie字符串统计
 comments: true
 date: 2022-09-07 10:56:22
 tags:
     - 算法
     - AcWing
-    - 前缀树
+    - 字典树
     - Trie
 categories:
     - [指尖飞舞, 算法, AcWing, 算法基础课, 第二讲数据结构]
@@ -48,6 +48,12 @@ __输出样例：__
 > 1
 > 0
 > 1
+___
+### Trie字典树
+使用二维数组构建前缀树，每一个树节点对应二维数组中唯一的行，每行长度 $26$ 对应 $26$ 字母。
+`son` 数组存放当前节点子节点所在行数。
+当一个字符串插入到前缀树中时，使用统计数组 `cnt` 记录当前跟节点对应的字符串数量。
+使用 `idx` 记录对全部节点计数，当新的结点出现时，可以知道用二维数组哪一行表示新的节点。
 
 {% tabs g_tab0 %}
 <!-- tab C++ -->
@@ -62,7 +68,7 @@ int son[N][26], cnt[N], idx;
 
 // son buffer -> stores the row of child node 
 // a d c    a d e
-static void build_tree(string &s)
+static void build_trie(string &s)
 {
     int p = 0;
     for (int i = 0, len = s.size(); i < len; ++i) {
@@ -91,7 +97,7 @@ int main()
     string t; cin >> t;
     string ops, s;
     for (; cin >> ops, cin >> s;) {
-        if (ops == "I") build_tree(s);
+        if (ops == "I") build_trie(s);
         else if (ops == "Q") cout << query(s) << endl;
     }
     return 0;
@@ -99,12 +105,6 @@ int main()
 ```
 <!-- endtab -->
 {% endtabs %}
-
-### Trie前缀树
-使用二维数组构建前缀树，每一个树节点对应二维数组中唯一的行，每行长度26对应26字母。
-`son` 数组存放当前节点子节点所在行数。
-当一个字符串插入到前缀树中时，使用统计数组 cnt 记录当前跟节点对应的字符串数量。
-使用 `idx` 记录对全部节点计数，当新的结点出现时，可以知道用二维数组哪一行表示新的节点。
 
 
 {% note primary %}
