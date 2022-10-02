@@ -4,10 +4,13 @@ comments: true
 date: 2020-03-14 00:43:07
 tags: 
     - Java
-    - static
 categories: 
-    - [指尖飞舞, Java]
+    - [指尖飞舞, Java, Java SE]
 ---
+__摘要：__
+读《Thinking In Java》的一些关于static关键字的总结。
+<!--more-->
+
 ## Why
 ### Why we have to use a `static` key word? 
 一般来说，要想引用类成员变量、使用类方法或者分配存储空间，需要创建一个对象。
