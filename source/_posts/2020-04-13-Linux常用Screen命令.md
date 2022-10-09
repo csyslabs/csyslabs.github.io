@@ -4,7 +4,6 @@ comments: true
 date: 2020-04-13 09:59:32
 tags:
     - Linux
-    - Screen
 categories:
     - [不亦乐乎, Linux]
 ---

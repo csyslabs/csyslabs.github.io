@@ -4,7 +4,8 @@ comments: true
 date: 2020-06-01 13:52:17
 tags:
     - Anaconda
-categories:
+    - Python
+categoris:
     - [不亦乐乎]
 ---
 ### 为什么要用Anaconda

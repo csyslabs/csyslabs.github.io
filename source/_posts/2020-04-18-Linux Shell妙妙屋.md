@@ -1,14 +1,14 @@
 ---
-title: 常用Shell命令
+title: Linux Shell妙妙屋
 comments: true
 date: 2020-04-18 14:11:44
 tags:
-    - Shell
     - Linux
+    - Shell
 categories:
     - [不亦乐乎, Linux]
 ---
-__查找当前目录及子目录特定文件（夹）并删除__
+### 1. 查找当前目录及子目录特定文件（夹）并删除
 `find . -name "*.zip" -type f -print -exec rm {} \;`
 + `.`即从当前目录递归查找
 + `-name '*.zip'`查找以`.zip`文件名结尾的对象
@@ -18,5 +18,5 @@ __查找当前目录及子目录特定文件（夹）并删除__
 + `rm`删除
 如果希望删除目录，可以`-type d`，其表示对象为目录。另外如果希望递归删除，可以`rm -r`。如果希望递归强制删除，可以`rm -rf`。
 
-__查找当前目录及子目录特定文件并移动到目标目录__
+### 2. 查找当前目录及子目录特定文件并移动到目标目录
 `find . -name "*.mp4" -type f -print -exec mv -t /home/AriaGo/ {} +;`

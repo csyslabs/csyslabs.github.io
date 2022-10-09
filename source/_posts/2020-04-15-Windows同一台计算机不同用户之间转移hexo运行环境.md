@@ -3,7 +3,7 @@ title: Windows同一台计算机不同用户之间转移hexo运行环境
 comments: true
 date: 2020-04-15 18:47:56
 tags:
-    - hexo
+    - HeXo
     - 博客
 categories:
     - [不亦乐乎, 博客]
