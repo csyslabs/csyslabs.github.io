@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：考察GROUP BY、多表联查、多字段 IN 查询。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-17T03:32:22.000Z">
-<meta property="article:modified_time" content="2022-09-17T03:54:13.069Z">
+<meta property="article:modified_time" content="2023-06-25T16:28:37.567Z">
 <meta property="article:author" content="etoa">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="MySQL">
@@ -265,10 +265,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-09-17 11:32:22 / Modified: 11:54:13" itemprop="dateCreated datePublished" datetime="2022-09-17T11:32:22+08:00">2022-09-17</time>
+              <time title="Created: 2022-09-17 11:32:22" itemprop="dateCreated datePublished" datetime="2022-09-17T11:32:22+08:00">2022-09-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-26 00:28:37" itemprop="dateModified" datetime="2023-06-26T00:28:37+08:00">2023-06-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -310,7 +316,7 @@
 <h3 id="GROUP-BY-IN-临时表"><a href="#GROUP-BY-IN-临时表" class="headerlink" title="GROUP BY + IN + 临时表"></a>GROUP BY + IN + 临时表</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">MySQL</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">select d.name as Department, e.name as Employee, e.salary as Salary</span><br><span class="line">from Employee as e</span><br><span class="line">left join Department as d </span><br><span class="line">on e.departmentId &#x3D; d.id</span><br><span class="line">where (e.departmentId, e.salary) in</span><br><span class="line">(</span><br><span class="line">    select departmentId, max(salary) as salary</span><br><span class="line">    from Employee </span><br><span class="line">    group by departmentId</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div></div></div>
 
 <p>先关联 <code>Employee</code> 和 <code>Department</code> 两张表组合成一张大表，再使用 <code>IN</code> 条件限定范围。<br>使用 <code>GROUP BY</code> 对 <code>Employee</code> 表按照 <code>DepartmentId</code> 分组求最大薪资划定限定范围。</p>
-<p>有趣的是多条件 <code>IN</code> 的使用。</p>
+<p>有趣的是多字段 <code>IN</code> 的使用。</p>
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://leetcode.cn/problems/department-highest-salary/" target="_blank" rel="noopener">LeetCode 184. 部门工资最高的员工</a></p>
           </div>
@@ -434,20 +440,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">201</span>
+          <span class="site-state-item-count">195</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">158</span>
+        <span class="site-state-item-count">138</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -489,7 +495,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fas fa-terminal"></i>
   </span>
