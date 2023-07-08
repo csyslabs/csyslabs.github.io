@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>SysLabs™</title>
+  <title>VIRTUAL™ Labs</title>
   
-  <subtitle>System Laboratories</subtitle>
+  <subtitle>Create NtContainer for Virtual</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ntifs.com/"/>
@@ -10,7 +10,7 @@
   <id>https://ntifs.com/</id>
   
   <author>
-    <name>etoa</name>
+    <name>zxy</name>
     
   </author>
   
