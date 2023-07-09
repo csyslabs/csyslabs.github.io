@@ -28,7 +28,7 @@
 <meta property="og:description" content="摘要：数组模拟哈希集合（哈希表），使用拉链法和开放寻址法处理冲突。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-07-08T16:27:30.000Z">
-<meta property="article:modified_time" content="2023-07-08T17:41:03.940Z">
+<meta property="article:modified_time" content="2023-07-09T05:58:19.359Z">
 <meta property="article:author" content="zxy">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="哈希表">
@@ -267,7 +267,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-07-09 00:27:30 / Modified: 01:41:03" itemprop="dateCreated datePublished" datetime="2023-07-09T00:27:30+08:00">2023-07-09</time>
+              <time title="Created: 2023-07-09 00:27:30 / Modified: 13:58:19" itemprop="dateCreated datePublished" datetime="2023-07-09T00:27:30+08:00">2023-07-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,7 +343,7 @@
 <p>判断存在性时，判断哈希值对应的数组存放链表头节点是否为空，或者非空情况遍历单链表逐个比较数值是否相等。</p>
 <h4 id="开放寻址法"><a href="#开放寻址法" class="headerlink" title="开放寻址法"></a>开放寻址法</h4><p>如果哈希值对应数组被占用，则往后遍历找到新的地址，不断轮询尝试直到找到位置。</p>
 <p>模拟集合的数组长度根据经验选择比操作次数最大值大2倍大的最小质数，同时可以作为开放寻址法的哈希函数 $MOD$ 值。</p>
-<p>模拟集合数组存放数值，初始化为数值范围以外的 $0x3f3f3f3f$。</p>
+<p>模拟集合数组存放数值，初始化为数值范围以外的 <code>0x3f3f3f3f</code>。</p>
 <p>实现一个 $find$ 函数，判断 $hash$ 值对应的数是否存在，如果不存在说明该位置可以作为数的存放位置；如果存在则要判断是否被别的数值占用，如果被别的数值占用则向后遍历集合数组，直到找到一个满足条件的位置。</p>
 <p>需要注意的是，我们初始化数值大小为操作数量最大值的 $2$ 倍还多，最坏的情况是每一个操作都不相同，这样我们依然有一倍的冗余，所以必然存在一个位置可以放数值。</p>
 <div class="note primary">
