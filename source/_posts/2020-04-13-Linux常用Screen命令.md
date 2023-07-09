@@ -5,7 +5,7 @@ date: 2020-04-13 09:59:32
 tags:
     - Linux
 categories:
-    - [不亦乐乎, Linux]
+    - [Linux]
 ---
 Screen是一个可以在多个进程之间多路复用一个物理终端的窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。在使用过程中可以退出screen，甚至可以关掉登录窗口，下次再进去重新挂上screen会话，所有工作全部都会恢复。
 
