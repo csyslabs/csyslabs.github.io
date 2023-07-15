@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【AcWing算法基础】第三讲-搜索与图论-DFS AcWing 843. n-皇后问题</title>
+    <url>/2023/07/15/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%89%E8%AE%B2-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA-DFS-AcWing-843-n-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><strong>摘要：</strong><br>经典的DFS问题，n-皇后。</p>
+<a id="more"></a>
+
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>$n$−皇后问题是指将 $n$ 个皇后放在 $n \times n$ 的国际象棋棋盘上，使得皇后不能相互攻击到，即任意两个皇后都不能处于同一行、同一列或同一斜线上。</p>
+<p><img src="https://cdn.acwing.com/media/article/image/2019/06/08/19_860e00c489-1_597ec77c49-8-queens.png" alt="n-queen"></p>
+<p>现在给定整数 $n$，请你输出所有的满足条件的棋子摆法。</p>
+<p><strong>输入格式</strong><br>共一行，包含整数 $n$。</p>
+<p><strong>输出格式</strong><br>每个解决方案占 $n$ 行，每行输出一个长度为 $n$ 的字符串，用来表示完整的棋盘状态。</p>
+<p>其中 <code>.</code> 表示某一个位置的方格状态为空，<code>Q</code> 表示某一个位置的方格上摆着皇后。</p>
+<p>每个方案输出完成后，输出一个空行。</p>
+<p>注意：行末不能有多余空格。</p>
+<p>输出方案的顺序任意，只要不重复且没有遗漏即可。</p>
+<p><strong>数据范围</strong><br>$1≤n≤9$</p>
+<p><strong>输入样例：</strong><br>$4$</p>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>.Q..<br>…Q<br>Q…<br>..Q.</p>
+<p>..Q.<br>Q…<br>…Q<br>.Q..</p>
+</blockquote>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++/行递归搜索</a></li><li class="tab"><a href="#g_tab0-2">C++/按每个格子放与不放枚举搜索</a></li><li class="tab"><a href="#g_tab0-3">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * author: zxy</span></span><br><span class="line"><span class="comment"> * code at: 2023-7-15 17:18:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">bool</span> col[N], dg[N], ndg[N];</span><br><span class="line"><span class="keyword">char</span> g[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r == n) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// finds a valid solution if overflow</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; g[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; n; ++c)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!col[c] &amp;&amp; !dg[c + r] &amp;&amp; !ndg[c - r + n])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// valid grid to put queen</span></span><br><span class="line">            g[r][c] = <span class="string">'Q'</span>;</span><br><span class="line">            col[c] = dg[c + r] = ndg[c - r + n] = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">// step into the next row</span></span><br><span class="line">            dfs(r + <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// back track to restore context</span></span><br><span class="line">            col[c] = dg[c + r] = ndg[c - r + n] = <span class="literal">false</span>;</span><br><span class="line">            g[r][c] = <span class="string">'.'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            g[i][j] = <span class="string">'.'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dfs(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">bool</span> row[N], col[N], dg[N], ndg[N];</span><br><span class="line"><span class="keyword">char</span> g[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// the colums overflows, set to the next row</span></span><br><span class="line">    <span class="keyword">if</span> (c &gt;= n)</span><br><span class="line">    &#123;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        ++r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (r &gt;= n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (s &gt;= n) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// consider a valid solution</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; g[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment">// try not put queen</span></span><br><span class="line">    g[r][c] = <span class="string">'.'</span>;</span><br><span class="line">    dfs(r, c + <span class="number">1</span>, s);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// try put queen</span></span><br><span class="line">    <span class="keyword">if</span> (!row[r] &amp;&amp; !col[c] &amp;&amp; !dg[r + c] &amp;&amp; !ndg[r - c + n])</span><br><span class="line">    &#123;</span><br><span class="line">        g[r][c] = <span class="string">'Q'</span>;</span><br><span class="line">        row[r] = col[c] = dg[r + c] = ndg[r - c + n] = <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// step into next columns</span></span><br><span class="line">        dfs(r, c + <span class="number">1</span>, s + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// back track to restore context</span></span><br><span class="line">        g[r][c] = <span class="string">'.'</span>;</span><br><span class="line">        row[r] = col[c] = dg[r + c] = ndg[r - c + n] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            g[i][j] = <span class="string">'.'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-3"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div></div>
+
+<h3 id="按行递归搜索"><a href="#按行递归搜索" class="headerlink" title="按行递归搜索"></a>按行递归搜索</h3><p>从第一行开始向右遍历放入第一个 <code>Q</code>，记下冲突位置， 即记下竖和两个斜对角占用，横冲突不需要考虑因为我们按行搜索，每一行只会放置一个 <code>Q</code>。</p>
+<p>此时递归进入下一行，根据冲突记录找到不冲突的点，放置 <code>Q</code>。依次往下一行递归，当递归到某一行没有能够找到位置放置 <code>Q</code>，可以认为方案不合法。此时递归函数回溯。进行上一行，对下一个可能放置 <code>Q</code> 的位置进行尝试。</p>
+<p>当递归到行越界的时候，可以认为该路径上的所有 <code>Q</code> 合法，输出方案。</p>
+<p>需要注意的是记录两个对角线冲突状态时，我们使用一元二次方程 $r = c + d$ 和 $r = c - d$ 中截距 $d$ 来表示一条对角线，其中：</p>
+<p>$d = r + c$</p>
+<p>$d = r - c$</p>
+<p>在数组中维护 $d$ 的值时，对于第二种情况，可能下标取到负值。由于 $r - c$ 最小可以取到 $-c$ 即 $-n$ 的位置，我们将整个 $d = r - c$ 向右偏移 $n$ 位，即可解决数组下标为负数的问题。</p>
+<h3 id="按每个格子放与不放枚举搜索"><a href="#按每个格子放与不放枚举搜索" class="headerlink" title="按每个格子放与不放枚举搜索"></a>按每个格子放与不放枚举搜索</h3><p>思想是每个格子都尝试放与不放两种选择，从最后一个格子开始，作为放置 <code>Q</code> 的起点向后递归。不满足的话回溯到倒数第二个格子放置 <code>Q</code>，依次类推。</p>
+<p>该方法存在大量重复尝试，每一个格子作为放置 <code>Q</code> 的起点向后递归的时候，都会和其他起点的路径存在重复。</p>
+<p>对比按行递归搜索方法，该方法复杂度更高。</p>
+<div class="note primary">
+            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/description/845/" target="_blank" rel="noopener">AcWing 843. n-皇后问题</a></p>
+          </div>]]></content>
+      <categories>
+        <category>指尖飞舞</category>
+        <category>算法</category>
+        <category>AcWing</category>
+        <category>算法基础课</category>
+        <category>第三讲搜索与图论</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>DFS</tag>
+        <tag>AcWing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【AcWing算法基础】第三讲-搜索与图论-DFS AcWing 842. 排列数字</title>
     <url>/2023/07/15/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%89%E8%AE%B2-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA-DFS-AcWing-842-%E6%8E%92%E5%88%97%E6%95%B0%E5%AD%97/</url>
     <content><![CDATA[<p><strong>摘要：</strong><br>DFS入门题。</p>
@@ -22,7 +72,7 @@
 </blockquote>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> path[N];</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// overflow</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) <span class="built_in">cout</span> &lt;&lt; path[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!st[i])</span><br><span class="line">        &#123;</span><br><span class="line">            path[u] = i;</span><br><span class="line">            st[i] = <span class="literal">true</span>;</span><br><span class="line">            dfs(u + <span class="number">1</span>);</span><br><span class="line">            st[i] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    dfs(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div></div>
 
-<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>总体思路是：按照深度优先进行下一位数字的搜索操作。每搜索到一个节点，使用path数组记录节点值。当路径中记录的数字数量到达预计值的时候，输出路径并递归返回。<br>为了每个节点可以使用新的数字而不至于重复，将当前路径已经使用过的数字使用额外数组记下，在下一层调用的时候跳过已使用的数字。<br>需要注意的是，在递归回来的时候，需要将已被标记的当前入口节点使用状态重置。因为标记的目的是为了下一层跳过，那么从下一层递归回来当然需要还原。</p>
+<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>本题核心思想是使用递归全量枚举暴搜。<br>按照深度优先进行下一位数字的搜索操作。每搜索到一个节点，使用path数组记录节点值。当路径中记录的数字数量到达预计值的时候，输出路径并递归返回。<br>为了每个节点可以使用新的数字而不至于重复，将当前路径已经使用过的数字使用额外数组记下，在下一层调用的时候跳过已使用的数字。<br>需要注意的是，在递归回来的时候，需要将已被标记的当前入口节点使用状态重置。因为标记的目的是为了下一层跳过，那么从下一层递归回来当然需要还原。<br>另外，之所以回溯的时候，path不需要恢复现场，是因为后续的写入会直接将对应位置的值覆盖掉。</p>
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/844/" target="_blank" rel="noopener">AcWing 842. 排列数字</a></p>
           </div>]]></content>
@@ -9793,13 +9843,13 @@
       </tags>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -9886,6 +9936,13 @@
   </entry>
   <entry>
     <title></title>
+    <url>/about/assets/js/browser.min.js</url>
+    <content><![CDATA[/* browser.js v1.0 | @ajlkn | MIT licensed */
+var browser=function(){"use strict";var e={name:null,version:null,os:null,osVersion:null,touch:null,mobile:null,_canUse:null,canUse:function(n){e._canUse||(e._canUse=document.createElement("div"));var o=e._canUse.style,r=n.charAt(0).toUpperCase()+n.slice(1);return n in o||"Moz"+r in o||"Webkit"+r in o||"O"+r in o||"ms"+r in o},init:function(){var n,o,r,i,t=navigator.userAgent;for(n="other",o=0,r=[["firefox",/Firefox\/([0-9\.]+)/],["bb",/BlackBerry.+Version\/([0-9\.]+)/],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/],["opera",/OPR\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)/],["edge",/Edge\/([0-9\.]+)/],["safari",/Version\/([0-9\.]+).+Safari/],["chrome",/Chrome\/([0-9\.]+)/],["ie",/MSIE ([0-9]+)/],["ie",/Trident\/.+rv:([0-9]+)/]],i=0;i<r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(RegExp.$1);break}for(e.name=n,e.version=o,n="other",o=0,r=[["ios", ([0-9_]+) like mac os x ,function(e){return e.replace("_",".").replace("_","")}],["ios", cpu 0}],["wp", windows phone ([0-9\.]+) ,null],["android", android ,null],["mac", macintosh.+mac e.replace("_",".").replace("_","")}],["windows", nt ,null],["bb", blackberry.+version\ bb[0-9]+.+version\ ,null],["linux", linux ,null],["bsd", bsd ,null],["unix", x11 ,null]],i="0;i<r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(r[i][2]?r[i][2](RegExp.$1):RegExp.$1);break}e.os=n,e.osVersion=o,e.touch="wp"==e.os?navigator.msMaxTouchPoints">0:!!("ontouchstart"in window),e.mobile="wp"==e.os||"android"==e.os||"ios"==e.os||"bb"==e.os}};return e.init(),e}();!function(e,n){"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?module.exports=n():e.browser=n()}(this,function(){return browser});
+</r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(RegExp.$1);break}for(e.name=n,e.version=o,n="other",o=0,r=[["ios",>]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/about/assets/css/fontawesome-all.min.css</url>
     <content><![CDATA[/*!
  * Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
@@ -9895,9 +9952,56 @@
   </entry>
   <entry>
     <title></title>
-    <url>/about/assets/js/breakpoints.min.js</url>
-    <content><![CDATA[/* breakpoints.js v1.0 | @ajlkn | MIT licensed */
-var breakpoints=function(){"use strict";function e(e){t.init(e)}var t={list:null,media:{},events:[],init:function(e){t.list=e,window.addEventListener("resize",t.poll),window.addEventListener("orientationchange",t.poll),window.addEventListener("load",t.poll),window.addEventListener("fullscreenchange",t.poll)},active:function(e){var n,a,s,i,r,d,c;if(!(e in t.media)){if(">="==e.substr(0,2)?(a="gte",n=e.substr(2)):"<="==e.substr(0,2)?(a="lte",n=e.substr(2)):">"==e.substr(0,1)?(a="gt",n=e.substr(1)):"</="==e.substr(0,2)?(a="lte",n=e.substr(2)):">]]></content>
+    <url>/about/assets/css/noscript.css</url>
+    <content><![CDATA[/*
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Spotlights */
+
+	.spotlights > section > .image:before {
+		opacity: 0 !important;
+	}
+
+	.spotlights > section > .content > .inner {
+		-moz-transform: none !important;
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
+		opacity: 1 !important;
+	}
+
+/* Wrapper */
+
+	.wrapper > .inner {
+		opacity: 1 !important;
+		-moz-transform: none !important;
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
+	}
+
+/* Sidebar */
+
+	#sidebar > .inner {
+		opacity: 1 !important;
+	}
+
+	#sidebar nav > ul > li {
+		-moz-transform: none !important;
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
+		opacity: 1 !important;
+	}]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/about/assets/js/jquery.scrolly.min.js</url>
+    <content><![CDATA[/* jquery.scrolly v1.0.0-dev | (c) @ajlkn | MIT licensed */
+(function(e){function u(s,o){var u,a,f;if((u=e(s))[t]==0)return n;a=u[i]()[r];switch(o.anchor){case"middle":f=a-(e(window).height()-u.outerHeight())/2;break;default:case r:f=Math.max(a,0)}return typeof o[i]=="function"?f-=o[i]():f-=o[i],f}var t="length",n=null,r="top",i="offset",s="click.scrolly",o=e(window);e.fn.scrolly=function(i){var o,a,f,l,c=e(this);if(this[t]==0)return c;if(this[t]>1){for(o=0;o]]></content>
   </entry>
   <entry>
     <title></title>
@@ -9907,16 +10011,201 @@ var breakpoints=function(){"use strict";function e(e){t.init(e)}var t={list:null
   </entry>
   <entry>
     <title></title>
-    <url>/about/assets/js/browser.min.js</url>
-    <content><![CDATA[/* browser.js v1.0 | @ajlkn | MIT licensed */
-var browser=function(){"use strict";var e={name:null,version:null,os:null,osVersion:null,touch:null,mobile:null,_canUse:null,canUse:function(n){e._canUse||(e._canUse=document.createElement("div"));var o=e._canUse.style,r=n.charAt(0).toUpperCase()+n.slice(1);return n in o||"Moz"+r in o||"Webkit"+r in o||"O"+r in o||"ms"+r in o},init:function(){var n,o,r,i,t=navigator.userAgent;for(n="other",o=0,r=[["firefox",/Firefox\/([0-9\.]+)/],["bb",/BlackBerry.+Version\/([0-9\.]+)/],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/],["opera",/OPR\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)/],["edge",/Edge\/([0-9\.]+)/],["safari",/Version\/([0-9\.]+).+Safari/],["chrome",/Chrome\/([0-9\.]+)/],["ie",/MSIE ([0-9]+)/],["ie",/Trident\/.+rv:([0-9]+)/]],i=0;i<r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(RegExp.$1);break}for(e.name=n,e.version=o,n="other",o=0,r=[["ios", ([0-9_]+) like mac os x ,function(e){return e.replace("_",".").replace("_","")}],["ios", cpu 0}],["wp", windows phone ([0-9\.]+) ,null],["android", android ,null],["mac", macintosh.+mac e.replace("_",".").replace("_","")}],["windows", nt ,null],["bb", blackberry.+version\ bb[0-9]+.+version\ ,null],["linux", linux ,null],["bsd", bsd ,null],["unix", x11 ,null]],i="0;i<r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(r[i][2]?r[i][2](RegExp.$1):RegExp.$1);break}e.os=n,e.osVersion=o,e.touch="wp"==e.os?navigator.msMaxTouchPoints">0:!!("ontouchstart"in window),e.mobile="wp"==e.os||"android"==e.os||"ios"==e.os||"bb"==e.os}};return e.init(),e}();!function(e,n){"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?module.exports=n():e.browser=n()}(this,function(){return browser});
-</r.length;i++)if(t.match(r[i][1])){n=r[i][0],o=parseFloat(RegExp.$1);break}for(e.name=n,e.version=o,n="other",o=0,r=[["ios",>]]></content>
+    <url>/about/assets/js/breakpoints.min.js</url>
+    <content><![CDATA[/* breakpoints.js v1.0 | @ajlkn | MIT licensed */
+var breakpoints=function(){"use strict";function e(e){t.init(e)}var t={list:null,media:{},events:[],init:function(e){t.list=e,window.addEventListener("resize",t.poll),window.addEventListener("orientationchange",t.poll),window.addEventListener("load",t.poll),window.addEventListener("fullscreenchange",t.poll)},active:function(e){var n,a,s,i,r,d,c;if(!(e in t.media)){if(">="==e.substr(0,2)?(a="gte",n=e.substr(2)):"<="==e.substr(0,2)?(a="lte",n=e.substr(2)):">"==e.substr(0,1)?(a="gt",n=e.substr(1)):"</="==e.substr(0,2)?(a="lte",n=e.substr(2)):">]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>/about/assets/js/jquery.scrolly.min.js</url>
-    <content><![CDATA[/* jquery.scrolly v1.0.0-dev | (c) @ajlkn | MIT licensed */
-(function(e){function u(s,o){var u,a,f;if((u=e(s))[t]==0)return n;a=u[i]()[r];switch(o.anchor){case"middle":f=a-(e(window).height()-u.outerHeight())/2;break;default:case r:f=Math.max(a,0)}return typeof o[i]=="function"?f-=o[i]():f-=o[i],f}var t="length",n=null,r="top",i="offset",s="click.scrolly",o=e(window);e.fn.scrolly=function(i){var o,a,f,l,c=e(this);if(this[t]==0)return c;if(this[t]>1){for(o=0;o]]></content>
+    <url>/about/assets/js/main.js</url>
+    <content><![CDATA[/*
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+(function($) {
+
+	var	$window = $(window),
+		$body = $('body'),
+		$sidebar = $('#sidebar');
+
+	// Breakpoints.
+		breakpoints({
+			xlarge:   [ '1281px',  '1680px' ],
+			large:    [ '981px',   '1280px' ],
+			medium:   [ '737px',   '980px'  ],
+			small:    [ '481px',   '736px'  ],
+			xsmall:   [ null,      '480px'  ]
+		});
+
+	// Hack: Enable IE flexbox workarounds.
+		if (browser.name == 'ie')
+			$body.addClass('is-ie');
+
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
+
+	// Forms.
+
+		// Hack: Activate non-input submits.
+			$('form').on('click', '.submit', function(event) {
+
+				// Stop propagation, default.
+					event.stopPropagation();
+					event.preventDefault();
+
+				// Submit form.
+					$(this).parents('form').submit();
+
+			});
+
+	// Sidebar.
+		if ($sidebar.length > 0) {
+
+			var $sidebar_a = $sidebar.find('a');
+
+			$sidebar_a
+				.addClass('scrolly')
+				.on('click', function() {
+
+					var $this = $(this);
+
+					// External link? Bail.
+						if ($this.attr('href').charAt(0) != '#')
+							return;
+
+					// Deactivate all links.
+						$sidebar_a.removeClass('active');
+
+					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+						$this
+							.addClass('active')
+							.addClass('active-locked');
+
+				})
+				.each(function() {
+
+					var	$this = $(this),
+						id = $this.attr('href'),
+						$section = $(id);
+
+					// No section for this link? Bail.
+						if ($section.length < 1)
+							return;
+
+					// Scrollex.
+						$section.scrollex({
+							mode: 'middle',
+							top: '-20vh',
+							bottom: '-20vh',
+							initialize: function() {
+
+								// Deactivate section.
+									$section.addClass('inactive');
+
+							},
+							enter: function() {
+
+								// Activate section.
+									$section.removeClass('inactive');
+
+								// No locked links? Deactivate all links and activate this section's one.
+									if ($sidebar_a.filter('.active-locked').length == 0) {
+
+										$sidebar_a.removeClass('active');
+										$this.addClass('active');
+
+									}
+
+								// Otherwise, if this section's link is the one that's locked, unlock it.
+									else if ($this.hasClass('active-locked'))
+										$this.removeClass('active-locked');
+
+							}
+						});
+
+				});
+
+		}
+
+	// Scrolly.
+		$('.scrolly').scrolly({
+			speed: 1000,
+			offset: function() {
+
+				// If <=large,>small, and sidebar is present, use its height as the offset.
+					if (breakpoints.active('<=large') && !breakpoints.active('<="small')" $sidebar.length> 0)
+						return $sidebar.height();
+
+				return 0;
+
+			}
+		});
+
+	// Spotlights.
+		$('.spotlights > section')
+			.scrollex({
+				mode: 'middle',
+				top: '-10vh',
+				bottom: '-10vh',
+				initialize: function() {
+
+					// Deactivate section.
+						$(this).addClass('inactive');
+
+				},
+				enter: function() {
+
+					// Activate section.
+						$(this).removeClass('inactive');
+
+				}
+			})
+			.each(function() {
+
+				var	$this = $(this),
+					$image = $this.find('.image'),
+					$img = $image.find('img'),
+					x;
+
+				// Assign image.
+					$image.css('background-image', 'url(' + $img.attr('src') + ')');
+
+				// Set background position.
+					if (x = $img.data('position'))
+						$image.css('background-position', x);
+
+				// Hide <img>.
+					$img.hide();
+
+			});
+
+	// Features.
+		$('.features')
+			.scrollex({
+				mode: 'middle',
+				top: '-20vh',
+				bottom: '-20vh',
+				initialize: function() {
+
+					// Deactivate section.
+						$(this).addClass('inactive');
+
+				},
+				enter: function() {
+
+					// Activate section.
+						$(this).removeClass('inactive');
+
+				}
+			});
+
+})(jQuery);</=large')></=large,>]]></content>
   </entry>
   <entry>
     <title></title>
@@ -10504,245 +10793,6 @@ var browser=function(){"use strict";var e={name:null,version:null,os:null,osVers
 	};
 
 })(jQuery);</div>]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/about/assets/js/main.js</url>
-    <content><![CDATA[/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-(function($) {
-
-	var	$window = $(window),
-		$body = $('body'),
-		$sidebar = $('#sidebar');
-
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
-
-	// Hack: Enable IE flexbox workarounds.
-		if (browser.name == 'ie')
-			$body.addClass('is-ie');
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Forms.
-
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
-
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
-
-				// Submit form.
-					$(this).parents('form').submit();
-
-			});
-
-	// Sidebar.
-		if ($sidebar.length > 0) {
-
-			var $sidebar_a = $sidebar.find('a');
-
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
-
-					var $this = $(this);
-
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
-
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
-
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
-
-				})
-				.each(function() {
-
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
-
-					// No section for this link? Bail.
-						if ($section.length < 1)
-							return;
-
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
-
-								// Deactivate section.
-									$section.addClass('inactive');
-
-							},
-							enter: function() {
-
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
-							}
-						});
-
-				});
-
-		}
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
-
-				// If <=large,>small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large') && !breakpoints.active('<="small')" $sidebar.length> 0)
-						return $sidebar.height();
-
-				return 0;
-
-			}
-		});
-
-	// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide <img>.
-					$img.hide();
-
-			});
-
-	// Features.
-		$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			});
-
-})(jQuery);</=large')></=large,>]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/about/assets/css/noscript.css</url>
-    <content><![CDATA[/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-/* Spotlights */
-
-	.spotlights > section > .image:before {
-		opacity: 0 !important;
-	}
-
-	.spotlights > section > .content > .inner {
-		-moz-transform: none !important;
-		-webkit-transform: none !important;
-		-ms-transform: none !important;
-		transform: none !important;
-		opacity: 1 !important;
-	}
-
-/* Wrapper */
-
-	.wrapper > .inner {
-		opacity: 1 !important;
-		-moz-transform: none !important;
-		-webkit-transform: none !important;
-		-ms-transform: none !important;
-		transform: none !important;
-	}
-
-/* Sidebar */
-
-	#sidebar > .inner {
-		opacity: 1 !important;
-	}
-
-	#sidebar nav > ul > li {
-		-moz-transform: none !important;
-		-webkit-transform: none !important;
-		-ms-transform: none !important;
-		transform: none !important;
-		opacity: 1 !important;
-	}]]></content>
   </entry>
   <entry>
     <title></title>
