@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ntifs.com/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2023-07-15T17:19:23.554Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ntifs.com/2021/08/10/%E7%BB%8F%E9%AA%8C%EF%BC%9A%E6%8A%8Ahexo%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%E4%BB%8EWindows%E8%BF%81%E7%A7%BB%E5%88%B0Mac/</loc>
     
-    <lastmod>2023-07-15T16:33:01.342Z</lastmod>
+    <lastmod>2023-07-15T16:42:46.596Z</lastmod>
     
   </url>
   
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://ntifs.com/categories/index.html</loc>
+    <loc>https://ntifs.com/tags/index.html</loc>
     
     <lastmod>2023-07-04T14:06:51.248Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ntifs.com/tags/index.html</loc>
+    <loc>https://ntifs.com/categories/index.html</loc>
     
     <lastmod>2023-07-04T14:06:51.248Z</lastmod>
     

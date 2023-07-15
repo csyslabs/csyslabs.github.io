@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ntifs.com/"/>
-  <updated>2023-07-15T09:58:35.954Z</updated>
+  <updated>2023-07-15T17:19:23.554Z</updated>
   <id>https://ntifs.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo搜索结果不完全问题修复记录</title>
+    <link href="https://ntifs.com/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/"/>
+    <id>https://ntifs.com/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</id>
+    <published>2023-07-15T16:42:13.000Z</published>
+    <updated>2023-07-15T17:19:23.554Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>修复Hexo搜索问题。</p><a id="more"></a><h3 id="问题表现"><a href="#问题表现" class="headerlink" title="问题表现"></a>问题表现</h3><p>搜索功能只能搜索到部分文章，进过尝试发现在某个时间点后的文章内容不可被搜到。</p><h3 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h3><p>经过网络搜索发现可以通过在线访问网站的search.xml文件判断问题。</p><ol><li>访问<a href="https://ntifs.com/search.xml">https://ntifs.com/search.xml</a></li><li>发现如下报错<br><img src="/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/1.jpg" alt="1"></li><li>直接定位错误问题出现 <a href="https://ntifs.com/search.xml">https://ntifs.com/search.xml</a> 这个url返回内容的第2114行，定位到错误发生在文章：<code>记录一下自己把hexo博客环境从Windows迁移到Mac的过程</code> 中。</li><li>vscode打开本地文章发现如下错误字符<br><img src="/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/2.jpg" alt="2"></li><li>删除错误字符，重新部署验证，本来在这篇文章之前都不可被搜索，之后都可以。经过验证发现全站内容均可搜到：<br><img src="/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/3.jpg" alt="3"></li></ol><p><strong>参考文章</strong></p><blockquote><p><a href="https://www.sqlsec.com/2017/12/hexosearch.html#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1" target="_blank" rel="noopener">Hexo 博客无法搜索的终极解决方法</a><br><a href="http://ponder.work/2021/10/11/hexo-local-search-not-complete-fix/" target="_blank" rel="noopener">hexo 站内搜索内容不完全问题修复</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;修复Hexo搜索问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="不亦乐乎" scheme="https://ntifs.com/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/"/>
+    
+      <category term="博客" scheme="https://ntifs.com/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="博客" scheme="https://ntifs.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="https://ntifs.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>【AcWing算法基础】第三讲-搜索与图论-DFS AcWing 843. n-皇后问题</title>
@@ -642,39 +669,6 @@
       <category term="数据库" scheme="https://ntifs.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="窗口函数" scheme="https://ntifs.com/tags/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 176. 第二高的薪水</title>
-    <link href="https://ntifs.com/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/"/>
-    <id>https://ntifs.com/2022/04/08/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</id>
-    <published>2022-04-08T03:27:08.000Z</published>
-    <updated>2023-07-04T14:06:51.070Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>数据库TopK问题</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://leetcode-cn.com/problems/second-highest-salary/" target="_blank" rel="noopener">LeetCode 176. 第二高的薪水</a></p><h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">MySQL</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">(</span><br><span class="line">select distinct</span><br><span class="line">salary from Employee</span><br><span class="line">order by salary desc</span><br><span class="line">limit 1 offset 1</span><br><span class="line">) as SecondHighestSalary;</span><br></pre></td></tr></table></figure></div></div></div><p>对于子查询：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select distinct</span><br><span class="line">salary from Employee</span><br><span class="line">order by salary desc</span><br><span class="line">limit 1 offset 1</span><br></pre></td></tr></table></figure><p>将查询产生一个临时数据集，当数据库总行数 &lt;= 1时，由于偏移的作用，将产生一个空集。<br>使用第二次查询可以查到null值，满足题目要求。</p><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://leetcode-cn.com/problems/second-highest-salary/" target="_blank" rel="noopener">LeetCode 176. 第二高的薪水</a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;数据库TopK问题&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="指尖飞舞" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
-    
-      <category term="数据库" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="MySQL" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ntifs.com/tags/LeetCode/"/>
-    
-      <category term="TopK" scheme="https://ntifs.com/tags/TopK/"/>
-    
-      <category term="MySQL" scheme="https://ntifs.com/tags/MySQL/"/>
-    
-      <category term="数据库" scheme="https://ntifs.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
