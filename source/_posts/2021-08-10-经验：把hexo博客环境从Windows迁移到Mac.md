@@ -47,7 +47,7 @@ __摘要：__
 > 打开GitHub官网，登录自己的账号。
 > 前往Setting页面，选择SSH and GPG keys。
 > 点击New SSH key，将public key复制到这里，并命名。
-11. 打开第2步拷贝的hexo压缩文件，将themes中的_config.yml中的所有Windows绝对路径替换成当前Mac的路径。
+11. 打开第2步拷贝的hexo压缩文件，将themes中的_config.yml中的所有Windows绝对路径替换成当前Mac的路径。
 12. 终端定位到hexo根目录，执行：
 > `hexo s`
 见证奇迹的时刻，耶～
