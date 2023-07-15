@@ -3,11 +3,10 @@ title: Maven编译踩坑记录：Maven未识别JDK的问题
 comments: true
 date: 2021-08-24 10:40:52
 tags:
-    - 工程
+    - 开发
     - Maven
-    - 异常
 categories:
-    - [指尖飞舞, 工程, 异常]
+    - [指尖飞舞, 开发]
 ---
 __摘要：__
 记一次mvn编译时踩的坑。
