@@ -52,25 +52,6 @@
   </entry>
   
   <entry>
-    <title>第三方应用对接钉钉账号系统实践</title>
-    <link href="https://ntifs.com/2023/07/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8%E5%AF%B9%E6%8E%A5%E9%92%89%E9%92%89%E8%B4%A6%E5%8F%B7%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://ntifs.com/2023/07/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8%E5%AF%B9%E6%8E%A5%E9%92%89%E9%92%89%E8%B4%A6%E5%8F%B7%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5/</id>
-    <published>2023-07-20T14:44:49.000Z</published>
-    <updated>2023-07-20T14:44:49.989Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>摘要：</strong></p><a id="more"></a><h3 id><a href="#" class="headerlink" title></a></h3><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li><li class="tab"><a href="#g_tab0-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="g_tab0-2"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href></a></p>          </div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hexo搜索结果不完全问题修复记录</title>
     <link href="https://ntifs.com/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/"/>
     <id>https://ntifs.com/2023/07/16/Hexo%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</id>
@@ -649,6 +630,43 @@
       <category term="MySQL" scheme="https://ntifs.com/tags/MySQL/"/>
     
       <category term="数据库" scheme="https://ntifs.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【AcWing算法基础】第二讲-数据结构-Trie AcWing 835. Trie字符串统计</title>
+    <link href="https://ntifs.com/2022/09/07/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Trie-AcWing-835-Trie%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%9F%E8%AE%A1/"/>
+    <id>https://ntifs.com/2022/09/07/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Trie-AcWing-835-Trie%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%9F%E8%AE%A1/</id>
+    <published>2022-09-07T02:56:22.000Z</published>
+    <updated>2023-07-04T14:06:51.100Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>摘要：</strong><br>Trie模板题</p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>维护一个字符串集合，支持两种操作：</p><p><code>I</code> <code>x</code> 向集合中插入一个字符串 <code>x</code>；<br><code>Q</code> <code>x</code> 询问一个字符串在集合中出现了多少次。<br>共有 $N$ 个操作，输入的字符串总长度不超过 $10^5$，字符串仅包含小写英文字母。</p><p><strong>输入格式</strong><br>第一行包含整数 $N$，表示操作数。</p><p>接下来 $N$ 行，每行包含一个操作指令，指令为 <code>I</code> <code>x</code> 或 <code>Q</code> <code>x</code> 中的一种。</p><p><strong>输出格式</strong><br>对于每个询问指令 <code>Q</code> <code>x</code>，都要输出一个整数作为结果，表示 <code>x</code> 在集合中出现的次数。</p><p>每个结果占一行。</p><p><strong>数据范围</strong><br>$1 ≤ N ≤ 2 \times 10^4$</p><p><strong>输入样例：</strong></p><blockquote><p>5<br>I abc<br>Q abc<br>Q ab<br>I ab<br>Q ab</p></blockquote><p><strong>输出样例：</strong></p><blockquote><p>1<br>0<br>1</p></blockquote><hr><h3 id="Trie字典树"><a href="#Trie字典树" class="headerlink" title="Trie字典树"></a>Trie字典树</h3><p>使用二维数组构建前缀树，每一个树节点对应二维数组中唯一的行，每行长度 $26$ 对应 $26$ 字母。<br><code>son</code> 数组存放当前节点子节点所在行数。<br>当一个字符串插入到前缀树中时，使用统计数组 <code>cnt</code> 记录当前跟节点对应的字符串数量。<br>使用 <code>idx</code> 记录对全部节点计数，当新的结点出现时，可以知道用二维数组哪一行表示新的节点。</p><div class="tabs" id="g_tab0"><ul class="nav-tabs"><li class="tab active"><a href="#g_tab0-1">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="g_tab0-1"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> son[N][<span class="number">26</span>], cnt[N], idx;</span><br><span class="line"></span><br><span class="line"><span class="comment">// son buffer -&gt; stores the row of child node </span></span><br><span class="line"><span class="comment">// a d c    a d e</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">build_trie</span><span class="params">(<span class="built_in">string</span> &amp;s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, len = s.<span class="built_in">size</span>(); i &lt; len; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = s[i] - <span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">if</span> (!son[p][c]) son[p][c] = ++idx;</span><br><span class="line">        p = son[p][c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 以p行结束(叶子节点的"子节点"行)的字符串计数</span></span><br><span class="line">    cnt[p]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="built_in">string</span> &amp;s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, len = s.<span class="built_in">size</span>(); i &lt; len; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = s[i] - <span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">if</span> (!son[p][c]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        p = son[p][c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt[p];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>)-&gt;sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> t; <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="built_in">string</span> ops, s;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">cin</span> &gt;&gt; ops, <span class="built_in">cin</span> &gt;&gt; s;) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ops == <span class="string">"I"</span>) build_trie(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (ops == <span class="string">"Q"</span>) <span class="built_in">cout</span> &lt;&lt; query(s) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div><div class="note primary">            <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/837/" target="_blank" rel="noopener">AcWing 835. Trie字符串统计</a></p>          </div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;&lt;br&gt;Trie模板题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="指尖飞舞" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/"/>
+    
+      <category term="算法" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="AcWing" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/"/>
+    
+      <category term="算法基础课" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+      <category term="第二讲数据结构" scheme="https://ntifs.com/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/AcWing/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/%E7%AC%AC%E4%BA%8C%E8%AE%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="算法" scheme="https://ntifs.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="AcWing" scheme="https://ntifs.com/tags/AcWing/"/>
+    
+      <category term="字典树" scheme="https://ntifs.com/tags/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
+    
+      <category term="Trie" scheme="https://ntifs.com/tags/Trie/"/>
     
   </entry>
   
