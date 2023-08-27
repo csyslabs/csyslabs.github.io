@@ -5,7 +5,7 @@ date: 2023-08-24 23:45:43
 tags:
     - 算法
     - AcWing 
-    - DFS
+    - BFS
 categories:
     - [指尖飞舞, 算法, AcWing, 算法基础课, 第三讲搜索与图论]
 ---
