@@ -235,6 +235,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ntifs.com/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="zxy">
+      <meta itemprop="description" content="我太菜被关起来了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VIRTUAL™ Labs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/15/Windows%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E4%B9%8B%E9%97%B4%E8%BD%AC%E7%A7%BBhexo%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">Windows同一台计算机不同用户之间转移hexo运行环境</a>
+        </h2>
+
+        <div class="post-meta">
+          
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-15 18:47:56" itemprop="dateCreated datePublished" datetime="2020-04-15T18:47:56+08:00">2020-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-07-04 22:06:50" itemprop="dateModified" datetime="2023-07-04T22:06:50+08:00">2023-07-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/" itemprop="url" rel="index"><span itemprop="name">不亦乐乎</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%8D%E4%BA%A6%E4%B9%90%E4%B9%8E/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">博客</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>部署hexo的用户：A</strong><br><strong>新用户：B</strong></p>
+<p>在Windows平台由A切换B之后，A配置的hexo没法直接使用。</p>
+<p><strong>解决方法</strong></p>
+<blockquote>
+<ul>
+<li>将<code>C:\Users\A\AppData\Roaming</code>下的<code>npm</code>目录拷贝到<code>C:\Users\B\AppData\Roaming</code>。<blockquote>
+<p>这里是hexo的安装目录，在新用户下不用重新安装。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\A</code>下的<code>.ssh</code>目录拷贝到<code>C:\Users\B</code>。<blockquote>
+<p>这里存放着用于连接Github的ssh公钥和私钥。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\A</code>下的<code>node_modules</code>目录拷贝到<code>C:\Users\B</code>。<blockquote>
+<p>这里是安装node之后用来存放<code>npm</code>下载的各种包的地方，我们不用重新执行<code>npm install</code>，直接拷贝即可。</p>
+</blockquote>
+</li>
+<li>将<code>C:\Users\B\AppData\Roaming\npm</code>添加到B的用户环境变量。<blockquote>
+<p>这一步可以让我们在新用户B下直接执行<code>hexo</code>命令。</p>
+</blockquote>
+</li>
+<li>将<code>T:\Git\root\Git\cmd</code>添加到B的用户环境变量。<blockquote>
+<p>这样可以在B下执行<code>git</code>命令。</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>同一台计算机不同不同用户之间转移hexo运行环境要比不同计算机之间更加方便。</p>
+<h5 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h5><blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a><br><a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35668237</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a><br><a href="https://m.html.cn/qa/node-js/12146.html" target="_blank" rel="noopener">https://m.html.cn/qa/node-js/12146.html</a><br><a href="https://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/01/npm-install.html</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://ntifs.com/2020/04/13/%E8%B0%B7%E6%AD%8C%E4%BA%91%EF%BC%88GCP%EF%BC%89%E7%BB%99%E7%BB%99%E6%9C%AA%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%A4%96%E9%83%A8IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%AE%9E%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1036,98 +1147,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ntifs.com/2020/03/29/LeetCode-9-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="zxy">
-      <meta itemprop="description" content="我太菜被关起来了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VIRTUAL™ Labs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/29/LeetCode-9-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="post-title-link" itemprop="url">LeetCode 9. 两数相加</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-03-29 19:00:56" itemprop="dateCreated datePublished" datetime="2020-03-29T19:00:56+08:00">2020-03-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-04 22:06:50" itemprop="dateModified" datetime="2023-07-04T22:06:50+08:00">2023-07-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/" itemprop="url" rel="index"><span itemprop="name">指尖飞舞</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8C%87%E5%B0%96%E9%A3%9E%E8%88%9E/%E7%AE%97%E6%B3%95/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>摘要：</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/29/LeetCode-9-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1201,7 +1220,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">203</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1214,7 +1233,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">137</span>
+        <span class="site-state-item-count">138</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
