@@ -24,12 +24,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="【AcWing算法基础】第三讲-搜索与图论-树与图的深度优先遍历 AcWing 846. 树的重心">
 <meta property="og:url" content="https://ntifs.com/2023/09/02/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%89%E8%AE%B2-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA-%E6%A0%91%E4%B8%8E%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86-AcWing-846-%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/index.html">
-<meta property="og:site_name" content="VIRTUAL™ Labs">
+<meta property="og:site_name" content="计算复杂性实验室">
 <meta property="og:description" content="摘要：使用邻接表建图并递归遍历图。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ntifs.com/2023/09/02/%E3%80%90AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%89%E8%AE%B2-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA-%E6%A0%91%E4%B8%8E%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86-AcWing-846-%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/adjacency_list.jpg">
 <meta property="article:published_time" content="2023-09-02T09:23:08.000Z">
-<meta property="article:modified_time" content="2023-09-02T10:14:15.994Z">
+<meta property="article:modified_time" content="2023-09-11T15:07:38.363Z">
 <meta property="article:author" content="zxy">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="DFS">
@@ -64,7 +64,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
-  <title>【AcWing算法基础】第三讲-搜索与图论-树与图的深度优先遍历 AcWing 846. 树的重心 | VIRTUAL™ Labs</title>
+  <title>【AcWing算法基础】第三讲-搜索与图论-树与图的深度优先遍历 AcWing 846. 树的重心 | 计算复杂性实验室</title>
   
     <script>
       function sendPageView() {
@@ -111,7 +111,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="VIRTUAL™ Labs" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="计算复杂性实验室" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -132,10 +132,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">VIRTUAL™ Labs</h1>
+      <h1 class="site-title">计算复杂性实验室</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">NtCreateArticle for Virtual</p>
+      <p class="site-subtitle" itemprop="description">the virtual labs for virtual</p>
   </div>
 
   <div class="site-nav-right">
@@ -252,7 +252,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VIRTUAL™ Labs">
+      <meta itemprop="name" content="计算复杂性实验室">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -268,10 +268,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-02 17:23:08 / Modified: 18:14:15" itemprop="dateCreated datePublished" datetime="2023-09-02T17:23:08+08:00">2023-09-02</time>
+              <time title="Created: 2023-09-02 17:23:08" itemprop="dateCreated datePublished" datetime="2023-09-02T17:23:08+08:00">2023-09-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-11 23:07:38" itemprop="dateModified" datetime="2023-09-11T23:07:38+08:00">2023-09-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -337,6 +343,7 @@
 <p>值得注意的是，对于该节点 $a$，它的所有直接连通块除了所有孩子连通块外，还有父连通块。因为我们知道所有节点数量，故可简单使用总数减去所有孩子连通块节点总数得到父连通块的节点数量。</p>
 <p>这样，对于节点 $a$，我们知道了所有连通块的节点数量，可以取最大值，并维护起来，方便与其他节点进行比较，取最小值即可。</p>
 <p>另外，代码开数组时，注意下标取值范围。节点数范围为 $1≤n≤10^5$，建图过程中，对于$a,b$ 两点会分别连接 $a$ 到 $b$ 和 $b$ 到 $a$。<br>在该过程中，$h$ 数组下标对应 $a$ 和 $b$ 及其他节点的值，范围始终在 $n$ 内，所以 $h$ 数组大小取 $10^5 + 10$ 即可；<br>然而 $e$ 数组和 $ne$ 数组下标对应 $idx$，因为每两点构建两次边，所以 $idx$ 一直向后递增总数翻倍，故 $e$ 和 $ne$ 的下标范围取 $2$ 倍的 $10^5 + 10$.</p>
+<p><code>dfs(1)</code>表示从1号点开始搜，我们可以从任意一个点开始搜。</p>
 <div class="note primary">
             <p><strong>原题链接：</strong> <a href="https://www.acwing.com/problem/content/848/" target="_blank" rel="noopener">AcWing 846. 树的重心</a></p>
           </div>
